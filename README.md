@@ -12,7 +12,7 @@ is **Pasadena, California**.
 | Milestone | State |
 |---|---|
 | 1. Pilot city research | ✅ Pasadena chosen |
-| 2. Data pipeline + data quality report | ✅ built (transit distance is a learning exercise, see below) |
+| 2. Data pipeline + data quality report | ✅ built |
 | 3. Rule files + capacity engine | next |
 | 4–9. Map, scenarios, UI, redevelopment estimate, docs, pro forma | planned |
 
@@ -33,7 +33,7 @@ reports/pasadena/quality_report.md           counts of every flag (committed)
   columns. `la_assessor.py` is shared by every LA County city.
 - `pipeline/src/zce/spatial.py`: parcel ↔ zone (largest overlap), parcel ↔
   council district and specific plan.
-- `pipeline/src/zce/transit.py`: transit stops, plus the exercise function.
+- `pipeline/src/zce/transit.py`: transit stops and distance from each lot to the nearest one.
 - `pipeline/src/zce/clean.py`: runs it all and adds flags. Lots are flagged, never dropped.
 
 ## Running it locally
@@ -61,20 +61,6 @@ folders ending in `.nosync`, which keeps 100+ MB of data out of iCloud, and
 it avoids a real bug: iCloud marks files in synced `.venv` folders as hidden,
 and Python ignores hidden `.pth` files, so `import zce` fails. The Makefile
 points uv at `pipeline/.venv.nosync` for that reason.
-
-## 🧑‍🎓 Current exercise
-
-Write `distance_to_nearest_ft()` in
-[pipeline/src/zce/transit.py](pipeline/src/zce/transit.py). The comment above
-it is the spec. Read the "Coordinate systems" and "Spatial joins" sections of
-[LEARNING.md](LEARNING.md) first, then:
-
-```bash
-make exercise
-```
-
-When all 7 tests pass, run `make clean` again; the report's "Distance to
-transit" section will fill in.
 
 ## Privacy
 

@@ -37,9 +37,8 @@ A lot can have several flags. Flagged lots are kept and shown on the map with a 
 | `missing_building_data` | 1,590 | 5.3% | Assessor has no building record (often vacant, public, or exempt land). Existing units unknown. |
 | `missing_assessed_value` | 815 | 2.7% | No land/improvement value on the roll (often exempt or public land). |
 | `sliver_lot` | 65 | 0.2% | Lot is under 500 sq ft; probably a strip or mapping artifact. |
-| `transit_distance_missing` | 30,198 | 100.0% | Distance to transit not computed yet (the milestone 2 exercise). |
 
-Lots with no flags (not counting `transit_distance_missing`): **25,111** (83.2%)
+Lots with no flags: **25,111** (83.2%)
 
 ## Lots by zone category
 
@@ -146,4 +145,8 @@ Polygons whose category label does not match their zone code (the code is used):
 
 ## Distance to transit
 
-Not computed yet. Write `distance_to_nearest_ft()` (the milestone 2 exercise) and re-run `make clean`.
+Measured from the lot's edge to the nearest stop (see `transit.distance_to_nearest_ft`).
+
+- Lots within ½ mile (2,640 ft) of a major transit stop: **6,205** (20.5%). AB 2097 parking relief applies to these.
+- Median distance to a Metro rail station: 4,945 ft
+- Lots with no distance (should be 0): 0

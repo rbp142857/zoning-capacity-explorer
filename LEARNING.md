@@ -44,7 +44,7 @@ Plane Zone 5, US feet), designed for this part of Southern California, so
 `geometry.area` is square feet and `distance` is feet. Rule of thumb: store
 and exchange data in 4326, but `to_crs()` into a local projected CRS before
 measuring anything. Measuring in the wrong CRS doesn't raise an error; it just
-gives silently wrong numbers, which is why the exercise function must refuse
+gives silently wrong numbers, which is why `distance_to_nearest_ft()` refuses
 geographic CRSs.
 Docs: <https://geopandas.org/en/stable/docs/user_guide/projections.html> ·
 <https://epsg.io/2229>
@@ -69,8 +69,8 @@ their shapes relate. We use three kinds:
   This is more robust than a point test when city zoning lines and county
   parcel lines are a few feet apart.
 - `gpd.sjoin_nearest(...)`: for each row, find the nearest feature on the
-  other side, optionally returning the distance. It's what you'll want for the
-  exercise.
+  other side, optionally returning the distance. `transit.distance_to_nearest_ft()`
+  uses it to measure each lot's distance to transit.
 Docs: <https://geopandas.org/en/stable/docs/user_guide/mergingdata.html> ·
 <https://geopandas.org/en/stable/docs/reference/api/geopandas.sjoin_nearest.html>
 
@@ -142,8 +142,8 @@ Test files are `tests/test_*.py`; any function named `test_*` is a test, and a
 plain `assert` is the check. *Fixtures* (in `conftest.py`) build reusable
 inputs; `@pytest.mark.parametrize` runs one test over many input/expected
 pairs. Our tests use tiny hand-drawn boxes in feet so every expected number
-can be checked on paper. *Markers* (`@pytest.mark.exercise`) let us skip the
-exercise tests by default.
+can be checked on paper. *Markers* (`@pytest.mark.exercise`) let us skip
+tests for an unfinished learning exercise by default.
 Docs: <https://docs.pytest.org/en/stable/getting-started.html>
 
 ### Prop 13 and assessed values (a warning for milestone 7)

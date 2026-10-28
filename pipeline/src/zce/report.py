@@ -21,7 +21,6 @@ FLAG_MEANINGS = {
     "missing_building_data": "Assessor has no building record (often vacant, public, or exempt land). Existing units unknown.",
     "missing_assessed_value": "No land/improvement value on the roll (often exempt or public land).",
     "sliver_lot": "Lot is under 500 sq ft; probably a strip or mapping artifact.",
-    "transit_distance_missing": "Distance to transit not computed yet (the milestone 2 exercise).",
 }
 
 
@@ -60,11 +59,8 @@ def write_quality_report(parcels, zones, stats: dict, manifest: dict, city: City
     flag_rows = [{"flag": f"`{f}`", "lots": f"{int(counts.get(f, 0)):,}",
                   "share": f"{counts.get(f, 0) / n:.1%}", "meaning": m} for f, m in FLAG_MEANINGS.items()]
     out.append(_table(pd.DataFrame(flag_rows)))
-    # Ignore the exercise flag here so this number is useful before it's done.
-    real_flags = parcels["flags"].map(lambda f: [x for x in f if x != "transit_distance_missing"])
-    unflagged = (real_flags.map(len) == 0).sum()
-    out.append(f"\nLots with no flags (not counting `transit_distance_missing`): "
-               f"**{unflagged:,}** ({unflagged / n:.1%})")
+    unflagged = (parcels["flags"].map(len) == 0).sum()
+    out.append(f"\nLots with no flags: **{unflagged:,}** ({unflagged / n:.1%})")
 
     out.append("\n## Lots by zone category\n")
     by_cat = parcels.groupby(parcels["zone_category"].fillna("(no zone)")).agg(
@@ -117,14 +113,12 @@ def write_quality_report(parcels, zones, stats: dict, manifest: dict, city: City
         out.extend(f"- `{r.zone_code}` labeled \"{r.zone_category}\"" for r in mismatch.itertuples())
 
     out.append("\n## Distance to transit\n")
-    d = parcels["dist_major_transit_ft"]
-    if d.notna().any():
-        within = (d <= 2640).sum()
-        out.append(f"- Lots within ½ mile (2,640 ft) of a major transit stop: **{within:,}** ({within / n:.1%}). "
-                   "AB 2097 parking relief applies to these.")
-        out.append(f"- Median distance to a Metro rail station: {parcels['dist_rail_station_ft'].median():,.0f} ft")
-    else:
-        out.append("Not computed yet. Write `distance_to_nearest_ft()` (the milestone 2 exercise) and re-run `make clean`.")
+    out.append("Measured from the lot's edge to the nearest stop (see `transit.distance_to_nearest_ft`).\n")
+    within = (parcels["dist_major_transit_ft"] <= 2640).sum()
+    out.append(f"- Lots within ½ mile (2,640 ft) of a major transit stop: **{within:,}** ({within / n:.1%}). "
+               "AB 2097 parking relief applies to these.")
+    out.append(f"- Median distance to a Metro rail station: {parcels['dist_rail_station_ft'].median():,.0f} ft")
+    out.append(f"- Lots with no distance (should be 0): {parcels['dist_major_transit_ft'].isna().sum():,}")
 
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(out) + "\n")

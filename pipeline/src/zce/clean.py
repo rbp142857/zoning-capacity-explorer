@@ -29,15 +29,6 @@ def _add_flag(flags: pd.Series, condition: pd.Series, name: str) -> pd.Series:
     return flags.where(~condition, flags.map(lambda f: f + [name]))
 
 
-def _distance_or_nan(parcels, stops, label):
-    """Run the transit exercise function, or leave NaN until it's written."""
-    try:
-        return transit.distance_to_nearest_ft(parcels, stops), True
-    except NotImplementedError:
-        print(f"  ! {label}: distance_to_nearest_ft() is not written yet (exercise); leaving NaN")
-        return pd.Series(float("nan"), index=parcels.index), False
-
-
 def clean_city(city: CityConfig) -> gpd.GeoDataFrame:
     raw, crs = city.raw_dir, city.analysis_crs
     manifest = json.loads((raw / "_manifest.json").read_text())
@@ -67,8 +58,8 @@ def clean_city(city: CityConfig) -> gpd.GeoDataFrame:
     print("Measuring distance to transit")
     major = transit.load_major_transit_stops(raw / "major_transit_stops.geojson", crs)
     rail = transit.load_rail_stations(raw / manifest["metro_rail_gtfs"]["file"], crs)
-    parcels["dist_major_transit_ft"], transit_done = _distance_or_nan(parcels, major, "major transit stops")
-    parcels["dist_rail_station_ft"], _ = _distance_or_nan(parcels, rail, "rail stations")
+    parcels["dist_major_transit_ft"] = transit.distance_to_nearest_ft(parcels, major)
+    parcels["dist_rail_station_ft"] = transit.distance_to_nearest_ft(parcels, rail)
 
     # ---- Flags -------------------------------------------------------------
     flags = pd.Series([[] for _ in range(len(parcels))], index=parcels.index)
@@ -81,8 +72,6 @@ def clean_city(city: CityConfig) -> gpd.GeoDataFrame:
     flags = _add_flag(flags, parcels["existing_units"].isna(), "missing_building_data")
     flags = _add_flag(flags, parcels["land_value"].isna(), "missing_assessed_value")
     flags = _add_flag(flags, parcels["lot_area_sqft"] < SLIVER_SQFT, "sliver_lot")
-    if not transit_done:
-        flags = _add_flag(flags, pd.Series(True, index=parcels.index), "transit_distance_missing")
     parcels["flags"] = flags
 
     # Sanity checks that should never fail. If one does, stop: something

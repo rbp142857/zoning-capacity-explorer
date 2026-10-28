@@ -38,33 +38,45 @@ def load_rail_stations(gtfs_zip_path, analysis_crs: str) -> gpd.GeoDataFrame:
     ).to_crs(analysis_crs)
 
 
-# ---------------------------------------------------------------------------
-# 🧑‍🎓 EXERCISE (milestone 2): write this function.
-#
-# Read LEARNING.md -> "Coordinate systems" and "Spatial joins" first.
-#
-# What it should do:
-#   Given parcels (polygons) and stops (points), both already in the SAME
-#   projected CRS measured in feet (EPSG:2229), return a pandas Series with one
-#   number per parcel: the straight-line distance in feet from the parcel to
-#   the nearest stop.
-#
-# Rules:
-#   - The result's index must match `parcels.index` exactly (same order, same
-#     labels), so the pipeline can do `parcels["dist_ft"] = your_result`.
-#   - Measure from the parcel's EDGE, not its center: a parcel that touches a
-#     stop is distance 0. (Hint: Shapely/GeoPandas distance between a polygon
-#     and a point is already edge-to-point.)
-#   - If `stops` is empty, return all NaN (unknown), not 0 or infinity.
-#   - Raise a ValueError if the two inputs have different CRSs, or if the CRS
-#     is geographic (degrees), because distances in degrees are meaningless.
-#     (Hint: `gdf.crs.is_geographic`.)
-#   - It must be fast enough for ~30,000 parcels x ~1,000 stops. A double
-#     Python for-loop will be very slow; look at `geopandas.sjoin_nearest`,
-#     which uses a spatial index.
-#
-# Tests that check your version: pipeline/tests/test_transit_exercise.py
-# Run them with:   make exercise
-# ---------------------------------------------------------------------------
 def distance_to_nearest_ft(parcels: gpd.GeoDataFrame, stops: gpd.GeoDataFrame) -> pd.Series:
-    raise NotImplementedError("Exercise: see the comment above this function")
+    """Straight-line distance in feet from each parcel to its nearest stop.
+
+    Distance is measured from the parcel's EDGE: a lot that touches a stop is
+    0 ft away. That matches how "within 1/2 mile" is commonly read for AB 2097
+    (any part of the lot within the radius); the alternative reading (from the
+    lot's center) is recorded as an assumption in METHODOLOGY.md.
+
+    Returns a Series with the same index as `parcels`, so the caller can write
+    `parcels["dist_ft"] = distance_to_nearest_ft(parcels, stops)`.
+    """
+    # Guard 1: both layers must use the same CRS, or we'd be comparing feet
+    # in one coordinate system with numbers from another.
+    if parcels.crs != stops.crs:
+        raise ValueError(f"CRS mismatch: parcels are {parcels.crs}, stops are {stops.crs}")
+    # Guard 2: in a geographic CRS (lon/lat) the "distance" would be in
+    # degrees, which is not a fixed length. Fail loudly instead of returning
+    # numbers that look plausible but are wrong.
+    if parcels.crs is None or parcels.crs.is_geographic:
+        raise ValueError("Use a projected CRS measured in feet (e.g. EPSG:2229), not lon/lat degrees")
+
+    # No stops at all means "unknown", not "0 ft away".
+    if stops.empty:
+        return pd.Series(float("nan"), index=parcels.index, name="distance_ft")
+
+    # sjoin_nearest uses a spatial index (an R-tree) to find each parcel's
+    # closest stop without measuring against every stop, and distance_col
+    # asks it to also return that distance. Polygon-to-point distance in
+    # Shapely is already edge-to-point (and 0 if the point is inside).
+    nearest = gpd.sjoin_nearest(
+        parcels[["geometry"]],
+        stops[["geometry"]],
+        how="left",
+        distance_col="distance_ft",
+    )
+
+    # If two stops are exactly equally close, sjoin_nearest returns one row
+    # for each, so the same parcel appears twice. Keep one value per parcel
+    # (the distance is identical either way), then put rows back in the
+    # parcels' original order.
+    distance = nearest["distance_ft"].groupby(level=0).min()
+    return distance.reindex(parcels.index)
