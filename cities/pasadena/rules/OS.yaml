@@ -1,0 +1,18 @@
+# Pasadena OS (Open Space). No housing allowed.
+zone: OS
+name: Open Space (OS)
+family: nonresidential
+
+sources:
+  C17-26:
+    section: PMC Chapter 17.26 (special purpose districts)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST
+
+residential_allowed: {value: false, source: C17-26, assumption: "Open space district; housing not allowed. Not yet checked line by line against the Chapter 17.26 use table."}
+housing_types: {value: [], source: C17-26}
+
+setbacks:
+  front_ft: {value: 0, source: C17-26, assumption: "Not relevant: housing not allowed."}
+  side_ft: {value: 0, source: C17-26, assumption: "Not relevant: housing not allowed."}
+  rear_ft: {value: 0, source: C17-26, assumption: "Not relevant: housing not allowed."}
+max_stories: {value: 0, source: C17-26, assumption: "Not relevant: housing not allowed."}

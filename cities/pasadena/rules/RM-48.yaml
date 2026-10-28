@@ -1,0 +1,95 @@
+# Pasadena RM-48 (Multi-Family Residential, "City of Gardens" standards).
+# Every value cites a code section in `sources`. Code version: Municode, Sep 2, 2026.
+zone: RM-48
+name: Multi-Family Residential (RM-48)
+family: multifamily
+
+sources:
+  T2-2:
+    section: PMC §17.22.030, Table 2-2 (allowed uses, residential districts)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  T2-4:
+    section: PMC §17.22.060, Table 2-4 (RM district development standards)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  S070:
+    section: PMC §17.22.070 (RM additional standards; A = density, B = setbacks, F = height)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  S080:
+    section: PMC §17.22.080.A.2 (RM garden requirements)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  T4-6:
+    section: PMC §17.46.040, Table 4-6 (off-street parking)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART4SIPLGEDEST_CH17.46PALO_17.46.040NUOREPASPRE
+
+residential_allowed: {value: true, source: T2-2}
+housing_types: {value: [single_family, two_unit, multifamily], source: T2-2}
+
+min_lot_area_sqft:
+  value: 10000
+  source: T2-4
+  assumption: "Applies to new parcels only; existing smaller lots are flagged, not zeroed."
+min_lot_width_ft: {value: 60, source: T2-4}
+
+lot_area_per_unit_sqft:
+  value: 910
+  source: T2-4
+  assumption: "For lots of 10,000 sf or more; smaller lots use the table in §17.22.070.A.2 (small_lot_units)."
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 4000, value: 2}
+      - {below: 5500, value: 3}
+      - {below: 7000, value: 4}
+      - {below: 8500, value: 5}
+      - {value: 6}
+  source: S070
+small_lot_units_below_sqft: 10000
+
+density_rounding:
+  value: nearest_half_up
+  source: S070
+  assumption: "RM-32/RM-48: round to the nearest whole unit; .50 may round up (§17.22.070.A.1.b)."
+
+setbacks:
+  front_ft:
+    value: 20
+    source: S070
+    assumption: "The minimum is the blockface average, but never under 20 ft (§17.22.070.B.1); we use 20 ft."
+  side_ft:
+    value: 5
+    source: T2-4
+    assumption: "5 ft for 40 ft behind the front setback line, none required after that; we use 5 ft for the full depth."
+  rear_ft:
+    value: 0
+    source: T2-4
+    assumption: "None required unless adjoining an RS district (not modeled)."
+
+max_height_ft: {value: 38, source: S070}
+max_stories:
+  value: 3
+  source: S070
+  assumption: "38 ft to the ridge with no top-plate limit (§17.22.070.F.1.i) allows three stories."
+
+
+min_open_space_share:
+  value:
+    by: lot_width_ft
+    bands:
+      - {below: 80, share: 0.32}
+      - {below: 160.01, share: 0.29}
+      - {share: 0.34}
+  source: S080
+  assumption: "Total garden space for surface parking or parking with dwellings above (we model surface parking)."
+
+parking_per_unit:
+  value: 2
+  source: T4-6
+  assumption: "Our assumed average unit (850 sf net) is over 650 sf, which requires 2 covered spaces."
+guest_parking_per_unit: {value: 0.1, source: T4-6}
+guest_parking_min_units: 10
+
+simplifications:
+  - Blockface-average front setbacks, light-and-air building separation and the one-story street element (§17.22.070.D, F.1.c) are not modeled.
+  - Extra rear setbacks when the lot adjoins an RS district (5/15/25 ft by story) are not modeled.
+  - Hillside (HD) overlay standards are not modeled; HD lots are flagged.

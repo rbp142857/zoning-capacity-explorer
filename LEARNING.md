@@ -154,3 +154,76 @@ value ratio", a common redevelopment heuristic elsewhere, is distorted here.
 The roll's `land_base_year` column (kept in our data) tells us how stale each
 value is.
 Docs: <https://www.boe.ca.gov/proptaxes/prop13.htm>
+
+---
+
+## Milestone 3: rule files and the capacity engine
+
+### Rules as data, not code
+Each zone's rules live in a YAML file (`cities/pasadena/rules/RS-6.yaml`)
+instead of `if zone == "RS-6":` branches in Python. Data can be read by people
+who don't code, diffed in git when the city amends its code, validated
+automatically, and loaded by the browser later. The engine stays generic: it
+knows what a "lot-area-per-unit rule" is, not what RS-6 is.
+Docs (YAML basics): <https://learnxinyminutes.com/docs/yaml/>
+
+### Pydantic generics and validators
+`Sourced[float]` is a *generic* model: one class definition, `Sourced[T]`,
+that holds a value of any type `T` plus a citation. `model_validator` runs a
+check over the whole object after parsing; ours walks the rule file and fails
+if any `source:` key is missing from `sources:`. `extra="forbid"` means a
+misspelled field is an error instead of being silently ignored.
+Docs: <https://docs.pydantic.dev/latest/concepts/models/#generic-models> ·
+<https://docs.pydantic.dev/latest/concepts/validators/#model-validators>
+
+### Lookup tables as "bands"
+Zoning is full of tables keyed on lot size or width ("lots under 12,000 sf:
+30% of the lot plus 500 sf"). `Banded` stores such a table as a list of
+bands, each applying below an upper bound, and `.pick()` finds the band for a
+lot. One small structure covers coverage, floor area, height, stories,
+garden space and Pasadena's small-lot density table.
+
+### Binding constraint (the min over constraints)
+Each rule gives its own maximum number of units; the legal maximum is the
+*smallest* of them, and the rule that produced it is the **binding
+constraint**. It's the most useful output for users: if parking binds,
+upzoning density adds nothing until parking rules change. When two rules
+tie, we report legal limits (density) before physical ones (envelope),
+because a legal limit is what a reform would change.
+
+### Rounding rules matter
+Codes say how to round fractional units, and they differ: Pasadena rounds
+RM-16 up only above .75, and RM-32/RM-48 to the nearest unit. `round_units()`
+implements each mode, with a tiny tolerance because floating-point math can
+turn 3.0 into 2.9999999.
+Docs (why 0.1 + 0.2 != 0.3): <https://docs.python.org/3/tutorial/floatingpoint.html>
+
+### Minimum rotated rectangle (lot width and depth)
+Setbacks need a lot's width and depth, but the data only has polygons. The
+*minimum rotated rectangle* is the smallest box, at any angle, that contains
+the polygon. Its short side approximates frontage (width) and its long side
+depth. For irregular lots we multiply by a shape factor (lot area / box area)
+so the lot isn't credited with land it doesn't have.
+Docs: <https://shapely.readthedocs.io/en/stable/reference/shapely.oriented_envelope.html>
+
+### State preemption
+California's legislature can override city zoning for housing. SB 9 lets
+owners build two homes on most single-family lots and split the lot once;
+ADU law adds a backyard unit and a junior unit; AB 2097 bans parking minimums
+near major transit. The engine computes the local answer first, then each
+state "path", and keeps both, so users can see how much capacity comes from
+Sacramento rather than City Hall.
+Docs: <https://www.hcd.ca.gov/planning-and-community-development/accessory-dwelling-units> ·
+<https://www.hcd.ca.gov/policy-and-research/sb9>
+
+### Theoretical vs. realistic capacity
+The numbers in `capacity_report.md` are **theoretical**: what the rules allow
+if every lot were rebuilt to the maximum. Almost none will be. Milestone 7
+adds a separate "likely to redevelop" estimate. Reading theoretical capacity
+as a forecast is the most common mistake made with tools like this.
+
+### Dataclasses
+`Lot` and `EngineAssumptions` are `@dataclass(frozen=True)` classes: Python
+writes the `__init__` for you, and `frozen=True` makes them read-only, so a
+constraint function can't accidentally change the lot another function sees.
+Docs: <https://docs.python.org/3/library/dataclasses.html>

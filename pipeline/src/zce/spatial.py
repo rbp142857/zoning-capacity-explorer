@@ -63,3 +63,29 @@ def inside_boundary(parcels: gpd.GeoDataFrame, boundary: gpd.GeoDataFrame) -> pd
     """True where the parcel's representative point is inside the city limits."""
     city = boundary.geometry.union_all()
     return parcels.geometry.representative_point().within(city)
+
+
+def lot_dimensions(parcels: gpd.GeoDataFrame) -> pd.DataFrame:
+    """Width and depth of each lot, from its minimum rotated rectangle.
+
+    The minimum rotated rectangle is the smallest box (at any angle) that
+    contains the lot. For the typical long, narrow city lot its short side is
+    the street frontage (width) and its long side is the depth. This is an
+    assumption: corner lots and odd shapes can face the "wrong" way. The
+    engine also gets a shape factor (lot area / box area) so irregular lots
+    don't get credit for area they don't have.
+    """
+    rects = parcels.geometry.minimum_rotated_rectangle()
+    widths, depths = [], []
+    for rect in rects:
+        if rect.geom_type != "Polygon":  # degenerate slivers collapse to a line
+            widths.append(0.0)
+            depths.append(0.0)
+            continue
+        xs, ys = rect.exterior.coords.xy
+        # Lengths of two adjacent sides of the rectangle.
+        a = ((xs[1] - xs[0]) ** 2 + (ys[1] - ys[0]) ** 2) ** 0.5
+        b = ((xs[2] - xs[1]) ** 2 + (ys[2] - ys[1]) ** 2) ** 0.5
+        widths.append(min(a, b))
+        depths.append(max(a, b))
+    return pd.DataFrame({"lot_width_ft": widths, "lot_depth_ft": depths}, index=parcels.index)

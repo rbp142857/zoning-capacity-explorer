@@ -2,6 +2,7 @@
 
     uv run python -m zce download pasadena
     uv run python -m zce clean pasadena
+    uv run python -m zce capacity pasadena
     uv run python -m zce all pasadena
 
 The Makefile at the repo root wraps these.
@@ -14,7 +15,7 @@ from zce.config import load_city
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="zce", description="Zoning Capacity Explorer pipeline")
-    parser.add_argument("step", choices=["download", "clean", "all"])
+    parser.add_argument("step", choices=["download", "clean", "capacity", "all"])
     parser.add_argument("city", help="city id, i.e. a folder name under cities/")
     parser.add_argument("--only", nargs="*", help="download only these sources")
     args = parser.parse_args()
@@ -31,6 +32,10 @@ def main() -> None:
         from zce.clean import clean_city
 
         clean_city(city)
+    if args.step in ("capacity", "all"):
+        from zce.capacity_step import run_capacity
+
+        run_capacity(city)
 
 
 if __name__ == "__main__":

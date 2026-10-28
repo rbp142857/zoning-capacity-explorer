@@ -85,3 +85,13 @@ specific_plan_prefixes:
   LP: Lamanda Park Specific Plan
   SFO: South Fair Oaks Specific Plan
   WGSP: West Gateway Specific Plan  # not in the current specific_plans layer; verify in M3
+
+# Assumptions the capacity engine needs that the zoning code does not give.
+# Each one is a judgment call, explained here and in METHODOLOGY.md. Changing a
+# number here changes every result, so keep them visible and dated.
+assumptions:
+  avg_unit_net_sqft: 850      # typical new apartment/condo; Table 4-6 parking for >650 sf units applies
+  net_to_gross: 0.80          # share of building floor area that is inside units (rest: halls, stairs, walls)
+  parking_stall_sqft: 300     # one surface stall (8.5 x 18 ft, §17.46.110) plus its share of the drive aisle
+  parking_mode: surface       # by-right capacity assumes surface or at-grade parking, not garages under the building
+  state_law_path: cities/_california/state_overrides.yaml

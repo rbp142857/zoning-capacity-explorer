@@ -13,10 +13,12 @@ is **Pasadena, California**.
 |---|---|
 | 1. Pilot city research | ✅ Pasadena chosen |
 | 2. Data pipeline + data quality report | ✅ built |
-| 3. Rule files + capacity engine | next |
-| 4–9. Map, scenarios, UI, redevelopment estimate, docs, pro forma | planned |
+| 3. Rule files + capacity engine | ✅ 16 zones, state law (SB 9, ADU, AB 2097), 69 tests |
+| 4. Static map | next |
+| 5–9. Scenarios, UI, redevelopment estimate, docs, pro forma | planned |
 
-Latest data quality report: [reports/pasadena/quality_report.md](reports/pasadena/quality_report.md)
+Latest reports: [data quality](reports/pasadena/quality_report.md) ·
+[capacity](reports/pasadena/capacity_report.md) · method: [METHODOLOGY.md](METHODOLOGY.md) (draft)
 
 ## How it fits together
 
@@ -27,6 +29,12 @@ cities/pasadena/city.yaml        where the data comes from, which CRS to measure
         ▼  make clean            adapters → spatial joins → flags
 data.nosync/clean/pasadena/parcels.parquet   one row per lot, zoning attached
 reports/pasadena/quality_report.md           counts of every flag (committed)
+        │
+cities/pasadena/rules/*.yaml     one file per zone, every value cited
+cities/_california/state_overrides.yaml      SB 9, ADUs, AB 2097, ...
+        ▼  make capacity         engine: min over constraints, then state law
+data.nosync/out/pasadena/capacity.parquet    max units, binding constraint per lot
+reports/pasadena/capacity_report.md          totals by zone, district, transit
 ```
 
 - `pipeline/src/zce/adapters/`: turn each publisher's format into our common
@@ -35,6 +43,10 @@ reports/pasadena/quality_report.md           counts of every flag (committed)
   council district and specific plan.
 - `pipeline/src/zce/transit.py`: transit stops and distance from each lot to the nearest one.
 - `pipeline/src/zce/clean.py`: runs it all and adds flags. Lots are flagged, never dropped.
+- `pipeline/src/zce/rules/schema.py`: what a rule file may contain (Pydantic).
+- `pipeline/src/zce/engine/`: the zoning math, with no GIS imports. `constraints.py`
+  has one function per constraint; `capacity.py` combines them and applies state law.
+- `pipeline/src/zce/capacity_step.py`: runs the engine over every lot.
 
 ## Running it locally
 

@@ -31,6 +31,21 @@ class Source(BaseModel):
     license: str
 
 
+class Assumptions(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    avg_unit_net_sqft: float
+    net_to_gross: float
+    parking_stall_sqft: float
+    parking_mode: Literal["surface"]
+    state_law_path: str
+
+    @property
+    def gross_sqft_per_unit(self) -> float:
+        """Building floor area one unit uses, including its share of hallways."""
+        return self.avg_unit_net_sqft / self.net_to_gross
+
+
 class CityConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -40,6 +55,15 @@ class CityConfig(BaseModel):
     analysis_crs: str
     sources: dict[str, Source]
     specific_plan_prefixes: dict[str, str] = {}
+    assumptions: Assumptions
+
+    @property
+    def rules_dir(self) -> Path:
+        return CITIES_DIR / self.id / "rules"
+
+    @property
+    def state_law_file(self) -> Path:
+        return REPO_ROOT / self.assumptions.state_law_path
 
     @property
     def raw_dir(self) -> Path:

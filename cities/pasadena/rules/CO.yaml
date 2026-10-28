@@ -1,0 +1,60 @@
+# Pasadena CO (Office Commercial). Housing is allowed, as multifamily or mixed use.
+# Every value cites a code section in `sources`. Code version: Municode, Sep 2, 2026.
+zone: CO
+name: Office Commercial (CO)
+family: commercial
+
+sources:
+  T2-5:
+    section: PMC §17.24.030, Table 2-5 (allowed uses, commercial and industrial districts)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST
+  T2-6:
+    section: PMC §17.24.040, Table 2-6 (commercial and industrial development standards)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST
+  T2-4:
+    section: PMC §17.22.060, Table 2-4 (RM district development standards)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  S080:
+    section: PMC §17.22.080.A.2 (RM garden requirements)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  T4-6:
+    section: PMC §17.46.040, Table 4-6 (off-street parking)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART4SIPLGEDEST_CH17.46PALO_17.46.040NUOREPASPRE
+
+residential_allowed: {value: true, source: T2-5}
+housing_types: {value: [single_family, multifamily, mixed_use], source: T2-5}
+
+min_lot_area_sqft: {value: 7200, source: T2-6, assumption: "Table 2-6 lists 7,200 sf for CO; for CL/CG lot size is set through subdivision. Used for flagging only."}
+
+lot_area_per_unit_sqft: {value: 910, source: T2-6, assumption: "Table 2-6: maximum density 'as required for RM-48' (910 sf of lot per unit)."}
+density_rounding: {value: nearest_half_up, source: T2-4, assumption: "Uses the RM-48 rounding rule."}
+
+setbacks:
+  front_ft: {value: 20, source: T2-6}
+  side_ft: {value: 10, source: T2-6, assumption: "Larger side setbacks and encroachment planes apply next to residential zones (not modeled)."}
+  rear_ft: {value: 10, source: T2-6, assumption: "Larger rear setbacks apply next to residential zones (not modeled)."}
+
+max_height_ft: {value: 45, source: T2-6, assumption: "Limited to 36 ft and two stories when abutting RS or RM-12 (not modeled)."}
+max_stories: {value: 4, source: T2-6, assumption: "45 ft allows 4 stories at about 11 ft per story for ground-floor commercial plus residential floors."}
+max_far: {value: 0.8, source: T2-6, assumption: "We assume the FAR limit applies to all floor area, residential included."}
+
+min_open_space_share:
+  value:
+    by: lot_width_ft
+    bands:
+      - {below: 80, share: 0.32}
+      - {below: 160.01, share: 0.29}
+      - {share: 0.34}
+  source: S080
+  assumption: "Table 2-6 says residential uses follow RM-32 standards, which include the City of Gardens garden space; we apply the RM-32 surface-parking garden shares."
+
+parking_per_unit:
+  value: 2
+  source: T4-6
+  assumption: "Residential parking follows Table 4-6; our assumed 850 sf unit needs 2 covered spaces."
+guest_parking_per_unit: {value: 0.1, source: T4-6}
+guest_parking_min_units: 10
+
+simplifications:
+  - Encroachment planes and larger setbacks next to residential zones are not modeled.
+  - Mixed-use ground-floor commercial is not modeled separately; all allowed floor area is treated as housing.

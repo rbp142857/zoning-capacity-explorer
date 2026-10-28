@@ -1,5 +1,5 @@
 # Zoning Capacity Explorer: one command per pipeline step.
-#   make all CITY=pasadena     download + clean
+#   make all CITY=pasadena     download + clean + capacity
 #   make test                  unit tests
 #   make exercise              tests for the current learning exercise
 
@@ -12,7 +12,7 @@ export UV_PROJECT_ENVIRONMENT := .venv.nosync
 UV ?= uv
 RUN = cd pipeline && $(UV) run
 
-.PHONY: all download clean test exercise setup
+.PHONY: all download clean capacity test exercise setup
 
 setup:
 	cd pipeline && $(UV) sync
@@ -23,7 +23,10 @@ download:
 clean:
 	$(RUN) python -m zce clean $(CITY)
 
-all: download clean
+capacity:
+	$(RUN) python -m zce capacity $(CITY)
+
+all: download clean capacity
 
 test:
 	$(RUN) pytest

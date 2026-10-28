@@ -1,0 +1,94 @@
+# Pasadena RS-1 (Single-Family Residential).
+# Every value cites a code section in `sources`. Code version: Municode, Sep 2, 2026.
+zone: RS-1
+name: Single-Family Residential (RS-1)
+family: single_family
+
+sources:
+  T2-2:
+    section: PMC §17.22.030, Table 2-2 (allowed uses, residential districts)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  T2-3:
+    section: PMC §17.22.040, Table 2-3 (RS and RM-12 development standards)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  S050A:
+    section: PMC §17.22.050.A (front setbacks, RS and RM-12)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST_CH17.22REZODI
+  T4-6:
+    section: PMC §17.46.040, Table 4-6 (off-street parking)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART4SIPLGEDEST_CH17.46PALO_17.46.040NUOREPASPRE
+
+residential_allowed: {value: true, source: T2-2}
+housing_types:
+  value: [single_family, two_unit]
+  source: T2-2
+  assumption: >-
+    "Two-unit developments" in RS (Table 2-2 note 5) are Pasadena's
+    implementation of state law SB 9. We model them under state law
+    (cities/_california/state_overrides.yaml), not as local density.
+
+min_lot_area_sqft:
+  value: 40000
+  source: T2-3
+  assumption: "Applies to new parcels only. Existing smaller lots can still hold a house, so they are flagged, not zeroed."
+min_lot_width_ft: {value: 100, source: T2-3}
+
+max_units_per_lot: {value: 1, source: T2-3}
+
+setbacks:
+  front_ft:
+    value: 25
+    source: S050A
+    assumption: >-
+      The real minimum is the blockface average of existing front setbacks,
+      but never less than 25 ft. We use 25 ft because we don't have building
+      footprints; actual setbacks may be deeper.
+  side_ft:
+    value: {pct_of_width: 0.10, min_ft: 5, max_ft: 10}
+    source: T2-3
+  rear_ft: {value: 25, source: T2-3}
+
+max_height_ft:
+  value:
+    by: lot_width_ft
+    bands:
+      - {below: 75, value: 28}
+      - {value: 32}
+  source: T2-3
+max_stories:
+  value: 2
+  source: T2-3
+  assumption: >-
+    The second-story top plate is limited to 20 ft (23 ft in historic and
+    hillside overlays), which allows two stories.
+
+lot_coverage:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 7200.01, value: null}  # 7,200 sf or less: no maximum
+      - {below: 12000, share: 0.35}
+      - {share: 0.35, at_least_sqft: 4800}
+  source: T2-3
+  assumption: "Coverage above 35% (up to 40%) is allowed only for single-story parts; we use 35%."
+
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 12000, share: 0.30, plus_sqft: 500}
+      - {below: 24000, share: 0.20, plus_sqft: 1700}
+      - {share: 0.25, plus_sqft: 1000}
+  source: T2-3
+  assumption: >-
+    By right, a house may be at most 35% larger than the median house within
+    500 ft ("neighborhood compatibility"); these are the higher maximums
+    allowed with a Single-Family Compatibility Permit. With one unit per lot
+    this does not change unit counts, only the reform scenarios.
+
+parking_per_unit: {value: 2, source: T4-6}
+
+simplifications:
+  - Neighborhood-compatibility floor-area limit (median house within 500 ft) not modeled.
+  - Encroachment planes (§17.40.160) not modeled; they mostly shape the second story.
+  - Hillside (HD) overlay standards (§17.29) not modeled; HD lots are flagged.

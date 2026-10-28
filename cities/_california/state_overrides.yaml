@@ -1,0 +1,102 @@
+# California state laws that override local zoning.
+#
+# These sit apart from city rule files because state law can PREEMPT city
+# rules: a city can't forbid what the state allows. The engine computes local
+# capacity first, then applies these, and records which path won so the map
+# can say "allowed by state law (SB 9)" instead of hiding it in the local number.
+#
+# status: modeled      -> the engine applies it
+# status: not_modeled  -> listed so users know it exists; every affected
+#                         number is an UNDERESTIMATE until it's modeled.
+
+state: CA
+as_of: "2026-10-28"
+
+laws:
+  - id: adu
+    name: Accessory Dwelling Units and Junior ADUs
+    status: modeled
+    summary: >-
+      On a lot with (or proposed for) one single-family home, the state allows
+      one ADU plus one junior ADU (inside the house), whatever local density
+      says. Pasadena allows ADUs in all residential zones and in CO/CL (PMC
+      Tables 2-2 and 2-5, §17.50.275).
+    citation:
+      section: Cal. Gov. Code §§66314-66342 (recodified from §65852.2 by SB 477, effective 2025)
+      url: https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=GOV&division=1.&title=7.&part=&chapter=13.&article=2.
+    params:
+      units_added_to_single_family: 2  # 1 ADU + 1 JADU
+      applies_to_families: [single_family, multifamily, commercial]
+    assumptions:
+      - Applied only where local zoning allows exactly one unit on the lot (a single-family home).
+      - "Multifamily lots can also add ADUs under state law (conversions of non-living space and up to 8 detached ADUs, SB 1211). Not modeled yet, so multifamily ADU capacity is undercounted."
+
+  - id: sb9
+    name: SB 9 two-unit developments and urban lot splits
+    status: modeled
+    summary: >-
+      In single-family zones, the state allows two homes on a lot by right, and
+      a one-time split of the lot into two, each allowed two homes: four in
+      total. Pasadena adopted this as "Two-Unit Developments" (Table 2-2 note 5)
+      and allows no ADUs on lots created by an urban lot split.
+    citation:
+      section: Cal. Gov. Code §65852.21 (two-unit developments) and §66411.7 (urban lot splits)
+      url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65852.21
+    params:
+      applies_to_families: [single_family]
+      units_without_split: 2
+      units_with_split: 4
+      # Each new lot must be at least 1,200 sq ft (§66411.7(a)(2)), so the
+      # original lot needs at least 2,400 sq ft.
+      min_lot_sqft_for_split: 2400
+      # Below this, a "lot" is a strip or sliver that can't hold two of the
+      # 800 sq ft homes SB 9 guarantees (an assumption, not a statutory number).
+      min_lot_sqft_for_two_units: 1200
+      # SB 9 does not apply in historic districts designated by local
+      # ordinance; Pasadena's landmark districts are its LD-n overlays.
+      excluded_overlay_prefixes: [LD-]
+    assumptions:
+      - "Each new lot must also be at least 40% of the original; splitting a lot in half always satisfies that, so we don't check it."
+      - SB 9 doesn't apply where the work would demolish rent-restricted housing or housing rented in the last 3 years. We don't have tenancy data, so this is not checked; capacity on rented lots is overstated.
+      - Lots in very high fire hazard zones can still use SB 9 if they meet fire mitigation standards, so they are not excluded.
+      - The owner-occupancy affidavit required for lot splits is a condition of approval, not a capacity limit.
+      - Lots under 1,200 sq ft get no SB 9 units (they are almost all strips and slivers, not house lots).
+
+  - id: ab2097
+    name: AB 2097 no parking minimums near major transit
+    status: modeled
+    summary: >-
+      Cities may not require any minimum parking for housing within ½ mile of a
+      major transit stop (Public Resources Code §21064.3).
+    citation:
+      section: Cal. Gov. Code §65863.2
+      url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65863.2
+    params:
+      radius_ft: 2640
+    assumptions:
+      - Distance is measured from the nearest edge of the lot, i.e. a lot counts if any part of it is within ½ mile. Measuring from the lot's center would cover fewer lots.
+      - Major transit stops come from SCAG's 2022 base-year inventory, which uses the AB 2553 definition (20-minute peak headways).
+
+  - id: sb79
+    name: SB 79 transit-oriented development upzoning (2025)
+    status: not_modeled
+    summary: >-
+      Allows taller, denser housing near high-frequency rail and bus rapid
+      transit stops. Its height and density tiers, effective date, and local
+      alternative-plan options need to be checked before modeling; until then,
+      capacity near Metro A Line stations is UNDERESTIMATED.
+    citation:
+      section: Senate Bill 79 (2025-2026 session)
+      url: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB79
+
+  - id: density_bonus
+    name: State Density Bonus Law
+    status: not_modeled
+    summary: >-
+      Projects that include affordable units can exceed local density (often
+      by 50% or more) and waive some standards. It depends on a project's
+      affordability mix, so it's not part of base capacity; it could become a
+      scenario lever.
+    citation:
+      section: Cal. Gov. Code §65915
+      url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65915

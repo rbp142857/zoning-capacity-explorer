@@ -1,0 +1,18 @@
+# Pasadena CG (General Commercial). No housing allowed.
+zone: CG
+name: General Commercial (CG)
+family: nonresidential
+
+sources:
+  T2-5:
+    section: PMC §17.24.030, Table 2-5 (allowed uses, commercial and industrial districts)
+    url: https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART2ZODIALLAUSZOECST
+
+residential_allowed: {value: false, source: T2-5, assumption: "Table 2-5 shows multi-family and single-family housing as not allowed ('—') in CG. Accessory dwelling units are also not allowed."}
+housing_types: {value: [], source: T2-5}
+
+setbacks:
+  front_ft: {value: 0, source: T2-5, assumption: "Not relevant: housing not allowed."}
+  side_ft: {value: 0, source: T2-5, assumption: "Not relevant: housing not allowed."}
+  rear_ft: {value: 0, source: T2-5, assumption: "Not relevant: housing not allowed."}
+max_stories: {value: 0, source: T2-5, assumption: "Not relevant: housing not allowed."}
