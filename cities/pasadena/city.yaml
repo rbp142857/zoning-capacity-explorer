@@ -1,0 +1,87 @@
+# City configuration for Pasadena, CA.
+# Everything city-specific that is NOT a zoning rule lives here: where the data
+# comes from, which coordinate system to measure in, and how to read zone codes.
+# Zoning rules themselves go in cities/pasadena/rules/ (milestone 3).
+
+id: pasadena
+name: Pasadena, California
+state: CA
+
+# EPSG:2229 = NAD83 / California State Plane Zone 5, measured in US survey feet.
+# We do all area and distance math in this projected CRS, because lat/lon
+# degrees are not a unit of length. See LEARNING.md -> "Coordinate systems".
+analysis_crs: "EPSG:2229"
+
+sources:
+  parcels:
+    kind: arcgis
+    adapter: la_assessor
+    url: https://public.gis.lacounty.gov/public/rest/services/LACounty_Cache/LACounty_Parcel/MapServer/0
+    # TaxRateCity is the city the parcel is legally in. SitusCity is only the
+    # mailing city: about 5,000 unincorporated parcels have "PASADENA CA"
+    # addresses but follow LA County zoning, not Pasadena's.
+    where: "TaxRateCity = 'PASADENA'"
+    publisher: Los Angeles County Office of the Assessor
+    license: Public record; published by LA County without an explicit open license. Attribution given. Owner names are not included in the source.
+  zoning:
+    kind: arcgis
+    adapter: pasadena_zoning
+    url: https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/Zoning/FeatureServer/0
+    where: "1=1"
+    publisher: City of Pasadena Planning & Community Development
+    license: Published by the City of Pasadena; no explicit open license. Attribution given.
+  city_boundary:
+    kind: arcgis
+    url: https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/City_Boundary/FeatureServer/0
+    where: "1=1"
+    publisher: City of Pasadena
+    license: Published by the City of Pasadena; no explicit open license. Attribution given.
+  specific_plans:
+    # Boundaries of the specific plan areas. We use this layer (not just the
+    # zone-code prefix) to decide whether a lot is in a specific plan, because
+    # some plan areas use plain codes like "CL" or "RM-48" with no prefix.
+    kind: arcgis
+    url: https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/SpecificPlanAreas/FeatureServer/0
+    where: "1=1"
+    publisher: City of Pasadena Planning & Community Development
+    license: Published by the City of Pasadena; no explicit open license. Attribution given.
+  districts:
+    # Council districts are the "neighborhood" breakdown: Pasadena has no
+    # official neighborhood map, and districts are stable, citable and known to
+    # policymakers.
+    kind: arcgis
+    url: https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/CouncilDistricts/FeatureServer/0
+    where: "1=1"
+    publisher: City of Pasadena
+    license: Published by the City of Pasadena; no explicit open license. Attribution given.
+  major_transit_stops:
+    # SCAG's official inventory of "major transit stops" (Public Resources Code
+    # 21064.3 as amended by AB 2553). This is the definition state law uses for
+    # parking relief (AB 2097), so we use it instead of computing our own.
+    kind: arcgis
+    url: https://maps.scag.ca.gov/scaggis/rest/services/OpenData/Major_Transit_Stops_Plan_Year_2022/MapServer/0
+    where: "1=1"
+    publisher: Southern California Association of Governments (SCAG), Connect SoCal 2024, base year 2022
+    license: Published by SCAG for planning purposes; no explicit open license. Attribution given.
+  metro_rail_gtfs:
+    kind: file
+    url: https://gitlab.com/LACMTA/gtfs_rail/-/raw/master/gtfs_rail.zip
+    publisher: Los Angeles County Metropolitan Transportation Authority
+    license: LA Metro GTFS, published for public use under Metro's developer terms.
+
+# Pasadena's zone codes combine an optional specific-plan prefix with a base
+# district, e.g. "CD-MU-C" = Central District Specific Plan, MU-C district.
+# We strip the prefix to get the base district. Whether a lot is in a specific
+# plan at all comes from the specific_plans layer above (some plan areas use
+# unprefixed codes). Specific-plan rules are simplified in the MVP and every
+# such lot is flagged.
+specific_plan_prefixes:
+  CD: Central District Specific Plan
+  EC: East Colorado Specific Plan
+  ECSP: East Colorado Specific Plan
+  EPSP: East Pasadena Specific Plan
+  FGSP: Fair Oaks/Orange Grove Specific Plan
+  LA: Lincoln Avenue Specific Plan
+  LP: Lamanda Park Specific Plan
+  SFO: South Fair Oaks Specific Plan
+  WGSP: West Gateway Specific Plan  # not in the current specific_plans layer; verify in M3

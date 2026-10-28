@@ -1,0 +1,37 @@
+"""Command-line entry point.
+
+    uv run python -m zce download pasadena
+    uv run python -m zce clean pasadena
+    uv run python -m zce all pasadena
+
+The Makefile at the repo root wraps these.
+"""
+
+import argparse
+
+from zce.config import load_city
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(prog="zce", description="Zoning Capacity Explorer pipeline")
+    parser.add_argument("step", choices=["download", "clean", "all"])
+    parser.add_argument("city", help="city id, i.e. a folder name under cities/")
+    parser.add_argument("--only", nargs="*", help="download only these sources")
+    args = parser.parse_args()
+
+    city = load_city(args.city)
+
+    # Imports are inside the branches so `download` does not need to load
+    # GeoPandas, which is slow to import.
+    if args.step in ("download", "all"):
+        from zce.download import download_city
+
+        download_city(city, only=args.only)
+    if args.step in ("clean", "all"):
+        from zce.clean import clean_city
+
+        clean_city(city)
+
+
+if __name__ == "__main__":
+    main()

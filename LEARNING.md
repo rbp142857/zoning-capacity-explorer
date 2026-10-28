@@ -1,0 +1,156 @@
+# Learning notes
+
+Concepts used in this project, in roughly the order you meet them. Each has a
+short explanation and a link to good documentation. This file grows with each
+milestone.
+
+---
+
+## Milestone 2: data pipeline
+
+### Python environments and uv
+A *virtual environment* is a private folder of Python packages for one project,
+so this project's GeoPandas version can't clash with another project's. `uv` is
+a fast tool that creates the environment, installs packages listed in
+`pyproject.toml`, and pins exact versions in `uv.lock`, so anyone who clones the
+repo gets the same versions. `uv run <command>` runs a command inside the
+environment without you having to "activate" it.
+Docs: <https://docs.astral.sh/uv/guides/projects/>
+
+### Parcels, the assessor roll, and APN/AIN
+A *parcel* is a legally defined piece of land with its own tax ID. In LA County
+the ID is the AIN (Assessor's Identification Number; the APN is the same number
+with dashes). The *assessor roll* is the county's list of every parcel's taxable
+value and building facts. We use it for lot shape, existing units, building
+age, and land vs. improvement value.
+Docs: <https://portal.assessor.lacounty.gov/>
+
+### Condo "stacks"
+The Assessor gives each condo *unit* its own AIN, and all units in a building
+share one copy of the same polygon. Zoning applies to the land, not to units, so
+we merge each stack into one lot by grouping on the polygon's exact shape. We
+call `geometry.normalize()` first so two copies of the same shape drawn starting
+at different corners still compare as equal, then compare their WKB (a compact
+binary encoding of the geometry).
+Docs: <https://shapely.readthedocs.io/en/stable/reference/shapely.normalize.html>
+
+### Coordinate reference systems (CRS)
+A CRS says what the numbers in a geometry mean. **EPSG:4326** is longitude and
+latitude in *degrees*. It's the default for GeoJSON and GPS, but a degree isn't
+a fixed length (one degree of longitude shrinks toward the poles), so you can't
+measure area or distance in it. A *projected* CRS flattens part of the Earth
+onto a grid measured in real units. We use **EPSG:2229** (California State
+Plane Zone 5, US feet), designed for this part of Southern California, so
+`geometry.area` is square feet and `distance` is feet. Rule of thumb: store
+and exchange data in 4326, but `to_crs()` into a local projected CRS before
+measuring anything. Measuring in the wrong CRS doesn't raise an error; it just
+gives silently wrong numbers, which is why the exercise function must refuse
+geographic CRSs.
+Docs: <https://geopandas.org/en/stable/docs/user_guide/projections.html> ·
+<https://epsg.io/2229>
+
+### GeoPandas and GeoDataFrames
+GeoPandas extends pandas: a `GeoDataFrame` is a DataFrame with a special
+`geometry` column of Shapely shapes, plus a CRS. You get spatial methods
+(`.area`, `.to_crs()`, `.representative_point()`) and spatial joins on top of
+everything pandas can do.
+Docs: <https://geopandas.org/en/stable/getting_started/introduction.html>
+
+### Spatial joins
+A normal join matches rows by equal keys. A *spatial join* matches rows by how
+their shapes relate. We use three kinds:
+- `gpd.sjoin(points, districts, predicate="within")`: which district each
+  point is inside. We join a *representative point* rather than the whole lot,
+  because a point is inside exactly one district. Unlike a centroid, a
+  representative point is guaranteed to be inside the polygon (the centroid of
+  an L-shaped lot can fall outside it).
+- `gpd.overlay(parcels, zones, how="intersection")`: cuts every lot into
+  pieces by zone, so we can measure which zone covers the *most* of each lot.
+  This is more robust than a point test when city zoning lines and county
+  parcel lines are a few feet apart.
+- `gpd.sjoin_nearest(...)`: for each row, find the nearest feature on the
+  other side, optionally returning the distance. It's what you'll want for the
+  exercise.
+Docs: <https://geopandas.org/en/stable/docs/user_guide/mergingdata.html> ·
+<https://geopandas.org/en/stable/docs/reference/api/geopandas.sjoin_nearest.html>
+
+### Spatial indexes
+Comparing 30,000 lots against 1,000 stops naively is 30 million distance
+calculations. A *spatial index* (an R-tree) groups shapes into nested boxes so
+the computer can skip everything far away and only measure nearby candidates.
+GeoPandas builds one automatically (`gdf.sindex`) and `sjoin`/`sjoin_nearest`
+use it, which is why they're fast and a double for-loop isn't.
+Docs: <https://geopandas.org/en/stable/docs/reference/sindex.html>
+
+### ArcGIS REST services and pagination
+Most US city and county GIS data is published through Esri ArcGIS servers. Each
+layer has a URL, and appending `/query?where=...&f=geojson` returns features.
+Servers cap each response (often at 1,000 features), so `download.py` *pages*
+through results with `resultOffset`, sorted by the layer's ID field so pages
+never overlap. It also checks the final count against `returnCountOnly`, so a
+silently truncated download fails loudly.
+Docs: <https://developers.arcgis.com/rest/services-reference/enterprise/query-feature-service-layer/>
+
+### GeoJSON vs. GeoParquet
+GeoJSON is human-readable text, which is great for exchange but large and slow
+(our raw parcels are 117 MB). GeoParquet is the Parquet columnar format plus
+geometry and CRS metadata. It's binary, compressed, keeps column types (an
+integer stays an integer), and loads in a fraction of the time. Raw downloads
+stay GeoJSON; everything we produce is GeoParquet.
+Docs: <https://geoparquet.org/>
+
+### GTFS
+The General Transit Feed Specification is the standard format transit agencies
+use to publish schedules: a zip of CSV files (`stops.txt`, `routes.txt`,
+`stop_times.txt`, ...). We read only `stops.txt`. Rows with `location_type = 1`
+are *stations* (parents that group platforms), so we get one point per Metro
+station.
+Docs: <https://gtfs.org/documentation/schedule/reference/#stopstxt>
+
+### "Major transit stop" (California law)
+California defines a major transit stop in Public Resources Code §21064.3: a
+rail or BRT station, a ferry terminal, or the intersection of two bus routes
+with frequent peak service (AB 2553 relaxed "frequent" from every 15 minutes to
+every 20). State laws such as AB 2097 (no parking minimums within ½ mile of
+one) use this definition, so we use SCAG's official inventory instead of
+computing our own from GTFS.
+Docs: <https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PRC&sectionNum=21064.3> ·
+<https://scag.ca.gov/high-quality-transit-areas>
+
+### Whitelists vs. blacklists (privacy by design)
+A blacklist says "drop these columns"; a whitelist says "keep *only* these."
+With a blacklist, a new `OWNER_NAME` column added by the publisher next year
+would leak into the published data. With a whitelist it can't. The test
+`test_personal_columns_are_dropped` locks this behaviour in.
+
+### Data validation with Pydantic
+Pydantic turns a plain dict (here, parsed YAML) into a typed Python object and
+raises a clear error if a field is missing, misspelled, or the wrong type.
+`extra="forbid"` makes unknown keys an error, so a typo like `ulr:` in
+`city.yaml` fails immediately. Milestone 3 uses Pydantic much more heavily for
+the zoning rule files.
+Docs: <https://docs.pydantic.dev/latest/concepts/models/>
+
+### Flag, don't drop
+When a record is incomplete (no zone, no building data), the tempting fix is
+`dropna()`. That silently shrinks the city and biases every total. Instead,
+each lot gets a list of flags, and the quality report counts them. Totals stay
+honest, and users can see exactly what's uncertain.
+
+### Testing with pytest
+Test files are `tests/test_*.py`; any function named `test_*` is a test, and a
+plain `assert` is the check. *Fixtures* (in `conftest.py`) build reusable
+inputs; `@pytest.mark.parametrize` runs one test over many input/expected
+pairs. Our tests use tiny hand-drawn boxes in feet so every expected number
+can be checked on paper. *Markers* (`@pytest.mark.exercise`) let us skip the
+exercise tests by default.
+Docs: <https://docs.pytest.org/en/stable/getting-started.html>
+
+### Prop 13 and assessed values (a warning for milestone 7)
+Under California's Proposition 13, a property's assessed value is reset to
+market value only when it's sold, then can rise at most 2% a year. A house
+bought in 1978 can show a land value far below market, so "improvement-to-land
+value ratio", a common redevelopment heuristic elsewhere, is distorted here.
+The roll's `land_base_year` column (kept in our data) tells us how stale each
+value is.
+Docs: <https://www.boe.ca.gov/proptaxes/prop13.htm>

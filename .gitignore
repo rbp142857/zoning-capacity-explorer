@@ -1,0 +1,15 @@
+# Data is downloaded by the pipeline, never committed.
+data.nosync/
+data/
+
+# Python
+.venv*/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Web (milestone 4+)
+node_modules/
+web/dist/
+
+.DS_Store
