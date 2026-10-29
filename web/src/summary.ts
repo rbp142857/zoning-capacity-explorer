@@ -28,6 +28,7 @@ function groupSums(data: ParcelData, groupOf: (pid: number) => number, labels: s
 }
 
 export const netNew: Pick = (r, pid) => r.net[pid] ?? 0;
+export const realisticNew: Pick = (r, pid) => r.realistic[pid];
 
 export function byDistrict(data: ParcelData, today: Results, now: Results, value: Pick = netNew): ChartRow[] {
   return groupSums(data, (pid) => data.columns.district[pid], data.codes.district, today, now, value);

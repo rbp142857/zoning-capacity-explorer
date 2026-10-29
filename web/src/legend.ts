@@ -100,6 +100,8 @@ export function renderLegend(
   } else if (view === "added") {
     const added = scenario.max.map((v, pid) => (v === null ? null : Math.max(0, v - (today.max[pid] ?? 0))));
     rows = classRows(added, modeled, data.count, ADDED_CLASSES, theme, "No change from today's rules");
+  } else if (view === "likely") {
+    rows = classRows(scenario.realistic, modeled, data.count, ADDED_CLASSES, theme, "Not likely to redevelop (see the screens)");
   } else {
     rows = bindingRows(data, scenario, theme, highlight);
   }

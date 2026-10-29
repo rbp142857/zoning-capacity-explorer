@@ -386,3 +386,38 @@ loosens a rule never lowers any lot's capacity", run over 7 lots × 8 levers.
 It caught a real bug (allowing duplexes switched off the ADU option). The
 `hypothesis` library takes this further by generating the inputs for you.
 Docs: <https://hypothesis.readthedocs.io/en/latest/quickstart.html>
+
+---
+
+## Milestone 7: realistic vs. theoretical capacity
+
+### Screens, not predictions
+A *screen* is a yes/no test that filters candidates ("building at least 50
+years old"). Passing every screen makes a lot a plausible redevelopment
+candidate; it doesn't say it will happen, or when. Predicting that needs
+market data (rents, costs, sales) and usually a statistical model fitted to
+past redevelopment. Keeping the method to plain screens keeps it explainable
+to a city council.
+Docs (how cities screen sites): <https://www.hcd.ca.gov/planning-and-community-development/housing-elements/building-blocks/site-inventory-analysis>
+
+### Check a heuristic against your data before trusting it
+"Building worth less than its land" is a classic redevelopment screen. Here
+it passes 77% of lots, and grouping by the year the land was last assessed
+shows why: under Prop 13 the assessor resets values at sale and puts most of
+the price into land, so recently sold homes look "underbuilt". One
+`groupby` turned an assumption into a measured caveat.
+
+### Bit masks
+Four yes/no screens per lot are stored as one small integer: bit 1 = age,
+bit 2 = value, bit 4 = ownership, bit 8 = historic. `mask & 2` tests one
+screen; 15 means "passed all four". It's compact to send to the browser,
+and both languages use the same `&` operator, so parity is easy.
+Docs: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_AND>
+
+### Results that look wrong are information
+The first version said a fourplex reform added 456 homes in theory but
+19,149 "likely" ones. The numbers were computed correctly; the definition was
+the problem (counting a house-to-duplex teardown as likely). Adding a
+"gain at least 3 homes" screen fixed most of it, and the remaining
+asymmetry (city fourplex counted, SB 9 fourplex not) is written down as a
+choice, with the reason, instead of hidden.

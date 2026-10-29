@@ -18,7 +18,7 @@ import { renderLegend } from "./legend";
 import { createMap, currentTheme, type View } from "./map";
 import { describeScenario, renderPrintSummary } from "./print";
 import { type AddressIndex, setupSearch } from "./search";
-import { byDistrict, byTransitDistance } from "./summary";
+import { byDistrict, byTransitDistance, netNew, realisticNew } from "./summary";
 import { LEVERS, scenarioFromHash, scenarioToHash } from "./url";
 
 const CITY = "pasadena";
@@ -78,6 +78,14 @@ function showHeadline(data: ParcelData, scenario: Scenario, now: Results, today:
   } else {
     note.textContent = `${fmt.format(today.totals.local)} under city zoning alone, the rest from state law`;
   }
+  $("stat-realistic").textContent = fmt.format(now.totals.realistic);
+  const rNote = $("stat-realistic-note");
+  if (reform) {
+    const d = now.totals.realistic - today.totals.realistic;
+    rNote.innerHTML = `<span class="up">${d >= 0 ? "+" : "−"}${fmt.format(Math.abs(d))}</span> vs. ${fmt.format(today.totals.realistic)} today · ${fmt.format(now.totals.likelyLots)} lots · a screen, not a forecast`;
+  } else {
+    rNote.textContent = `on ${fmt.format(now.totals.likelyLots)} lots, vs. ${fmt.format(now.totals.net)} new homes in theory · a screen, not a forecast`;
+  }
   const state = $("scenario-state");
   state.textContent = reform ? "Scenario active" : "Today's rules";
   state.classList.toggle("active", reform);
@@ -108,12 +116,15 @@ function popupHtml(data: ParcelData, pid: number, now: Results, today: Results, 
 }
 
 function renderCharts(data: ParcelData, now: Results, today: Results, reform: boolean) {
+  const realistic = document.querySelector<HTMLInputElement>('input[name="chart-mode"]:checked')?.value === "realistic";
+  const pickValue = realistic ? realisticNew : netNew;
+  const what = realistic ? "New homes on lots likely to redevelop" : "New homes possible";
   for (const [id, title, rows] of [
-    ["chart-district", "New homes possible, by council district", byDistrict(data, today, now)],
-    ["chart-transit", "New homes possible, by distance to a major transit stop", byTransitDistance(data, today, now)],
+    ["chart-district", `${what}, by council district`, byDistrict(data, today, now, pickValue)],
+    ["chart-transit", `${what}, by distance to a major transit stop`, byTransitDistance(data, today, now, pickValue)],
   ] as const) {
     const el = $(id);
-    renderBarChart(el, { title, valueLabel: "new homes possible", rows: [...rows], showScenario: reform }, currentTheme(), el.clientWidth || 300);
+    renderBarChart(el, { title, valueLabel: what.toLowerCase(), rows: [...rows], showScenario: reform }, currentTheme(), el.clientWidth || 300);
   }
 }
 
@@ -222,6 +233,9 @@ async function main() {
     redraw();
 
     renderCharts(data, now, today, !isBaseline(scenario));
+    document.querySelectorAll<HTMLInputElement>('input[name="chart-mode"]').forEach((input) =>
+      input.addEventListener("change", () => renderCharts(data, now, today, !isBaseline(scenario))),
+    );
     let chartWidth = $("chart-district").clientWidth;
     window.addEventListener("resize", () => {
       if ($("chart-district").clientWidth !== chartWidth) {
@@ -278,6 +292,8 @@ async function main() {
         scenarioMax: now.totals.max,
         todayNet: today.totals.net,
         scenarioNet: now.totals.net,
+        todayRealistic: today.totals.realistic,
+        scenarioRealistic: now.totals.realistic,
         byDistrict: byDistrict(data, today, now),
         byTransit: byTransitDistance(data, today, now),
         mapImage,

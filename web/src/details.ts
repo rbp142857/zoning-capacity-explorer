@@ -4,6 +4,7 @@
 import { BINDING_LABELS } from "./colors";
 import type { ParcelData } from "./data";
 import type { CapacityResult } from "./engine/capacity";
+import { redevelopment } from "./engine/redevelop";
 import type { LotInputs } from "./engine/run";
 import { type Scenario, applyScenario, adjustForLot, capacityUnderScenario } from "./engine/scenario";
 import type { RulesFile, Sourced, ZoneRules } from "./engine/types";
@@ -100,6 +101,29 @@ function limitsTable(today: CapacityResult, now: CapacityResult, reform: boolean
     .join("");
 }
 
+const SCREEN_TEXT: Record<string, [string, string]> = {
+  zoning_allows_too_little_more: ["Zoning allows at least twice the homes already there", "Zoning allows less than twice the homes already there"],
+  building_too_new: ["Building is 50+ years old (or lot is vacant)", "Building is less than 50 years old"],
+  building_worth_more_than_land: ["Building assessed at less than the land", "Building assessed at more than the land (or value unknown)"],
+  condo_many_owners: ["Not a condo", "Condo (many owners)"],
+  historic_district: ["Not in a landmark district", "In a landmark (historic) district"],
+};
+
+function redevSection(rules: RulesFile, mask: number, r: CapacityResult, existing: number | null, reform: boolean): string {
+  const redev = redevelopment(rules.redevelopment, mask, r.local_units, existing);
+  const items = Object.entries(SCREEN_TEXT)
+    .map(([code, [pass, fail]]) => {
+      const failed = redev.failed.includes(code);
+      return `<li class="${failed ? "fail" : "pass"}"><span aria-hidden="true">${failed ? "✗" : "✓"}</span>
+        <span class="visually-hidden">${failed ? "Fails" : "Passes"}: </span>${failed ? fail : pass}</li>`;
+    })
+    .join("");
+  const verdict = redev.likely
+    ? `Likely to redevelop${reform ? " under this scenario" : ""}: counts ${fmt.format(redev.realistic_new_units)} new homes in the realistic estimate.`
+    : `Not likely to redevelop${reform ? " under this scenario" : ""}.`;
+  return `<h3>Likely to redevelop?</h3><p>${verdict}</p><ul class="screens">${items}</ul>`;
+}
+
 export function renderLotDetails(
   el: HTMLElement,
   pid: number,
@@ -161,6 +185,7 @@ export function renderLotDetails(
         : ""
     }
     ${flags.length ? `<ul class="details-flags">${flags.map((f) => `<li>${esc(flagText[f] ?? f)}</li>`).join("")}</ul>` : ""}
+    ${redevSection(rules, data.columns.redev_mask[pid], reform ? now.result : today.result, lot.existing_units, reform)}
     <h3>Rules that apply (${esc(now.rules.name)})</h3>
     <table class="details-table rules">${rulesTable(now.rules, lot.area_sqft, lot.width_ft)}</table>`;
 }

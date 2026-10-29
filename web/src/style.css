@@ -262,3 +262,16 @@ fieldset.view-toggle input { width: 18px; height: 18px; accent-color: var(--acce
   .print-foot { font-size: 9px; color: #333; margin-top: 8px; word-break: break-all; }
   .print-summary th, .print-summary td { border-bottom: 1px solid #ccc; }
 }
+
+/* Realistic estimate */
+.info { font-size: 12px; color: var(--accent); }
+.about { font-size: 13px; color: var(--ink-2); }
+.about summary { cursor: pointer; color: var(--ink); font-weight: 600; }
+.about p { margin: 6px 0; }
+.chart-mode { border: 0; padding: 0; margin: 0 0 4px; display: grid; gap: 2px; font-size: 13px; }
+.chart-mode label { display: flex; align-items: center; gap: 6px; min-height: 28px; cursor: pointer; }
+.chart-mode input { accent-color: var(--accent); }
+.screens { list-style: none; padding: 0; margin: 4px 0; font-size: 13px; display: grid; gap: 3px; }
+.screens li { display: flex; gap: 6px; }
+.screens li.pass span[aria-hidden] { color: var(--ink); font-weight: 700; }
+.screens li.fail { color: var(--ink-muted); }

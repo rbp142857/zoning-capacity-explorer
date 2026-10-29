@@ -16,6 +16,7 @@ from zce import spatial
 from zce.capacity_report import write_capacity_report
 from zce.config import DATA_DIR, REPO_ROOT, CityConfig
 from zce.engine import EngineAssumptions, Lot, compute_capacity
+from zce.engine.redevelop import redevelopment, screens_from_config, static_mask
 from zce.rules.schema import load_state_overrides, load_zone_rules
 
 LIMIT_NAMES = ["density", "lot_area_per_unit", "envelope", "parking", "state_adu", "state_sb9"]
@@ -71,6 +72,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
         gross_sqft_per_unit=city.assumptions.gross_sqft_per_unit,
         parking_stall_sqft=city.assumptions.parking_stall_sqft,
     )
+    screens = screens_from_config(city.redevelopment)
     print(f"Loaded {len(rules)} zone rule files and {len(state.laws)} state laws")
 
     parcels = parcels.join(spatial.lot_dimensions(parcels))
@@ -89,6 +91,16 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
             existing_units=_number_or_none(row["existing_units"]),
         )
         result = compute_capacity(zone_rules, lot, a, state)
+        mask = static_mask(
+            screens,
+            year_built=_number_or_none(row["year_built"]),
+            land_value=_number_or_none(row["land_value"]),
+            improvement_value=_number_or_none(row["improvement_value"]),
+            existing_units=lot.existing_units,
+            is_condo=bool(row["is_condo"]),
+            overlays=lot.overlays,
+        )
+        redev = redevelopment(screens, mask, result.local_units, lot.existing_units)
         if result.status == "not_modeled" and "planned_development_not_modeled" in flags:
             result.flags = []  # the PD flag already says why
         records.append(
@@ -103,6 +115,10 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
                 "state_laws_applied": result.state_laws_applied,
                 **{f"limit_{k}": result.limits.get(k) for k in LIMIT_NAMES},
                 "capacity_flags": flags + result.flags,
+                "redev_mask": mask,
+                "likely_redevelop": redev.likely,
+                "realistic_new_units": redev.realistic_new_units,
+                "redev_failed": list(redev.failed),
             }
         )
     out = parcels.join(pd.DataFrame(records, index=parcels.index))

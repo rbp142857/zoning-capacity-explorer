@@ -17,8 +17,9 @@ is **Pasadena, California**.
 | 4. Static map | ✅ MapLibre + PMTiles, 3 views, legend, deploy workflow |
 | 5. Scenario engine in the browser | ✅ 9 levers, shareable links, Python/TypeScript parity test |
 | 6. Charts, lot details, address search, printable summary | ✅ |
-| 7. Realistic redevelopment estimate | next |
-| 8–9. Validation, docs, deploy; pro forma (optional) | planned |
+| 7. Realistic redevelopment estimate | ✅ 5 screens, shown beside theoretical everywhere |
+| 8. Validation, methodology, deploy | next |
+| 9. Developer pro forma (optional) | planned |
 
 Latest reports: [data quality](reports/pasadena/quality_report.md) ·
 [capacity](reports/pasadena/capacity_report.md) · method: [METHODOLOGY.md](METHODOLOGY.md) (draft)

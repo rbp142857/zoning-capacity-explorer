@@ -93,6 +93,7 @@ def write_rules(city: CityConfig, path) -> None:
             "gross_sqft_per_unit": city.assumptions.gross_sqft_per_unit,
             "parking_stall_sqft": city.assumptions.parking_stall_sqft,
         },
+        "redevelopment": city.redevelopment.model_dump(),
     }
     path.write_text(json.dumps(payload, separators=(",", ":")))
 
@@ -191,6 +192,7 @@ def export_city(city: CityConfig) -> None:
             "rules_zone": [rule_index.get(z, -1) if isinstance(z, str) else -1 for z in lots["rules_zone"]],
             "overlay_set": [overlay_index[tuple(o) if o is not None else ()] for o in lots["overlays"]],
             "district": [district_index.get(d, -1) if isinstance(d, str) else -1 for d in lots["district"]],
+            "redev_mask": [int(m) for m in lots["redev_mask"]],
         },
     }
     # separators=(",", ":") drops spaces: about 20% smaller.

@@ -24,7 +24,7 @@ import {
 import type { ParcelData } from "./data";
 import type { Results } from "./engine/run";
 
-export type View = "max" | "net" | "added" | "binding";
+export type View = "max" | "net" | "added" | "likely" | "binding";
 
 const SOURCE = "lots";
 const SOURCE_LAYER = "parcels"; // the layer name we gave tippecanoe
@@ -165,6 +165,7 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
           max: modeled ? scenario.max[pid] ?? -1 : -1,
           net: modeled ? scenario.net[pid] ?? -1 : -1,
           added: modeled ? Math.max(0, (scenario.max[pid] ?? 0) - (today.max[pid] ?? 0)) : -1,
+          likely: modeled ? scenario.realistic[pid] : -1,
           bind: modeled ? groupOfCode[code] : -1,
           braw: code,
         },
@@ -176,6 +177,7 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
     if (view === "max") return classExpression("max", MAX_UNITS_CLASSES, theme);
     if (view === "net") return classExpression("net", NET_NEW_CLASSES, theme);
     if (view === "added") return classExpression("added", ADDED_CLASSES, theme);
+    if (view === "likely") return classExpression("likely", ADDED_CLASSES, theme);
     return bindingExpression(theme, highlight);
   }
 

@@ -46,6 +46,18 @@ class Assumptions(BaseModel):
         return self.avg_unit_net_sqft / self.net_to_gross
 
 
+class RedevelopmentScreens(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    as_of_year: int
+    min_capacity_multiple: float
+    min_net_new_units: int
+    min_building_age_years: int
+    max_improvement_to_land_ratio: float
+    exclude_condos: bool
+    exclude_overlay_prefixes: list[str]
+
+
 class CityConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -56,6 +68,7 @@ class CityConfig(BaseModel):
     sources: dict[str, Source]
     specific_plan_prefixes: dict[str, str] = {}
     assumptions: Assumptions
+    redevelopment: RedevelopmentScreens
 
     @property
     def rules_dir(self) -> Path:

@@ -49,7 +49,34 @@ def write_capacity_report(df: pd.DataFrame, rules: dict, state, city: CityConfig
     out.append(f"- Share of residential land where **local zoning allows only one home**: **{share:.0%}** "
                "(before state law; with SB 9 and ADU law almost none of it is limited to one home)\n")
 
-    out.append("## What limits capacity (binding constraint)\n")
+    out.append("## Realistic vs. theoretical\n")
+    likely = ok[ok["likely_redevelop"]]
+    sf_state = ok["binding_constraint"].isin(["state_law:sb9", "state_law:adu"])
+    out.append("Theoretical capacity assumes every lot is rebuilt to the maximum. The realistic estimate counts only "
+               "lots that pass every redevelopment screen (see METHODOLOGY.md), and only their *local* capacity: "
+               "adding an ADU or a second house under state law usually keeps the existing home.\n")
+    out.append(f"- Net new homes, theoretical (all rules incl. state law): **{_fmt(ok['net_new_units'].sum())}**")
+    out.append(f"- Net new homes on lots **likely to redevelop**: **{_fmt(likely['realistic_new_units'].sum())}** "
+               f"on {_fmt(len(likely))} lots ({len(likely) / len(ok):.1%} of modeled lots)")
+    out.append(f"- Lots where state law (SB 9 / ADUs) is what allows more homes: **{_fmt(sf_state.sum())}**, "
+               f"{_fmt(ok.loc[sf_state, 'net_new_units'].sum())} homes theoretically. Not counted as likely: "
+               "statewide, few eligible owners have used SB 9 so far.\n")
+    reasons = ok.loc[~ok["likely_redevelop"], "redev_failed"].map(lambda f: list(f)[0] if len(f) else None)
+    rc = reasons.value_counts()
+    labels = {
+        "zoning_allows_too_little_more": "Zoning allows less than twice what's there",
+        "building_too_new": "Building less than 50 years old",
+        "building_worth_more_than_land": "Building worth more than the land (or value unknown)",
+        "condo_many_owners": "Condo (many owners)",
+        "historic_district": "In a landmark (historic) district",
+    }
+    out.append("First screen each other lot fails:\n")
+    out.append(_table(pd.DataFrame({"reason": [labels.get(k, k) for k in rc.index], "lots": [_fmt(v) for v in rc.values]})))
+    by_zone_r = likely.groupby("rules_zone").agg(lots=("parcel_id", "size"), realistic_new=("realistic_new_units", "sum"))
+    out.append("\nLikely-to-redevelop lots by zone:\n")
+    out.append(_table(by_zone_r.sort_values("realistic_new", ascending=False).reset_index()))
+
+    out.append("\n## What limits capacity (binding constraint)\n")
     by_bind = ok.groupby("binding_constraint").agg(
         lots=("parcel_id", "size"), max_units=("max_units", "sum"), net_new=("net_new_units", "sum")
     ).sort_values("lots", ascending=False)

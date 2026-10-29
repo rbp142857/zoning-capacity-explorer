@@ -33,6 +33,7 @@ export interface ParcelData {
     rules_zone: number[]; // index into codes.rules_zone, -1 = not modeled
     overlay_set: number[]; // index into codes.overlay_sets
     district: number[]; // index into codes.district, -1 = none
+    redev_mask: number[]; // static redevelopment screens passed (bit mask, see engine/redevelop.ts)
   };
 }
 

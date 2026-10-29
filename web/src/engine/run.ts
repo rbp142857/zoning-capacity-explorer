@@ -2,6 +2,7 @@
 
 import type { ParcelData } from "../data";
 import type { EngineAssumptions, Lot } from "./constraints";
+import { redevelopment } from "./redevelop";
 import { type Scenario, applyScenario, capacityUnderScenario } from "./scenario";
 import type { RulesFile } from "./types";
 
@@ -11,7 +12,9 @@ export interface Results {
   local: (number | null)[];
   net: (number | null)[];
   binding: number[]; // index into data.codes.binding, -1 = not modeled
-  totals: { max: number; local: number; net: number; existing: number };
+  likely: boolean[]; // passes every redevelopment screen
+  realistic: number[]; // net new homes counted in the realistic estimate (0 if not likely)
+  totals: { max: number; local: number; net: number; existing: number; realistic: number; likelyLots: number };
 }
 
 /** Engine inputs for each lot, built once from parcels.json. */
@@ -43,8 +46,8 @@ export function runScenario(data: ParcelData, inputs: LotInputs, rules: RulesFil
   const a: EngineAssumptions = rules.assumptions;
   const codeOf = new Map(data.codes.binding.map((name, i) => [name, i]));
   const out: Results = {
-    max: [], local: [], net: [], binding: [],
-    totals: { max: 0, local: 0, net: 0, existing: 0 },
+    max: [], local: [], net: [], binding: [], likely: [], realistic: [],
+    totals: { max: 0, local: 0, net: 0, existing: 0, realistic: 0, likelyLots: 0 },
   };
   for (let pid = 0; pid < data.count; pid++) {
     const r = capacityUnderScenario(inputs.zones[pid], inputs.lots[pid], a, zoneRules, state, scenario);
@@ -52,11 +55,18 @@ export function runScenario(data: ParcelData, inputs: LotInputs, rules: RulesFil
     out.local.push(r.local_units);
     out.net.push(r.net_new_units);
     out.binding.push(r.binding_constraint === null ? -1 : codeOf.get(r.binding_constraint) ?? -1);
+    const redev = redevelopment(
+      rules.redevelopment, data.columns.redev_mask[pid], r.local_units, inputs.lots[pid].existing_units,
+    );
+    out.likely.push(redev.likely);
+    out.realistic.push(redev.realistic_new_units);
     if (r.status === "ok") {
       out.totals.max += r.max_units ?? 0;
       out.totals.local += r.local_units ?? 0;
       out.totals.net += r.net_new_units ?? 0;
       out.totals.existing += inputs.lots[pid].existing_units ?? 0;
+      out.totals.realistic += redev.realistic_new_units;
+      if (redev.likely) out.totals.likelyLots++;
     }
   }
   return out;

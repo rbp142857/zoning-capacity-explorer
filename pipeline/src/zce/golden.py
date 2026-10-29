@@ -19,6 +19,7 @@ import pandas as pd
 
 from zce.config import DATA_DIR, REPO_ROOT, CityConfig, load_city
 from zce.engine import EngineAssumptions, Lot
+from zce.engine.redevelop import ALL_STATIC, AGE, HISTORIC, redevelopment, screens_from_config
 from zce.engine.scenario import Scenario, apply_scenario, capacity_under_scenario
 from zce.rules.schema import load_state_overrides, load_zone_rules
 
@@ -63,6 +64,11 @@ EDGE_LOTS = [
 ]
 
 
+# Edge lots get static screen masks that exercise each failure path.
+_EDGE_MASKS = [ALL_STATIC, ALL_STATIC & ~HISTORIC, ALL_STATIC, ALL_STATIC, ALL_STATIC & ~AGE]
+EDGE_LOTS = [dict(lot, redev_mask=_EDGE_MASKS[i % len(_EDGE_MASKS)]) for i, lot in enumerate(EDGE_LOTS)]
+
+
 def _sample_real_lots(city: CityConfig) -> list[dict]:
     df = pd.read_parquet(DATA_DIR / "out" / city.id / "capacity.parquet")
     rows = list(df.itertuples(index=False))
@@ -77,6 +83,7 @@ def _sample_real_lots(city: CityConfig) -> list[dict]:
             "overlays": list(row.overlays) if row.overlays is not None else [],
             "dist_major_transit_ft": None if pd.isna(row.dist_major_transit_ft) else float(row.dist_major_transit_ft),
             "existing_units": None if pd.isna(row.existing_units) else float(row.existing_units),
+            "redev_mask": int(row.redev_mask),
         })
     return lots
 
@@ -85,6 +92,7 @@ def compute_expected(city: CityConfig, lots: list[dict]) -> dict:
     rules = load_zone_rules(city.rules_dir)
     state = load_state_overrides(city.state_law_file)
     a = EngineAssumptions(city.assumptions.gross_sqft_per_unit, city.assumptions.parking_stall_sqft)
+    screens = screens_from_config(city.redevelopment)
     results = {}
     for name, s in SCENARIOS.items():
         r2, st2 = apply_scenario(rules, state, s)
@@ -93,7 +101,10 @@ def compute_expected(city: CityConfig, lots: list[dict]) -> dict:
             lot = Lot(d["area_sqft"], d["width_ft"], d["depth_ft"], tuple(d["overlays"]),
                       d["dist_major_transit_ft"], d["existing_units"])
             res = capacity_under_scenario(d["zone"], lot, a, r2, st2, s)
+            redev = redevelopment(screens, d["redev_mask"], res.local_units, d["existing_units"])
             out.append({
+                "likely_redevelop": redev.likely,
+                "realistic_new_units": redev.realistic_new_units,
                 "max_units": res.max_units,
                 "local_units": res.local_units,
                 "binding_constraint": res.binding_constraint,

@@ -118,3 +118,48 @@ and in development the page checks every lot under today's rules.
   lever lowers any lot's capacity. This test caught a real bug: allowing
   duplexes used to switch off the ADU option (house + ADU + junior ADU) on
   some lots, so a "more permissive" scenario lowered their capacity.
+
+## 7. Realistic vs. theoretical capacity
+
+Every number above is **theoretical**: the homes the rules allow if every lot
+were rebuilt to the maximum. Most lots never will be. The **"likely to
+redevelop"** estimate counts only lots that pass every one of these common
+planning screens (thresholds in `cities/pasadena/city.yaml`):
+
+1. **Zoning allows at least twice the homes already there, and at least 3 more.**
+   Demolishing a house to gain one or two homes rarely pays for itself.
+2. **The building is at least 50 years old** (or the lot is vacant).
+3. **The building is assessed at less than the land.**
+4. **Not a condo** (many owners rarely agree to sell together).
+5. **Not in a landmark (historic) district** (demolition needs special review).
+
+Only the city's own allowance (or a reform scenario's) counts toward this
+estimate, not the state-law paths: adding an ADU, or a second house under SB 9,
+usually keeps the existing home, and few eligible owners have used SB 9 so
+far. Those homes are reported separately as theoretical capacity.
+
+**Under today's rules: 4,907 new homes on 753 lots** pass every screen, compared
+with 68,222 theoretical new homes. Nearly every other lot fails screen 1.
+
+What this is **not**: a forecast. It doesn't say when, or how many, of these
+lots will be rebuilt; that depends on rents, construction costs, interest
+rates and owners' choices (the optional feasibility milestone looks at costs).
+
+Caveats we want readers to know:
+
+- **Prop 13 weakens screen 3.** When a property sells, the assessor puts most
+  of the price into land value. In Pasadena the building-to-land ratio is
+  about 1.7 for owners who bought before 1980 but about 0.4 for buyers since
+  2010, so this screen mostly flags recently sold properties. It passes 77% of
+  lots; the other screens do most of the work.
+- **City rules and SB 9 are treated differently.** A fourplex allowed by a
+  city reform counts toward the realistic estimate; the same fourplex allowed
+  through SB 9 (lot split plus two homes each) doesn't. We chose this because
+  SB 9 has seen little use and comes with owner-occupancy and tenant
+  conditions a city rule might not have. It means a fourplex reform raises
+  the realistic estimate (by about 7,800) far more than its theoretical
+  capacity (by about 460). Readers who disagree with this choice should
+  focus on the theoretical numbers for single-family zones.
+- Under the transit upzoning scenario (+2 stories, double density within ½
+  mile), the realistic estimate rises by about 6,500 homes. Reforms that
+  double allowances on older multifamily lots move it most.

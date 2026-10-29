@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
 
+import { redevelopment } from "./redevelop";
 import { type Scenario, applyScenario, capacityUnderScenario } from "./scenario";
 import type { RulesFile } from "./types";
 
@@ -22,6 +23,7 @@ interface GoldenLot {
   overlays: string[];
   dist_major_transit_ft: number | null;
   existing_units: number | null;
+  redev_mask: number;
 }
 
 describe("TypeScript engine matches Python (golden file)", () => {
@@ -40,7 +42,10 @@ describe("TypeScript engine matches Python (golden file)", () => {
         };
         const got = capacityUnderScenario(d.zone, lot, rules.assumptions, r2, st2, scenario);
         const want = golden.expected[name][i];
+        const redev = redevelopment(rules.redevelopment, d.redev_mask, got.local_units, d.existing_units);
         const actual = {
+          likely_redevelop: redev.likely,
+          realistic_new_units: redev.realistic_new_units,
           max_units: got.max_units,
           local_units: got.local_units,
           binding_constraint: got.binding_constraint,

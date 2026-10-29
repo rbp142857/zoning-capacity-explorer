@@ -55,6 +55,11 @@
             <span class="stat-note" id="stat-max-note"></span>
           </div>
           <div class="stat">
+            <span class="stat-label">New homes on lots likely to redevelop <a href="#about-realistic" class="info">(what's this?)</a></span>
+            <span class="stat-value" id="stat-realistic">–</span>
+            <span class="stat-note" id="stat-realistic-note"></span>
+          </div>
+          <div class="stat">
             <span class="stat-label">Residential land where city zoning allows only one home</span>
             <span class="stat-value" id="stat-single">–</span>
             <span class="stat-note">today, before state law (SB 9 and ADUs)</span>
@@ -159,6 +164,7 @@
           <label><input type="radio" name="view" value="max" checked /> Homes allowed</label>
           <label><input type="radio" name="view" value="net" /> New homes possible</label>
           <label><input type="radio" name="view" value="added" /> Homes added by the reform</label>
+          <label><input type="radio" name="view" value="likely" /> Lots likely to redevelop</label>
           <label><input type="radio" name="view" value="binding" /> What limits it</label>
         </fieldset>
 
@@ -176,11 +182,33 @@
 
         <section class="charts" aria-labelledby="charts-title">
           <h2 id="charts-title" class="legend-title">Where new homes could go</h2>
+          <fieldset class="chart-mode">
+            <legend class="visually-hidden">Which new homes to count</legend>
+            <label><input type="radio" name="chart-mode" value="theoretical" checked /> Everything the rules allow</label>
+            <label><input type="radio" name="chart-mode" value="realistic" /> Only on lots likely to redevelop</label>
+          </fieldset>
           <div class="chart" id="chart-district"></div>
           <div class="chart" id="chart-transit"></div>
         </section>
 
         <button type="button" id="print" class="print-button">Print a one-page summary</button>
+
+        <details class="about" id="about-realistic">
+          <summary>Theoretical vs. likely to redevelop</summary>
+          <p>
+            <strong>Theoretical</strong> numbers count every home the rules allow, as if every lot were rebuilt.
+            Most lots won't be. <strong>Likely to redevelop</strong> counts only lots that pass every common
+            planning screen: zoning allows at least twice the homes already there, the building is at least 50
+            years old (or the lot is vacant), the building is assessed at less than the land, and the lot isn't a
+            condo or in a landmark district. Only the city's (or the scenario's) own allowance counts here: adding
+            an ADU or a second house under state law usually keeps the existing home, so it isn't redevelopment.
+          </p>
+          <p>
+            This is a screen, not a forecast: it shows where rebuilding is plausible, not when or whether it will
+            happen. The building-value screen is weak in California, where Prop 13 makes assessed values
+            depend on when a property last sold.
+          </p>
+        </details>
 
         <p class="fineprint">
           Theoretical maximums: what the rules allow if a lot were rebuilt, not a prediction.

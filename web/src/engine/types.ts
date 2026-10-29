@@ -82,6 +82,15 @@ export interface RulesFile {
   zones: Record<string, ZoneRules>;
   state: StateOverrides;
   assumptions: { gross_sqft_per_unit: number; parking_stall_sqft: number };
+  redevelopment: {
+    as_of_year: number;
+    min_capacity_multiple: number;
+    min_net_new_units: number;
+    min_building_age_years: number;
+    max_improvement_to_land_ratio: number;
+    exclude_condos: boolean;
+    exclude_overlay_prefixes: string[];
+  };
 }
 
 export function isBanded(v: unknown): v is Banded {

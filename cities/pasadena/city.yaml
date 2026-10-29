@@ -95,3 +95,29 @@ assumptions:
   parking_stall_sqft: 300     # one surface stall (8.5 x 18 ft, §17.46.110) plus its share of the drive aisle
   parking_mode: surface       # by-right capacity assumes surface or at-grade parking, not garages under the building
   state_law_path: cities/_california/state_overrides.yaml
+
+# "Likely to redevelop" screens (milestone 7). A lot is a redevelopment
+# candidate only if it passes ALL of these. This is a screen, not a forecast:
+# it says where replacing a building is plausible, not that it will happen.
+# See METHODOLOGY.md, "Realistic vs. theoretical capacity".
+redevelopment:
+  as_of_year: 2026
+  # Zoning (local rules or the scenario) must allow at least this many times
+  # the homes already there; otherwise rebuilding gains too little to pay.
+  min_capacity_multiple: 2.0
+  # ...and rebuilding must add at least this many homes. Demolishing a
+  # house to gain one or two homes rarely pays (land and the old building
+  # are expensive), so those lots aren't counted, whether the extra homes
+  # come from city rules or a reform scenario.
+  min_net_new_units: 3
+  # Buildings at least this old (built 1976 or earlier). Vacant lots pass.
+  min_building_age_years: 50
+  # Assessed building value below this share of land value. CAUTION: under
+  # Prop 13 the assessor splits a sale price mostly into land, so this
+  # screen passes 77% of lots and favors recently sold ones; it's kept as a
+  # weak screen and the other three do most of the work.
+  max_improvement_to_land_ratio: 1.0
+  # Condos have many owners, so whole-building redevelopment is rare.
+  exclude_condos: true
+  # Demolition in landmark (historic) districts needs special review.
+  exclude_overlay_prefixes: [LD-]
