@@ -107,6 +107,7 @@ const SCREEN_TEXT: Record<string, [string, string]> = {
   building_worth_more_than_land: ["Building assessed at less than the land", "Building assessed at more than the land (or value unknown)"],
   condo_many_owners: ["Not a condo", "Condo (many owners)"],
   historic_district: ["Not in a landmark district", "In a landmark (historic) district"],
+  single_family_zone: ["Not in a single-family zone", "In a single-family zone (small-scale infill is counted separately)"],
 };
 
 function redevSection(rules: RulesFile, mask: number, r: CapacityResult, existing: number | null, reform: boolean): string {

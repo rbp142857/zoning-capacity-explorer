@@ -418,6 +418,8 @@ Docs: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operato
 The first version said a fourplex reform added 456 homes in theory but
 19,149 "likely" ones. The numbers were computed correctly; the definition was
 the problem (counting a house-to-duplex teardown as likely). Adding a
-"gain at least 3 homes" screen fixed most of it, and the remaining
-asymmetry (city fourplex counted, SB 9 fourplex not) is written down as a
-choice, with the reason, instead of hidden.
+"gain at least 3 homes" screen fixed most of it. The rest came from treating
+the same building (a fourplex on a single-family lot) differently depending on
+whether a city rule or SB 9 allowed it. The fix was to be consistent with the
+evidence: small-scale infill in single-family zones is reported separately,
+whichever rule allows it.

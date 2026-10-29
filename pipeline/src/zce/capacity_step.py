@@ -99,6 +99,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
             existing_units=lot.existing_units,
             is_condo=bool(row["is_condo"]),
             overlays=lot.overlays,
+            single_family_zone=zone_rules is not None and zone_rules.family == "single_family",
         )
         redev = redevelopment(screens, mask, result.local_units, lot.existing_units)
         if result.status == "not_modeled" and "planned_development_not_modeled" in flags:

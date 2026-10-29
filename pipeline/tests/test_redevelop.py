@@ -6,7 +6,7 @@ import math
 
 import pytest
 
-from zce.engine.redevelop import AGE, ALL_STATIC, HISTORIC, OWNERSHIP, VALUE, Screens, redevelopment, static_mask
+from zce.engine.redevelop import AGE, ALL_STATIC, HISTORIC, OWNERSHIP, VALUE, ZONE, Screens, redevelopment, static_mask
 
 S = Screens(
     as_of_year=2026, min_capacity_multiple=2.0, min_net_new_units=3, min_building_age_years=50,
@@ -47,6 +47,15 @@ def test_condo_and_landmark_district_fail():
     assert not mask(is_condo=True) & OWNERSHIP
     assert not mask(overlays=("HD", "LD-4")) & HISTORIC
     assert mask(overlays=("HD",)) & HISTORIC  # hillside overlay isn't historic
+
+
+def test_single_family_zone_lots_are_never_likely():
+    # Small-scale infill in single-family zones is reported separately,
+    # whether SB 9 or a city fourplex rule allows it.
+    m = mask(single_family_zone=True)
+    assert not m & ZONE
+    r = redevelopment(S, m, local_units=4, existing_units=1)
+    assert not r.likely and r.failed == ("single_family_zone",)
 
 
 def test_likely_when_zoning_allows_double():

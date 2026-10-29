@@ -90,6 +90,7 @@ export interface RulesFile {
     max_improvement_to_land_ratio: number;
     exclude_condos: boolean;
     exclude_overlay_prefixes: string[];
+    exclude_single_family_zones: boolean;
   };
 }
 

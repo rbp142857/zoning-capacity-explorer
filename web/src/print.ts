@@ -84,9 +84,9 @@ export function renderPrintSummary(el: HTMLElement, d: PrintData) {
       ${table("New homes possible by council district", d.byDistrict, d.reform)}
       ${table("New homes possible by distance to a major transit stop", d.byTransit, d.reform)}
     </div>
-    <p class="print-foot">* Lots passing every redevelopment screen (zoning allows 2x the existing homes, building 50+ years
-      old, building assessed below land value, not a condo, not in a landmark district); counts the city's or scenario's
-      allowance only, not state-law ADUs or SB 9. A screen, not a forecast.<br>
+    <p class="print-foot">* Lots passing every redevelopment screen (zoning allows 2x the existing homes and 3+ more,
+      building 50+ years old, building assessed below land value, not a condo, not in a landmark district, not in a
+      single-family zone); counts the city's or scenario's allowance only. A screen, not a forecast.<br>
       Interactive version and method: ${esc(d.url)}<br>
       Data: LA County Assessor parcels, City of Pasadena zoning (Municode, Sep 2, 2026), SCAG major transit stops.
       Specific-plan and planned-development lots are not modeled yet. Generated ${esc(d.generatedAt)}.</p>`;

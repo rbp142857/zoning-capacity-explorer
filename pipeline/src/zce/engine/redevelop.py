@@ -14,9 +14,10 @@ Two kinds of screens:
   there? Recomputed for every scenario, here and in web/src/engine/redevelop.ts.
 
 The realistic estimate uses LOCAL capacity (the city's rules, or a reform
-scenario), not the state-law ADU/SB 9 path: adding an ADU or a second house
-usually keeps the existing home, so it isn't redevelopment. Those additions
-are reported separately.
+scenario), not the state-law ADU/SB 9 path, and leaves out single-family
+zones entirely: small-scale infill there (SB 9, ADUs, or a city fourplex
+rule) has produced few homes wherever it's been allowed. Those homes are
+reported separately as theoretical capacity.
 
 This is a screen, not a prediction: it doesn't say when, or how many, of the
 candidates will actually be rebuilt.
@@ -25,10 +26,11 @@ candidates will actually be rebuilt.
 from dataclasses import dataclass
 
 # Bit positions of the static screens in the mask (1 = passed).
-AGE, VALUE, OWNERSHIP, HISTORIC = 1, 2, 4, 8
-ALL_STATIC = AGE | VALUE | OWNERSHIP | HISTORIC
+AGE, VALUE, OWNERSHIP, HISTORIC, ZONE = 1, 2, 4, 8, 16
+ALL_STATIC = AGE | VALUE | OWNERSHIP | HISTORIC | ZONE
 SCREEN_NAMES = {AGE: "building_too_new", VALUE: "building_worth_more_than_land",
-                OWNERSHIP: "condo_many_owners", HISTORIC: "historic_district"}
+                OWNERSHIP: "condo_many_owners", HISTORIC: "historic_district",
+                ZONE: "single_family_zone"}
 
 
 @dataclass(frozen=True)
@@ -40,6 +42,7 @@ class Screens:
     max_improvement_to_land_ratio: float
     exclude_condos: bool
     exclude_overlay_prefixes: tuple[str, ...]
+    exclude_single_family_zones: bool = True
 
 
 def static_mask(
@@ -51,6 +54,7 @@ def static_mask(
     existing_units: float | None,
     is_condo: bool,
     overlays: tuple[str, ...],
+    single_family_zone: bool = False,
 ) -> int:
     """Which static screens a lot passes, as a bit mask."""
     nan = lambda v: v is None or v != v  # noqa: E731  (NaN is the only value not equal to itself)
@@ -66,6 +70,8 @@ def static_mask(
         mask |= OWNERSHIP
     if not any(o.startswith(p) for o in overlays for p in s.exclude_overlay_prefixes):
         mask |= HISTORIC
+    if not (s.exclude_single_family_zones and single_family_zone):
+        mask |= ZONE
     return mask
 
 
@@ -101,4 +107,5 @@ def screens_from_config(cfg) -> Screens:
         max_improvement_to_land_ratio=cfg.max_improvement_to_land_ratio,
         exclude_condos=cfg.exclude_condos,
         exclude_overlay_prefixes=tuple(cfg.exclude_overlay_prefixes),
+        exclude_single_family_zones=cfg.exclude_single_family_zones,
     )

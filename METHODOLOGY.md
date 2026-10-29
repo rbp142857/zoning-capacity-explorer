@@ -132,11 +132,15 @@ planning screens (thresholds in `cities/pasadena/city.yaml`):
 3. **The building is assessed at less than the land.**
 4. **Not a condo** (many owners rarely agree to sell together).
 5. **Not in a landmark (historic) district** (demolition needs special review).
+6. **Not in a single-family zone.** Small-scale infill on single-family lots
+   (SB 9 duplexes and lot splits, ADUs, or a city duplex/fourplex reform) has
+   produced few homes wherever it has been allowed, compared with how many
+   lots became eligible. We treat it the same whichever rule allows it and
+   report it separately as theoretical capacity (53,546 homes on 20,134 lots
+   today), rather than count any of it as likely.
 
 Only the city's own allowance (or a reform scenario's) counts toward this
-estimate, not the state-law paths: adding an ADU, or a second house under SB 9,
-usually keeps the existing home, and few eligible owners have used SB 9 so
-far. Those homes are reported separately as theoretical capacity.
+estimate, not the state-law ADU and SB 9 paths.
 
 **Under today's rules: 4,907 new homes on 753 lots** pass every screen, compared
 with 68,222 theoretical new homes. Nearly every other lot fails screen 1.
@@ -152,14 +156,14 @@ Caveats we want readers to know:
   about 1.7 for owners who bought before 1980 but about 0.4 for buyers since
   2010, so this screen mostly flags recently sold properties. It passes 77% of
   lots; the other screens do most of the work.
-- **City rules and SB 9 are treated differently.** A fourplex allowed by a
-  city reform counts toward the realistic estimate; the same fourplex allowed
-  through SB 9 (lot split plus two homes each) doesn't. We chose this because
-  SB 9 has seen little use and comes with owner-occupancy and tenant
-  conditions a city rule might not have. It means a fourplex reform raises
-  the realistic estimate (by about 7,800) far more than its theoretical
-  capacity (by about 460). Readers who disagree with this choice should
-  focus on the theoretical numbers for single-family zones.
+- **Single-family reforms show no realistic gain, by design.** A city
+  fourplex reform changes only single-family zones, so it moves the
+  theoretical numbers but not this estimate. That reflects the record of
+  similar reforms, not a judgment that they don't matter: their effect builds
+  slowly, lot by lot, and is better read from the theoretical numbers plus
+  local permit data. (An earlier draft counted city fourplexes but not SB 9
+  fourplexes; treating the same building differently by which rule allows
+  it overstated the reform's realistic effect, so we changed it.)
 - Under the transit upzoning scenario (+2 stories, double density within ½
   mile), the realistic estimate rises by about 6,500 homes. Reforms that
   double allowances on older multifamily lots move it most.

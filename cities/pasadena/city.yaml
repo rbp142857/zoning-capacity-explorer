@@ -121,3 +121,8 @@ redevelopment:
   exclude_condos: true
   # Demolition in landmark (historic) districts needs special review.
   exclude_overlay_prefixes: [LD-]
+  # Small-scale infill on single-family lots (SB 9, ADUs, or a city
+  # duplex/fourplex reform) has produced few homes wherever it's been allowed,
+  # compared with how many lots became eligible. We don't count any of it as
+  # "likely", whatever rule allows it, and report it separately instead.
+  exclude_single_family_zones: true

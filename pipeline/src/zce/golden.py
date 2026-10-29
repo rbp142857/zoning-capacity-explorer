@@ -19,7 +19,7 @@ import pandas as pd
 
 from zce.config import DATA_DIR, REPO_ROOT, CityConfig, load_city
 from zce.engine import EngineAssumptions, Lot
-from zce.engine.redevelop import ALL_STATIC, AGE, HISTORIC, redevelopment, screens_from_config
+from zce.engine.redevelop import ALL_STATIC, AGE, HISTORIC, ZONE, redevelopment, screens_from_config
 from zce.engine.scenario import Scenario, apply_scenario, capacity_under_scenario
 from zce.rules.schema import load_state_overrides, load_zone_rules
 
@@ -66,7 +66,11 @@ EDGE_LOTS = [
 
 # Edge lots get static screen masks that exercise each failure path.
 _EDGE_MASKS = [ALL_STATIC, ALL_STATIC & ~HISTORIC, ALL_STATIC, ALL_STATIC, ALL_STATIC & ~AGE]
-EDGE_LOTS = [dict(lot, redev_mask=_EDGE_MASKS[i % len(_EDGE_MASKS)]) for i, lot in enumerate(EDGE_LOTS)]
+EDGE_LOTS = [
+    # Lots in single-family zones fail the zone screen, as in the real data.
+    dict(lot, redev_mask=_EDGE_MASKS[i % len(_EDGE_MASKS)] & (~ZONE if (lot["zone"] or "").startswith("RS") else ALL_STATIC))
+    for i, lot in enumerate(EDGE_LOTS)
+]
 
 
 def _sample_real_lots(city: CityConfig) -> list[dict]:

@@ -56,6 +56,7 @@ class RedevelopmentScreens(BaseModel):
     max_improvement_to_land_ratio: float
     exclude_condos: bool
     exclude_overlay_prefixes: list[str]
+    exclude_single_family_zones: bool
 
 
 class CityConfig(BaseModel):
