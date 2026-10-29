@@ -87,7 +87,15 @@ async function main() {
     redraw();
 
     const popup = new maplibregl.Popup({ maxWidth: "300px", focusAfterOpen: true });
-    controller.onLotClick((pid, lngLat) => popup.setLngLat(lngLat).setHTML(popupHtml(data, pid)).addTo(controller.map));
+    controller.onLotClick((pid, lngLat) => {
+      popup.setLngLat(lngLat).setHTML(popupHtml(data, pid)).addTo(controller.map);
+      // On phones the map is short, so move the clicked lot near the top to
+      // leave room for the popup below it.
+      if (window.matchMedia("(max-width: 760px)").matches) {
+        const height = controller.map.getContainer().clientHeight;
+        controller.map.easeTo({ center: lngLat, offset: [0, -(height / 2 - 40)], duration: 300 });
+      }
+    });
   } catch (err) {
     status.textContent = `Couldn't load the map data. ${(err as Error).message}`;
     console.error(err);

@@ -191,6 +191,12 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
   // Add our layers as soon as the basemap's style is parsed ("style.load"),
   // not on "load", which also waits for every basemap tile, font and icon.
   // If the free basemap is slow or down, the lots still appear.
+  // The compact credits box starts expanded and covers much of a phone
+  // screen. Collapse it to its (i) button once the map is drawn; it still
+  // opens on click. (Removing this class is how MapLibre itself collapses it.)
+  map.once("idle", () =>
+    map.getContainer().querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show"),
+  );
   map.on("error", (e) => console.warn("Map error:", e.error?.message ?? e));
   return new Promise((resolve) => {
     map.once("style.load", () => {
