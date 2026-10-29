@@ -2,6 +2,7 @@
 #   make all CITY=pasadena     download + clean + capacity + export (website data)
 #   make test                  unit tests
 #   make exercise              tests for the current learning exercise
+#   make repl                  Python prompt with the project's code importable
 
 CITY ?= pasadena
 
@@ -12,7 +13,7 @@ export UV_PROJECT_ENVIRONMENT := .venv.nosync
 UV ?= uv
 RUN = cd pipeline && $(UV) run
 
-.PHONY: all download clean capacity export golden validate test exercise setup
+.PHONY: all download clean capacity export golden validate test exercise setup repl site
 
 setup:
 	cd pipeline && $(UV) sync
@@ -43,3 +44,9 @@ test:
 
 exercise:
 	$(RUN) pytest -m exercise -v
+
+repl:
+	$(RUN) python
+
+site:
+	cd web && npm run dev

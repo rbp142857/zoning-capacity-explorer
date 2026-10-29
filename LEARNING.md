@@ -1,6 +1,8 @@
 # Learning notes
 
-Concepts used in this project, in roughly the order you meet them. Each has a
+Concepts used in this project, in roughly the order you meet them. For a
+guided tour of the code matched to CS50P weeks, see
+[docs/BEGINNER_GUIDE.md](docs/BEGINNER_GUIDE.md). Each has a
 short explanation and a link to good documentation. This file grows with each
 milestone.
 

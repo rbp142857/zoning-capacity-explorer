@@ -6,6 +6,8 @@ is **Pasadena, California**.
 
 **Live site: <https://rbp142857.github.io/zoning-capacity-explorer/>**
 
+New to the code? Start with the **[beginner's guide](docs/BEGINNER_GUIDE.md)**.
+
 > **Disclaimer:** this is an estimate for research and advocacy, not legal or
 > zoning advice. Always confirm with the city before relying on it.
 
@@ -28,7 +30,8 @@ Reports: [data quality](reports/pasadena/quality_report.md) ·
 [validation](reports/pasadena/validation.md) ·
 method: [METHODOLOGY.md](METHODOLOGY.md) ·
 [hand-checked lots](docs/HAND_CHECKS.md) ·
-new city: [ADDING_A_CITY.md](ADDING_A_CITY.md)
+new city: [ADDING_A_CITY.md](ADDING_A_CITY.md) ·
+**[beginner's guide](docs/BEGINNER_GUIDE.md)**
 
 ## How it fits together
 
