@@ -23,9 +23,18 @@ class Source(BaseModel):
     # extra="forbid" turns unknown keys into errors, which catches typos.
     model_config = ConfigDict(extra="forbid")
 
-    kind: Literal["arcgis", "file"]
+    kind: Literal["arcgis", "file", "ckan", "manual"]
     url: str
     where: str = "1=1"
+    # For kind "ckan" (data.ca.gov datastore): which table, and row filters.
+    resource_id: str | None = None
+    filters: dict[str, str] = {}
+    # Validation-only sources aren't needed to build the map.
+    validation_only: bool = False
+    # For kind "manual": the file name to save the download as. Used for
+    # servers that refuse automated downloads; a person downloads the file
+    # in a browser and saves it into data.nosync/raw/<city>/.
+    filename: str | None = None
     adapter: str | None = None
     publisher: str
     license: str

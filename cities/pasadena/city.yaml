@@ -68,6 +68,36 @@ sources:
     url: https://gitlab.com/LACMTA/gtfs_rail/-/raw/master/gtfs_rail.zip
     publisher: Los Angeles County Metropolitan Transportation Authority
     license: LA Metro GTFS, published for public use under Metro's developer terms.
+  # --- Validation sources (make validate) ---
+  housing_element:
+    # Adopted 2021-2029 Housing Element; Appendix C lists every site in the
+    # sites inventory with its parcel number and the city's capacity estimate.
+    # The city's server refuses automated downloads, so this one is manual.
+    kind: manual
+    filename: 2021-2029-Pasadena-Housing-Element.pdf
+    url: https://www.cityofpasadena.net/planning/wp-content/uploads/sites/30/2021-2029-Pasadena-Housing-Element.pdf
+    publisher: City of Pasadena (adopted July 18, 2022)
+    license: Public government document.
+    validation_only: true
+  apr_table_a2:
+    # Annual Progress Reports, Table A2: every home permitted or completed,
+    # by year, parcel number and type (ADU, single-family, 2-4, 5+).
+    kind: ckan
+    url: https://data.ca.gov
+    resource_id: fe505d9b-8c36-42ba-ba30-08bc4f34e022
+    filters: {JURIS_NAME: PASADENA}
+    publisher: California Department of Housing and Community Development (HCD)
+    license: Published on data.ca.gov as open data.
+    validation_only: true
+  dof_e5:
+    # Official housing-unit counts by city (2020 Census benchmark + estimates).
+    # DOF's server also refuses automated downloads: manual.
+    kind: manual
+    filename: E-5_2026_InternetVersion.xlsx
+    url: https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/e-5-population-and-housing-estimates-for-cities-counties-and-the-state-2020-2026/E-5_2026_InternetVersion.xlsx
+    publisher: California Department of Finance, Demographic Research Unit (E-5, May 2026)
+    license: Public government data.
+    validation_only: true
 
 # Pasadena's zone codes combine an optional specific-plan prefix with a base
 # district, e.g. "CD-MU-C" = Central District Specific Plan, MU-C district.

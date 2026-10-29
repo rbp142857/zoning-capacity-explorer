@@ -12,7 +12,7 @@ export UV_PROJECT_ENVIRONMENT := .venv.nosync
 UV ?= uv
 RUN = cd pipeline && $(UV) run
 
-.PHONY: all download clean capacity export golden test test-web exercise setup
+.PHONY: all download clean capacity export golden validate test exercise setup
 
 setup:
 	cd pipeline && $(UV) sync
@@ -32,7 +32,10 @@ export:
 golden:
 	$(RUN) python -m zce golden $(CITY)
 
-all: download clean capacity export golden
+validate:
+	$(RUN) python -m zce validate $(CITY)
+
+all: download clean capacity export golden validate
 
 test:
 	$(RUN) pytest

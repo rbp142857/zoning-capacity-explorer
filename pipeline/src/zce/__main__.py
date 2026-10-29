@@ -5,6 +5,7 @@
     uv run python -m zce capacity pasadena
     uv run python -m zce export pasadena
     uv run python -m zce golden pasadena
+    uv run python -m zce validate pasadena
     uv run python -m zce all pasadena
 
 The Makefile at the repo root wraps these.
@@ -17,7 +18,7 @@ from zce.config import load_city
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="zce", description="Zoning Capacity Explorer pipeline")
-    parser.add_argument("step", choices=["download", "clean", "capacity", "export", "golden", "all"])
+    parser.add_argument("step", choices=["download", "clean", "capacity", "export", "golden", "validate", "all"])
     parser.add_argument("city", help="city id, i.e. a folder name under cities/")
     parser.add_argument("--only", nargs="*", help="download only these sources")
     args = parser.parse_args()
@@ -46,6 +47,10 @@ def main() -> None:
         from zce.golden import write_golden
 
         write_golden(city.id)
+    if args.step in ("validate", "all"):
+        from zce.validate import validate_city
+
+        validate_city(city)
 
 
 if __name__ == "__main__":

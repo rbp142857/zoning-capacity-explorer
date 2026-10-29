@@ -88,6 +88,23 @@ def download_arcgis_layer(source: Source, out_path: Path) -> int:
     return len(features)
 
 
+def download_ckan(source: Source, out_path: Path) -> int:
+    """All matching rows of a CKAN datastore table (data.ca.gov), paged."""
+    records: list[dict] = []
+    while True:
+        page = _get_json(
+            f"{source.url}/api/3/action/datastore_search",
+            {"resource_id": source.resource_id, "filters": json.dumps(source.filters),
+             "limit": 1000, "offset": len(records)},
+        )["result"]
+        records.extend(page["records"])
+        if len(records) >= page["total"] or not page["records"]:
+            break
+        time.sleep(PAUSE_SECONDS)
+    out_path.write_text(json.dumps(records))
+    return len(records)
+
+
 def download_file(source: Source, out_path: Path) -> int:
     resp = requests.get(source.url, headers=HEADERS, timeout=300)
     resp.raise_for_status()
@@ -103,11 +120,28 @@ def download_city(city: CityConfig, only: list[str] | None = None) -> None:
     for name, source in city.sources.items():
         if only and name not in only:
             continue
+        if source.kind == "manual":
+            out = city.raw_dir / (source.filename or Path(source.url).name)
+            if not out.exists():
+                print(f"MANUAL DOWNLOAD NEEDED for '{name}': this server doesn't allow automated downloads.\n"
+                      f"  1. Open {source.url} in your browser\n  2. Save the file as {out}")
+                continue
+            print(f"Found manually downloaded {name}: {out.name}")
+            size, unit = out.stat().st_size, "bytes"
+            manifest[name] = {"url": source.url, "where": "", "file": out.name, unit: size,
+                              "downloaded_at": datetime.fromtimestamp(out.stat().st_mtime, timezone.utc).isoformat(timespec="seconds"),
+                              "publisher": source.publisher, "license": source.license}
+            manifest_path.write_text(json.dumps(manifest, indent=2))
+            continue
         print(f"Downloading {name} from {source.url}")
         if source.kind == "arcgis":
             out = city.raw_dir / f"{name}.geojson"
             size = download_arcgis_layer(source, out)
             unit = "features"
+        elif source.kind == "ckan":
+            out = city.raw_dir / f"{name}.json"
+            size = download_ckan(source, out)
+            unit = "records"
         else:
             out = city.raw_dir / Path(source.url).name
             size = download_file(source, out)

@@ -423,3 +423,42 @@ the same building (a fourplex on a single-family lot) differently depending on
 whether a city rule or SB 9 allowed it. The fix was to be consistent with the
 evidence: small-scale infill in single-family zones is reported separately,
 whichever rule allows it.
+
+---
+
+## Milestone 8: validation
+
+### Validate against independent sources
+Tests check that the code does what we meant; validation checks that what we
+meant matches the world. We compared with three sources built independently
+of ours: the state's housing-unit count (DOF), the city's own capacity
+estimate (Housing Element sites inventory), and what was actually permitted
+(HCD Annual Progress Reports). None should match exactly; the point is that
+every difference has an explanation.
+
+### Hand checks become regression tests
+Ten real lots were worked out on paper from the code text, then copied into
+`tests/test_real_parcels.py` with their inputs. A *regression test* protects a
+known-good answer: if a later change alters one, the test fails and you
+decide whether the new answer is a fix or a bug.
+
+### Matching records across datasets
+Permit records and parcels share a parcel number (APN), until a lot is merged
+or turned into condos and gets a new one. We matched in steps: parcel number,
+then a normalized street address, then the nearest lot to the record's map
+point (geocoded points usually sit in the street, so "inside a lot" finds
+nothing). Reporting how many matched each way keeps the method honest.
+Docs: <https://geopandas.org/en/stable/docs/reference/api/geopandas.sjoin_nearest.html>
+
+### Reading tables out of PDFs
+Government documents often hold their best data in PDF tables. `pypdf`
+extracts the text; a regular expression pulls out each row. The check that
+the parse worked: the parsed total (10,261) matches the total the document
+states. Optional parts of a row (`(?: ... )?` in the regex) were the main
+difficulty.
+Docs: <https://docs.python.org/3/howto/regex.html> · <https://pypdf.readthedocs.io/>
+
+### Respect sites that refuse automated downloads
+Two government servers reject requests from scripts. Disguising the script as
+a browser would get around that, but it overrides the site owner's choice. The
+pipeline instead tells a person which file to download and where to save it.

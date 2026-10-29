@@ -18,11 +18,15 @@ is **Pasadena, California**.
 | 5. Scenario engine in the browser | ✅ 9 levers, shareable links, Python/TypeScript parity test |
 | 6. Charts, lot details, address search, printable summary | ✅ |
 | 7. Realistic redevelopment estimate | ✅ 5 screens, shown beside theoretical everywhere |
-| 8. Validation, methodology, deploy | next |
+| 8. Validation, methodology, deploy | ✅ validated; ready to deploy (needs a GitHub repo) |
 | 9. Developer pro forma (optional) | planned |
 
-Latest reports: [data quality](reports/pasadena/quality_report.md) ·
-[capacity](reports/pasadena/capacity_report.md) · method: [METHODOLOGY.md](METHODOLOGY.md) (draft)
+Reports: [data quality](reports/pasadena/quality_report.md) ·
+[capacity](reports/pasadena/capacity_report.md) ·
+[validation](reports/pasadena/validation.md) ·
+method: [METHODOLOGY.md](METHODOLOGY.md) ·
+[hand-checked lots](docs/HAND_CHECKS.md) ·
+new city: [ADDING_A_CITY.md](ADDING_A_CITY.md)
 
 ## How it fits together
 
@@ -95,6 +99,11 @@ cd web && npm install && npm run dev
 ```
 
 Then open the address Vite prints (http://127.0.0.1:5173 by default).
+
+**Validation** (`make validate`) compares the results with official figures. Two of
+its sources are on servers that refuse automated downloads; `make download`
+prints their links and where to save them (open the link in a browser, save the
+file there, run `make validate` again).
 
 `make test` runs the Python tests and the web tests (including the parity
 test). If you change the engine, a rule file or `zce/golden.py`, run
