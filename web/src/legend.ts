@@ -2,6 +2,7 @@
 // color is never the only way to read the map.
 
 import {
+  ADDED_CLASSES,
   BINDING_GROUPS,
   BINDING_LABELS,
   CATEGORICAL,
@@ -12,7 +13,8 @@ import {
   type Theme,
   type ValueClass,
 } from "./colors";
-import { bindingOf, type ParcelData } from "./data";
+import type { ParcelData } from "./data";
+import type { Results } from "./engine/run";
 import type { View } from "./map";
 
 interface Row {
@@ -26,7 +28,8 @@ const fmt = new Intl.NumberFormat("en-US");
 
 function classRows(
   values: (number | null)[],
-  data: ParcelData,
+  modeled: (pid: number) => boolean,
+  count: number,
   classes: ValueClass[],
   theme: Theme,
   zeroLabel: string,
@@ -35,9 +38,9 @@ function classRows(
   const counts = new Array(classes.length).fill(0);
   let zero = 0;
   let notModeled = 0;
-  for (let pid = 0; pid < data.count; pid++) {
+  for (let pid = 0; pid < count; pid++) {
     const v = values[pid];
-    if (data.columns.binding[pid] < 0 || v === null) notModeled++;
+    if (!modeled(pid) || v === null) notModeled++;
     else if (v === 0) zero++;
     else counts[classes.findIndex((c) => v >= c.min && (c.max === null || v <= c.max))]++;
   }
@@ -48,13 +51,13 @@ function classRows(
   ];
 }
 
-function bindingRows(data: ParcelData, theme: Theme, highlight: string | null): Row[] {
+function bindingRows(data: ParcelData, results: Results, theme: Theme, highlight: string | null): Row[] {
   const tally: Record<string, number> = {};
   let notModeled = 0;
   for (let pid = 0; pid < data.count; pid++) {
-    const b = bindingOf(data, pid);
-    if (b === null) notModeled++;
-    else tally[b] = (tally[b] ?? 0) + 1;
+    const code = results.binding[pid];
+    if (code < 0) notModeled++;
+    else tally[data.codes.binding[code]] = (tally[data.codes.binding[code]] ?? 0) + 1;
   }
   const nm = { color: NEUTRAL[theme].notModeled, label: "Not modeled yet", count: notModeled };
   if (highlight) {
@@ -79,14 +82,27 @@ function bindingRows(data: ParcelData, theme: Theme, highlight: string | null): 
   ];
 }
 
-export function renderLegend(el: HTMLElement, data: ParcelData, view: View, theme: Theme, highlight: string | null) {
-  const c = data.columns;
-  const rows =
-    view === "max"
-      ? classRows(c.max_units, data, MAX_UNITS_CLASSES, theme, "0: housing not allowed or doesn't fit")
-      : view === "net"
-        ? classRows(c.net_new_units, data, NET_NEW_CLASSES, theme, "0: no room for more homes")
-        : bindingRows(data, theme, highlight);
+export function renderLegend(
+  el: HTMLElement,
+  data: ParcelData,
+  view: View,
+  scenario: Results,
+  today: Results,
+  theme: Theme,
+  highlight: string | null,
+) {
+  const modeled = (pid: number) => scenario.binding[pid] >= 0;
+  let rows: Row[];
+  if (view === "max") {
+    rows = classRows(scenario.max, modeled, data.count, MAX_UNITS_CLASSES, theme, "0: housing not allowed or doesn't fit");
+  } else if (view === "net") {
+    rows = classRows(scenario.net, modeled, data.count, NET_NEW_CLASSES, theme, "0: no room for more homes");
+  } else if (view === "added") {
+    const added = scenario.max.map((v, pid) => (v === null ? null : Math.max(0, v - (today.max[pid] ?? 0))));
+    rows = classRows(added, modeled, data.count, ADDED_CLASSES, theme, "No change from today's rules");
+  } else {
+    rows = bindingRows(data, scenario, theme, highlight);
+  }
 
   el.replaceChildren(
     ...rows.map((r) => {

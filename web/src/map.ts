@@ -1,16 +1,17 @@
-// The map: basemap, lot shapes from PMTiles, and colors from parcels.json.
+// The map: basemap, lot shapes from PMTiles, and colors from engine results.
 //
 // How coloring works: every lot shape in the tiles has a `pid`. We tell
 // MapLibre to use it as the feature id (`promoteId`), then attach numbers to
 // each id with `setFeatureState`. The paint rules read those numbers with
-// ["feature-state", ...]. Changing views or (in milestone 5) scenarios only
-// changes feature state or paint rules; the tiles are never re-downloaded.
+// ["feature-state", ...]. A new scenario only calls setResults(): the tiles
+// are never re-downloaded.
 
 import maplibregl, { type ExpressionSpecification, type Map as MlMap } from "maplibre-gl";
 import { Protocol } from "pmtiles";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import {
+  ADDED_CLASSES,
   BINDING_GROUPS,
   CATEGORICAL,
   MAX_UNITS_CLASSES,
@@ -21,8 +22,9 @@ import {
   type ValueClass,
 } from "./colors";
 import type { ParcelData } from "./data";
+import type { Results } from "./engine/run";
 
-export type View = "max" | "net" | "binding";
+export type View = "max" | "net" | "added" | "binding";
 
 const SOURCE = "lots";
 const SOURCE_LAYER = "parcels"; // the layer name we gave tippecanoe
@@ -81,6 +83,7 @@ function bindingExpression(theme: Theme, highlightCode: number | null): Expressi
 export interface MapController {
   map: MlMap;
   setView(view: View, highlightCode?: number | null): void;
+  setResults(scenario: Results, today: Results): void;
   onLotClick(handler: (pid: number, lngLat: maplibregl.LngLat) => void): void;
 }
 
@@ -88,6 +91,7 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
   let theme = currentTheme();
   let view: View = "max";
   let highlight: number | null = null;
+  let latest: { scenario: Results; today: Results } | null = null;
   const clickHandlers: ((pid: number, lngLat: maplibregl.LngLat) => void)[] = [];
 
   const map = new maplibregl.Map({
@@ -103,9 +107,7 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
   map.addControl(new maplibregl.ScaleControl({ unit: "imperial" }), "bottom-left");
 
   // Group index per binding-constraint code, so feature state can hold a small number.
-  const groupOfCode = data.codes.binding.map((name) =>
-    BINDING_GROUPS.findIndex((g) => g.members.includes(name)),
-  );
+  const groupOfCode = data.codes.binding.map((name) => BINDING_GROUPS.findIndex((g) => g.members.includes(name)));
 
   function addLotLayers() {
     map.addSource(SOURCE, {
@@ -136,15 +138,18 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
   }
 
   function applyFeatureState() {
-    const c = data.columns;
+    if (!latest || !map.getSource(SOURCE)) return;
+    const { scenario, today } = latest;
     for (let pid = 0; pid < data.count; pid++) {
-      const code = c.binding[pid];
+      const code = scenario.binding[pid];
+      const modeled = code >= 0;
       map.setFeatureState(
         { source: SOURCE, sourceLayer: SOURCE_LAYER, id: pid },
         {
-          max: code < 0 ? -1 : c.max_units[pid] ?? -1,
-          net: code < 0 ? -1 : c.net_new_units[pid] ?? -1,
-          bind: code < 0 ? -1 : groupOfCode[code],
+          max: modeled ? scenario.max[pid] ?? -1 : -1,
+          net: modeled ? scenario.net[pid] ?? -1 : -1,
+          added: modeled ? Math.max(0, (scenario.max[pid] ?? 0) - (today.max[pid] ?? 0)) : -1,
+          bind: modeled ? groupOfCode[code] : -1,
           braw: code,
         },
       );
@@ -154,6 +159,7 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
   function paintFor(): ExpressionSpecification {
     if (view === "max") return classExpression("max", MAX_UNITS_CLASSES, theme);
     if (view === "net") return classExpression("net", NET_NEW_CLASSES, theme);
+    if (view === "added") return classExpression("added", ADDED_CLASSES, theme);
     return bindingExpression(theme, highlight);
   }
 
@@ -183,20 +189,24 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
       highlight = highlightCode;
       if (map.getLayer(FILL)) map.setPaintProperty(FILL, "fill-color", paintFor());
     },
+    setResults(scenario, today) {
+      latest = { scenario, today };
+      applyFeatureState();
+    },
     onLotClick(handler) {
       clickHandlers.push(handler);
     },
   };
 
-  // Add our layers as soon as the basemap's style is parsed ("style.load"),
-  // not on "load", which also waits for every basemap tile, font and icon.
-  // If the free basemap is slow or down, the lots still appear.
   // The compact credits box starts expanded and covers much of a phone
   // screen. Collapse it to its (i) button once the map is drawn; it still
   // opens on click. (Removing this class is how MapLibre itself collapses it.)
   map.once("idle", () =>
     map.getContainer().querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show"),
   );
+  // Add our layers as soon as the basemap's style is parsed ("style.load"),
+  // not on "load", which also waits for every basemap tile, font and icon.
+  // If the free basemap is slow or down, the lots still appear.
   map.on("error", (e) => console.warn("Map error:", e.error?.message ?? e));
   return new Promise((resolve) => {
     map.once("style.load", () => {

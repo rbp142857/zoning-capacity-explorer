@@ -290,3 +290,52 @@ GitHub Pages serves plain files for free. A GitHub Actions *workflow*
 (`.github/workflows/deploy.yml`) runs on GitHub's servers on every push:
 install, build, upload `web/dist`, publish. A second workflow runs the tests.
 Docs: <https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages>
+
+---
+
+## Milestone 5: scenarios in the browser
+
+### Same logic, two languages, one test
+The engine exists in Python (the pipeline, the source of truth) and in
+TypeScript (so the browser can recompute instantly without a server). Two
+copies of the same logic will drift apart unless something checks them. A
+**golden test** does: Python computes answers for a fixed set of inputs and
+saves them (`shared/fixtures/golden.json`); the TypeScript test runs the same
+inputs and fails on any difference. A second Python test fails if the golden
+file is stale, so a change on the Python side forces you to regenerate it.
+Docs: <https://en.wikipedia.org/wiki/Characterization_test>
+
+### Testing the test (mutation testing, by hand)
+A test that can't fail is worthless. We deliberately broke the TypeScript
+rounding rule (0.75 -> 0.70) and confirmed the parity test went red, then
+put it back. Tools like Stryker automate this idea.
+Docs: <https://stryker-mutator.io/docs/>
+
+### Floating-point and rounding at boundaries
+Python and JavaScript both use IEEE-754 doubles, so the same operations in
+the same order give the same bits. Where we round (lot dimensions to 0.1 ft
+before export), we round *once in the pipeline* and have both engines use
+the rounded values; rounding in only one place changed 10 lots' answers.
+
+### Never mutate the rules
+A scenario makes modified **copies** of the rules (`model_copy(update=...)`
+in Python, `{...rules, ...changes}` in TypeScript) instead of editing them.
+The "today" results and every scenario start from the same untouched rules,
+so switching scenarios back and forth can't leave stale changes behind.
+Docs: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax>
+
+### State in the URL
+The scenario lives in the URL's `#hash` (`#v=1&sf=4&pk=0`), so sharing the
+address shares the scenario, and the back button and bookmarks work. Only
+changed levers are written; unknown or invalid values fall back to today's
+rules, so a mistyped or old link never breaks the page. `v=1` is a version
+number for when the lever set changes. `history.replaceState` updates the
+address without adding a history entry on every click.
+Docs: <https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState> ·
+<https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams>
+
+### Vitest
+Vitest is a test runner for TypeScript that understands Vite projects.
+`describe`/`it`/`expect` play the role of pytest's test functions and
+`assert`.
+Docs: <https://vitest.dev/guide/>

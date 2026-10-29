@@ -1,4 +1,5 @@
-# Run the Python tests on every push and pull request.
+# Run the Python tests, and the web type-check plus the Python/TypeScript
+# parity test, on every push and pull request.
 name: Tests
 
 on:
@@ -22,5 +23,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci && npx tsc --noEmit
+      - run: npm ci && npx tsc --noEmit && npm test
         working-directory: web

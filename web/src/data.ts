@@ -8,7 +8,7 @@ export interface ParcelData {
   city: string;
   generated_at: string;
   count: number;
-  codes: { binding: string[]; zone: string[] };
+  codes: { binding: string[]; zone: string[]; rules_zone: string[]; overlay_sets: string[][] };
   headline: {
     existing_units: number;
     local_units: number;
@@ -27,17 +27,16 @@ export interface ParcelData {
     net_new_units: (number | null)[];
     binding: number[]; // index into codes.binding, or -1 = not modeled
     lot_area_sqft: number[];
+    lot_width_ft: number[];
+    lot_depth_ft: number[];
+    dist_major_transit_ft: (number | null)[];
+    rules_zone: number[]; // index into codes.rules_zone, -1 = not modeled
+    overlay_set: number[]; // index into codes.overlay_sets
   };
 }
 
-export async function loadParcels(url: string): Promise<ParcelData> {
+export async function loadJson<T>(url: string): Promise<T> {
   const resp = await fetch(url);
   if (!resp.ok) throw new Error(`Could not load ${url}: HTTP ${resp.status}`);
-  return (await resp.json()) as ParcelData;
-}
-
-/** The binding-constraint name for a lot, e.g. "parking", or null if not modeled. */
-export function bindingOf(data: ParcelData, pid: number): string | null {
-  const code = data.columns.binding[pid];
-  return code < 0 ? null : data.codes.binding[code];
+  return (await resp.json()) as T;
 }

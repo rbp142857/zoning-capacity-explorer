@@ -80,3 +80,29 @@ zoning first, then each state law, and keep both numbers.
 - **SB 9 caveat:** SB 9 can't be used where it would demolish rent-restricted
   or recently rented housing. We have no tenancy data, so SB 9 capacity is
   overstated on rented lots.
+
+## 5. Reform scenarios
+
+The "Reform scenario" panel changes the rules and recalculates every lot in
+your browser. Each lever, and what we assume when we apply it:
+
+| Lever | What changes |
+|---|---|
+| Homes per lot in single-family zones | The city's one-home-per-lot cap becomes 2, 3, 4 or 6. Floor-area, setback and parking limits still apply, so on many lots the building envelope, not the cap, becomes the limit. |
+| Minimum lot size in single-family zones | A lot may be split into as many lots of the new minimum size as fit; each gets the per-lot allowance. We don't check street frontage or access for the new lots. |
+| Parking per home | Replaces the 2-space requirement in every zone (0 removes parking minimums, and guest parking with them). |
+| No parking minimums near transit | Widens AB 2097's ½-mile radius (it can't be narrowed: that's state law). |
+| Near major transit: extra stories / density | For multifamily and commercial zones within the chosen distance: stories are added; floor-area ratio grows in proportion so the extra stories are usable; required land per home is divided by the density factor. |
+| Housing in General Commercial (CG) | CG lots use CL's housing standards (RM-32 density and gardens) with CG's own 45 ft height (4 stories) and FAR 0.80. |
+| ADU homes per house | The ADU path adds 3 or 4 homes to a single-family lot instead of 2. |
+
+A finding the tool makes visible: **legalizing fourplexes in single-family
+zones adds little on its own** (about 900 homes citywide, even with parking
+minimums removed). SB 9 already allows up to four homes on most such lots,
+and the city's floor-area limits mean a typical 7,200 sq ft lot fits only two
+homes of average size under local rules. A fourplex reform that also raised
+the floor-area limit would show a different result.
+
+The browser and the Python pipeline run the same calculations: an automated
+test checks that both give identical answers for 415 lots under 9 scenarios,
+and in development the page checks every lot under today's rules.

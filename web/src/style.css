@@ -142,3 +142,33 @@ fieldset.view-toggle input { width: 18px; height: 18px; accent-color: var(--acce
 @media (forced-colors: active) {
   .swatch { forced-color-adjust: none; }
 }
+
+/* Reform scenario panel */
+.scenario { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: var(--page); }
+.scenario summary {
+  cursor: pointer; font-weight: 650; display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  min-height: 32px;
+}
+.scenario-state { font-weight: 500; font-size: 12px; color: var(--ink-2); }
+.scenario-state.active { color: var(--accent); font-weight: 650; }
+.presets { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.presets button, .share button {
+  font: inherit; font-size: 13px; padding: 6px 10px; min-height: 32px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+}
+.presets button:hover, .share button:hover { border-color: var(--accent); }
+.levers { display: grid; gap: 10px; }
+.levers label { display: grid; gap: 3px; font-size: 13px; color: var(--ink-2); }
+.levers select {
+  font: inherit; font-size: 14px; padding: 5px 8px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+}
+.levers select.changed { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+.levers fieldset { border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; margin: 0; display: grid; gap: 8px; }
+.levers legend { font-size: 13px; color: var(--ink); padding: 0 4px; }
+.levers label.check { display: flex; align-items: center; gap: 8px; color: var(--ink); min-height: 32px; }
+.levers label.check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.share { display: flex; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+#share-status { font-size: 12px; color: var(--ink-2); }
+.stat-note .up { color: var(--ink); font-weight: 650; }
+.popup .scenario-col { color: var(--accent); }

@@ -21,6 +21,23 @@ from zce.rules.schema import load_state_overrides, load_zone_rules
 LIMIT_NAMES = ["density", "lot_area_per_unit", "envelope", "parking", "state_adu", "state_sb9"]
 
 
+def round_engine_inputs(parcels: pd.DataFrame) -> pd.DataFrame:
+    """Round the numbers the engine reads, once, here.
+
+    The browser receives these values rounded (to keep the download small)
+    and recomputes capacity from them. Rounding them here too means Python
+    and the browser compute from identical inputs, so their answers match
+    exactly. The precision (1 sq ft, 0.1 ft, 1 ft) is far finer than the
+    accuracy of the parcel data.
+    """
+    out = parcels.copy()
+    out["lot_area_sqft"] = out["lot_area_sqft"].round(0)
+    out["lot_width_ft"] = out["lot_width_ft"].round(1)
+    out["lot_depth_ft"] = out["lot_depth_ft"].round(1)
+    out["dist_major_transit_ft"] = out["dist_major_transit_ft"].round(0)
+    return out
+
+
 def _number_or_none(x):
     return None if pd.isna(x) else float(x)
 
@@ -57,6 +74,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
     print(f"Loaded {len(rules)} zone rule files and {len(state.laws)} state laws")
 
     parcels = parcels.join(spatial.lot_dimensions(parcels))
+    parcels = round_engine_inputs(parcels)
 
     records = []
     for row in parcels.itertuples(index=False):

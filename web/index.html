@@ -6,7 +6,7 @@
     <title>Pasadena Zoning Capacity</title>
     <meta
       name="description"
-      content="How many homes Pasadena's zoning and California state law allow on every lot, and what limits them."
+      content="How many homes Pasadena's zoning and California state law allow on every lot, what limits them, and what reforms would change."
     />
   </head>
   <body>
@@ -22,28 +22,122 @@
 
     <main class="layout">
       <aside id="controls" class="panel" aria-label="Map controls and summary">
-        <section class="headline" aria-labelledby="headline-title">
+        <section class="headline" aria-labelledby="headline-title" aria-live="polite">
           <h2 id="headline-title" class="visually-hidden">Citywide totals</h2>
           <div class="stat">
             <span class="stat-label">Homes on modeled lots today</span>
             <span class="stat-value" id="stat-existing">–</span>
           </div>
           <div class="stat">
-            <span class="stat-label">Legal maximum with state law</span>
+            <span class="stat-label" id="stat-max-label">Legal maximum under today's rules</span>
             <span class="stat-value" id="stat-max">–</span>
-            <span class="stat-note" id="stat-local"></span>
+            <span class="stat-note" id="stat-max-note"></span>
           </div>
           <div class="stat">
             <span class="stat-label">Residential land where city zoning allows only one home</span>
             <span class="stat-value" id="stat-single">–</span>
-            <span class="stat-note">before state law (SB 9 and ADUs)</span>
+            <span class="stat-note">today, before state law (SB 9 and ADUs)</span>
           </div>
         </section>
 
+        <details class="scenario" id="scenario" open>
+          <summary>
+            <span>Reform scenario</span>
+            <span class="scenario-state" id="scenario-state">Today's rules</span>
+          </summary>
+
+          <div class="presets" role="group" aria-label="Example scenarios">
+            <button type="button" data-preset="fourplex">Fourplexes in single-family zones</button>
+            <button type="button" data-preset="parking">No parking minimums within 1 mile of transit</button>
+            <button type="button" data-preset="transit">Upzone near transit</button>
+            <button type="button" data-preset="reset">Back to today's rules</button>
+          </div>
+
+          <form id="levers" class="levers">
+            <label>Homes allowed per lot in single-family zones
+              <select name="sf_units_per_lot">
+                <option value="">Today: 1</option>
+                <option value="2">2 (duplex)</option>
+                <option value="3">3 (triplex)</option>
+                <option value="4">4 (fourplex)</option>
+                <option value="6">6 (sixplex)</option>
+              </select>
+            </label>
+            <label>Minimum lot size in single-family zones (lots can be split down to this)
+              <select name="sf_min_lot_sqft">
+                <option value="">Today: no new splits</option>
+                <option value="5000">5,000 sq ft</option>
+                <option value="3000">3,000 sq ft</option>
+                <option value="2500">2,500 sq ft</option>
+                <option value="1500">1,500 sq ft</option>
+              </select>
+            </label>
+            <label>Parking spaces required per home
+              <select name="parking_per_unit">
+                <option value="">Today: 2</option>
+                <option value="1">1</option>
+                <option value="0.5">0.5</option>
+                <option value="0">None</option>
+              </select>
+            </label>
+            <label>No parking minimums within this distance of a major transit stop
+              <select name="parking_exempt_radius_ft">
+                <option value="2640">Today: ½ mile (state law AB 2097)</option>
+                <option value="3960">¾ mile</option>
+                <option value="5280">1 mile</option>
+              </select>
+            </label>
+            <fieldset>
+              <legend>Near major transit stops (multifamily and commercial zones)</legend>
+              <label>Within
+                <select name="transit_radius_ft">
+                  <option value="1320">¼ mile</option>
+                  <option value="2640">½ mile</option>
+                  <option value="5280">1 mile</option>
+                </select>
+              </label>
+              <label>Extra stories allowed
+                <select name="transit_extra_stories">
+                  <option value="0">Today: none</option>
+                  <option value="1">+1</option>
+                  <option value="2">+2</option>
+                  <option value="3">+3</option>
+                  <option value="4">+4</option>
+                </select>
+              </label>
+              <label>Density allowed
+                <select name="transit_density_multiplier">
+                  <option value="1">Today: ×1</option>
+                  <option value="1.5">×1.5</option>
+                  <option value="2">×2</option>
+                  <option value="3">×3</option>
+                </select>
+              </label>
+            </fieldset>
+            <label class="check">
+              <input type="checkbox" name="housing_in_cg" />
+              Allow housing in General Commercial (CG) zones
+            </label>
+            <label>Homes a house can add through ADUs
+              <select name="adu_units_added">
+                <option value="">Today: 2 (ADU + junior ADU)</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </label>
+          </form>
+
+          <div class="share">
+            <button type="button" id="share">Copy link to this scenario</button>
+            <span id="share-status" role="status" aria-live="polite"></span>
+          </div>
+        </details>
+
         <fieldset class="view-toggle">
           <legend>Color lots by</legend>
-          <label><input type="radio" name="view" value="max" checked /> Homes allowed now</label>
+          <label><input type="radio" name="view" value="max" checked /> Homes allowed</label>
           <label><input type="radio" name="view" value="net" /> New homes possible</label>
+          <label><input type="radio" name="view" value="added" /> Homes added by the reform</label>
           <label><input type="radio" name="view" value="binding" /> What limits it</label>
         </fieldset>
 

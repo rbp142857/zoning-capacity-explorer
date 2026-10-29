@@ -12,7 +12,7 @@ export UV_PROJECT_ENVIRONMENT := .venv.nosync
 UV ?= uv
 RUN = cd pipeline && $(UV) run
 
-.PHONY: all download clean capacity export test exercise setup
+.PHONY: all download clean capacity export golden test test-web exercise setup
 
 setup:
 	cd pipeline && $(UV) sync
@@ -29,10 +29,14 @@ capacity:
 export:
 	$(RUN) python -m zce export $(CITY)
 
-all: download clean capacity export
+golden:
+	$(RUN) python -m zce golden $(CITY)
+
+all: download clean capacity export golden
 
 test:
 	$(RUN) pytest
+	cd web && npx vitest run
 
 exercise:
 	$(RUN) pytest -m exercise -v

@@ -48,6 +48,16 @@ export const NET_NEW_CLASSES: ValueClass[] = [
   { min: 50, max: null, label: "50 or more" },
 ];
 
+export const ADDED_CLASSES: ValueClass[] = [
+  { min: 1, max: 1, label: "+1 home" },
+  { min: 2, max: 2, label: "+2" },
+  { min: 3, max: 3, label: "+3" },
+  { min: 4, max: 9, label: "+4 to 9" },
+  { min: 10, max: 24, label: "+10 to 24" },
+  { min: 25, max: 49, label: "+25 to 49" },
+  { min: 50, max: null, label: "+50 or more" },
+];
+
 export function rampFor(theme: Theme): string[] {
   return theme === "dark" ? BLUE_DARK : BLUE_LIGHT;
 }

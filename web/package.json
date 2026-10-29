@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "dependencies": {
     "maplibre-gl": "4.7.1",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "typescript": "5.4.5",
-    "vite": "4.5.14"
+    "vite": "4.5.14",
+    "vitest": "0.34.6"
   }
 }

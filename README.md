@@ -15,8 +15,9 @@ is **Pasadena, California**.
 | 2. Data pipeline + data quality report | ✅ built |
 | 3. Rule files + capacity engine | ✅ 16 zones, state law (SB 9, ADU, AB 2097), 69 tests |
 | 4. Static map | ✅ MapLibre + PMTiles, 3 views, legend, deploy workflow |
-| 5. Scenario engine in the browser | next |
-| 6–9. UI, redevelopment estimate, docs, pro forma | planned |
+| 5. Scenario engine in the browser | ✅ 9 levers, shareable links, Python/TypeScript parity test |
+| 6. Charts, parcel panel, address search, printable summary | next |
+| 7–9. Redevelopment estimate, docs, pro forma | planned |
 
 Latest reports: [data quality](reports/pasadena/quality_report.md) ·
 [capacity](reports/pasadena/capacity_report.md) · method: [METHODOLOGY.md](METHODOLOGY.md) (draft)
@@ -38,7 +39,10 @@ data.nosync/out/pasadena/capacity.parquet    max units, binding constraint per l
 reports/pasadena/capacity_report.md          totals by zone, district, transit
         ▼  make export           tippecanoe + JSON
 web/public/data/pasadena/parcels.pmtiles     lot shapes (committed, ~4 MB)
-web/public/data/pasadena/parcels.json        numbers per lot (committed, ~1 MB, ~180 kB gzipped)
+web/public/data/pasadena/parcels.json        numbers + engine inputs per lot (committed, ~1.6 MB, ~340 kB gzipped)
+web/public/data/pasadena/rules.json          rule files + state law for the browser engine
+        ▼  make golden           Python answers for 415 lots x 9 scenarios
+shared/fixtures/golden.json                  the browser engine must match these exactly
         ▼  web/ (Vite + TypeScript + MapLibre)  static site, no server
 ```
 
@@ -53,8 +57,12 @@ web/public/data/pasadena/parcels.json        numbers per lot (committed, ~1 MB, 
   has one function per constraint; `capacity.py` combines them and applies state law.
 - `pipeline/src/zce/capacity_step.py`: runs the engine over every lot.
 - `pipeline/src/zce/export_web.py`: writes the website's tiles and data.
+- `pipeline/src/zce/engine/scenario.py`: reform levers applied to copies of the rules.
+- `web/src/engine/`: the same engine and scenario logic in TypeScript, so the
+  browser recalculates every lot (~30 ms) when a lever changes.
+  `parity.test.ts` checks it against `shared/fixtures/golden.json`.
 - `web/src/`: the map. `map.ts` (layers and coloring), `colors.ts` (palettes and
-  classes), `legend.ts`, `data.ts`, `main.ts` (wires it together).
+  classes), `legend.ts`, `url.ts` (scenario ↔ shareable link), `main.ts`.
 
 ## Running it locally
 
@@ -81,6 +89,16 @@ cd web && npm install && npm run dev
 ```
 
 Then open the address Vite prints (http://127.0.0.1:5173 by default).
+
+`make test` runs the Python tests and the web tests (including the parity
+test). If you change the engine, a rule file or `zce/golden.py`, run
+`make golden` and commit the new `shared/fixtures/golden.json`;
+`test_golden.py` fails until you do.
+
+**npm and iCloud:** `web/node_modules` is a link to `web/node_modules.nosync`
+(so iCloud doesn't sync it). `npm install` can replace the link with a real
+folder; if that happens, run
+`cd web && rm -rf node_modules.nosync && mv node_modules node_modules.nosync && ln -s node_modules.nosync node_modules`.
 
 The download is about 120 MB and takes a minute or two. Raw data is never
 committed; `make download` fetches it again and records dates in

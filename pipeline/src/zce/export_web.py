@@ -24,6 +24,7 @@ import geopandas as gpd
 import pandas as pd
 
 from zce.config import DATA_DIR, REPO_ROOT, CityConfig
+from zce.rules.schema import load_state_overrides, load_zone_rules
 
 # Binding constraints as small integers to keep the JSON compact.
 # -1 means "not modeled". The order here is the order the website lists them.
@@ -81,6 +82,21 @@ def write_tiles(lots: gpd.GeoDataFrame, out_path, work_dir) -> None:
     )
 
 
+def write_rules(city: CityConfig, path) -> None:
+    """Rule files, state law and assumptions as one JSON file for the browser engine."""
+    rules = load_zone_rules(city.rules_dir)
+    state = load_state_overrides(city.state_law_file)
+    payload = {
+        "zones": {z: r.model_dump(mode="json") for z, r in rules.items()},
+        "state": state.model_dump(mode="json"),
+        "assumptions": {
+            "gross_sqft_per_unit": city.assumptions.gross_sqft_per_unit,
+            "parking_stall_sqft": city.assumptions.parking_stall_sqft,
+        },
+    }
+    path.write_text(json.dumps(payload, separators=(",", ":")))
+
+
 def export_city(city: CityConfig) -> None:
     lots = gpd.read_parquet(DATA_DIR / "out" / city.id / "capacity.parquet")
     # Stable ids: sort by parcel id so the same lot keeps its pid between runs.
@@ -91,8 +107,17 @@ def export_city(city: CityConfig) -> None:
     work_dir = DATA_DIR / "out" / city.id
     write_tiles(lots, web_dir / "parcels.pmtiles", work_dir)
 
+    write_rules(city, web_dir / "rules.json")
+
     zones = sorted(z for z in lots["zone_code"].dropna().unique())
     zone_index = {z: i for i, z in enumerate(zones)}
+    rule_zones = sorted(z for z in lots["rules_zone"].dropna().unique())
+    rule_index = {z: i for i, z in enumerate(rule_zones)}
+    # Overlays only matter to the engine as a set per lot; store each
+    # distinct set once and give lots an index into that list.
+    overlay_sets = sorted({tuple(o) if o is not None else () for o in lots["overlays"]})
+    overlay_index = {o: i for i, o in enumerate(overlay_sets)}
+
     binding = lots["binding_constraint"].map(lambda b: BINDING_CODES.index(b) if isinstance(b, str) else -1)
 
     ok = lots["model_status"] == "ok"
@@ -105,7 +130,12 @@ def export_city(city: CityConfig) -> None:
         "city": city.name,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "count": len(lots),
-        "codes": {"binding": BINDING_CODES, "zone": zones},
+        "codes": {
+            "binding": BINDING_CODES,
+            "zone": zones,
+            "rules_zone": rule_zones,
+            "overlay_sets": [list(o) for o in overlay_sets],
+        },
         "headline": {
             "existing_units": int(lots.loc[ok, "existing_units"].sum()),
             "local_units": int(lots.loc[ok, "local_units"].sum()),
@@ -124,7 +154,14 @@ def export_city(city: CityConfig) -> None:
             "max_units": _int_column(lots["max_units"]),
             "net_new_units": _int_column(lots["net_new_units"]),
             "binding": binding.astype(int).tolist(),
-            "lot_area_sqft": [round(v) for v in lots["lot_area_sqft"]],
+            # Engine inputs, already rounded in the capacity step, so the
+            # browser recomputes from exactly what Python used.
+            "lot_area_sqft": [int(v) for v in lots["lot_area_sqft"]],
+            "lot_width_ft": [float(v) for v in lots["lot_width_ft"]],
+            "lot_depth_ft": [float(v) for v in lots["lot_depth_ft"]],
+            "dist_major_transit_ft": _int_column(lots["dist_major_transit_ft"]),
+            "rules_zone": [rule_index.get(z, -1) if isinstance(z, str) else -1 for z in lots["rules_zone"]],
+            "overlay_set": [overlay_index[tuple(o) if o is not None else ()] for o in lots["overlays"]],
         },
     }
     # separators=(",", ":") drops spaces: about 20% smaller.
