@@ -1,6 +1,6 @@
 # Data is downloaded by the pipeline, never committed.
-data.nosync/
-data/
+/data.nosync/
+/data/
 
 # Python
 .venv*/
