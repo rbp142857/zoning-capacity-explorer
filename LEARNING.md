@@ -227,3 +227,66 @@ as a forecast is the most common mistake made with tools like this.
 writes the `__init__` for you, and `frozen=True` makes them read-only, so a
 constraint function can't accidentally change the lot another function sees.
 Docs: <https://docs.python.org/3/library/dataclasses.html>
+
+---
+
+## Milestone 4: the map
+
+### Vector tiles and PMTiles
+A web map can't download 30,000 lot shapes at once on a phone. *Vector tiles*
+cut the data into square tiles per zoom level, so the browser loads only the
+tiles on screen, simplified for that zoom. **PMTiles** packs all the tiles
+into one file. The browser asks for just the bytes of the tiles it needs
+using HTTP *range requests* (`Range: bytes=1000-2000`), so any static host
+works and no tile server is needed. `tippecanoe` builds the file from GeoJSON.
+Docs: <https://docs.protomaps.com/pmtiles/> · <https://github.com/felt/tippecanoe>
+
+### Geometry and numbers kept apart
+The tiles hold only each lot's shape and its `pid`. Everything the map shows
+lives in `parcels.json`, one array per field, where element *i* belongs to
+lot *i*. In milestone 5 the browser will recompute those numbers for a reform
+scenario without touching the tiles.
+
+### MapLibre GL JS, expressions and feature state
+MapLibre draws vector tiles with WebGL. Layer colors are *expressions*, small
+JSON programs like `["step", value, color0, 2, color1, 3, color2]` that
+MapLibre runs for every feature on the GPU-friendly side. `promoteId` tells
+MapLibre to use the `pid` property as each feature's id; `setFeatureState(id,
+{max: 4})` attaches a number to it; `["feature-state", "max"]` reads it in an
+expression. Changing a view only swaps the expression.
+Docs: <https://maplibre.org/maplibre-style-spec/expressions/> ·
+<https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#setfeaturestate>
+
+### Color-blind-safe map colors
+- **Amounts** (homes allowed) use one hue, light to dark, split into a few
+  classes. A rainbow would suggest categories that aren't there.
+- **Categories** (what limits a lot) use distinct hues, but on a map every
+  color can touch every other, so only a few hues stay distinguishable for
+  people with color-vision deficiency. We checked ours with a validator that
+  simulates color blindness (it computes color differences, rather than
+  trusting our eyes), and cap the map at three hues plus grays. Finer detail
+  comes from "Highlight one limit".
+- Color is never the only channel: every legend row has a label and a count,
+  and clicking a lot gives the numbers in words.
+Docs: <https://jfly.uni-koeln.de/color/> (Okabe & Ito, "Color Universal Design")
+
+### Light and dark mode
+CSS custom properties (`--surface`, `--ink`) hold the colors; a
+`prefers-color-scheme: dark` media query swaps them, and the map switches to
+a dark basemap. Dark mode reverses the blue ramp, so small values sit close
+to the dark background and large values stand out.
+Docs: <https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme>
+
+### Vite and TypeScript
+TypeScript is JavaScript with type annotations. `tsc --noEmit` checks them
+without producing files, catching mistakes like passing a string where a
+number is expected. Vite serves the site during development (reloading on
+save) and bundles it into `web/dist` for deployment. `base: "./"` makes asset
+paths relative, so the site works under GitHub Pages' `/<repo-name>/` path.
+Docs: <https://vitejs.dev/guide/> · <https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html>
+
+### Static hosting and GitHub Actions
+GitHub Pages serves plain files for free. A GitHub Actions *workflow*
+(`.github/workflows/deploy.yml`) runs on GitHub's servers on every push:
+install, build, upload `web/dist`, publish. A second workflow runs the tests.
+Docs: <https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pasadena Zoning Capacity</title>
+    <meta
+      name="description"
+      content="How many homes Pasadena's zoning and California state law allow on every lot, and what limits them."
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#controls">Skip to map controls</a>
+
+    <header class="topbar">
+      <h1>Pasadena Zoning Capacity</h1>
+      <p class="disclaimer" role="note">
+        <strong>Estimate for research and advocacy, not legal or zoning advice.</strong>
+        Always confirm with the City of Pasadena.
+      </p>
+    </header>
+
+    <main class="layout">
+      <aside id="controls" class="panel" aria-label="Map controls and summary">
+        <section class="headline" aria-labelledby="headline-title">
+          <h2 id="headline-title" class="visually-hidden">Citywide totals</h2>
+          <div class="stat">
+            <span class="stat-label">Homes on modeled lots today</span>
+            <span class="stat-value" id="stat-existing">–</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Legal maximum with state law</span>
+            <span class="stat-value" id="stat-max">–</span>
+            <span class="stat-note" id="stat-local"></span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Residential land where city zoning allows only one home</span>
+            <span class="stat-value" id="stat-single">–</span>
+            <span class="stat-note">before state law (SB 9 and ADUs)</span>
+          </div>
+        </section>
+
+        <fieldset class="view-toggle">
+          <legend>Color lots by</legend>
+          <label><input type="radio" name="view" value="max" checked /> Homes allowed now</label>
+          <label><input type="radio" name="view" value="net" /> New homes possible</label>
+          <label><input type="radio" name="view" value="binding" /> What limits it</label>
+        </fieldset>
+
+        <div class="highlight" id="highlight-wrap" hidden>
+          <label for="highlight">Highlight one limit</label>
+          <select id="highlight">
+            <option value="">(show all groups)</option>
+          </select>
+        </div>
+
+        <section aria-labelledby="legend-title">
+          <h2 id="legend-title" class="legend-title">Legend</h2>
+          <ul class="legend" id="legend"></ul>
+        </section>
+
+        <p class="fineprint">
+          Theoretical maximums: what the rules allow if a lot were rebuilt, not a prediction.
+          <span id="not-modeled-note"></span>
+          Keyboard: arrow keys pan the map, + and − zoom.
+        </p>
+      </aside>
+
+      <div class="map-wrap">
+        <div id="map" role="region" aria-label="Map of Pasadena lots colored by zoning capacity"></div>
+        <div id="status" class="map-status" role="status" aria-live="polite">Loading lots…</div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

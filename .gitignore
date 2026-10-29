@@ -9,7 +9,8 @@ __pycache__/
 .pytest_cache/
 
 # Web (milestone 4+)
-node_modules/
+node_modules
+node_modules.nosync/
 web/dist/
 
 .DS_Store

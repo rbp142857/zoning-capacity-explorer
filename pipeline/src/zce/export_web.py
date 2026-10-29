@@ -1,0 +1,135 @@
+"""Export step: capacity results -> files the static website loads.
+
+Two files, kept apart on purpose (see docs/PLAN.md, "Geometry and attributes
+are kept apart"):
+
+  web/public/data/<city>/parcels.pmtiles   lot shapes only, each with a numeric `pid`
+  web/public/data/<city>/parcels.json      every number the map shows, as columns
+                                           indexed by the same `pid`
+
+The map draws shapes from the tiles and colors them from the JSON, so a
+scenario change in milestone 5 just recomputes numbers in the browser; the
+tiles never change.
+
+These files are generated, small (a few MB), and committed, so the site can be
+deployed as plain static files without running the pipeline in CI.
+"""
+
+import json
+import shutil
+import subprocess
+from datetime import datetime, timezone
+
+import geopandas as gpd
+import pandas as pd
+
+from zce.config import DATA_DIR, REPO_ROOT, CityConfig
+
+# Binding constraints as small integers to keep the JSON compact.
+# -1 means "not modeled". The order here is the order the website lists them.
+BINDING_CODES = [
+    "state_law:sb9",
+    "state_law:adu",
+    "density",
+    "lot_area_per_unit",
+    "envelope",
+    "parking",
+    "use_not_permitted",
+]
+
+# Tile zoom range. Below z11 a whole city is a few pixels wide, and parcels
+# are too small to see; the map starts at about z12.5.
+MIN_ZOOM, MAX_ZOOM = 11, 16
+
+
+def _int_column(series: pd.Series) -> list:
+    """Nullable integers -> JSON list with null for unknown."""
+    return [None if pd.isna(v) else int(v) for v in series]
+
+
+def write_tiles(lots: gpd.GeoDataFrame, out_path, work_dir) -> None:
+    """Write lot shapes (with only `pid`) to PMTiles using tippecanoe."""
+    if shutil.which("tippecanoe") is None:
+        raise RuntimeError("tippecanoe is not installed: brew install tippecanoe")
+    # Web maps use longitude/latitude (EPSG:4326) input.
+    shapes = lots[["pid", "geometry"]].to_crs("EPSG:4326")
+    geojson = work_dir / "parcels_for_tiles.geojson"
+    shapes.to_file(geojson, driver="GeoJSON")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(
+        [
+            "tippecanoe",
+            "--force",
+            f"--output={out_path}",
+            "--layer=parcels",
+            f"--minimum-zoom={MIN_ZOOM}",
+            f"--maximum-zoom={MAX_ZOOM}",
+            # Each shape keeps its `pid` as a property; the browser promotes
+            # it to the feature id (MapLibre `promoteId`). We don't use
+            # tippecanoe's id option because vector tiles reserve id 0.
+            # Never drop or merge lots: a missing lot would look like a lot
+            # with no capacity. Simplify shapes instead to keep tiles small.
+            "--no-feature-limit",
+            "--no-tile-size-limit",
+            "--simplification=4",
+            "--no-tiny-polygon-reduction",
+            "--detect-shared-borders",
+            "--quiet",
+            str(geojson),
+        ],
+        check=True,
+    )
+
+
+def export_city(city: CityConfig) -> None:
+    lots = gpd.read_parquet(DATA_DIR / "out" / city.id / "capacity.parquet")
+    # Stable ids: sort by parcel id so the same lot keeps its pid between runs.
+    lots = lots.sort_values("parcel_id").reset_index(drop=True)
+    lots["pid"] = lots.index.astype(int)
+
+    web_dir = REPO_ROOT / "web" / "public" / "data" / city.id
+    work_dir = DATA_DIR / "out" / city.id
+    write_tiles(lots, web_dir / "parcels.pmtiles", work_dir)
+
+    zones = sorted(z for z in lots["zone_code"].dropna().unique())
+    zone_index = {z: i for i, z in enumerate(zones)}
+    binding = lots["binding_constraint"].map(lambda b: BINDING_CODES.index(b) if isinstance(b, str) else -1)
+
+    ok = lots["model_status"] == "ok"
+    # Share of residential land where local zoning allows only one home
+    # (same definition as capacity_report.md).
+    residential = ok & (lots["binding_constraint"] != "use_not_permitted")
+    one_home = residential & (lots["local_units"] <= 1)
+    single_home_share = lots.loc[one_home, "lot_area_sqft"].sum() / lots.loc[residential, "lot_area_sqft"].sum()
+    payload = {
+        "city": city.name,
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "count": len(lots),
+        "codes": {"binding": BINDING_CODES, "zone": zones},
+        "headline": {
+            "existing_units": int(lots.loc[ok, "existing_units"].sum()),
+            "local_units": int(lots.loc[ok, "local_units"].sum()),
+            "max_units": int(lots.loc[ok, "max_units"].sum()),
+            "net_new_units": int(lots.loc[ok, "net_new_units"].sum()),
+            "lots_modeled": int(ok.sum()),
+            "lots_not_modeled": int((~ok).sum()),
+            "single_home_land_share": round(float(single_home_share), 3),
+        },
+        # Columns: element i belongs to the lot with pid i.
+        "columns": {
+            "parcel_id": lots["parcel_id"].tolist(),
+            "zone": [zone_index.get(z, -1) if isinstance(z, str) else -1 for z in lots["zone_code"]],
+            "existing_units": _int_column(lots["existing_units"]),
+            "local_units": _int_column(lots["local_units"]),
+            "max_units": _int_column(lots["max_units"]),
+            "net_new_units": _int_column(lots["net_new_units"]),
+            "binding": binding.astype(int).tolist(),
+            "lot_area_sqft": [round(v) for v in lots["lot_area_sqft"]],
+        },
+    }
+    # separators=(",", ":") drops spaces: about 20% smaller.
+    (web_dir / "parcels.json").write_text(json.dumps(payload, separators=(",", ":")))
+
+    sizes = {p.name: p.stat().st_size for p in web_dir.iterdir()}
+    for name, size in sizes.items():
+        print(f"  {name}: {size / 1e6:.1f} MB")
