@@ -188,8 +188,12 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
     },
   };
 
+  // Add our layers as soon as the basemap's style is parsed ("style.load"),
+  // not on "load", which also waits for every basemap tile, font and icon.
+  // If the free basemap is slow or down, the lots still appear.
+  map.on("error", (e) => console.warn("Map error:", e.error?.message ?? e));
   return new Promise((resolve) => {
-    map.once("load", () => {
+    map.once("style.load", () => {
       addLotLayers();
       resolve(controller);
     });
