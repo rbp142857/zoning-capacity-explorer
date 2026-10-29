@@ -4,6 +4,8 @@ An open-source tool that shows what zoning legally allows on every parcel in a
 city, and how much housing a proposed rule change would enable. The pilot city
 is **Pasadena, California**.
 
+**Live site: <https://rbp142857.github.io/zoning-capacity-explorer/>**
+
 > **Disclaimer:** this is an estimate for research and advocacy, not legal or
 > zoning advice. Always confirm with the city before relying on it.
 
@@ -18,7 +20,7 @@ is **Pasadena, California**.
 | 5. Scenario engine in the browser | ✅ 9 levers, shareable links, Python/TypeScript parity test |
 | 6. Charts, lot details, address search, printable summary | ✅ |
 | 7. Realistic redevelopment estimate | ✅ 5 screens, shown beside theoretical everywhere |
-| 8. Validation, methodology, deploy | ✅ validated; ready to deploy (needs a GitHub repo) |
+| 8. Validation, methodology, deploy | ✅ live on GitHub Pages |
 | 9. Developer pro forma (optional) | planned |
 
 Reports: [data quality](reports/pasadena/quality_report.md) ·
