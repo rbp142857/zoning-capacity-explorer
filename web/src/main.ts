@@ -7,13 +7,18 @@
 import maplibregl from "maplibre-gl";
 
 import "./style.css";
+import { renderBarChart } from "./charts";
 import { BINDING_LABELS } from "./colors";
 import { type ParcelData, loadJson } from "./data";
 import { type Results, buildLotInputs, runScenario } from "./engine/run";
 import { BASELINE, type Scenario, isBaseline } from "./engine/scenario";
 import type { RulesFile } from "./engine/types";
+import { renderLotDetails } from "./details";
 import { renderLegend } from "./legend";
 import { createMap, currentTheme, type View } from "./map";
+import { describeScenario, renderPrintSummary } from "./print";
+import { type AddressIndex, setupSearch } from "./search";
+import { byDistrict, byTransitDistance } from "./summary";
 import { LEVERS, scenarioFromHash, scenarioToHash } from "./url";
 
 const CITY = "pasadena";
@@ -98,7 +103,18 @@ function popupHtml(data: ParcelData, pid: number, now: Results, today: Results, 
   const limits = reform
     ? `<div class="limit">Limit today: ${limit(today)}</div><div class="limit scenario-col">Limit under scenario: ${limit(now)}</div>`
     : `<div class="limit">Limit: ${limit(today)}</div>`;
-  return `<div class="popup">${header}<dl>${rows.join("")}</dl>${limits}</div>`;
+  return `<div class="popup">${header}<dl>${rows.join("")}</dl>${limits}
+    <button type="button" class="popup-details">All limits and code sections</button></div>`;
+}
+
+function renderCharts(data: ParcelData, now: Results, today: Results, reform: boolean) {
+  for (const [id, title, rows] of [
+    ["chart-district", "New homes possible, by council district", byDistrict(data, today, now)],
+    ["chart-transit", "New homes possible, by distance to a major transit stop", byTransitDistance(data, today, now)],
+  ] as const) {
+    const el = $(id);
+    renderBarChart(el, { title, valueLabel: "new homes possible", rows: [...rows], showScenario: reform }, currentTheme(), el.clientWidth || 300);
+  }
 }
 
 // --- Main ----------------------------------------------------------------------------
@@ -143,6 +159,26 @@ async function main() {
       renderLegend(legend, data, view, now, today, currentTheme(), code === null ? null : data.codes.binding[code]);
     };
 
+    // --- Lot details panel ---
+    let selectedPid: number | null = null;
+    const details = $("details");
+    const showDetails = (pid: number, focus = false) => {
+      selectedPid = pid;
+      controller.select(pid);
+      renderLotDetails($("details-body"), pid, data, inputs, rules, scenario, !isBaseline(scenario), BASELINE);
+      details.hidden = false;
+      if (focus) {
+        details.focus();
+        details.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      }
+    };
+    $("details-close").addEventListener("click", () => {
+      details.hidden = true;
+      selectedPid = null;
+      controller.select(null);
+      $("search-input").focus();
+    });
+
     const applyScenario = (next: Scenario, updateUrl = true) => {
       scenario = next;
       const t0 = performance.now();
@@ -151,6 +187,8 @@ async function main() {
       showHeadline(data, scenario, now, today);
       controller.setResults(now, today);
       redraw();
+      renderCharts(data, now, today, !isBaseline(scenario));
+      if (selectedPid !== null) showDetails(selectedPid);
       popup.remove();
       if (updateUrl) history.replaceState(null, "", scenarioToHash(scenario) || window.location.pathname);
       console.debug(`Scenario recomputed in ${Math.round(performance.now() - t0)} ms`);
@@ -183,15 +221,74 @@ async function main() {
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", redraw);
     redraw();
 
+    renderCharts(data, now, today, !isBaseline(scenario));
+    let chartWidth = $("chart-district").clientWidth;
+    window.addEventListener("resize", () => {
+      if ($("chart-district").clientWidth !== chartWidth) {
+        chartWidth = $("chart-district").clientWidth;
+        renderCharts(data, now, today, !isBaseline(scenario));
+      }
+    });
+
     const popup = new maplibregl.Popup({ maxWidth: "300px", focusAfterOpen: true });
-    controller.onLotClick((pid, lngLat) => {
+    const openLot = (pid: number, lngLat: maplibregl.LngLatLike) => {
       popup.setLngLat(lngLat).setHTML(popupHtml(data, pid, now, today, !isBaseline(scenario))).addTo(controller.map);
+      popup.getElement()?.querySelector(".popup-details")?.addEventListener("click", () => showDetails(pid, true));
+      showDetails(pid);
+    };
+    controller.onLotClick((pid, lngLat) => {
+      openLot(pid, lngLat);
       // On phones the map is short, so move the clicked lot near the top to
       // leave room for the popup below it.
       if (window.matchMedia("(max-width: 760px)").matches) {
         const height = controller.map.getContainer().clientHeight;
         controller.map.easeTo({ center: lngLat, offset: [0, -(height / 2 - 40)], duration: 300 });
       }
+    });
+
+    // --- Address search ---
+    setupSearch(
+      $<HTMLInputElement>("search-input"),
+      $<HTMLUListElement>("search-list"),
+      $("search-status"),
+      () => loadJson<AddressIndex>(`${DATA_DIR}/addresses.json`),
+      data.columns.parcel_id,
+      (hit) => {
+        controller.map.flyTo({ center: [hit.lng, hit.lat], zoom: 17, duration: 800 });
+        controller.map.once("moveend", () => openLot(hit.pid, [hit.lng, hit.lat]));
+        showDetails(hit.pid);
+      },
+    );
+
+    // --- Printable summary ---
+    const fillPrint = () => {
+      const reform = !isBaseline(scenario);
+      let mapImage: string | null = null;
+      try {
+        mapImage = controller.map.getCanvas().toDataURL("image/png");
+      } catch {
+        mapImage = null; // a blank or tainted canvas: print without the map
+      }
+      renderPrintSummary($("print-summary"), {
+        city: "Pasadena",
+        reform,
+        levers: describeScenario(form()),
+        existing: today.totals.existing,
+        todayMax: today.totals.max,
+        scenarioMax: now.totals.max,
+        todayNet: today.totals.net,
+        scenarioNet: now.totals.net,
+        byDistrict: byDistrict(data, today, now),
+        byTransit: byTransitDistance(data, today, now),
+        mapImage,
+        url: window.location.href,
+        generatedAt: new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }),
+      });
+    };
+    window.addEventListener("beforeprint", fillPrint);
+    $("print").addEventListener("click", () => {
+      fillPrint();
+      window.print();
     });
 
     // Sanity check in development: the browser's "today" must equal the

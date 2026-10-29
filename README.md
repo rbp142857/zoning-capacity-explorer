@@ -16,8 +16,9 @@ is **Pasadena, California**.
 | 3. Rule files + capacity engine | ✅ 16 zones, state law (SB 9, ADU, AB 2097), 69 tests |
 | 4. Static map | ✅ MapLibre + PMTiles, 3 views, legend, deploy workflow |
 | 5. Scenario engine in the browser | ✅ 9 levers, shareable links, Python/TypeScript parity test |
-| 6. Charts, parcel panel, address search, printable summary | next |
-| 7–9. Redevelopment estimate, docs, pro forma | planned |
+| 6. Charts, lot details, address search, printable summary | ✅ |
+| 7. Realistic redevelopment estimate | next |
+| 8–9. Validation, docs, deploy; pro forma (optional) | planned |
 
 Latest reports: [data quality](reports/pasadena/quality_report.md) ·
 [capacity](reports/pasadena/capacity_report.md) · method: [METHODOLOGY.md](METHODOLOGY.md) (draft)
@@ -41,6 +42,7 @@ reports/pasadena/capacity_report.md          totals by zone, district, transit
 web/public/data/pasadena/parcels.pmtiles     lot shapes (committed, ~4 MB)
 web/public/data/pasadena/parcels.json        numbers + engine inputs per lot (committed, ~1.6 MB, ~340 kB gzipped)
 web/public/data/pasadena/rules.json          rule files + state law for the browser engine
+web/public/data/pasadena/addresses.json      address search index (loaded on first search)
         ▼  make golden           Python answers for 415 lots x 9 scenarios
 shared/fixtures/golden.json                  the browser engine must match these exactly
         ▼  web/ (Vite + TypeScript + MapLibre)  static site, no server
@@ -61,8 +63,11 @@ shared/fixtures/golden.json                  the browser engine must match these
 - `web/src/engine/`: the same engine and scenario logic in TypeScript, so the
   browser recalculates every lot (~30 ms) when a lever changes.
   `parity.test.ts` checks it against `shared/fixtures/golden.json`.
-- `web/src/`: the map. `map.ts` (layers and coloring), `colors.ts` (palettes and
-  classes), `legend.ts`, `url.ts` (scenario ↔ shareable link), `main.ts`.
+- `web/src/`: the site. `map.ts` (layers and coloring), `colors.ts` (palettes and
+  classes), `legend.ts`, `url.ts` (scenario ↔ shareable link), `charts.ts` and
+  `summary.ts` (bar charts by district and transit distance), `details.ts` (lot
+  panel with code citations), `search.ts` (address search), `print.ts`
+  (one-page summary), `main.ts` (wires it together).
 
 ## Running it locally
 

@@ -8,7 +8,7 @@ export interface ParcelData {
   city: string;
   generated_at: string;
   count: number;
-  codes: { binding: string[]; zone: string[]; rules_zone: string[]; overlay_sets: string[][] };
+  codes: { binding: string[]; zone: string[]; rules_zone: string[]; overlay_sets: string[][]; district: string[] };
   headline: {
     existing_units: number;
     local_units: number;
@@ -32,6 +32,7 @@ export interface ParcelData {
     dist_major_transit_ft: (number | null)[];
     rules_zone: number[]; // index into codes.rules_zone, -1 = not modeled
     overlay_set: number[]; // index into codes.overlay_sets
+    district: number[]; // index into codes.district, -1 = none
   };
 }
 

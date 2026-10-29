@@ -22,6 +22,27 @@
 
     <main class="layout">
       <aside id="controls" class="panel" aria-label="Map controls and summary">
+        <div class="search" role="search">
+          <label for="search-input">Find an address or parcel number</label>
+          <input
+            id="search-input"
+            type="text"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-controls="search-list"
+            autocomplete="off"
+            placeholder="e.g. 100 N Garfield Ave"
+          />
+          <ul id="search-list" role="listbox" aria-label="Matching addresses" hidden></ul>
+          <span id="search-status" class="visually-hidden" role="status" aria-live="polite"></span>
+        </div>
+
+        <section id="details" class="details" aria-labelledby="details-title" hidden tabindex="-1">
+          <button type="button" class="details-close" id="details-close" aria-label="Close lot details">×</button>
+          <div id="details-body"></div>
+        </section>
+
         <section class="headline" aria-labelledby="headline-title" aria-live="polite">
           <h2 id="headline-title" class="visually-hidden">Citywide totals</h2>
           <div class="stat">
@@ -153,6 +174,14 @@
           <ul class="legend" id="legend"></ul>
         </section>
 
+        <section class="charts" aria-labelledby="charts-title">
+          <h2 id="charts-title" class="legend-title">Where new homes could go</h2>
+          <div class="chart" id="chart-district"></div>
+          <div class="chart" id="chart-transit"></div>
+        </section>
+
+        <button type="button" id="print" class="print-button">Print a one-page summary</button>
+
         <p class="fineprint">
           Theoretical maximums: what the rules allow if a lot were rebuilt, not a prediction.
           <span id="not-modeled-note"></span>
@@ -165,6 +194,8 @@
         <div id="status" class="map-status" role="status" aria-live="polite">Loading lots…</div>
       </div>
     </main>
+
+    <section id="print-summary" class="print-summary" aria-hidden="true"></section>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

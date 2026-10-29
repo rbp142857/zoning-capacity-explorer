@@ -339,3 +339,50 @@ Vitest is a test runner for TypeScript that understands Vite projects.
 `describe`/`it`/`expect` play the role of pytest's test functions and
 `assert`.
 Docs: <https://vitest.dev/guide/>
+
+---
+
+## Milestone 6: charts, lot details, search, print
+
+### Accessible charts without a library
+The two bar charts are hand-written SVG: a `<path>` per bar, text labels, and
+nothing else, so the page stays small. Accessibility comes from three
+things: each bar group is focusable (`tabindex="0"`) with an `aria-label`
+that reads the numbers out, hover *and* keyboard focus show the same
+tooltip, and every chart has a "Show as table" view. Text uses the ink
+colors, never the series color, so it stays readable.
+Docs: <https://www.w3.org/WAI/tutorials/images/complex/> ·
+<https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths>
+
+### The ARIA combobox pattern
+Address search is a text box (`role="combobox"`) controlling a list
+(`role="listbox"`) of options (`role="option"`). Arrow keys move a "virtual"
+focus: real focus stays in the text box, and `aria-activedescendant` tells
+screen readers which option is highlighted. A polite live region announces
+"5 matches". Options react to `mousedown`, not `click`, because a click
+blurs the text box first and the list would close before the click lands.
+Docs: <https://www.w3.org/WAI/ARIA/apg/patterns/combobox/>
+
+### Lazy loading
+The address list is 340 kB, more than all the other data. Most visitors
+never search, so it's downloaded the first time the search box gets focus or
+a keystroke. Both triggers share one promise, so it's fetched once even if
+both fire. (A bug where typing before focus finished loading did nothing
+was fixed this way.)
+Docs: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise>
+
+### Print stylesheets
+`@media print { ... }` CSS applies only when printing. We hide the whole
+interactive page and show a separate summary section filled in on the
+`beforeprint` event. The map snapshot comes from `canvas.toDataURL()`, which
+only works if MapLibre keeps its last frame (`preserveDrawingBuffer: true`).
+Docs: <https://developer.mozilla.org/en-US/docs/Web/CSS/@media#print> ·
+<https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeprint_event>
+
+### Testing a property, not just examples
+Most tests check one input against one hand-calculated answer. A *property*
+test checks something that must hold for many inputs: here, "a lever that
+loosens a rule never lowers any lot's capacity", run over 7 lots × 8 levers.
+It caught a real bug (allowing duplexes switched off the ADU option). The
+`hypothesis` library takes this further by generating the inputs for you.
+Docs: <https://hypothesis.readthedocs.io/en/latest/quickstart.html>

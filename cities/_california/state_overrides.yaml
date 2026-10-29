@@ -25,10 +25,10 @@ laws:
       section: Cal. Gov. Code §§66314-66342 (recodified from §65852.2 by SB 477, effective 2025)
       url: https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=GOV&division=1.&title=7.&part=&chapter=13.&article=2.
     params:
-      units_added_to_single_family: 2  # 1 ADU + 1 JADU
+      units_added_to_single_family: 2  # 1 ADU + 1 JADU, on a lot with one house
       applies_to_families: [single_family, multifamily, commercial]
     assumptions:
-      - Applied only where local zoning allows exactly one unit on the lot (a single-family home).
+      - "Applied wherever local zoning fits at least one home: the owner may build a house plus an ADU and a junior ADU instead of what local density allows. It's an alternative path (the larger of the two counts), not added on top."
       - "Multifamily lots can also add ADUs under state law (conversions of non-living space and up to 8 detached ADUs, SB 1211). Not modeled yet, so multifamily ADU capacity is undercounted."
 
   - id: sb9

@@ -97,6 +97,31 @@ def write_rules(city: CityConfig, path) -> None:
     path.write_text(json.dumps(payload, separators=(",", ":")))
 
 
+def write_addresses(lots: gpd.GeoDataFrame, path) -> None:
+    """Address search index, loaded by the browser only when someone searches.
+
+    Situs (property) addresses only; owner mailing addresses are never in
+    our data. Each entry has the lot's pid and a point inside the lot to fly
+    the map to. Sorted by address so the list reads naturally.
+    """
+    has_address = lots["address"].fillna("").str.strip() != ""
+    sub = lots[has_address]
+    points = sub.geometry.representative_point().to_crs("EPSG:4326")
+    # "960 SAN PASQUAL ST PASADENA CA 91106" -> "960 SAN PASQUAL ST, 91106":
+    # every address here is in Pasadena, so the city name is noise.
+    clean = (
+        sub["address"].str.strip().str.replace(r"\s+PASADENA\s+CA\s+", ", ", regex=True).str.replace(r"\s+", " ", regex=True)
+    )
+    order = clean.argsort(kind="stable")
+    payload = {
+        "address": clean.iloc[order].tolist(),
+        "pid": sub["pid"].iloc[order].astype(int).tolist(),
+        "lng": [round(p.x, 6) for p in points.iloc[order]],
+        "lat": [round(p.y, 6) for p in points.iloc[order]],
+    }
+    path.write_text(json.dumps(payload, separators=(",", ":")))
+
+
 def export_city(city: CityConfig) -> None:
     lots = gpd.read_parquet(DATA_DIR / "out" / city.id / "capacity.parquet")
     # Stable ids: sort by parcel id so the same lot keeps its pid between runs.
@@ -111,6 +136,8 @@ def export_city(city: CityConfig) -> None:
 
     zones = sorted(z for z in lots["zone_code"].dropna().unique())
     zone_index = {z: i for i, z in enumerate(zones)}
+    districts = sorted(d for d in lots["district"].dropna().unique())
+    district_index = {d: i for i, d in enumerate(districts)}
     rule_zones = sorted(z for z in lots["rules_zone"].dropna().unique())
     rule_index = {z: i for i, z in enumerate(rule_zones)}
     # Overlays only matter to the engine as a set per lot; store each
@@ -134,6 +161,7 @@ def export_city(city: CityConfig) -> None:
             "binding": BINDING_CODES,
             "zone": zones,
             "rules_zone": rule_zones,
+            "district": districts,
             "overlay_sets": [list(o) for o in overlay_sets],
         },
         "headline": {
@@ -162,10 +190,12 @@ def export_city(city: CityConfig) -> None:
             "dist_major_transit_ft": _int_column(lots["dist_major_transit_ft"]),
             "rules_zone": [rule_index.get(z, -1) if isinstance(z, str) else -1 for z in lots["rules_zone"]],
             "overlay_set": [overlay_index[tuple(o) if o is not None else ()] for o in lots["overlays"]],
+            "district": [district_index.get(d, -1) if isinstance(d, str) else -1 for d in lots["district"]],
         },
     }
     # separators=(",", ":") drops spaces: about 20% smaller.
     (web_dir / "parcels.json").write_text(json.dumps(payload, separators=(",", ":")))
+    write_addresses(lots, web_dir / "addresses.json")
 
     sizes = {p.name: p.stat().st_size for p in web_dir.iterdir()}
     for name, size in sizes.items():

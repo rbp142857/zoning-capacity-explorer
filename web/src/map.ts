@@ -85,6 +85,8 @@ export interface MapController {
   setView(view: View, highlightCode?: number | null): void;
   setResults(scenario: Results, today: Results): void;
   onLotClick(handler: (pid: number, lngLat: maplibregl.LngLat) => void): void;
+  /** Outline one lot (the one shown in the details panel), or none. */
+  select(pid: number | null): void;
 }
 
 export function createMap(container: string, data: ParcelData, tilesUrl: string): Promise<MapController> {
@@ -92,6 +94,7 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
   let view: View = "max";
   let highlight: number | null = null;
   let latest: { scenario: Results; today: Results } | null = null;
+  let selected: number | null = null;
   const clickHandlers: ((pid: number, lngLat: maplibregl.LngLat) => void)[] = [];
 
   const map = new maplibregl.Map({
@@ -102,6 +105,9 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
     minZoom: 11,
     maxZoom: 18,
     attributionControl: { customAttribution: DATA_ATTRIBUTION, compact: true },
+    // Keep the last frame readable so the print summary can include a
+    // snapshot of the map (canvas.toDataURL()).
+    preserveDrawingBuffer: true,
   });
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
   map.addControl(new maplibregl.ScaleControl({ unit: "imperial" }), "bottom-left");
@@ -133,6 +139,16 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
         "line-color": NEUTRAL[theme].outline,
         "line-width": ["interpolate", ["linear"], ["zoom"], 14, 0.3, 17, 1.2],
       },
+    });
+    // Thick outline around the selected lot, in the ink color so it reads
+    // on every fill color.
+    map.addLayer({
+      id: "lots-selected",
+      type: "line",
+      source: SOURCE,
+      "source-layer": SOURCE_LAYER,
+      filter: ["==", ["get", "pid"], selected ?? -1],
+      paint: { "line-color": theme === "dark" ? "#f0efec" : "#0b0b0b", "line-width": 3 },
     });
     applyFeatureState();
   }
@@ -195,6 +211,10 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
     },
     onLotClick(handler) {
       clickHandlers.push(handler);
+    },
+    select(pid) {
+      selected = pid;
+      if (map.getLayer("lots-selected")) map.setFilter("lots-selected", ["==", ["get", "pid"], pid ?? -1]);
     },
   };
 

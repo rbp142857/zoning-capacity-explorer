@@ -116,3 +116,23 @@ def test_more_adus(base):
     lot = Lot(7_200, 60, 120, overlays=("LD-1",), dist_major_transit_ft=9_000)
     assert run(base, "RS-6", lot).max_units == 3
     assert run(base, "RS-6", lot, adu_units_added=3).max_units == 4
+
+
+@pytest.mark.parametrize("levers", [
+    {"sf_units_per_lot": 2}, {"sf_units_per_lot": 4}, {"sf_min_lot_sqft": 2_500},
+    {"parking_per_unit": 0}, {"parking_exempt_radius_ft": 5_280},
+    {"transit_extra_stories": 2, "transit_density_multiplier": 2}, {"housing_in_cg": True}, {"adu_units_added": 3},
+])
+@pytest.mark.parametrize("zone, lot", [
+    ("RS-6", Lot(4_952, 45, 110, overlays=("LD-1",), dist_major_transit_ft=5_413)),
+    ("RS-6", Lot(7_200, 60, 120, dist_major_transit_ft=9_000)),
+    ("RS-6", Lot(7_200, 60, 120, overlays=("LD-1",), dist_major_transit_ft=9_000)),
+    ("RS-2", Lot(20_000, 100, 200, dist_major_transit_ft=1_000)),
+    ("RM-12", Lot(8_000, 80, 100, dist_major_transit_ft=3_000)),
+    ("RM-32", Lot(15_000, 100, 150, dist_major_transit_ft=1_000)),
+    ("CG", Lot(13_600, 80, 170, dist_major_transit_ft=1_000)),
+])
+def test_permissive_levers_never_reduce_capacity(base, zone, lot, levers):
+    # Every lever only loosens rules, so no lot may end up with fewer homes.
+    # (This caught a bug where legalizing duplexes switched off the ADU path.)
+    assert run(base, zone, lot, **levers).max_units >= run(base, zone, lot).max_units

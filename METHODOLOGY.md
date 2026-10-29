@@ -53,8 +53,11 @@ not zeroed**, because existing lots can still be built on.
 California law overrides city zoning in several ways. We calculate local
 zoning first, then each state law, and keep both numbers.
 
-- **ADUs (Gov. Code §66314 and following):** a lot with one house can add a
-  backyard unit and a junior unit inside the house, for 3 homes in total.
+- **ADUs (Gov. Code §66314 and following):** any lot where a house fits can
+  have that house plus a backyard unit and a junior unit inside the house,
+  for 3 homes in total. We count this as an alternative to the local answer
+  (whichever is larger), so it also applies in zones like RM-12 where the
+  city allows 2.
 - **SB 9 (Gov. Code §65852.21, §66411.7):** in single-family zones, two homes
   per lot; or a one-time split into two lots with two homes each, for 4 in
   total, if the lot is at least 2,400 sq ft. SB 9 does not apply in
@@ -97,8 +100,8 @@ your browser. Each lever, and what we assume when we apply it:
 | ADU homes per house | The ADU path adds 3 or 4 homes to a single-family lot instead of 2. |
 
 A finding the tool makes visible: **legalizing fourplexes in single-family
-zones adds little on its own** (about 900 homes citywide, even with parking
-minimums removed). SB 9 already allows up to four homes on most such lots,
+zones adds little on its own** (about 2,400 homes citywide, even with parking
+minimums removed, on top of roughly 114,000 already allowed). SB 9 already allows up to four homes on most such lots,
 and the city's floor-area limits mean a typical 7,200 sq ft lot fits only two
 homes of average size under local rules. A fourplex reform that also raised
 the floor-area limit would show a different result.
@@ -106,3 +109,12 @@ the floor-area limit would show a different result.
 The browser and the Python pipeline run the same calculations: an automated
 test checks that both give identical answers for 415 lots under 9 scenarios,
 and in development the page checks every lot under today's rules.
+
+## 6. Checks that guard the numbers
+
+- **Python and browser agree:** 415 lots x 9 scenarios are computed by both
+  engines and compared exactly on every test run.
+- **Reforms only add:** every lever loosens a rule, so a test checks that no
+  lever lowers any lot's capacity. This test caught a real bug: allowing
+  duplexes used to switch off the ADU option (house + ADU + junior ADU) on
+  some lots, so a "more permissive" scenario lowered their capacity.

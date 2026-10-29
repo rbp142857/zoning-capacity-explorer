@@ -76,7 +76,7 @@ export function computeCapacity(
   let bestBinding = binding;
 
   const adu = getLaw(state, "adu");
-  if (adu && r.residential_allowed.value && (adu.params.applies_to_families as string[]).includes(r.family) && units === 1) {
+  if (adu && r.residential_allowed.value && (adu.params.applies_to_families as string[]).includes(r.family) && units >= 1) {
     const aduUnits = 1 + Math.trunc(adu.params.units_added_to_single_family as number);
     limits.state_adu = aduUnits;
     if (aduUnits > bestUnits) [bestUnits, bestBinding] = [aduUnits, "state_law:adu"];

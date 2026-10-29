@@ -93,9 +93,12 @@ def compute_capacity(
 
     best_units, best_binding = units, binding
 
-    # ADU path: a single-family home can add one ADU and one junior ADU.
+    # ADU path: wherever a house fits (local capacity >= 1), the owner can
+    # build one house plus one ADU and one junior ADU, whatever the local
+    # density. It's an alternative to the local answer, not added to it, so
+    # allowing more local homes can never make this path disappear.
     adu = state.get("adu") if state else None
-    if adu and rules.residential_allowed.value and rules.family in adu.params["applies_to_families"] and units == 1:
+    if adu and rules.residential_allowed.value and rules.family in adu.params["applies_to_families"] and units >= 1:
         adu_units = 1 + int(adu.params["units_added_to_single_family"])
         limits["state_adu"] = adu_units
         if adu_units > best_units:
