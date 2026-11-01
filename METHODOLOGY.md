@@ -488,8 +488,8 @@ use R4's 400. Their numbers assume an all-residential building.
   base zoning, so these are base-zoning numbers: too low for what can really be
   built. This is the next thing to model.
 - **Surface parking is conservative.** The engine assumes parking on the ground,
-  but many LA apartments park under the building. Parking is the limit on 17,000+
-  lots outside the half-mile transit area, which understates them.
+  but many LA apartments park under the building. Parking is the limit on about
+  11,200 lots outside the half-mile transit area, which understates them.
 - **Parking of 1.5 spaces per home** is the code's figure for 3 habitable rooms;
   larger homes need 2, smaller ones 1.
 - **Rent-stabilized buildings aren't identified.** Replacing them has its own
