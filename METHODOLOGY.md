@@ -449,34 +449,68 @@ housing count still needs its manual download.
 
 ## 14. Los Angeles (in progress)
 
-LA is being added in steps and is not on the site yet. So far it has its
-zoning adapter and rule files for its single-family zones. Every other lot
-(apartments, commercial, downtown, specific plans) is "not modeled".
+LA is being added in steps and is not on the site yet. It has a zoning adapter
+and 85 rule files from the Los Angeles Municipal Code (American Legal, read
+November 1, 2026), covering 651,968 of its 672,322 lots (97%). A lot looks for a
+file named for its zone and height district, then its zone alone, so `R1-1` and
+`R1-1XL` use `R1`, while `R3-1XL` has its own file because the height district
+changes the floor area.
 
-**Rules.** 21 zone files from the Los Angeles Municipal Code (American Legal,
-read November 1, 2026): R1, RS, RA, RE (a map showing only RE means RE11), RE9,
-RE11, RE15, RE20, RE40, A1, A2, R1V1, R1V2, R1V3, R1R3, R1H1, RU, RZ2.5, RZ3,
-RZ4 and RW1. A lot looks for a file named for its zone and height district, then
-its zone alone, so `R1-1` and `R1-1XL` both use `R1`. These cover 436,041 lots.
+**Not modeled yet:** downtown's new code (Chapter 1A, 16,221 lots) and specific
+plan zones. These lots hold 118,819 of the city's homes, and 13% of apartment
+homes permitted since 2018 are in Chapter 1A, so this gap matters more than its
+lot count suggests.
+
+**Zones.**
+
+- **Single-family:** R1, RS, RA, RE (a map showing only RE means RE11), RE9, RE11,
+  RE15, RE20, RE40, A1, A2, R1V1, R1V2, R1V3, R1R3, R1H1, RU, RZ2.5, RZ3, RZ4, RW1.
+- **Apartments:** R2, RD1.5 through RD6, R3, R4, R5, RAS3, RAS4.
+- **Commercial, with homes allowed:** CR, C1, C1.5, C2, C4, C5, CM.
+- **No housing:** MR1, M1, MR2, M2, M3, P, OS, PF.
+
+**How floor area works in LA.** It's a multiple of the "buildable area", the lot
+minus required yards (§12.21.1 A), not of the lot. Commercial Height District 1
+is 1.5 times, other Height District 1 zones are 3 times, Height District 2 is 6, 3
+is 10, 4 is 13. Height District 1XL allows two stories. In apartment zones the
+multiple equals the engine's story count. In commercial Height District 1 the
+multiple is its own field, `max_buildable_multiple`, because the 1.5 limit isn't a
+story count and the parking math needs real stories.
+
+**Homes in commercial zones.** Commercial zones borrow their density from
+apartment zones: C1 and CM use R3's 800 sq ft per home, C1.5, C2, C4, C5 and CR
+use R4's 400. Their numbers assume an all-residential building.
 
 **What's simplified, and which way it pushes the numbers:**
 
-- **Hillside lots use flat-lot rules.** 28,581 lots in the `H` overlay really
-  follow §12.21 C.10 (floor area by slope). They are flagged. It rarely changes
-  the answer, since one home is the local limit either way.
+- **Incentive programs are left out, the biggest gap.** The state density bonus,
+  Transit Oriented Communities and Executive Directive 1 let many projects exceed
+  base zoning, so these are base-zoning numbers: too low for what can really be
+  built. This is the next thing to model.
+- **Surface parking is conservative.** The engine assumes parking on the ground,
+  but many LA apartments park under the building. Parking is the limit on 17,000+
+  lots outside the half-mile transit area, which understates them.
+- **Parking of 1.5 spaces per home** is the code's figure for 3 habitable rooms;
+  larger homes need 2, smaller ones 1.
+- **Rent-stabilized buildings aren't identified.** Replacing them has its own
+  rules, and the realistic estimate doesn't screen for them, so it is too high.
+- **Conditions (`Q`, `T`, `D`) are flagged, not read.** A `D` limit often lowers
+  floor area, such as in `C2-2D`, which we treat as `C2-2`, so these can be too high.
+- **Hillside lots use flat-lot rules.** 28,581 single-family lots in the `H` overlay
+  really follow §12.21 C.10 (floor area by slope). They are flagged.
 - **SB 9 in fire zones is overcounted.** Executive Order N-32-25 suspends SB 9 in
   Very High Fire Hazard Severity Zones in the Palisades and Eaton burn areas, and
   a mayoral order stops applications in the Palisades. We don't have those zones
-  yet, so those lots wrongly show SB 9 homes. Other state limits on building in
-  fire zones are also not modeled.
+  yet, so those lots wrongly show SB 9 homes.
 - **SB 9 in A1 and A2 is left out.** These zones also allow farming, so they may
   not count as single-family under SB 9. We could not find the city's reading, so
   2,585 lots stay at the ADU path (conservative). Check this before relying on it.
-- **Conditions (`Q`, `T`, `D`) are flagged, not read.** 13,115 single-family lots
-  have them; each sets its own limits in a separate ordinance.
-- **Height districts are not modeled** (1VL, 1XL, 1SS). They limit stories, but
-  the one-home limit binds first. They would matter under an upzoning scenario.
-- **Left out:** the 20% floor-area bonus in RA, RE and RS; encroachment planes;
-  Coastal Zone floor area; duplexes on lots beside commercial zones.
-- **No rule file:** RZ5 (109 lots) isn't in the RZ section of the code, R1P (31
-  lots) wasn't found, and A1(UV) and A2(PV) have one lot each. All stay "not modeled".
+- **Small lots keep one home.** A lot too small for one home's share of land is
+  given one home. The code says so directly only for single-family zones.
+- **Industrial zones get no homes,** since their use lists allow only a guard's or
+  caretaker's home, though their sections still set lot-area rules for dwellings.
+  Worth a second reading: 9,000+ homes already stand on these lots.
+- **Other left-outs:** the 20% floor-area bonus in RA, RE and RS; encroachment
+  planes; transitional heights next to single-family zones; Coastal Zone rules.
+- **No rule file:** RZ5 and R1P (not found in the code sections checked), RMP
+  (mobile home parks), RW2 and one-off zones such as A1(UV).

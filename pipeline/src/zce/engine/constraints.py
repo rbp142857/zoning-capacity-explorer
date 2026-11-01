@@ -180,6 +180,8 @@ def envelope_limit(rules: ZoneRules, lot: Lot, a: EngineAssumptions) -> int:
     floor_area = max_footprint_sqft(rules, lot) * stories
     if rules.max_far is not None:
         floor_area = min(floor_area, rules.max_far.value * lot.area_sqft)
+    if rules.max_buildable_multiple is not None:
+        floor_area = min(floor_area, rules.max_buildable_multiple.value * setback_area_sqft(rules, lot))
 
     units = math.floor(floor_area / a.gross_sqft_per_unit + 1e-9)
 

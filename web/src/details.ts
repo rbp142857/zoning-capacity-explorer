@@ -66,6 +66,7 @@ function rulesTable(r: ZoneRules, area: number, width: number, distSf: number | 
     ["Lot coverage", r.lot_coverage],
     ["Floor area", r.max_floor_area],
     ["Floor area ratio", r.max_far],
+    ["Floor area (times the lot minus yards)", r.max_buildable_multiple],
     ["Garden / open space", r.min_open_space_share],
     ["Parking per home", r.parking_per_unit],
   ];

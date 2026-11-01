@@ -1,0 +1,18 @@
+# Los Angeles PF. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+zone: PF
+name: "Public Facilities (PF)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "LAMC §12.04.09 (PF Public Facilities Zone)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-109035
+
+residential_allowed: {value: false, source: Z, assumption: "Public facilities zone. Not read line by line; public-land housing rules are not modeled."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not allowed."}

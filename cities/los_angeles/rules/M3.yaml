@@ -1,0 +1,18 @@
+# Los Angeles M3. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+zone: M3
+name: "Heavy Industrial (M3)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "LAMC §12.20 (M3 zone)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-111886
+
+residential_allowed: {value: false, source: Z, assumption: "Only a guard's or caretaker's home is allowed, as an accessory use. The section still has lot-area rules for dwellings, but its use list does not allow them, so existing homes here are nonconforming."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not allowed."}

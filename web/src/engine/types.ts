@@ -55,6 +55,7 @@ export interface ZoneRules {
   lot_coverage: Sourced<number | Banded> | null;
   max_floor_area: Sourced<Banded> | null;
   max_far: Sourced<number> | null;
+  max_buildable_multiple: Sourced<number> | null;
   min_open_space_share: Sourced<number | Banded> | null;
   parking_per_unit: Sourced<number> | null;
   guest_parking_per_unit: Sourced<number> | null;

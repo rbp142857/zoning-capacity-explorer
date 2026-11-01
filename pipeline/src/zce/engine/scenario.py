@@ -151,13 +151,16 @@ def adjust_for_lot(r: ZoneRules, lot: Lot, s: Scenario) -> ZoneRules:
         m, extra = s.transit_density_multiplier, s.transit_extra_stories
         if extra:
             updates["max_stories"] = _cite(_add_stories(r.max_stories.value, extra))
-            if r.max_far is not None:
-                # Keep FAR in proportion to the added stories, or the extra
-                # height could never be used (assumption).
-                base = r.max_stories.value
-                base_stories = base if not isinstance(base, Banded) else base.pick(lot.area_sqft, lot.width_ft, lot.dist_single_family_ft).value
-                if base_stories:
-                    updates["max_far"] = _cite(r.max_far.value * (base_stories + extra) / base_stories)
+            # Keep FAR in proportion to the added stories, or the extra
+            # height could never be used (assumption).
+            base = r.max_stories.value
+            base_stories = base if not isinstance(base, Banded) else base.pick(lot.area_sqft, lot.width_ft, lot.dist_single_family_ft).value
+            if base_stories:
+                growth = (base_stories + extra) / base_stories
+                if r.max_far is not None:
+                    updates["max_far"] = _cite(r.max_far.value * growth)
+                if r.max_buildable_multiple is not None:
+                    updates["max_buildable_multiple"] = _cite(r.max_buildable_multiple.value * growth)
         if m != 1.0:
             if r.lot_area_per_unit_sqft is not None:
                 v = r.lot_area_per_unit_sqft.value

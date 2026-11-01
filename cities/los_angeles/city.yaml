@@ -58,8 +58,8 @@ zone_aliases: {}
 specific_plan_prefixes: {}
 
 # Same engine assumptions and redevelopment screens as Pasadena; revisit if
-# LA's typical new units or building economics differ. Parking is
-# not required for housing outside R1 and OP1, so `surface` rarely matters.
+# LA's typical new units or building economics differ. Homes need parking
+# (§12.21 A.4); `surface` is conservative, since many LA apartments park under the building.
 assumptions:
   avg_unit_net_sqft: 850
   net_to_gross: 0.80

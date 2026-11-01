@@ -1,0 +1,44 @@
+# Los Angeles C1.5. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+zone: C1.5
+name: "Limited Commercial (C1.5)"
+family: commercial
+
+sources:
+  Z:
+    section: "LAMC §12.13.5 (C1.5 Limited Commercial Zone; homes as in R4)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-110708
+  H:
+    section: "LAMC §12.21.1 (height districts and floor area)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-114268
+  P:
+    section: "LAMC §12.21 A.4.(a) (parking for dwellings)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-113040
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily, mixed_use], source: Z}
+lot_area_per_unit_sqft: {value: 400, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home's share of land keeps one home. The code says this directly only for single-family zones; we assume it here too."
+small_lot_units_below_sqft: 400
+
+setbacks:
+  front_ft: {value: 10, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 6}, source: Z, assumption: "10% of lot width, at least 3 ft, at most 5 ft, plus 1 ft per story above the second (at most 16 ft)."}
+  rear_ft: {value: 15, source: Z}
+
+max_stories: {value: 3, source: H, assumption: "1VL limits a building to 3 stories, 1L to 6, and plain Height District 1 sets no story limit. We use 3, which fits the 1.5 times floor area limit."}
+max_buildable_multiple: {value: 1.5, source: H, assumption: "Floor area at most 1.5 times the lot minus required yards in commercial Height District 1 (§12.21.1 A.1)."}
+parking_per_unit: {value: 1.5, source: P, assumption: "1 space under 3 habitable rooms, 1.5 for 3 rooms, 2 above that. We use 1.5 for a typical unit. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "All-residential building assumed; commercial space would reduce the homes."
+  - "Density bonus and LA's incentive programs (TOC, ED 1) can allow far more; not modeled, so these numbers are the base zoning only."
+  - "Hillside Area rules (slope density, §12.21 C.10 and §12.21 A.17) not modeled; those lots are flagged."
+  - "Replacement rules for rent-stabilized homes (RSO, SB 330) not modeled."
+  - "Minimum density rules are not modeled; this tool reports maximums."
+  - "Transitional height limits next to single-family zones (§12.21.1 A.10) not modeled."

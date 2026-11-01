@@ -364,3 +364,82 @@ rule file is the zone alone (`R1`).
 
 - Density: under the 2-acre minimum (§12.06 C.2), so it keeps its **1** home. SB 9 left out in A2.
 - **Result: 3, ADU law.** Engine: 3 ✓
+
+## Los Angeles (apartment and commercial zones)
+
+LA caps floor area at a multiple of the "buildable area", the lot minus required
+yards (§12.21.1 A): 3 times in residential Height District 1, 1.5 times in
+commercial Height District 1, 6 times in Height District 2. 1XL allows 2 stories.
+Parking is surface parking at 1.5 spaces per home (rounded up per project) and 300
+sq ft per space, within reach of the ground left after the front yard. "Shape" is
+the lot's area over its width times depth.
+
+### L11. 2276 Ewing St · R2 · 7,502 sq ft (50 × 150.6)
+
+- Lot area: 2,500 per home (§12.09 C.4) = 3, but R2 allows 2 homes. Local: **2**. ADU law: 3.
+- **Result: 3, ADU law.** 3 homes today. Engine: 3 ✓
+
+### L12. 1925 W 35th St · RD1.5 · 6,907 sq ft (50 × 138.3)
+
+- Lot area: 1,500 per home (§12.09.1 C.4) → 4.6 → **4**.
+- Envelope: 40 × 108.3 × 0.999 = 4,327; × 3 = 12,981 sq ft → 12. Parking: 7 homes need 11 spaces, 2,479 + 3,300 = 5,779 of 6,158 sq ft; 8 don't fit.
+- **Result: 4, lot area.** Engine: 4 ✓
+
+### L13. 1501 S Dunsmuir Ave · RD2 · 6,100 sq ft (50 × 122.1)
+
+- Lot area: 2,000 per home → **3**. Envelope: 40 × 92.1 × 0.999 × 3 = 11,043 sq ft → 10.
+- **Result: 3, lot area.** Engine: 3 ✓
+
+### L14. 7124 Flight Ave · R3 · 7,201 sq ft (60 × 120)
+
+- Lot area: 800 per home (§12.10 C.4) → 9. Envelope: 48 × 90 × 3 = 12,960 sq ft → 12.
+- Parking: 6,301 sq ft of ground. 7 homes: 2,479 + 3,300 = 5,779 fits. 8 homes: 2,833 + 3,600 = 6,433 doesn't → **7**.
+- **Result: 7, parking.** 6 homes today. Engine: 7 ✓
+
+### L15. 1069 S Cloverdale Ave · R3, HPOZ · 6,905 sq ft (50 × 138.1)
+
+- Lot area: 800 per home → 8.6 → **8**. 1,107 ft from transit: no parking.
+- **Result: 8, lot area.** Engine: 8 ✓
+
+### L16. 2100 N Cahuenga Blvd · R3-1XL · 6,638 sq ft (50 × 132.9)
+
+- Lot area: **8**. Envelope: 40 × 102.9 × 0.999 × 2 stories = 8,223 sq ft → 7.
+- Parking: 5,889 sq ft of ground. 6 homes: 3,188 + 2,700 = 5,888 just fits; 7 don't → **6**.
+- **Result: 6, parking.** Engine: 6 ✓
+
+### L17. 11124 La Maida St · R4-2 · 7,749 sq ft (50 × 155.1)
+
+- Lot area: 400 per home (§12.11 C.4) → 19. Envelope: 6 times buildable, rear yard 18 ft: 40 × 122.1 × 0.999 × 6 = 29,281 sq ft → 27.
+- Parking: 7,000 sq ft of ground. 10 homes: 1,771 + 4,500 fits; 11 homes: 1,948 + 5,100 doesn't → **10**.
+- **Result: 10, parking.** Engine: 10 ✓
+
+### L18. 7802 Foothill Blvd · C2-1VL · 10,466 sq ft (79.4 × 172.1)
+
+- Lot area: R4's 400 per home (§12.14 C.3) → 26. Envelope: no front yard, R4 side yards at 3 stories (6 ft), 15 ft rear: 67.4 × 157.1 × 0.766 = 8,110 sq ft buildable; × 1.5 = 12,165 → 11.4 → **11**. Parking fits 12.
+- **Result: 11, envelope.** Vacant today. Engine: 11 ✓
+
+### L19. 4801 S Broadway · C2-1VL · 6,740 sq ft (67.4 × 100.1)
+
+- Envelope: 55.4 × 85.1 × 0.999 × 1.5 = 7,065 sq ft → 6.6 → **6**. Near transit: no parking.
+- **Result: 6, envelope.** Engine: 6 ✓
+
+### L20. 4615 Lankershim Blvd · C2-2 · 6,340 sq ft (50 × 139.9)
+
+- Lot area: 15. Envelope: 40 × 121.9 × 0.906 × 6 = 26,518 sq ft → 24.
+- Parking: 10 homes: 1,771 + 4,500 = 6,271 of 6,340 fits; 11 don't → **10**.
+- **Result: 10, parking.** Engine: 10 ✓
+
+### L21. 17827 Chatsworth St · C1-1XL · 6,847 sq ft (50 × 137)
+
+- Lot area: R3's 800 per home (§12.13 C.4) → 8. Envelope: 40 × 112 × 1.0 × 1.5 = 6,717 sq ft → **6**. Parking fits 6 too; envelope comes first in the tie order.
+- **Result: 6, envelope.** Engine: 6 ✓
+
+### L22. 3731 S Grand Ave · CM-1 · 6,907 sq ft (48.3 × 143.2)
+
+- Lot area: R3's 800 per home (§12.17.1 C.2) → 8. Envelope: 38.6 × 128.2 × 0.999 × 1.5 = 7,420 sq ft → 7.0 → **6**, just short of 7.
+- **Result: 6, envelope.** Engine: 6 ✓
+
+### L23. 18428 Gault St · M1 · 14,995 sq ft (100 × 150)
+
+- M1 allows MR1 uses and C2's commercial uses, so homes only for a guard or caretaker.
+- **Result: 0, not allowed.** Engine: 0 ✓

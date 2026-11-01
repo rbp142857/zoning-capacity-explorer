@@ -1,0 +1,45 @@
+# Los Angeles RD4-1XL. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+zone: RD4-1XL
+name: "Restricted Density Multiple Dwelling (RD4), Height District 1XL"
+family: multifamily
+
+sources:
+  Z:
+    section: "LAMC §12.09.1 (RD Restricted Density Multiple Dwelling Zone)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-109838
+  H:
+    section: "LAMC §12.21.1 (height districts and floor area)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-114268
+  P:
+    section: "LAMC §12.21 A.4.(a) (parking for dwellings)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-113040
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+min_lot_area_sqft: {value: 8000, source: Z}
+min_lot_width_ft: {value: 60, source: Z}
+lot_area_per_unit_sqft: {value: 4000, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home's share of land keeps one home. The code says this directly only for single-family zones; we assume it here too."
+small_lot_units_below_sqft: 4000
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 5, max_ft: 10}, source: Z, assumption: "5 ft or 10% of lot width, whichever is larger, at most 10 ft."}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 30, source: H}
+max_stories: {value: 2, source: H, assumption: "Height District 1XL: two stories and 30 ft, so at most twice the buildable area."}
+parking_per_unit: {value: 1.5, source: P, assumption: "1 space under 3 habitable rooms, 1.5 for 3 rooms, 2 above that. We use 1.5 for a typical unit. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Density bonus and LA's incentive programs (TOC, ED 1) can allow far more; not modeled, so these numbers are the base zoning only."
+  - "Hillside Area rules (slope density, §12.21 C.10 and §12.21 A.17) not modeled; those lots are flagged."
+  - "Replacement rules for rent-stabilized homes (RSO, SB 330) not modeled."
+  - "Minimum density rules are not modeled; this tool reports maximums."
+  - "Transitional height limits next to single-family zones (§12.21.1 A.10) not modeled."

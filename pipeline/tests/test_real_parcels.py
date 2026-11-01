@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, ten in Los Angeles).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 23 in Los Angeles).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -184,6 +184,32 @@ LOS_ANGELES = [
      3, "state_law:adu", {"density": 2, "lot_area_per_unit": 2, "envelope": 713, "state_adu": 3, "state_sb9": None}),
     ("8800 Wentworth St", "A2", Lot(70395, 225.6, 454.9, (), 21751, 1),
      3, "state_law:adu", {"density": 2, "lot_area_per_unit": 1, "envelope": 141, "state_adu": 3, "state_sb9": None}),
+    ("2276 Ewing St", "R2", Lot(7502, 50.0, 150.6, (), 4923, 3),
+     3, "state_law:adu", {"density": 2, "lot_area_per_unit": 3, "envelope": 13, "state_adu": 3}),
+    ("1925 W 35th St", "RD1.5", Lot(6907, 50.0, 138.3, ("O",), 2884, 4),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 12, "parking": 7}),
+    ("1501 S Dunsmuir Ave", "RD2", Lot(6100, 50.0, 122.1, ("O",), 2814, 3),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 10}),
+    ("7124 Flight Ave", "R3", Lot(7201, 60.0, 120.0, (), 4322, 6),
+     7, "parking", {"lot_area_per_unit": 9, "envelope": 12, "parking": 7}),
+    ("1069 S Cloverdale Ave", "R3", Lot(6905, 50.0, 138.1, ("O", "HPOZ"), 1107, 2),
+     8, "lot_area_per_unit", {"lot_area_per_unit": 8, "envelope": 12, "parking": None}),
+    ("2100 N Cahuenga Blvd", "R3-1XL", Lot(6638, 50.0, 132.9, (), 2867, 2),
+     6, "parking", {"lot_area_per_unit": 8, "envelope": 7, "parking": 6}),
+    ("11124 La Maida St", "R4-2", Lot(7749, 50.0, 155.1, (), 3463, 3),
+     10, "parking", {"lot_area_per_unit": 19, "envelope": 27, "parking": 10}),
+    ("7802 Foothill Blvd", "C2", Lot(10466, 79.4, 172.1, (), 23752, 0),
+     11, "envelope", {"lot_area_per_unit": 26, "envelope": 11, "parking": 12}),
+    ("4801 S Broadway", "C2", Lot(6740, 67.4, 100.1, ("CPIO",), 1699, None),
+     6, "envelope", {"lot_area_per_unit": 16, "envelope": 6, "parking": None}),
+    ("4615 Lankershim Blvd", "C2-2", Lot(6340, 50.0, 139.9, (), 4996, 1),
+     10, "parking", {"lot_area_per_unit": 15, "envelope": 24, "parking": 10}),
+    ("17827 Chatsworth St", "C1-1XL", Lot(6847, 50.0, 137.0, (), 11488, 1),
+     6, "envelope", {"lot_area_per_unit": 8, "envelope": 6, "parking": 6}),
+    ("3731 S Grand Ave", "CM", Lot(6907, 48.3, 143.2, ("CPIO",), 1700, None),
+     6, "envelope", {"lot_area_per_unit": 8, "envelope": 6, "parking": None}),
+    ("18428 Gault St", "M1", Lot(14995, 100.0, 150.0, (), 810, 0),
+     0, "use_not_permitted", {}),
 ]
 
 

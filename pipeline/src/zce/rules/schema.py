@@ -135,6 +135,8 @@ class ZoneRules(Strict):
     lot_coverage: Sourced[float | Banded] | None = None  # share of lot, or banded rule
     max_floor_area: Sourced[Banded] | None = None  # banded floor-area formula
     max_far: Sourced[float] | None = None  # floor area ratio
+    # Floor area as a multiple of the lot minus required yards (LA's "buildable area").
+    max_buildable_multiple: Sourced[float] | None = None
     min_open_space_share: Sourced[float | Banded] | None = None  # e.g. Pasadena gardens
 
     # Parking (spaces per unit). Guest spaces only kick in at a project size.
