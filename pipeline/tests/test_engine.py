@@ -99,6 +99,14 @@ def test_lot_area_per_unit_uses_zone_rounding():
     assert lot_area_per_unit_limit(z, Lot(10_300, 70, 150)) == 3
 
 
+def test_lot_area_per_unit_by_width():
+    # Glendale R-2250 style: 2,250 sf per home, but 1,800 on lots 90 ft or wider.
+    z = zone(lot_area_per_unit_sqft=s({"by": "lot_width_ft", "bands": [
+        {"below": 90, "value": 2250}, {"value": 1800}]}))
+    assert lot_area_per_unit_limit(z, Lot(9_000, 60, 150)) == 4  # 9,000 / 2,250 = 4.0
+    assert lot_area_per_unit_limit(z, Lot(9_000, 90, 100)) == 5  # 9,000 / 1,800 = 5.0
+
+
 def test_small_lot_table_replaces_per_unit_rule():
     # Pasadena RM-32/RM-48: lots under 10,000 sf use a table, e.g. 6,000 sf -> 4 units
     z = zone(
@@ -147,6 +155,18 @@ def test_footprint_is_tightest_of_setbacks_coverage_open_space():
     # open space 50% -> 5,000. Tightest = 4,000.
     z = zone(lot_coverage=s(0.40), min_open_space_share=s(0.50))
     assert max_footprint_sqft(z, Lot(10_000, 100, 100)) == 4_000
+
+
+def test_small_lot_still_fits_one_small_house():
+    # 3,000 sf lot, FAR 0.30 -> 900 sf of floor area: less than one average
+    # unit (1,000 sf), but at least a small house (500 sf) -> 1 home.
+    z = zone(max_far=s(0.30), max_stories=s(2))
+    small_house = EngineAssumptions(gross_sqft_per_unit=1000, parking_stall_sqft=300, min_home_sqft=500)
+    assert envelope_limit(z, Lot(3_000, 30, 100), small_house) == 1
+    # Without the rule (min_home_sqft = 0), the same lot gets 0.
+    assert envelope_limit(z, Lot(3_000, 30, 100), A) == 0
+    # 1,500 sf lot -> 450 sf allowed: not even a small house -> 0.
+    assert envelope_limit(z, Lot(1_500, 15, 100), small_house) == 0
 
 
 def test_envelope_stories_and_far():

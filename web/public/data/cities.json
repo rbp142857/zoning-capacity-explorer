@@ -1,0 +1,20 @@
+[
+ {
+  "id": "glendale",
+  "name": "Glendale, California",
+  "center": [
+   -118.255,
+   34.16
+  ],
+  "zoom": 12.6
+ },
+ {
+  "id": "pasadena",
+  "name": "Pasadena, California",
+  "center": [
+   -118.135,
+   34.16
+  ],
+  "zoom": 12.3
+ }
+]

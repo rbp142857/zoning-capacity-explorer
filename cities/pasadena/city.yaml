@@ -6,6 +6,8 @@
 id: pasadena
 name: Pasadena, California
 state: CA
+official_name: Pasadena  # as written in DOF and HCD data
+map: {center: [-118.135, 34.16], zoom: 12.3}
 
 # EPSG:2229 = NAD83 / California State Plane Zone 5, measured in US survey feet.
 # We do all area and distance math in this projected CRS, because lat/lon
@@ -43,6 +45,7 @@ sources:
     kind: arcgis
     url: https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/SpecificPlanAreas/FeatureServer/0
     where: "1=1"
+    name_field: NAME
     publisher: City of Pasadena Planning & Community Development
     license: Published by the City of Pasadena; no explicit open license. Attribution given.
   districts:
@@ -52,6 +55,7 @@ sources:
     kind: arcgis
     url: https://services2.arcgis.com/zNjnZafDYCAJAbN0/ArcGIS/rest/services/CouncilDistricts/FeatureServer/0
     where: "1=1"
+    name_field: DISTRICT_NAME
     publisher: City of Pasadena
     license: Published by the City of Pasadena; no explicit open license. Attribution given.
   major_transit_stops:
@@ -122,6 +126,7 @@ specific_plan_prefixes:
 assumptions:
   avg_unit_net_sqft: 850      # typical new apartment/condo; Table 4-6 parking for >650 sf units applies
   net_to_gross: 0.80          # share of building floor area that is inside units (rest: halls, stairs, walls)
+  min_home_sqft: 500          # a small house: lots whose limits allow this much still get one home
   parking_stall_sqft: 300     # one surface stall (8.5 x 18 ft, §17.46.110) plus its share of the drive aisle
   parking_mode: surface       # by-right capacity assumes surface or at-grade parking, not garages under the building
   state_law_path: cities/_california/state_overrides.yaml

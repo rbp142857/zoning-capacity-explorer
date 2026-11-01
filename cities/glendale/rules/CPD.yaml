@@ -1,0 +1,29 @@
+# Glendale CPD. Every value cites Glendale Municipal Code Title 30 (eCode360, through Ord. No. 6052 (May 19, 2026)).
+# Zones come from SCAG's countywide table, which has no overlay districts (historic, height, FAR).
+zone: CPD
+name: "Commercial Planned Development (CPD)"
+family: commercial
+
+sources:
+  T12A:
+    section: "GMC §30.12.020, Table 30.12-A (commercial uses)"
+    url: https://ecode360.com/43352215
+  T12B:
+    section: "GMC §30.12.030, Table 30.12-B (commercial standards)"
+    url: https://ecode360.com/43352215
+  T32A:
+    section: "GMC §30.32, Table 30-32-A (residential parking)"
+    url: https://ecode360.com/43353043
+
+residential_allowed: {value: true, source: T12A}
+housing_types: {value: [single_family], source: T12A, assumption: "Table 30.12-A allows one dwelling per lot in CPD, not multiple dwellings."}
+max_units_per_lot: {value: 1, source: T12A}
+
+setbacks:
+  front_ft: {value: 0, source: T12B}
+  side_ft: {value: 0, source: T12B}
+  rear_ft: {value: 0, source: T12B}
+
+max_height_ft: {value: 35, source: T12B}
+max_stories: {value: 2, source: T12B, assumption: "35 ft and 2 stories."}
+parking_per_unit: {value: 2, source: T32A, assumption: "Single-family homes: two spaces (the code's multi-unit table doesn't apply where one home is on the lot)."}

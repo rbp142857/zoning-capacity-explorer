@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pasadena Zoning Capacity</title>
+    <title>LA County Zoning Capacity</title>
     <meta
       name="description"
-      content="How many homes Pasadena's zoning and California state law allow on every lot, what limits them, and what reforms would change."
+      content="How many homes city zoning and California state law allow on every lot in modeled LA County cities, what limits them, and what reforms would change."
     />
   </head>
   <body>
     <a class="skip-link" href="#controls">Skip to map controls</a>
 
     <header class="topbar">
-      <h1>Pasadena Zoning Capacity</h1>
+      <h1><span id="city-name">LA County</span> Zoning Capacity</h1>
+      <label class="city-picker">
+        <span class="visually-hidden">City</span>
+        <select id="city" aria-label="Choose a city"></select>
+      </label>
       <p class="disclaimer" role="note">
         <strong>Estimate for research and advocacy, not legal or zoning advice.</strong>
-        Always confirm with the City of Pasadena.
+        Always confirm with the city.
       </p>
     </header>
 
@@ -222,7 +226,7 @@
       </aside>
 
       <div class="map-wrap">
-        <div id="map" role="region" aria-label="Map of Pasadena lots colored by zoning capacity"></div>
+        <div id="map" role="region" aria-label="Map of lots colored by zoning capacity"></div>
         <div id="status" class="map-status" role="status" aria-live="polite">Loading lots…</div>
       </div>
     </main>

@@ -40,8 +40,9 @@ def _get_json(url: str, params: dict) -> dict:
     raise AssertionError("unreachable")
 
 
-def download_arcgis_layer(source: Source, out_path: Path) -> int:
-    """Download every feature of an ArcGIS layer to a GeoJSON file.
+def download_arcgis_layer(source: Source, out_path: Path, geometry: bool = True) -> int:
+    """Download every feature of an ArcGIS layer to a GeoJSON file
+    (or, with geometry=False, a JSON list of attribute records).
 
     ArcGIS servers return at most `maxRecordCount` features per request (often
     1,000), so we page through results with `resultOffset`, ordered by
@@ -69,10 +70,13 @@ def download_arcgis_layer(source: Source, out_path: Path) -> int:
                 "orderByFields": id_field,
                 "resultOffset": len(features),
                 "resultRecordCount": page_size,
-                "f": "geojson",
+                "returnGeometry": "true" if geometry else "false",
+                "f": "geojson" if geometry else "json",
             },
         )
         batch = page.get("features", [])
+        if not geometry:
+            batch = [f["attributes"] for f in batch]
         if not batch:
             break
         features.extend(batch)
@@ -84,7 +88,8 @@ def download_arcgis_layer(source: Source, out_path: Path) -> int:
         raise RuntimeError(
             f"Expected {expected} features from {source.url} but got {len(features)}"
         )
-    out_path.write_text(json.dumps({"type": "FeatureCollection", "features": features}))
+    payload = {"type": "FeatureCollection", "features": features} if geometry else features
+    out_path.write_text(json.dumps(payload))
     return len(features)
 
 
@@ -134,7 +139,11 @@ def download_city(city: CityConfig, only: list[str] | None = None) -> None:
             manifest_path.write_text(json.dumps(manifest, indent=2))
             continue
         print(f"Downloading {name} from {source.url}")
-        if source.kind == "arcgis":
+        if source.kind == "arcgis" and not source.geometry:
+            out = city.raw_dir / f"{name}.json"
+            size = download_arcgis_layer(source, out, geometry=False)
+            unit = "records"
+        elif source.kind == "arcgis":
             out = city.raw_dir / f"{name}.geojson"
             size = download_arcgis_layer(source, out)
             unit = "features"

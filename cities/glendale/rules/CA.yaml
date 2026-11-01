@@ -1,0 +1,19 @@
+# Glendale CA. Every value cites Glendale Municipal Code Title 30 (eCode360, through Ord. No. 6052 (May 19, 2026)).
+# Zones come from SCAG's countywide table, which has no overlay districts (historic, height, FAR).
+zone: CA
+name: "Commercial Auto (CA)"
+family: nonresidential
+
+sources:
+  T12A:
+    section: "GMC §30.12.020, Table 30.12-A (commercial uses)"
+    url: https://ecode360.com/43352215
+
+residential_allowed: {value: false, source: T12A, assumption: "Table 30.12-A allows no dwellings in CA (ADUs only with an existing home)."}
+housing_types: {value: [], source: T12A}
+
+setbacks:
+  front_ft: {value: 0, source: T12A}
+  side_ft: {value: 0, source: T12A}
+  rear_ft: {value: 0, source: T12A}
+max_stories: {value: 0, source: T12A, assumption: "Not relevant: housing not allowed."}

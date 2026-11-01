@@ -1,0 +1,45 @@
+# Glendale CR. Every value cites Glendale Municipal Code Title 30 (eCode360, through Ord. No. 6052 (May 19, 2026)).
+# Zones come from SCAG's countywide table, which has no overlay districts (historic, height, FAR).
+zone: CR
+name: "Commercial Regional (CR)"
+family: commercial
+
+sources:
+  T12A:
+    section: "GMC §30.12.020, Table 30.12-A (commercial uses)"
+    url: https://ecode360.com/43352215
+  T12B:
+    section: "GMC §30.12.030, Table 30.12-B (commercial standards)"
+    url: https://ecode360.com/43352215
+  T32A:
+    section: "GMC §30.32, Table 30-32-A (residential parking)"
+    url: https://ecode360.com/43353043
+
+residential_allowed: {value: true, source: T12A}
+housing_types: {value: [single_family, multifamily, mixed_use], source: T12A}
+
+lot_area_per_unit_sqft:
+  value:
+    by: lot_width_ft
+    bands:
+      - {below: 90, value: 1250}
+      - {value: 1000}
+  source: T12B
+  assumption: "1 home per 1,250 sq ft; on lots 90 ft or wider, 1 per 1,000 sq ft."
+density_rounding: {value: floor, source: T12B, assumption: "No rounding rule stated; fractions are rounded down."}
+
+setbacks:
+  front_ft: {value: 0, source: T12B, assumption: "10 ft average on the ground floor, 5 ft above; we use 0 for the upper floors' footprint (not modeled precisely)."}
+  side_ft: {value: 5, source: T12B, assumption: "5 ft minimum interior setback for multi-family; more next to residential zones (not modeled)."}
+  rear_ft: {value: 5, source: T12B, assumption: "Interior setback applied to the rear."}
+
+max_height_ft: {value: 45, source: T12B}
+max_stories: {value: 3, source: T12B, assumption: "45 ft and 3 stories."}
+
+parking_per_unit: {value: 2, source: T32A, assumption: "Units of up to 2 bedrooms need 2 spaces; our assumed 850 sq ft home is in that range."}
+guest_parking_per_unit: {value: 0.25, source: T32A}
+guest_parking_min_units: 4
+
+simplifications:
+  - "Mixed-use ground-floor commercial not modeled separately; all floor area is treated as housing."
+  - "Landscaping requirements (Section 30.12.040) not modeled."

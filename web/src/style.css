@@ -67,6 +67,10 @@ body {
   padding: 10px 16px; background: var(--surface); border-bottom: 1px solid var(--border);
 }
 .topbar h1 { font-size: 18px; margin: 0; }
+.city-picker select {
+  font: inherit; font-size: 14px; padding: 4px 8px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--page); color: var(--ink);
+}
 .disclaimer {
   margin: 0; padding: 4px 10px; border-radius: 6px; font-size: 13px;
   background: var(--banner); color: var(--banner-ink);

@@ -117,3 +117,60 @@ the lowest is the city's answer, then state law (ADU, SB 9) can allow more.
   (SP-1a)** may set its own standards for this lot. The engine applies only
   the base CO rules to overlay lots like this; that's listed under "Not yet
   modeled" in METHODOLOGY.md.
+
+---
+
+# Glendale (5 lots)
+
+Glendale Municipal Code Title 30, eCode360 version through Ord. No. 6052
+(May 19, 2026). Same shared assumptions as Pasadena, plus a **500 sq ft
+minimum home**: a lot whose limits allow at least that much floor area holds
+one home even if it's less than the average 1,062.5 sq ft unit. Zones come from
+SCAG's countywide table, which has no overlays, so FAR district I and the
+most restrictive height districts are used (see the rule files).
+
+### G1. 1248 Thompson Ave · R1 · 6,837 sq ft (42.7 × 161.5 ft)
+
+- Density **1**. Envelope: front 25, sides 6, rear 6 → 30.7 × 130.5 = 4,006;
+  coverage 40% = 2,735 × 2 stories = 5,470; FAR district I: 30% × 6,837 =
+  **2,051 sq ft** → 1.9 → **1**. Parking: ground = 60% (40% open space) =
+  4,102; 3 homes = 3,394 fits, 4 = 4,525 doesn't → **3**.
+- City answer 1; ADU path 3; SB 9 (≥ 2,400 sq ft) **4**. Engine: 4, `state_law:sb9` ✓
+
+### G2. 1056 Kildonan Dr · R1R (hillside) · 10,560 sq ft (92.5 × 115.3)
+
+- Density **1**. Envelope: front 15, sides 10, rear 10 → 72.5 × 90.3 = 6,547;
+  coverage 40% = 4,224 × 2 = 8,448; FAR over 10,000 sq ft: 0.10 × 10,560 +
+  2,000 = **3,056** → **2**. Parking **5**.
+- SB 9 → **4**. Not likely to redevelop (single-family zone; built 1979).
+  Engine: 4 ✓
+
+### G3. 651 Salem St · R-2250 · 7,056 sq ft (50.9 × 139.3)
+
+- Land per home (under 90 ft wide): 7,056 ÷ 2,250 = 3.1 → **3**.
+- Envelope: coverage 50% = 3,528 × 3 stories = 10,584; FAR 0.85 × 7,056 =
+  **5,998** → **5**. Parking (3,372 ft from transit): ground = 80% (20% open
+  space) = 5,645; each home 354 + 600; at 4+ homes add ¼ guest space each.
+  5 homes = 1,771 + 11 spaces × 300 = 5,071 fits; 6 = 2,125 + 14 × 300 = 6,325
+  doesn't → **5**.
+- **Result: 3, land per home.** The house (1918) is assessed at $8k against
+  $237k of land, but zoning allows only +2 homes, under the 3-home minimum, so
+  it's **not** counted as likely. Engine: 3 ✓
+
+### G4. 325 N Howard St · R-1250 · 14,999 sq ft (99.6 × 151.4), 1,674 ft from transit
+
+- Land per home: 90 ft or wider → **1,000 sq ft per home**: 14,999 ÷ 1,000 =
+  14.999 → rounded down → **14**.
+- Envelope: coverage 60% = 8,999 × 3 = 26,998; FAR 1.2 × 14,999 = **17,999** →
+  **16**. Parking: AB 2097, none.
+- **Result: 14, land per home.** 18 homes today (a 1963 building that's legally
+  nonconforming), so 0 new. Engine: 14 ✓
+
+### G5. 1109 N Brand Blvd · C3 · 8,709 sq ft (40 × 218.4)
+
+- Land per home: under 90 ft wide → 8,709 ÷ 1,250 = 6.97 → **6**.
+- Envelope: no FAR or coverage limit; sides 5, rear 5 → 30 × 213.4 = 6,402 ×
+  3 stories (height district I) = 19,147 → **18**. Parking: 8 homes = 2,833 +
+  18 spaces × 300 = 8,233 fits; 9 = 3,188 + 20 × 300 = 9,188 doesn't → **8**.
+- **Result: 6, land per home.** A 1950 commercial building worth about a
+  third of its land, no homes today → **likely to redevelop, +6**. Engine: 6 ✓

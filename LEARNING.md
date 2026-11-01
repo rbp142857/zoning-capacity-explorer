@@ -464,3 +464,36 @@ Docs: <https://docs.python.org/3/howto/regex.html> · <https://pypdf.readthedocs
 Two government servers reject requests from scripts. Disguising the script as
 a browser would get around that, but it overrides the site owner's choice. The
 pipeline instead tells a person which file to download and where to save it.
+
+
+---
+
+## LA County expansion: many cities, one pipeline
+
+### Join by key when you can, by shape when you must
+Pasadena's zones came from a map, so each lot was matched to the zone polygon
+covering most of it (a spatial join). SCAG's table lists zones by parcel
+number, so Glendale's lots are matched by an ordinary key join, like
+matching rows in two spreadsheets by an ID column. That's simpler, faster and
+exact. Spatial joins are for when there's no shared ID.
+
+### The adapter pattern
+Every city publishes data differently. An *adapter* converts one source into
+the shape the rest of the code expects (`attach_zoning(...)` returns the same
+columns for Pasadena's map and SCAG's table). A dictionary of adapters, chosen
+by name in each city's config, means `clean.py` never needs an `if city ==`
+branch.
+Docs: <https://refactoring.guru/design-patterns/adapter>
+
+### Refactor, then prove nothing changed
+Before adding Glendale, the pipeline was restructured for many cities. The
+proof it still worked: Pasadena's outputs were byte-for-byte the same as
+before the refactor (same report, same numbers for every lot). Change the
+structure first, check the results are unchanged, and only then change
+behavior.
+
+### Assumptions can hide in "average" values
+Glendale exposed one: the engine counted units at an average size of 1,062.5
+sq ft, so small lots where only a smaller house fits got 0 homes. The fix (a
+500 sq ft minimum home) changed 139 Pasadena lots too. A second city is a
+test of the first city's assumptions.

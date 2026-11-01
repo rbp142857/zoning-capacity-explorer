@@ -71,6 +71,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
     a = EngineAssumptions(
         gross_sqft_per_unit=city.assumptions.gross_sqft_per_unit,
         parking_stall_sqft=city.assumptions.parking_stall_sqft,
+        min_home_sqft=city.assumptions.min_home_sqft,
     )
     screens = screens_from_config(city.redevelopment)
     print(f"Loaded {len(rules)} zone rule files and {len(state.laws)} state laws")

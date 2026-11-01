@@ -1,0 +1,39 @@
+# Glendale SFMU. Every value cites Glendale Municipal Code Title 30 (eCode360, through Ord. No. 6052 (May 19, 2026)).
+# Zones come from SCAG's countywide table, which has no overlay districts (historic, height, FAR).
+zone: SFMU
+name: "San Fernando Road Corridor Mixed Use (SFMU)"
+family: commercial
+
+sources:
+  T14A:
+    section: "GMC §30.14.020, Table 30.14-A (mixed-use uses)"
+    url: https://ecode360.com/43352367
+  T14B:
+    section: "GMC §30.14.030, Table 30.14-B (mixed-use standards)"
+    url: https://ecode360.com/43352367
+  T32A:
+    section: "GMC §30.32, Table 30-32-A (residential parking)"
+    url: https://ecode360.com/43353043
+
+residential_allowed: {value: true, source: T14A}
+housing_types: {value: [multifamily, mixed_use], source: T14A}
+min_lot_area_sqft: {value: 10000, source: T14B, assumption: "For new parcels; flagged only."}
+min_lot_width_ft: {value: 100, source: T14B}
+units_per_acre: {value: 87, source: T14B, assumption: "Density is 35, 87 or 100 homes per acre depending on whether the lot abuts single-family, multifamily or neither. SCAG's table can't tell us which, so we use the middle tier (87)."}
+density_rounding: {value: floor, source: T14B, assumption: "No rounding rule stated; fractions are rounded down."}
+
+setbacks:
+  front_ft: {value: 0, source: T14B}
+  side_ft: {value: 0, source: T14B}
+  rear_ft: {value: 0, source: T14B, assumption: "None, except 15-25 ft when abutting R1, R1R or ROS (not modeled)."}
+
+max_height_ft: {value: 60, source: T14B, assumption: "36, 60 or 75 ft by the same adjacency tiers; we use the middle tier."}
+max_stories: {value: 4, source: T14B, assumption: "Middle tier: 60 ft and 4 stories."}
+min_open_space_share: {value: 0.1, source: T14B, assumption: "Minimum 10% landscaped."}
+
+parking_per_unit: {value: 2, source: T32A, assumption: "Units of up to 2 bedrooms need 2 spaces; our assumed 850 sq ft home is in that range."}
+guest_parking_per_unit: {value: 0.25, source: T32A}
+guest_parking_min_units: 4
+
+simplifications:
+  - "Adjacency-based density and height tiers: middle tier used for every lot."

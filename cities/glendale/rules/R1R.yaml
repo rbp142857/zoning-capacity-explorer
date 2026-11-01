@@ -1,0 +1,51 @@
+# Glendale R1R. Every value cites Glendale Municipal Code Title 30 (eCode360, through Ord. No. 6052 (May 19, 2026)).
+# Zones come from SCAG's countywide table, which has no overlay districts (historic, height, FAR).
+zone: R1R
+name: "Restricted Residential (R1R)"
+family: single_family
+
+sources:
+  T11A:
+    section: "GMC §30.11.020, Table 30.11-A (residential uses)"
+    url: https://ecode360.com/43352065
+  T11B:
+    section: "GMC §30.11.030, Table 30.11-B (ROS, R1R, R1 standards)"
+    url: https://ecode360.com/43352065
+  S040:
+    section: "GMC §30.11.040 (ROS and R1R additional standards)"
+    url: https://ecode360.com/43352065
+  S060:
+    section: "GMC §30.11.060 (residential lot size)"
+    url: https://ecode360.com/43352065
+  T32A:
+    section: "GMC §30.32, Table 30-32-A (residential parking)"
+    url: https://ecode360.com/43353043
+
+residential_allowed: {value: true, source: T11A}
+housing_types: {value: [single_family], source: T11A}
+min_lot_area_sqft: {value: 12000, source: S060, assumption: "12,000 sq ft for new lots; a new home on a lot divided before June 26, 1986 needs at least 7,500 sq ft (§30.11.060). Smaller lots are flagged, not zeroed."}
+max_units_per_lot: {value: 1, source: T11B}
+
+setbacks:
+  front_ft: {value: 15, source: T11B}
+  side_ft: {value: 10, source: T11B, assumption: "Interior side setback; street-side setbacks on corner lots are larger (not modeled)."}
+  rear_ft: {value: 10, source: T11B, assumption: "The table gives 'interior' setbacks; we apply them to the rear as well."}
+
+max_height_ft: {value: 32, source: S040}
+max_stories: {value: 2, source: S040, assumption: "Hillside zones: at most two stories and 32 ft (a third story only on 40%+ slopes, not modeled)."}
+lot_coverage: {value: 0.4, source: T11B, assumption: "40% including all buildings."}
+min_open_space_share: {value: 0.4, source: T11B, assumption: "Permanently landscaped open space, 40% of the lot."}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 10000, share: 0.30}
+      - {share: 0.10, plus_sqft: 2000}  # 0.30 x first 10,000 + 0.10 x the rest
+  source: T11B
+  assumption: "Glendale sets single-family FAR by 'FAR District' (I: 0.30, II: 0.40, III: 0.45 for the first 10,000 sq ft, 0.10 after). SCAG's zoning table doesn't say which district a lot is in, so we use District I, the most restrictive (realistic, not optimistic). Garage area up to 500 sq ft is excluded from FAR; our floor area is living space only."
+parking_per_unit: {value: 2, source: T32A, assumption: "Single-family homes: two spaces (the code's multi-unit table doesn't apply where one home is on the lot)."}
+
+simplifications:
+  - "Slope-based rules (density for subdivisions, extra story on steep lots, ungraded open space) not modeled."
+  - "FAR district (I, II or III) unknown; District I used."
+  - "Historic District overlay (Ch. 30.25) not in SCAG's table, so SB 9's historic-district exclusion can't be applied."

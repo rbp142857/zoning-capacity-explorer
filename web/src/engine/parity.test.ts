@@ -2,7 +2,7 @@
 // the Python engine for every lot and scenario in shared/fixtures/golden.json.
 // Regenerate the golden file with `make golden` after changing the Python side.
 
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
@@ -12,8 +12,7 @@ import { type Scenario, applyScenario, capacityUnderScenario } from "./scenario"
 import type { RulesFile } from "./types";
 
 const root = fileURLToPath(new URL("../../../", import.meta.url));
-const golden = JSON.parse(readFileSync(`${root}shared/fixtures/golden.json`, "utf8"));
-const rules: RulesFile = JSON.parse(readFileSync(`${root}web/public/data/${golden.city}/rules.json`, "utf8"));
+const goldenFiles = readdirSync(`${root}shared/fixtures`).filter((f) => /^golden_.+\.json$/.test(f));
 
 interface GoldenLot {
   zone: string | null;
@@ -26,7 +25,11 @@ interface GoldenLot {
   redev_mask: number;
 }
 
-describe("TypeScript engine matches Python (golden file)", () => {
+for (const file of goldenFiles) {
+const golden = JSON.parse(readFileSync(`${root}shared/fixtures/${file}`, "utf8"));
+const rules: RulesFile = JSON.parse(readFileSync(`${root}web/public/data/${golden.city}/rules.json`, "utf8"));
+
+describe(`TypeScript engine matches Python (${file})`, () => {
   for (const [name, scenario] of Object.entries(golden.scenarios as Record<string, Scenario>)) {
     it(`scenario: ${name}`, () => {
       const [r2, st2] = applyScenario(rules.zones, rules.state, scenario);
@@ -60,6 +63,7 @@ describe("TypeScript engine matches Python (golden file)", () => {
     });
   }
 });
+}
 
 function sortKeys(o: Record<string, unknown>): Record<string, unknown> {
   const out: Record<string, unknown> = {};

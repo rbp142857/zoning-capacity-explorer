@@ -12,14 +12,14 @@ import json
 import geopandas as gpd
 import pandas as pd
 
-from zce.adapters import la_assessor, pasadena_zoning
+from zce.adapters import ZONING_ADAPTERS, la_assessor
 from zce.config import REPO_ROOT, CityConfig
 from zce.report import write_quality_report
 from zce import spatial, transit
 
 # Lots smaller than this (sq ft) are almost always slivers, strips or mapping
 # artifacts rather than buildable lots. 500 sq ft is smaller than any
-# residential minimum lot size in Pasadena.
+# residential minimum lot size in the cities modeled so far.
 SLIVER_SQFT = 500
 
 
@@ -37,23 +37,37 @@ def clean_city(city: CityConfig) -> gpd.GeoDataFrame:
     parcels, stats = la_assessor.load_parcels(raw / "parcels.geojson", crs)
     n_in = len(parcels)
 
-    print("Loading zoning")
-    zones = pasadena_zoning.load_zoning(raw / "zoning.geojson", crs, city.specific_plan_prefixes)
+    print("Attaching zoning")
+    adapter = ZONING_ADAPTERS[city.sources["zoning"].adapter]
+    zone_cols, zones, zoning_notes = adapter(parcels, raw, city)
+    parcels = parcels.join(zone_cols)
 
-    print("Joining parcels to zones (largest overlap)")
-    parcels = parcels.join(spatial.assign_zone(parcels, zones))
+    # Neighborhood grouping for charts: council districts where the city has
+    # them, otherwise ZIP code (some cities, like Glendale, elect at large).
+    if "districts" in city.sources:
+        print("Joining parcels to council districts")
+        districts = gpd.read_file(raw / "districts.geojson").to_crs(crs)
+        parcels["district"] = spatial.assign_district(parcels, districts, city.sources["districts"].name_field)
+    else:
+        zips = "ZIP " + parcels["address"].str.extract(r"(9\d{4})\s*$", expand=False)
+        # Lots with no address (mostly vacant or public land), and the few
+        # addresses with a typo or a neighboring city's ZIP, go into one group
+        # so the charts stay readable.
+        counts = zips.value_counts()
+        parcels["district"] = zips.where(zips.map(counts) >= 50, "Other or no ZIP")
 
-    print("Joining parcels to council districts")
-    districts = gpd.read_file(raw / "districts.geojson").to_crs(crs)
-    parcels["district"] = spatial.assign_district(parcels, districts, "DISTRICT_NAME")
+    # Where the city publishes specific-plan boundaries, they're authoritative
+    # for "is this lot inside a specific plan" (some plan areas use plain zone
+    # codes); otherwise the adapter's reading of the zone code stands.
+    if "specific_plans" in city.sources:
+        plans = gpd.read_file(raw / "specific_plans.geojson").to_crs(crs)
+        parcels["specific_plan"] = spatial.assign_district(parcels, plans, city.sources["specific_plans"].name_field)
 
-    # The zone-code prefix only gave us a guess; the plan boundary layer is
-    # authoritative for "is this lot inside a specific plan, and which one".
-    plans = gpd.read_file(raw / "specific_plans.geojson").to_crs(crs)
-    parcels["specific_plan"] = spatial.assign_district(parcels, plans, "NAME")
-
-    boundary = gpd.read_file(raw / "city_boundary.geojson").to_crs(crs)
-    parcels["in_city_limits"] = spatial.inside_boundary(parcels, boundary)
+    if "city_boundary" in city.sources:
+        boundary = gpd.read_file(raw / "city_boundary.geojson").to_crs(crs)
+        parcels["in_city_limits"] = spatial.inside_boundary(parcels, boundary)
+    else:
+        parcels["in_city_limits"] = True  # parcels were already filtered by tax-rate city
 
     print("Measuring distance to transit")
     major = transit.load_major_transit_stops(raw / "major_transit_stops.geojson", crs)
@@ -87,6 +101,6 @@ def clean_city(city: CityConfig) -> gpd.GeoDataFrame:
     print(f"Wrote {len(parcels):,} lots to {out}")
 
     report_path = REPO_ROOT / "reports" / city.id / "quality_report.md"
-    write_quality_report(parcels, zones, stats, manifest, city, report_path)
+    write_quality_report(parcels, zones, stats, manifest, city, report_path, zoning_notes)
     print(f"Wrote {report_path}")
     return parcels

@@ -1,8 +1,9 @@
 # Zoning Capacity Explorer
 
 An open-source tool that shows what zoning legally allows on every parcel in a
-city, and how much housing a proposed rule change would enable. The pilot city
-is **Pasadena, California**.
+city, and how much housing a proposed rule change would enable. Cities so far:
+**Pasadena** (the pilot) and **Glendale**, California. Pick a city in the site's
+header, or link to one with `?city=glendale`.
 
 **Live site: <https://rbp142857.github.io/zoning-capacity-explorer/>**
 
@@ -24,6 +25,7 @@ New to the code? Start with the **[beginner's guide](docs/BEGINNER_GUIDE.md)**.
 | 7. Realistic redevelopment estimate | ✅ 5 screens, shown beside theoretical everywhere |
 | 8. Validation, methodology, deploy | ✅ live on GitHub Pages |
 | 9. Developer pro forma (optional) | planned |
+| LA County expansion | ✅ multi-city pipeline and site; Glendale added from SCAG's countywide zoning table |
 
 Reports: [data quality](reports/pasadena/quality_report.md) ·
 [capacity](reports/pasadena/capacity_report.md) ·

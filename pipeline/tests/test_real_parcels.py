@@ -1,4 +1,5 @@
-"""Ten real Pasadena lots, checked by hand against the Zoning Code text.
+"""Real lots checked by hand against each city's zoning code text
+(ten in Pasadena, five in Glendale).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -53,6 +54,38 @@ def pasadena():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CASES, ids=[c[0] for c in CASES])
 def test_hand_checked_parcel(pasadena, address, zone, lot, max_units, binding, limits):
     rules, state, a = pasadena
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+# Glendale: (address, zone, Lot, expected max, binding, limits). See HAND_CHECKS.md.
+GLENDALE = [
+    ("1248 Thompson Ave", "R1", Lot(6837, 42.7, 161.5, (), 6865, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 1, "parking": 3, "state_adu": 3, "state_sb9": 4}),
+    ("1056 Kildonan Dr", "R1R", Lot(10560, 92.5, 115.3, (), 10456, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "parking": 5, "state_sb9": 4}),
+    ("651 Salem St", "R-2250", Lot(7056, 50.9, 139.3, (), 3372, 1),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 5, "parking": 5}),
+    ("325 N Howard St", "R-1250", Lot(14999, 99.6, 151.4, (), 1674, 18),
+     14, "lot_area_per_unit", {"lot_area_per_unit": 14, "envelope": 16, "parking": None}),
+    ("1109 N Brand Blvd", "C3", Lot(8709, 40.0, 218.4, (), 5478, 0),
+     6, "lot_area_per_unit", {"lot_area_per_unit": 6, "envelope": 18, "parking": 8}),
+]
+
+
+@pytest.fixture(scope="module")
+def glendale():
+    rules = load_zone_rules(REPO / "cities" / "glendale" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", GLENDALE, ids=[c[0] for c in GLENDALE])
+def test_hand_checked_glendale_parcel(glendale, address, zone, lot, max_units, binding, limits):
+    rules, state, a = glendale
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

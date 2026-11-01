@@ -22,8 +22,9 @@ all at once. Each part stands on its own.
 
 ## 1. Use the tool
 
-Open **<https://rbp142857.github.io/zoning-capacity-explorer/>**. Try these in
-order; each one shows a different feature.
+Open **<https://rbp142857.github.io/zoning-capacity-explorer/>**. Pick a city
+(Pasadena or Glendale) in the header. Try these in order; each one shows a
+different feature.
 
 1. **Read the headline numbers** at the top of the left panel: homes today,
    the legal maximum, and the share of land where the city allows only one home.

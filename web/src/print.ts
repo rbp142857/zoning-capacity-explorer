@@ -75,7 +75,7 @@ export function renderPrintSummary(el: HTMLElement, d: PrintData) {
   el.innerHTML = `
     <h1>${esc(d.city)}: zoning capacity summary</h1>
     <p class="print-disclaimer"><strong>Estimate for research and advocacy, not legal or zoning advice.</strong>
-      Always confirm with the City of Pasadena. Numbers are theoretical maximums if lots were rebuilt, not predictions.</p>
+      Always confirm with the City of ${esc(d.city)}. Numbers are theoretical maximums if lots were rebuilt, not predictions.</p>
     ${scenarioText}
     <table class="print-totals"><thead><tr><th></th><th>Today's rules</th>${d.reform ? "<th>This scenario</th>" : ""}</tr></thead>
       <tbody><tr><th>Homes on modeled lots today</th><td>${fmt.format(d.existing)}</td>${d.reform ? `<td>${fmt.format(d.existing)}</td>` : ""}</tr>${totals}</tbody></table>
@@ -88,6 +88,6 @@ export function renderPrintSummary(el: HTMLElement, d: PrintData) {
       building 50+ years old, building assessed below land value, not a condo, not in a landmark district, not in a
       single-family zone); counts the city's or scenario's allowance only. A screen, not a forecast.<br>
       Interactive version and method: ${esc(d.url)}<br>
-      Data: LA County Assessor parcels, City of Pasadena zoning (Municode, Sep 2, 2026), SCAG major transit stops.
+      Data: LA County Assessor parcels, ${esc(d.city)} zoning (sources in METHODOLOGY.md), SCAG major transit stops.
       Specific-plan and planned-development lots are not modeled yet. Generated ${esc(d.generatedAt)}.</p>`;
 }

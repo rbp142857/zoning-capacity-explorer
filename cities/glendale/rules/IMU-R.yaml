@@ -1,0 +1,19 @@
+# Glendale IMU-R. Every value cites Glendale Municipal Code Title 30 (eCode360, through Ord. No. 6052 (May 19, 2026)).
+# Zones come from SCAG's countywide table, which has no overlay districts (historic, height, FAR).
+zone: IMU-R
+name: "Industrial/Commercial-Residential Mixed Use (IMU-R)"
+family: nonresidential
+
+sources:
+  T14A:
+    section: "GMC §30.14.020, Table 30.14-A (mixed-use uses)"
+    url: https://ecode360.com/43352367
+
+residential_allowed: {value: false, source: T14A, assumption: "Multiple dwellings need an Administrative Use Permit (Table 30.14-A, 'A'): a discretionary approval, so not counted as allowed by right."}
+housing_types: {value: [], source: T14A}
+
+setbacks:
+  front_ft: {value: 0, source: T14A}
+  side_ft: {value: 0, source: T14A}
+  rear_ft: {value: 0, source: T14A}
+max_stories: {value: 0, source: T14A, assumption: "Not relevant: housing not allowed."}

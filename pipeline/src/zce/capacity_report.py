@@ -51,7 +51,7 @@ def write_capacity_report(df: pd.DataFrame, rules: dict, state, city: CityConfig
 
     out.append("## Realistic vs. theoretical\n")
     likely = ok[ok["likely_redevelop"]]
-    sf_zone = ok["rules_zone"].str.startswith("RS", na=False)
+    sf_zone = ok["rules_zone"].map(lambda z: z in rules and rules[z].family == "single_family")
     out.append("Theoretical capacity assumes every lot is rebuilt to the maximum. The realistic estimate counts only "
                "lots that pass every redevelopment screen (see METHODOLOGY.md), and only their *local* capacity: "
                "adding an ADU or a second house under state law usually keeps the existing home, and single-family zones are "
@@ -101,7 +101,7 @@ def write_capacity_report(df: pd.DataFrame, rules: dict, state, city: CityConfig
     ).sort_values("lots", ascending=False)
     out.append(_table(by_zone.reset_index()))
 
-    out.append("\n## By council district\n")
+    out.append("\n## By council district\n" if "districts" in city.sources else "\n## By ZIP code\n")
     by_d = ok.groupby(ok["district"].fillna("(none)")).agg(
         lots=("parcel_id", "size"), existing=("existing_units", lambda s: int(s.sum())),
         max_with_state_law=("max_units", "sum"), net_new=("net_new_units", "sum"))

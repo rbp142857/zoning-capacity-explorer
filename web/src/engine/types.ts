@@ -40,7 +40,7 @@ export interface ZoneRules {
   min_lot_area_sqft: Sourced<number> | null;
   min_lot_width_ft: Sourced<number> | null;
   max_units_per_lot: Sourced<number> | null;
-  lot_area_per_unit_sqft: Sourced<number> | null;
+  lot_area_per_unit_sqft: Sourced<number | Banded> | null;
   units_per_acre: Sourced<number> | null;
   small_lot_units: Sourced<Banded> | null;
   small_lot_units_below_sqft: number | null;
@@ -81,7 +81,7 @@ export interface StateOverrides {
 export interface RulesFile {
   zones: Record<string, ZoneRules>;
   state: StateOverrides;
-  assumptions: { gross_sqft_per_unit: number; parking_stall_sqft: number };
+  assumptions: { gross_sqft_per_unit: number; parking_stall_sqft: number; min_home_sqft?: number };
   redevelopment: {
     as_of_year: number;
     min_capacity_multiple: number;

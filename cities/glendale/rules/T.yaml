@@ -1,0 +1,18 @@
+# Glendale T. Glendale Municipal Code Title 30 (eCode360, through Ord. No. 6052, May 19, 2026).
+zone: T
+name: "Industrial/Commercial T (T)"
+family: nonresidential
+
+sources:
+  T13A:
+    section: "GMC §30.13.020, Table 30.13-A (industrial uses)"
+    url: https://ecode360.com/43352310
+
+residential_allowed: {value: false, source: T13A, assumption: "Table 30.13-A allows no new dwellings in IND or T (only converting an existing live/work unit, with a conditional use permit)."}
+housing_types: {value: [], source: T13A}
+
+setbacks:
+  front_ft: {value: 0, source: T13A}
+  side_ft: {value: 0, source: T13A}
+  rear_ft: {value: 0, source: T13A}
+max_stories: {value: 0, source: T13A, assumption: "Not relevant: housing not allowed."}

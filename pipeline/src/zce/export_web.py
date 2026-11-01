@@ -92,6 +92,7 @@ def write_rules(city: CityConfig, path) -> None:
         "assumptions": {
             "gross_sqft_per_unit": city.assumptions.gross_sqft_per_unit,
             "parking_stall_sqft": city.assumptions.parking_stall_sqft,
+            "min_home_sqft": city.assumptions.min_home_sqft,
         },
         "redevelopment": city.redevelopment.model_dump(),
     }
@@ -121,6 +122,19 @@ def write_addresses(lots: gpd.GeoDataFrame, path) -> None:
         "lat": [round(p.y, 6) for p in points.iloc[order]],
     }
     path.write_text(json.dumps(payload, separators=(",", ":")))
+
+
+def write_city_index() -> None:
+    """web/public/data/cities.json: every city with exported data, for the city picker."""
+    from zce.config import CITIES_DIR, load_city
+
+    data_root = REPO_ROOT / "web" / "public" / "data"
+    cities = []
+    for folder in sorted(p for p in CITIES_DIR.iterdir() if (p / "city.yaml").exists()):
+        if (data_root / folder.name / "parcels.json").exists():
+            c = load_city(folder.name)
+            cities.append({"id": c.id, "name": c.name, "center": list(c.map.center), "zoom": c.map.zoom})
+    (data_root / "cities.json").write_text(json.dumps(cities, indent=1))
 
 
 def export_city(city: CityConfig) -> None:
@@ -198,6 +212,8 @@ def export_city(city: CityConfig) -> None:
     # separators=(",", ":") drops spaces: about 20% smaller.
     (web_dir / "parcels.json").write_text(json.dumps(payload, separators=(",", ":")))
     write_addresses(lots, web_dir / "addresses.json")
+
+    write_city_index()
 
     sizes = {p.name: p.stat().st_size for p in web_dir.iterdir()}
     for name, size in sizes.items():

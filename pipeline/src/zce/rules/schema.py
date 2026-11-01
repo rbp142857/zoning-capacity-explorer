@@ -113,7 +113,9 @@ class ZoneRules(Strict):
 
     # Density: any of these may be set; the engine applies all that are.
     max_units_per_lot: Sourced[int] | None = None
-    lot_area_per_unit_sqft: Sourced[float] | None = None
+    # A number, or a table by lot width/area (e.g. Glendale: less land per
+    # home on lots 90 ft or wider).
+    lot_area_per_unit_sqft: Sourced[float | Banded] | None = None
     units_per_acre: Sourced[float] | None = None
     small_lot_units: Sourced[Banded] | None = None  # table of units by lot area
     small_lot_units_below_sqft: float | None = None  # lots under this use the table

@@ -110,7 +110,12 @@ export function adjustForLot(r: ZoneRules, lot: Lot, s: Scenario): ZoneRules {
       }
     }
     if (m !== 1) {
-      if (r.lot_area_per_unit_sqft) u.lot_area_per_unit_sqft = cite(r.lot_area_per_unit_sqft.value / m);
+      if (r.lot_area_per_unit_sqft) {
+        const v = r.lot_area_per_unit_sqft.value;
+        u.lot_area_per_unit_sqft = cite(
+          typeof v === "number" ? v / m : { ...v, bands: v.bands.map((b) => ({ ...b, value: b.value === null ? null : b.value / m })) },
+        );
+      }
       if (r.units_per_acre) u.units_per_acre = cite(r.units_per_acre.value * m);
       if (r.max_units_per_lot) u.max_units_per_lot = cite(Math.floor(r.max_units_per_lot.value * m + 1e-9));
       if (r.small_lot_units) u.small_lot_units = cite(scaleBandedValues(r.small_lot_units.value, m));

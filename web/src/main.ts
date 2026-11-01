@@ -21,11 +21,44 @@ import { type AddressIndex, setupSearch } from "./search";
 import { byDistrict, byTransitDistance, netNew, realisticNew } from "./summary";
 import { LEVERS, scenarioFromHash, scenarioToHash } from "./url";
 
-const CITY = "pasadena";
 // import.meta.env.BASE_URL is "./" (see vite.config.ts), so these work
 // whether the site is served at / or at /<repo-name>/ on GitHub Pages.
-const DATA_DIR = `${import.meta.env.BASE_URL}data/${CITY}`;
-const TILES_URL = new URL(`${DATA_DIR}/parcels.pmtiles`, window.location.href).href;
+const DATA_ROOT = `${import.meta.env.BASE_URL}data`;
+
+interface CityInfo {
+  id: string;
+  name: string;
+  center: [number, number];
+  zoom: number;
+}
+
+// Links shared before more cities were added have no ?city=, and were made
+// for Pasadena, so it stays the default.
+const DEFAULT_CITY = "pasadena";
+
+/** The city comes from ?city=... in the address. */
+function pickCity(cities: CityInfo[]): CityInfo {
+  const wanted = new URLSearchParams(window.location.search).get("city") ?? DEFAULT_CITY;
+  return cities.find((c) => c.id === wanted) ?? cities[0];
+}
+
+function setupCityPicker(cities: CityInfo[], current: CityInfo) {
+  const select = $<HTMLSelectElement>("city");
+  for (const c of cities) {
+    const opt = document.createElement("option");
+    opt.value = c.id;
+    opt.textContent = c.name.split(",")[0];
+    select.append(opt);
+  }
+  select.value = current.id;
+  // Switching city reloads the page with ?city=..., keeping the scenario
+  // (the #hash), since the reform levers apply to every city.
+  select.addEventListener("change", () => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("city", select.value);
+    window.location.href = url.toString();
+  });
+}
 
 const PRESETS: Record<string, Partial<Scenario>> = {
   fourplex: { sf_units_per_lot: 4 },
@@ -133,6 +166,14 @@ function renderCharts(data: ParcelData, now: Results, today: Results, reform: bo
 async function main() {
   const status = $("status");
   try {
+    const cities = await loadJson<CityInfo[]>(`${DATA_ROOT}/cities.json`);
+    const city = pickCity(cities);
+    setupCityPicker(cities, city);
+    const cityName = city.name.split(",")[0];
+    $("city-name").textContent = cityName;
+    document.title = `${cityName} Zoning Capacity`;
+    const DATA_DIR = `${DATA_ROOT}/${city.id}`;
+    const TILES_URL = new URL(`${DATA_DIR}/parcels.pmtiles`, window.location.href).href;
     const [data, rules] = await Promise.all([
       loadJson<ParcelData>(`${DATA_DIR}/parcels.json`),
       loadJson<RulesFile>(`${DATA_DIR}/rules.json`),
@@ -145,7 +186,7 @@ async function main() {
     writeForm(scenario);
     showHeadline(data, scenario, now, today);
 
-    const controller = await createMap("map", data, TILES_URL);
+    const controller = await createMap("map", data, TILES_URL, { center: city.center, zoom: city.zoom });
     status.textContent = "";
     controller.setResults(now, today);
 
@@ -201,7 +242,8 @@ async function main() {
       renderCharts(data, now, today, !isBaseline(scenario));
       if (selectedPid !== null) showDetails(selectedPid);
       popup.remove();
-      if (updateUrl) history.replaceState(null, "", scenarioToHash(scenario) || window.location.pathname);
+      // Keep ?city=... (the search part); only the #scenario changes.
+      if (updateUrl) history.replaceState(null, "", window.location.pathname + window.location.search + scenarioToHash(scenario));
       console.debug(`Scenario recomputed in ${Math.round(performance.now() - t0)} ms`);
     };
 
@@ -284,7 +326,7 @@ async function main() {
         mapImage = null; // a blank or tainted canvas: print without the map
       }
       renderPrintSummary($("print-summary"), {
-        city: "Pasadena",
+        city: cityName,
         reform,
         levers: describeScenario(form()),
         existing: today.totals.existing,

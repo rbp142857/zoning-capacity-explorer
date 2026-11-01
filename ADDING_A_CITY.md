@@ -1,9 +1,26 @@
 # Adding a city
 
-The pipeline is built so a new city mostly means **new rule files and a small
-zoning adapter**. This guide walks through it, using a second Los Angeles
-County city as the example (the parcel adapter and California state law are
-already done). Budget most of your time for step 4: reading the zoning code.
+The pipeline is built so a new city mostly means **new rule files**. For any
+city in Los Angeles County there's now a fast path: SCAG's countywide zoning
+table gives every parcel its zone code, so no zoning adapter or zoning map is
+needed. Glendale was added this way; copy `cities/glendale/` as your starting
+point. Budget most of your time for step 4: reading the zoning code.
+
+**LA County fast path, in short:**
+
+1. Copy `cities/glendale/city.yaml` to `cities/<city>/city.yaml`. Change `id`,
+   `name`, `official_name`, `map`, the parcels filter (`TaxRateCity`), the
+   zoning filter (SCAG's `CITY` name), and the permit-report filter
+   (`JURIS_NAME`).
+2. `make download clean CITY=<city>`, then list the city's zone codes and how
+   many lots each has (the quality report shows them).
+3. Write rule files for the zones covering most residential land (step 4
+   below). If SCAG spells a code differently from the city's code, add it to
+   `zone_aliases` in city.yaml.
+4. `make capacity export golden validate CITY=<city>`, hand-check at least five
+   lots, `make test`. The city appears in the site's picker automatically.
+
+The longer steps below explain each part, and what to do outside LA County.
 
 ## 0. Check the data exists (an afternoon)
 
@@ -48,10 +65,10 @@ Every city's zoning layer names its fields differently. Copy
 `zone_ordinance`. Rewrite `OVERLAY_PATTERN` for the city's overlay codes, and
 add tests like `tests/test_pasadena_zoning.py`.
 
-Then point `clean.py` at the new adapter. (Today it calls the Pasadena adapter
-directly; the second city is the moment to pick the adapter from
-`city.yaml`'s `adapter:` field instead. That's a small refactor worth doing
-then, not before.)
+Then register it in `pipeline/src/zce/adapters/__init__.py` (`ZONING_ADAPTERS`)
+and name it in `city.yaml` (`sources.zoning.adapter`). Each adapter provides
+`attach_zoning(parcels, raw_dir, city)`. Districts, specific-plan boundaries and
+a city boundary are optional sources; without districts, charts group by ZIP code.
 
 Outside LA County you also need a **parcel adapter**: copy
 `adapters/la_assessor.py`, keep its column **whitelist** idea (never a
@@ -127,9 +144,8 @@ make capacity export golden validate CITY=<city-id>
 
 ## 7. Website and docs
 
-- The site currently loads one city (`CITY` in `web/src/main.ts`, and the map
-  center in `web/src/map.ts`). For a second city, make both come from a small
-  per-city config, and add a city picker.
+- The site picks up every city with exported data (`web/public/data/cities.json`,
+  written by `make export`); the map's starting view comes from `map:` in city.yaml.
 - Add a city section to METHODOLOGY.md: data sources with dates and licenses,
   every simplification, and the validation results.
 - `make test` must pass, including the golden parity test.

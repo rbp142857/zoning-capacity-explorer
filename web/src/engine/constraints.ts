@@ -19,6 +19,7 @@ export interface Lot {
 export interface EngineAssumptions {
   gross_sqft_per_unit: number;
   parking_stall_sqft: number;
+  min_home_sqft?: number;
 }
 
 export function shapeFactor(lot: Lot): number {
@@ -72,7 +73,7 @@ export function lotAreaPerUnitLimit(r: ZoneRules, lot: Lot): number | null {
     return Math.trunc(pick(r.small_lot_units.value, lot.area_sqft, lot.width_ft).value as number);
   }
   if (!r.lot_area_per_unit_sqft) return null;
-  return roundUnits(lot.area_sqft / r.lot_area_per_unit_sqft.value, rounding(r));
+  return roundUnits(lot.area_sqft / (asNumber(r.lot_area_per_unit_sqft.value, lot) as number), rounding(r));
 }
 
 export function setbackAreaSqft(r: ZoneRules, lot: Lot): number {
@@ -111,7 +112,14 @@ export function envelopeLimit(r: ZoneRules, lot: Lot, a: EngineAssumptions): num
       byFormula = Math.floor((bandArea(band, lot) as number) / a.gross_sqft_per_unit + EPS);
     }
     units = Math.min(units, byFormula);
+    floorArea = Math.min(
+      floorArea,
+      band.plus_sqft_per_unit
+        ? (band.share as number) * lot.area_sqft + band.plus_sqft + band.plus_sqft_per_unit
+        : (bandArea(band, lot) as number),
+    );
   }
+  if (units < 1 && a.min_home_sqft && floorArea >= a.min_home_sqft) units = 1;
   return Math.max(0, units);
 }
 

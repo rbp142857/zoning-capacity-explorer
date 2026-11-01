@@ -16,6 +16,7 @@ the data-quality report so a human can look at it.
 import re
 
 import geopandas as gpd
+import pandas as pd
 
 # Overlay families from Pasadena Zoning Code Article 3 (overlay districts).
 # Order matters: longer, more specific patterns must come before shorter ones
@@ -85,3 +86,25 @@ def load_zoning(raw_path, analysis_crs: str, plan_prefixes: dict[str, str]) -> g
     # them so area calculations in the spatial join are correct.
     zones["geometry"] = zones.geometry.make_valid()
     return zones
+
+
+def attach_zoning(parcels: gpd.GeoDataFrame, raw_dir, city) -> tuple[pd.DataFrame, gpd.GeoDataFrame, list[str]]:
+    """Zone columns for every lot, the zoning table, and data-quality notes.
+
+    Pasadena's own zoning layer is a map of polygons, so each lot takes the
+    zone covering most of it (see spatial.assign_zone).
+    """
+    from zce import spatial  # local import: spatial imports pandas/geopandas heavily
+
+    zones = load_zoning(raw_dir / "zoning.geojson", city.analysis_crs, city.specific_plan_prefixes)
+    zone_cols = spatial.assign_zone(parcels, zones)
+    return zone_cols, zones, category_mismatches(zones)
+
+
+def category_mismatches(zones: gpd.GeoDataFrame) -> list[str]:
+    """Polygons whose category label doesn't match their code family (data errors)."""
+    bad = zones[
+        ((zones["zone_category"] == "Multi-Family Residential") & ~zones["base_zone"].str.startswith("RM"))
+        | ((zones["zone_category"] == "Single-Family Residential") & ~zones["base_zone"].str.startswith("RS"))
+    ]
+    return [f"`{r.zone_code}` labeled \"{r.zone_category}\"" for r in bad.itertuples()]

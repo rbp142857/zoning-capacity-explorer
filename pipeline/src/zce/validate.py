@@ -143,9 +143,10 @@ def validate_city(city: CityConfig) -> Path:
     # 1. Existing homes ------------------------------------------------------------
     out.append("## 1. Existing homes: Assessor roll vs. Department of Finance\n")
     roll_total = lots["existing_units"].sum()
-    xlsx = raw / (city.sources["dof_e5"].filename or "")
-    if xlsx.exists():
-        dof = dof_housing_units(xlsx, "Pasadena")
+    dof_src = city.sources.get("dof_e5")
+    xlsx = raw / (dof_src.filename or "") if dof_src else None
+    if xlsx and xlsx.exists():
+        dof = dof_housing_units(xlsx, city.official_name)
         latest = dof.iloc[-1]
         diff = roll_total / latest["total"] - 1
         out.append(_table(dof.rename(columns={"year": "DOF year (Jan 1; 2020 = Census)"})))
@@ -155,13 +156,16 @@ def validate_city(city: CityConfig) -> Path:
         out.append("- Expected differences: the roll counts units the Assessor taxes (ADUs are sometimes "
                    "folded into the main building, sometimes not); DOF starts from the 2020 Census and adds "
                    "permits. A gap of a few percent is normal; a large gap would point to a data problem.\n")
-    else:
+    elif dof_src:
         missing("dof_e5")
+    else:
+        out.append("_Not configured for this city (add `dof_e5` to city.yaml)._\n")
 
     # 2. Housing Element sites -----------------------------------------------------
     out.append("## 2. Housing Element sites inventory vs. this tool\n")
-    pdf = raw / (city.sources["housing_element"].filename or "")
-    if pdf.exists():
+    he_src = city.sources.get("housing_element")
+    pdf = raw / (he_src.filename or "") if he_src else None
+    if pdf and pdf.exists():
         sites, unparsed = parse_sites(housing_element_text(pdf))
         out.append(f"Parsed **{len(sites):,}** site rows from Appendix C (unparsed lines: {len(unparsed)}), "
                    f"total capacity **{_fmt(sites['total'].sum())}** homes. The document states 10,261 for "
@@ -192,8 +196,10 @@ def validate_city(city: CityConfig) -> Path:
         out.append(f"- **{int((m['model_status'] != 'ok').sum())} site parcels** with "
                    f"{_fmt(m.loc[m['model_status'] != 'ok', 'total'].sum())} homes are in specific plans or PDs "
                    "that this tool doesn't model yet: most of the city's planned capacity is there.\n")
-    else:
+    elif he_src:
         missing("housing_element")
+    else:
+        out.append("_Not configured for this city yet: its sites inventory table needs its own parser._\n")
 
     # 3. Production ----------------------------------------------------------------
     out.append("## 3. What actually gets built (HCD Annual Progress Reports)\n")
@@ -240,7 +246,7 @@ def validate_city(city: CityConfig) -> Path:
         matched_share = big.loc[big["lot_id"].notna(), "permitted"].sum() / big["permitted"].sum()
         big = big.join(by_ain[["model_status", "zone_code", "specific_plan"]], on="lot_id")
         big["where"] = big["specific_plan"].fillna(
-            big["model_status"].map({"ok": "Modeled base zones", "not_modeled": "Planned developments"}))
+            big["model_status"].map({"ok": "Modeled base zones", "not_modeled": "Other zones not modeled (PDs, no zone found, ...)"}))
         big["where"] = big["where"].fillna("Parcel not matched")
         w = big.groupby("where")["permitted"].sum().sort_values(ascending=False)
         out.append(f"Where homes in **5+ unit buildings** were permitted ({matched_share:.0%} of them matched to a lot: "
@@ -256,8 +262,12 @@ def validate_city(city: CityConfig) -> Path:
         out.append(f"- 2–4 unit buildings (the \"missing middle\" that SB 9 and fourplex reforms target) added about "
                    f"{_fmt(per_year.get('2 to 4', 0))} homes a year citywide. That's why the realistic estimate "
                    "doesn't count small-scale infill in single-family zones.")
+        modeled_share = w.get("Modeled base zones", 0) / w.sum()
+        coverage = ("Most new apartment buildings are in areas this tool doesn't model yet, so its totals miss "
+                    "where the city builds most." if modeled_share < 0.5 else
+                    f"{modeled_share:.0%} of new apartment homes are in zones this tool models.")
         out.append("- Nearest-lot matches can land on a neighbor across the street, so treat the shares as "
-                   "approximate. Most new apartment buildings are in specific plans this tool doesn't model yet.\n")
+                   f"approximate. {coverage}\n")
     else:
         out.append("_Skipped: run `make download` to fetch the Annual Progress Report data._\n")
 

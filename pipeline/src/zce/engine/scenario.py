@@ -160,7 +160,12 @@ def adjust_for_lot(r: ZoneRules, lot: Lot, s: Scenario) -> ZoneRules:
                     updates["max_far"] = _cite(r.max_far.value * (base_stories + extra) / base_stories)
         if m != 1.0:
             if r.lot_area_per_unit_sqft is not None:
-                updates["lot_area_per_unit_sqft"] = _cite(r.lot_area_per_unit_sqft.value / m)
+                v = r.lot_area_per_unit_sqft.value
+                if isinstance(v, Banded):
+                    v = v.model_copy(update={"bands": [b.model_copy(update={"value": b.value / m}) for b in v.bands]})
+                else:
+                    v = v / m
+                updates["lot_area_per_unit_sqft"] = _cite(v)
             if r.units_per_acre is not None:
                 updates["units_per_acre"] = _cite(r.units_per_acre.value * m)
             if r.max_units_per_lot is not None:

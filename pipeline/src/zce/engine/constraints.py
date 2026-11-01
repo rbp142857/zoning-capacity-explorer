@@ -47,6 +47,7 @@ class EngineAssumptions:
 
     gross_sqft_per_unit: float  # building floor area per unit, incl. hallways
     parking_stall_sqft: float  # surface area per parking space, incl. aisle share
+    min_home_sqft: float = 0  # smallest house counted (see city.yaml)
     extra: dict = field(default_factory=dict)
 
 
@@ -134,7 +135,7 @@ def lot_area_per_unit_limit(rules: ZoneRules, lot: Lot) -> int | None:
     if rules.lot_area_per_unit_sqft is None:
         return None
     mode = rules.density_rounding.value if rules.density_rounding else "floor"
-    return round_units(lot.area_sqft / rules.lot_area_per_unit_sqft.value, mode)
+    return round_units(lot.area_sqft / _number(rules.lot_area_per_unit_sqft.value, lot), mode)
 
 
 # --- Constraint 3: buildable envelope ---------------------------------------------
@@ -189,6 +190,12 @@ def envelope_limit(rules: ZoneRules, lot: Lot, a: EngineAssumptions) -> int:
         else:
             by_formula = math.floor(_band_area(band, lot) / a.gross_sqft_per_unit + 1e-9)
         units = min(units, by_formula)
+        floor_area = min(floor_area, fixed + band.plus_sqft_per_unit if band.plus_sqft_per_unit else _band_area(band, lot))
+
+    # A lot too small for an average-size new unit can still hold one small
+    # house, as long as the limits allow at least min_home_sqft of floor area.
+    if units < 1 and a.min_home_sqft and floor_area >= a.min_home_sqft:
+        units = 1
     return max(0, units)
 
 

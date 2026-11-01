@@ -38,7 +38,7 @@ const BASEMAPS: Record<Theme, string> = {
 };
 
 const DATA_ATTRIBUTION =
-  "Parcels: LA County Assessor · Zoning: City of Pasadena · Transit stops: SCAG · Analysis: Zoning Capacity Explorer";
+  "Parcels: LA County Assessor · Zoning: city zoning maps and SCAG · Transit stops: SCAG · Analysis: Zoning Capacity Explorer";
 
 // The pmtiles:// protocol lets MapLibre read individual tiles out of one
 // .pmtiles file using HTTP range requests, so no tile server is needed.
@@ -89,7 +89,12 @@ export interface MapController {
   select(pid: number | null): void;
 }
 
-export function createMap(container: string, data: ParcelData, tilesUrl: string): Promise<MapController> {
+export function createMap(
+  container: string,
+  data: ParcelData,
+  tilesUrl: string,
+  view0: { center: [number, number]; zoom: number },
+): Promise<MapController> {
   let theme = currentTheme();
   let view: View = "max";
   let highlight: number | null = null;
@@ -100,8 +105,8 @@ export function createMap(container: string, data: ParcelData, tilesUrl: string)
   const map = new maplibregl.Map({
     container,
     style: BASEMAPS[theme],
-    center: [-118.135, 34.16], // Pasadena city hall, roughly
-    zoom: 12.3,
+    center: view0.center,
+    zoom: view0.zoom,
     minZoom: 11,
     maxZoom: 18,
     attributionControl: { customAttribution: DATA_ATTRIBUTION, compact: true },
