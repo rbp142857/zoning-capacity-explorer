@@ -1,0 +1,53 @@
+# Burbank MDC-2. Every value cites the Burbank Municipal Code Title 10, Ch. 1 (Code Publishing, through Ord. No. 25-4,036, eff. Jan 16, 2026).
+# Zones come from SCAG's countywide table, which has no overlay districts
+# (hillside area, 2021-2029 Housing Element Opportunity Sites overlay).
+zone: MDC-2
+name: "Media District Limited Commercial (MDC-2)"
+family: commercial
+
+sources:
+  T502:
+    section: "BMC §10-1-502, Table 10-1-502 (uses in nonresidential zones)"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100105.html#10-1-502
+  S920:
+    section: "BMC §10-1-920 (mixed-use development standards)"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100109.html#10-1-920
+  GPC:
+    section: "BMC General Plan Consistency tables (e.g. §10-1-708.5): maximum density by General Plan designation"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100107.html#10-1-708.5
+
+residential_allowed: {value: true, source: T502, assumption: "Homes are allowed as part of a mixed-use project with an administrative use permit (AUP), a staff-level approval; we count them. Residential-only buildings are allowed only where state law requires it, which is not modeled."}
+housing_types: {value: [mixed_use], source: T502}
+min_lot_area_sqft: {value: 6000, source: S920, assumption: "For new lots only."}
+
+units_per_acre: {value: 58, source: GPC, assumption: "Density comes from the General Plan designation, not the zone. 98% of MDC-2 lots are designated Media District (58 homes per acre) in SCAG's General Plan table, so we use that for all MDC-2 lots."}
+density_rounding: {value: up, source: S920, assumption: "§10-1-920(B)(2)(c)(ii): round up to the next whole home (projects paying affordable-housing in-lieu fees round differently; not modeled)."}
+
+setbacks:
+  front_ft: {value: 5, source: S920, assumption: "Underlying zone: 5 ft or 20% of building height, at most 10 ft (none on lots with less than 75 ft of frontage); we use 5 ft."}
+  side_ft: {value: 0, source: S920, assumption: "No interior setback next to other nonresidential zones; 10 ft next to residential zones (not modeled per side)."}
+  rear_ft: {value: 10, source: S920, assumption: "10 ft, assuming the rear of a commercial lot backs onto a residential zone, as most of Burbank's corridor lots do."}
+
+max_height_ft:
+  value:
+    by: dist_single_family_ft
+    bands:
+      - {below: 150, value: 40}
+      - {value: 60}
+  source: S920
+  assumption: "40 ft within 150 ft of a single-family zoned lot, 60 ft from 150 ft. 80 ft is allowed 300 ft or more from all residential zones; we use 60 ft there too (simplification; density and parking limit these lots first)."
+max_stories:
+  value:
+    by: dist_single_family_ft
+    bands:
+      - {below: 150, value: 3}
+      - {value: 5}
+  source: S920
+  assumption: "Stories that fit the height limit with a 13 ft ground floor (required) and 10 ft upper floors: 3 under 40 ft, 5 under 60 ft."
+
+parking_per_unit: {value: 1.5, source: S920, assumption: "1.5 spaces per 2- or 3-bedroom unit (1 per studio or 1-bedroom); our assumed 850 sq ft home is a 2-bedroom."}
+
+simplifications:
+  - "Ground-floor commercial space not modeled separately; all floor area is treated as housing."
+  - "Open space per unit (225 to 275 sq ft) and frontage, step-back and buffer standards not modeled."
+  - "2021-2029 Housing Element Opportunity Sites overlay (site-specific densities) not in SCAG's table."

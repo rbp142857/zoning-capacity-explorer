@@ -35,6 +35,7 @@ export function buildLotInputs(data: ParcelData): LotInputs {
       overlays: data.codes.overlay_sets[c.overlay_set[pid]],
       dist_major_transit_ft: c.dist_major_transit_ft[pid],
       existing_units: c.existing_units[pid],
+      dist_single_family_ft: c.dist_single_family_ft[pid],
     });
     zones.push(c.rules_zone[pid] >= 0 ? data.codes.rules_zone[c.rules_zone[pid]] : null);
   }

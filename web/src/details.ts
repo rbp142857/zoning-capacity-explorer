@@ -36,9 +36,9 @@ function cite(r: ZoneRules, v: Sourced<unknown> | null): string {
   return `<span class="cite">${link}</span>${note}`;
 }
 
-function describeValue(v: unknown, area: number, width: number): string {
+function describeValue(v: unknown, area: number, width: number, distSf: number | null): string {
   if (isBanded(v)) {
-    const b = pick(v, area, width);
+    const b = pick(v, area, width, distSf);
     if (b.share !== null) {
       const parts = [`${Math.round(b.share * 100)}% of the lot`];
       if (b.plus_sqft) parts.push(`+ ${fmt.format(b.plus_sqft)} sq ft`);
@@ -46,13 +46,13 @@ function describeValue(v: unknown, area: number, width: number): string {
       if (b.at_least_sqft) parts.push(`(at least ${fmt.format(b.at_least_sqft)} sq ft)`);
       return parts.join(" ");
     }
-    return b.value === null ? "no limit for this lot size" : String(b.value);
+    return b.value === null ? "no limit for this lot" : String(b.value);
   }
   if (isSideSetback(v)) return `${Math.round(v.pct_of_width * 100)}% of lot width (${v.min_ft}–${v.max_ft} ft)`;
   return String(v);
 }
 
-function rulesTable(r: ZoneRules, area: number, width: number): string {
+function rulesTable(r: ZoneRules, area: number, width: number, distSf: number | null): string {
   const rows: [string, Sourced<unknown> | null, string?][] = [
     ["Housing allowed", r.residential_allowed, r.residential_allowed.value ? "Yes" : "No"],
     ["Homes per lot", r.max_units_per_lot],
@@ -75,7 +75,7 @@ function rulesTable(r: ZoneRules, area: number, width: number): string {
     .filter(([, v]) => v !== null && v !== undefined)
     .map(([label, v, text]) => {
       const s = v as Sourced<unknown>;
-      let shown = text ?? describeValue(s.value, area, width);
+      let shown = text ?? describeValue(s.value, area, width, distSf);
       if (label === "Lot coverage" || label === "Garden / open space") {
         if (typeof s.value === "number") shown = `${Math.round(s.value * 100)}% of the lot`;
       }
@@ -164,6 +164,7 @@ export function renderLotDetails(
     substandard_lot_width: "Narrower than today's minimum for new lots.",
     sb9_excluded_historic_district: "In a landmark (historic) district, where SB 9 doesn't apply.",
     sb9_lot_too_small: "Too small for SB 9's two homes.",
+    sb9_excluded_by_city: "The city's code bars SB 9 homes in this zone (we follow the city; see the rule file).",
   };
 
   el.innerHTML = `${head}
@@ -188,5 +189,5 @@ export function renderLotDetails(
     ${flags.length ? `<ul class="details-flags">${flags.map((f) => `<li>${esc(flagText[f] ?? f)}</li>`).join("")}</ul>` : ""}
     ${redevSection(rules, data.columns.redev_mask[pid], reform ? now.result : today.result, lot.existing_units, reform)}
     <h3>Rules that apply (${esc(now.rules.name)})</h3>
-    <table class="details-table rules">${rulesTable(now.rules, lot.area_sqft, lot.width_ft)}</table>`;
+    <table class="details-table rules">${rulesTable(now.rules, lot.area_sqft, lot.width_ft, lot.dist_single_family_ft)}</table>`;
 }

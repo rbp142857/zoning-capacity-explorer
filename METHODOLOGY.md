@@ -11,26 +11,27 @@ want to look.
 
 ## Summary
 
-Two cities are modeled: **Pasadena** (the pilot, using the city's own zoning
-map) and **Glendale** (the first city added from SCAG's countywide zoning
-table, section 11).
+Three cities are modeled: **Pasadena** (the pilot, using the city's own zoning
+map), **Glendale** (the first city added from SCAG's countywide zoning table,
+section 11) and **Burbank** (section 12).
 
-| | Pasadena | Glendale |
-|---|---|---|
-| Lots modeled | 27,591 of 30,198 | 34,541 of 35,641 |
-| Homes on modeled lots today | 51,582 | 79,516 |
-| Legal maximum, city zoning only | 54,342 | 85,625 |
-| Legal maximum with state law (SB 9, ADUs, AB 2097), theoretical | 114,385 | 159,577 |
-| New homes possible (maximum minus existing), theoretical | 68,323 | 92,798 |
-| New homes on lots **likely to redevelop** (a screen, not a forecast) | 4,907 on 753 lots | 13,388 on 1,258 lots |
-| Residential land where the city allows only one home | 77% | 74% |
-| Homes permitted per year, 2018–2025 (state reports) | ~424 | ~1,173 |
+| | Pasadena | Glendale | Burbank |
+|---|---|---|---|
+| Lots modeled | 27,591 of 30,198 | 34,541 of 35,641 | 24,976 of 25,456 |
+| Homes on modeled lots today | 51,582 | 79,516 | 43,358 |
+| Legal maximum, city zoning only | 54,342 | 85,625 | 49,761 |
+| Legal maximum with state law (SB 9, ADUs, AB 2097), theoretical | 114,385 | 159,577 | 104,968 |
+| New homes possible (maximum minus existing), theoretical | 68,323 | 92,798 | 67,382 |
+| New homes on lots **likely to redevelop** (a screen, not a forecast) | 4,907 on 753 lots | 13,388 on 1,258 lots | 7,293 on 736 lots |
+| Residential land where the city allows only one home | 77% | 74% | 74% |
+| Homes permitted per year, 2018–2025 (state reports) | ~424 | ~1,173 | ~321 |
 
-- In both cities, state law (SB 9, ADUs) is what allows more than one home on
-  most residential land.
+- In all three cities, state law (SB 9, ADUs) is what allows more than one
+  home on most residential land.
 - Pasadena: 2,607 lots in specific plans (mostly the Central District) are
   **not modeled yet**, and that's where most of its new apartments are built.
-  Glendale: 62% of new apartment homes are in zones the tool models.
+  Glendale: 62% of new apartment homes are in zones the tool models. Burbank
+  built apartments in only five permits, too few to say (section 12).
 
 ## 1. What the tool measures
 
@@ -273,3 +274,80 @@ Glendale permitted about 1,170 homes a year in 2018–2025 (about 690 in
 buildings of 5+ homes, 430 ADUs, 11 in 2–4 unit buildings). 62% of new
 apartment homes were in modeled zones; at that pace the likely-to-redevelop
 estimate equals about 31 years of building.
+
+## 12. Burbank
+
+**Zoning data.** Like Glendale, Burbank's zones come from SCAG's parcel-level
+zoning table, joined by parcel number: 99.4% of lots matched (164 show "no
+zone"). SCAG spells Burbank's codes the way the code does. The Media
+District's residential zones are aliased to the zones the code says they
+follow (MDR-3 → R-3, MDR-4 → R-4, BMC §10-1-2124).
+
+**Rules.** 30 zone files from the Burbank Municipal Code, Title 10, Chapter 1
+(Code Publishing, through Ord. No. 25-4,036, eff. January 16, 2026):
+single-family (R-1, R-1-H), multifamily (R-2, R-3, R-4), commercial zones
+where homes are allowed in mixed-use projects (C-2, C-3, C-4, MPC-1 to 3,
+BCC-1 to 3, MDC-2 to 4), and 13 zones without housing. Multifamily density
+steps up with lot size: R-4 allows one home per 2,000 sq ft of lot under
+12,000 sq ft, per 1,400 sq ft from 12,000, and per 1,000 sq ft from 24,000.
+
+**Two things Burbank does differently, and how the tool handles them:**
+
+- **Limits depend on distance to single-family zoning.** In R-2 to R-4, lots
+  within 500 ft of an R-1 or R-1-H lot get 2 stories and 60% lot coverage;
+  others get 3 stories and 70%. In mixed-use projects the height is 40 ft
+  within 150 ft of single-family zoning and 60 ft beyond (80 ft is allowed
+  300 ft from all residential zones; we cap it at 60 ft, since density and
+  parking limit those lots first). The pipeline measures every lot's distance
+  to the nearest single-family-zoned lot, and rule tables can be keyed on
+  it, the same way they're keyed on lot area or width. 37% of R-4 lots are
+  more than 500 ft away.
+- **Density in commercial zones comes from the General Plan**, not the zone
+  (27 homes per acre in Corridor Commercial, 58 in the Media District, 87
+  Downtown). SCAG's parcel-level General Plan table shows that each
+  commercial zone falls almost entirely in one designation (C-3: 96%
+  Corridor Commercial; BCC-1: 100% Downtown), so each rule file uses its
+  zone's designation. BCC-3 is split; the most common designation (27 per
+  acre) is used. Mixed-use projects round the home count **up**
+  (§10-1-920(B)(2)(c)).
+
+**Other choices** (each written in the rule files):
+
+- **Mixed use counts as allowing housing.** In the commercial zones, homes
+  are allowed as part of a mixed-use project with an Administrative Use
+  Permit (AUP), a staff-level approval. That's the city's only local path to
+  housing in those zones, so it's counted. (Glendale's IMU-R, where apartments also need an
+  AUP, is counted as not allowing housing; a consistent treatment across
+  cities is an open question.) Residential-only buildings in commercial zones
+  are allowed only where state law requires them, which isn't modeled.
+- **SB 9 in R-1-H.** Burbank's code bars SB 9 second homes in its
+  horsekeeping zone (§10-1-608.1(A)(3)). We follow the city's code, so those
+  750 lots get the ADU path only, and are flagged `sb9_excluded_by_city`.
+- **Second homes by conditional use permit** in R-1 are discretionary and not
+  counted.
+- **Measure One** (Art. 20, extended to 2030) requires voter approval to
+  raise the General Plan's housing limits, and community-impact findings for
+  residential projects. Neither is a per-lot number; both are noted, not
+  modeled.
+- Single-family front setbacks are "the average on the block", which we
+  can't measure; 20 ft is used.
+
+**Not modeled yet:** planned developments (PD, about 230 lots with 4,500
+homes, including large apartment complexes), the hillside area's extra
+standards, the 2021–2029 Housing Element Opportunity Sites overlay (site-by-
+site densities from the Housing Element), and a few codes that don't appear
+in the current code (NSFC, R-5, MDR-5): 480 lots in all.
+
+**Validation** ([`reports/burbank/validation.md`](reports/burbank/validation.md)):
+Burbank permitted about 320 homes a year in 2018–2025: 100 in buildings of 5+
+homes, 205 ADUs, and 4 in 2–4 unit buildings. Apartment building came from
+just five permits, so the "where it was built" table is fragile. The report
+says 77% were in modeled zones, but that is one 573-home project at 777 N
+Front St (2022), whose parcel number isn't on today's county roll (the site
+was re-parceled) and whose map point lands on the neighboring railroad lot.
+Of the rest, 93 homes were in a planned development (not modeled), 46 on an
+R-4 lot, and 92 couldn't be matched. The likely-to-redevelop estimate (7,300
+homes on 736 lots, nearly all in commercial zones) is about 94 years of
+Burbank's recent apartment building: its zoning allows far more than gets
+built. The Department of Finance housing count still needs its manual
+download.

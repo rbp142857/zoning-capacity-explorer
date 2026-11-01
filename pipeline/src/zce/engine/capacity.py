@@ -107,7 +107,9 @@ def compute_capacity(
     # SB 9 path: two units, or four with an urban lot split, in single-family zones.
     sb9 = state.get("sb9") if state else None
     if sb9 and rules.family in sb9.params["applies_to_families"]:
-        if _has_excluded_overlay(lot, sb9.params["excluded_overlay_prefixes"]):
+        if rules.sb9_allowed is not None and not rules.sb9_allowed.value:
+            result.flags.append("sb9_excluded_by_city")
+        elif _has_excluded_overlay(lot, sb9.params["excluded_overlay_prefixes"]):
             result.flags.append("sb9_excluded_historic_district")
         elif lot.area_sqft < sb9.params["min_lot_sqft_for_two_units"]:
             result.flags.append("sb9_lot_too_small")

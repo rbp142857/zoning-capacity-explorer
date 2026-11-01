@@ -203,6 +203,7 @@ def export_city(city: CityConfig) -> None:
             "lot_width_ft": [float(v) for v in lots["lot_width_ft"]],
             "lot_depth_ft": [float(v) for v in lots["lot_depth_ft"]],
             "dist_major_transit_ft": _int_column(lots["dist_major_transit_ft"]),
+            "dist_single_family_ft": _int_column(lots["dist_single_family_ft"]),
             "rules_zone": [rule_index.get(z, -1) if isinstance(z, str) else -1 for z in lots["rules_zone"]],
             "overlay_set": [overlay_index[tuple(o) if o is not None else ()] for o in lots["overlays"]],
             "district": [district_index.get(d, -1) if isinstance(d, str) else -1 for d in lots["district"]],

@@ -105,7 +105,7 @@ export function adjustForLot(r: ZoneRules, lot: Lot, s: Scenario): ZoneRules {
       u.max_stories = cite(addStories(r.max_stories.value, extra));
       if (r.max_far) {
         const base = r.max_stories.value;
-        const baseStories = typeof base === "number" ? base : pick(base, lot.area_sqft, lot.width_ft).value;
+        const baseStories = typeof base === "number" ? base : pick(base, lot.area_sqft, lot.width_ft, lot.dist_single_family_ft).value;
         if (baseStories) u.max_far = cite((r.max_far.value * (baseStories + extra)) / baseStories);
       }
     }

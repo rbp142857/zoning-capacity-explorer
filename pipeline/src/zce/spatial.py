@@ -89,3 +89,17 @@ def lot_dimensions(parcels: gpd.GeoDataFrame) -> pd.DataFrame:
         widths.append(min(a, b))
         depths.append(max(a, b))
     return pd.DataFrame({"lot_width_ft": widths, "lot_depth_ft": depths}, index=parcels.index)
+
+
+def distance_to_lots_ft(parcels: gpd.GeoDataFrame, targets: pd.Series) -> pd.Series:
+    """Distance from each lot's edge to the nearest edge of a target lot.
+
+    Used for "distance to single-family zoning" (Burbank's height limits
+    step down near single-family neighborhoods). 0 for the target lots
+    themselves and their neighbors; empty (NaN) when there are no targets.
+    In the parcels' coordinate system, which is in feet.
+    """
+    target_geoms = parcels.loc[targets, "geometry"]
+    if target_geoms.empty:
+        return pd.Series(float("nan"), index=parcels.index)
+    return parcels.geometry.distance(target_geoms.union_all())

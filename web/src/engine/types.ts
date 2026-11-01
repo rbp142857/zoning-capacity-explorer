@@ -17,7 +17,7 @@ export interface Band {
 }
 
 export interface Banded {
-  by: "lot_area_sqft" | "lot_width_ft";
+  by: "lot_area_sqft" | "lot_width_ft" | "dist_single_family_ft";
   bands: Band[];
 }
 
@@ -28,7 +28,7 @@ export interface SideSetback {
 }
 
 export type Family = "single_family" | "multifamily" | "commercial" | "nonresidential";
-export type Rounding = "floor" | "up_above_0_75" | "nearest_half_up";
+export type Rounding = "floor" | "up_above_0_75" | "nearest_half_up" | "up";
 
 export interface ZoneRules {
   zone: string;
@@ -59,6 +59,7 @@ export interface ZoneRules {
   parking_per_unit: Sourced<number> | null;
   guest_parking_per_unit: Sourced<number> | null;
   guest_parking_min_units: number | null;
+  sb9_allowed?: Sourced<boolean> | null;
   simplifications: string[];
 }
 
@@ -103,8 +104,10 @@ export function isSideSetback(v: unknown): v is SideSetback {
 }
 
 /** Same as Banded.pick() in schema.py. */
-export function pick(b: Banded, lotAreaSqft: number, lotWidthFt: number): Band {
-  const key = b.by === "lot_area_sqft" ? lotAreaSqft : lotWidthFt;
+export function pick(b: Banded, lotAreaSqft: number, lotWidthFt: number, distSingleFamilyFt: number | null = null): Band {
+  let key: number;
+  if (b.by === "dist_single_family_ft") key = distSingleFamilyFt ?? Infinity;
+  else key = b.by === "lot_area_sqft" ? lotAreaSqft : lotWidthFt;
   for (const band of b.bands) {
     if (band.below === null || key < band.below) return band;
   }

@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale).
+(ten in Pasadena, five in Glendale, six in Burbank).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -86,6 +86,41 @@ def glendale():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", GLENDALE, ids=[c[0] for c in GLENDALE])
 def test_hand_checked_glendale_parcel(glendale, address, zone, lot, max_units, binding, limits):
     rules, state, a = glendale
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+# Burbank: Lot(..., dist_single_family_ft) as the last value: Burbank's height
+# and coverage limits depend on distance to single-family zoning. See HAND_CHECKS.md.
+BURBANK = [
+    ("1065 E Grinnell Dr", "R-1", Lot(7850, 50.0, 157.3, (), 6062, 1, 0),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "parking": 6, "state_adu": 3, "state_sb9": 4}),
+    ("438 S Lamer St", "R-1-H", Lot(10125, 75.0, 135.1, (), 7807, 1, 0),
+     3, "state_law:adu", {"density": 1, "envelope": 3, "parking": 7, "state_adu": 3, "state_sb9": None}),
+    ("1919 W Alameda Ave", "R-4", Lot(10583, 97.9, 109.0, (), 7380, 0, 21),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 11, "parking": 7}),
+    ("520 E Orange Grove Ave", "R-4", Lot(12303, 101.7, 121.6, (), 2439, 0, 1428),
+     8, "lot_area_per_unit", {"lot_area_per_unit": 8, "envelope": 24, "parking": None}),
+    ("2907 W Burbank Blvd", "C-3", Lot(7861, 75.0, 105.5, (), 6227, 0, 20),
+     5, "density", {"density": 5, "envelope": 19, "parking": 9}),
+    ("300 E Olive Ave", "BCC-2", Lot(31000, 155.0, 200.1, (), 1175, None, 2517),
+     62, "density", {"density": 62, "envelope": 134, "parking": None}),
+]
+
+
+@pytest.fixture(scope="module")
+def burbank():
+    rules = load_zone_rules(REPO / "cities" / "burbank" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BURBANK, ids=[c[0] for c in BURBANK])
+def test_hand_checked_burbank_parcel(burbank, address, zone, lot, max_units, binding, limits):
+    rules, state, a = burbank
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

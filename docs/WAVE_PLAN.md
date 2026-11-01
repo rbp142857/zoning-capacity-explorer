@@ -44,12 +44,15 @@ building. Each is a Glendale-sized job via the SCAG fast path
 | West Hollywood | 4,314 | 23 (10) | 146 | 171 |
 | Monrovia | 9,783 | 30 (11) | 140 | 188 |
 | Santa Clarita | 51,872 | 25 (5) | 128 | 495 |
-| Burbank | 25,423 | 41 (7) | 104 | 321 |
+| Burbank ✅ | 25,423 | 41 (7) | 104 | 321 |
 | Duarte | 5,503 | 18 (6) | 103 | 122 |
 
 Together: 147,000 parcels, ~1,175 homes/yr in 2+ unit buildings (4.5%).
 Good order: Burbank first (closest to Glendale), then Santa Monica (most
-building), then the rest.
+building), then the rest. **Burbank: done** (October 31, 2026; see
+METHODOLOGY.md §12). It needed two small engine additions that later cities
+can reuse: limits keyed on distance to single-family zoning, and a city
+opting a zone out of SB 9.
 
 ### Wave 2: City of Los Angeles (its own project)
 

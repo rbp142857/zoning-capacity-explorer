@@ -84,7 +84,9 @@ export function computeCapacity(
 
   const sb9 = getLaw(state, "sb9");
   if (sb9 && (sb9.params.applies_to_families as string[]).includes(r.family)) {
-    if (hasExcludedOverlay(lot, sb9.params.excluded_overlay_prefixes as string[])) {
+    if (r.sb9_allowed && !r.sb9_allowed.value) {
+      flags.push("sb9_excluded_by_city");
+    } else if (hasExcludedOverlay(lot, sb9.params.excluded_overlay_prefixes as string[])) {
       flags.push("sb9_excluded_historic_district");
     } else if (lot.area_sqft < (sb9.params.min_lot_sqft_for_two_units as number)) {
       flags.push("sb9_lot_too_small");

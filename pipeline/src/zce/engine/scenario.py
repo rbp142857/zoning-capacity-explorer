@@ -155,7 +155,7 @@ def adjust_for_lot(r: ZoneRules, lot: Lot, s: Scenario) -> ZoneRules:
                 # Keep FAR in proportion to the added stories, or the extra
                 # height could never be used (assumption).
                 base = r.max_stories.value
-                base_stories = base if not isinstance(base, Banded) else base.pick(lot.area_sqft, lot.width_ft).value
+                base_stories = base if not isinstance(base, Banded) else base.pick(lot.area_sqft, lot.width_ft, lot.dist_single_family_ft).value
                 if base_stories:
                     updates["max_far"] = _cite(r.max_far.value * (base_stories + extra) / base_stories)
         if m != 1.0:

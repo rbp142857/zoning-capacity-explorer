@@ -22,6 +22,7 @@ interface GoldenLot {
   overlays: string[];
   dist_major_transit_ft: number | null;
   existing_units: number | null;
+  dist_single_family_ft?: number | null;
   redev_mask: number;
 }
 
@@ -42,6 +43,7 @@ describe(`TypeScript engine matches Python (${file})`, () => {
           overlays: d.overlays,
           dist_major_transit_ft: d.dist_major_transit_ft,
           existing_units: d.existing_units,
+          dist_single_family_ft: d.dist_single_family_ft ?? null,
         };
         const got = capacityUnderScenario(d.zone, lot, rules.assumptions, r2, st2, scenario);
         const want = golden.expected[name][i];

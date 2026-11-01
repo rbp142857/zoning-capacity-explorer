@@ -1,5 +1,14 @@
 [
  {
+  "id": "burbank",
+  "name": "Burbank, California",
+  "center": [
+   -118.32,
+   34.185
+  ],
+  "zoom": 12.6
+ },
+ {
   "id": "glendale",
   "name": "Glendale, California",
   "center": [

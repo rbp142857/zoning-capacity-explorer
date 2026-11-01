@@ -14,6 +14,7 @@ export interface Lot {
   overlays: string[];
   dist_major_transit_ft: number | null;
   existing_units: number | null;
+  dist_single_family_ft: number | null;
 }
 
 export interface EngineAssumptions {
@@ -33,11 +34,12 @@ export function roundUnits(x: number, mode: string): number {
   if (mode === "floor") return whole;
   if (mode === "up_above_0_75") return fraction > 0.75 + EPS ? whole + 1 : whole;
   if (mode === "nearest_half_up") return fraction >= 0.5 - EPS ? whole + 1 : whole;
+  if (mode === "up") return fraction > EPS ? whole + 1 : whole;
   throw new Error(`unknown rounding mode ${mode}`);
 }
 
 function pickValue(v: number | Banded, lot: Lot): Band | number {
-  return isBanded(v) ? pick(v, lot.area_sqft, lot.width_ft) : v;
+  return isBanded(v) ? pick(v, lot.area_sqft, lot.width_ft, lot.dist_single_family_ft) : v;
 }
 
 function bandArea(band: Band, lot: Lot, units = 0): number | null {
@@ -70,7 +72,7 @@ export function densityLimit(r: ZoneRules, lot: Lot): number | null {
 
 export function lotAreaPerUnitLimit(r: ZoneRules, lot: Lot): number | null {
   if (r.small_lot_units && r.small_lot_units_below_sqft !== null && lot.area_sqft < r.small_lot_units_below_sqft) {
-    return Math.trunc(pick(r.small_lot_units.value, lot.area_sqft, lot.width_ft).value as number);
+    return Math.trunc(pick(r.small_lot_units.value, lot.area_sqft, lot.width_ft, lot.dist_single_family_ft).value as number);
   }
   if (!r.lot_area_per_unit_sqft) return null;
   return roundUnits(lot.area_sqft / (asNumber(r.lot_area_per_unit_sqft.value, lot) as number), rounding(r));
@@ -102,7 +104,7 @@ export function envelopeLimit(r: ZoneRules, lot: Lot, a: EngineAssumptions): num
   let units = Math.floor(floorArea / a.gross_sqft_per_unit + EPS);
 
   if (r.max_floor_area) {
-    const band = pick(r.max_floor_area.value, lot.area_sqft, lot.width_ft);
+    const band = pick(r.max_floor_area.value, lot.area_sqft, lot.width_ft, lot.dist_single_family_ft);
     let byFormula: number;
     if (band.plus_sqft_per_unit) {
       const fixed = (band.share as number) * lot.area_sqft + band.plus_sqft;

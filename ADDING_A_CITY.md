@@ -104,6 +104,18 @@ For each zone, from the development-standards tables:
   formulas, required open space.
 - Parking per unit, and guest parking.
 
+Burbank-style details the schema supports:
+
+- Tables can be keyed on `lot_area_sqft`, `lot_width_ft` or
+  `dist_single_family_ft` (distance to the nearest single-family-zoned lot,
+  measured by the pipeline). In a `lot_coverage` table, write each band as
+  `share:` (a share of the lot), not `value:`.
+- `density_rounding: up` for codes that round any fraction up.
+- `sb9_allowed: false` where the city's code bars SB 9 in a zone.
+- If density depends on the General Plan designation, SCAG's
+  `GeneralPlan_poly_LA` table gives each parcel's designation; check whether
+  each zone falls mostly in one (Burbank's did).
+
 Rules for writing them:
 
 - **Cite every number** (`source:` key → `sources:` entry with section and URL).

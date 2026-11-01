@@ -29,6 +29,7 @@ class Lot:
     overlays: tuple[str, ...] = ()
     dist_major_transit_ft: float | None = None
     existing_units: float | None = None
+    dist_single_family_ft: float | None = None  # to the nearest single-family-zoned lot
 
     @property
     def shape_factor(self) -> float:
@@ -60,6 +61,7 @@ def round_units(x: float, mode: str) -> int:
     floor            1.99 -> 1   (the default: you can't build part of a home)
     up_above_0_75    2.76 -> 3, 2.75 -> 2   (Pasadena RM-16)
     nearest_half_up  2.5 -> 3, 2.49 -> 2    (Pasadena RM-32/RM-48)
+    up               2.01 -> 3, 2.0 -> 2    (Burbank mixed use)
     """
     # Tiny tolerance so 2.9999999 (floating-point noise) counts as 3.
     whole = math.floor(x + 1e-9)
@@ -70,13 +72,15 @@ def round_units(x: float, mode: str) -> int:
         return whole + 1 if fraction > 0.75 + 1e-9 else whole
     if mode == "nearest_half_up":
         return whole + 1 if fraction >= 0.5 - 1e-9 else whole
+    if mode == "up":
+        return whole + 1 if fraction > 1e-9 else whole
     raise ValueError(f"unknown rounding mode {mode!r}")
 
 
 def _pick(rule_value, lot: Lot) -> Band | float | None:
     """Resolve a plain number or a Banded table to the value for this lot."""
     if isinstance(rule_value, Banded):
-        return rule_value.pick(lot.area_sqft, lot.width_ft)
+        return rule_value.pick(lot.area_sqft, lot.width_ft, lot.dist_single_family_ft)
     return rule_value
 
 
@@ -131,7 +135,7 @@ def lot_area_per_unit_limit(rules: ZoneRules, lot: Lot) -> int | None:
         and rules.small_lot_units_below_sqft is not None
         and lot.area_sqft < rules.small_lot_units_below_sqft
     ):
-        return int(rules.small_lot_units.value.pick(lot.area_sqft, lot.width_ft).value)
+        return int(rules.small_lot_units.value.pick(lot.area_sqft, lot.width_ft, lot.dist_single_family_ft).value)
     if rules.lot_area_per_unit_sqft is None:
         return None
     mode = rules.density_rounding.value if rules.density_rounding else "floor"
@@ -180,7 +184,7 @@ def envelope_limit(rules: ZoneRules, lot: Lot, a: EngineAssumptions) -> int:
     units = math.floor(floor_area / a.gross_sqft_per_unit + 1e-9)
 
     if rules.max_floor_area is not None:
-        band = rules.max_floor_area.value.pick(lot.area_sqft, lot.width_ft)
+        band = rules.max_floor_area.value.pick(lot.area_sqft, lot.width_ft, lot.dist_single_family_ft)
         if band.plus_sqft_per_unit:
             # Allowance grows with each unit (e.g. RM-12: 35% of lot + 500 sf per
             # unit). Solve n x gross <= share x lot + per_unit x n for n.

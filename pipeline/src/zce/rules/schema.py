@@ -13,6 +13,7 @@ Design goals:
 The engine (zce.engine) only reads these objects; it never touches YAML or GIS.
 """
 
+import math
 from pathlib import Path
 from typing import Generic, Literal, TypeVar
 
@@ -59,7 +60,9 @@ class Band(Strict):
 
 
 class Banded(Strict):
-    by: Literal["lot_area_sqft", "lot_width_ft"]
+    # dist_single_family_ft: distance to the nearest lot in a single-family
+    # zone (Burbank: lower height limits near single-family neighborhoods).
+    by: Literal["lot_area_sqft", "lot_width_ft", "dist_single_family_ft"]
     bands: list[Band]
 
     @model_validator(mode="after")
@@ -71,8 +74,12 @@ class Banded(Strict):
             raise ValueError("bands must be in increasing order of `below`")
         return self
 
-    def pick(self, lot_area_sqft: float, lot_width_ft: float) -> Band:
-        key = lot_area_sqft if self.by == "lot_area_sqft" else lot_width_ft
+    def pick(self, lot_area_sqft: float, lot_width_ft: float, dist_single_family_ft: float | None = None) -> Band:
+        if self.by == "dist_single_family_ft":
+            # Unknown distance = no single-family zone in the city: "far".
+            key = math.inf if dist_single_family_ft is None else dist_single_family_ft
+        else:
+            key = lot_area_sqft if self.by == "lot_area_sqft" else lot_width_ft
         for band in self.bands:
             if band.below is None or key < band.below:
                 return band
@@ -94,7 +101,7 @@ class Setbacks(Strict):
 
 
 HousingType = Literal["single_family", "two_unit", "multifamily", "mixed_use"]
-Rounding = Literal["floor", "up_above_0_75", "nearest_half_up"]
+Rounding = Literal["floor", "up_above_0_75", "nearest_half_up", "up"]
 
 
 class ZoneRules(Strict):
@@ -134,6 +141,10 @@ class ZoneRules(Strict):
     parking_per_unit: Sourced[float] | None = None
     guest_parking_per_unit: Sourced[float] | None = None
     guest_parking_min_units: int | None = None
+
+    # False where the city's code says SB 9 doesn't apply to the zone
+    # (Burbank's horsekeeping zone). None/True: state law decides.
+    sb9_allowed: Sourced[bool] | None = None
 
     simplifications: list[str] = []  # things the MVP deliberately leaves out
 

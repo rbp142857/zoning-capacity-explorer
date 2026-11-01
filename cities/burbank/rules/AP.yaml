@@ -1,0 +1,20 @@
+# Burbank AP. Every value cites the Burbank Municipal Code Title 10, Ch. 1 (Code Publishing, through Ord. No. 25-4,036, eff. Jan 16, 2026).
+# Zones come from SCAG's countywide table, which has no overlay districts
+# (hillside area, 2021-2029 Housing Element Opportunity Sites overlay).
+zone: AP
+name: "Airport (AP)"
+family: nonresidential
+
+sources:
+  T502:
+    section: "BMC §10-1-502, Table 10-1-502 (uses in nonresidential zones)"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100105.html#10-1-502
+
+residential_allowed: {value: false, source: T502, assumption: "Table 10-1-502 allows no homes in AP."}
+housing_types: {value: [], source: T502}
+
+setbacks:
+  front_ft: {value: 0, source: T502}
+  side_ft: {value: 0, source: T502}
+  rear_ft: {value: 0, source: T502}
+max_stories: {value: 0, source: T502, assumption: "Not relevant: housing not allowed."}

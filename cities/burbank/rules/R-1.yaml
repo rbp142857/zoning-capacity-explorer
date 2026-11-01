@@ -1,0 +1,43 @@
+# Burbank R-1. Every value cites the Burbank Municipal Code Title 10, Ch. 1 (Code Publishing, through Ord. No. 25-4,036, eff. Jan 16, 2026).
+# Zones come from SCAG's countywide table, which has no overlay districts
+# (hillside area, 2021-2029 Housing Element Opportunity Sites overlay).
+zone: R-1
+name: "Single Family Residential (R-1)"
+family: single_family
+
+sources:
+  T602:
+    section: "BMC §10-1-602, Table 10-1-602 (uses in R-1 and R-1-H)"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100106.html#10-1-602
+  T603:
+    section: "BMC §10-1-603, Table 10-1-603(A) (R-1 and R-1-H standards)"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100106.html#10-1-603
+
+residential_allowed: {value: true, source: T602}
+housing_types: {value: [single_family], source: T602}
+min_lot_area_sqft: {value: 6000, source: T603}
+min_lot_width_ft: {value: 50, source: T603}
+max_units_per_lot: {value: 1, source: T602, assumption: "One home per lot by right. A second home needs a conditional use permit (and 5,750 sq ft more land), which is discretionary, so it is not counted."}
+
+setbacks:
+  front_ft: {value: 20, source: T603, assumption: "The code requires the average front setback on the block, which we can't measure; 20 ft is typical of Burbank's single-family blocks."}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 3, max_ft: 10}, source: T603}
+  rear_ft: {value: 15, source: T603}
+
+max_height_ft: {value: 30, source: T603, assumption: "30 ft to the top of a pitched roof (20 ft to the top plate)."}
+max_stories: {value: 2, source: T603}
+lot_coverage: {value: 0.5, source: T603}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 7500, share: 0.40}
+      - {below: 15000, share: 0.30, plus_sqft: 750}  # 0.40 x first 7,500 + 0.30 x the next 7,500
+      - {share: 0.20, plus_sqft: 2250}  # + 0.20 x everything over 15,000
+  source: T603
+  assumption: "FAR 0.4 on the first 7,500 sq ft of lot, 0.3 on the part from 7,500 to 15,000, and 0.2 above 15,000 (the code's example: a 6,000 sq ft lot allows 2,400 sq ft)."
+parking_per_unit: {value: 2, source: T603, assumption: "Two spaces for a home up to 3,400 sq ft."}
+
+simplifications:
+  - "Hillside-area standards (§10-1-606) not modeled: SCAG's table doesn't mark the hillside area."
+  - "Upper-story stepbacks and building modulation (§10-1-603(E)) not modeled."

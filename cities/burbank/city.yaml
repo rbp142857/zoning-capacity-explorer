@@ -1,0 +1,84 @@
+# City configuration for Burbank, CA (wave 1). Zones from SCAG's countywide
+# zoning table, like Glendale. See ADDING_A_CITY.md and docs/WAVE_PLAN.md.
+
+id: burbank
+name: Burbank, California
+state: CA
+official_name: Burbank  # as written in DOF and HCD data
+map: {center: [-118.32, 34.185], zoom: 12.6}
+
+# EPSG:2229 = NAD83 / California State Plane Zone 5 (US feet), same as Pasadena.
+analysis_crs: "EPSG:2229"
+
+sources:
+  parcels:
+    kind: arcgis
+    adapter: la_assessor
+    url: https://public.gis.lacounty.gov/public/rest/services/LACounty_Cache/LACounty_Parcel/MapServer/0
+    where: "TaxRateCity = 'BURBANK'"
+    publisher: Los Angeles County Office of the Assessor
+    license: Public record; published by LA County without an explicit open license. Attribution given. Owner names are not included in the source.
+  zoning:
+    # SCAG's parcel-level zoning compilation (2024 codes, updated Oct 2025),
+    # joined to county parcels by parcel number. It has no overlay districts.
+    kind: arcgis
+    geometry: false
+    adapter: scag_zoning
+    url: https://maps.scag.ca.gov/scaggis/rest/services/LDX/Zoning_poly_LA/MapServer/0
+    where: "CITY = 'Burbank'"
+    publisher: Southern California Association of Governments (SCAG), regional land use dataset
+    license: Published by SCAG for planning purposes; no explicit open license. Attribution given.
+  major_transit_stops:
+    kind: arcgis
+    url: https://maps.scag.ca.gov/scaggis/rest/services/OpenData/Major_Transit_Stops_Plan_Year_2022/MapServer/0
+    where: "1=1"
+    publisher: Southern California Association of Governments (SCAG), Connect SoCal 2024, base year 2022
+    license: Published by SCAG for planning purposes; no explicit open license. Attribution given.
+  metro_rail_gtfs:
+    kind: file
+    url: https://gitlab.com/LACMTA/gtfs_rail/-/raw/master/gtfs_rail.zip
+    publisher: Los Angeles County Metropolitan Transportation Authority
+    license: LA Metro GTFS, published for public use under Metro's developer terms.
+  apr_table_a2:
+    kind: ckan
+    url: https://data.ca.gov
+    resource_id: fe505d9b-8c36-42ba-ba30-08bc4f34e022
+    filters: {JURIS_NAME: BURBANK}
+    publisher: California Department of Housing and Community Development (HCD)
+    license: Published on data.ca.gov as open data.
+    validation_only: true
+  dof_e5:
+    kind: manual
+    filename: E-5_2026_InternetVersion.xlsx
+    url: https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/e-5-population-and-housing-estimates-for-cities-counties-and-the-state-2020-2026/E-5_2026_InternetVersion.xlsx
+    publisher: California Department of Finance, Demographic Research Unit (E-5, May 2026)
+    license: Public government data.
+    validation_only: true
+
+# The Media District's residential zones follow R-3 and R-4 rules
+# (BMC §10-1-2124: "MDR-3 shall be treated as if R-3 and MDR-4 ... as if R-4").
+# SCAG spells the other codes as the code does.
+zone_aliases: {MDR-3: R-3, MDR-4: R-4}
+specific_plan_prefixes: {}
+
+# Same engine assumptions and redevelopment screens as Pasadena; revisit if
+# Burbank's typical new units or building economics differ.
+assumptions:
+  avg_unit_net_sqft: 850
+  net_to_gross: 0.80
+  parking_stall_sqft: 300
+  min_home_sqft: 500
+  parking_mode: surface
+  state_law_path: cities/_california/state_overrides.yaml
+
+redevelopment:
+  as_of_year: 2026
+  min_capacity_multiple: 2.0
+  min_net_new_units: 3
+  min_building_age_years: 50
+  max_improvement_to_land_ratio: 1.0
+  exclude_condos: true
+  # SCAG's table has no historic-district overlays, so this
+  # screen can't exclude them (noted in METHODOLOGY.md).
+  exclude_overlay_prefixes: []
+  exclude_single_family_zones: true

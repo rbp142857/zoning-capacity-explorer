@@ -1,0 +1,20 @@
+# Burbank CEM. Every value cites the Burbank Municipal Code Title 10, Ch. 1 (Code Publishing, through Ord. No. 25-4,036, eff. Jan 16, 2026).
+# Zones come from SCAG's countywide table, which has no overlay districts
+# (hillside area, 2021-2029 Housing Element Opportunity Sites overlay).
+zone: CEM
+name: "Cemetery (CEM)"
+family: nonresidential
+
+sources:
+  S907:
+    section: "BMC §10-1-907 (uses in the Cemetery zone)"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100109.html#10-1-907
+
+residential_allowed: {value: false, source: S907, assumption: "No homes in the Cemetery zone (§10-1-907)."}
+housing_types: {value: [], source: S907}
+
+setbacks:
+  front_ft: {value: 0, source: S907}
+  side_ft: {value: 0, source: S907}
+  rear_ft: {value: 0, source: S907}
+max_stories: {value: 0, source: S907, assumption: "Not relevant: housing not allowed."}

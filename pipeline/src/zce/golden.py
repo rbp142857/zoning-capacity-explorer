@@ -92,6 +92,7 @@ def _sample_real_lots(city: CityConfig) -> list[dict]:
             "overlays": list(row.overlays) if row.overlays is not None else [],
             "dist_major_transit_ft": None if pd.isna(row.dist_major_transit_ft) else float(row.dist_major_transit_ft),
             "existing_units": None if pd.isna(row.existing_units) else float(row.existing_units),
+            "dist_single_family_ft": None if pd.isna(row.dist_single_family_ft) else float(row.dist_single_family_ft),
             "redev_mask": int(row.redev_mask),
         })
     return lots
@@ -109,7 +110,7 @@ def compute_expected(city: CityConfig, lots: list[dict]) -> dict:
         out = []
         for d in lots:
             lot = Lot(d["area_sqft"], d["width_ft"], d["depth_ft"], tuple(d["overlays"]),
-                      d["dist_major_transit_ft"], d["existing_units"])
+                      d["dist_major_transit_ft"], d["existing_units"], d.get("dist_single_family_ft"))
             res = capacity_under_scenario(d["zone"], lot, a, r2, st2, s)
             redev = redevelopment(screens, d["redev_mask"], res.local_units, d["existing_units"])
             out.append({

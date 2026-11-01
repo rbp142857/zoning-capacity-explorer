@@ -174,3 +174,68 @@ most restrictive height districts are used (see the rule files).
   18 spaces × 300 = 8,233 fits; 9 = 3,188 + 20 × 300 = 9,188 doesn't → **8**.
 - **Result: 6, land per home.** A 1950 commercial building worth about a
   third of its land, no homes today → **likely to redevelop, +6**. Engine: 6 ✓
+
+---
+
+# Burbank (6 lots)
+
+Burbank Municipal Code Title 10, Chapter 1, Code Publishing version through
+Ord. No. 25-4,036 (eff. January 16, 2026). Same shared assumptions as Glendale
+(1,062.5 sq ft per new home, 300 sq ft per parking space, 500 sq ft minimum
+home). Two things are new in Burbank:
+
+- **Distance to single-family zoning** changes the limits. In R-2 to R-4,
+  lots within 500 ft of an R-1 or R-1-H lot get 2 stories and 60% coverage,
+  others 3 stories and 70%. In mixed-use projects, lots within 150 ft get
+  40 ft (3 stories), others 60 ft (5 stories). The pipeline measures this
+  from lot edge to lot edge.
+- **Commercial-zone density comes from the General Plan** (homes per acre by
+  designation), and mixed-use projects round the home count **up**.
+
+### B1. 1065 E Grinnell Dr · R-1 · 7,850 sq ft (50 × 157.3 ft)
+
+- Density **1**. Envelope: front 20 (assumed), sides 10% of width = 5,
+  rear 15 → 40 × 122.3 = 4,892 (× 0.998 shape); coverage 50% = 3,925 × 2
+  stories = 7,850; FAR: 0.30 × 7,850 + 750 = **3,105 sq ft** → **2**.
+  Parking: ground = 7,850 − 998 front strip = 6,852; 6 homes = 3,188 + 12 ×
+  300 = 6,788 fits, 7 doesn't → **6**.
+- City answer 1; ADU path 3; SB 9 **4**. Engine: 4, `state_law:sb9` ✓
+
+### B2. 438 S Lamer St · R-1-H (horsekeeping) · 10,125 sq ft (75 × 135.1)
+
+- Density **1**. FAR: 0.30 × 10,125 + 750 = **3,788 sq ft** → **3**.
+- Burbank's code bars SB 9 in R-1-H (§10-1-608.1(A)(3)), so no SB 9 path;
+  ADU path **3**. Engine: 3, `state_law:adu`, flag `sb9_excluded_by_city` ✓
+
+### B3. 1919 W Alameda Ave · R-4 · 10,583 sq ft (97.9 × 109), 21 ft from R-1
+
+- Land per home (lot under 12,000 sq ft): 10,583 ÷ 2,000 = 5.29 → **5**.
+- Envelope (within 500 ft of R-1): coverage 60% = 6,350 × **2** stories =
+  12,700 → **11**. Parking: ground = 10,583 − 1,651 front strip = 8,932;
+  7 homes = 3,719 + 16 spaces (14 + 1.75 guest, rounded) × 300 = 8,519
+  fits; 8 = 4,250 + 18 × 300 = 9,650 doesn't → **7**.
+- **Result: 5, land per home.** Engine: 5 ✓
+
+### B4. 520 E Orange Grove Ave · R-4 · 12,303 sq ft (101.7 × 121.6), 1,428 ft from R-1
+
+- Land per home (12,000 to 23,999 sq ft): 12,303 ÷ 1,400 = 8.79 → **8**.
+- Envelope (more than 500 ft from R-1): setbacks 87.7 × 97.6 = 8,559
+  (× 0.995) = 8,515, under 70% coverage (8,612) → 8,515 × **3** stories =
+  25,545 → **24**. Parking: AB 2097 (2,439 ft from a major transit stop), none.
+- **Result: 8, land per home.** Engine: 8 ✓
+
+### B5. 2907 W Burbank Blvd · C-3 (Corridor Commercial) · 7,861 sq ft (75 × 105.5), 20 ft from R-1
+
+- Density: 27 per acre × 7,861 ÷ 43,560 = 4.87 → rounded **up** → **5**.
+- Envelope (within 150 ft of R-1 → 40 ft, 3 stories): front 5, rear 10,
+  sides 0 → 75 × 90.5 = 6,788 (× 0.994) × 3 = 20,230 → **19**. Parking 1.5
+  per home: ground = 7,861 − 373 = 7,488; 9 homes = 3,188 + 14 × 300 = 7,388
+  fits, 10 doesn't → **9**.
+- **Result: 5, density.** Engine: 5 ✓
+
+### B6. 300 E Olive Ave · BCC-2 (Downtown) · 31,000 sq ft (155 × 200.1), 2,517 ft from R-1
+
+- Density: 87 per acre × 31,000 ÷ 43,560 = 61.9 → rounded **up** → **62**.
+- Envelope (5 stories): 155 × 185.1 = 28,690 (× 0.9995) × 5 = 143,380 →
+  **134**. Parking: AB 2097 (1,175 ft from transit), none.
+- **Result: 62, density.** A commercial building, no homes today. Engine: 62 ✓

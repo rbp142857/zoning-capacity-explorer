@@ -1,0 +1,69 @@
+# Burbank R-3. Every value cites the Burbank Municipal Code Title 10, Ch. 1 (Code Publishing, through Ord. No. 25-4,036, eff. Jan 16, 2026).
+# Zones come from SCAG's countywide table, which has no overlay districts
+# (hillside area, 2021-2029 Housing Element Opportunity Sites overlay).
+zone: R-3
+name: "Medium Density Residential (R-3)"
+family: multifamily
+
+sources:
+  T627:
+    section: "BMC §10-1-627, Table 10-1-627 (uses in R-2, R-3, R-4)"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100106.html#10-1-627
+  T628:
+    section: "BMC §10-1-628, Table 10-1-628(A) (multiple family standards)"
+    url: https://codepublishing.com/CA/Burbank/html/Burbank10/Burbank100106.html#10-1-628
+
+residential_allowed: {value: true, source: T627}
+housing_types: {value: [single_family, multifamily], source: T627}
+min_lot_area_sqft: {value: 6000, source: T628}
+min_lot_width_ft: {value: 50, source: T628}
+
+lot_area_per_unit_sqft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 12000, value: 2400}
+      - {below: 24000, value: 2000}
+      - {value: 1600}
+  source: T628
+  assumption: "1 home per 2,400 sq ft on lots under 12,000 sq ft, 1 per 2,000 on lots of 12,000 to 23,999, 1 per 1,600 on lots of 24,000 or more."
+density_rounding: {value: floor, source: T628, assumption: "Note 1: round down, even at 0.5 or more."}
+
+setbacks:
+  front_ft: {value: 27, source: T628, assumption: "25 ft minimum, 27 ft average; we use the average."}
+  side_ft: {value: 7, source: T628, assumption: "5 ft minimum, 7 ft average (1 ft more for 3 stories); we use the 7 ft average."}
+  rear_ft: {value: 7, source: T628, assumption: "5 ft minimum, 7 ft average; we use the average."}
+
+max_height_ft:
+  value:
+    by: dist_single_family_ft
+    bands:
+      - {below: 500, value: 35}
+      - {value: 50}
+  source: T628
+  assumption: "Top of roof: 35 ft within 500 ft of single-family zoned property, 50 ft farther away. Distance is measured from lot edge to the nearest R-1 or R-1-H lot."
+max_stories:
+  value:
+    by: dist_single_family_ft
+    bands:
+      - {below: 500, value: 2}
+      - {value: 3}
+  source: T628
+  assumption: "2 stories within 500 ft of single-family zoned property, 3 stories farther away."
+lot_coverage:
+  value:
+    by: dist_single_family_ft
+    bands:
+      - {below: 500, share: 0.6}
+      - {share: 0.7}
+  source: T628
+  assumption: "60% within 500 ft of single-family zoned property, 70% farther away."
+min_open_space_share: {value: 0.25, source: T628, assumption: "Minimum share of the lot that must be landscaped. Per-unit common and private open space (150 + 50 sq ft) is not modeled separately."}
+
+parking_per_unit: {value: 2, source: T628, assumption: "2 spaces per unit with 2 or more bedrooms; our assumed 850 sq ft home is in that range (1-bedroom units need 1.75)."}
+guest_parking_per_unit: {value: 0.25, source: T628, assumption: "1 guest space per 4 units, none for 3 or fewer (the 2-space minimum is not modeled)."}
+guest_parking_min_units: 4
+
+simplifications:
+  - "20 ft buffer next to single-family zoned property and the 5 ft upper-story setback (§10-1-628(E), (F)) not modeled."
+  - "Measure One (Art. 20) adds community-impact findings for residential projects (§10-1-2006), a process step that is not modeled. Its interim conditional-use requirement (§10-1-2005) applied until multifamily standards were adopted, which they were in 2005 (§10-1-628), so multifamily is counted as permitted."

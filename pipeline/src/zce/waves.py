@@ -30,7 +30,7 @@ CKAN_SQL = "https://data.ca.gov/api/3/action/datastore_search_sql"
 APR_A2 = "fe505d9b-8c36-42ba-ba30-08bc4f34e022"
 HEADERS = {"User-Agent": "zoning-capacity-explorer (open-source research tool)"}
 YEARS = (2018, 2025)
-DONE = {"Pasadena", "Glendale"}
+DONE = {"Pasadena", "Glendale", "Burbank"}
 OUT_DIR = REPO_ROOT / "reports" / "la_county"
 
 

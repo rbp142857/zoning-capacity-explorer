@@ -64,6 +64,9 @@ def zone(**overrides) -> ZoneRules:
         (2.76, "up_above_0_75", 3),
         (2.49, "nearest_half_up", 2),
         (2.50, "nearest_half_up", 3),
+        (2.01, "up", 3),  # Burbank mixed use: any fraction rounds up
+        (2.0, "up", 2),
+        (1.9999999999, "up", 2),  # noise is not a fraction
     ],
 )
 def test_round_units(x, mode, expected):
@@ -336,3 +339,32 @@ def test_cg_allows_no_housing(pasadena):
     rules, state, a = pasadena
     r = compute_capacity(rules["CG"], Lot(10_000, 100, 100), a, state)
     assert r.max_units == 0 and r.binding_constraint == "use_not_permitted"
+
+
+# --- Limits that depend on distance to single-family zoning (Burbank) ------------
+
+
+def test_stories_by_distance_to_single_family():
+    # 10,000 sf lot, no setbacks, 60% coverage = 6,000 sf footprint.
+    # Within 500 ft of single-family zoning: 2 stories -> 12,000 sf -> 12 units.
+    # Farther: 3 stories -> 18,000 sf -> 18 units.
+    r = zone(
+        lot_coverage=s(0.6),
+        max_stories=s({"by": "dist_single_family_ft", "bands": [{"below": 500, "value": 2}, {"value": 3}]}),
+    )
+    assert envelope_limit(r, Lot(10_000, 100, 100, dist_single_family_ft=499), A) == 12
+    assert envelope_limit(r, Lot(10_000, 100, 100, dist_single_family_ft=500), A) == 18
+    # Unknown distance (no single-family zone in the city) counts as far away.
+    assert envelope_limit(r, Lot(10_000, 100, 100), A) == 18
+
+
+def test_city_can_exclude_sb9():
+    # Burbank R-1-H: a single-family zone where the city's code bars SB 9.
+    rules = load_zone_rules(REPO / "cities" / "burbank" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    lot = Lot(8000, 50, 160, (), 9000, 1, 0)
+    a = EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300)
+    assert compute_capacity(rules["R-1"], lot, a, state).limits["state_sb9"] == 4
+    r1h = compute_capacity(rules["R-1-H"], lot, a, state)
+    assert "state_sb9" not in r1h.limits
+    assert "sb9_excluded_by_city" in r1h.flags

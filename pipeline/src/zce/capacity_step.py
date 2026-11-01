@@ -36,6 +36,7 @@ def round_engine_inputs(parcels: pd.DataFrame) -> pd.DataFrame:
     out["lot_width_ft"] = out["lot_width_ft"].round(1)
     out["lot_depth_ft"] = out["lot_depth_ft"].round(1)
     out["dist_major_transit_ft"] = out["dist_major_transit_ft"].round(0)
+    out["dist_single_family_ft"] = out["dist_single_family_ft"].round(0)
     return out
 
 
@@ -77,6 +78,8 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
     print(f"Loaded {len(rules)} zone rule files and {len(state.laws)} state laws")
 
     parcels = parcels.join(spatial.lot_dimensions(parcels))
+    single_family = parcels["base_zone"].map(lambda z: isinstance(z, str) and z in rules and rules[z].family == "single_family")
+    parcels["dist_single_family_ft"] = spatial.distance_to_lots_ft(parcels, single_family)
     parcels = round_engine_inputs(parcels)
 
     records = []
@@ -90,6 +93,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
             overlays=tuple(row["overlays"]) if row["overlays"] is not None else (),
             dist_major_transit_ft=_number_or_none(row["dist_major_transit_ft"]),
             existing_units=_number_or_none(row["existing_units"]),
+            dist_single_family_ft=_number_or_none(row["dist_single_family_ft"]),
         )
         result = compute_capacity(zone_rules, lot, a, state)
         mask = static_mask(
