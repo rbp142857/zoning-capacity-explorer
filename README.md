@@ -3,7 +3,8 @@
 An open-source tool that shows what zoning legally allows on every parcel in a
 city, and how much housing a proposed rule change would enable. Cities so far:
 **Pasadena** (the pilot), **Glendale**, **Burbank** and **Santa Monica**, California.
-Pick a city in the site's header, or link to one with `?city=santa_monica`.
+Tick one or more cities in the site's header (or **Select all**), or link to them
+with `?city=santa_monica`, `?cities=burbank,glendale` or `?cities=all`.
 
 **Live site: <https://rbp142857.github.io/zoning-capacity-explorer/>**
 

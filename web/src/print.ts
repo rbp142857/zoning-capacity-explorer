@@ -44,7 +44,8 @@ function table(title: string, rows: ChartRow[], reform: boolean): string {
 }
 
 export interface PrintData {
-  city: string;
+  cities: string[];
+  districtTitle: string;
   reform: boolean;
   levers: string[];
   existing: number;
@@ -62,6 +63,8 @@ export interface PrintData {
 }
 
 export function renderPrintSummary(el: HTMLElement, d: PrintData) {
+  const place = d.cities.join(", ");
+  const confirm = d.cities.length === 1 ? `the City of ${d.cities[0]}` : "each city";
   const scenarioText = d.reform
     ? `<p><strong>Reform scenario:</strong></p><ul>${d.levers.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>`
     : "<p>Today's rules (no reform scenario applied).</p>";
@@ -73,21 +76,21 @@ export function renderPrintSummary(el: HTMLElement, d: PrintData) {
        <tr><th>New homes possible</th><td>${fmt.format(d.todayNet)}</td></tr>
        <tr><th>…on lots likely to redevelop*</th><td>${fmt.format(d.todayRealistic)}</td></tr>`;
   el.innerHTML = `
-    <h1>${esc(d.city)}: zoning capacity summary</h1>
+    <h1>${esc(place)}: zoning capacity summary</h1>
     <p class="print-disclaimer"><strong>Estimate for research and advocacy, not legal or zoning advice.</strong>
-      Always confirm with the City of ${esc(d.city)}. Numbers are theoretical maximums if lots were rebuilt, not predictions.</p>
+      Always confirm with ${esc(confirm)}. Numbers are theoretical maximums if lots were rebuilt, not predictions.</p>
     ${scenarioText}
     <table class="print-totals"><thead><tr><th></th><th>Today's rules</th>${d.reform ? "<th>This scenario</th>" : ""}</tr></thead>
       <tbody><tr><th>Homes on modeled lots today</th><td>${fmt.format(d.existing)}</td>${d.reform ? `<td>${fmt.format(d.existing)}</td>` : ""}</tr>${totals}</tbody></table>
     ${d.mapImage ? `<img class="print-map" src="${d.mapImage}" alt="Map of the current view">` : ""}
     <div class="print-tables">
-      ${table("New homes possible by council district", d.byDistrict, d.reform)}
+      ${table(`New homes possible by ${d.districtTitle}`, d.byDistrict, d.reform)}
       ${table("New homes possible by distance to a major transit stop", d.byTransit, d.reform)}
     </div>
     <p class="print-foot">* Lots passing every redevelopment screen (zoning allows 2x the existing homes and 3+ more,
       building 50+ years old, building assessed below land value, not a condo, not in a landmark district, not in a
       single-family zone); counts the city's or scenario's allowance only. A screen, not a forecast.<br>
       Interactive version and method: ${esc(d.url)}<br>
-      Data: LA County Assessor parcels, ${esc(d.city)} zoning (sources in METHODOLOGY.md), SCAG major transit stops.
+      Data: LA County Assessor parcels, ${esc(place)} zoning (sources in METHODOLOGY.md), SCAG major transit stops.
       Specific-plan and planned-development lots are not modeled yet. Generated ${esc(d.generatedAt)}.</p>`;
 }

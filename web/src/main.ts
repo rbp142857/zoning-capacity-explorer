@@ -8,14 +8,17 @@ import maplibregl from "maplibre-gl";
 
 import "./style.css";
 import { renderBarChart } from "./charts";
+import {
+  COMBINED, type CityInfo, mergeParcelData, mergeResults, selectionFromSearch, selectionToSearch, shortName,
+} from "./cities";
 import { BINDING_LABELS } from "./colors";
 import { type ParcelData, loadJson } from "./data";
-import { type Results, buildLotInputs, runScenario } from "./engine/run";
+import { type LotInputs, type Results, buildLotInputs, runScenario } from "./engine/run";
 import { BASELINE, type Scenario, isBaseline } from "./engine/scenario";
 import type { RulesFile } from "./engine/types";
 import { renderLotDetails } from "./details";
 import { renderLegend } from "./legend";
-import { createMap, currentTheme, type View } from "./map";
+import { createMap, currentTheme, type MapCity, type View } from "./map";
 import { describeScenario, renderPrintSummary } from "./print";
 import { type AddressIndex, setupSearch } from "./search";
 import { byDistrict, byTransitDistance, netNew, realisticNew } from "./summary";
@@ -25,38 +28,59 @@ import { LEVERS, scenarioFromHash, scenarioToHash } from "./url";
 // whether the site is served at / or at /<repo-name>/ on GitHub Pages.
 const DATA_ROOT = `${import.meta.env.BASE_URL}data`;
 
-interface CityInfo {
-  id: string;
-  name: string;
-  center: [number, number];
-  zoom: number;
+/** What one selected city needs: its own rules, and its answers under today's rules. */
+interface CityBundle {
+  info: CityInfo;
+  data: ParcelData;
+  rules: RulesFile;
+  inputs: LotInputs;
+  today: Results;
+  offset: number; // where its lots start in the combined list
 }
 
-// Links shared before more cities were added have no ?city=, and were made
-// for Pasadena, so it stays the default.
-const DEFAULT_CITY = "pasadena";
+const cityDir = (id: string) => `${DATA_ROOT}/${id}`;
 
-/** The city comes from ?city=... in the address. */
-function pickCity(cities: CityInfo[]): CityInfo {
-  const wanted = new URLSearchParams(window.location.search).get("city") ?? DEFAULT_CITY;
-  return cities.find((c) => c.id === wanted) ?? cities[0];
-}
-
-function setupCityPicker(cities: CityInfo[], current: CityInfo) {
-  const select = $<HTMLSelectElement>("city");
-  for (const c of cities) {
-    const opt = document.createElement("option");
-    opt.value = c.id;
-    opt.textContent = c.name.split(",")[0];
-    select.append(opt);
-  }
-  select.value = current.id;
-  // Switching city reloads the page with ?city=..., keeping the scenario
-  // (the #hash), since the reform levers apply to every city.
-  select.addEventListener("change", () => {
-    const url = new URL(window.location.href);
-    url.searchParams.set("city", select.value);
-    window.location.href = url.toString();
+/** Build the dropdown of checkboxes; onChange gets the ids that are now ticked. */
+function setupCityPicker(cities: CityInfo[], selected: string[], onChange: (ids: string[]) => void) {
+  const picker = $<HTMLDetailsElement>("city-picker");
+  const box = $("city-options");
+  const makeRow = (text: string, value: string) => {
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.value = value;
+    label.append(input, text);
+    box.append(label);
+    return input;
+  };
+  const all = makeRow("Select all", "");
+  all.parentElement?.classList.add("select-all");
+  const rows = cities.map((c) => makeRow(shortName(c), c.id));
+  const ticked = () => rows.filter((r) => r.checked).map((r) => r.value);
+  const showState = () => {
+    const ids = ticked();
+    all.checked = ids.length === rows.length;
+    all.indeterminate = ids.length > 0 && ids.length < rows.length;
+    const one = cities.find((c) => c.id === ids[0]);
+    $("city-summary").textContent =
+      ids.length === 0 ? "No cities" : ids.length === 1 && one ? shortName(one) : ids.length === rows.length ? "All cities" : `${ids.length} cities`;
+  };
+  rows.forEach((r) => (r.checked = selected.includes(r.value)));
+  showState();
+  all.addEventListener("change", () => rows.forEach((r) => (r.checked = all.checked)));
+  box.addEventListener("change", () => {
+    showState();
+    onChange(ticked());
+  });
+  // Close like a menu: click elsewhere, or press Escape.
+  document.addEventListener("click", (e) => {
+    if (picker.open && !picker.contains(e.target as Node)) picker.open = false;
+  });
+  picker.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && picker.open) {
+      picker.open = false;
+      picker.querySelector("summary")?.focus();
+    }
   });
 }
 
@@ -148,12 +172,18 @@ function popupHtml(data: ParcelData, pid: number, now: Results, today: Results, 
     <button type="button" class="popup-details">All limits and code sections</button></div>`;
 }
 
+/** What a city's chart groups are: several cities show one bar per city. */
+function districtTitle(data: ParcelData): string {
+  if (data.city === COMBINED) return "city";
+  return data.codes.district.some((d) => d.startsWith("ZIP")) ? "ZIP code" : "council district";
+}
+
 function renderCharts(data: ParcelData, now: Results, today: Results, reform: boolean) {
   const realistic = document.querySelector<HTMLInputElement>('input[name="chart-mode"]:checked')?.value === "realistic";
   const pickValue = realistic ? realisticNew : netNew;
   const what = realistic ? "New homes on lots likely to redevelop" : "New homes possible";
   for (const [id, title, rows] of [
-    ["chart-district", `${what}, by council district`, byDistrict(data, today, now, pickValue)],
+    ["chart-district", `${what}, by ${districtTitle(data)}`, byDistrict(data, today, now, pickValue)],
     ["chart-transit", `${what}, by distance to a major transit stop`, byTransitDistance(data, today, now, pickValue)],
   ] as const) {
     const el = $(id);
@@ -167,32 +197,96 @@ async function main() {
   const status = $("status");
   try {
     const cities = await loadJson<CityInfo[]>(`${DATA_ROOT}/cities.json`);
-    const city = pickCity(cities);
-    setupCityPicker(cities, city);
-    const cityName = city.name.split(",")[0];
-    $("city-name").textContent = cityName;
-    document.title = `${cityName} Zoning Capacity`;
-    const DATA_DIR = `${DATA_ROOT}/${city.id}`;
-    const TILES_URL = new URL(`${DATA_DIR}/parcels.pmtiles`, window.location.href).href;
-    const [data, rules] = await Promise.all([
-      loadJson<ParcelData>(`${DATA_DIR}/parcels.json`),
-      loadJson<RulesFile>(`${DATA_DIR}/rules.json`),
-    ]);
-    const inputs = buildLotInputs(data);
-    const today = runScenario(data, inputs, rules, BASELINE);
-    let scenario = scenarioFromHash(window.location.hash);
-    let now = isBaseline(scenario) ? today : runScenario(data, inputs, rules, scenario);
+    const allIds = cities.map((c) => c.id);
 
+    // Each city is downloaded once, however many times it's ticked and unticked.
+    const loaded = new Map<string, Promise<Omit<CityBundle, "offset">>>();
+    const loadCity = (info: CityInfo) => {
+      let city = loaded.get(info.id);
+      if (!city) {
+        city = (async () => {
+          const [data, rules] = await Promise.all([
+            loadJson<ParcelData>(`${cityDir(info.id)}/parcels.json`),
+            loadJson<RulesFile>(`${cityDir(info.id)}/rules.json`),
+          ]);
+          const inputs = buildLotInputs(data);
+          return { info, data, rules, inputs, today: runScenario(data, inputs, rules, BASELINE) };
+        })();
+        city.catch(() => loaded.delete(info.id)); // allow a retry
+        loaded.set(info.id, city);
+      }
+      return city;
+    };
+
+    // The selection and everything computed from it. Listeners below read
+    // these when they run, so changing the selection needs no re-wiring.
+    let bundles: CityBundle[] = [];
+    let data = mergeParcelData([], []);
+    let today = mergeResults([]);
+    let scenario = scenarioFromHash(window.location.hash);
+    let now = today;
+
+    const computeNow = () =>
+      isBaseline(scenario)
+        ? today
+        : mergeResults(bundles.map((b) => runScenario(b.data, b.inputs, b.rules, scenario)));
+
+    /** Load `ids` and make them the current selection. False if a newer selection replaced it. */
+    let selectionToken = 0;
+    const setSelection = async (ids: string[]) => {
+      const token = ++selectionToken;
+      const chosen = cities.filter((c) => ids.includes(c.id));
+      const parts = await Promise.all(chosen.map(loadCity));
+      if (token !== selectionToken) return false;
+      let offset = 0;
+      bundles = parts.map((p) => {
+        const b = { ...p, offset };
+        offset += p.data.count;
+        return b;
+      });
+      data = mergeParcelData(parts.map((p) => p.data), chosen.map(shortName));
+      today = mergeResults(parts.map((p) => p.today));
+      now = computeNow();
+      const place = bundles.length === 1 ? shortName(bundles[0].info) : bundles.length ? `${bundles.length} Cities` : "LA County";
+      $("city-name").textContent = place;
+      document.title = `${place} Zoning Capacity`;
+      return true;
+    };
+
+    const selected = selectionFromSearch(window.location.search, allIds);
+    await setSelection(selected);
     writeForm(scenario);
     showHeadline(data, scenario, now, today);
 
-    const controller = await createMap("map", data, TILES_URL, { center: city.center, zoom: city.zoom });
+    const mapCities = (): MapCity[] =>
+      bundles.map((b) => ({
+        id: b.info.id,
+        tilesUrl: new URL(`${cityDir(b.info.id)}/parcels.pmtiles`, window.location.href).href,
+        offset: b.offset,
+        count: b.data.count,
+      }));
+
+    // One city opens at its usual view; several are framed to fit.
+    const start = bundles.length === 1 ? bundles[0].info : cities[0];
+    const bindingCodes = bundles[0]?.data.codes.binding ?? (await loadCity(cities[0])).data.codes.binding;
+    const controller = await createMap("map", bindingCodes, { center: start.center, zoom: start.zoom });
+    const frameCities = (animate: boolean) => {
+      if (bundles.length === 1) {
+        const { center, zoom } = bundles[0].info;
+        controller.map.easeTo({ center, zoom, duration: animate ? 600 : 0 });
+      } else if (bundles.length > 1) {
+        const [w, s, e, n] = data.bounds;
+        controller.map.fitBounds([[w, s], [e, n]], { padding: 40, animate });
+      }
+    };
+    frameCities(false);
     status.textContent = "";
+    controller.setCities(mapCities());
     controller.setResults(now, today);
 
     // Highlight menu: one option per binding constraint.
     const select = $<HTMLSelectElement>("highlight");
-    data.codes.binding.forEach((name, code) => {
+    bindingCodes.forEach((name, code) => {
       const opt = document.createElement("option");
       opt.value = String(code);
       opt.textContent = BINDING_LABELS[name] ?? name;
@@ -208,16 +302,23 @@ async function main() {
       const code = view === "binding" && select.value !== "" ? Number(select.value) : null;
       controller.setView(view, code);
       $("highlight-wrap").hidden = view !== "binding";
-      renderLegend(legend, data, view, now, today, currentTheme(), code === null ? null : data.codes.binding[code]);
+      renderLegend(legend, data, view, now, today, currentTheme(), code === null ? null : bindingCodes[code]);
     };
 
     // --- Lot details panel ---
     let selectedPid: number | null = null;
     const details = $("details");
+    const closeDetails = () => {
+      details.hidden = true;
+      selectedPid = null;
+      controller.select(null);
+    };
     const showDetails = (pid: number, focus = false) => {
       selectedPid = pid;
       controller.select(pid);
-      renderLotDetails($("details-body"), pid, data, inputs, rules, scenario, !isBaseline(scenario), BASELINE);
+      // The engine's details need the lot's own city: its rules, its numbering.
+      const b = bundles.find((c) => pid >= c.offset && pid < c.offset + c.data.count) as CityBundle;
+      renderLotDetails($("details-body"), pid - b.offset, b.data, b.inputs, b.rules, scenario, !isBaseline(scenario), BASELINE);
       details.hidden = false;
       if (focus) {
         details.focus();
@@ -225,16 +326,14 @@ async function main() {
       }
     };
     $("details-close").addEventListener("click", () => {
-      details.hidden = true;
-      selectedPid = null;
-      controller.select(null);
+      closeDetails();
       $("search-input").focus();
     });
 
     const applyScenario = (next: Scenario, updateUrl = true) => {
       scenario = next;
       const t0 = performance.now();
-      now = isBaseline(scenario) ? today : runScenario(data, inputs, rules, scenario);
+      now = computeNow();
       writeForm(scenario);
       showHeadline(data, scenario, now, today);
       controller.setResults(now, today);
@@ -303,18 +402,54 @@ async function main() {
     });
 
     // --- Address search ---
-    setupSearch(
+    const loadAddresses = async (): Promise<AddressIndex> => {
+      const lists = await Promise.all(
+        bundles.map(async (b) => ({ b, list: await loadJson<AddressIndex>(`${cityDir(b.info.id)}/addresses.json`) })),
+      );
+      return {
+        address: lists.flatMap(({ list }) => list.address),
+        pid: lists.flatMap(({ b, list }) => list.pid.map((p) => p + b.offset)),
+        lng: lists.flatMap(({ list }) => list.lng),
+        lat: lists.flatMap(({ list }) => list.lat),
+      };
+    };
+    const search = setupSearch(
       $<HTMLInputElement>("search-input"),
       $<HTMLUListElement>("search-list"),
       $("search-status"),
-      () => loadJson<AddressIndex>(`${DATA_DIR}/addresses.json`),
-      data.columns.parcel_id,
+      loadAddresses,
+      () => data.columns.parcel_id,
       (hit) => {
         controller.map.flyTo({ center: [hit.lng, hit.lat], zoom: 17, duration: 800 });
         controller.map.once("moveend", () => openLot(hit.pid, [hit.lng, hit.lat]));
         showDetails(hit.pid);
       },
     );
+
+    // --- Choosing cities ---
+    setupCityPicker(cities, selected, async (ids) => {
+      status.textContent = "Loading…";
+      try {
+        if (!(await setSelection(ids))) return; // a newer choice took over
+        status.textContent = ids.length ? "" : "Select a city to see its lots.";
+        popup.remove();
+        closeDetails();
+        search.reset();
+        controller.setCities(mapCities());
+        controller.setResults(now, today);
+        showHeadline(data, scenario, now, today);
+        redraw();
+        renderCharts(data, now, today, !isBaseline(scenario));
+        frameCities(true);
+        history.replaceState(
+          null, "",
+          window.location.pathname + selectionToSearch(window.location.search, ids, allIds) + window.location.hash,
+        );
+      } catch (err) {
+        status.textContent = `Couldn't load that city. ${(err as Error).message}`;
+        console.error(err);
+      }
+    });
 
     // --- Printable summary ---
     const fillPrint = () => {
@@ -326,7 +461,8 @@ async function main() {
         mapImage = null; // a blank or tainted canvas: print without the map
       }
       renderPrintSummary($("print-summary"), {
-        city: cityName,
+        cities: bundles.map((b) => shortName(b.info)),
+        districtTitle: districtTitle(data),
         reform,
         levers: describeScenario(form()),
         existing: today.totals.existing,

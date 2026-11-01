@@ -8,6 +8,7 @@ export interface ParcelData {
   city: string;
   generated_at: string;
   count: number;
+  bounds: [number, number, number, number]; // west, south, east, north
   codes: { binding: string[]; zone: string[]; rules_zone: string[]; overlay_sets: string[][]; district: string[] };
   headline: {
     existing_units: number;
@@ -17,6 +18,7 @@ export interface ParcelData {
     lots_modeled: number;
     lots_not_modeled: number;
     single_home_land_share: number;
+    residential_land_sqft: number;
   };
   columns: {
     parcel_id: string[];

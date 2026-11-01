@@ -49,9 +49,9 @@ export function setupSearch(
   list: HTMLUListElement,
   status: HTMLElement,
   loadIndex: () => Promise<AddressIndex>,
-  parcelIds: string[],
+  parcelIds: () => string[],
   onPick: (hit: SearchHit) => void,
-) {
+): { reset(): void } {
   let index: AddressIndex | null = null;
   let hits: SearchHit[] = [];
   let active = -1;
@@ -99,20 +99,25 @@ export function setupSearch(
   // first); every caller awaits the same promise.
   let loading: Promise<AddressIndex | null> | null = null;
   const ensureIndex = () => {
-    loading ??= loadIndex()
-      .then((i) => (index = i))
+    if (loading) return loading;
+    const mine: Promise<AddressIndex | null> = loadIndex()
+      .then((i) => {
+        if (loading === mine) index = i; // ignore a list for an old city selection
+        return i;
+      })
       .catch(() => {
         status.textContent = "Couldn't load the address list.";
-        loading = null; // allow a retry
+        if (loading === mine) loading = null; // allow a retry
         return null;
       });
-    return loading;
+    loading = mine;
+    return mine;
   };
   input.addEventListener("focus", () => void ensureIndex());
 
   input.addEventListener("input", async () => {
     if (!index && !(await ensureIndex())) return;
-    hits = searchAddresses(index as AddressIndex, input.value, parcelIds);
+    hits = searchAddresses(index as AddressIndex, input.value, parcelIds());
     active = -1;
     render();
     const q = input.value.trim();
@@ -137,4 +142,15 @@ export function setupSearch(
   });
 
   input.addEventListener("blur", () => setTimeout(close, 100));
+
+  return {
+    /** The selected cities changed: forget the list and any open matches. */
+    reset() {
+      index = null;
+      loading = null;
+      hits = [];
+      close();
+      if (document.activeElement === input) void ensureIndex();
+    },
+  };
 }

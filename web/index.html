@@ -14,10 +14,12 @@
 
     <header class="topbar">
       <h1><span id="city-name">LA County</span> Zoning Capacity</h1>
-      <label class="city-picker">
-        <span class="visually-hidden">City</span>
-        <select id="city" aria-label="Choose a city"></select>
-      </label>
+      <details class="city-picker" id="city-picker">
+        <summary><span class="visually-hidden">Cities shown: </span><span id="city-summary">Cities</span></summary>
+        <fieldset id="city-options">
+          <legend class="visually-hidden">Cities to show</legend>
+        </fieldset>
+      </details>
       <p class="disclaimer" role="note">
         <strong>Estimate for research and advocacy, not legal or zoning advice.</strong>
         Always confirm with the city.

@@ -38,9 +38,9 @@ BINDING_CODES = [
     "use_not_permitted",
 ]
 
-# Tile zoom range. Below z11 a whole city is a few pixels wide, and parcels
-# are too small to see; the map starts at about z12.5.
-MIN_ZOOM, MAX_ZOOM = 11, 16
+# Tile zoom range. Parcels are too small to see at z8, but the colors still
+# show where capacity is across cities. 8 is low enough to see all of LA County at once; keep in step with minZoom in web/src/map.ts.
+MIN_ZOOM, MAX_ZOOM = 8, 16
 
 
 def _int_column(series: pd.Series) -> list:
@@ -172,6 +172,8 @@ def export_city(city: CityConfig) -> None:
         "city": city.name,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "count": len(lots),
+        # [west, south, east, north], so the map can frame several cities at once.
+        "bounds": [round(float(v), 5) for v in lots.to_crs("EPSG:4326").total_bounds],
         "codes": {
             "binding": BINDING_CODES,
             "zone": zones,
@@ -187,6 +189,8 @@ def export_city(city: CityConfig) -> None:
             "lots_modeled": int(ok.sum()),
             "lots_not_modeled": int((~ok).sum()),
             "single_home_land_share": round(float(single_home_share), 3),
+            # Lets the site combine this share across cities, weighted by land.
+            "residential_land_sqft": int(lots.loc[residential, "lot_area_sqft"].sum()),
         },
         # Columns: element i belongs to the lot with pid i.
         "columns": {
