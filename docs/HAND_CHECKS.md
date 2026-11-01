@@ -479,3 +479,53 @@ per home). Base floor area only, without public benefit bonuses.
 
 - MB2 base FAR 3.0 (Sec. 2B.14.2) = 18,057 sq ft → 16.99 → **16**. No height limit, so floor area sets the answer.
 - **Result: 16, envelope.** Engine: 16 ✓
+
+## El Monte
+
+Checked against the El Monte Municipal Code, Title 17 (Municode, Ord. No. 3053),
+read November 1, 2026.
+
+### E1. 11421 Elmcrest St · R-1A · 9,546 sq ft (60 × 160)
+
+- Density: 1 home. Floor area: 8,001 to 12,000 sq ft row, 30% = 2,864 sq ft, above the 2,800 floor → 2.7 → 2.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### E2. 4726 Maxson Rd · R-1B · 13,472 sq ft (73 × 201.8)
+
+- Land per home: 8,720 sq ft at up to 100 ft of frontage → 1. Floor area: 25% = 3,368, below the 3,600 floor, so 3,600 → 3.4 → 3.
+- **Result: 4, SB 9.** 2 homes today. Engine: 4 ✓
+
+### E3. 12043 Cherrylee Dr · R-1C · 33,763 sq ft (133.4 × 254.9)
+
+- Density: 1. Floor area: over 20,000 sq ft, 20% = 6,753 sq ft → 6.4 → 6.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### E4. 11066 McGirk Ave · R-2 · 6,010 sq ft (60 × 102.4)
+
+- Land per home: 5,445 → **1**. FAR 0.40 = 2,404 sq ft → 2. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### E5. 3641 Durfee Ave · R-3 · 22,937 sq ft (81.4 × 283)
+
+- Land per home: 4,356 under 100 ft of frontage → 5.3 → **5**. FAR 0.50 = 11,469 sq ft → 10.
+- **Result: 5, lot area.** 13 homes stand here today, more than zoning now allows. Engine: 5 ✓
+
+### E6. 9743 Valley Blvd · R-4 · 42,178 sq ft (100.1 × 634.9)
+
+- Land per home: 1,740 → 24. FAR 0.60 = 25,307 sq ft → 23.8 → **23**.
+- **Result: 23, envelope.** Engine: 23 ✓
+
+### E7. 3141 Peck Rd · C-3 · 52,139 sq ft (195.5 × 367.3)
+
+- Land per home: 1,450 at 30,000 sq ft or more → 35. FAR 0.60 = 31,283 sq ft → 29.4 → **29**. 2,176 ft from transit: no parking.
+- **Result: 29, envelope.** Engine: 29 ✓
+
+### E8. 2822 Durfee Ave · MMU · 34,445 sq ft (140 × 248.9)
+
+- Land per home: 1,400 in the 30,001 to 35,000 sq ft row → 24.6 → **24**.
+- **Result: 24, lot area.** Engine: 24 ✓
+
+### E9. 12315 Dahlia Ave · M-1 · 11,605 sq ft (80.2 × 148)
+
+- The use matrix allows no homes in M-1.
+- **Result: 0, not allowed.** Engine: 0 ✓

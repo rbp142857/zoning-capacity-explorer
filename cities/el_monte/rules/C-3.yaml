@@ -1,0 +1,52 @@
+# El Monte C-3. Every value cites the El Monte Municipal Code, Title 17 (Municode, Ord. No. 3053, read 2026-11-01).
+zone: C-3
+name: "General Commercial (C-3)"
+family: commercial
+
+sources:
+  Z:
+    section: "EMMC §17.40.040, Table 17.40-3 (homes in commercial zones)"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIV4COMAZODI_CH17.40COZODI_17.40.040DEST
+  U:
+    section: "EMMC Table 17.A-1 (citywide use matrix)"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIVACIMAPEUS_CH17.AMAPEUS_17.AMAPEUS
+  P:
+    section: "EMMC §17.70 Tables 17.70-2 and 17.70-3 (parking)"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIV7PALARE_CH17.70PARE
+
+residential_allowed: {value: true, source: U, assumption: "Multiple-family homes are allowed. Note 6 bars them in the East Valley Entryway and on Valley Blvd at Baldwin and Peck; not modeled."}
+housing_types: {value: [multifamily], source: U}
+min_lot_area_sqft: {value: 6000, source: Z, assumption: "15,000 sq ft on major arterials, otherwise R-4's 6,000. We have no arterial map, so we use 6,000; arterial lots can be too high."}
+min_lot_width_ft: {value: 60, source: Z}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 30000, value: 1740}
+      - {value: 1450}
+  source: Z
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home's share of land keeps one home; one house on a lot is allowed (Table 17.A-1). This is our reading for existing lots."
+small_lot_units_below_sqft: 1740
+
+setbacks:
+  front_ft: {value: 10, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on the first story, 8 ft above; we use the first story."}
+  rear_ft: {value: 10, source: Z, assumption: "10 ft, or 20 ft next to R-1; we use 10 ft."}
+
+max_height_ft: {value: 40, source: Z}
+max_stories: {value: 3, source: Z}
+lot_coverage: {value: 0.45, source: Z}
+max_far: {value: 0.60, source: Z, assumption: "FAR for 3 or more homes. The bonus to 0.80 or 0.85 needs points and is left out (conservative)."}
+parking_per_unit: {value: 1.75, source: P, assumption: "1¾ spaces for a 1-bedroom home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.1667, source: P, assumption: "1 guest space per 6 homes for 3 or more homes; the minimum of 2 is not modeled."}
+guest_parking_min_units: 3
+
+simplifications:
+  - "All-residential building assumed."
+  - "Upper-story setbacks and open space per home are not modeled."

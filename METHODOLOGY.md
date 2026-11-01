@@ -523,3 +523,36 @@ use R4's 400. Their numbers assume an all-residential building.
   planes; transitional heights next to single-family zones; Coastal Zone rules.
 - **No rule file:** RZ5 and R1P (not found in the code sections checked), RMP
   (mobile home parks), RW2 and one-off zones such as A1(UV).
+
+## 15. El Monte
+
+Not on the site yet: publishing a new city's site files is the owner's call.
+
+**Zoning data.** Zones come from SCAG's parcel table. 96.3% of lots are modeled.
+Not modeled: the specific plans (SP-4 Downtown Main Street, 277 lots, plus SP-1 to
+SP-3), 125 lots with no zone, RMP, and SCAG's `OP` (110 lots) and `RR` (19 lots),
+which aren't in the code's Table 17.14-1. `OP` may be the code's OMU, but we
+don't assume so.
+
+**Rules.** 17 zone files from Title 17, rewritten in 2025 by Ord. No. 3053:
+R-1A, R-1B, R-1C, R-2, R-3, R-4, MMU, C-1, C-2, C-3, and no homes in M-1, M-2, PF,
+OS, AP, RT, RW.
+
+**How El Monte differs:**
+
+- **Density by frontage.** R-1B and R-3 allow more homes on wider lots. We use lot
+  width for street frontage.
+- **R-1B allows several detached houses** at 7,260 to 8,720 sq ft of land each.
+- **FAR is low and rises with project size.** R-2, R-3 and R-4 are 0.40, 0.50 and
+  0.60 for three homes. The 0.60 to 0.80 row includes a bonus of up to 0.20 earned
+  with points (§17.24.050.C), which we leave out, so numbers lean low.
+- **Homes in commercial zones** have their own table: FAR 0.60, 3 stories, 1,740 or
+  1,450 sq ft per home. Major arterials need a 15,000 sq ft lot, and we have no
+  arterial map, so small arterial lots can be too high. Some areas of Valley
+  Boulevard bar homes; not modeled, also too high.
+- **MMU needs 20,000 sq ft for homes,** so smaller lots show none, though many could
+  combine with neighbors.
+
+**Left out:** upper-story setbacks, open space per home, buffers next to R zones,
+the Rurban Homestead Overlay, and the Valley Entryway Overlay. SB 9 follows state
+law; El Monte's own SB 9 rules weren't checked.

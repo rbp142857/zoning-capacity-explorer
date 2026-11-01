@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -235,6 +235,45 @@ def los_angeles():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", LOS_ANGELES, ids=[c[0] for c in LOS_ANGELES])
 def test_hand_checked_los_angeles_parcel(los_angeles, address, zone, lot, max_units, binding, limits):
     rules, state, a = los_angeles
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+EL_MONTE = [
+    ("11421 Elmcrest St", "R-1A", Lot(9546, 60.0, 160.0, (), 6323, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "state_adu": 3, "state_sb9": 4}),
+    ("4726 Maxson Rd", "R-1B", Lot(13472, 73.0, 201.8, (), 9796, 2),
+     4, "state_law:sb9", {"lot_area_per_unit": 1, "envelope": 3, "state_sb9": 4}),
+    ("12043 Cherrylee Dr", "R-1C", Lot(33763, 133.4, 254.9, (), 11308, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 6, "state_sb9": 4}),
+    ("11066 McGirk Ave", "R-2", Lot(6010, 60.0, 102.4, (), 3919, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 2, "state_adu": 3}),
+    ("3641 Durfee Ave", "R-3", Lot(22937, 81.4, 283.0, (), 3609, 13),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 10}),
+    ("9743 Valley Blvd", "R-4", Lot(42178, 100.1, 634.9, (), 4312, None),
+     23, "envelope", {"lot_area_per_unit": 24, "envelope": 23}),
+    ("3141 Peck Rd", "C-3", Lot(52139, 195.5, 367.3, (), 2176, 0),
+     29, "envelope", {"lot_area_per_unit": 35, "envelope": 29, "parking": None}),
+    ("2822 Durfee Ave", "MMU", Lot(34445, 140.0, 248.9, (), 2476, 0),
+     24, "lot_area_per_unit", {"lot_area_per_unit": 24, "parking": None}),
+    ("12315 Dahlia Ave", "M-1", Lot(11605, 80.2, 148.0, (), 2353, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def el_monte():
+    rules = load_zone_rules(REPO / "cities" / "el_monte" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", EL_MONTE, ids=[c[0] for c in EL_MONTE])
+def test_hand_checked_el_monte_parcel(el_monte, address, zone, lot, max_units, binding, limits):
+    rules, state, a = el_monte
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

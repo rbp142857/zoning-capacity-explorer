@@ -39,7 +39,7 @@ building. Each is a Glendale-sized job via the SCAG fast path
 | City | Parcels | Zone codes (for 90%) | Homes/yr in 2+ unit buildings | All homes/yr |
 |---|---|---|---|---|
 | Santa Monica ✅ | 14,979 | 44 (9) | 260 | 386 |
-| El Monte | 16,978 | 25 (7) | 148 | 238 |
+| El Monte ✅ | 16,978 | 25 (7) | 148 | 238 |
 | Inglewood | 18,375 | 29 (8) | 146 | 215 |
 | West Hollywood | 4,314 | 23 (10) | 146 | 171 |
 | Monrovia | 9,783 | 30 (11) | 140 | 188 |

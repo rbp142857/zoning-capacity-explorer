@@ -1,0 +1,54 @@
+# El Monte MMU. Every value cites the El Monte Municipal Code, Title 17 (Municode, Ord. No. 3053, read 2026-11-01).
+zone: MMU
+name: "Mixed/Multiuse (MMU)"
+family: commercial
+
+sources:
+  Z:
+    section: "EMMC §17.30.040, Table 17.30-2"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIV3MUZODI_CH17.30MIURMUZODI_17.30.040DEST
+  U:
+    section: "EMMC Table 17.A-1 (citywide use matrix)"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIVACIMAPEUS_CH17.AMAPEUS_17.AMAPEUS
+  P:
+    section: "EMMC §17.70 Tables 17.70-2 and 17.70-3 (parking)"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIV7PALARE_CH17.70PARE
+
+residential_allowed: {value: true, source: U}
+housing_types: {value: [multifamily, mixed_use], source: U}
+min_lot_area_sqft: {value: 20000, source: Z}
+min_lot_width_ft: {value: 100, source: Z}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 25001, value: 1600}
+      - {below: 30001, value: 1500}
+      - {below: 35001, value: 1400}
+      - {below: 40001, value: 1300}
+      - {value: 1244}
+  source: Z
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 0}
+  source: Z
+  assumption: "Homes need a lot of at least 20,000 sq ft, so smaller lots get none unless combined with neighbors."
+small_lot_units_below_sqft: 20000
+
+setbacks:
+  front_ft: {value: 5, source: Z}
+  side_ft: {value: 0, source: Z, assumption: "No interior side yard; 10 ft next to R zones is not modeled."}
+  rear_ft: {value: 0, source: Z, assumption: "None; 10 to 20 ft next to R zones is not modeled."}
+
+max_height_ft: {value: 50, source: Z, assumption: "The table's height rows are hard to read for under 35 homes per acre; we use 4 stories and 50 ft."}
+max_stories: {value: 4, source: Z}
+lot_coverage: {value: 0.60, source: Z}
+parking_per_unit: {value: 1.5, source: P, assumption: "1½ spaces for a 1-bedroom home at up to 35 homes per acre. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.1667, source: P, assumption: "1 guest space per 6 homes; the minimum of 2 is not modeled."}
+guest_parking_min_units: 3
+
+simplifications:
+  - "Open space per home (250 sq ft) and the 15 ft maximum front yard are not modeled."
+  - "Combining small lots to reach 20,000 sq ft is not modeled."
