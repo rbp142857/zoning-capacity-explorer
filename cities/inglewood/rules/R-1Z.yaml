@@ -1,0 +1,28 @@
+# Inglewood R-1Z. Every value cites the Inglewood Municipal Code, Chapter 12 (eCode360, read 2026-11-01).
+zone: "R-1Z"
+name: "R-1Z Zero-Lot-Line Zone"
+family: single_family
+
+sources:
+  Z:
+    section: "IMC Ch. 12, Article 2.1 (R-1Z Zero-Lot-Line Zone)"
+    url: https://ecode360.com/43786310
+  P:
+    section: "IMC Ch. 12, Article 19 (Parking Regulations)"
+    url: https://ecode360.com/43787806
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+max_units_per_lot: {value: 1, source: Z}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "A zero-lot-line home sits on or within 5 ft of one side line; we use 5 ft per side, as the one-home limit binds."}
+  rear_ft: {value: 25, source: Z, assumption: "Not read for this zone; R-1's figure used. The one-home limit binds either way."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2.5, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "Two enclosed spaces per home (§ 12-Article 19, Residential Parking Requirements). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Objective Design Standards and any lot coverage limit outside the sections cited are not modeled."

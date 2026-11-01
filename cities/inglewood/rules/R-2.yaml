@@ -1,0 +1,56 @@
+# Inglewood R-2. Every value cites the Inglewood Municipal Code, Chapter 12 (eCode360, read 2026-11-01).
+zone: "R-2"
+name: "R-2 Limited Multiple-Family Zone"
+family: multifamily
+
+sources:
+  Z:
+    section: "IMC Ch. 12, Article 3 (R-2 Limited Multiple-Family Zone)"
+    url: https://ecode360.com/43786345
+  P:
+    section: "IMC Ch. 12, Article 19 (Parking Regulations)"
+    url: https://ecode360.com/43787806
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 5000, value: 1}
+      - {below: 8000, value: 2}
+      - {below: 11000, value: 3}
+      - {below: 14000, value: 4}
+      - {below: 17000, value: 5}
+      - {below: 20000, value: 6}
+      - {below: 23000, value: 7}
+      - {below: 26000, value: 8}
+      - {below: 29000, value: 9}
+      - {below: 32000, value: 10}
+      - {below: 35000, value: 11}
+      - {below: 38000, value: 12}
+      - {below: 41000, value: 13}
+      - {below: 44000, value: 14}
+      - {below: 47000, value: 15}
+      - {below: 50000, value: 16}
+      - {below: 53000, value: 17}
+      - {below: 56000, value: 18}
+      - {below: 59000, value: 19}
+      - {below: 62000, value: 20}
+      - {value: 21}
+  source: Z
+  assumption: "§ Lot Area Per Unit: 2,500 sq ft each for 1 or 2 homes, 8,000 for 3, and 3,000 more per extra home. A lot under 2,500 sq ft keeps one home (assumed)."
+small_lot_units_below_sqft: 65000
+lot_area_per_unit_sqft: {value: 3000, source: Z, assumption: "Lots over 65,000 sq ft use a flat 3,000 per home, slightly low."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}, source: Z, assumption: "Same as R-1: 10% of lot width, at least 3 ft, at most 5 ft."}
+  rear_ft: {value: 25, source: Z, assumption: "Same as R-1: 25% of lot depth, at most 25 ft; we use 25 ft."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2.5, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "Two enclosed spaces per home (§ 12-Article 19, Residential Parking Requirements). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Objective Design Standards and any lot coverage limit outside the sections cited are not modeled."

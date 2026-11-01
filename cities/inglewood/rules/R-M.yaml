@@ -1,0 +1,52 @@
+# Inglewood R-M. Every value cites the Inglewood Municipal Code, Chapter 12 (eCode360, read 2026-11-01).
+zone: "R-M"
+name: "R-M Residential and Medical Zone"
+family: multifamily
+
+sources:
+  Z:
+    section: "IMC Ch. 12, Article 5.1 (R-M Residential and Medical Zone)"
+    url: https://ecode360.com/43786442
+  P:
+    section: "IMC Ch. 12, Article 19 (Parking Regulations)"
+    url: https://ecode360.com/43787806
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_width_ft
+    bands:
+      - {below: 80, value: 1400}
+      - {value: 1100}
+  source: Z
+  assumption: "1,100 sq ft needs at least 12,000 sq ft and 80 ft of width; the table below handles smaller lots."
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 1400, value: 1}
+      - {below: 2800, value: 1}
+      - {below: 4200, value: 2}
+      - {below: 5600, value: 3}
+      - {below: 7000, value: 4}
+      - {below: 8400, value: 5}
+      - {below: 9800, value: 6}
+      - {below: 11200, value: 7}
+      - {value: 8}
+  source: Z
+  assumption: "Under 12,000 sq ft: 1,400 sq ft per home, and a lot too small for one keeps one home (assumed)."
+small_lot_units_below_sqft: 12000
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 10, source: Z, assumption: "Residential-only buildings follow R-3: 7 ft, plus 3 ft per story over two."}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 40, source: Z}
+max_stories: {value: 3, source: Z, assumption: "Residential-only buildings follow R-3's height."}
+parking_per_unit: {value: 2, source: P, assumption: "Two enclosed spaces per home (§ 12-Article 19, Residential Parking Requirements). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Buildings of 4 or more stories with other uses have no lot-area limit; not modeled."
+  - "Objective Design Standards and any lot coverage limit outside the sections cited are not modeled."

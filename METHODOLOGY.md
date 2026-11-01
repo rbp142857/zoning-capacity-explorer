@@ -556,3 +556,33 @@ OS, AP, RT, RW.
 **Left out:** upper-story setbacks, open space per home, buffers next to R zones,
 the Rurban Homestead Overlay, and the Valley Entryway Overlay. SB 9 follows state
 law; El Monte's own SB 9 rules weren't checked.
+
+## 16. Inglewood
+
+Not on the site yet: publishing a new city's site files is the owner's call.
+
+**Zoning data.** SCAG's table. Only 81% of lots are modeled, and the gap matters:
+four Transit Oriented Development plan areas (Downtown, Fairview Heights,
+Westchester/Veterans, Crenshaw/Imperial, 3,045 lots) appear in SCAG only by plan
+name, without the MU-1 to MU-4 zones and the plan's own standards. These are where
+Inglewood means to grow, so the city's capacity is well understated until its own
+zoning map and the plan are added. Also not modeled: other specific plans, 219
+lots with no zone, and a few small zones.
+
+**Rules.** 16 zone files from Chapter 12: R-1, R-1Z, R-1½, R-2, R-2A, R-3, R-4, R-M,
+and no homes counted in C-2, C-2A, C-3, C-S, C-R, M-1L, P-1 and O-S.
+
+**How Inglewood differs:**
+
+- **R-2 and R-2A use a stepped schedule:** 2,500 sq ft each for 1 or 2 homes, then
+  8,000 or 9,000 sq ft for 3, and 3,000 or 4,000 more per extra home.
+- **R-3 and R-4 have two densities.** The higher one needs both 12,000 sq ft and 80
+  ft of width.
+- **Two parking spaces per home,** enclosed, at any size.
+- **Commercial zones mostly bar new homes.** C-2 allows mixed use only around
+  Crenshaw and Manchester, which we don't map, so those lots are too low.
+
+**Worth a second reading:** P-1 lots show 1,496 homes today but zero allowed. Article
+17 has no dwelling use, yet so many homes suggest parking zones may sit over
+residential ones in practice. R-1Z's rear yard wasn't read; one home binds anyway.
+Article 35 (ADUs) wasn't checked against the state path.

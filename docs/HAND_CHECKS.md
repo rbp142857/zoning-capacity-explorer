@@ -529,3 +529,53 @@ read November 1, 2026.
 
 - The use matrix allows no homes in M-1.
 - **Result: 0, not allowed.** Engine: 0 ✓
+
+## Inglewood
+
+Checked against the Inglewood Municipal Code, Chapter 12 (eCode360), read
+November 1, 2026.
+
+### I1. 9120 S 8th Ave · R-1 · 8,505 sq ft
+
+- One home per family at 6,000 sq ft (Article 2). 2,015 ft from transit: no parking.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### I2. 3249 W 108th St · R-2 · 6,066 sq ft
+
+- 2,500 sq ft each for 1 or 2 homes (Article 3) → **2**. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### I3. 3714 W 105th St · R-2 · 14,588 sq ft
+
+- 3 homes need 8,000 sq ft, and each extra home 3,000 more: 4 at 11,000, 5 at 14,000, 6 at 17,000 → **5**.
+- **Result: 5, lot area.** Engine: 5 ✓
+
+### I4. 500 E Fairview Blvd · R-2A · 12,771 sq ft
+
+- 3 homes need 9,000 sq ft, and each extra home 4,000 more: 4 at 13,000 → **3**.
+- **Result: 3, lot area.** 4 homes stand here today. Engine: 3 ✓
+
+### I5. 134 E Spruce Ave · R-3 · 9,625 sq ft (50 wide)
+
+- Under 12,000 sq ft: 1,400 per home (Article 4) → 6.9 → **6**.
+- **Result: 6, lot area.** Engine: 6 ✓
+
+### I6. 709 Venice Way · R-3 · 18,503 sq ft (80 wide)
+
+- At least 12,000 sq ft and 80 ft wide: 1,100 per home → 16.8 → **16**.
+- **Result: 16, lot area.** Engine: 16 ✓
+
+### I7. 816 N Market St · R-4 · 12,476 sq ft (50 wide)
+
+- Big enough but under 80 ft wide, so 1,250 per home (Article 5) → 9.98 → **9**.
+- **Result: 9, lot area.** Engine: 9 ✓
+
+### I8. 910 Myrtle Ave · R-M · 12,260 sq ft (52.5 wide)
+
+- Residential-only follows R-3; under 80 ft wide: 1,400 per home → 8.8 → **8**.
+- **Result: 8, lot area.** Engine: 8 ✓
+
+### I9. 400 E Kelso St · C-2 · 31,107 sq ft
+
+- No new dwellings in C-2 outside one mixed-use area around Crenshaw and Manchester, which this lot isn't in.
+- **Result: 0, not counted.** Engine: 0 ✓

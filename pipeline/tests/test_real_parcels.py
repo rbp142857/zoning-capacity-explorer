@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -274,6 +274,45 @@ def el_monte():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", EL_MONTE, ids=[c[0] for c in EL_MONTE])
 def test_hand_checked_el_monte_parcel(el_monte, address, zone, lot, max_units, binding, limits):
     rules, state, a = el_monte
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+INGLEWOOD = [
+    ("9120 S 8th Ave", "R-1", Lot(8505, 63.0, 135.2, (), 2015, 1),
+     4, "state_law:sb9", {"density": 1, "parking": None, "state_adu": 3, "state_sb9": 4}),
+    ("3249 W 108th St", "R-2", Lot(6066, 40.0, 151.7, (), 2712, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "state_adu": 3}),
+    ("3714 W 105th St", "R-2", Lot(14588, 91.0, 160.3, (), 3927, 2),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5}),
+    ("500 E Fairview Blvd", "R-2A", Lot(12771, 80.6, 175.4, (), 2034, 4),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3}),
+    ("134 E Spruce Ave", "R-3", Lot(9625, 50.0, 192.5, (), 930, 9),
+     6, "lot_area_per_unit", {"lot_area_per_unit": 6, "parking": None}),
+    ("709 Venice Way", "R-3", Lot(18503, 80.0, 234.5, (), 3405, 5),
+     16, "lot_area_per_unit", {"lot_area_per_unit": 16}),
+    ("816 N Market St", "R-4", Lot(12476, 50.0, 250.2, (), 902, 6),
+     9, "lot_area_per_unit", {"lot_area_per_unit": 9, "parking": None}),
+    ("910 Myrtle Ave", "R-M", Lot(12260, 52.5, 234.1, (), 1110, 14),
+     8, "lot_area_per_unit", {"lot_area_per_unit": 8, "parking": None}),
+    ("400 E Kelso St", "C-2", Lot(31107, 163.7, 190.1, (), 947, 1),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def inglewood():
+    rules = load_zone_rules(REPO / "cities" / "inglewood" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", INGLEWOOD, ids=[c[0] for c in INGLEWOOD])
+def test_hand_checked_inglewood_parcel(inglewood, address, zone, lot, max_units, binding, limits):
+    rules, state, a = inglewood
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

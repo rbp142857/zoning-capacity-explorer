@@ -1,0 +1,64 @@
+# Inglewood R-4. Every value cites the Inglewood Municipal Code, Chapter 12 (eCode360, read 2026-11-01).
+zone: "R-4"
+name: "R-4 Multiple-Family Zone"
+family: multifamily
+
+sources:
+  Z:
+    section: "IMC Ch. 12, Article 5 (R-4 Multiple-Family Zone)"
+    url: https://ecode360.com/43786412
+  P:
+    section: "IMC Ch. 12, Article 19 (Parking Regulations)"
+    url: https://ecode360.com/43787806
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_width_ft
+    bands:
+      - {below: 80, value: 1250}
+      - {value: 800}
+  source: Z
+  assumption: "800 sq ft needs at least 12,000 sq ft and 80 ft of width; the table below handles smaller lots."
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 1250, value: 1}
+      - {below: 2500, value: 1}
+      - {below: 3750, value: 2}
+      - {below: 5000, value: 3}
+      - {below: 6250, value: 4}
+      - {below: 7500, value: 5}
+      - {below: 8750, value: 6}
+      - {below: 10000, value: 7}
+      - {below: 11250, value: 8}
+      - {value: 9}
+  source: Z
+  assumption: "Under 12,000 sq ft: 1,250 sq ft per home, and a lot too small for one keeps one home (assumed)."
+small_lot_units_below_sqft: 12000
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 13, source: Z, assumption: "7 ft, plus 3 ft for each story over two: 13 ft at four stories; six-story buildings need 19 ft, not modeled."}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 12000, value: 52}
+      - {value: 75}
+  source: Z
+max_stories:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 12000, value: 4}
+      - {value: 6}
+  source: Z
+parking_per_unit: {value: 2, source: P, assumption: "Two enclosed spaces per home (§ 12-Article 19, Residential Parking Requirements). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Objective Design Standards and any lot coverage limit outside the sections cited are not modeled."

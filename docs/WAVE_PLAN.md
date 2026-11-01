@@ -40,7 +40,7 @@ building. Each is a Glendale-sized job via the SCAG fast path
 |---|---|---|---|---|
 | Santa Monica ✅ | 14,979 | 44 (9) | 260 | 386 |
 | El Monte ✅ | 16,978 | 25 (7) | 148 | 238 |
-| Inglewood | 18,375 | 29 (8) | 146 | 215 |
+| Inglewood ⚠️ | 18,375 | 29 (8) | 146 | 215 |
 | West Hollywood | 4,314 | 23 (10) | 146 | 171 |
 | Monrovia | 9,783 | 30 (11) | 140 | 188 |
 | Santa Clarita | 51,872 | 25 (5) | 128 | 495 |
@@ -88,6 +88,9 @@ yet: its 140 MB of site files need the owner's go-ahead. See METHODOLOGY section
 
 **Open decisions for the owner** (the conservative reading is in use for now):
 SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 under Chapter 1A; publishing LA.
+
+**Open data gap:** Inglewood's Transit Oriented plan areas need the city's own zoning
+map and plan (⚠️ above; see METHODOLOGY section 16). SP-4 in El Monte is similar.
 
 **What the real data showed (November 2026).** LA's data was downloaded and run
 through the pipeline and site as a test, with stand-in rules:
