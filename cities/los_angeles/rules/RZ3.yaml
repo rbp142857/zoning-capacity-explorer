@@ -1,0 +1,34 @@
+# Los Angeles RZ3. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+zone: RZ3
+name: "Residential Zero Side Yard (RZ3)"
+family: single_family
+
+sources:
+  Z:
+    section: "LAMC §12.08.3 (RZ Residential Zero Side Yard Zone)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-109659
+  H:
+    section: "LAMC §12.21.1 (height and floor area limits)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-114268
+  P:
+    section: "LAMC §12.21 A.4.(a) (two spaces for each one-family dwelling)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-113040
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 3000, source: Z}
+min_lot_width_ft: {value: 30, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, including lots smaller than the minimum. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 10, source: Z}
+  side_ft: {value: 3, source: Z, assumption: "3 ft on each side; the zero-side-yard option is not modeled."}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 45, source: H}
+max_stories: {value: 3, source: H, assumption: "The code limits feet, not stories; we fit one story per 10 ft of height, at most 3."}
+parking_per_unit: {value: 2, source: P, assumption: "Two spaces per home, none within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Floor area is three times the buildable area (§12.21.1 A.1), which the 3-story envelope reproduces."
+  - "Coastal Zone and height-district differences are not modeled."

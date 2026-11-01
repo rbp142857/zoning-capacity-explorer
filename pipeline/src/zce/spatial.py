@@ -6,6 +6,7 @@ the capacity engine never needs to touch geometry again.
 
 import geopandas as gpd
 import pandas as pd
+import shapely
 
 # If the largest zone covers less than this share of a parcel, the parcel is
 # "split-zoned" and gets a flag. 0.9 leaves room for small mapping
@@ -102,4 +103,10 @@ def distance_to_lots_ft(parcels: gpd.GeoDataFrame, targets: pd.Series) -> pd.Ser
     target_geoms = parcels.loc[targets, "geometry"]
     if target_geoms.empty:
         return pd.Series(float("nan"), index=parcels.index)
-    return parcels.geometry.distance(target_geoms.union_all())
+    # A nearest-neighbor search, not a merge of all targets into one shape:
+    # merging LA's 400,000+ lots is slow and fails on a few invalid outlines.
+    tree = shapely.STRtree(target_geoms.values)
+    (lot_positions, _), distances = tree.query_nearest(parcels.geometry.values, return_distance=True, all_matches=False)
+    out = pd.Series(float("nan"), index=parcels.index)
+    out.iloc[lot_positions] = distances
+    return out

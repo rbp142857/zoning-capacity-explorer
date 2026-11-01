@@ -73,6 +73,12 @@ def rules_for_lot(row, rules: dict):
     return zone_rules, flags
 
 
+def _in_single_family_zone(row, rules: dict) -> bool:
+    """Is this lot's rule file a single-family one? Uses the same lookup as rules_for_lot."""
+    zone_rules, _ = rules_for_lot(row, rules)
+    return zone_rules is not None and zone_rules.family == "single_family"
+
+
 def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
     parcels = gpd.read_parquet(city.clean_dir / "parcels.parquet")
     rules = load_zone_rules(city.rules_dir)
@@ -86,7 +92,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
     print(f"Loaded {len(rules)} zone rule files and {len(state.laws)} state laws")
 
     parcels = parcels.join(spatial.lot_dimensions(parcels))
-    single_family = parcels["base_zone"].map(lambda z: isinstance(z, str) and z in rules and rules[z].family == "single_family")
+    single_family = parcels.apply(_in_single_family_zone, axis=1, rules=rules)
     parcels["dist_single_family_ft"] = spatial.distance_to_lots_ft(parcels, single_family)
     parcels = round_engine_inputs(parcels)
 

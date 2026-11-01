@@ -1,0 +1,50 @@
+# Los Angeles A2. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+# A1 and A2 allow one-family homes; see the sb9_allowed note below.
+zone: A2
+name: "Agricultural (A2)"
+family: single_family
+
+sources:
+  Z:
+    section: "LAMC §12.06 (A2 Agricultural Zone; yards as in A1)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-109255
+  H:
+    section: "LAMC §12.21.1 (height and floor area limits)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-114268
+  P:
+    section: "LAMC §12.21 A.4.(a) (two spaces for each one-family dwelling)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-113040
+  SB9:
+    section: "Cal. Gov. Code §65852.21 (SB 9 applies in single-family residential zones)"
+    url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65852.21
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 87120, source: Z}
+min_lot_width_ft: {value: 150, source: Z}
+max_units_per_lot: {value: 2, source: Z, assumption: "One acre per home, at most two homes on a lot (§12.06 C.2)."}
+lot_area_per_unit_sqft: {value: 43560, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 87120, value: 1}
+      - {value: 2}
+  source: Z
+  assumption: "A lot too small for two homes keeps one, including lots under the minimum."
+small_lot_units_below_sqft: 87120
+sb9_allowed: {value: false, source: SB9, assumption: "This zone also allows farming, so it may not count as single-family under SB 9. We could not confirm the city's reading, so we leave SB 9 out (conservative)."}
+
+setbacks:
+  front_ft: {value: 25, source: Z, assumption: "20% of lot depth, at most 25 ft; we use 25 ft (typical lots are deep enough)."}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 25}, source: Z, assumption: "10% of lot width, at least 3 ft, at most 25 ft."}
+  rear_ft: {value: 25, source: Z, assumption: "25% of lot depth, at most 25 ft; we use 25 ft."}
+
+max_height_ft: {value: 45, source: H}
+max_stories: {value: 3, source: H, assumption: "The code limits feet, not stories; we fit one story per 10 ft of height, at most 3."}
+parking_per_unit: {value: 2, source: P, assumption: "Two spaces per home, none within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Floor area is three times the buildable area (§12.21.1 A.1), which the 3-story envelope reproduces."
+  - "Two homes need enough land for both; smaller lots keep one home."
+  - "Coastal Zone and height-district differences are not modeled."

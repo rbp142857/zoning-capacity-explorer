@@ -1,0 +1,40 @@
+# Los Angeles RE40. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+zone: RE40
+name: "Residential Estate (RE40)"
+family: single_family
+
+sources:
+  Z:
+    section: "LAMC §12.07.01 (RE Residential Estate Zone)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-109384
+  H:
+    section: "LAMC §12.21.1 (height and floor area limits)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-114268
+  P:
+    section: "LAMC §12.21 A.4.(a) (two spaces for each one-family dwelling)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-113040
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 40000, source: Z}
+min_lot_width_ft: {value: 80, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, including lots smaller than the minimum. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z, assumption: "20% of lot depth, at most 25 ft; we use 25 ft (typical lots are deep enough)."}
+  side_ft: {value: 10, source: Z, assumption: "10 ft on each side."}
+  rear_ft: {value: 25, source: Z, assumption: "25% of lot depth, at most 25 ft; we use 25 ft."}
+
+max_height_ft: {value: 36, source: H}
+max_stories: {value: 3, source: H, assumption: "The code limits feet, not stories; we fit one story per 10 ft of height, at most 3."}
+max_far: {value: 0.35, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "Two spaces per home, none within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Hillside Area (H) rules (§12.21 C.10: floor area by slope, its own height limits and setbacks) not modeled; those lots are flagged and use these flat-lot rules."
+  - "The optional 20% floor-area bonus for stepped-back designs is left out, so floor area is slightly conservative."
+  - "Height is 36 ft, or 30 ft with a roof sloped under 25%; we use 36 ft."
+  - "Height districts are not modeled: 1VL, 1XL and 1SS can limit a home to fewer stories, but the one-home limit binds first."
+  - "Coastal Zone lots follow different floor-area rules (§12.21.1 A.1); not modeled."
+  - "Two-family dwellings on lots whose side adjoins a commercial or industrial zone are not modeled."
+  - "Prevailing front yards (the average of neighbors) are not modeled."

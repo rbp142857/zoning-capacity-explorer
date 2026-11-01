@@ -1,0 +1,59 @@
+# Los Angeles R1V3. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+zone: R1V3
+name: "One-Family, Variable-Mass (R1V3)"
+family: single_family
+
+sources:
+  Z:
+    section: "LAMC §12.08 C.5.(b), Table 12.08 C.5.(b) (R1V zones)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-109540
+  H:
+    section: "LAMC §12.21.1 (height and floor area limits)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-114268
+  P:
+    section: "LAMC §12.21 A.4.(a) (two spaces for each one-family dwelling)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-113040
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, including lots smaller than the minimum. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z, assumption: "20% of lot depth, at most 20 ft; we use 20 ft."}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}, source: Z, assumption: "5 ft; 10% of width (at least 3 ft) on lots under 50 ft wide. Extra side yard above 18 ft of height not modeled."}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 28, source: H}
+max_stories: {value: 2, source: H, assumption: "The code limits feet, not stories; we fit one story per 10 ft of height, at most 3."}
+lot_coverage:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 6001, share: 0.5}
+      - {below: 7001, share: 0.48}
+      - {below: 8001, share: 0.46}
+      - {below: 9001, share: 0.44}
+      - {below: 10001, share: 0.42}
+      - {share: 0.4}
+  source: Z
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 6001, share: 0.45}
+      - {below: 7001, share: 0.43}
+      - {below: 8001, share: 0.41}
+      - {below: 9001, share: 0.39}
+      - {below: 10001, share: 0.37}
+      - {share: 0.35}
+  source: Z
+parking_per_unit: {value: 2, source: P, assumption: "Two spaces per home, none within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "The 45° encroachment plane is not modeled."
+  - "Height districts are not modeled: 1VL, 1XL and 1SS can limit a home to fewer stories, but the one-home limit binds first."
+  - "Coastal Zone lots follow different floor-area rules (§12.21.1 A.1); not modeled."
+  - "Two-family dwellings on lots whose side adjoins a commercial or industrial zone are not modeled."
+  - "Prevailing front yards (the average of neighbors) are not modeled."

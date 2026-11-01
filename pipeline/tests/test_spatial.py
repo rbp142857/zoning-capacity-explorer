@@ -1,10 +1,11 @@
 import math
 
 import geopandas as gpd
-from shapely.geometry import box
+import pandas as pd
+from shapely.geometry import Polygon, box
 
 from conftest import CRS
-from zce.spatial import assign_district, assign_zone, inside_boundary
+from zce.spatial import assign_district, assign_zone, distance_to_lots_ft, inside_boundary
 
 
 def _zones(*items):
@@ -60,3 +61,15 @@ def test_inside_boundary():
     parcels = gpd.GeoDataFrame(geometry=[box(0, 0, 10, 10), box(500, 500, 510, 510)], crs=CRS)
     boundary = gpd.GeoDataFrame(geometry=[box(-100, -100, 100, 100)], crs=CRS)
     assert inside_boundary(parcels, boundary).tolist() == [True, False]
+
+
+def test_distance_to_lots_finds_the_nearest_target_and_survives_a_bad_outline():
+    bowtie = Polygon([(0, 0), (10, 10), (10, 0), (0, 10)])  # crosses itself: invalid
+    lots = gpd.GeoDataFrame(geometry=[box(0, 0, 10, 10), box(20, 0, 30, 10), box(100, 0, 110, 10), bowtie], crs=CRS)
+    targets = pd.Series([True, False, False, True])
+    assert distance_to_lots_ft(lots, targets).tolist() == [0, 10, 90, 0]
+
+
+def test_distance_to_lots_is_empty_with_no_targets():
+    lots = gpd.GeoDataFrame(geometry=[box(0, 0, 10, 10)], crs=CRS)
+    assert distance_to_lots_ft(lots, pd.Series([False])).isna().all()

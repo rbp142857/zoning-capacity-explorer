@@ -305,3 +305,62 @@ adopted July 28, 2026). Same shared assumptions as Burbank. What's different:
 
 - No density limit. Envelope: FAR 2.5 = 18,795 sq ft → 17.7 → **17**.
 - **Result: 17, envelope.** 16 homes today. Engine: 17 ✓
+
+## Los Angeles (single-family zones)
+
+Checked against the Los Angeles Municipal Code (American Legal, read November 1,
+2026). One home needs 1,062.5 gross sq ft in the envelope math. Lots within ½
+mile of a major transit stop need no parking (AB 2097). SB 9 gives 4 homes
+with a split, and ADU law gives 3, so local capacity only sets the answer where
+neither applies. The map shows the zone with its height district (`R1-1`); the
+rule file is the zone alone (`R1`).
+
+### L1. 10548 McClemont Ave · R1 · 5,088 sq ft (50 × 101.9)
+
+- Density: 1 home (§12.08 C.4). Envelope: FAR 0.45 (§12.08 C.5.(a)) = 2,290 sq ft → 2.2 → **2**.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### L2. 16428 Gunther St · RS · 11,183 sq ft (124.2 × 201)
+
+- Density: 1. Envelope: lot is over 9,000 sq ft, so 40% = 4,473 sq ft, above the 4,050 floor (§12.07.1 C.5) → 4.2 → **4**.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### L3. 9447 Haines Canyon Ave · RE11 · 11,183 sq ft (76.2 × 158.1)
+
+- Density: 1. Envelope: under 15,000 sq ft, so 40% = 4,473 sq ft (§12.07.01 C.5) → 4.2 → **4**.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### L4. 14937 Bledsoe St · RA · 84,415 sq ft (346.4 × 423.7)
+
+- Density: 1. Envelope: over 20,000 sq ft, so 20% = 16,883 sq ft, above the 5,000 floor (§12.07 C.5) → 15.9 → **15**.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### L5. 3400 Corinth Ave · R1V2 · 6,126 sq ft (60 × 102.9)
+
+- Density: 1. Envelope: 6,001–7,000 sq ft row of Table 12.08 C.5.(b), RFAR .53 = 3,247 sq ft → 3.1 → **3**. 1,549 ft from transit: no parking.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### L6. 1224 Hauser Blvd · R1R3 · 6,076 sq ft (60 × 101.4)
+
+- Density: 1. Envelope: 6,001–7,000 sq ft row of Table 12.08 C.5.(d), RFAR .43 = 2,613 sq ft → 2.5 → **2**.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### L7. 10466 Glory Ave · RE40 · 54,198 sq ft (148.2 × 366.9)
+
+- Density: 1. Envelope: 35% = 18,969 sq ft (§12.07.01 C.5) → 17.9 → **17**.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### L8. 931 S Cochran Ave · R1, HPOZ · 7,949 sq ft (57.3 × 138.7)
+
+- Density: 1. Envelope: FAR 0.45 = 3,577 sq ft → 3.4 → **3**. In a Historic Preservation Overlay Zone, so no SB 9.
+- **Result: 3, ADU law (house, ADU, junior ADU).** Engine: 3 ✓
+
+### L9. 9300 Reverie Rd · A1 · 296,744 sq ft (617.6 × 680)
+
+- Density: 2.5 acres per home, at most 2 (§12.05 C.4): 2.7 → **2**. Envelope: yards leave 567.6 × 630, scaled by the lot's shape (0.707) = 252,670 sq ft; 3 stories → 713 homes (not the limit). SB 9 left out in A1 (see METHODOLOGY).
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### L10. 8800 Wentworth St · A2 · 70,395 sq ft (225.6 × 454.9)
+
+- Density: under the 2-acre minimum (§12.06 C.2), so it keeps its **1** home. SB 9 left out in A2.
+- **Result: 3, ADU law.** Engine: 3 ✓

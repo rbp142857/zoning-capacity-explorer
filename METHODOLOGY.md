@@ -446,3 +446,37 @@ in wave 3 (docs/WAVE_PLAN.md). In the modeled zones, the likely-to-redevelop
 estimate (47,700 homes) is about 550 years of recent building there: the
 zoning allows far more than the market builds. The Department of Finance
 housing count still needs its manual download.
+
+## 14. Los Angeles (in progress)
+
+LA is being added in steps and is not on the site yet. So far it has its
+zoning adapter and rule files for its single-family zones. Every other lot
+(apartments, commercial, downtown, specific plans) is "not modeled".
+
+**Rules.** 21 zone files from the Los Angeles Municipal Code (American Legal,
+read November 1, 2026): R1, RS, RA, RE (a map showing only RE means RE11), RE9,
+RE11, RE15, RE20, RE40, A1, A2, R1V1, R1V2, R1V3, R1R3, R1H1, RU, RZ2.5, RZ3,
+RZ4 and RW1. A lot looks for a file named for its zone and height district, then
+its zone alone, so `R1-1` and `R1-1XL` both use `R1`. These cover 436,041 lots.
+
+**What's simplified, and which way it pushes the numbers:**
+
+- **Hillside lots use flat-lot rules.** 28,581 lots in the `H` overlay really
+  follow §12.21 C.10 (floor area by slope). They are flagged. It rarely changes
+  the answer, since one home is the local limit either way.
+- **SB 9 in fire zones is overcounted.** Executive Order N-32-25 suspends SB 9 in
+  Very High Fire Hazard Severity Zones in the Palisades and Eaton burn areas, and
+  a mayoral order stops applications in the Palisades. We don't have those zones
+  yet, so those lots wrongly show SB 9 homes. Other state limits on building in
+  fire zones are also not modeled.
+- **SB 9 in A1 and A2 is left out.** These zones also allow farming, so they may
+  not count as single-family under SB 9. We could not find the city's reading, so
+  2,585 lots stay at the ADU path (conservative). Check this before relying on it.
+- **Conditions (`Q`, `T`, `D`) are flagged, not read.** 13,115 single-family lots
+  have them; each sets its own limits in a separate ordinance.
+- **Height districts are not modeled** (1VL, 1XL, 1SS). They limit stories, but
+  the one-home limit binds first. They would matter under an upzoning scenario.
+- **Left out:** the 20% floor-area bonus in RA, RE and RS; encroachment planes;
+  Coastal Zone floor area; duplexes on lots beside commercial zones.
+- **No rule file:** RZ5 (109 lots) isn't in the RZ section of the code, R1P (31
+  lots) wasn't found, and A1(UV) and A2(PV) have one lot each. All stay "not modeled".

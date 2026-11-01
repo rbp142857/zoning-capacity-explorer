@@ -81,6 +81,10 @@ several files where the height district changes the answer. 17 zones cover 90%
 of lots. Lots with `Q`, `T`, `F` or `D` conditions are flagged as simplified;
 Chapter 1A and specific-plan zones stay "not modeled" until they have files.
 
+**Progress (November 2026).** The single-family zones have rule files: 21 files
+covering 436,041 lots (65%). They stay off the site until the apartment and
+commercial zones are done. See METHODOLOGY section 14.
+
 **What the real data showed (November 2026).** LA's data was downloaded and run
 through the pipeline and site as a test, with stand-in rules:
 
@@ -90,8 +94,7 @@ through the pipeline and site as a test, with stand-in rules:
 - **SCAG's table has base zones only** (`R1`, `C2`), not LA's full strings.
   **Decision: use LA City Planning's own
   [Zoning layer](https://services5.arcgis.com/7nsPwEMP38bSkCjy/arcgis/rest/services/Zoning/FeatureServer/15)
-  for LA, through its own zoning adapter** (`adapters/la_city_zoning.py`, built;
-  no rule files yet). It has
+  for LA, through its own zoning adapter** (`adapters/la_city_zoning.py`). It has
   58,859 polygons, last edited October 29, 2026, and full strings such as
   `[Q]R3-1-O`. Compared on real lots, using each lot's interior point:
   - Only 40 lots get no zone (SCAG misses 3,416).

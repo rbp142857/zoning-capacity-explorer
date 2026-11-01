@@ -1,0 +1,35 @@
+# Los Angeles RW1. Every value cites the Los Angeles Municipal Code (American Legal, read 2026-11-01).
+zone: RW1
+name: "Residential Waterways (RW1)"
+family: single_family
+
+sources:
+  Z:
+    section: "LAMC §12.08.5 (RW1 Residential Waterways Zone)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-109747
+  H:
+    section: "LAMC §12.21.1 (height and floor area limits)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-114268
+  P:
+    section: "LAMC §12.21 A.4.(a) (two spaces for each one-family dwelling)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-113040
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 2300, source: Z}
+min_lot_width_ft: {value: 28, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, including lots smaller than the minimum. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 10, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 100}, source: Z, assumption: "10% of lot width, at least 3 ft; the code sets no maximum."}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 30, source: H}
+max_stories: {value: 3, source: H, assumption: "The code limits feet, not stories; we fit one story per 10 ft of height, at most 3."}
+parking_per_unit: {value: 2, source: P, assumption: "Two spaces per home, none within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "The 10% per story usable open space rule (§12.08.5 C.5) is not modeled."
+  - "Floor area is three times the buildable area (§12.21.1 A.1), which the 3-story envelope reproduces."
+  - "Coastal Zone and height-district differences are not modeled."

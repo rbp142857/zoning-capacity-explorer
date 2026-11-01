@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, ten in Los Angeles).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -156,6 +156,47 @@ def santa_monica():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", SANTA_MONICA, ids=[c[0] for c in SANTA_MONICA])
 def test_hand_checked_santa_monica_parcel(santa_monica, address, zone, lot, max_units, binding, limits):
     rules, state, a = santa_monica
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+LOS_ANGELES = [
+    ("10548 McClemont Ave", "R1", Lot(5088, 50.0, 101.9, ("RFA",), 25858, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "state_adu": 3, "state_sb9": 4}),
+    ("16428 Gunther St", "RS", Lot(11183, 124.2, 201.0, (), 12509, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 4, "state_adu": 3, "state_sb9": 4}),
+    ("9447 Haines Canyon Ave", "RE11", Lot(11183, 76.2, 158.1, (), 23562, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 4, "state_adu": 3, "state_sb9": 4}),
+    ("14937 Bledsoe St", "RA", Lot(84415, 346.4, 423.7, ("K",), 7389, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 15, "state_adu": 3, "state_sb9": 4}),
+    ("3400 Corinth Ave", "R1V2", Lot(6126, 60.0, 102.9, (), 1549, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 3, "parking": None, "state_adu": 3, "state_sb9": 4}),
+    ("1224 Hauser Blvd", "R1R3", Lot(6076, 60.0, 101.4, ("RG", "O"), 3190, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "state_adu": 3, "state_sb9": 4}),
+    ("10466 Glory Ave", "RE40", Lot(54198, 148.2, 366.9, ("K",), 28431, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 17, "state_adu": 3, "state_sb9": 4}),
+    ("931 S Cochran Ave", "R1", Lot(7949, 57.3, 138.7, ("O", "HPOZ"), 957, 1),
+     3, "state_law:adu", {"density": 1, "envelope": 3, "state_adu": 3, "state_sb9": None}),
+    ("9300 Reverie Rd", "A1", Lot(296744, 617.6, 680.0, (), 19615, 1),
+     3, "state_law:adu", {"density": 2, "lot_area_per_unit": 2, "envelope": 713, "state_adu": 3, "state_sb9": None}),
+    ("8800 Wentworth St", "A2", Lot(70395, 225.6, 454.9, (), 21751, 1),
+     3, "state_law:adu", {"density": 2, "lot_area_per_unit": 1, "envelope": 141, "state_adu": 3, "state_sb9": None}),
+]
+
+
+@pytest.fixture(scope="module")
+def los_angeles():
+    rules = load_zone_rules(REPO / "cities" / "los_angeles" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", LOS_ANGELES, ids=[c[0] for c in LOS_ANGELES])
+def test_hand_checked_los_angeles_parcel(los_angeles, address, zone, lot, max_units, binding, limits):
+    rules, state, a = los_angeles
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

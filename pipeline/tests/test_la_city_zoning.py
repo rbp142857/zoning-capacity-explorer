@@ -1,9 +1,12 @@
+from pathlib import Path
+
 import geopandas as gpd
 import pytest
 from shapely.geometry import box
 
 from zce.adapters.la_city_zoning import NEW_CODE, attach_zoning, parse_zone_string
-from zce.capacity_step import rules_for_lot
+from zce.capacity_step import _in_single_family_zone, rules_for_lot
+from zce.rules.schema import load_zone_rules
 
 
 # Every string below is a real one from LA City Planning's layer (or built from
@@ -109,3 +112,13 @@ def test_attach_zoning_gives_every_lot_the_standard_columns(tmp_path):
     assert a.zone_share == pytest.approx(1.0, abs=0.01)
     # A lot in no zone keeps its row, with an empty overlay list for later steps.
     assert b.overlays == [] and not isinstance(b.zone_code, str)
+
+
+def test_lots_find_their_rule_file_by_zone_class_and_count_as_single_family():
+    rules = load_zone_rules(Path(__file__).resolve().parents[2] / "cities" / "los_angeles" / "rules")
+    row = {"base_zone": "R1-1XL", "zone_class": "R1", "specific_plan": None, "overlays": ["H", "cond:Q"]}
+    zone_rules, flags = rules_for_lot(row, rules)
+    assert zone_rules.zone == "R1"
+    assert flags == ["hillside_overlay_not_modeled", "zoning_conditions_not_modeled"]
+    assert _in_single_family_zone(row, rules)
+    assert not _in_single_family_zone({**row, "base_zone": "C2-1VL", "zone_class": "C2"}, rules)
