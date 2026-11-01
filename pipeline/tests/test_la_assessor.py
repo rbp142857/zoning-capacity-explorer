@@ -1,9 +1,11 @@
 import math
 
+import pandas as pd
+
 from shapely.geometry import box
 
 from conftest import CRS, raw_assessor_row
-from zce.adapters.la_assessor import WHITELIST, load_parcels
+from zce.adapters.la_assessor import WHITELIST, load_parcels, unique_parcel_ids
 
 
 def test_lot_area_is_computed_in_square_feet(write_raw_parcels, lot):
@@ -57,3 +59,8 @@ def test_condo_stack_becomes_one_lot(write_raw_parcels, lot):
     assert condo["parcel_id"] == "1"  # the lowest AIN represents the lot
     assert condo["land_value"] == 3 * 400_000
     assert condo["address"] == "10 MAIN ST PASADENA CA 91101"  # unit number removed
+
+
+def test_unique_parcel_ids_keeps_every_lot():
+    ids = pd.Series(["111", "222", "111", " ", None])
+    assert unique_parcel_ids(ids).tolist() == ["111", "222", "111-2", "unnumbered", "unnumbered-2"]

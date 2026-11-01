@@ -99,6 +99,18 @@ def _merge_condo_stacks(parcels: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     return gpd.GeoDataFrame(lots.reset_index(drop=True), geometry="geometry", crs=parcels.crs)
 
 
+def unique_parcel_ids(ids: pd.Series) -> pd.Series:
+    """Every lot needs its own ID, but the roll isn't perfectly clean.
+
+    In the City of LA, 12 records have a blank parcel number, and 4 numbers
+    appear on two different shapes. Both copies are kept (lots are never
+    dropped): later ones get a suffix, e.g. "4259037004-2".
+    """
+    ids = ids.fillna("").astype(str).str.strip().replace("", "unnumbered")
+    repeat = ids.groupby(ids).cumcount()
+    return ids.where(repeat == 0, ids + "-" + (repeat + 1).astype(str))
+
+
 def load_parcels(raw_path, analysis_crs: str) -> tuple[gpd.GeoDataFrame, dict]:
     """Read raw Assessor GeoJSON and return (lots, stats for the quality report)."""
     raw = gpd.read_file(raw_path)
@@ -110,6 +122,7 @@ def load_parcels(raw_path, analysis_crs: str) -> tuple[gpd.GeoDataFrame, dict]:
     parcels = gpd.GeoDataFrame(parcels, geometry=raw.geometry, crs=raw.crs).to_crs(analysis_crs)
 
     lots = _merge_condo_stacks(parcels)
+    lots["parcel_id"] = unique_parcel_ids(lots["parcel_id"])
 
     # Lot area comes from the polygon, in square feet because EPSG:2229 is in
     # feet. The Assessor's own lot-size field is often missing, so geometry is

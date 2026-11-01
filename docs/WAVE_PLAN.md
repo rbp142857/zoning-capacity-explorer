@@ -75,6 +75,29 @@ LA's zones carry extra parts the rules depend on:
   the ADU and SB 9 paths.
 - **Downtown's new zoning code** (Chapter 1A): treat it as its own zone family.
 
+**What the real data showed (November 2026).** LA's data was downloaded and run
+through the pipeline and site as a test, with stand-in rules:
+
+- 672,322 lots (806,375 assessor records, 134,053 of them condo units merged
+  into 6,787 lots), 256 zone codes. Single-family zones (R1, RS, RE, RA and
+  variants) hold roughly 63% of the lots, so sub-step (a) covers most of the map.
+- **SCAG's table has base zones only** (`R1`, `C2`), not LA's full strings: no
+  height districts, supplemental districts or `[Q]`/`[T]` conditions. Height
+  districts set the floor-area limit in many zones, so sub-steps (b) and (c)
+  need the city's own zoning map (check the LA City GeoHub) instead of, or
+  joined to, SCAG. Do this check first; it decides the zoning adapter.
+- **The site copes:** on a Mac, a scenario over every lot takes about 0.3 s,
+  memory settles near 220 MB (285 MB during changes), and all five cities
+  together work. Not yet measured on a real phone. A new download is 53 MB of
+  tiles (fetched piece by piece, largest piece about 1 MB), 48 MB of lot data
+  (6.5 MB compressed) and 44 MB of addresses (8.4 MB compressed, only when
+  someone searches).
+- **Hosting can wait:** LA fits GitHub's 100 MB file limit. At about 217 bytes
+  per lot, the whole county (roughly 2 million lots) would be about 430 MB,
+  under GitHub Pages' 1 GB site limit. Pages' soft 100 GB a month of traffic
+  and repo growth from re-exports are what would force a move, for example to
+  Cloudflare R2 (10 GB free, no download fees; check current terms first).
+
 Break it into sub-steps, each shipped and validated on its own:
 (a) single-family zones (RE, RS, R1), (b) multifamily (RD, R2, R3, R4, R5),
 (c) commercial zones that allow housing, (d) the incentive program path,

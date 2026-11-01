@@ -40,7 +40,7 @@ BINDING_CODES = [
 
 # Tile zoom range. Parcels are too small to see at z8, but the colors still
 # show where capacity is across cities. 8 is low enough to see all of LA County at once; keep in step with minZoom in web/src/map.ts.
-MIN_ZOOM, MAX_ZOOM = 8, 16
+MIN_ZOOM, MAX_ZOOM = 8, 15
 
 
 def _int_column(series: pd.Series) -> list:
@@ -68,12 +68,15 @@ def write_tiles(lots: gpd.GeoDataFrame, out_path, work_dir) -> None:
             # Each shape keeps its `pid` as a property; the browser promotes
             # it to the feature id (MapLibre `promoteId`). We don't use
             # tippecanoe's id option because vector tiles reserve id 0.
-            # Never drop or merge lots: a missing lot would look like a lot
-            # with no capacity. Simplify shapes instead to keep tiles small.
+            # Keep lots even in crowded tiles: a missing lot would look like a
+            # lot with no capacity. Coarser shapes below the top zoom keep the
+            # zoomed-out tiles small; there, lots smaller than a pixel are
+            # thinned out (invisible anyway). At z15 only slivers are lost
+            # (19 of the City of LA's 672,322 lots).
             "--no-feature-limit",
             "--no-tile-size-limit",
             "--simplification=4",
-            "--no-tiny-polygon-reduction",
+            "--low-detail=10",
             "--detect-shared-borders",
             "--quiet",
             str(geojson),
@@ -167,7 +170,9 @@ def export_city(city: CityConfig) -> None:
     # (same definition as capacity_report.md).
     residential = ok & (lots["binding_constraint"] != "use_not_permitted")
     one_home = residential & (lots["local_units"] <= 1)
-    single_home_share = lots.loc[one_home, "lot_area_sqft"].sum() / lots.loc[residential, "lot_area_sqft"].sum()
+    residential_land = lots.loc[residential, "lot_area_sqft"].sum()
+    # A city with no rule files yet has no residential land (and JSON has no NaN).
+    single_home_share = lots.loc[one_home, "lot_area_sqft"].sum() / residential_land if residential_land else 0
     payload = {
         "city": city.name,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -190,7 +195,7 @@ def export_city(city: CityConfig) -> None:
             "lots_not_modeled": int((~ok).sum()),
             "single_home_land_share": round(float(single_home_share), 3),
             # Lets the site combine this share across cities, weighted by land.
-            "residential_land_sqft": int(lots.loc[residential, "lot_area_sqft"].sum()),
+            "residential_land_sqft": int(residential_land),
         },
         # Columns: element i belongs to the lot with pid i.
         "columns": {

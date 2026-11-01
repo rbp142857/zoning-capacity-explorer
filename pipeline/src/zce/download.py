@@ -59,29 +59,38 @@ def download_arcgis_layer(source: Source, out_path: Path, geometry: bool = True)
         {"where": source.where, "returnCountOnly": "true", "f": "json"},
     )["count"]
 
+    # Save each page as it arrives, so a dropped connection on a big city
+    # (LA takes about half an hour) resumes instead of starting over.
+    partial = out_path.with_suffix(out_path.suffix + ".partial")
     features: list[dict] = []
-    while len(features) < expected:
-        page = _get_json(
-            f"{source.url}/query",
-            {
-                "where": source.where,
-                "outFields": "*",
-                "outSR": 4326,  # GeoJSON is always lon/lat (EPSG:4326)
-                "orderByFields": id_field,
-                "resultOffset": len(features),
-                "resultRecordCount": page_size,
-                "returnGeometry": "true" if geometry else "false",
-                "f": "geojson" if geometry else "json",
-            },
-        )
-        batch = page.get("features", [])
-        if not geometry:
-            batch = [f["attributes"] for f in batch]
-        if not batch:
-            break
-        features.extend(batch)
-        print(f"  {len(features):,} / {expected:,}", end="\r")
-        time.sleep(PAUSE_SECONDS)
+    if partial.exists():
+        features = [json.loads(line) for line in partial.read_text().splitlines()]
+        print(f"  resuming after {len(features):,} features")
+    with open(partial, "a") as saved:
+        while len(features) < expected:
+            page = _get_json(
+                f"{source.url}/query",
+                {
+                    "where": source.where,
+                    "outFields": "*",
+                    "outSR": 4326,  # GeoJSON is always lon/lat (EPSG:4326)
+                    "orderByFields": id_field,
+                    "resultOffset": len(features),
+                    "resultRecordCount": page_size,
+                    "returnGeometry": "true" if geometry else "false",
+                    "f": "geojson" if geometry else "json",
+                },
+            )
+            batch = page.get("features", [])
+            if not geometry:
+                batch = [f["attributes"] for f in batch]
+            if not batch:
+                break
+            features.extend(batch)
+            saved.write("".join(json.dumps(f) + "\n" for f in batch))
+            saved.flush()
+            print(f"  {len(features):,} / {expected:,}", end="\r")
+            time.sleep(PAUSE_SECONDS)
     print()
 
     if len(features) != expected:
@@ -90,6 +99,7 @@ def download_arcgis_layer(source: Source, out_path: Path, geometry: bool = True)
         )
     payload = {"type": "FeatureCollection", "features": features} if geometry else features
     out_path.write_text(json.dumps(payload))
+    partial.unlink()
     return len(features)
 
 

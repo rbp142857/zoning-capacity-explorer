@@ -112,6 +112,7 @@ export function createMap(
   let view: View = "max";
   let highlight: number | null = null;
   let latest: { scenario: Results; today: Results } | null = null;
+  let applied: { scenario: Results; today: Results } | null = null; // what the map's lots show now
   let selected: number | null = null;
   let cities: MapCity[] = [];
   const clickHandlers: ((pid: number, lngLat: maplibregl.LngLat) => void)[] = [];
@@ -188,12 +189,21 @@ export function createMap(
   function applyFeatureState() {
     if (!latest) return;
     const { scenario, today } = latest;
+    // Only touch lots whose answer changed. A reform usually changes a small
+    // share of them, and with hundreds of thousands of lots, rewriting every
+    // lot's state makes the page stutter.
+    const before = applied?.today === today ? applied.scenario : null;
+    applied = latest;
     for (const city of cities) {
       const source = sourceId(city.id);
       if (!map.getSource(source)) continue;
       for (let pid = 0; pid < city.count; pid++) {
         const i = city.offset + pid;
         const code = scenario.binding[i];
+        if (
+          before && before.binding[i] === code && before.max[i] === scenario.max[i] &&
+          before.net[i] === scenario.net[i] && before.realistic[i] === scenario.realistic[i]
+        ) continue;
         const modeled = code >= 0;
         map.setFeatureState(
           { source, sourceLayer: SOURCE_LAYER, id: pid },
@@ -239,6 +249,7 @@ export function createMap(
     if (next === theme) return;
     theme = next;
     map.once("style.load", () => {
+      applied = null; // a new style starts with no lot colors
       cities.forEach(addLotLayers);
       applyFeatureState();
     });
@@ -257,6 +268,7 @@ export function createMap(
     setCities(next) {
       // Results from the old selection use the old numbering.
       latest = null;
+      applied = null;
       const keep = new Set(next.map((c) => c.id));
       cities.filter((c) => !keep.has(c.id)).forEach((c) => removeLotLayers(c.id));
       const had = new Set(cities.map((c) => c.id));

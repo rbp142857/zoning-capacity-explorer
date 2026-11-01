@@ -3,7 +3,7 @@
 // Keyboard: type at least 3 characters, Down/Up to move through matches,
 // Enter to pick, Escape to close. Screen readers hear how many matches there
 // are and which one is highlighted (aria-activedescendant).
-// The address list (~340 kB) loads the first time the box gets focus.
+// The address list (several MB for a big city) loads on the first keystroke.
 
 export interface AddressIndex {
   address: string[];
@@ -95,8 +95,7 @@ export function setupSearch(
     onPick(hit);
   };
 
-  // Load the list once, on first focus or first keystroke (whichever comes
-  // first); every caller awaits the same promise.
+  // Load the list once, on the first keystroke; every caller awaits the same promise.
   let loading: Promise<AddressIndex | null> | null = null;
   const ensureIndex = () => {
     if (loading) return loading;
@@ -113,7 +112,6 @@ export function setupSearch(
     loading = mine;
     return mine;
   };
-  input.addEventListener("focus", () => void ensureIndex());
 
   input.addEventListener("input", async () => {
     if (!index && !(await ensureIndex())) return;
@@ -150,7 +148,6 @@ export function setupSearch(
       loading = null;
       hits = [];
       close();
-      if (document.activeElement === input) void ensureIndex();
     },
   };
 }
