@@ -1,5 +1,5 @@
-# City configuration for City of Los Angeles, CA (wave 2; no rule files yet). Zones from SCAG's countywide
-# zoning table, like Glendale. See ADDING_A_CITY.md and docs/WAVE_PLAN.md.
+# City configuration for City of Los Angeles, CA (wave 2; no rule files yet). Zones from the
+# city's own zoning map. See docs/WAVE_PLAN.md.
 
 id: los_angeles
 name: Los Angeles, California
@@ -19,15 +19,14 @@ sources:
     publisher: Los Angeles County Office of the Assessor
     license: Public record; published by LA County without an explicit open license. Attribution given. Owner names are not included in the source.
   zoning:
-    # SCAG's parcel-level zoning compilation (2024 codes, updated Oct 2025),
-    # joined to county parcels by parcel number. It has no overlay districts.
+    # LA City Planning's own map, not SCAG's table: it has height districts,
+    # overlays and the new zoning code (see docs/WAVE_PLAN.md).
     kind: arcgis
-    geometry: false
-    adapter: scag_zoning
-    url: https://maps.scag.ca.gov/scaggis/rest/services/LDX/Zoning_poly_LA/MapServer/0
-    where: "CITY = 'Los Angeles'"
-    publisher: Southern California Association of Governments (SCAG), regional land use dataset
-    license: Published by SCAG for planning purposes; no explicit open license. Attribution given.
+    adapter: la_city_zoning
+    url: https://services5.arcgis.com/7nsPwEMP38bSkCjy/arcgis/rest/services/Zoning/FeatureServer/15
+    where: "1=1"
+    publisher: City of Los Angeles, Department of City Planning
+    license: Published by LA City Planning "as is" under a site disclaimer; no explicit open license. Attribution given.
   major_transit_stops:
     kind: arcgis
     url: https://maps.scag.ca.gov/scaggis/rest/services/OpenData/Major_Transit_Stops_Plan_Year_2022/MapServer/0
@@ -76,7 +75,5 @@ redevelopment:
   min_building_age_years: 50
   max_improvement_to_land_ratio: 1.0
   exclude_condos: true
-  # SCAG's table has no historic-district overlays, so this
-  # screen can't exclude them (noted in METHODOLOGY.md).
-  exclude_overlay_prefixes: []
+  exclude_overlay_prefixes: [HPOZ]  # historic districts
   exclude_single_family_zones: true

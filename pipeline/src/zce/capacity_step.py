@@ -58,10 +58,18 @@ def rules_for_lot(row, rules: dict):
     if isinstance(base, str) and base.startswith("PD"):
         return None, ["planned_development_not_modeled"]
     zone_rules = rules.get(base) if isinstance(base, str) else None
+    # LA: "C2-1VL" has its own rule file only if its height district matters;
+    # otherwise the zone class's file ("C2") applies. Other cities have no zone_class.
+    zone_class = row.get("zone_class")
+    if zone_rules is None and isinstance(zone_class, str):
+        zone_rules = rules.get(zone_class)
     if zone_rules is not None and isinstance(row["specific_plan"], str):
         flags.append("specific_plan_base_rules_used")
-    if any(o.startswith("HD") for o in (row["overlays"] if row["overlays"] is not None else [])):
+    overlays = row["overlays"] if row["overlays"] is not None else []
+    if any(o == "H" or o.startswith("HD") for o in overlays):  # LA writes H, Pasadena HD
         flags.append("hillside_overlay_not_modeled")
+    if any(o.startswith("cond:") for o in overlays):
+        flags.append("zoning_conditions_not_modeled")
     return zone_rules, flags
 
 

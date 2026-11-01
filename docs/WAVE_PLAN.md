@@ -75,17 +75,43 @@ LA's zones carry extra parts the rules depend on:
   the ADU and SB 9 paths.
 - **Downtown's new zoning code** (Chapter 1A): treat it as its own zone family.
 
+**How rule files will work.** Each lot looks for a file named for its zone and
+height district (`C2-1VL`), then for its zone alone (`C2`). So a zone only needs
+several files where the height district changes the answer. 17 zones cover 90%
+of lots. Lots with `Q`, `T`, `F` or `D` conditions are flagged as simplified;
+Chapter 1A and specific-plan zones stay "not modeled" until they have files.
+
 **What the real data showed (November 2026).** LA's data was downloaded and run
 through the pipeline and site as a test, with stand-in rules:
 
 - 672,322 lots (806,375 assessor records, 134,053 of them condo units merged
   into 6,787 lots), 256 zone codes. Single-family zones (R1, RS, RE, RA and
   variants) hold roughly 63% of the lots, so sub-step (a) covers most of the map.
-- **SCAG's table has base zones only** (`R1`, `C2`), not LA's full strings: no
-  height districts, supplemental districts or `[Q]`/`[T]` conditions. Height
-  districts set the floor-area limit in many zones, so sub-steps (b) and (c)
-  need the city's own zoning map (check the LA City GeoHub) instead of, or
-  joined to, SCAG. Do this check first; it decides the zoning adapter.
+- **SCAG's table has base zones only** (`R1`, `C2`), not LA's full strings.
+  **Decision: use LA City Planning's own
+  [Zoning layer](https://services5.arcgis.com/7nsPwEMP38bSkCjy/arcgis/rest/services/Zoning/FeatureServer/15)
+  for LA, through its own zoning adapter** (`adapters/la_city_zoning.py`, built;
+  no rule files yet). It has
+  58,859 polygons, last edited October 29, 2026, and full strings such as
+  `[Q]R3-1-O`. Compared on real lots, using each lot's interior point:
+  - Only 40 lots get no zone (SCAG misses 3,416).
+  - Where both use LA's older zone codes (about 652,000 lots), the base zones
+    agree on 99.6%, so each confirms the other.
+  - SCAG is out of date on the new code: 16,221 lots (73,865 homes) are in
+    Chapter 1A zones, and SCAG still shows an older zone on 10,561 of them.
+  - Height districts are present on 93% of lots and do vary: C2 lots are split
+    between 1VL, 1, 2D, 1L and others. About 8% of lots have `Q` or `T`
+    conditions and 3% have a `D` limit, each set in its own ordinance, so they
+    can only be flagged as "simplified".
+  - It lists overlays, which SCAG doesn't: O, HCR, RIO, CPIO, H, CUGU, HPOZ and
+    others. HPOZ (20,596 lots) matters for SB 9's historic-district exclusion.
+  - Its terms are a site-wide disclaimer ("as is", no warranty), with no explicit
+    open license. Add the city to the list to ask before charging for anything.
+- **Where LA builds:** of 150,982 homes permitted in 5+ unit buildings in
+  2018-2025, by the zone on today's map: C2 32%, Chapter 1A 14%, R3 12%, R4 8%,
+  C4 6%. About 28% are on lots with a condition prefix such as `[Q]` or `(T)`. So single-family zones
+  cover the most land, but commercial zones are where the homes get built, and
+  incentive programs (sub-step d) may explain much of it; not yet measured.
 - **The site copes:** on a Mac, a scenario over every lot takes about 0.3 s,
   memory settles near 220 MB (285 MB during changes), and all five cities
   together work. Not yet measured on a real phone. A new download is 53 MB of

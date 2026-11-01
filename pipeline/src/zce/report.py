@@ -90,6 +90,16 @@ def write_quality_report(
     out.append(f"{len(by_zone)} distinct zone codes on lots. Top 25 by lot count (these need rule files first):\n")
     out.append(_table(by_zone.head(25).reset_index()))
 
+    # Cities whose zone strings carry extra parts (LA): the zone alone says
+    # more about which rule files to write first.
+    if "zone_class" in parcels:
+        by_class = parcels.groupby("zone_class").agg(
+            lots=("parcel_id", "size"), acres=("lot_area_sqft", lambda s: round(s.sum() / 43560)),
+            existing_units=("existing_units", lambda s: int(s.sum())),
+        ).sort_values("lots", ascending=False)
+        out.append(f"\n{len(by_class)} zones, without height districts or overlays. Top 25:\n")
+        out.append(_table(by_class.head(25).reset_index()))
+
     out.append("\n## Specific plans\n")
     sp = parcels.groupby(parcels["specific_plan"].fillna("(none)")).agg(
         lots=("parcel_id", "size"), acres=("lot_area_sqft", lambda s: round(s.sum() / 43560)),

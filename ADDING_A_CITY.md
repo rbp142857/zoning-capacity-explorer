@@ -70,6 +70,9 @@ and name it in `city.yaml` (`sources.zoning.adapter`). Each adapter provides
 `attach_zoning(parcels, raw_dir, city)`. Districts, specific-plan boundaries and
 a city boundary are optional sources; without districts, charts group by ZIP code.
 
+`adapters/la_city_zoning.py` is the example for a city that packs everything
+into one zone string, and for rule files shared by several height districts.
+
 Outside LA County you also need a **parcel adapter**: copy
 `adapters/la_assessor.py`, keep its column **whitelist** idea (never a
 blacklist, for privacy), and produce the same output columns.

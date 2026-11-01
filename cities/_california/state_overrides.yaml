@@ -53,8 +53,9 @@ laws:
       # 800 sq ft homes SB 9 guarantees (an assumption, not a statutory number).
       min_lot_sqft_for_two_units: 1200
       # SB 9 does not apply in historic districts designated by local
-      # ordinance; Pasadena's landmark districts are its LD-n overlays.
-      excluded_overlay_prefixes: [LD-]
+      # ordinance; Pasadena's landmark districts are its LD-n overlays, and
+      # LA's are its Historic Preservation Overlay Zones (HPOZ).
+      excluded_overlay_prefixes: [LD-, HPOZ]
     assumptions:
       - "Each new lot must also be at least 40% of the original; splitting a lot in half always satisfies that, so we don't check it."
       - SB 9 doesn't apply where the work would demolish rent-restricted housing or housing rented in the last 3 years. We don't have tenancy data, so this is not checked; capacity on rented lots is overstated.
