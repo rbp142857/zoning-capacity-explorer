@@ -1,0 +1,27 @@
+# Los Angeles [LM6-G2-4][IX6-4]. Chapter 1A (new zoning code), read on zoning.lacity.gov on 2026-11-01.
+zone: "[LM6-G2-4][IX6-4]"
+name: "LM6 form, G2 frontage, Standards 4, IX6 use, 4 density"
+family: nonresidential
+
+sources:
+  F:
+    section: "LA Zoning Code (Ch. 1A) Sec. 2B.9.6 (LM6 Form District)"
+    url: https://zoning.lacity.gov/browse/2#2B.9.6
+  U:
+    section: "LA Zoning Code (Ch. 1A) Sec. 5B.6.6 (IX6 Use District)"
+    url: https://zoning.lacity.gov/browse/5#5B.6.6
+  D:
+    section: "LA Zoning Code (Ch. 1A) Part 6B (Density Districts)"
+    url: https://zoning.lacity.gov/browse/6#6B
+  P:
+    section: "LA Zoning Code (Ch. 1A) Sec. 4C.4.1, Table 1 (Package A, assigned by Development Standards District 4)"
+    url: https://zoning.lacity.gov/browse/4#4C.4.1
+
+residential_allowed: {value: false, source: U, assumption: "Dwellings only with Productive Space or a Legacy Small Business, at least 0.5 FAR. We don't count these homes (conservative)."}
+housing_types: {value: [], source: U}
+
+setbacks:
+  front_ft: {value: 0, source: F}
+  side_ft: {value: 0, source: F}
+  rear_ft: {value: 0, source: F}
+max_stories: {value: 0, source: F, assumption: "Not relevant: homes not counted."}

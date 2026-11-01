@@ -122,3 +122,12 @@ def test_lots_find_their_rule_file_by_zone_class_and_count_as_single_family():
     assert flags == ["hillside_overlay_not_modeled", "zoning_conditions_not_modeled"]
     assert _in_single_family_zone(row, rules)
     assert not _in_single_family_zone({**row, "base_zone": "C2-1VL", "zone_class": "C2"}, rules)
+
+
+def test_chapter_1a_lots_use_their_own_rules_without_the_simplified_plan_flag():
+    rules = load_zone_rules(Path(__file__).resolve().parents[2] / "cities" / "los_angeles" / "rules")
+    zone = "[H3-MU3-3][RX2-2L]"
+    row = {"base_zone": zone, "zone_class": zone, "specific_plan": NEW_CODE, "overlays": []}
+    zone_rules, flags = rules_for_lot(row, rules)
+    assert zone_rules.zone == zone
+    assert flags == []

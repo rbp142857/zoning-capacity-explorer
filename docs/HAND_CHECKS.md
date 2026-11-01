@@ -443,3 +443,39 @@ the lot's area over its width times depth.
 
 - M1 allows MR1 uses and C2's commercial uses, so homes only for a guard or caretaker.
 - **Result: 0, not allowed.** Engine: 0 ✓
+
+## Los Angeles (Chapter 1A, downtown and Boyle Heights)
+
+Read on zoning.lacity.gov. The zone string gives the Form District (floor area,
+yards), the Use District (are homes allowed) and the Density District (lot area
+per home). Base floor area only, without public benefit bonuses.
+
+### L24. 960 N Broadway · [DM5-SH2-5][CX1-FA] · 8,598 sq ft
+
+- FA density: floor area is the only limit. DM5 base FAR 6.0 (Sec. 2B.16.5) = 51,588 sq ft → 48.6 → **48**. Near transit, and Package A needs no parking.
+- **Result: 48, envelope.** Engine: 48 ✓
+
+### L25. 770 S Grand Avenue · [HB5-G1-5][CX3-FA] · 129,533 sq ft
+
+- HB5 base FAR 9.0 (Sec. 2B.20.5) = 1,165,797 sq ft → **1,097**.
+- **Result: 1,097, envelope.** 700 homes today. Engine: 1,097 ✓
+
+### L26. 3216 Eagle St · [H3-MU3-3][RX2-2L] · 5,112 sq ft
+
+- 2L density: 2 homes per lot (Div. 6B.1). H3 FAR 0.6 (Sec. 2B.3.3) = 3,067 sq ft → 2.9 → 2. Local: **2**. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### L27. 647 Camulos St · [VN1-MU3-3][RX2-15] · 5,600 sq ft
+
+- 15 density: 1,500 sq ft per home (Div. 6B.2) → 3.7 → **3**. VN1 FAR 1.0 (Sec. 2B.4.1) = 5,600 sq ft → 5.
+- **Result: 3, lot area.** Engine: 3 ✓
+
+### L28. 2624 E Cesar E Chavez Ave · [LM3-CC1-4][CX5-8] · 4,000 sq ft
+
+- 8 density: 800 per home → **5**. LM3 FAR 1.5 (Sec. 2B.9.3) = 6,000 sq ft → 5.6 → 5. A tie; lot area comes first.
+- **Result: 5, lot area.** Engine: 5 ✓
+
+### L29. 525 E 6th St · [MB2-G1-5][IX1-FA] · 6,019 sq ft
+
+- MB2 base FAR 3.0 (Sec. 2B.14.2) = 18,057 sq ft → 16.99 → **16**. No height limit, so floor area sets the answer.
+- **Result: 16, envelope.** Engine: 16 ✓

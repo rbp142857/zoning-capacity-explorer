@@ -13,6 +13,7 @@ import geopandas as gpd
 import pandas as pd
 
 from zce import spatial
+from zce.adapters.la_city_zoning import NEW_CODE
 from zce.capacity_report import write_capacity_report
 from zce.config import DATA_DIR, REPO_ROOT, CityConfig
 from zce.engine import EngineAssumptions, Lot, compute_capacity
@@ -63,7 +64,9 @@ def rules_for_lot(row, rules: dict):
     zone_class = row.get("zone_class")
     if zone_rules is None and isinstance(zone_class, str):
         zone_rules = rules.get(zone_class)
-    if zone_rules is not None and isinstance(row["specific_plan"], str):
+    # LA's Chapter 1A zones sit in the plan column too, but their files are their own rules.
+    plan = row["specific_plan"]
+    if zone_rules is not None and isinstance(plan, str) and plan != NEW_CODE:
         flags.append("specific_plan_base_rules_used")
     overlays = row["overlays"] if row["overlays"] is not None else []
     if any(o == "H" or o.startswith("HD") for o in overlays):  # LA writes H, Pasadena HD

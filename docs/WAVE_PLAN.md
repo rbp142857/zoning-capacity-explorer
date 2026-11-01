@@ -81,9 +81,13 @@ several files where the height district changes the answer. 17 zones cover 90%
 of lots. Lots with `Q`, `T`, `F` or `D` conditions are flagged as simplified;
 Chapter 1A and specific-plan zones stay "not modeled" until they have files.
 
-**Progress (November 2026).** 85 rule files cover 651,968 lots (97%): single-family,
-apartment, commercial and no-housing zones. Not done: Chapter 1A, specific plans
-and incentive programs. LA isn't on the site yet. See METHODOLOGY section 14.
+**Progress (November 2026).** 259 rule files cover 668,189 lots (99.4%):
+single-family, apartment, commercial, no-housing and Chapter 1A zones. Not done:
+4,133 lots, mostly in specific plan zones, and incentive programs. LA isn't on the site
+yet: its 140 MB of site files need the owner's go-ahead. See METHODOLOGY section 14.
+
+**Open decisions for the owner** (the conservative reading is in use for now):
+SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 under Chapter 1A; publishing LA.
 
 **What the real data showed (November 2026).** LA's data was downloaded and run
 through the pipeline and site as a test, with stand-in rules:

@@ -1,0 +1,27 @@
+# Los Angeles [MB1-CDR1-5][IX4-FA]. Chapter 1A (new zoning code), read on zoning.lacity.gov on 2026-11-01.
+zone: "[MB1-CDR1-5][IX4-FA]"
+name: "MB1 form, CDR1 frontage, Standards 5, IX4 use, FA density"
+family: nonresidential
+
+sources:
+  F:
+    section: "LA Zoning Code (Ch. 1A) Sec. 2B.14.1 (MB1 Form District)"
+    url: https://zoning.lacity.gov/browse/2#2B.14.1
+  U:
+    section: "LA Zoning Code (Ch. 1A) Sec. 5B.6.4 (IX4 Use District)"
+    url: https://zoning.lacity.gov/browse/5#5B.6.4
+  D:
+    section: "LA Zoning Code (Ch. 1A) Part 6B (Density Districts)"
+    url: https://zoning.lacity.gov/browse/6#6B
+  P:
+    section: "LA Zoning Code (Ch. 1A) Sec. 4C.4.1, Table 1 (Package A, assigned by Development Standards District 5)"
+    url: https://zoning.lacity.gov/browse/4#4C.4.1
+
+residential_allowed: {value: false, source: U, assumption: "Dwellings only if 100% affordable. We don't count these homes (conservative)."}
+housing_types: {value: [], source: U}
+
+setbacks:
+  front_ft: {value: 0, source: F}
+  side_ft: {value: 0, source: F}
+  rear_ft: {value: 0, source: F}
+max_stories: {value: 0, source: F, assumption: "Not relevant: homes not counted."}

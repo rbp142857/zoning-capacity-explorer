@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 23 in Los Angeles).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -210,6 +210,18 @@ LOS_ANGELES = [
      6, "envelope", {"lot_area_per_unit": 8, "envelope": 6, "parking": None}),
     ("18428 Gault St", "M1", Lot(14995, 100.0, 150.0, (), 810, 0),
      0, "use_not_permitted", {}),
+    ("960 N Broadway", "[DM5-SH2-5][CX1-FA]", Lot(8598, 65.0, 133.1, ("CPIO",), 429, 1),
+     48, "envelope", {"envelope": 48, "parking": None}),
+    ("770 S Grand Avenue", "[HB5-G1-5][CX3-FA]", Lot(129533, 314.5, 445.9, ("CPIO",), 61, 700),
+     1097, "envelope", {"envelope": 1097}),
+    ("3216 Eagle St", "[H3-MU3-3][RX2-2L]", Lot(5112, 41.0, 124.8, ("CPIO",), 2282, 1),
+     3, "state_law:adu", {"density": 2, "envelope": 2, "state_adu": 3}),
+    ("647 Camulos St", "[VN1-MU3-3][RX2-15]", Lot(5600, 40.0, 140.3, ("CPIO",), 1885, 2),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 5}),
+    ("2624 E Cesar E Chavez Ave", "[LM3-CC1-4][CX5-8]", Lot(4000, 40.0, 100.2, ("CPIO",), 1112, 1),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 5}),
+    ("525 E 6th St", "[MB2-G1-5][IX1-FA]", Lot(6019, 60.1, 100.2, ("CPIO",), 813, 0),
+     16, "envelope", {"envelope": 16}),
 ]
 
 

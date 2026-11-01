@@ -60,7 +60,7 @@ Top zone codes for these homes:
 | (WC)COLLEGE-SN | 3,031 |
 | R4-2 | 2,764 |
 
-- In the zones this tool models, 5+ unit buildings added about **13,868 homes a year**. Our likely-to-redevelop estimate for those zones is **424,388 homes**, roughly **31 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
+- In the zones this tool models, 5+ unit buildings added about **13,868 homes a year**. Our likely-to-redevelop estimate for those zones is **505,327 homes**, roughly **36 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
 - 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 2,389 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
 - Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. 73% of new apartment homes are in zones this tool models.
 

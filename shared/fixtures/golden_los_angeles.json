@@ -356,7 +356,7 @@
    "redev_mask": 13
   },
   {
-   "zone": null,
+   "zone": "[LM6-SH3-4][CX2-4]",
    "area_sqft": 8351.0,
    "width_ft": 49.3,
    "depth_ft": 171.1,
@@ -508,7 +508,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "[MB1-CDF1-5][IX4-FA]",
    "area_sqft": 22323.0,
    "width_ft": 155.8,
    "depth_ft": 160.0,
@@ -1520,7 +1520,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "[HM2-CHC1-5][CX3-FA]",
    "area_sqft": 1073.0,
    "width_ft": 21.8,
    "depth_ft": 61.9,
@@ -2351,7 +2351,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "[VN1-MU3-4][RX2-15]",
    "area_sqft": 4577.0,
    "width_ft": 44.0,
    "depth_ft": 104.3,
@@ -2585,7 +2585,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "[H3-MU3-3][RX2-2L]",
    "area_sqft": 6243.0,
    "width_ft": 50.0,
    "depth_ft": 125.1,
@@ -3749,7 +3749,7 @@
    "redev_mask": 31
   },
   {
-   "zone": null,
+   "zone": "[LF1-WH1-6][I1-N]",
    "area_sqft": 17397.0,
    "width_ft": 119.7,
    "depth_ft": 154.0,
@@ -4158,7 +4158,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "[HB3-G1-5][CX3-FA]",
    "area_sqft": 7483.0,
    "width_ft": 49.9,
    "depth_ft": 150.1,
@@ -4688,7 +4688,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "[VN1-CR1-4][RG2-8]",
    "area_sqft": 4645.0,
    "width_ft": 31.2,
    "depth_ft": 148.7,
@@ -5185,11 +5185,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 11,
+    "local_units": 11,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 20,
+     "envelope": 11,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -5380,11 +5386,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -6690,13 +6698,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -7777,11 +7791,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "lot_area_per_unit",
+    "net_new_units": 0,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 3,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -8059,11 +8079,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 2,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 1,
+    "limits": {
+     "density": 2,
+     "lot_area_per_unit": null,
+     "envelope": 3,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -9578,11 +9604,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -10099,13 +10127,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 42,
+    "max_units": 42,
+    "local_units": 42,
+    "binding_constraint": "envelope",
+    "net_new_units": 42,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 42,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -10783,13 +10817,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 4,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 5,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -11317,11 +11357,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 11,
+    "local_units": 11,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 20,
+     "envelope": 11,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -11512,11 +11558,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -12822,13 +12870,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -13909,11 +13963,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "lot_area_per_unit",
+    "net_new_units": 0,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 3,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -14191,11 +14251,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 2,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 1,
+    "limits": {
+     "density": 2,
+     "lot_area_per_unit": null,
+     "envelope": 3,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -15710,11 +15776,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -16231,13 +16299,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 42,
+    "max_units": 42,
+    "local_units": 42,
+    "binding_constraint": "envelope",
+    "net_new_units": 42,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 42,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -16915,13 +16989,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 4,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 5,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -17449,11 +17529,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 11,
+    "local_units": 11,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 20,
+     "envelope": 11,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -17644,11 +17730,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -18954,13 +19042,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -20041,11 +20135,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "lot_area_per_unit",
+    "net_new_units": 0,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 3,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -20323,11 +20423,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 2,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 1,
+    "limits": {
+     "density": 2,
+     "lot_area_per_unit": null,
+     "envelope": 3,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -21842,11 +21948,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -22363,13 +22471,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 42,
+    "max_units": 42,
+    "local_units": 42,
+    "binding_constraint": "envelope",
+    "net_new_units": 42,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 42,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -23047,13 +23161,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 4,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 5,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -23581,11 +23701,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 11,
+    "local_units": 11,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 20,
+     "envelope": 11,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -23776,11 +23902,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -25086,13 +25214,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -26174,11 +26308,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "lot_area_per_unit",
+    "net_new_units": 0,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 3,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -26456,11 +26596,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 2,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 1,
+    "limits": {
+     "density": 2,
+     "lot_area_per_unit": null,
+     "envelope": 3,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -27975,11 +28121,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -28496,13 +28644,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 42,
+    "max_units": 42,
+    "local_units": 42,
+    "binding_constraint": "envelope",
+    "net_new_units": 42,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 42,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -29180,13 +29334,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 4,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 5,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -29714,11 +29874,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 11,
+    "local_units": 11,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 20,
+     "envelope": 11,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -29909,11 +30075,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -31219,13 +31387,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -32307,11 +32481,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "lot_area_per_unit",
+    "net_new_units": 0,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 3,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -32589,11 +32769,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 2,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 1,
+    "limits": {
+     "density": 2,
+     "lot_area_per_unit": null,
+     "envelope": 3,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -34108,11 +34294,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -34629,13 +34817,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 42,
+    "max_units": 42,
+    "local_units": 42,
+    "binding_constraint": "envelope",
+    "net_new_units": 42,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 42,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -35313,13 +35507,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 4,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 5,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -35847,11 +36047,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 23,
+    "local_units": 23,
+    "binding_constraint": "envelope",
+    "net_new_units": 18,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 41,
+     "envelope": 23,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": true,
@@ -36042,11 +36248,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -37352,13 +37560,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 8,
+    "max_units": 8,
+    "local_units": 8,
+    "binding_constraint": "envelope",
+    "net_new_units": 8,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 8,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -38437,13 +38651,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "lot_area_per_unit",
+    "net_new_units": 3,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 6,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -38721,11 +38941,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "density",
+    "net_new_units": 2,
+    "limits": {
+     "density": 4,
+     "lot_area_per_unit": null,
+     "envelope": 5,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -40240,11 +40466,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -40761,13 +40989,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 56,
+    "max_units": 56,
+    "local_units": 56,
+    "binding_constraint": "envelope",
+    "net_new_units": 56,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 56,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -41445,13 +41679,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 11,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -41979,11 +42219,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 11,
+    "local_units": 11,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 20,
+     "envelope": 11,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -42174,11 +42420,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -43484,13 +43732,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -44571,11 +44825,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "lot_area_per_unit",
+    "net_new_units": 0,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 3,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -44853,11 +45113,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 2,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 1,
+    "limits": {
+     "density": 2,
+     "lot_area_per_unit": null,
+     "envelope": 3,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -46372,11 +46638,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -46893,13 +47161,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 42,
+    "max_units": 42,
+    "local_units": 42,
+    "binding_constraint": "envelope",
+    "net_new_units": 42,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 42,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -47577,13 +47851,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 4,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 5,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -48111,11 +48391,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 11,
+    "local_units": 11,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 20,
+     "envelope": 11,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -48306,11 +48592,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -49616,13 +49904,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "envelope",
+    "net_new_units": 6,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 6,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -50703,11 +50997,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 4,
+    "local_units": 3,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 1,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 3,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -50985,11 +51285,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 4,
+    "local_units": 2,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 2,
+    "limits": {
+     "density": 2,
+     "lot_area_per_unit": null,
+     "envelope": 3,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -52504,11 +52810,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -53025,13 +53333,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 42,
+    "max_units": 42,
+    "local_units": 42,
+    "binding_constraint": "envelope",
+    "net_new_units": 42,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 42,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -53709,13 +54023,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 4,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 5,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -54243,11 +54563,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 17,
+    "local_units": 17,
+    "binding_constraint": "envelope",
+    "net_new_units": 12,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 31,
+     "envelope": 17,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -54438,11 +54764,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -55748,13 +56076,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 7,
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "envelope",
+    "net_new_units": 7,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -56836,11 +57170,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "lot_area_per_unit",
+    "net_new_units": 1,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 4,
+     "envelope": 5,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -57118,11 +57458,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 4,
+    "local_units": 3,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 2,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 4,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -58637,11 +58983,13 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "max_units": 0,
+    "local_units": 0,
+    "binding_constraint": "use_not_permitted",
+    "net_new_units": 0,
+    "limits": {
+     "use_not_permitted": 0
+    }
    },
    {
     "likely_redevelop": false,
@@ -59158,13 +59506,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 49,
+    "max_units": 49,
+    "local_units": 49,
+    "binding_constraint": "envelope",
+    "net_new_units": 49,
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": null,
+     "envelope": 49,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -59842,13 +60196,19 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 5,
+    "max_units": 5,
+    "local_units": 5,
+    "binding_constraint": "envelope",
     "net_new_units": null,
-    "limits": {}
+    "limits": {
+     "density": null,
+     "lot_area_per_unit": 8,
+     "envelope": 5,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,

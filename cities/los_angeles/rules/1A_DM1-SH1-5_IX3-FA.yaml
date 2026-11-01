@@ -1,0 +1,27 @@
+# Los Angeles [DM1-SH1-5][IX3-FA]. Chapter 1A (new zoning code), read on zoning.lacity.gov on 2026-11-01.
+zone: "[DM1-SH1-5][IX3-FA]"
+name: "DM1 form, SH1 frontage, Standards 5, IX3 use, FA density"
+family: nonresidential
+
+sources:
+  F:
+    section: "LA Zoning Code (Ch. 1A) Sec. 2B.16.1 (DM1 Form District)"
+    url: https://zoning.lacity.gov/browse/2#2B.16.1
+  U:
+    section: "LA Zoning Code (Ch. 1A) Sec. 5B.6.3 (IX3 Use District)"
+    url: https://zoning.lacity.gov/browse/5#5B.6.3
+  D:
+    section: "LA Zoning Code (Ch. 1A) Part 6B (Density Districts)"
+    url: https://zoning.lacity.gov/browse/6#6B
+  P:
+    section: "LA Zoning Code (Ch. 1A) Sec. 4C.4.1, Table 1 (Package A, assigned by Development Standards District 5)"
+    url: https://zoning.lacity.gov/browse/4#4C.4.1
+
+residential_allowed: {value: false, source: U, assumption: "Dwellings only alongside light manufacturing of at least 1.0 FAR. We don't count these homes (conservative)."}
+housing_types: {value: [], source: U}
+
+setbacks:
+  front_ft: {value: 0, source: F}
+  side_ft: {value: 0, source: F}
+  rear_ft: {value: 0, source: F}
+max_stories: {value: 0, source: F, assumption: "Not relevant: homes not counted."}

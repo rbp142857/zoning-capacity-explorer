@@ -450,16 +450,15 @@ housing count still needs its manual download.
 ## 14. Los Angeles (in progress)
 
 LA is being added in steps and is not on the site yet. It has a zoning adapter
-and 85 rule files from the Los Angeles Municipal Code (American Legal, read
-November 1, 2026), covering 651,968 of its 672,322 lots (97%). A lot looks for a
+and 259 rule files from the Los Angeles Municipal Code (American Legal and the
+city's zoning.lacity.gov, read November 1, 2026), covering 668,189 of its 672,322
+lots (99.4%). A lot looks for a
 file named for its zone and height district, then its zone alone, so `R1-1` and
 `R1-1XL` use `R1`, while `R3-1XL` has its own file because the height district
 changes the floor area.
 
-**Not modeled yet:** downtown's new code (Chapter 1A, 16,221 lots) and specific
-plan zones. These lots hold 118,819 of the city's homes, and 13% of apartment
-homes permitted since 2018 are in Chapter 1A, so this gap matters more than its
-lot count suggests.
+**Not modeled yet:** 4,133 lots, mostly in specific plan zones (Warner Center,
+Central City West, Exposition and others).
 
 **Zones.**
 
@@ -468,6 +467,16 @@ lot count suggests.
 - **Apartments:** R2, RD1.5 through RD6, R3, R4, R5, RAS3, RAS4.
 - **Commercial, with homes allowed:** CR, C1, C1.5, C2, C4, C5, CM.
 - **No housing:** MR1, M1, MR2, M2, M3, P, OS, PF.
+
+**Chapter 1A (downtown and Boyle Heights).** 174 zone strings, 16,221 lots, each
+with its own file. A string like `[H3-MU3-3][RX2-2L]` reads as Form, Frontage and
+Standards District, then Use and Density District. We use base FAR, not bonus
+FAR, so these sit far below what projects reach through the public benefit
+programs. We don't count homes in IX3, IX4 and IX6, which allow them only with
+manufacturing, as 100% affordable, or with Productive Space, and in P2 and A1.
+Inclusionary districts (`S` in the use tables) count all their homes, though a
+share must be affordable. Amenity space, frontage, step-back and width rules
+are not modeled, so these can be too high.
 
 **How floor area works in LA.** It's a multiple of the "buildable area", the lot
 minus required yards (§12.21.1 A), not of the lot. Commercial Height District 1
