@@ -85,6 +85,23 @@ class MapView(BaseModel):
     zoom: float
 
 
+class ZoneSplit(BaseModel):
+    """Send some lots of one zone to a different rule file, by address.
+
+    For codes whose standards differ by street within one zone (Santa Monica's
+    GC zone allows 70 ft on Santa Monica Blvd but 45 ft on Pico Blvd). The
+    pattern is a case-insensitive regular expression searched in the lot's
+    address, which ends with the ZIP code.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    zone: str  # base zone after zone_aliases, e.g. "GC"
+    address_pattern: str  # e.g. "PICO BLVD"
+    to: str  # rule file zone, e.g. "GC-PICO"
+    reason: str  # the code section that makes the distinction
+
+
 class CityConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -97,6 +114,8 @@ class CityConfig(BaseModel):
     # Zone codes as spelled in the zoning data -> as spelled in the code and
     # the rule files (e.g. SCAG writes "R2250" for Glendale's "R-2250").
     zone_aliases: dict[str, str] = {}
+    # Checked in order; the first split whose zone and address match wins.
+    zone_splits: list[ZoneSplit] = []
     # Name of this city in other agencies' data (DOF E-5, HCD reports).
     official_name: str
     map: MapView

@@ -1,0 +1,44 @@
+# Santa Monica R1. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: R1
+name: "Single-Unit Residential (R1)"
+family: single_family
+
+sources:
+  U07:
+    section: "SMMC §9.07.020, Table 9.07.020 (R1 land uses)"
+    url: https://ecode360.com/42746645
+  T07:
+    section: "SMMC §9.07.030, Table 9.07.030 (R1 development standards)"
+    url: https://ecode360.com/42746645
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: U07}
+housing_types: {value: [single_family], source: U07}
+min_lot_area_sqft: {value: 5000, source: T07}
+min_lot_width_ft: {value: 50, source: T07}
+max_units_per_lot: {value: 1, source: T07, assumption: "1 home per parcel. Duplexes and lot splits (§9.31.125) are the city's SB 9 rules, modeled by the state-law path."}
+
+setbacks:
+  front_ft: {value: 20, source: T07, assumption: "Per the Official Districting Map, or 20 ft where it sets none; we use 20 ft."}
+  side_ft: {value: {pct_of_width: 0.15, min_ft: 3.5, max_ft: 22.5}, source: T07, assumption: "Two-story homes: both sides together 30% of lot width (at most 45 ft), each at least 10% or 3.5 ft; we use 15% per side."}
+  rear_ft: {value: 15, source: T07}
+
+max_height_ft: {value: 28, source: T07, assumption: "28 ft on lots up to 20,000 sq ft, no wall above 23 ft."}
+max_stories: {value: 2, source: T07}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 5000, value: 2250}
+      - {share: 0.45}
+  source: T07
+  assumption: "Two-story home: FAR 0.45, or 2,250 sq ft on lots under 5,000 sq ft."
+parking_per_unit: {value: 2, source: P28, assumption: "2 spaces per single-unit home outside ½ mile of a major transit stop (none within, applied by the AB 2097 path)."}
+
+simplifications:
+  - "Upper-story stepbacks and the 23 ft side daylight plane not modeled."
+  - "The 100 ft minimum width north of Montana Place (Adelaide Drive area) affects only new lots; not modeled."

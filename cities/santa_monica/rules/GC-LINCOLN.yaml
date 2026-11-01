@@ -1,0 +1,36 @@
+# Santa Monica GC-LINCOLN. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: GC-LINCOLN
+name: "General Commercial (GC), Lincoln Blvd"
+family: commercial
+
+sources:
+  U11:
+    section: "SMMC §9.11.020, Table 9.11.020 (mixed-use and commercial land uses)"
+    url: https://ecode360.com/42746863
+  T11:
+    section: "SMMC §9.11.030, Table 9.11.030.B (standards for housing projects, mixed-use and commercial districts)"
+    url: https://ecode360.com/42746863
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: U11, assumption: "Multi-unit housing is permitted by right."}
+housing_types: {value: [multifamily, mixed_use], source: U11}
+min_lot_area_sqft: {value: 7500, source: T11, assumption: "For new lots only."}
+
+setbacks:
+  front_ft: {value: 0, source: T11, assumption: "No front or side setback; buildings sit at the sidewalk."}
+  side_ft: {value: 0, source: T11}
+  rear_ft: {value: 10, source: T11, assumption: "10 ft next to a residential district, which most boulevard lots back onto."}
+
+max_height_ft: {value: 55, source: T11, assumption: "Housing projects on Lincoln Blvd: 55 ft (100% affordable projects get 10 ft more, not modeled)."}
+max_stories: {value: 5, source: T11, assumption: "No story limit for housing projects; 5 stories fit under 55 ft with the required 11 ft ground floor."}
+max_far: {value: 2.5, source: T11, assumption: "Housing projects on Lincoln Blvd: FAR 2.5. There is no separate density limit: the number of homes follows from floor area."}
+parking_per_unit: {value: 0, source: P28, assumption: "No minimum parking for housing projects outside R1 and OP1 (§9.28.060(A)(1)(b)), anywhere in the city."}
+
+simplifications:
+  - "Ground-floor commercial space required on some boulevards is not modeled separately; all floor area is treated as housing."
+  - "Maximum building footprint, upper-story stepbacks, the daylight plane next to residential districts, and outdoor living area (100 sq ft per home) not modeled."
+  - "Which standards apply depends on the street; we assign each lot by its address (see city.yaml zone_splits)."

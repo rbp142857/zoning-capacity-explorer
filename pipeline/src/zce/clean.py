@@ -29,6 +29,18 @@ def _add_flag(flags: pd.Series, condition: pd.Series, name: str) -> pd.Series:
     return flags.where(~condition, flags.map(lambda f: f + [name]))
 
 
+def apply_zone_splits(base_zone: pd.Series, address: pd.Series, splits) -> pd.Series:
+    """Re-label lots whose zone's standards depend on the street (city.yaml `zone_splits`)."""
+    out = base_zone.copy()
+    done = pd.Series(False, index=base_zone.index)
+    addr = address.fillna("")
+    for split in splits:
+        hit = ~done & (base_zone == split.zone) & addr.str.contains(split.address_pattern, case=False, regex=True)
+        out[hit] = split.to
+        done |= hit
+    return out
+
+
 def clean_city(city: CityConfig) -> gpd.GeoDataFrame:
     raw, crs = city.raw_dir, city.analysis_crs
     manifest = json.loads((raw / "_manifest.json").read_text())
@@ -41,6 +53,7 @@ def clean_city(city: CityConfig) -> gpd.GeoDataFrame:
     adapter = ZONING_ADAPTERS[city.sources["zoning"].adapter]
     zone_cols, zones, zoning_notes = adapter(parcels, raw, city)
     parcels = parcels.join(zone_cols)
+    parcels["base_zone"] = apply_zone_splits(parcels["base_zone"], parcels["address"], city.zone_splits)
 
     # Neighborhood grouping for charts: council districts where the city has
     # them, otherwise ZIP code (some cities, like Glendale, elect at large).

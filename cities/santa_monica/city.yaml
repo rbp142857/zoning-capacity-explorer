@@ -1,0 +1,112 @@
+# City configuration for Santa Monica, CA (wave 1). Zones from SCAG's countywide
+# zoning table, like Glendale. See ADDING_A_CITY.md and docs/WAVE_PLAN.md.
+
+id: santa_monica
+name: Santa Monica, California
+state: CA
+official_name: Santa Monica  # as written in DOF and HCD data
+map: {center: [-118.475, 34.022], zoom: 13.2}
+
+# EPSG:2229 = NAD83 / California State Plane Zone 5 (US feet), same as Pasadena.
+analysis_crs: "EPSG:2229"
+
+sources:
+  parcels:
+    kind: arcgis
+    adapter: la_assessor
+    url: https://public.gis.lacounty.gov/public/rest/services/LACounty_Cache/LACounty_Parcel/MapServer/0
+    where: "TaxRateCity = 'SANTA MONICA'"
+    publisher: Los Angeles County Office of the Assessor
+    license: Public record; published by LA County without an explicit open license. Attribution given. Owner names are not included in the source.
+  zoning:
+    # SCAG's parcel-level zoning compilation (2024 codes, updated Oct 2025),
+    # joined to county parcels by parcel number. It has no overlay districts.
+    kind: arcgis
+    geometry: false
+    adapter: scag_zoning
+    url: https://maps.scag.ca.gov/scaggis/rest/services/LDX/Zoning_poly_LA/MapServer/0
+    where: "CITY = 'Santa Monica'"
+    publisher: Southern California Association of Governments (SCAG), regional land use dataset
+    license: Published by SCAG for planning purposes; no explicit open license. Attribution given.
+  major_transit_stops:
+    kind: arcgis
+    url: https://maps.scag.ca.gov/scaggis/rest/services/OpenData/Major_Transit_Stops_Plan_Year_2022/MapServer/0
+    where: "1=1"
+    publisher: Southern California Association of Governments (SCAG), Connect SoCal 2024, base year 2022
+    license: Published by SCAG for planning purposes; no explicit open license. Attribution given.
+  metro_rail_gtfs:
+    kind: file
+    url: https://gitlab.com/LACMTA/gtfs_rail/-/raw/master/gtfs_rail.zip
+    publisher: Los Angeles County Metropolitan Transportation Authority
+    license: LA Metro GTFS, published for public use under Metro's developer terms.
+  apr_table_a2:
+    kind: ckan
+    url: https://data.ca.gov
+    resource_id: fe505d9b-8c36-42ba-ba30-08bc4f34e022
+    filters: {JURIS_NAME: SANTA MONICA}
+    publisher: California Department of Housing and Community Development (HCD)
+    license: Published on data.ca.gov as open data.
+    validation_only: true
+  dof_e5:
+    kind: manual
+    filename: E-5_2026_InternetVersion.xlsx
+    url: https://dof.ca.gov/media/docs/forecasting/Demographics/estimates/e-5-population-and-housing-estimates-for-cities-counties-and-the-state-2020-2026/E-5_2026_InternetVersion.xlsx
+    publisher: California Department of Finance, Demographic Research Unit (E-5, May 2026)
+    license: Public government data.
+    validation_only: true
+
+# SCAG appends overlay codes to the zone: "-A" (off-street parking overlay,
+# Ch. 9.16) and "-BCH" (Beach Overlay, Ch. 9.20). Neither changes housing
+# rules, so those lots use the base zone, except in the beach areas where
+# Table 9.08.030 sets its own standards (zone_splits below). MUC-PPC is MUC.
+zone_aliases:
+  R1-A: R1
+  R2-A: R2
+  R3-A: R3
+  R4-A: R4
+  R4-BCH: R4
+  OP2-BCH: OP2
+  OP3-BCH: OP3
+  OP4-BCH: OP4
+  MUC-PPC: MUC
+
+# Santa Monica sets different standards for the same zone on different
+# streets (Tables 9.08.030 and 9.11.030.B). The address (which ends in the
+# ZIP code) picks the rule file; the first matching line wins. ZIP 90405 is
+# the part of the city south of the I-10 freeway.
+zone_splits:
+  - {zone: R2-BCH, address_pattern: "PALISADES BEACH", to: R2-NP, reason: "§9.08.030: R2 north of the Pier and west of Ocean Ave"}
+  - {zone: R2-BCH, address_pattern: "90405", to: R2-OPB, reason: "§9.08.030: R2 between Neilson Way and Barnard Way"}
+  - {zone: R2-BCH, address_pattern: "", to: R2, reason: "Other beach-overlay R2 lots use base R2"}
+  - {zone: R3-BCH, address_pattern: "90401", to: R3-APW, reason: "§9.08.030: R3 around Appian Way, south of the Pier"}
+  - {zone: R3-BCH, address_pattern: "", to: R3, reason: "Other beach-overlay R3 lots use base R3"}
+  - {zone: MUBL, address_pattern: "PICO BLVD", to: MUBL-PICO, reason: "Table 9.11.030.B: MUBL on Pico Blvd"}
+  - {zone: MUBL, address_pattern: "LINCOLN BLVD|MAIN ST|90405", to: MUBL-LM, reason: "Table 9.11.030.B: MUBL on Lincoln Blvd and Main St (and other MUBL lots south of I-10)"}
+  - {zone: GC, address_pattern: "PICO BLVD", to: GC-PICO, reason: "Table 9.11.030.B: GC on Pico Blvd"}
+  - {zone: GC, address_pattern: "LINCOLN BLVD|90405", to: GC-LINCOLN, reason: "Table 9.11.030.B: GC on Lincoln Blvd (south of I-10, GC is the Lincoln corridor)"}
+  - {zone: GC, address_pattern: "", to: GC-SMB, reason: "Table 9.11.030.B: GC on Santa Monica Blvd"}
+  - {zone: NC, address_pattern: "MAIN ST|OCEAN PARK BL|MONTANA AVE", to: NC-MOM, reason: "Table 9.11.030.B: NC on Main St, Ocean Park Blvd and Montana Ave"}
+specific_plan_prefixes: {}
+
+# Same engine assumptions and redevelopment screens as Pasadena; revisit if
+# Santa Monica's typical new units or building economics differ. Parking is
+# not required for housing outside R1 and OP1, so `surface` rarely matters.
+assumptions:
+  avg_unit_net_sqft: 850
+  net_to_gross: 0.80
+  parking_stall_sqft: 300
+  min_home_sqft: 500
+  parking_mode: surface
+  state_law_path: cities/_california/state_overrides.yaml
+
+redevelopment:
+  as_of_year: 2026
+  min_capacity_multiple: 2.0
+  min_net_new_units: 3
+  min_building_age_years: 50
+  max_improvement_to_land_ratio: 1.0
+  exclude_condos: true
+  # SCAG's table has no historic-district overlays, so this
+  # screen can't exclude them (noted in METHODOLOGY.md).
+  exclude_overlay_prefixes: []
+  exclude_single_family_zones: true

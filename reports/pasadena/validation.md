@@ -39,6 +39,21 @@ Where homes in **5+ unit buildings** were permitted (100% of them matched to a l
 | South Fair Oaks | 76 | 4% |
 | Fair Oaks/Orange Grove | 67 | 3% |
 
+Top zone codes for these homes:
+
+| zone_code | homes permitted |
+|---|---|
+| PD-34 | 394 |
+| CD-MU-N | 376 |
+| EPSP-d2-CG-B | 281 |
+| CD-RM-87 | 181 |
+| CG | 180 |
+| CD-MU-G | 169 |
+| RM-32 | 138 |
+| CD-MU-C | 133 |
+| RM-48 | 78 |
+| SFO-MU-G | 76 |
+
 - In the zones this tool models, 5+ unit buildings added about **50 homes a year**. Our likely-to-redevelop estimate for those zones is **4,907 homes**, roughly **98 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
 - 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 8 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
 - Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. Most new apartment buildings are in areas this tool doesn't model yet, so its totals miss where the city builds most.

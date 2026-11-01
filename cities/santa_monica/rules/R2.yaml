@@ -1,0 +1,45 @@
+# Santa Monica R2. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: R2
+name: "Low Density Residential (R2)"
+family: multifamily
+
+sources:
+  U08:
+    section: "SMMC §9.08.020, Table 9.08.020 (R2, R3, R4 land uses)"
+    url: https://ecode360.com/42746684
+  T08:
+    section: "SMMC §9.08.030, Table 9.08.030 and subsections (R2, R3, R4 standards)"
+    url: https://ecode360.com/42746684
+  R04:
+    section: "SMMC §9.04.020 (rounding: fractions of 0.5 or more round up)"
+    url: https://ecode360.com/42746552
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: U08}
+housing_types: {value: [single_family, two_unit, multifamily], source: U08}
+min_lot_area_sqft: {value: 5000, source: T08}
+min_lot_width_ft: {value: 50, source: T08}
+
+lot_area_per_unit_sqft: {value: 1500, source: T08, assumption: "Housing projects: 1 home per 1,500 sq ft of lot."}
+density_rounding: {value: nearest_half_up, source: R04, assumption: "§9.04.020: fractions of 0.5 or more round up."}
+
+setbacks:
+  front_ft: {value: 20, source: T08}
+  side_ft: {value: {pct_of_width: 0.16, min_ft: 4, max_ft: 8}, source: T08, assumption: "8 ft on lots 50 ft or wider; 4 ft or 16% of width on narrower lots."}
+  rear_ft: {value: 15, source: T08}
+
+max_height_ft: {value: 30, source: T08, assumption: "Housing projects: 30 ft."}
+max_stories: {value: 3, source: T08, assumption: "No story limit for housing projects; 3 stories is what fits under 30 ft at about 10 ft per story."}
+max_far: {value: 1.0, source: T08, assumption: "Housing projects: FAR 1.0."}
+min_open_space_share: {value: 0.3, source: T08, assumption: "Minimum planting area: 30% of the lot."}
+parking_per_unit: {value: 0, source: P28, assumption: "No minimum parking for housing projects outside R1 and OP1 (§9.28.060(A)(1)(b)), anywhere in the city."}
+
+simplifications:
+  - "Projects of 10 or fewer homes may use 4 ft side and rear setbacks (SB 684 / SB 1123, in the table notes); we use the standard setbacks, which rarely bind because floor area (FAR) limits come first."
+  - "Projects with a base density of 8 to 10 homes may exceed the FAR to reach 1.25 (state law, SB 478); not modeled."
+  - "Daylight plane above the front setback, courtyards on lots over 99 ft wide, and the R1 transition setbacks not modeled."
+  - "Tier 2 community-benefit standards apply to non-housing projects only; housing projects get the table's housing standards, used here."

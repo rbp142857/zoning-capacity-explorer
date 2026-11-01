@@ -1,0 +1,41 @@
+# Santa Monica R2-OPB. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: R2-OPB
+name: "Low Density Residential (R2), Ocean Park beach area (Neilson Way to Barnard Way)"
+family: multifamily
+
+sources:
+  U08:
+    section: "SMMC §9.08.020, Table 9.08.020 (R2, R3, R4 land uses)"
+    url: https://ecode360.com/42746684
+  T08:
+    section: "SMMC §9.08.030, Table 9.08.030 and subsections (R2, R3, R4 standards)"
+    url: https://ecode360.com/42746684
+  R04:
+    section: "SMMC §9.04.020 (rounding: fractions of 0.5 or more round up)"
+    url: https://ecode360.com/42746552
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: T08}
+housing_types: {value: [single_family, two_unit], source: T08, assumption: "Only single-unit homes and duplexes are listed as permitted here; multi-unit buildings are not."}
+min_lot_area_sqft: {value: 3000, source: T08}
+
+max_units_per_lot: {value: 2, source: T08, assumption: "Duplex at most (permitted on lots that existed on Aug. 31, 1975, which we assume of all lots)."}
+lot_area_per_unit_sqft: {value: 1500, source: T08}
+density_rounding: {value: nearest_half_up, source: R04, assumption: "§9.04.020: fractions of 0.5 or more round up."}
+
+setbacks:
+  front_ft: {value: 10, source: T08}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 4, max_ft: 10}, source: T08, assumption: "Formula 5 ft + (stories x width) / 50, or 10% of width (at least 4 ft) on lots under 50 ft wide; most lots here are narrow, so we use 10%."}
+  rear_ft: {value: 15, source: T08}
+
+max_height_ft: {value: 23, source: T08, assumption: "23 ft flat roof, 30 ft pitched; walls no higher than 23 ft."}
+max_stories: {value: 2, source: T08, assumption: "2 stories fit under the 23 ft wall height."}
+max_far: {value: 1.2, source: T08}
+parking_per_unit: {value: 0, source: P28, assumption: "No minimum parking for housing projects outside R1 and OP1 (§9.28.060(A)(1)(b)), anywhere in the city."}
+
+simplifications:
+  - "Front setback paving limit and design review not modeled."

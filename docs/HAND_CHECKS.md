@@ -239,3 +239,69 @@ home). Two things are new in Burbank:
 - Envelope (5 stories): 155 × 185.1 = 28,690 (× 0.9995) × 5 = 143,380 →
   **134**. Parking: AB 2097 (1,175 ft from transit), none.
 - **Result: 62, density.** A commercial building, no homes today. Engine: 62 ✓
+
+---
+
+# Santa Monica (7 lots)
+
+Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS,
+adopted July 28, 2026). Same shared assumptions as Burbank. What's different:
+
+- **No parking minimums for housing** anywhere except R1 and OP1 (§9.28.060),
+  so parking never limits multifamily or mixed-use lots.
+- **Commercial, employment and Bergamot zones have no density limit** for
+  housing projects: the number of homes follows from the floor-area ratio
+  (FAR) and height alone (Tables 9.11.030.B, 9.12.030.B, 9.13.030.B).
+- **Standards differ by street within one zone** (GC on Santa Monica Blvd
+  allows FAR 3.25 and 70 ft, on Pico Blvd 2.0 and 45 ft). The lot's address
+  picks the rule file (`zone_splits` in city.yaml).
+- **Rounding:** fractions of 0.5 or more round up (§9.04.020; in Ocean Park,
+  an extra home if the leftover land is at least half the per-home area).
+
+### S1. 1723 Robson Ave · R1 · 5,106 sq ft (50 × 102.1 ft)
+
+- Density **1**. FAR 0.45 (two-story home) = **2,298 sq ft** → **2**;
+  setbacks (front 20, sides 15% = 7.5, rear 15) leave 35 × 67.1 = 2,349 × 2
+  stories, more than the FAR. Parking (5,719 ft from a major transit stop, so
+  required): ground = 5,106 − 1,000 front strip = 4,106; 3 homes = 1,594 + 6
+  × 300 = 3,394 fits, 4 = 2,125 + 2,400 doesn't → **3**.
+- City answer 1; ADU path 3; SB 9 **4**. Engine: 4, `state_law:sb9` ✓
+
+### S2. 2013 18th St · R2 · 7,991 sq ft (50 × 160)
+
+- Land per home: 7,991 ÷ 1,500 = 5.33 → **5** (0.33 rounds down).
+- Envelope: FAR 1.0 = 7,991 sq ft → **7**. Setbacks 34 × 125 = 4,250 × 3
+  stories and 30% planting area leave more than the FAR. Parking: none required.
+- **Result: 5, land per home.** 3 homes today. Engine: 5 ✓
+
+### S3. 2428 Beverley Ave · OP2 · 7,124 sq ft (50.1 × 142.6)
+
+- Land per home: 7,124 ÷ 2,000 = 3.56; the leftover 1,124 sq ft is at least
+  1,000, so one more home (§9.09.030(A)(1)) → **4**.
+- Envelope: FAR 1.0 = 7,124 sq ft → **6**.
+- **Result: 4, land per home.** 4 homes today, so no net gain. Engine: 4 ✓
+
+### S4. 1438 15th St · R3 · 7,491 sq ft (50 × 150)
+
+- Land per home: 7,491 ÷ 1,250 = 5.99 → **6**.
+- Envelope: FAR 1.5 = 11,237 sq ft → **10**.
+- **Result: 6, land per home.** 7 homes today (more than the zone now
+  allows, common in Santa Monica's older apartment areas). Engine: 6 ✓
+
+### S5. 1501 17th St · MUBL (north of I-10) · 7,500 sq ft (50 × 150)
+
+- No density limit. Envelope: FAR 3.25 = 24,375 sq ft; the building (no
+  front or side setback, 10 ft rear: 50 × 140 × 6 stories) is larger, so FAR
+  binds → 24,375 ÷ 1,062.5 = 22.9 → **22**.
+- **Result: 22, envelope.** 5 homes in a 1949 building today; it passes the
+  redevelopment screens. Engine: 22 ✓
+
+### S6. 728 Montana Ave · NC (Montana Ave) · 6,006 sq ft (60.1 × 100.1)
+
+- No density limit. Envelope: FAR 2.5 = 15,015 sq ft → 14.1 → **14**.
+- **Result: 14, envelope.** Engine: 14 ✓
+
+### S7. 2452 Lincoln Blvd · GC (Lincoln Blvd) · 7,518 sq ft (78.2 × 110.1)
+
+- No density limit. Envelope: FAR 2.5 = 18,795 sq ft → 17.7 → **17**.
+- **Result: 17, envelope.** 16 homes today. Engine: 17 ✓

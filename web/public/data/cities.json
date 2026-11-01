@@ -25,5 +25,14 @@
    34.16
   ],
   "zoom": 12.3
+ },
+ {
+  "id": "santa_monica",
+  "name": "Santa Monica, California",
+  "center": [
+   -118.475,
+   34.022
+  ],
+  "zoom": 13.2
  }
 ]

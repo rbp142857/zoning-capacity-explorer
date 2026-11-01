@@ -1,0 +1,33 @@
+# Santa Monica OPD. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: OPD
+name: "Ocean Park Duplex Residential (OPD)"
+family: multifamily
+
+sources:
+  U09:
+    section: "SMMC §9.09.020, Table 9.09.020 (Ocean Park land uses)"
+    url: https://ecode360.com/42746777
+  T09:
+    section: "SMMC §9.09.030, Table 9.09.030 and subsections (Ocean Park standards)"
+    url: https://ecode360.com/42746777
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: U09}
+housing_types: {value: [single_family, two_unit], source: U09}
+min_lot_area_sqft: {value: 5000, source: T09}
+max_units_per_lot: {value: 2, source: T09}
+
+setbacks:
+  front_ft: {value: 20, source: T09, assumption: "30 ft from the walkway centerline (Copeland Court); about 20 ft from the lot line."}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 4, max_ft: 10}, source: T09}
+  rear_ft: {value: 15, source: T09}
+
+max_height_ft: {value: 23, source: T09, assumption: "23 ft flat roof, 30 ft pitched."}
+max_stories: {value: 2, source: T09}
+max_far: {value: 1.0, source: T09}
+min_open_space_share: {value: 0.25, source: T09}
+parking_per_unit: {value: 0, source: P28, assumption: "No minimum parking for housing projects outside R1 and OP1 (§9.28.060(A)(1)(b)), anywhere in the city."}

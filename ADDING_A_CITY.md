@@ -112,6 +112,10 @@ Burbank-style details the schema supports:
   `share:` (a share of the lot), not `value:`.
 - `density_rounding: up` for codes that round any fraction up.
 - `sb9_allowed: false` where the city's code bars SB 9 in a zone.
+- `zone_splits` in city.yaml when one zone's standards differ by street
+  (Santa Monica's GC: 70 ft on Santa Monica Blvd, 45 ft on Pico Blvd). Each
+  line sends lots of a zone whose address matches a pattern (street name or
+  ZIP code) to a separate rule file; the first match wins.
 - If density depends on the General Plan designation, SCAG's
   `GeneralPlan_poly_LA` table gives each parcel's designation; check whether
   each zone falls mostly in one (Burbank's did).

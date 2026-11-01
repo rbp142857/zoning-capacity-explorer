@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -121,6 +121,41 @@ def burbank():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BURBANK, ids=[c[0] for c in BURBANK])
 def test_hand_checked_burbank_parcel(burbank, address, zone, lot, max_units, binding, limits):
     rules, state, a = burbank
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+SANTA_MONICA = [
+    ("1723 Robson Ave", "R1", Lot(5106, 50.0, 102.1, (), 5719, 1, 0),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "parking": 3, "state_adu": 3, "state_sb9": 4}),
+    ("2013 18th St", "R2", Lot(7991, 50.0, 160.0, (), 2978, 3, 884),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 7, "parking": None}),
+    ("2428 Beverley Ave", "OP2", Lot(7124, 50.1, 142.6, (), 1908, 4, 1449),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 6, "parking": None}),
+    ("1438 15th St", "R3", Lot(7491, 50.0, 150.0, (), 1084, 7, 3596),
+     6, "lot_area_per_unit", {"lot_area_per_unit": 6, "envelope": 10, "parking": None}),
+    ("1501 17th St", "MUBL", Lot(7500, 50.0, 150.0, (), 677, 5, 3177),
+     22, "envelope", {"envelope": 22, "parking": None}),
+    ("728 Montana Ave", "NC-MOM", Lot(6006, 60.1, 100.1, (), 3475, 6, 255),
+     14, "envelope", {"envelope": 14, "parking": None}),
+    ("2452 Lincoln Blvd", "GC-LINCOLN", Lot(7518, 78.2, 110.1, (), 2054, 16, 524),
+     17, "envelope", {"envelope": 17, "parking": None}),
+]
+
+
+@pytest.fixture(scope="module")
+def santa_monica():
+    rules = load_zone_rules(REPO / "cities" / "santa_monica" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", SANTA_MONICA, ids=[c[0] for c in SANTA_MONICA])
+def test_hand_checked_santa_monica_parcel(santa_monica, address, zone, lot, max_units, binding, limits):
+    rules, state, a = santa_monica
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

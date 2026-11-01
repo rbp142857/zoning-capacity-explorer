@@ -1,0 +1,34 @@
+# Santa Monica HMU. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: HMU
+name: "Healthcare Mixed-Use (HMU)"
+family: commercial
+
+sources:
+  U13:
+    section: "SMMC §9.13.020, Table 9.13.020 (employment district land uses)"
+    url: https://ecode360.com/42746931
+  T13:
+    section: "SMMC §9.13.030, Table 9.13.030.B (standards for housing projects, employment districts)"
+    url: https://ecode360.com/42746931
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: U13, assumption: "Multi-unit housing is permitted by right."}
+housing_types: {value: [multifamily, mixed_use], source: U13}
+min_lot_area_sqft: {value: 7500, source: T13, assumption: "For new lots only."}
+
+setbacks:
+  front_ft: {value: 0, source: T13}
+  side_ft: {value: 0, source: T13}
+  rear_ft: {value: 15, source: T13, assumption: "15 ft next to a residential district; we apply it to every lot (conservative)."}
+
+max_height_ft: {value: 70, source: T13, assumption: "Housing projects: 70 ft (100% affordable: 10 ft more, not modeled)."}
+max_stories: {value: 6, source: T13, assumption: "6 stories fit under 70 ft with an 11 ft ground floor."}
+max_far: {value: 2.5, source: T13, assumption: "Housing projects: FAR 2.5; no separate density limit."}
+parking_per_unit: {value: 0, source: P28, assumption: "No minimum parking for housing projects outside R1 and OP1 (§9.28.060(A)(1)(b)), anywhere in the city."}
+
+simplifications:
+  - "Daylight plane next to residential districts and outdoor living area (100 sq ft per home) not modeled."

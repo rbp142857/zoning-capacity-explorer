@@ -1,0 +1,33 @@
+# Santa Monica BTV. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: BTV
+name: "Bergamot Transit Village (BTV)"
+family: commercial
+
+sources:
+  U12:
+    section: "SMMC §9.12.020, Table 9.12.020 (Bergamot land uses)"
+    url: https://ecode360.com/42746927
+  T12:
+    section: "SMMC §9.12.030, Table 9.12.030.B (standards for housing projects, Bergamot districts)"
+    url: https://ecode360.com/42746927
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: U12, assumption: "Multi-unit housing is permitted by right."}
+housing_types: {value: [multifamily, mixed_use], source: U12}
+
+setbacks:
+  front_ft: {value: 10, source: T12, assumption: "Building frontage line: 10 to 20 ft from the curb depending on the street, mostly sidewalk; we use 10 ft from the lot line (conservative)."}
+  side_ft: {value: 0, source: T12}
+  rear_ft: {value: 10, source: T12, assumption: "10 ft next to a residential district; applied to every lot."}
+
+max_height_ft: {value: 84, source: T12, assumption: "Housing projects: 4.0 and 84 ft."}
+max_stories: {value: 7, source: T12, assumption: "7 stories fit under 84 ft with an 11 ft ground floor."}
+max_far: {value: 4.0, source: T12, assumption: "Housing projects: FAR 4.0; no separate density limit."}
+parking_per_unit: {value: 0, source: P28, assumption: "No minimum parking for housing projects outside R1 and OP1 (§9.28.060(A)(1)(b)), anywhere in the city."}
+
+simplifications:
+  - "Bergamot Area Plan street, open-space and building-modulation standards, and tower rules above 90 ft, not modeled."

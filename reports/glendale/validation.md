@@ -37,6 +37,21 @@ Where homes in **5+ unit buildings** were permitted (100% of them matched to a l
 | Other zones not modeled (PDs, no zone found, ...) | 1,617 | 29% |
 | Downtown Specific Plan | 490 | 9% |
 
+Top zone codes for these homes:
+
+| zone_code | homes permitted |
+|---|---|
+| (not matched or no zone) | 1,617 |
+| R3050 | 1,348 |
+| SFMU | 590 |
+| R1250 | 550 |
+| DSP/GAT | 490 |
+| R1650 | 354 |
+| R2250 | 165 |
+| C3 | 160 |
+| IMU-R | 141 |
+| C2 | 110 |
+
 - In the zones this tool models, 5+ unit buildings added about **429 homes a year**. Our likely-to-redevelop estimate for those zones is **13,388 homes**, roughly **31 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
 - 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 11 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
 - Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. 62% of new apartment homes are in zones this tool models.

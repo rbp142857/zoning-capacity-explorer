@@ -38,7 +38,7 @@ building. Each is a Glendale-sized job via the SCAG fast path
 
 | City | Parcels | Zone codes (for 90%) | Homes/yr in 2+ unit buildings | All homes/yr |
 |---|---|---|---|---|
-| Santa Monica | 14,979 | 44 (9) | 260 | 386 |
+| Santa Monica ✅ | 14,979 | 44 (9) | 260 | 386 |
 | El Monte | 16,978 | 25 (7) | 148 | 238 |
 | Inglewood | 18,375 | 29 (8) | 146 | 215 |
 | West Hollywood | 4,314 | 23 (10) | 146 | 171 |
@@ -52,7 +52,11 @@ Good order: Burbank first (closest to Glendale), then Santa Monica (most
 building), then the rest. **Burbank: done** (October 31, 2026; see
 METHODOLOGY.md §12). It needed two small engine additions that later cities
 can reuse: limits keyed on distance to single-family zoning, and a city
-opting a zone out of SB 9.
+opting a zone out of SB 9. **Santa Monica: done** (November 1, 2026;
+METHODOLOGY.md §13), except Downtown, where 55% of its recent apartment
+homes were permitted (moved to wave 3, below). It added one reusable piece:
+picking a zone's rule file by street address, for codes whose standards
+differ by street (`zone_splits` in city.yaml).
 
 ### Wave 2: City of Los Angeles (its own project)
 
@@ -87,7 +91,10 @@ Break it into sub-steps, each shipped and validated on its own:
   Monterey Park, Agoura Hills, Torrance. Together ~1,280 homes/yr (4.9%),
   122 zone codes for 90% of their parcels.
 - **Specific plans in done cities:** Pasadena's Central District (where 60%
-  of Pasadena's new apartments are) and Glendale's Downtown Specific Plan.
+  of Pasadena's new apartments are), Glendale's Downtown Specific Plan, and
+  Santa Monica's Downtown Community Plan (55% of its new apartment homes;
+  standards in the plan's Chapter 4). These three are worth doing earlier
+  than the rest of wave 3, since each is where its city builds most.
 
 ### Wave 4: unincorporated LA County
 

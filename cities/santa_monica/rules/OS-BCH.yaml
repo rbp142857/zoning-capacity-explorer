@@ -1,0 +1,20 @@
+# Santa Monica OS-BCH. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: OS-BCH
+name: "Open Space (OS), Beach Overlay"
+family: nonresidential
+
+sources:
+  U15:
+    section: "SMMC §9.15.020, Table 9.15.020 (public and semi-public land uses)"
+    url: https://ecode360.com/42746984
+
+residential_allowed: {value: false, source: U15, assumption: "Table 9.15.020 allows no homes in OS; the Beach Overlay (Ch. 9.20) adds none."}
+housing_types: {value: [], source: U15}
+
+setbacks:
+  front_ft: {value: 0, source: U15}
+  side_ft: {value: 0, source: U15}
+  rear_ft: {value: 0, source: U15}
+max_stories: {value: 0, source: U15, assumption: "Not relevant: housing not allowed."}

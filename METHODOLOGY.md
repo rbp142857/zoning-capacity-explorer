@@ -11,27 +11,29 @@ want to look.
 
 ## Summary
 
-Three cities are modeled: **Pasadena** (the pilot, using the city's own zoning
+Four cities are modeled: **Pasadena** (the pilot, using the city's own zoning
 map), **Glendale** (the first city added from SCAG's countywide zoning table,
-section 11) and **Burbank** (section 12).
+section 11), **Burbank** (section 12) and **Santa Monica** (section 13).
 
-| | Pasadena | Glendale | Burbank |
-|---|---|---|---|
-| Lots modeled | 27,591 of 30,198 | 34,541 of 35,641 | 24,976 of 25,456 |
-| Homes on modeled lots today | 51,582 | 79,516 | 43,358 |
-| Legal maximum, city zoning only | 54,342 | 85,625 | 49,761 |
-| Legal maximum with state law (SB 9, ADUs, AB 2097), theoretical | 114,385 | 159,577 | 104,968 |
-| New homes possible (maximum minus existing), theoretical | 68,323 | 92,798 | 67,382 |
-| New homes on lots **likely to redevelop** (a screen, not a forecast) | 4,907 on 753 lots | 13,388 on 1,258 lots | 7,293 on 736 lots |
-| Residential land where the city allows only one home | 77% | 74% | 74% |
-| Homes permitted per year, 2018–2025 (state reports) | ~424 | ~1,173 | ~321 |
+| | Pasadena | Glendale | Burbank | Santa Monica |
+|---|---|---|---|---|
+| Lots modeled | 27,591 of 30,198 | 34,541 of 35,641 | 24,976 of 25,456 | 14,351 of 14,962 |
+| Homes on modeled lots today | 51,582 | 79,516 | 43,358 | 51,036 |
+| Legal maximum, city zoning only | 54,342 | 85,625 | 49,761 | 113,611 |
+| Legal maximum with state law (SB 9, ADUs, AB 2097), theoretical | 114,385 | 159,577 | 104,968 | 134,346 |
+| New homes possible (maximum minus existing), theoretical | 68,323 | 92,798 | 67,382 | 85,765 |
+| New homes on lots **likely to redevelop** (a screen, not a forecast) | 4,907 on 753 lots | 13,388 on 1,258 lots | 7,293 on 736 lots | 47,741 on 1,675 lots |
+| Residential land where the city allows only one home | 77% | 74% | 74% | 42% |
+| Homes permitted per year, 2018–2025 (state reports) | ~424 | ~1,173 | ~321 | ~386 |
 
-- In all three cities, state law (SB 9, ADUs) is what allows more than one
+- In all four cities, state law (SB 9, ADUs) is what allows more than one
   home on most residential land.
 - Pasadena: 2,607 lots in specific plans (mostly the Central District) are
   **not modeled yet**, and that's where most of its new apartments are built.
   Glendale: 62% of new apartment homes are in zones the tool models. Burbank
-  built apartments in only five permits, too few to say (section 12).
+  built apartments in only five permits, too few to say (section 12). Santa
+  Monica: 55% of its new apartment homes were permitted Downtown, which is
+  not modeled yet (section 13).
 
 ## 1. What the tool measures
 
@@ -351,3 +353,96 @@ homes on 736 lots, nearly all in commercial zones) is about 94 years of
 Burbank's recent apartment building: its zoning allows far more than gets
 built. The Department of Finance housing count still needs its manual
 download.
+
+## 13. Santa Monica
+
+**Zoning data.** Zones come from SCAG's parcel-level table, joined by parcel
+number: 99.4% of lots matched (85 show "no zone"). SCAG appends overlay codes
+to some zones: `-A` (off-street parking overlay, Ch. 9.16) and `-BCH` (Beach
+Overlay, Ch. 9.20). Neither changes housing rules, so those lots are aliased
+to their base zone, except in three beach areas where the code sets its own
+standards (below).
+
+**Rules.** 31 zone files from the Santa Monica Municipal Code, Article 9
+(eCode360, through Ord. No. 2862CCS, adopted July 28, 2026):
+
+- **Single-family:** R1 (one home, FAR 0.45, 2 stories) and OP1 (Ocean Park).
+- **Multifamily:** R2, R3, R4 (one home per 1,500, 1,250 and 900 sq ft of
+  lot; FAR 1.0, 1.5, 2.0; 30, 40, 45 ft) and Ocean Park's OPD, OP2, OP3, OP4,
+  plus three beach areas of R2 and R3 that Table 9.08.030 treats separately:
+  north of the Pier (R2-NP), between Neilson Way and Barnard Way (R2-OPB:
+  single homes and duplexes only) and around Appian Way (R3-APW).
+- **Mixed-use, commercial, employment and Bergamot zones** that allow housing
+  by right: MUBL, MUB, GC, NC, IC, OC, HMU, BTV, MUC, CAC, CCS.
+- **No housing:** PL, OS.
+
+**Four things Santa Monica does differently, and how the tool handles them:**
+
+- **No parking minimums for housing** outside R1 and OP1 (§9.28.060), so
+  parking never limits a multifamily or mixed-use lot here.
+- **No density limit in the commercial zones.** Since the 2024 Housing
+  Element rezoning (Program 1.J), housing projects in the mixed-use,
+  commercial, employment and Bergamot zones have their own standards (Tables
+  9.11.030.B, 9.12.030.B, 9.13.030.B): a floor-area ratio and a height, and
+  no homes-per-acre cap. The number of homes follows from floor area: FAR ×
+  lot area ÷ 1,062.5 sq ft per home. This is why Santa Monica's commercial
+  capacity is so much larger than Burbank's, whose commercial zones cap
+  density at 27 to 87 homes per acre.
+- **Standards differ by street within one zone.** GC allows FAR 3.25 and
+  70 ft on Santa Monica Blvd, 2.5 and 55 ft on Lincoln Blvd, 2.0 and 45 ft on
+  Pico Blvd; MUBL and NC differ by street too. SCAG's table has one code per
+  zone, so the pipeline picks the rule file from the lot's address
+  (`zone_splits` in city.yaml): street name first, then ZIP code (90405 is
+  the part of the city south of the I-10). A corner lot addressed on a side
+  street gets the zone's default. Where the code's values differ within one
+  street (MUBL on Pico west of Lincoln, MUC north of Pennsylvania Ave), we
+  use the lower values.
+- **Rounding:** fractions of 0.5 or more round up (§9.04.020). Ocean Park's
+  rule (one more home if the leftover land is at least half the per-home
+  area) works out the same.
+
+**A finding worth knowing.** In the multifamily zones (R2 to R4, OP2 to
+OP4), 38,500 homes exist today but current zoning allows only 32,200 on the
+same lots: 2,700 of 5,700 lots have more homes than the zone now permits,
+mostly older apartment buildings. Rebuilding those lots under today's rules
+would lose homes, so they almost never pass the redevelopment screens.
+Nearly all the "likely" new homes (44,900 of 47,700) are on commercial-zone
+lots.
+
+**Other choices** (each written in the rule files):
+
+- Housing projects in the commercial zones use the table's housing
+  standards; 100% affordable projects get about 10 ft and 0.5 FAR more, not
+  modeled (like the state density bonus).
+- Story limits: housing projects have none in most zones, so stories are
+  what fits under the height limit (an 11 ft ground floor, then 10 ft
+  floors). FAR binds first on nearly every lot.
+- All floor area in a mixed-use building is counted as housing; required
+  ground-floor commercial space on some boulevards isn't subtracted.
+- Projects of 10 or fewer homes may use 4 ft side and rear setbacks (state
+  law SB 684 and SB 1123, written into the tables); we use the standard
+  setbacks, which rarely bind.
+- R1 and OP1 duplexes and lot splits (§9.31.125) are Santa Monica's SB 9
+  rules, modeled by the state-law path.
+- **SB 79** (2025 transit upzoning) is not modeled anywhere, and Santa Monica
+  has temporarily exempted qualifying parcels from it (Ch. 9.06, Ord. No.
+  2861CCS, until a year after its next Housing Element).
+- Ord. No. 2865CCS (September 22, 2026) amends the base districts but wasn't
+  in the online code when the rules were read; the rule files need a re-check
+  once it's codified.
+
+**Not modeled yet:** the **Downtown Community Plan** districts (LT, NV, BC,
+TA, OT, WT: 469 lots, 5,200 homes), whose standards are in the plan's
+Chapter 4 rather than the zoning code; the Civic Center (CC), Oceanfront
+(OF) and mobile home park (RMH) districts; and the airport. 611 lots in all.
+
+**Validation** ([`reports/santa_monica/validation.md`](reports/santa_monica/validation.md)):
+Santa Monica permitted about 386 homes a year in 2018–2025: 250 in buildings
+of 5+ homes, 93 ADUs, and 10 in 2–4 unit buildings. **55% of the homes in 5+
+unit buildings were permitted Downtown** (LT 644, TA 437, NV 28), and 35% in
+modeled zones (mostly MUBL and NC). So the city's biggest building area is
+the part this tool doesn't model yet; it joins Pasadena's Central District
+in wave 3 (docs/WAVE_PLAN.md). In the modeled zones, the likely-to-redevelop
+estimate (47,700 homes) is about 550 years of recent building there: the
+zoning allows far more than the market builds. The Department of Finance
+housing count still needs its manual download.

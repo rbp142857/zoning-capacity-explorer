@@ -1,0 +1,56 @@
+# Santa Monica OP3. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: OP3
+name: "Ocean Park Medium Density Residential (OP3)"
+family: multifamily
+
+sources:
+  U09:
+    section: "SMMC §9.09.020, Table 9.09.020 (Ocean Park land uses)"
+    url: https://ecode360.com/42746777
+  T09:
+    section: "SMMC §9.09.030, Table 9.09.030 and subsections (Ocean Park standards)"
+    url: https://ecode360.com/42746777
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: U09}
+housing_types: {value: [single_family, two_unit, multifamily], source: U09}
+min_lot_area_sqft: {value: 5000, source: T09}
+min_lot_width_ft: {value: 50, source: T09}
+
+lot_area_per_unit_sqft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 15000, value: 1500}
+      - {value: 2000}
+  source: T09
+  assumption: "1 home per 1,500 sq ft; on lots of 15,000 sq ft or more, 1 per 2,000 (the code also applies this to lots with long street frontage, not modeled)."
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: T09
+  assumption: "§9.09.030(A)(2): lots of 4,000 sq ft or less get 1 home (plus duplexes under §9.31.125)."
+small_lot_units_below_sqft: 4001
+density_rounding: {value: nearest_half_up, source: T09, assumption: "§9.09.030(A)(1): one more home if the leftover lot area is at least half the per-home area."}
+
+setbacks:
+  front_ft: {value: 20, source: T09, assumption: "20 ft (5 ft less where neighbors are set back less); we use 20 ft."}
+  side_ft: {value: {pct_of_width: 0.12, min_ft: 4, max_ft: 12}, source: T09, assumption: "Formula in §9.09.030(C) for blank walls (12 ft for walls with main windows on wide lots); we use 12% of width, at least 4 ft."}
+  rear_ft: {value: 15, source: T09}
+
+max_height_ft: {value: 23, source: T09, assumption: "23 ft flat roof, 30 ft pitched."}
+max_stories: {value: 2, source: T09, assumption: "Base standard; 100% affordable projects have no story limit (not modeled)."}
+max_far: {value: 1.0, source: T09, assumption: "Base standard (100% affordable projects get more, not modeled)."}
+min_open_space_share: {value: 0.25, source: T09, assumption: "Minimum planting area 25% of the lot, for 2 or more homes."}
+parking_per_unit: {value: 0, source: P28, assumption: "No minimum parking for housing projects outside R1 and OP1 (§9.28.060(A)(1)(b)), anywhere in the city."}
+
+simplifications:
+  - "Projects of 10 or fewer homes may use 4 ft side and rear setbacks (SB 684 / SB 1123, in the table notes); we use the standard setbacks, which rarely bind because floor area (FAR) limits come first."
+  - "Projects with a base density of 8 to 10 homes may exceed the FAR to reach 1.25 (state law, SB 478); not modeled."
+  - "Height limits on steep upslope OP2 lots (§9.09.030(B)) and the OP1/OPD transition rules not modeled."

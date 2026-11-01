@@ -253,6 +253,11 @@ def validate_city(city: CityConfig) -> Path:
                    + ", ".join(f"{_fmt(v)} by {k}" for k, v in how.items()) + "):\n")
         out.append(_table(pd.DataFrame({"area": w.index, "homes permitted": [_fmt(v) for v in w.values],
                                         "share": [f"{v / w.sum():.0%}" for v in w.values]})))
+        # By zone code, so a city's biggest unmodeled building areas are visible.
+        z = big.groupby(big["zone_code"].fillna("(not matched or no zone)"))["permitted"].sum()
+        z = z.sort_values(ascending=False).head(10)
+        out.append("\nTop zone codes for these homes:\n")
+        out.append(_table(pd.DataFrame({"zone_code": z.index, "homes permitted": [_fmt(v) for v in z.values]})))
         modeled_rate = w.get("Modeled base zones", 0) / years
         realistic = lots.loc[ok, "realistic_new_units"].sum()
         out.append(f"\n- In the zones this tool models, 5+ unit buildings added about **{_fmt(modeled_rate)} homes "

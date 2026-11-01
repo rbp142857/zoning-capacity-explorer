@@ -1,0 +1,49 @@
+# Santa Monica R2-NP. Every value cites the Santa Monica Municipal Code Article 9 (eCode360, through Ord. No. 2862CCS, adopted July 28, 2026).
+# Zones come from SCAG's countywide table. Ord. No. 2865CCS (Sept. 22, 2026)
+# amends the base districts but was not yet in the online code; re-check.
+zone: R2-NP
+name: "Low Density Residential (R2), north of the Pier and west of Ocean Avenue"
+family: multifamily
+
+sources:
+  U08:
+    section: "SMMC §9.08.020, Table 9.08.020 (R2, R3, R4 land uses)"
+    url: https://ecode360.com/42746684
+  T08:
+    section: "SMMC §9.08.030, Table 9.08.030 and subsections (R2, R3, R4 standards)"
+    url: https://ecode360.com/42746684
+  R04:
+    section: "SMMC §9.04.020 (rounding: fractions of 0.5 or more round up)"
+    url: https://ecode360.com/42746552
+  P28:
+    section: "SMMC §9.28.060 and Table 9.28.060 (parking; no minimum for housing projects outside R1 and OP1)"
+    url: https://ecode360.com/42747771
+
+residential_allowed: {value: true, source: U08}
+housing_types: {value: [single_family, two_unit, multifamily], source: T08}
+min_lot_area_sqft: {value: 5000, source: T08}
+
+lot_area_per_unit_sqft: {value: 1500, source: T08, assumption: "Specified area north of the Pier: 1 home per 1,500 sq ft on lots of 4,000 sq ft or more."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: T08
+  assumption: "Lots under 4,000 sq ft (or 40 ft wide or less): 1 home, plus duplexes under §9.31.125."
+small_lot_units_below_sqft: 4000
+density_rounding: {value: nearest_half_up, source: R04, assumption: "§9.04.020: fractions of 0.5 or more round up."}
+
+setbacks:
+  front_ft: {value: 20, source: T08}
+  side_ft: {value: {pct_of_width: 0.16, min_ft: 4, max_ft: 15}, source: T08, assumption: "Formula 5 ft + (stories x lot width) / 50, which is 8 ft for 3 stories on a 50 ft lot; we use 16% of width, at least 4 ft."}
+  rear_ft: {value: 15, source: T08, assumption: "Beach setback: 15 ft for lots up to 100 ft deep, 55 ft for deeper lots; we use 15 ft."}
+
+max_height_ft: {value: 40, source: T08, assumption: "40 ft, within a site view envelope that starts at 30 ft."}
+max_stories: {value: 3, source: T08, assumption: "The view envelope rises from 30 ft at the beach setback; 3 stories."}
+max_far: {value: 1.5, source: T08}
+parking_per_unit: {value: 0, source: P28, assumption: "No minimum parking for housing projects outside R1 and OP1 (§9.28.060(A)(1)(b)), anywhere in the city."}
+
+simplifications:
+  - "Site view envelope, 30 ft width limit above 23 ft, and Pacific Coast Highway view corridors not modeled."
+  - "55 ft beach setback on lots over 100 ft deep not modeled."
