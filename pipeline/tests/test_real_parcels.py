@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -313,6 +313,45 @@ def inglewood():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", INGLEWOOD, ids=[c[0] for c in INGLEWOOD])
 def test_hand_checked_inglewood_parcel(inglewood, address, zone, lot, max_units, binding, limits):
     rules, state, a = inglewood
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+WEST_HOLLYWOOD = [
+    ("419 Huntley Dr", "R1B", Lot(6004, 49.9, 121.8, (), 1687, 2),
+     4, "state_law:sb9", {"lot_area_per_unit": 2, "envelope": 2, "state_sb9": 4}),
+    ("1249 N Ogden Dr", "R2", Lot(7484, 51.4, 148.5, (), 1295, 10),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3, "parking": None}),
+    ("1015 N Stanley Ave", "R3B", Lot(6495, 50.7, 129.1, (), 1485, 9),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5}),
+    ("1217 Havenhurst Dr", "R4A", Lot(15240, 80.6, 190.2, (), 1908, 19),
+     17, "lot_area_per_unit", {"lot_area_per_unit": 17}),
+    ("1342 N Crescent Heights Blvd", "R4B", Lot(14983, 79.5, 189.5, (), 1373, 12),
+     17, "lot_area_per_unit", {"lot_area_per_unit": 17}),
+    ("1019 N Fairfax Ave", "CC1", Lot(6672, 47.0, 143.2, (), 541, 0),
+     9, "envelope", {"envelope": 9, "parking": None}),
+    ("7906 Santa Monica Blvd", "CC2", Lot(9375, 75.0, 125.5, (), 120, 0),
+     17, "envelope", {"envelope": 17}),
+    ("369 N Robertson Blvd", "CN1", Lot(13343, 105.0, 195.2, (), 2304, 0),
+     12, "envelope", {"envelope": 12}),
+    ("500 N Doheny Dr", "CN2", Lot(5174, 53.8, 96.9, (), 2325, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def west_hollywood():
+    rules = load_zone_rules(REPO / "cities" / "west_hollywood" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", WEST_HOLLYWOOD, ids=[c[0] for c in WEST_HOLLYWOOD])
+def test_hand_checked_west_hollywood_parcel(west_hollywood, address, zone, lot, max_units, binding, limits):
+    rules, state, a = west_hollywood
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

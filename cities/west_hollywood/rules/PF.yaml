@@ -1,0 +1,18 @@
+# West Hollywood PF. Every value cites the West Hollywood Municipal Code, Title 19 (eCode360, read 2026-11-01).
+zone: "PF"
+name: "Public Facilities (PF)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "WHMC Ch. 19.10, Tables 2-5 and 2-6"
+    url: https://ecode360.com/43927979
+
+residential_allowed: {value: false, source: Z, assumption: "Table 2-6 sets no residential floor area for PF."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not allowed."}

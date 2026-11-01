@@ -579,3 +579,54 @@ November 1, 2026.
 
 - No new dwellings in C-2 outside one mixed-use area around Crenshaw and Manchester, which this lot isn't in.
 - **Result: 0, not counted.** Engine: 0 ✓
+
+## West Hollywood
+
+Checked against the West Hollywood Municipal Code, Title 19 (eCode360), read
+November 1, 2026. Most of the city is within ½ mile of a major transit stop, so
+parking rarely applies.
+
+### W1. 419 Huntley Dr · R1-B · 6,004 sq ft
+
+- Table 2-4: 2 homes under 8,500 sq ft. FAR 0.5 = 3,002 sq ft → 2.8 → 2.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### W2. 1249 N Ogden Dr · R2 · 7,484 sq ft
+
+- Table 2-4: 3 homes from 4,000 to 7,999 sq ft → **3**.
+- **Result: 3, lot area.** 10 homes stand here today, far more than zoning now allows. Engine: 3 ✓
+
+### W3. 1015 N Stanley Ave · R3-B · 6,495 sq ft
+
+- 1,210 sq ft per home (Table 2-3) → 5.4 → **5**.
+- **Result: 5, lot area.** 9 homes today. Engine: 5 ✓
+
+### W4. 1217 Havenhurst Dr · R4-A · 15,240 sq ft
+
+- 872 sq ft per home → 17.5 → **17**.
+- **Result: 17, lot area.** 19 homes today. Engine: 17 ✓
+
+### W5. 1342 N Crescent Heights Blvd · R4-B · 14,983 sq ft
+
+- 872 sq ft per home → 17.2 → **17**.
+- **Result: 17, lot area.** Engine: 17 ✓
+
+### W6. 1019 N Fairfax Ave · CC1 · 6,672 sq ft
+
+- FAR 1.5 (Table 2-6) = 10,008 sq ft → 9.4 → **9**. No density limit.
+- **Result: 9, envelope.** Engine: 9 ✓
+
+### W7. 7906 Santa Monica Blvd · CC2 · 9,375 sq ft
+
+- FAR 2.0 = 18,750 sq ft → 17.6 → **17**.
+- **Result: 17, envelope.** Engine: 17 ✓
+
+### W8. 369 N Robertson Blvd · CN1 · 13,343 sq ft
+
+- FAR 1.0 = 13,343 sq ft → 12.6 → **12**.
+- **Result: 12, envelope.** Engine: 12 ✓
+
+### W9. 500 N Doheny Dr · CN2 · 5,174 sq ft
+
+- Mixed-use projects aren't allowed in CN2 (Table 2-5 note 12).
+- **Result: 0, not allowed.** Engine: 0 ✓

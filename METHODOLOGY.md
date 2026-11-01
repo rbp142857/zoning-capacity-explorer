@@ -586,3 +586,27 @@ and no homes counted in C-2, C-2A, C-3, C-S, C-R, M-1L, P-1 and O-S.
 17 has no dwelling use, yet so many homes suggest parking zones may sit over
 residential ones in practice. R-1Z's rear yard wasn't read; one home binds anyway.
 Article 35 (ADUs) wasn't checked against the state path.
+
+## 17. West Hollywood
+
+Not on the site yet: publishing a new city's site files is the owner's call.
+
+**Zoning data.** SCAG's table. 94.4% of lots are modeled. Not modeled: Sunset Specific
+Plan (SSP, 151 lots), other specific plans, and 78 lots SCAG doesn't match.
+
+**Rules.** 17 zone files from Title 19: R1A, R1B, R1C, R2, R3A, R3B, R3C, R4A, R4B,
+R4B-C, CN1, CC1, CC2, CA, CR, and no homes in CN2 and PF.
+
+**How West Hollywood differs:**
+
+- **R1-B and R2 use a stepped table** (Table 2-4), so "single-family" R1-B allows two
+  homes on small lots and more on large ones.
+- **Commercial zones have no density limit.** Homes are limited by FAR. We count the
+  whole FAR as homes, which runs high, since a project must be mixed use. The
+  Mixed-Use Incentive Overlay's extra FAR and the commercial-only overlay aren't in
+  our data; one pushes numbers low and the other high.
+- **Older buildings beat today's zoning:** R3 and R4 hold many lots with more homes
+  than now allowed, which caps net new capacity.
+
+**Worth a second reading:** R4B-C's FAR of 0.58 is printed in Table 2-3 and used as
+printed, though it looks low for four stories (11 lots).
