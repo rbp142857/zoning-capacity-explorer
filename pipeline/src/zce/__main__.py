@@ -18,10 +18,16 @@ from zce.config import load_city
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="zce", description="Zoning Capacity Explorer pipeline")
-    parser.add_argument("step", choices=["download", "clean", "capacity", "export", "golden", "validate", "all"])
-    parser.add_argument("city", help="city id, i.e. a folder name under cities/")
+    parser.add_argument("step", choices=["download", "clean", "capacity", "export", "golden", "validate", "all", "waves"])
+    parser.add_argument("city", nargs="?", default="pasadena", help="city id, i.e. a folder name under cities/")
     parser.add_argument("--only", nargs="*", help="download only these sources")
     args = parser.parse_args()
+
+    if args.step == "waves":  # county-wide planning report, not a per-city step
+        from zce.waves import write_ranking
+
+        write_ranking()
+        return
 
     city = load_city(args.city)
 

@@ -25,7 +25,7 @@ New to the code? Start with the **[beginner's guide](docs/BEGINNER_GUIDE.md)**.
 | 7. Realistic redevelopment estimate | ✅ 5 screens, shown beside theoretical everywhere |
 | 8. Validation, methodology, deploy | ✅ live on GitHub Pages |
 | 9. Developer pro forma (optional) | planned |
-| LA County expansion | ✅ multi-city pipeline and site; Glendale added from SCAG's countywide zoning table |
+| LA County expansion | ✅ multi-city pipeline and site; Glendale added. Next: [wave plan](docs/WAVE_PLAN.md) |
 
 Reports: [data quality](reports/pasadena/quality_report.md) ·
 [capacity](reports/pasadena/capacity_report.md) ·
