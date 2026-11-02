@@ -765,8 +765,7 @@ uses the schedule for north of Huntington Drive; south allows more. Parking wasn
 ## 28. South Gate (NL and NM so far)
 
 Not on the site yet. 2 files from Chapter 11.25 cover 13,817 of 16,268 lots (84.9%). Not done: the
-mixed-use and corridor zones (MS, TMU, HMU, CDR, CC, UN), which is where the city plans more
-homes, and industrial and other zones. Parking wasn't read.
+mixed-use and corridor zones (MS, TMU, HMU, CDR, CC, UN), and industrial and other zones. Parking wasn't read.
 
 **Open question, please review:** NL's table allows 5 homes per acre and "max. 2 separate living
 units" on a 5,000 sq ft lot. We read the second unit as an ADU, so one main home. NL lots
