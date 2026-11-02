@@ -1,0 +1,38 @@
+# Bell C3R. Every value cites the Bell Municipal Code, Title 17 (eCode360, through Ord. 1297, read 2026-11-02).
+zone: "C3R"
+name: "C-3R Zone"
+family: commercial
+
+sources:
+  Z:
+    section: "BMC §§17.28.020 and 17.28.040, using §17.24.050"
+    url: https://ecode360.com/44226237
+  P:
+    section: "BMC §17.76.020(7) (parking for dwelling units)"
+    url: https://ecode360.com/44227184
+
+residential_allowed: {value: true, source: Z, assumption: "R-3's principal uses are allowed, and residential uses are also listed with a conditional use permit. We count them."}
+housing_types: {value: [multifamily, mixed_use], source: Z}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "Chapter 17.28 states no density. We use R-3's, since R-3's uses are what it allows (assumed); see the open decision."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1452
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "The chapter sets no residential side yard; we use R-3's (assumed)."}
+  rear_ft: {value: 10, source: Z, assumption: "The chapter sets no residential rear yard; we use R-3's (assumed)."}
+
+max_height_ft: {value: 35, source: Z, assumption: "The zone allows 70 ft. We use R-3's 35 ft and 3 stories (conservative), and density binds anyway."}
+max_stories: {value: 3, source: Z, assumption: "See height."}
+lot_coverage: {value: 0.50, source: Z, assumption: "The zone allows full coverage outside yards and parking; we use R-3's 50% (conservative)."}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.33, source: P, assumption: "1 open space per 3 multifamily homes."}
+

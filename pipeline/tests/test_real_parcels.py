@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1361,6 +1361,43 @@ def baldwin_park():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BALDWIN_PARK, ids=[c[0] for c in BALDWIN_PARK])
 def test_hand_checked_baldwin_park_parcel(baldwin_park, address, zone, lot, max_units, binding, limits):
     rules, state, a = baldwin_park
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+BELL = [
+    ("6936 Prospect Ave", "R1", Lot(5315, 49.4, 108.3, (), 1333, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 5, "state_adu": 3, "state_sb9": 4}),
+    ("3629 Anita Dr", "R2", Lot(5127, 52.2, 100.1, (), 2497, 1),
+     3, "state_law:adu", {"density": 2, "envelope": 5, "state_adu": 3}),
+    ("6322 Flora Ave", "R3", Lot(5956, 39.9, 150.1, (), 3081, 1),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 8, "parking": 4}),
+    ("7032 Bear Ave", "R3", Lot(5925, 43.0, 137.9, (), 3181, 1),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 8, "parking": 4}),
+    ("6815 California Ave", "R3", Lot(18768, 64.6, 300.1, (), 2050, 12),
+     12, "lot_area_per_unit", {"lot_area_per_unit": 12, "envelope": 26}),
+    ("4345 Florence Ave", "C3R", Lot(5973, 50.1, 119.3, (), 562, 2),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 8}),
+    ("4828 Florence Ave", "C3R", Lot(19197, 52.7, 365.1, (), 2127, 12),
+     13, "lot_area_per_unit", {"lot_area_per_unit": 13, "envelope": 27}),
+    ("4511 Gage Ave", "C3", Lot(6219, 53.7, 117.2, (), 2877, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def bell():
+    rules = load_zone_rules(REPO / "cities" / "bell" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BELL, ids=[c[0] for c in BELL])
+def test_hand_checked_bell_parcel(bell, address, zone, lot, max_units, binding, limits):
+    rules, state, a = bell
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

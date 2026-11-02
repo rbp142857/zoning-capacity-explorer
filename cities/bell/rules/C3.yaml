@@ -1,0 +1,18 @@
+# Bell C3. Every value cites the Bell Municipal Code, Title 17 (eCode360, through Ord. 1297, read 2026-11-02).
+zone: "C3"
+name: "C-3 Heavy Commercial"
+family: nonresidential
+
+sources:
+  Z:
+    section: "BMC Ch. 17.32"
+    url: https://ecode360.com/44226379
+
+residential_allowed: {value: false, source: Z, assumption: "Chapter 17.32 lists no homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

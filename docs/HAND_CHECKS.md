@@ -1544,3 +1544,39 @@ Rules: Baldwin Park Code of Ordinances, Chapter 153, read on American Legal 2026
 ### BP-10. 14064 Francisquito Ave · C2 · 8,870 sq ft
 
 - Table 153.050.020 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Bell
+
+Rules: Bell Municipal Code, Title 17, read on eCode360 2026-11-02 (through Ord. 1297). Each home uses 1,062.5 sq ft of building. Parking applies beyond ½ mile of a major transit stop.
+
+### BE-1. 6936 Prospect Ave · R1 · 5,315 sq ft
+
+- One home → **1**. Yards leave 39.4 × 73.3 × 0.994 = 2,869; × 2 ÷ 1,062.5 = 5.4 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BE-2. 3629 Anita Dr · R2 · 5,127 sq ft
+
+- Two homes → **2**. Yards leave 2,696; × 2 ÷ 1,062.5 = 5.07 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### BE-3. 6322 Flora Ave · R3 · 5,956 sq ft
+
+- 1,452 sq ft per home → 4.1 → **4**. 50% coverage × 3 stories = 8,934 ÷ 1,062.5 = 8.4 → 8. Parking: ground 5,361; 4 homes need 9 stalls (2,700) + 1,417 = 4,117, which fits; 5 need 3,600 + 1,771 = 5,371, which doesn't → 4. **Result: 4, lot area.** Engine: 4 ✓
+
+### BE-4. 7032 Bear Ave · R3 · 5,925 sq ft
+
+- 1,452 → 4.08 → **4**. Coverage × 3 → 8.4 → 8. Parking → 4. **Result: 4, lot area.** Engine: 4 ✓
+
+### BE-5. 6815 California Ave · R3 · 18,768 sq ft
+
+- 1,452 → 12.9 → **12**. Coverage × 3 → 26.5 → 26. Within ½ mile of transit, so no parking limit. **Result: 12, lot area.** Engine: 12 ✓ (12 homes today.)
+
+### BE-6. 4345 Florence Ave · C3R · 5,973 sq ft
+
+- R-3's 1,452 (assumed) → 4.1 → **4**. Coverage × 3 → 8.4 → 8. **Result: 4, lot area.** Engine: 4 ✓
+
+### BE-7. 4828 Florence Ave · C3R · 19,197 sq ft
+
+- 1,452 → 13.2 → **13**. Coverage × 3 → 27.1 → 27. **Result: 13, lot area.** Engine: 13 ✓
+
+### BE-8. 4511 Gage Ave · C3 · 6,219 sq ft
+
+- Chapter 17.32 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓

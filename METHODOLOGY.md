@@ -981,3 +981,15 @@ Other calls: heights are limits in feet, so we fit 2 stories at 27 and 35 ft and
 Known artifact: 351 lots show 0 homes, 319 because their yards leave too little building and 32 because surface parking takes the room. Most are narrow small-lot homes (about 20 ft wide) built under other approvals, with about 270 homes on them today. Reports count them as no capacity, not as homes to lose.
 
 Pipeline fix: the assessor roll here has a record with no parcel number sharing a shape with numbered ones, which crashed the condo merge. Such records now stay in the lot, and only real parcel numbers are listed.
+
+## 47. Bell (most zones)
+
+Not on the site yet. 7 files cover 4,170 of 4,231 lots (98.6%); R1, R2, R3 and C3R count homes. Not done: POL (24 lots), T (4), LAR (1) and 32 lots with no zone. We didn't find POL or LAR in the chapters we read. SCAG's records are from November 2018, and we haven't checked for rezoning since. The state's reports show no homes permitted in 5+ unit buildings in 2019-2025, so the permit check tells us little here.
+
+**C-3R (369 lots).** §17.28.020 allows R-3's principal uses and lists residential uses with a conditional use permit, but Chapter 17.28 states no density. We apply R-3's 1,452 sq ft per home, its 50% coverage, its 3 stories and 35 ft, and its side and rear yards, though the zone itself allows 70 ft and full coverage outside yards and parking. This drives 3,381 homes and is an open decision.
+**R-3.** Most of the city's lots are here. One home per 1,452 sq ft (30 per acre) binds on nearly every lot. Its 7,200 sq ft and 60 ft minimums apply to lots created after 1989, so older lots are flagged but keep their capacity. Private open space of 150 sq ft per home isn't modeled, so these can run high.
+**R-1 and R-2.** We found no coverage or floor area limit in these chapters, so yards and 2 stories set the envelope. The one- and two-home limits bind anyway.
+
+Other calls: parking uses 2 spaces per home, plus 1 per 3 multifamily homes as guest space. Fronts use the stated 25 and 15 ft, not the block's average, which can be less. C3 lists no homes; CM and M allow only caretakers' quarters, which we don't count. The Mixed-Use and Planned Development overlays aren't in our data, so those sites can differ.
+
+Known artifact: 18 lots show 0 homes because yards or parking leave too little room; most are slivers or narrow small lots, with 2 homes on them today.
