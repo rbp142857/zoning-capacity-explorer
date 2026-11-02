@@ -1041,3 +1041,16 @@ Not on the site yet. 6 files cover 418 of 426 lots (98.1%); only 8 lots with no 
 **SB 9.** Unlike Torrance, Artesia and Bellflower, Bradbury's own code names its A-1, A-2 and A-5 zones as single-family zones for SB 9 (Ch. 85, Art. IV), so SB 9 applies to them here. But it excludes very high fire hazard zones, as state law does, and we have no fire map. Much of the city is in the foothills, so the SB 9 total of 4 homes per lot likely runs high.
 
 Other calls: R-7,500 uses the two-story limits of 35% coverage and FAR 0.50, with a 25 ft front. Second stories also need 20 ft side and 30 ft rear yards, not modeled. R-20,000 and the A zones limit height to 28 ft, and we fit 2 stories. Ridgeline rules (Ch. 43), the 50 ft private street setback and parking aren't modeled; the one-home limit binds anyway. Many lots are smaller than their zone's minimum (177 flagged), which doesn't reduce their capacity here. OS allows no homes. The Affordable Housing Overlay (Ch. 88) isn't in our data.
+
+## 52. Calabasas (all mapped zones)
+
+Not on the site yet. 16 files cover 7,321 of 7,332 lots (99.8%); only 11 lots with no zone are left. SCAG's records are from March 2023. All 158 homes permitted in 5+ unit buildings in 2018-2025 are on modeled lots, but 78 of them are on PF land, where we count none; we didn't look into how those were approved.
+
+**RM density.** The table allows 24 homes per acre, but a zoning map suffix can set less (the code's example is RM-12D), and SCAG drops suffixes. We can't see which lots have one, so RM uses 24 and can run high. Densities above the minimum of 20 also need the impact findings in Ch. 17.60, not modeled. This is an open decision, and it drives 5,866 local homes.
+**HM, OS and REC.** Each allows one home per lot. We don't apply SB 9 in these districts; ADU law applies. Table 2-7 is merged across columns, so we read its yards for HM and OS as 50, 25 and 50 ft, and REC's as set by a development plan.
+**CMU and CT.** Homes need a conditional use permit, at up to 24 and 20 per acre, with FAR 1.0. Commercial space isn't subtracted, so these can run high. Table 2-6's rear yard row is merged, and we read 20 ft for CMU and 30 ft for CT.
+**RMH.** One 45-acre mobile home park, at 8 homes per acre, shows 361 homes. The assessor counts it as 1 home, so its net new figure of 360 is false: the park already holds its homes.
+
+Other calls: multifamily parking uses the two-bedroom figure of 2 spaces plus 1 guest per 3 homes. We have no slope data, so the hillside rules (§17.20.150) aren't modeled, and much of the city is hilly, so totals can run high. CL, CO and CB allow no homes under Table 2-6; CR lists none in Table 2-2; OS-DR and PF allow none under Table 2-7. The Affordable Housing overlay isn't in our data, so its sites run low.
+
+Known artifact: 324 lots show 0 homes because yards leave too little room, 303 of them small RM lots such as townhomes, with 300 homes on them today.

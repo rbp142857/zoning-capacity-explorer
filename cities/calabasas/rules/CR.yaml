@@ -1,0 +1,18 @@
+# Calabasas CR. Every value cites the Calabasas Municipal Code, Title 17 (Municode, read 2026-11-02).
+zone: "CR"
+name: "Commercial, Retail (CR)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Table 2-2"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE_ARTIIZODIALLAUS_CH17.14CODI
+
+residential_allowed: {value: false, source: Z, assumption: "Table 2-2 lists no homes here."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

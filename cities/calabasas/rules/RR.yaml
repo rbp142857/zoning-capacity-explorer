@@ -1,0 +1,27 @@
+# Calabasas RR. Every value cites the Calabasas Municipal Code, Title 17 (Municode, read 2026-11-02).
+zone: "RR"
+name: "Residential, Rural (RR)"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §17.11.010 Table 2-2 and §17.13.020 Table 2-5"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE_ARTIIZODIALLAUS_CH17.13REDI
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 43560, source: Z}
+min_lot_width_ft: {value: 75, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, Table 2-5. Subdivision densities are not modeled. State law is modeled separately."}
+
+setbacks:
+  front_ft: {value: 30, source: Z}
+  side_ft: {value: 10, source: Z}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The table limits height to 35 ft, not stories; we fit 2 (conservative)."}
+lot_coverage: {value: 0.3, source: Z}
+
+simplifications:
+  - "Lots over the hillside threshold follow §17.20.150, and we have no slope data, so hilly lots can run high. Parking isn't modeled; the one-home limit binds."

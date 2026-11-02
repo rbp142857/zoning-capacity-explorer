@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1544,6 +1544,47 @@ def bradbury():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BRADBURY, ids=[c[0] for c in BRADBURY])
 def test_hand_checked_bradbury_parcel(bradbury, address, zone, lot, max_units, binding, limits):
     rules, state, a = bradbury
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+CALABASAS = [
+    ("23015 Wrencrest Dr", "RS", Lot(9029, 80.8, 121.5, (), 17794, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 8, "state_adu": 3, "state_sb9": 4}),
+    ("3940 Prado De Verde", "RS", Lot(15172, 122.4, 135.1, (), 28654, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 13, "state_sb9": 4}),
+    ("4559 Cielo Cir", "RM", Lot(12100, 115.6, 131.4, (), 31616, 2),
+     6, "lot_area_per_unit", {"lot_area_per_unit": 6, "envelope": 12, "parking": 8}),
+    ("4654 Cielo Cir", "RM", Lot(54378, 260.8, 308.6, (), 31151, 1),
+     29, "lot_area_per_unit", {"lot_area_per_unit": 29, "envelope": 56, "parking": 41}),
+    ("3889 Old Topanga Road", "RR", Lot(43822, 169.8, 297.5, (), 20114, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 24, "state_sb9": 4}),
+    ("3485 Old Topanga Canyon Rd", "RC", Lot(16563, 51.0, 330.5, (), 23281, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 10, "state_sb9": 4}),
+    ("24325 Mulholland Hwy", "HM", Lot(48190, 229.9, 238.7, (), 28405, 1),
+     3, "state_law:adu", {"density": 1, "envelope": 41, "state_adu": 3}),
+    ("26050 Mureau Rd", "CMU", Lot(69222, 205.5, 362.2, (), 27951, 0),
+     38, "lot_area_per_unit", {"lot_area_per_unit": 38, "envelope": 65, "parking": 56}),
+    ("23556 Calabasas Rd", "CT", Lot(14398, 93.0, 157.3, (), 16148, 0),
+     6, "lot_area_per_unit", {"lot_area_per_unit": 6, "envelope": 13, "parking": 11}),
+    ("4830 Las Virgenes Rd", "CR", Lot(31647, 152.0, 220.9, (), 30136, 1),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def calabasas():
+    rules = load_zone_rules(REPO / "cities" / "calabasas" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CALABASAS, ids=[c[0] for c in CALABASAS])
+def test_hand_checked_calabasas_parcel(calabasas, address, zone, lot, max_units, binding, limits):
+    rules, state, a = calabasas
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

@@ -1,0 +1,18 @@
+# Calabasas OS-DR. Every value cites the Calabasas Municipal Code, Title 17 (Municode, read 2026-11-02).
+zone: "OS-DR"
+name: "Open Space, Development Restricted (OS-DR)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Ch. 17.16, Table 2-7"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE
+
+residential_allowed: {value: false, source: Z, assumption: "Table 2-7: residential density none allowed."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

@@ -1720,3 +1720,47 @@ Rules: Bradbury Code of Ordinances, Title IX, read on Municode 2026-11-02 (throu
 ### BR-6. 368 Old Ranch Rd · A-5 · 188,692 sq ft
 
 - One home → **1**. Yards leave 276.3 × 540.1 × 0.940 = 140,295; × 2 ÷ 1,062.5 = 264.1 → 264. **Result: 4, SB 9.** Engine: 4 ✓
+
+## Calabasas
+
+Rules: Calabasas Municipal Code, Title 17, read on Municode 2026-11-02. Each home uses 1,062.5 sq ft of building. Multifamily parking uses 2 spaces plus 1 guest space per 3 homes, at 300 sq ft each.
+
+### CA-1. 23015 Wrencrest Dr · RS · 9,029 sq ft
+
+- One home → **1**. Under 1/3 acre, 50% coverage = 4,514 × 2 ÷ 1,062.5 = 8.5 → 8. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-2. 3940 Prado De Verde · RS · 15,172 sq ft
+
+- One home → **1**. Over 1/3 acre, 35% is 5,310, so the 7,260 sq ft floor applies; × 2 ÷ 1,062.5 = 13.7 → 13. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-3. 4559 Cielo Cir · RM · 12,100 sq ft
+
+- 24 per acre = 1,815 → 6.7 → **6**. 55% coverage × 2 → 12.5 → 12. Parking: ground 10,258 ÷ 1,230 → 8. **Result: 6, lot area.** Engine: 6 ✓
+
+### CA-4. 4654 Cielo Cir · RM · 54,378 sq ft
+
+- 1,815 → 29.96 → **29**. Coverage × 2 → 56.3 → 56. Parking: ground 50,854 ÷ 1,230 → 41. **Result: 29, lot area.** Engine: 29 ✓
+
+### CA-5. 3889 Old Topanga Road · RR · 43,822 sq ft
+
+- One home → **1**. 30% coverage × 2 → 24.7 → 24. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-6. 3485 Old Topanga Canyon Rd · RC · 16,563 sq ft
+
+- One home → **1**. 35% coverage × 2 → 10.9 → 10. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-7. 24325 Mulholland Hwy · HM · 48,190 sq ft
+
+- One home → **1**. Yards leave 179.9 × 138.7 × 0.878 = 21,910; × 2 ÷ 1,062.5 = 41.2 → 41. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CA-8. 26050 Mureau Rd · CMU · 69,222 sq ft
+
+- 24 per acre = 1,815 → 38.1 → **38**. FAR 1.0 ÷ 1,062.5 = 65.2 → 65. Parking: 69,222 ÷ 1,230 → 56. **Result: 38, lot area.** Engine: 38 ✓
+
+### CA-9. 23556 Calabasas Rd · CT · 14,398 sq ft
+
+- 20 per acre = 2,178 → 6.6 → **6**. FAR 1.0 → 13.6 → 13. Parking → 11. **Result: 6, lot area.** Engine: 6 ✓
+
+### CA-10. 4830 Las Virgenes Rd · CR · 31,647 sq ft
+
+- Table 2-2 lists no homes here. **Result: 0, use not permitted.** Engine: 0 ✓
