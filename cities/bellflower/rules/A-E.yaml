@@ -1,0 +1,35 @@
+# Bellflower A-E. Every value cites the Bellflower Municipal Code, Title 17 (eCode360, through Ord. 1461 of September 28, 2026, read 2026-11-02).
+zone: "A-E"
+name: "A-E Agricultural Estate"
+family: single_family
+
+sources:
+  Z:
+    section: "BMC §§17.20.020 and 17.20.060 to 17.20.150"
+    url: https://ecode360.com/43107988
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 10000, source: Z}
+lot_area_per_unit_sqft: {value: 9900, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A smaller lot of record keeps one home (§17.20.110)."
+small_lot_units_below_sqft: 9900
+sb9_allowed: {value: false, source: Z, assumption: "This is an agricultural estate district, so we don't apply SB 9 (conservative), as in other cities' agricultural zones; see the open decision."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z, assumption: "15 ft or 15% of depth under 150 ft of depth, and 20% of depth above that. We use the 15 ft minimum, so deep lots can run high."}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.30, source: Z, assumption: "Maximum roof area of 30%; more needs a conditional use permit."}
+max_far: {value: 0.40, source: Z, assumption: "Total floor area of 40% of the lot; more needs a conditional use permit."}
+parking_per_unit: {value: 2, source: Z}
+guest_parking_per_unit: {value: 1, source: Z}

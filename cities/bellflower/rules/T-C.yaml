@@ -1,0 +1,18 @@
+# Bellflower T-C. Every value cites the Bellflower Municipal Code, Title 17 (eCode360, through Ord. 1461 of September 28, 2026, read 2026-11-02).
+zone: "T-C"
+name: "Town Center (TC)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "BMC §§17.48.130 and 17.48.160"
+    url: https://ecode360.com/43109290
+
+residential_allowed: {value: false, source: Z, assumption: "The Planning Commission may approve homes on the second floor and above, but the chapter states no density. We don't count them (conservative); see the open decision."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

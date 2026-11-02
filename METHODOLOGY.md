@@ -1004,3 +1004,16 @@ Not on the site yet. 11 files cover 4,080 of 4,094 lots (99.7%); R-1, R-2, R-3, 
 **M-U.** 30 homes per acre on lots of 15,000 sq ft or more in the standards table. Commercial space isn't subtracted, and §9.12.020 limits commercial FAR, so we don't apply an FAR limit to homes. M-U can run high.
 
 Other calls: the residential table limits height to 35 ft without a story limit, and we fit 2. M-U's 60 ft fits 4. At 5 or more rental homes, 20% common open space and 75 sq ft private open space per home aren't modeled. Added second-story setbacks aren't modeled. C-S's 30 homes per acre is for senior housing only, so we count none. C-4 and C-M allow no homes, per §9.12.020; M-1 and P-I list none; O-S allows only a caretaker's residence. Overlays, including the Housing Element re-use sites, aren't in our data.
+
+## 49. Bellflower (most zones)
+
+Not on the site yet. 10 files cover 11,814 of 11,938 lots (99.0%); S-F, R-1, A-E, R-2 and R-3 count homes. Not done: four specific plan codes (87 lots, 419 homes), SCH (3 lots, 350 homes) and 34 lots with no zone. SCAG's records are from April 2023. Of 18 homes permitted in 5+ unit buildings in 2018-2025, 13 are in SP No. 7.
+
+**Town Center (130 lots).** §17.48.130 lets the Planning Commission approve homes on the second floor and above, but the chapter states no density. We count none and record it as an open decision, so this area runs low.
+**R-1.** §17.24.100 sets 5,000 sq ft per home, and §17.24.110 covers lots with two or more single-family homes, so larger lots count more than one. SCAG drops any larger-lot suffix, so those lots can run high.
+**R-2 and R-3.** Side and rear yards depend on the wall: 8 ft for living and bedroom walls, 5 ft for secondary walls. We use 8. R-3 applies its 25% group open space; private open space isn't added. R-2's open space wasn't applied. The 2/3 rule for top stories isn't modeled in either, so floor area can run high, though density binds on most lots. Parking uses 2 spaces plus 1 visitor space per home.
+**A-E.** 9,900 sq ft per home, 30% roof area and 40% floor area, which a conditional use permit can raise. Rear yards grow with depth; we use the 15 ft minimum. SB 9 isn't applied, as an open decision.
+
+Other calls: C-G, M-1, Public Uses and Open Space list no homes. The roll shows homes in C-G and M-1 (2,191 and 1,799), which may be mobile home parks or older uses; we didn't check them. These lots count no capacity. The Housing Opportunity and planned development overlays aren't in our data, so those sites run low.
+
+Known artifact: 202 lots show 0 homes because yards or parking leave too little room, mostly narrow R-2 lots, with 160 homes on them today.

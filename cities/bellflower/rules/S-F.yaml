@@ -1,0 +1,26 @@
+# Bellflower S-F. Every value cites the Bellflower Municipal Code, Title 17 (eCode360, through Ord. 1461 of September 28, 2026, read 2026-11-02).
+zone: "S-F"
+name: "SF Single Family"
+family: single_family
+
+sources:
+  Z:
+    section: "BMC §§17.16.020 and 17.16.060 to 17.16.130"
+    url: https://ecode360.com/43107645
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 7000, source: Z, assumption: "Older lots of record that are smaller keep one home; they are flagged."}
+max_units_per_lot: {value: 1, source: Z, assumption: "One single-family residence. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.45, source: Z}
+
+simplifications:
+  - "Garage parking isn't modeled; the one-home limit binds."

@@ -1620,3 +1620,43 @@ Rules: Bell Gardens Municipal Code, Title 9, read on eCode360 2026-11-02 (throug
 ### BG-9. 6320 Florence Ave · C-4 · 31,641 sq ft
 
 - §9.12.020 allows no homes outside M-U. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Bellflower
+
+Rules: Bellflower Municipal Code, Title 17, read on eCode360 2026-11-02 (through Ord. 1461). Each home uses 1,062.5 sq ft of building. Parking uses 300 sq ft per space, and ground excludes the front yard.
+
+### BF-1. 14002 Dunrobin Ave · S-F · 5,419 sq ft
+
+- One home → **1**. 45% coverage = 2,439 × 2 ÷ 1,062.5 = 4.6 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BF-2. 9448 Rose St · R-1 · 5,266 sq ft
+
+- 5,000 sq ft per home → 1.05 → **1**. 45% coverage × 2 → 4.5 → 4. Parking: ground 3,886 ÷ (531 + 600) → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BF-3. 14544 Bellflower Blvd · R-1 · 17,056 sq ft
+
+- 5,000 → 3.4 → **3**. Coverage × 2 → 14.4 → 14. Parking: ground 15,737 ÷ 1,131 → 13. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BF-4. 16261 California Ave · A-E · 11,343 sq ft
+
+- 9,900 → 1.1 → **1**. FAR 0.40 = 4,537 → 4.3 → 4. Parking: ground 9,705 ÷ (531 + 900) → 6. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### BF-5. 9438 Mayne St · R-2 · 7,844 sq ft
+
+- 3,350 → 2.3 → **2**. Yards leave 44 × 102.7 = 4,519; × 2 ÷ 1,062.5 = 8.5 → 8. Parking: ground 6,644 ÷ 1,431 → 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓ (5 homes today.)
+
+### BF-6. 8539 Rose St · R-2 · 18,293 sq ft
+
+- 3,350 → 5.5 → **5**. Yards leave 12,624; × 2 ÷ 1,062.5 = 23.8 → 23. Parking: ground 16,891 ÷ 1,431 → 11. **Result: 5, lot area.** Engine: 5 ✓ (7 homes today.)
+
+### BF-7. 10136 Maple St · R-3 · 8,911 sq ft
+
+- 1,980 → 4.5 → **4**. Yards leave 50 × 112 = 5,600; × 3 ÷ 1,062.5 = 15.8 → 15. Parking: ground limited to 75% for open space = 6,683 ÷ (354 + 900) → 5. **Result: 4, lot area.** Engine: 4 ✓
+
+### BF-8. 16336 Cornuta Ave · R-3 · 40,045 sq ft
+
+- 1,980 → 20.2 → **20**. Footprint limited to 75% = 30,034; × 3 ÷ 1,062.5 = 84.8 → 84. Parking: 30,034 ÷ 1,254 → 23. **Result: 20, lot area.** Engine: 20 ✓
+
+### BF-9. 9824 Maple St · T-C · 7,879 sq ft
+
+- Upper-floor homes need Planning Commission approval, and no density is stated, so none are counted. **Result: 0, use not permitted.** Engine: 0 ✓

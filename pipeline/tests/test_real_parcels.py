@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1437,6 +1437,45 @@ def bell_gardens():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BELL_GARDENS, ids=[c[0] for c in BELL_GARDENS])
 def test_hand_checked_bell_gardens_parcel(bell_gardens, address, zone, lot, max_units, binding, limits):
     rules, state, a = bell_gardens
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+BELLFLOWER = [
+    ("14002 Dunrobin Ave", "S-F", Lot(5419, 54.8, 99.0, (), 5832, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 4, "state_adu": 3, "state_sb9": 4}),
+    ("9448 Rose St", "R-1", Lot(5266, 69.1, 76.3, (), 15219, 1),
+     4, "state_law:sb9", {"lot_area_per_unit": 1, "envelope": 4, "parking": 3, "state_sb9": 4}),
+    ("14544 Bellflower Blvd", "R-1", Lot(17056, 66.0, 258.6, (), 6665, 1),
+     4, "state_law:sb9", {"lot_area_per_unit": 3, "envelope": 14, "parking": 13, "state_sb9": 4}),
+    ("16261 California Ave", "A-E", Lot(11343, 82.0, 138.5, (), 10613, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 4, "parking": 6, "state_adu": 3}),
+    ("9438 Mayne St", "R-2", Lot(7844, 60.0, 130.7, (), 9613, 5),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "envelope": 8, "parking": 4, "state_adu": 3}),
+    ("8539 Rose St", "R-2", Lot(18293, 70.5, 260.9, (), 14785, 7),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 23, "parking": 11}),
+    ("10136 Maple St", "R-3", Lot(8911, 66.0, 135.0, (), 12475, 3),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 15, "parking": 5}),
+    ("16336 Cornuta Ave", "R-3", Lot(40045, 115.2, 348.6, (), 11157, 15),
+     20, "lot_area_per_unit", {"lot_area_per_unit": 20, "envelope": 84, "parking": 23}),
+    ("9824 Maple St", "T-C", Lot(7879, 63.1, 125.3, (), 12044, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def bellflower():
+    rules = load_zone_rules(REPO / "cities" / "bellflower" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BELLFLOWER, ids=[c[0] for c in BELLFLOWER])
+def test_hand_checked_bellflower_parcel(bellflower, address, zone, lot, max_units, binding, limits):
+    rules, state, a = bellflower
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding
