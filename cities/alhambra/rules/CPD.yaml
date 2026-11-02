@@ -1,6 +1,6 @@
 # Alhambra CPD. Every value cites the Alhambra Municipal Code, Title 23 (American Legal, read 2026-11-01).
 zone: "CPD"
-name: "Commercial Planned Development (old CPD)"
+name: "CPD (SCAG's code, from before the 2024 code)"
 family: nonresidential
 
 sources:

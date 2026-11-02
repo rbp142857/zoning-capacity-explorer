@@ -1,6 +1,6 @@
 # Alhambra IPD. Every value cites the Alhambra Municipal Code, Title 23 (American Legal, read 2026-11-01).
 zone: "IPD"
-name: "Industrial Planned Development (old IPD)"
+name: "IPD (SCAG's code, from before the 2024 code)"
 family: nonresidential
 
 sources:
