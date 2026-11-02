@@ -781,3 +781,13 @@ RHD. Not done: the mixed-use zones (MU-1, MU-2, MU-I, MU-HD, MU-N, MU-MD, MU-DT,
 **How Culver City differs:** there's no minimum parking anywhere in the city, so parking never
 limits homes here. Density is per gross acre, and we use the lot. R3 is in the code's table but
 not on SCAG's map.
+
+## 30. Montebello (residential zones so far)
+
+Not on the site yet. 5 files from Chapter 17.10 cover 10,647 of 12,284 lots (86.7%): R-1, R-A, R-2,
+R-3, R-4. Not done: C-1, C-2, C-M, C-R, M-1, M-2, and 386 lots with no zone.
+
+**What stands out:** a 25 ft height limit in R-2, R-3 and R-4, and R-3's density equals R-2's. So
+local zoning allows fewer homes than already exist: 16,732 against 18,911. A limit of 1 bedroom
+per 1,000 sq ft of lot also applies and isn't modeled. We use the south of Beverly Boulevard
+minimum lot size in R-1.

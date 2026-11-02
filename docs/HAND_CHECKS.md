@@ -963,3 +963,23 @@ The city has no minimum parking (§17.320.020).
 ### V5. 6060 Buckingham Pkwy · RHD · 35,407 sq ft
 
 - 70 per acre = 622.29 sq ft per home → 56.9 → **56**. **Result: 56, lot area.** 50 homes today. Engine: 56 ✓
+
+## Montebello (residential zones)
+
+Checked against the Montebello Municipal Code, Exhibit 17.10.020 (Municode), read November 1, 2026.
+
+### T1, T2. 1319 Via Camille (R-1), 641 N Maple Ave (R-A)
+
+- One home per lot. **Result: 4, SB 9.** Engine: 4 ✓
+
+### T3. 817 Palm Pl · R-2 · 4,982 sq ft
+
+- 3,000 per home → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### T4. 216 N 4th St · R-3 · 6,753 sq ft
+
+- 3,000 per home → **2**. ADU law: 3. **Result: 3, ADU law.** 4 homes today. Engine: 3 ✓
+
+### T5. 633 N Taylor Ave · R-4 · 48,727 sq ft
+
+- 2,000 per home → 24.4 → **24**. **Result: 24, lot area.** 41 homes today. Engine: 24 ✓

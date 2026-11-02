@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -746,6 +746,37 @@ def culver_city():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CULVER_CITY, ids=[c[0] for c in CULVER_CITY])
 def test_hand_checked_culver_city_parcel(culver_city, address, zone, lot, max_units, binding, limits):
     rules, state, a = culver_city
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+MONTEBELLO = [
+    ("1319 Via Camille", "R-1", Lot(8689, 65.6, 167.9, (), 5953, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("641 N Maple Ave", "R-A", Lot(6137, 70.1, 90.3, (), 5603, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("817 Palm Pl", "R-2", Lot(4982, 44.9, 115.0, (), 5563, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "state_adu": 3}),
+    ("216 N 4th St", "R-3", Lot(6753, 50.0, 135.2, (), 6606, 4),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "state_adu": 3}),
+    ("633 N Taylor Ave", "R-4", Lot(48727, 203.5, 239.7, (), 6059, 41),
+     24, "lot_area_per_unit", {"lot_area_per_unit": 24}),
+]
+
+
+@pytest.fixture(scope="module")
+def montebello():
+    rules = load_zone_rules(REPO / "cities" / "montebello" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", MONTEBELLO, ids=[c[0] for c in MONTEBELLO])
+def test_hand_checked_montebello_parcel(montebello, address, zone, lot, max_units, binding, limits):
+    rules, state, a = montebello
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding
