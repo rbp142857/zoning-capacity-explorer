@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -870,6 +870,39 @@ def westlake_village():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", WESTLAKE_VILLAGE, ids=[c[0] for c in WESTLAKE_VILLAGE])
 def test_hand_checked_westlake_village_parcel(westlake_village, address, zone, lot, max_units, binding, limits):
     rules, state, a = westlake_village
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+ALHAMBRA = [
+    ("2600 Orange Grove Ave", "R-1", Lot(6137, 70.6, 115.5, (), 3841, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "state_sb9": 4}),
+    ("2040 S 3rd St", "R-2", Lot(7015, 47.6, 150.7, (), 3035, 2),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "envelope": 8, "state_adu": 3}),
+    ("1850 Garvey Ave", "R-3", Lot(7925, 63.1, 136.7, (), 3988, 3),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4}),
+    ("2916 W Ramona Rd", "R-3", Lot(12451, 103.2, 122.1, (), 3579, 12),
+     11, "parking", {"lot_area_per_unit": 12, "parking": 11}),
+    ("150 N Garfield Ave", "CBD", Lot(11332, 66.9, 170.7, (), 2768, 0),
+     15, "parking", {"lot_area_per_unit": 16, "parking": 15}),
+    ("1129 E Main St", "EMC", Lot(7410, 49.5, 150.4, (), 6769, 0),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5}),
+]
+
+
+@pytest.fixture(scope="module")
+def alhambra():
+    rules = load_zone_rules(REPO / "cities" / "alhambra" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", ALHAMBRA, ids=[c[0] for c in ALHAMBRA])
+def test_hand_checked_alhambra_parcel(alhambra, address, zone, lot, max_units, binding, limits):
+    rules, state, a = alhambra
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

@@ -1,0 +1,36 @@
+# Alhambra EMC. Every value cites the Alhambra Municipal Code, Title 23 (American Legal, read 2026-11-01).
+zone: "EMC"
+name: "East Main Commercial (EMC)"
+family: commercial
+
+sources:
+  Z:
+    section: "AMC §23.05.030, Table 23.05.030"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-136054
+  P:
+    section: "AMC §23.20.040, Table 23.20.040"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-137138
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily, mixed_use], source: Z}
+lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "30 homes per acre: 43,560 divided by 30."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "§23.02.030: fractions round down, and at least one home is allowed where homes are permitted."
+small_lot_units_below_sqft: 1452
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z, assumption: "None, or 10 ft next to a residential zone, not modeled."}
+  rear_ft: {value: 0, source: Z, assumption: "None, or 10 ft next to a residential zone, not modeled."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z}
+max_far: {value: 2.0, source: Z, assumption: "We count the whole FAR as homes. The code's density bonus isn't modeled."}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces in an enclosed garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "0.5 guest space per home for multi-unit dwellings."}
+guest_parking_min_units: 2

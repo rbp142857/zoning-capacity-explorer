@@ -825,3 +825,17 @@ Judgment calls, most of them conservative:
 - **MU-SP No. 1 counts no homes.** Only Planning Area F allows them, and we have no map of planning areas.
 - **Corsa and Lindero run high.** The districts are capped at 145 and 462 homes, and the engine has no
   district cap: we get 306 and 637. The city's FAQ calls the 35-per-acre figure in the plan a typo, so we use its 32.
+
+## 34. Alhambra (base zones)
+
+Not on the site yet. 11 files from Title 23 cover 15,058 of 15,609 lots (96.5%). Not done: VSP (393 lots)
+and the named specific plans (79 lots more), whose texts aren't in the code, and 79 lots with no zone.
+
+**The zoning table is older than the code.** SCAG's Alhambra records are dated 2018 and use the names from
+before the January 2024 code (Ord. 4823). We read R-1, R-2 and R-3 as RL, RM and RH, the zones implementing the
+same General Plan designations. This is our reading, not a table in the code, and a lot rezoned since 2018 would
+be wrong. CBD, EMC, PO, PF and OS keep their names.
+
+Conservative calls: old CPD (298 lots) could be CMU (48 per acre) or AC (no homes), so it counts none. IPD and PO
+need a conditional use permit for homes, so they count none, and P no longer exists. RH uses 24 or 43 per acre;
+the 64-per-acre downtown area and the taller limits near freeways aren't mapped, so those lots run low.

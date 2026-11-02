@@ -1059,3 +1059,38 @@ Rules: Westlake Village Municipal Code, Article 9, read on Municode 2026-11-01, 
 - 32 per acre = 1,361.25 sq ft per home → 242.85 → **242**.
 - 40% coverage = 132,231 × 3 = 396,692 ÷ 1,062.5 = 373.
 - **Result: 242, lot area.** Engine: 242 ✓
+
+## Alhambra
+
+Rules: Alhambra Municipal Code, Title 23, read on American Legal 2026-11-01. SCAG's R-1, R-2 and R-3 are read as RL, RM and RH (see methodology).
+
+### AL-1. 2600 Orange Grove Ave · R-1 (RL) · 6,137 sq ft
+
+- One detached home → **1**. FAR 0.40 = 2,455 ÷ 1,062.5 = 2.3 → 2.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AL-2. 2040 S 3rd St · R-2 (RM) · 7,015 sq ft
+
+- 18 per acre = 2,420 sq ft per home → 2.9 → **2**.
+- 45% coverage = 3,157 × 3 stories = 9,470 ÷ 1,062.5 = 8.9 → 8.
+- ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AL-3. 1850 Garvey Ave · R-3 (RH) · 7,925 sq ft
+
+- Under 10,000 sq ft: 24 per acre = 1,815 sq ft per home → 4.4 → **4**. **Result: 4, lot area.** Engine: 4 ✓
+
+### AL-4. 2916 W Ramona Rd · R-3 (RH) · 12,451 sq ft, 103.2 × 122.1 ft
+
+- At 10,000 sq ft and up: 43 per acre = 1,013 sq ft per home → 12.3 → 12.
+- Parking: 12,451 − front strip (15 × 103.2 × 0.988 = 1,530) = 10,921 of ground. 11 homes: 2,338 + 28 spaces (8,400) = 10,738 fits. 12 homes: 2,550 + 30 spaces (9,000) doesn't → **11**.
+- **Result: 11, parking.** Engine: 11 ✓ (The lot has 12 homes today, so no net new.)
+
+### AL-5. 150 N Garfield Ave · CBD · 11,332 sq ft
+
+- 64 per acre = 680.6 sq ft per home → 16.6 → 16.
+- Parking at 1.5 + 0.3 guest: 15 homes: 3,188 + 27 spaces (8,100) = 11,288 fits. 16 homes: 3,400 + 29 spaces (8,700) doesn't → **15**.
+- **Result: 15, parking.** Engine: 15 ✓
+
+### AL-6. 1129 E Main St · EMC · 7,410 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 5.1 → **5**. **Result: 5, lot area.** Engine: 5 ✓

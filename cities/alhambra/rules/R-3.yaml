@@ -1,0 +1,47 @@
+# Alhambra R-3. Every value cites the Alhambra Municipal Code, Title 23 (American Legal, read 2026-11-01).
+zone: "R-3"
+name: "Residential High Density (RH; R-3 in SCAG's table)"
+family: multifamily
+
+sources:
+  Z:
+    section: "AMC §23.04.030, Table 23.04.030"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-136023
+  P:
+    section: "AMC §23.20.040, Table 23.20.040"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-137138
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, multifamily], source: Z}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 10000, value: 1815}
+      - {value: 1013.02}
+  source: Z
+  assumption: "24 homes per acre under 10,000 sq ft and 43 at 10,000 and up. The area bounded by Atlantic, Woodward, Commonwealth and Chapel allows 64, which we do not map, so lots there run low."
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "§23.02.030: fractions round down, and at least one home is allowed where homes are permitted."
+small_lot_units_below_sqft: 1815
+
+setbacks:
+  front_ft: {value: 15, source: Z, assumption: "The greater of 15 ft or the neighbors' average; we use 15 ft."}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on the first story and 6 ft above; we use 5 ft for the ground floor."}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 45, source: Z, assumption: "45 ft. 75 ft in the same mapped area and on some arterials near a freeway, which we do not map."}
+max_stories: {value: 5, source: Z, assumption: "5 stories. 6 in the same mapped area and on some arterials near a freeway, which we do not map."}
+lot_coverage: {value: 0.55, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces in an enclosed garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "0.5 guest space per home for multi-unit dwellings."}
+guest_parking_min_units: 2
+
+simplifications:
+  - "SCAG's zoning table for Alhambra dates from 2018 and uses the zone names from before the 2024 code. We read this as RH, the zone that implements the same General Plan designation; a lot rezoned since 2018 would be wrong."
+  - "Open space (§23.13.030) is not modeled."
