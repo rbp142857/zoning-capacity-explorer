@@ -1284,3 +1284,31 @@ Rules: San Gabriel Municipal Code, Chapter 153, read on American Legal 2026-11-0
 ### SG-7. 235 S Arroyo Dr · R-3 A (read as R-3) · 10,482 sq ft
 
 - 1,742 sq ft per home → 6.02 → **6**. **Result: 6, lot area.** Engine: 6 ✓
+
+## Monterey Park
+
+Rules: Monterey Park Municipal Code, Title 21, read on eCode360 2026-11-01.
+
+### MP-1. 1890 Verde Vista Dr · R-1 · 5,550 sq ft
+
+- One home → **1**. Under 6,000 sq ft, FAR 0.50 = 2,775 ÷ 1,062.5 = 2.6 → 2. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### MP-2. 546 Casuda Canyon Dr · R-1 · 8,029 sq ft
+
+- One home → **1**. FAR 0.40 = 3,212 ÷ 1,062.5 = 3.02 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### MP-3. 577 Casuda Canyon Dr · R-1 · 14,036 sq ft
+
+- One home → **1**. Over 10,000 sq ft, FAR 0.35 = 4,913 ÷ 1,062.5 = 4.6 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### MP-4. 101 Campanita Ct · R-2 · 7,201 sq ft
+
+- 16 per acre = 2,722.5 sq ft per home → 2.6 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### MP-5. 1581 College View Dr · R-3 · 8,238 sq ft
+
+- 25 per acre = 1,742.4 sq ft per home → 4.7 → **4**. **Result: 4, lot area.** Engine: 4 ✓ (5 homes today, so no net new.)
+
+### MP-6. 1501 S Atlantic Blvd · R-3 · 22,604 sq ft
+
+- 25 per acre → 12.97 → **12**. **Result: 12, lot area.** Engine: 12 ✓

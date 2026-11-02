@@ -1,0 +1,35 @@
+# Monterey Park R-1. Every value cites the Monterey Park Municipal Code, Title 21 (eCode360, read 2026-11-01).
+zone: "R-1"
+name: "Single-Family Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "MPMC Ch. 21.08, Table 21.08(E) (Development Standards in Residential Zones)"
+    url: https://ecode360.com/43882731
+  P:
+    section: "MPMC Ch. 21.22, Art. II (Residential Zones), Table 21.22(A)"
+    url: https://ecode360.com/43884306
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One dwelling per legal lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on the first floor and 10 ft on the second; we use 5 ft for the ground floor. Hillside fronts of 10 ft are not modeled."}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 6000, share: 0.50}
+      - {below: 10000, share: 0.40}
+      - {share: 0.35}
+  source: Z
+parking_per_unit: {value: 2, source: P, assumption: "2 enclosed garage spaces for 4 or fewer bedrooms. None within ½ mile of a major transit stop (the AB 2097 path)."}

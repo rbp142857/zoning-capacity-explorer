@@ -913,3 +913,12 @@ may miss added limits. This is an open decision.
 Judgment calls: R-1's coverage and FAR of 35%, and R-3's coverage of 60%, come from city handouts, not sections of the code we read; R-3's handout is from 2014. R-3 uses its yards at three stories (21, 15 and 16 ft). R-1's and R-1A's parking wasn't read.
 
 Conservative calls: C-1 and C-3 count no homes. They allow mixed use under §153.164, which we could not open, so mixed-use sites run low. MD (73 lots), GMD, MF, PF/OS and P-1 count none, and their uses weren't read. M-1 counts none, per the use table.
+
+## 41. Monterey Park (residential zones)
+
+Not on the site yet. 12 files cover 13,209 of 13,300 lots (99.3%), but only R-1, R-2 and R-3 count homes. Not done: GVC-S and GVN-S (73 lots) and 18 lots with no zone. SCAG's records are from 2025.
+
+**Density.** Table 21.08F sets maximum homes by lot, and we could not read it on eCode360. We use the per-acre maximums in §21.08. A city summary shows the top tiers match that density, and says lower tiers cover smaller lots, so smaller lots may run high.
+**R-3 conflict.** The chapter says 25 homes per acre. A city handout dated October 2024 (Ord. 2247) says 30, and the Housing Element called 25 inconsistent with the General Plan. We use 25 and record the question as an open decision.
+
+Other calls: parking uses 1 space for 2 or fewer bedrooms, with no guest parking; larger homes need more. Open space of up to 850 sq ft per home isn't modeled, so R-2 and R-3 can run high. N-S, C-B, R-S and C-S allow mixed use only in General Plan Mixed-Use areas we have no map of, so they count none and those lots run low. S-C and C-P are marked X. O-P, O-S and S-P count none, and their uses weren't read.
