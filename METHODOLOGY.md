@@ -839,3 +839,14 @@ be wrong. CBD, EMC, PO, PF and OS keep their names.
 Conservative calls: old CPD (298 lots) could be CMU (48 per acre) or AC (no homes), so it counts none. IPD and PO
 need a conditional use permit for homes, so they count none, and P no longer exists. RH uses 24 or 43 per acre;
 the 64-per-acre downtown area and the taller limits near freeways aren't mapped, so those lots run low.
+
+## 35. Palmdale (base zones)
+
+Not on the site yet. 27 files from Title 17 cover 41,206 of 47,732 lots (86.3%). Not done: SP (6,091 lots) and
+435 lots with no zone. SCAG's Palmdale records are dated 2023 and use the current zone names, except the three below.
+
+Judgment calls: homes count only where a table gives a residential density. EMPFX (742 lots), CA and IND aren't
+names in the tables we read. IND is treated like LI and HI, and EMPFX and CA count no homes. UT, OS and the PF zones
+count none, and their chapters weren't read. RC counts none, because its homes are limited to two areas we don't
+map. SFR side yards use the 7.5 ft average of 5 and 10. RN 1 is read as attached and detached homes, with 2 stories
+instead of the table's 2.5. Multifamily parking uses 1.5 spaces and 0.2 guest, the two-bedroom figure for 5 or more homes.

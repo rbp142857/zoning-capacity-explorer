@@ -1094,3 +1094,41 @@ Rules: Alhambra Municipal Code, Title 23, read on American Legal 2026-11-01. SCA
 ### AL-6. 1129 E Main St · EMC · 7,410 sq ft
 
 - 30 per acre = 1,452 sq ft per home → 5.1 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+## Palmdale
+
+Rules: Palmdale Municipal Code, Title 17, read on eCode360 2026-11-01.
+
+### PA-1. 4648 Paseo Hermoso · SFR 3 · 7,755 sq ft
+
+- One home → **1**. 50% coverage = 3,877 × 2 stories = 7,755 ÷ 1,062.5 = 7.3 → 7.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### PA-2. 40332 Tesoro Ln · SFR 1 · 24,183 sq ft
+
+- One home → **1**. 30% coverage = 7,255 × 2 = 14,510 ÷ 1,062.5 = 13.7 → 13.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### PA-3. 2637 E Avenue Q4 · RN 1 · 11,402 sq ft
+
+- 10 per acre = 4,356 sq ft per home → 2.6 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### PA-4. 39039 Yucca Tree St · RN 2 · 11,204 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 5.1 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### PA-5. 1623 Watling Dr · RN 3 · 19,348 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 13.3 → **13**. **Result: 13, lot area.** Engine: 13 ✓
+
+### PA-6. 38533 11th St E · RN 4 · 22,134 sq ft
+
+- 50 per acre = 871.2 sq ft per home → 25.4 → **25**. **Result: 25, lot area.** Engine: 25 ✓
+
+### PA-7. 1358 E Palmdale Blvd · MU 1 · 17,794 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 8.2 → **8**. **Result: 8, lot area.** Engine: 8 ✓ (This lot fronts Palmdale Boulevard, where the frontage must hold nonresidential space, so it can run high.)
+
+### PA-8. 803 W Palmdale Blvd · MEDFX · 21,802 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 15.01 → **15**. **Result: 15, lot area.** Engine: 15 ✓

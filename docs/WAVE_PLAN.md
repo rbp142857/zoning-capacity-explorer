@@ -151,7 +151,7 @@ Break it into sub-steps, each shipped and validated on its own:
 
 - **Long Beach** ⚠️ (residential zones done; mixed-use, PD and commercial not): 87,000 parcels, ~590 homes/yr; 177 zone codes (20 for
   90%), many of them planned-development districts. Treat like a small LA.
-- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27); South Gate NL and NM ⚠️ (section 28); Culver City residential ⚠️ (section 29); Montebello residential ⚠️ (section 30); Pomona skipped ⚠️ (below); Rolling Hills Estates R-A ⚠️ (section 31); West Covina residential ⚠️ (section 32). Westlake Village most zones ⚠️ (section 33). Alhambra base zones ⚠️ (section 34).
+- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27); South Gate NL and NM ⚠️ (section 28); Culver City residential ⚠️ (section 29); Montebello residential ⚠️ (section 30); Pomona skipped ⚠️ (below); Rolling Hills Estates R-A ⚠️ (section 31); West Covina residential ⚠️ (section 32). Westlake Village most zones ⚠️ (section 33). Alhambra base zones ⚠️ (section 34). Palmdale base zones ⚠️ (section 35).
 - **23 cities with 30–100 homes/yr in 2+ unit buildings:** Lancaster,
   Gardena, Norwalk, Santa Fe Springs, Whittier, Arcadia, South Gate, Culver
   City, Montebello, Pomona, Rolling Hills Estates, West Covina, Westlake

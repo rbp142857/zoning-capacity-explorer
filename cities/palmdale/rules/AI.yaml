@@ -1,0 +1,18 @@
+# Palmdale AI. Every value cites the Palmdale Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "AI"
+name: "Aerospace Industrial (AI)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "PMC Ch. 17.66, Table 17.66.010-1"
+    url: https://ecode360.com/46603826
+
+residential_allowed: {value: false, source: Z, assumption: "Table 17.66.010-1 gives AI no residential density."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

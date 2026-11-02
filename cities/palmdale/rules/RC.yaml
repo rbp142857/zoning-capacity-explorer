@@ -1,0 +1,18 @@
+# Palmdale RC. Every value cites the Palmdale Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "RC"
+name: "Regional Commercial (RC)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "PMC Ch. 17.48, Table 17.48.010-1"
+    url: https://ecode360.com/46603696
+
+residential_allowed: {value: false, source: Z, assumption: "Homes only on the Antelope Valley Mall site and south of Palmdale Boulevard between SR-14 and Division Street, with a comprehensive development plan. We don't map those, so we don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
