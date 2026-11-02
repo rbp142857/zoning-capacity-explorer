@@ -854,3 +854,19 @@ Checked against the Norwalk Municipal Code, Ch. 17.05 (eCode360), read November 
 ### O5. 11433 Excelsior Dr · R-2 · 43,864 sq ft
 
 - 2,722 per home → 16.1 → **16**. **Result: 16, lot area.** Engine: 16 ✓
+
+## Santa Fe Springs (residential zones)
+
+Checked against the Santa Fe Springs Code of Ordinances, Ch. 155 (Municode), read November 1, 2026.
+
+### F1. 11030 Davenrich St · R-1 · 7,471 sq ft
+
+- One home (§155.066). Coverage 40% × 2 stories = 5,977 sq ft → 5.6 → 5. **Result: 4, SB 9.** Engine: 4 ✓
+
+### F2. 10800 Pioneer Blvd · R-3 · 193,333 sq ft
+
+- 25 per acre = 1,742.4 sq ft per home → 110.96 → **110**. **Result: 110, lot area.** 107 homes today. Engine: 110 ✓
+
+### F3. 12341 Heritage Springs Dr · R-3 · 59,585 sq ft
+
+- 1,742.4 sq ft per home → 34.2 → **34**. **Result: 34, lot area.** Engine: 34 ✓

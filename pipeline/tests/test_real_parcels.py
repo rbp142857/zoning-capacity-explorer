@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -597,6 +597,33 @@ def norwalk():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", NORWALK, ids=[c[0] for c in NORWALK])
 def test_hand_checked_norwalk_parcel(norwalk, address, zone, lot, max_units, binding, limits):
     rules, state, a = norwalk
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+SANTA_FE_SPRINGS = [
+    ("11030 Davenrich St", "R-1", Lot(7471, 69.8, 134.4, (), 6442, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 5, "state_sb9": 4}),
+    ("10800 Pioneer Blvd", "R-3", Lot(193333, 390.1, 623.6, (), 8177, 107),
+     110, "lot_area_per_unit", {"lot_area_per_unit": 110}),
+    ("12341 Heritage Springs Dr", "R-3", Lot(59585, 254.7, 628.7, (), 9298, 15),
+     34, "lot_area_per_unit", {"lot_area_per_unit": 34}),
+]
+
+
+@pytest.fixture(scope="module")
+def santa_fe_springs():
+    rules = load_zone_rules(REPO / "cities" / "santa_fe_springs" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", SANTA_FE_SPRINGS, ids=[c[0] for c in SANTA_FE_SPRINGS])
+def test_hand_checked_santa_fe_springs_parcel(santa_fe_springs, address, zone, lot, max_units, binding, limits):
+    rules, state, a = santa_fe_springs
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

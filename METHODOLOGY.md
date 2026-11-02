@@ -731,3 +731,13 @@ no-housing, as their chapters weren't read for homes.
 **What stands out:** the 2025 FAR limits, 0.40 in R-1, 0.45 in R-2 and 0.50 in R-3, now
 often limit homes as tightly as density. R-1's FAR means a 5,000 sq ft lot barely holds
 one average new home.
+
+## 25. Santa Fe Springs (R-1, R-3, R-4 so far)
+
+Not on the site yet. 3 files from Chapter 155 cover 3,473 of 5,656 lots (61.4%). Much of the
+rest is industrial land (M-1, M-2, ML), whose rules weren't read, so those lots are "not
+modeled", not zero. Also not done: MU, C-1, C-4, A-1, and RR.
+
+Judgment calls: `-PD` and `-D` lots use the base zone's rules, though a PD can set its own.
+The city's site didn't load in our browser because of a certificate error, so the citations
+are all to the code on Municode. Minimum lot sizes are read as applying to new lots.

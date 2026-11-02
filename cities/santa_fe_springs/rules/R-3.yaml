@@ -1,0 +1,35 @@
+# Santa Fe Springs R-3. Every value cites the Santa Fe Springs Code of Ordinances, Ch. 155 (Municode, read 2026-11-01).
+zone: "R-3"
+name: "Multiple-Family/Medium Density (R-3)"
+family: multifamily
+
+sources:
+  Z:
+    section: "SFSCO §§155.091 and 155.093, Table 2"
+    url: https://library.municode.com/ca/santa_fe_springs/codes/code_of_ordinances?nodeId=TITXVLAUS_CH155ZO_ZODI_PT4MUMIREZODI
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+min_lot_area_sqft: {value: 7500, source: Z, assumption: "New lots; smaller existing lots get the density rule."}
+lot_area_per_unit_sqft: {value: 1742.4, source: Z, assumption: "25 homes per acre converted to land per home."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed). Single-unit homes are not allowed in new R-3 and R-4 projects, a rule not modeled."
+small_lot_units_below_sqft: 1742.4
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 40, source: Z}
+max_stories: {value: 4, source: Z}
+lot_coverage: {value: 0.6, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "2 per home (§§155.475 to 155.502). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Bigger setbacks next to R-1, 30 ft height within 25 ft of R-1, and open space per home are not modeled."
