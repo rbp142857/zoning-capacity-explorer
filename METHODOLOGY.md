@@ -967,3 +967,17 @@ Not on the site yet. 8 files cover 1,037 of 1,054 lots (98.4%); HD-R, MD-R, LD-R
 **SC.** Homes need a conditional use permit and follow HD's standards (§9-6.303(b)).
 
 Other calls: parking is 1 space per home. MD-R's attached and clustered homes need a conditional use permit, but we count them up to the density. C and R/R list hotels and mobile home parks but no other homes, so they count none. We didn't read P's uses, so its 9 lots count none. The Article 5 low and moderate income zone isn't among SCAG's codes, unless that's what LI means. Avalon's inclusionary and growth rules aren't modeled.
+
+## 46. Baldwin Park (most zones)
+
+Not on the site yet. 11 files cover 13,516 of 13,598 lots (99.4%); R1, RG, R3, MU-1 and MU-2 count homes. Not done: 82 lots with no zone. SCAG's records are from January 2017, and we haven't checked for rezoning since. Of 130 homes permitted in 5+ unit buildings in 2018-2025, 56 couldn't be placed on a zoned lot.
+
+**R-1.** SCAG writes R1 for both R-1 and R-1-7,500, so all use R-1's rules, and the stricter R-1-7,500 lots can run high. The use table lists single-family homes only, while the zone's intent, amended by Ord. 1503, mentions duplexes. We use one home and record it as an open decision.
+**MU-2.** Density is 15 homes per acre under 20,000 sq ft and 30 above it. The table doesn't cover exactly 20,000 sq ft; we use 30.
+**Mixed use.** All new development must include commercial space, which we don't subtract, so MU-1 and MU-2 can run high. Parking uses the apartment figure, as the code has no separate mixed-use one that we found.
+
+Other calls: heights are limits in feet, so we fit 2 stories at 27 and 35 ft and 4 at 50 ft. Parking uses 2 spaces plus 1 guest space per 3 homes. Open space per home isn't modeled in R-G, R-3, MU-1 or MU-2. Yards next to R-1 aren't modeled. C-1, C-2, F-C, I-C, I and OS list no homes. The Sierra Vista, Housing Element re-use and planned development overlays and any specific plans aren't in our data.
+
+Known artifact: 351 lots show 0 homes, 319 because their yards leave too little building and 32 because surface parking takes the room. Most are narrow small-lot homes (about 20 ft wide) built under other approvals, with about 270 homes on them today. Reports count them as no capacity, not as homes to lose.
+
+Pipeline fix: the assessor roll here has a record with no parcel number sharing a shape with numbered ones, which crashed the condo merge. Such records now stay in the lot, and only real parcel numbers are listed.

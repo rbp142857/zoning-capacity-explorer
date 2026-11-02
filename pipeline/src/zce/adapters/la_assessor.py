@@ -72,7 +72,7 @@ def _merge_condo_stacks(parcels: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     lots = grouped.agg(
         parcel_id=("parcel_id", "min"),  # a stable representative ID
         ain_count=("parcel_id", "size"),
-        ains=("parcel_id", lambda s: sorted(s)),  # every parcel number on this lot
+        ains=("parcel_id", lambda s: sorted(s.dropna())),  # every parcel number on this lot (some records have none)
         address=("address", "first"),
         use_code=("use_code", "first"),
         use_type=("use_type", "first"),

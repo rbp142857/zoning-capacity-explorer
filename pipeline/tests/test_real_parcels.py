@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1320,6 +1320,47 @@ def avalon():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", AVALON, ids=[c[0] for c in AVALON])
 def test_hand_checked_avalon_parcel(avalon, address, zone, lot, max_units, binding, limits):
     rules, state, a = avalon
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+BALDWIN_PARK = [
+    ("13308 Demblon St", "R1", Lot(5873, 54.3, 109.2, (), 7559, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 4, "state_adu": 3, "state_sb9": 4}),
+    ("14432 Olive St", "R1", Lot(15707, 55.1, 285.6, (), 4480, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 13, "state_sb9": 4}),
+    ("14567 Pacific Ave", "RG", Lot(5689, 50.1, 114.0, (), 1116, 3),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 5, "state_adu": 3}),
+    ("3833 Bresee Ave", "RG", Lot(19014, 63.1, 302.5, (), 4103, 9),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 17, "parking": 14}),
+    ("13727 Los Angeles St", "R3", Lot(8993, 61.2, 148.1, (), 5601, 3),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 9, "parking": 6}),
+    ("4135 La Rica Ave", "R3", Lot(29471, 143.0, 208.7, (), 2922, 13),
+     13, "lot_area_per_unit", {"lot_area_per_unit": 13, "envelope": 33, "parking": 22}),
+    ("14514 Central Ave", "MU-1", Lot(31030, 128.0, 243.7, (), 261, None),
+     21, "lot_area_per_unit", {"lot_area_per_unit": 21, "envelope": 58}),
+    ("14914 Pacific Ave", "MU-2", Lot(16110, 81.1, 199.1, (), 3192, 0),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 18, "parking": 13}),
+    ("14864 Pacific Ave", "MU-2", Lot(24653, 100.0, 246.9, (), 2729, 13),
+     16, "lot_area_per_unit", {"lot_area_per_unit": 16, "envelope": 27, "parking": 19}),
+    ("14064 Francisquito Ave", "C2", Lot(8870, 72.0, 123.5, (), 8621, None),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def baldwin_park():
+    rules = load_zone_rules(REPO / "cities" / "baldwin_park" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BALDWIN_PARK, ids=[c[0] for c in BALDWIN_PARK])
+def test_hand_checked_baldwin_park_parcel(baldwin_park, address, zone, lot, max_units, binding, limits):
+    rules, state, a = baldwin_park
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

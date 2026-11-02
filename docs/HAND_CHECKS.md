@@ -1500,3 +1500,47 @@ Rules: Avalon Municipal Code, Title 9, read on eCode360 2026-11-02 (code dated 2
 ### AV-9. 122 Sumner Ave · C · 4,802 sq ft
 
 - Article 2 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Baldwin Park
+
+Rules: Baldwin Park Code of Ordinances, Chapter 153, read on American Legal 2026-11-02 (through legislation of 12-17-25). Each home uses 1,062.5 sq ft of building. Apartments use 2 spaces plus 1 guest space per 3 homes, at 300 sq ft each; ground excludes the front yard.
+
+### BP-1. 13308 Demblon St · R1 · 5,873 sq ft
+
+- One home → **1**. 45% coverage = 2,643 × 2 ÷ 1,062.5 = 4.97 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BP-2. 14432 Olive St · R1 · 15,707 sq ft
+
+- One home → **1**. Coverage 7,068 × 2 ÷ 1,062.5 = 13.3 → 13. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BP-3. 14567 Pacific Ave · RG · 5,689 sq ft
+
+- 12 per acre = 3,630 → 1.6 → **1**. Yards leave 30.1 × 89 × 0.996 = 2,668; × 2 ÷ 1,062.5 = 5.02 → 5. ADU law: 3. No parking limit within ½ mile of transit. **Result: 3, ADU law.** Engine: 3 ✓ (3 homes today.)
+
+### BP-4. 3833 Bresee Ave · RG · 19,014 sq ft
+
+- 3,630 → 5.2 → **5**. Coverage × 2 → 17.9 → 17. Parking: ground 18,071; 14 homes need 33 stalls (9,900) + 7,437 = 17,337, which fits; 15 don't → 14. **Result: 5, lot area.** Engine: 5 ✓ (9 homes today.)
+
+### BP-5. 13727 Los Angeles St · R3 · 8,993 sq ft
+
+- 20 per acre = 2,178 → 4.1 → **4**. Yards leave 5,032; × 2 ÷ 1,062.5 = 9.5 → 9. Parking: ground 8,082; 6 homes need 14 stalls (4,200) + 3,187 = 7,387, which fits; 7 don't → 6. **Result: 4, lot area.** Engine: 4 ✓
+
+### BP-6. 4135 La Rica Ave · R3 · 29,471 sq ft
+
+- 2,178 → 13.5 → **13**. 60% coverage × 2 → 33.3 → 33. Parking → 22. **Result: 13, lot area.** Engine: 13 ✓ (13 homes today.)
+
+### BP-7. 14514 Central Ave · MU-1 · 31,030 sq ft
+
+- 30 per acre = 1,452 → 21.4 → **21**. FAR 2.0 = 62,060 ÷ 1,062.5 = 58.4 → 58. No parking limit within ½ mile of transit. **Result: 21, lot area.** Engine: 21 ✓
+
+### BP-8. 14914 Pacific Ave · MU-2 · 16,110 sq ft
+
+- Under 20,000 sq ft, 15 per acre = 2,904 → 5.5 → **5**. 60% coverage × 2 → 18.2 → 18. Parking → 13. **Result: 5, lot area.** Engine: 5 ✓
+
+### BP-9. 14864 Pacific Ave · MU-2 · 24,653 sq ft
+
+- Over 20,000 sq ft, 30 per acre = 1,452 → 16.98 → **16**. Coverage × 2 → 27.8 → 27. Parking → 19. **Result: 16, lot area.** Engine: 16 ✓
+
+### BP-10. 14064 Francisquito Ave · C2 · 8,870 sq ft
+
+- Table 153.050.020 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓

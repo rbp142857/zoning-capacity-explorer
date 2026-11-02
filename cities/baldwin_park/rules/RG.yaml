@@ -1,0 +1,40 @@
+# Baldwin Park RG. Every value cites the Baldwin Park Code of Ordinances, Chapter 153 (American Legal, through legislation of 12-17-25, read 2026-11-02).
+zone: "RG"
+name: "Garden Multi-Family Residential (R-G)"
+family: multifamily
+
+sources:
+  Z:
+    section: "BPC §§153.040.020 and 153.040.030"
+    url: https://codelibrary.amlegal.com/codes/baldwinpark/latest/baldwinpark_ca/0-0-0-9451
+  P:
+    section: "BPC §153.150.040 (parking spaces required)"
+    url: https://codelibrary.amlegal.com/codes/baldwinpark/latest/baldwinpark_ca/0-0-0-10566
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 3630, source: Z, assumption: "12 homes per acre: 43,560 divided by 12."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 3630
+
+setbacks:
+  front_ft: {value: 15, source: Z, assumption: "20 ft next to R-1 or R-1-7,500, not modeled."}
+  side_ft: {value: 10, source: Z, assumption: "20 ft next to R-1 or R-1-7,500, not modeled."}
+  rear_ft: {value: 10, source: Z, assumption: "20 ft next to R-1 or R-1-7,500, not modeled."}
+
+max_height_ft: {value: 27, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height to 27 ft, not stories; we fit 2."}
+lot_coverage: {value: 0.5, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "Apartments: 1 carport space and 1 other space per home. Efficiency apartments need 1. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.33, source: P, assumption: "1 guest space per 3 homes."}
+
+simplifications:
+  - "Open space of 250 sq ft common and 200 sq ft private per home is not modeled, so these can run high."

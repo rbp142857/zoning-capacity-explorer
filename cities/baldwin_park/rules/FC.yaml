@@ -1,0 +1,18 @@
+# Baldwin Park FC. Every value cites the Baldwin Park Code of Ordinances, Chapter 153 (American Legal, through legislation of 12-17-25, read 2026-11-02).
+zone: "FC"
+name: "Freeway Commercial (F-C)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "BPC §153.050.020"
+    url: https://codelibrary.amlegal.com/codes/baldwinpark/latest/baldwinpark_ca/0-0-0-9628
+
+residential_allowed: {value: false, source: Z, assumption: "Table 153.050.020 lists no homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
