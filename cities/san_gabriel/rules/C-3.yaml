@@ -1,0 +1,18 @@
+# San Gabriel C-3. Every value cites the San Gabriel Municipal Code, Chapter 153 (American Legal, read 2026-11-01).
+zone: "C-3"
+name: "Commercial and Limited Manufacturing (C-3)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "SGMC Ch. 153, Commercial and Industrial Zones"
+    url: https://codelibrary.amlegal.com/codes/sangabriel/latest/sangabriel_ca/0-0-0-26537
+
+residential_allowed: {value: false, source: Z, assumption: "Multiple-family units are marked X in the use table, and homes come only as mixed use under §153.164, a section we could not open. We don't count them (conservative); mixed-use sites run low."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

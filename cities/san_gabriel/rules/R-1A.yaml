@@ -1,0 +1,35 @@
+# San Gabriel R-1A. Every value cites the San Gabriel Municipal Code, Chapter 153 (American Legal, read 2026-11-01).
+zone: "R-1A"
+name: "Limited Two-Family Residence (R-1A)"
+family: multifamily
+
+sources:
+  Z:
+    section: "SGMC §§153.055 to 153.065"
+    url: https://codelibrary.amlegal.com/codes/sangabriel/latest/sangabriel_ca/0-0-0-26226
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit], source: Z}
+lot_area_per_unit_sqft: {value: 5500, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "One home on the 5,500 sq ft minimum site; a smaller lot keeps one home (assumed)."
+small_lot_units_below_sqft: 5500
+
+setbacks:
+  front_ft: {value: 20, source: Z, assumption: "20% of average block depth, at least 20 ft and at most 35 ft; we use 20 ft."}
+  side_ft: {value: 10, source: Z, assumption: "10 ft from each side above one story (§153.060). One story needs a total of 16 ft."}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 28, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.35, source: Z}
+max_far: {value: 0.35, source: Z}
+
+simplifications:
+  - "Parking wasn't read; the home count usually binds first."
+  - "The second floor must be 25% smaller than the first; not modeled."

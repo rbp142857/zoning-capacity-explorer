@@ -901,3 +901,15 @@ Stories come from §17.21.025 at 22 ft (2); it says nothing for 45 and 60 ft, so
 The Mixed Use Overlay counts all-residential buildings at 30 per acre, which runs high unless 20% of homes are affordable, since it otherwise requires commercial space.
 
 Conservative calls: plain C-3, C-R, C-2, C-M, M-1, M-2, UOS, H, P and AMP count no homes, and most of their use lists weren't read closely. The Housing overlay isn't in our data, so lots there run low.
+
+## 40. San Gabriel (residential zones)
+
+Not on the site yet. 17 files cover 8,308 of 8,351 lots (99.5%), but only the residential zones count homes. 43 lots have no zone. SCAG's records are dated 2016, and the code still uses the same
+residential names, though a lot rezoned since 2016 would be wrong.
+
+**Letter suffixes.** SCAG shows R-1 V, R-2 G, R-3 A, C-1 M, C-3 M and GMD. None of those letters are in §153.015's list of zones. We read R-1 V, R-2 G and R-3 A (231 lots) as overlays on the base zone with its rules, which
+may miss added limits. This is an open decision.
+
+Judgment calls: R-1's coverage and FAR of 35%, and R-3's coverage of 60%, come from city handouts, not sections of the code we read; R-3's handout is from 2014. R-3 uses its yards at three stories (21, 15 and 16 ft). R-1's and R-1A's parking wasn't read.
+
+Conservative calls: C-1 and C-3 count no homes. They allow mixed use under §153.164, which we could not open, so mixed-use sites run low. MD (73 lots), GMD, MF, PF/OS and P-1 count none, and their uses weren't read. M-1 counts none, per the use table.

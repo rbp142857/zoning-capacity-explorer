@@ -1252,3 +1252,35 @@ Rules: Hawthorne Municipal Code, Title 17, read on eCode360 2026-11-01 (includes
 ### HW-7. 3831 W Rosecrans Ave · C-3 with Mixed Use Overlay · 15,141 sq ft
 
 - 30 per acre = 1,452 sq ft per home → 10.4 → **10**. **Result: 10, lot area.** Engine: 10 ✓
+
+## San Gabriel
+
+Rules: San Gabriel Municipal Code, Chapter 153, read on American Legal 2026-11-01, plus two city handouts where noted.
+
+### SG-1. 711 Los Olivos Dr · R-1 · 8,842 sq ft
+
+- One home → **1**. FAR 0.35 (handout) = 3,095 ÷ 1,062.5 = 2.9 → 2. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### SG-2. 305 N San Marino Ave · R-1A · 11,505 sq ft
+
+- One home per 5,500 sq ft → 2.09 → **2**. FAR 0.35 = 4,027 ÷ 1,062.5 = 3.8 → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### SG-3. 1708 Jackson Ave · R-2 · 8,693 sq ft
+
+- Over 7,920 sq ft; 3,960 sq ft per home → 2.2 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### SG-4. 266 W Bencamp St · R-2 · 6,518 sq ft
+
+- Under 7,920 sq ft, one home only (§153.082) → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### SG-5. 1244 S Ramona St · R-3 · 6,920 sq ft
+
+- 1,742 sq ft per home → 3.97 → **3**. **Result: 3, lot area.** Engine: 3 ✓
+
+### SG-6. 1240 S Ramona St · R-3 · 22,916 sq ft
+
+- 1,742 sq ft per home → 13.2 → **13**. **Result: 13, lot area.** Engine: 13 ✓
+
+### SG-7. 235 S Arroyo Dr · R-3 A (read as R-3) · 10,482 sq ft
+
+- 1,742 sq ft per home → 6.02 → **6**. **Result: 6, lot area.** Engine: 6 ✓

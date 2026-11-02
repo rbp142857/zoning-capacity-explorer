@@ -1,0 +1,38 @@
+# San Gabriel R-2. Every value cites the San Gabriel Municipal Code, Chapter 153 (American Legal, read 2026-11-01).
+zone: "R-2"
+name: "Low Density Multiple-Family Residence (R-2)"
+family: multifamily
+
+sources:
+  Z:
+    section: "SGMC §§153.080 to 153.085"
+    url: https://codelibrary.amlegal.com/codes/sangabriel/latest/sangabriel_ca/0-0-0-26299
+  P:
+    section: "SGMC §153.220 (Number of Parking Spaces Required)"
+    url: https://codelibrary.amlegal.com/codes/sangabriel/latest/sangabriel_ca/0-0-0-26946
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, multifamily], source: Z}
+lot_area_per_unit_sqft: {value: 3960, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "§153.082: a lot under 7,920 sq ft is for one home only."
+small_lot_units_below_sqft: 7920
+
+setbacks:
+  front_ft: {value: 20, source: Z, assumption: "At least 20 ft and at most 25 ft; we use 20 ft."}
+  side_ft: {value: 10, source: Z, assumption: "10 ft for two stories up to 28 ft; 15 ft above 28 ft, not modeled."}
+  rear_ft: {value: 10, source: Z, assumption: "10 ft; 20 ft next to R-1, not modeled."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces in a garage per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.3333, source: P, assumption: "1 guest space per 3 homes."}
+guest_parking_min_units: 2
+
+simplifications:
+  - "500 sq ft of recreational area per bedroom (§153.089) is not modeled, so these can run high."
