@@ -863,3 +863,17 @@ the fixed 20 and 15 ft, which runs low on lots under 100 ft deep, because the co
 depth. Coverage uses RM's 40%, not the 70% with structured parking. MU zones need a conditional use permit and 100 ft of
 frontage; we count them, and narrower lots are flagged, not zeroed. The Mixed-Use Residential overlay isn't in our data, so
 CG, CN and CR count no homes. ML, MH, OS and SU count none, and we didn't read their uses.
+
+## 37. Azusa (neighborhoods and corridors)
+
+Not on the site yet. 21 files from Chapter 88 cover 7,134 of 8,553 lots (83.4%). Not done: SP-MN (1,050 lots), the downtown
+codes DTC, DTV and DCC (126 lots, which the code sends to the Azusa TOD Specific Plan), the University zones MU, RM and RMO
+(68 lots, likely DU-MU, DU-RM and DU-RMO), and 175 lots with no zone.
+
+**The map is old.** SCAG's Azusa records are dated 2005, the year this code was adopted. The TOD Specific Plan came in 2020 (Ord.
+2020-02), and we have no map of it, so corridor and neighborhood lots it changed would be wrong.
+
+Judgment calls: low-density lots count one home, because Table 2-1 allows no duplexes there. Corridors count all-residential
+buildings at 27 homes per acre, using the 40 ft mixed-use height, which can run high. Multifamily parking uses the 2 spaces for two
+to four bedrooms plus 1 guest space per 3 homes at five or more; single-home parking wasn't read. DE, DW and DWL count no homes, on a partial
+read of the use table. OS, Ins and Rec count none, and their uses weren't read.

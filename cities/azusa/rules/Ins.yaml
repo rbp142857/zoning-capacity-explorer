@@ -1,0 +1,18 @@
+# Azusa Ins. Every value cites the Azusa Development Code, Chapter 88 (Municode, read 2026-11-01).
+zone: "Ins"
+name: "Ins (SCAG's code)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "Azusa Development Code Ch. 88.28 (Special Purpose Zones)"
+    url: https://library.municode.com/ca/azusa/codes/code_of_ordinances?nodeId=CH88DECO_ART2URST_CH88.28SPPUZO
+
+residential_allowed: {value: false, source: Z, assumption: "We didn't read this zone's uses. We don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

@@ -1165,3 +1165,34 @@ Rules: Carson Municipal Code, Article IX, read on eCode360 2026-11-01. A fractio
 ### CA-7. 440 E Sepulveda Blvd · MU-SB · 18,595 sq ft, 94 ft wide
 
 - 25 per acre = 1,742.4 sq ft per home → 10.67, which rounds up → **11**. **Result: 11, lot area.** Engine: 11 ✓ (Under the 100 ft frontage for multiple-family, so the engine flags it.)
+
+## Azusa
+
+Rules: Azusa Development Code, Chapter 88, read on Municode 2026-11-01. Stories use the code's 2.5.
+
+### AZ-1. 1350 N Alameda Ave · NG3-Low · 8,518 sq ft, 71.9 × 122.0 ft
+
+- One home (no duplexes in the low column) → **1**.
+- Yards 25, 25, 5 each side: 61.9 × 72 = 4,457; × 0.971 = 4,328; × 2.5 = 10,820 ÷ 1,062.5 = 10.2 → 10.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AZ-2. 556 W 11th St · NG1-Low · 7,374 sq ft, 53.0 × 139.3 ft
+
+- One home → **1**. Yards 20, 20, 5: 43 × 99.3 = 4,270; × 0.999 = 4,265; × 2.5 = 10,662 ÷ 1,062.5 = 10.03 → 10.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AZ-3. 309 N Soldano Ave · NG2-Med · 7,569 sq ft
+
+- 15 per acre = 2,904 sq ft per home → 2.6 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AZ-4. 1325 N Azusa Ave · NG3-Mod · 20,271 sq ft
+
+- 27 per acre = 1,613.33 sq ft per home → 12.6 → **12**. **Result: 12, lot area.** Engine: 12 ✓
+
+### AZ-5. 246 N Azusa Ave · CAZ · 13,830 sq ft
+
+- 27 per acre → 8.6 → **8**. **Result: 8, lot area.** Engine: 8 ✓
+
+### AZ-6. 843 W Arrow Hwy · CAH · 32,862 sq ft
+
+- 27 per acre → 20.4 → **20**. **Result: 20, lot area.** Engine: 20 ✓
