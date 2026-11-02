@@ -877,3 +877,16 @@ Judgment calls: low-density lots count one home, because Table 2-1 allows no dup
 buildings at 27 homes per acre, using the 40 ft mixed-use height, which can run high. Multifamily parking uses the 2 spaces for two
 to four bedrooms plus 1 guest space per 3 homes at five or more; single-home parking wasn't read. DE, DW and DWL count no homes, on a partial
 read of the use table. OS, Ins and Rec count none, and their uses weren't read.
+
+## 38. Lomita (most zones)
+
+Not on the site yet. 18 files cover 4,209 of 4,270 lots (98.6%). Not done: R1P (22 lots), the Crenshaw Blvd plan (5 lots), and 34 lots with no zone.
+
+**The zoning table is older than the code.** SCAG's records are from 2023. The code's residential article was reenacted in June 2026 (Ord. 891)
+with A-1, R-1, R-2 and R-3. We read R1 and A1 as R-1 and A-1, and R1-6000, R1-7000 and R1-7500 as R-1. We read the number in RVD zones as sq ft per home, which is
+our inference, and keep that density as long as it fits the new zone: RVD2500 is R-2; RVD2200, RVD1500, RVD1452 and RVD1000 are R-3; RVD5000 is R-1.
+A city rezoning under the new code could change any of these.
+
+Conservative calls: commercial zones count no homes, because homes need a conditional use permit in a mixed-use project, and stand-alone homes are
+limited to a Housing overlay we don't have. Lots in the overlay run low. Stories aren't in the code, so we fit 2 at 27 ft and 3 at 35 ft. South of Pacific Coast Highway the limit is 16 ft and one story
+without a variation permit, which we don't map, so those lots run high.

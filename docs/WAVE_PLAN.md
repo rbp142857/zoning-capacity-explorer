@@ -97,6 +97,10 @@ Municode only has the older code, whose zones don't match the map.
 **Open decisions for the owner** (the conservative reading is in use for now):
 South Gate NL duplexes; SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 under Chapter 1A; publishing LA; whether Alhambra's old CPD lots count as CMU (48 homes per acre) rather than none; getting a post-2024 Alhambra zoning map; getting Azusa's TOD Specific Plan map (SCAG's Azusa data is from 2005).
 
+**How old SCAG's zoning data is** (YEAR_ZN, checked November 2026). An old date matters only where a city has rezoned or renamed zones since, which
+has been checked only for Alhambra, Carson, Azusa and Lomita. 2005: Azusa. 2016: Glendale, Monrovia, Montebello, Santa Clarita, West Covina, Carson.
+2017: South Gate. 2018: Alhambra. 2021 to 2025: the other 20 downloaded cities. Pomona's is 2025, but it has no rule files yet.
+
 **Open data gap:** Inglewood's Transit Oriented plan areas need the city's own zoning
 map and plan (⚠️ above; see METHODOLOGY section 16). SP-4 in El Monte is similar.
 
@@ -151,7 +155,7 @@ Break it into sub-steps, each shipped and validated on its own:
 
 - **Long Beach** ⚠️ (residential zones done; mixed-use, PD and commercial not): 87,000 parcels, ~590 homes/yr; 177 zone codes (20 for
   90%), many of them planned-development districts. Treat like a small LA.
-- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27); South Gate NL and NM ⚠️ (section 28); Culver City residential ⚠️ (section 29); Montebello residential ⚠️ (section 30); Pomona skipped ⚠️ (below); Rolling Hills Estates R-A ⚠️ (section 31); West Covina residential ⚠️ (section 32). Westlake Village most zones ⚠️ (section 33). Alhambra base zones ⚠️ (section 34). Palmdale base zones ⚠️ (section 35). Carson base zones ⚠️ (section 36). Azusa neighborhoods and corridors ⚠️ (section 37).
+- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27); South Gate NL and NM ⚠️ (section 28); Culver City residential ⚠️ (section 29); Montebello residential ⚠️ (section 30); Pomona skipped ⚠️ (below); Rolling Hills Estates R-A ⚠️ (section 31); West Covina residential ⚠️ (section 32). Westlake Village most zones ⚠️ (section 33). Alhambra base zones ⚠️ (section 34). Palmdale base zones ⚠️ (section 35). Carson base zones ⚠️ (section 36). Azusa neighborhoods and corridors ⚠️ (section 37). Lomita most zones ⚠️ (section 38).
 - **23 cities with 30–100 homes/yr in 2+ unit buildings:** Lancaster,
   Gardena, Norwalk, Santa Fe Springs, Whittier, Arcadia, South Gate, Culver
   City, Montebello, Pomona, Rolling Hills Estates, West Covina, Westlake

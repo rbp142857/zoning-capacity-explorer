@@ -1,0 +1,40 @@
+# Lomita RVD1452. Every value cites the Lomita Municipal Code, Title XI, Chapter 1 (Municode, read 2026-11-01).
+zone: "RVD1452"
+name: "Variable Density, 1,452 sq ft per home (R-3; RVD1452 in SCAG's table)"
+family: multifamily
+
+sources:
+  Z:
+    section: "LMC §11-1.30.01 and §11-1.30.03, Tables 11-1.30.A and B (Ord. 891, June 2026)"
+    url: https://library.municode.com/ca/lomita/codes/code_of_ordinances?nodeId=MUCO_TITXIPLZO_CH1ZO_PT3REZO_ART30REZO
+  P:
+    section: "LMC Art. 66 (Off-Street Parking and Loading)"
+    url: https://library.municode.com/ca/lomita/codes/code_of_ordinances?nodeId=MUCO_TITXIPLZO_CH1ZO_PT6GESTDE_ART66OREPASTLO
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "We read the number in RVD1452 as sq ft per home, about 30.0 per acre. That is within R-3's maximum of 43.6 per acre, so we keep the lower figure."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1452
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}, source: Z, assumption: "10% of lot width, at least 3 ft, at most 5 ft (Table 11-1.30.B note 4)."}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits height, not stories; we fit 3 at 35 ft."}
+lot_coverage: {value: 0.80, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces per home of up to four bedrooms and dens (§11-1.66.04). None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "One guest space per 2 homes."}
+guest_parking_min_units: 2
+
+simplifications:
+  - "SCAG's Lomita table is from 2023, before Ord. 891 (June 2026), and uses older zone names. We read RVD1452 as R-3, by density."
+  - "South of Pacific Coast Highway the limit is 16 ft and one story without a height variation permit; we don't map that, so those lots can run high."

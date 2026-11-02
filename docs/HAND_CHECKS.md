@@ -1196,3 +1196,27 @@ Rules: Azusa Development Code, Chapter 88, read on Municode 2026-11-01. Stories 
 ### AZ-6. 843 W Arrow Hwy · CAH · 32,862 sq ft
 
 - 27 per acre → 20.4 → **20**. **Result: 20, lot area.** Engine: 20 ✓
+
+## Lomita
+
+Rules: Lomita Municipal Code, Title XI, Chapter 1, read on Municode 2026-11-01 (Art. 30 as reenacted by Ord. 891, June 2026).
+
+### LO-1. 23826 Eshelman Ave · R1 (read as R-1) · 7,014 sq ft
+
+- One home → **1**. FAR 0.60 = 4,208 ÷ 1,062.5 = 3.96 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### LO-2. 25542 Pennsylvania Ave · A1 (read as A-1) · 8,647 sq ft
+
+- One home → **1**. FAR 0.60 = 5,188 ÷ 1,062.5 = 4.9 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### LO-3. 2269 243rd St · RVD2500 (read as R-2) · 7,072 sq ft
+
+- 2,500 sq ft per home → 2.8 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### LO-4. 2309 241st St · RVD1500 (read as R-3) · 11,827 sq ft
+
+- 1,500 sq ft per home → 7.9 → **7**. **Result: 7, lot area.** Engine: 7 ✓
+
+### LO-5. 25620 Oak St · RVD5000 (read as R-1) · 9,077 sq ft
+
+- One home → **1**. FAR 0.60 = 5,446 ÷ 1,062.5 = 5.1 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓

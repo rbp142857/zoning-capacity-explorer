@@ -1,0 +1,18 @@
+# Lomita MC. Every value cites the Lomita Municipal Code, Title XI, Chapter 1 (Municode, read 2026-11-01).
+zone: "MC"
+name: "MC (SCAG's code)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "LMC §11-1.43.01 (Mixed-Use Conditional Use Permit)"
+    url: https://library.municode.com/ca/lomita/codes/code_of_ordinances?nodeId=MUCO_TITXIPLZO_CH1ZO_PT4COZO_ART43MIECOUSPE
+
+residential_allowed: {value: false, source: Z, assumption: "§11-1.43.01: homes need a conditional use permit as part of a mixed-use project; stand-alone homes only in the Housing overlay, which our data does not show. We don't count homes (conservative); overlay lots run low."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
