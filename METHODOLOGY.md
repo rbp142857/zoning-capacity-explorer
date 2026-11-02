@@ -771,3 +771,13 @@ mixed-use and corridor zones (MS, TMU, HMU, CDR, CC, UN), and industrial and oth
 units" on a 5,000 sq ft lot. We read the second unit as an ADU, so one main home. NL lots
 average about 1.4 homes today, so a duplex reading is plausible and would raise local capacity
 a lot. State-law numbers (SB 9) are unaffected.
+
+## 29. Culver City (residential zones so far)
+
+Not on the site yet. 5 files from §17.210.020 cover 7,343 of 9,453 lots (77.7%): R1, R2, RLD, RMD,
+RHD. Not done: the mixed-use zones (MU-1, MU-2, MU-I, MU-HD, MU-N, MU-MD, MU-DT, 1,510 lots), PD
+(351), and others.
+
+**How Culver City differs:** there's no minimum parking anywhere in the city, so parking never
+limits homes here. Density is per gross acre, and we use the lot. R3 is in the code's table but
+not on SCAG's map.

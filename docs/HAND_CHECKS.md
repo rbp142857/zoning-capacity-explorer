@@ -938,3 +938,28 @@ Checked against the South Gate Municipal Code, Ch. 11.25 (eCode360), read Novemb
 ### Q3. 4100 Firestone Blvd · NM · 18,030 sq ft
 
 - 2,178 sq ft per home → 8.3 → **8**. **Result: 8, lot area.** Engine: 8 ✓
+
+## Culver City (residential zones)
+
+Checked against the Culver City Municipal Code, §17.210.020 (American Legal), read November 1, 2026.
+The city has no minimum parking (§17.320.020).
+
+### V1. 10826 Franklin Ave · R1 · 4,987 sq ft
+
+- One home. FAR 0.45 = 2,244 sq ft → 2.1 → 2. **Result: 4, SB 9.** Engine: 4 ✓
+
+### V2. 4174 Baldwin Ave · R2 · 6,755 sq ft
+
+- 2 per parcel. Floor area: 1,500 + 40% = 4,202 sq ft → 3.95 → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### V3. 3845 Sawtelle Blvd · RLD · 6,299 sq ft
+
+- 35 per acre = 1,244.57 sq ft per home → 5.06 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### V4. 4450 Overland Ave · RMD · 9,504 sq ft
+
+- 50 per acre = 871.2 sq ft per home → 10.9 → **10**. **Result: 10, lot area.** Engine: 10 ✓
+
+### V5. 6060 Buckingham Pkwy · RHD · 35,407 sq ft
+
+- 70 per acre = 622.29 sq ft per home → 56.9 → **56**. **Result: 56, lot area.** 50 homes today. Engine: 56 ✓

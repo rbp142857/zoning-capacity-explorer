@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -715,6 +715,37 @@ def south_gate():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", SOUTH_GATE, ids=[c[0] for c in SOUTH_GATE])
 def test_hand_checked_south_gate_parcel(south_gate, address, zone, lot, max_units, binding, limits):
     rules, state, a = south_gate
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+CULVER_CITY = [
+    ("10826 Franklin Ave", "R1", Lot(4987, 47.5, 105.1, (), 3482, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "parking": None, "state_sb9": 4}),
+    ("4174 Baldwin Ave", "R2", Lot(6755, 50.0, 135.0, (), 3395, 2),
+     3, "state_law:adu", {"density": 2, "envelope": 3, "state_adu": 3}),
+    ("3845 Sawtelle Blvd", "RLD", Lot(6299, 50.1, 125.9, (), 1103, 2),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "parking": None}),
+    ("4450 Overland Ave", "RMD", Lot(9504, 70.0, 166.7, (), 3337, 8),
+     10, "lot_area_per_unit", {"lot_area_per_unit": 10, "parking": None}),
+    ("6060 Buckingham Pkwy", "RHD", Lot(35407, 157.2, 244.7, (), 2168, 50),
+     56, "lot_area_per_unit", {"lot_area_per_unit": 56}),
+]
+
+
+@pytest.fixture(scope="module")
+def culver_city():
+    rules = load_zone_rules(REPO / "cities" / "culver_city" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CULVER_CITY, ids=[c[0] for c in CULVER_CITY])
+def test_hand_checked_culver_city_parcel(culver_city, address, zone, lot, max_units, binding, limits):
+    rules, state, a = culver_city
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

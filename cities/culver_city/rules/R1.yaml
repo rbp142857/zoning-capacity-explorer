@@ -1,0 +1,31 @@
+# Culver City R1. Every value cites the Culver City Municipal Code, Title 17 (American Legal, read 2026-11-01).
+zone: "R1"
+name: "Single-Family Residential (R1)"
+family: single_family
+
+sources:
+  Z:
+    section: "CCMC §17.210.020, Table 2-3"
+    url: https://codelibrary.amlegal.com/codes/culvercity/latest/culvercity_ca/0-0-0-17951
+  P:
+    section: "CCMC §17.320.020 (no minimum required parking)"
+    url: https://codelibrary.amlegal.com/codes/culvercity/latest/culvercity_ca/0-0-0-18658
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 40, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "8.7 per acre, at most 1 per parcel. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The table describes one- and two-story buildings."}
+max_far: {value: 0.45, source: Z}
+
+simplifications:
+  - "No minimum required parking (§17.320.020), so parking doesn't limit homes here."
+  - "The 1:1 upward encroachment plane is not modeled."

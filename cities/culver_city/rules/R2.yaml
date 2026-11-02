@@ -1,0 +1,37 @@
+# Culver City R2. Every value cites the Culver City Municipal Code, Title 17 (American Legal, read 2026-11-01).
+zone: "R2"
+name: "Two-Family Residential (R2)"
+family: multifamily
+
+sources:
+  Z:
+    section: "CCMC §17.210.020, Table 2-3"
+    url: https://codelibrary.amlegal.com/codes/culvercity/latest/culvercity_ca/0-0-0-17951
+  P:
+    section: "CCMC §17.320.020 (no minimum required parking)"
+    url: https://codelibrary.amlegal.com/codes/culvercity/latest/culvercity_ca/0-0-0-18658
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [two_unit], source: Z}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 40, source: Z}
+max_units_per_lot: {value: 2, source: Z, assumption: "17.4 per acre, at most 2 per parcel."}
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 4, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits 30 ft; we fit 2."}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 8000, share: 0.40, plus_sqft: 1500}
+      - {share: 0.60}
+  source: Z
+  assumption: "Excludes garages and non-habitable space."
+
+simplifications:
+  - "No minimum required parking (§17.320.020), so parking doesn't limit homes here."
