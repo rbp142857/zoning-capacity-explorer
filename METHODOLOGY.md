@@ -798,3 +798,13 @@ Not on the site yet. 4 files from Chapter 17.06 cover 1,979 of 3,232 lots (61.2%
 RA-15,000, RA-10,000, RAE. All allow one home per lot. Not done: RPD (1,031 lots), CG-MU-OD, the
 commercial zones and others. The lot coverage formula and parking weren't read in detail,
 since one home binds first. The minimum lot sizes come from a search summary of §17.04.080.
+
+## 32. West Covina (residential zones so far)
+
+Not on the site yet. 6 files from Chapter 26, Article II cover 18,790 of 24,211 lots (77.6%): R-1, R-A,
+MF-8, MF-15, MF-20, MF-45. Not done: PCD-1 (3,799 lots), SP (834), the T-4 and T-5 transect zones,
+commercial and others.
+
+Judgment calls: SCAG drops the lot-size suffix (R-1-6,000 up to 40,000), so all R-1 lots use the
+smallest yards and minimum. Lower MF heights within 100 ft of single-family zones aren't modeled.
+Parking wasn't read.

@@ -991,3 +991,31 @@ Checked against the Rolling Hills Estates Municipal Code, Ch. 17.06 (Municode), 
 ### R1 to R3. 78 Dapplegray Ln, 5228 Bluemound Rd, 2 Strawberry Ln
 
 - §17.06.050 allows one dwelling per lot. SB 9 path: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+## West Covina (R-1, R-A and MF zones)
+
+Checked against the West Covina Municipal Code, Ch. 26 Art. II (Municode), read November 1, 2026.
+
+### W-1. 521 S Astell Ave · R-1 · 9,408 sq ft
+
+- One home. Floor area: 3,100 + 20% of 1,908 = 3,482 sq ft → 3.3 → 3. **Result: 4, SB 9.** Engine: 4 ✓
+
+### W-2. 3330 E Holt Ave · R-A · 15,109 sq ft
+
+- One home. Floor area: 3,600 + 20% of 5,109 = 4,622 sq ft → 4.3 → 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### W-3. 1912 Tanglewood Dr · MF-8 · 5,724 sq ft
+
+- 8 per net acre = 5,445 sq ft per home → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### W-4. 1799 Aspen Village Way · MF-15 · 28,350 sq ft
+
+- 15 per acre = 2,904 sq ft per home → 9.8 → **9**. **Result: 9, lot area.** Engine: 9 ✓
+
+### W-5. 223 S Bandy Ave · MF-20 · 6,759 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 3.1 → **3**. **Result: 3, lot area.** Engine: 3 ✓
+
+### W-6. 2117 E Garvey Ave N · MF-45 · 6,200 sq ft
+
+- 45 per acre = 968 sq ft per home → 6.4 → **6**. **Result: 6, lot area.** Engine: 6 ✓
