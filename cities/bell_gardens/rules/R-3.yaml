@@ -1,0 +1,49 @@
+# Bell Gardens R-3. Every value cites the Bell Gardens Municipal Code, Title 9 (eCode360, through 06-29-2026, read 2026-11-02).
+zone: "R-3"
+name: "High Density Residential (R-3)"
+family: multifamily
+
+sources:
+  Z:
+    section: "BGMC §§9.10.020 to 9.10.040, Tables 9.10A and 9.10B"
+    url: https://ecode360.com/48053893
+  P:
+    section: "BGMC Ch. 9.38, required parking (Residential Uses)"
+    url: https://ecode360.com/48055097
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 15000, value: 2500}
+      - {below: 43560, value: 2000}
+      - {value: 1750}
+  source: Z
+  assumption: "The apartment figures. Condominiums need a conditional use permit and may reach 2,000, 1,625 and 1,400 sq ft per home; not modeled, so condominium sites run low."
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "Under 5,000 sq ft, one home."
+small_lot_units_below_sqft: 5000
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The table limits height to 35 ft, not stories, and sets second-story setbacks; we fit 2 (conservative)."}
+lot_coverage: {value: 0.45, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "1 visitor space per 2 homes at 5 or more homes."}
+guest_parking_min_units: 5
+
+simplifications:
+  - "At five or more rental homes, 20% common open space and 75 sq ft of private open space per home are not modeled, so these can run high."

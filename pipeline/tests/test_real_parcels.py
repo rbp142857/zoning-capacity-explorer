@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1398,6 +1398,45 @@ def bell():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BELL, ids=[c[0] for c in BELL])
 def test_hand_checked_bell_parcel(bell, address, zone, lot, max_units, binding, limits):
     rules, state, a = bell
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+BELL_GARDENS = [
+    ("5554 Agra St", "R-1", Lot(6387, 49.4, 130.7, (), 5801, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 5, "state_adu": 3, "state_sb9": 4}),
+    ("5900 Agra St", "R-2", Lot(6751, 49.9, 137.7, (), 4389, 2),
+     3, "state_law:adu", {"density": 3, "lot_area_per_unit": 2, "envelope": 5, "parking": 5, "state_adu": 3}),
+    ("5951 Watcher St", "R-2", Lot(10002, 64.0, 156.6, (), 4844, 1),
+     3, "density", {"density": 3, "lot_area_per_unit": 4, "envelope": 8, "parking": 7}),
+    ("6632 Specht Ave", "R-3", Lot(6888, 41.0, 169.3, (), 4716, 3),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "envelope": 5, "parking": 4, "state_adu": 3}),
+    ("5826 Live Oak St", "R-3", Lot(23346, 89.9, 261.1, (), 3328, 8),
+     11, "lot_area_per_unit", {"lot_area_per_unit": 11, "envelope": 19, "parking": 17}),
+    ("5720 Clara St", "R-3", Lot(74849, 211.2, 357.0, (), 3907, 65),
+     42, "lot_area_per_unit", {"lot_area_per_unit": 42, "envelope": 63, "parking": 55}),
+    ("5526 Clara St", "R-4", Lot(11900, 39.7, 301.0, (), 5167, 4),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 10, "parking": 8}),
+    ("6357 Eastern Ave", "M-U", Lot(18763, 137.0, 138.8, (), 5282, 0),
+     12, "lot_area_per_unit", {"lot_area_per_unit": 12, "envelope": 53, "parking": 16}),
+    ("6320 Florence Ave", "C-4", Lot(31641, 140.7, 238.0, (), 206, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def bell_gardens():
+    rules = load_zone_rules(REPO / "cities" / "bell_gardens" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BELL_GARDENS, ids=[c[0] for c in BELL_GARDENS])
+def test_hand_checked_bell_gardens_parcel(bell_gardens, address, zone, lot, max_units, binding, limits):
+    rules, state, a = bell_gardens
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

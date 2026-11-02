@@ -1580,3 +1580,43 @@ Rules: Bell Municipal Code, Title 17, read on eCode360 2026-11-02 (through Ord. 
 ### BE-8. 4511 Gage Ave · C3 · 6,219 sq ft
 
 - Chapter 17.32 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Bell Gardens
+
+Rules: Bell Gardens Municipal Code, Title 9, read on eCode360 2026-11-02 (through 06-29-2026). Each home uses 1,062.5 sq ft of building. Parking uses 2 spaces per home, plus 1 per 2 homes at 5 or more homes, at 300 sq ft each; ground excludes the front yard.
+
+### BG-1. 5554 Agra St · R-1 · 6,387 sq ft
+
+- One home → **1**. 45% coverage = 2,874 × 2 ÷ 1,062.5 = 5.4 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BG-2. 5900 Agra St · R-2 · 6,751 sq ft
+
+- 2,500 sq ft per home → 2.7 → **2**; cap of 3. Coverage × 2 → 5.7 → 5. Parking: ground 5,770 ÷ 1,131 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### BG-3. 5951 Watcher St · R-2 · 10,002 sq ft
+
+- 2,500 → 4; cap of **3**. Coverage × 2 → 8.5 → 8. Parking → 7. **Result: 3, the cap.** Engine: 3 ✓
+
+### BG-4. 6632 Specht Ave · R-3 · 6,888 sq ft
+
+- Under 15,000 sq ft, 2,500 → 2.76 → **2**. Coverage × 2 → 5.8 → 5. Parking: ground 6,278; 4 homes need 2,400 + 2,125 = 4,525, which fits; 5 need 13 stalls (3,900) + 2,656 = 6,556, which doesn't → 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### BG-5. 5826 Live Oak St · R-3 · 23,346 sq ft
+
+- 15,000 to 43,560 sq ft, 2,000 → 11.7 → **11**. Coverage × 2 → 19.8 → 19. Parking: ground 22,005; 17 homes need 43 stalls (12,900) + 9,031 = 21,931, which fits; 18 don't → 17. **Result: 11, lot area.** Engine: 11 ✓
+
+### BG-6. 5720 Clara St · R-3 · 74,849 sq ft
+
+- 43,560 sq ft and over, 1,750 → 42.8 → **42**. Coverage × 2 → 63.4 → 63. Parking → 55. **Result: 42, lot area.** Engine: 42 ✓ (65 homes today.)
+
+### BG-7. 5526 Clara St · R-4 · 11,900 sq ft
+
+- R-3's figures (assumed), 2,500 → 4.76 → **4**. Coverage × 2 → 10.08 → 10. Parking → 8. **Result: 4, lot area.** Engine: 4 ✓
+
+### BG-8. 6357 Eastern Ave · M-U · 18,763 sq ft
+
+- 30 per acre = 1,452 → 12.9 → **12**. Yards leave 127 × 113.8 × 0.987 = 14,261; × 4 stories ÷ 1,062.5 = 53.7 → 53. Parking: ground 16,735 ÷ (266 + 750) → 16. **Result: 12, lot area.** Engine: 12 ✓
+
+### BG-9. 6320 Florence Ave · C-4 · 31,641 sq ft
+
+- §9.12.020 allows no homes outside M-U. **Result: 0, use not permitted.** Engine: 0 ✓

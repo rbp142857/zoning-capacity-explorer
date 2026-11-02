@@ -993,3 +993,14 @@ Not on the site yet. 7 files cover 4,170 of 4,231 lots (98.6%); R1, R2, R3 and C
 Other calls: parking uses 2 spaces per home, plus 1 per 3 multifamily homes as guest space. Fronts use the stated 25 and 15 ft, not the block's average, which can be less. C3 lists no homes; CM and M allow only caretakers' quarters, which we don't count. The Mixed-Use and Planned Development overlays aren't in our data, so those sites can differ.
 
 Known artifact: 18 lots show 0 homes because yards or parking leave too little room; most are slivers or narrow small lots, with 2 homes on them today.
+
+## 48. Bell Gardens (most zones)
+
+Not on the site yet. 11 files cover 4,080 of 4,094 lots (99.7%); R-1, R-2, R-3, R-4 and M-U count homes. Not done: MPD (3 lots) and 11 lots with no zone. SCAG's records are from April 2023. All 19 homes permitted in 5+ unit buildings in 2018-2025 are on modeled lots.
+
+**R-3.** Density depends on lot size: under 5,000 sq ft one home, then 2,500, 2,000 and 1,750 sq ft per home at 5,000, 15,000 and 43,560 sq ft. Those are the apartment figures. Condominiums need a conditional use permit and may reach 2,000, 1,625 and 1,400 sq ft per home, so condominium sites run low.
+**R-4 (107 lots).** §9.10.010 names R-4, added by Ord. 929 in 2023, but the use and standards tables have no R-4 column that we could find. It should allow more than R-3, so we use R-3's standards as a low bound and record it as an open decision. This drives 660 local homes.
+**R-2.** One home under 5,000 sq ft, then 2,500 sq ft per home, up to 3.
+**M-U.** 30 homes per acre on lots of 15,000 sq ft or more in the standards table. Commercial space isn't subtracted, and §9.12.020 limits commercial FAR, so we don't apply an FAR limit to homes. M-U can run high.
+
+Other calls: the residential table limits height to 35 ft without a story limit, and we fit 2. M-U's 60 ft fits 4. At 5 or more rental homes, 20% common open space and 75 sq ft private open space per home aren't modeled. Added second-story setbacks aren't modeled. C-S's 30 homes per acre is for senior housing only, so we count none. C-4 and C-M allow no homes, per §9.12.020; M-1 and P-I list none; O-S allows only a caretaker's residence. Overlays, including the Housing Element re-use sites, aren't in our data.
