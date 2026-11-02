@@ -707,3 +707,16 @@ Judgment calls: where the code sets a sum of two side yards, we use half per sid
 Corner-lot duplexes aren't modeled. MDR and HDR use the 55 ft height for smaller
 complexes; larger ones can reach 72 ft. Open space and landscaping shares aren't
 modeled, so those two can run high.
+
+## 23. Gardena
+
+Not on the site yet. 23 files from Title 18 cover 11,108 of 12,110 lots (91.7%): R1, R2, R3,
+R4, Housing Overlay versions of commercial and industrial zones (`C3-HO-5` and so on),
+and no homes in C3, M1 and M2. Not done: specific plans, the `-MUO` zones, HB, CR, O, CP,
+C2, AMU and R6.
+
+**What stands out:** Housing Overlays allow far more than the base zones, up to 70 homes
+per acre on land where housing is otherwise barred, and that's where most new capacity
+is. Their numbers use residential-only height; mixed-use gets more. R-3 and R-4 round
+density up at .5; other zones' rounding wasn't stated, so we round down. M1 and C3 show
+1,777 homes today but allow none, worth a second look.

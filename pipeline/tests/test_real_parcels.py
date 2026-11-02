@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -531,6 +531,41 @@ def lancaster():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", LANCASTER, ids=[c[0] for c in LANCASTER])
 def test_hand_checked_lancaster_parcel(lancaster, address, zone, lot, max_units, binding, limits):
     rules, state, a = lancaster
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+GARDENA = [
+    ("1911 W 160th St", "R1", Lot(5006, 50.0, 100.2, (), 12911, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("1658 W 166th St", "R3", Lot(7500, 50.0, 150.1, (), 13935, 4),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3}),
+    ("14807 S Normandie Ave", "R4", Lot(18438, 132.0, 140.7, (), 11723, 19),
+     11, "lot_area_per_unit", {"lot_area_per_unit": 11}),
+    ("15210 S Ave A", "R4", Lot(30894, 106.0, 291.5, (), 12928, 18),
+     21, "lot_area_per_unit", {"lot_area_per_unit": 21}),
+    ("16321 S Western Ave", "C3-HO-5", Lot(12904, 100.0, 129.6, (), 13228, 0),
+     14, "lot_area_per_unit", {"lot_area_per_unit": 14}),
+    ("1957 W 144th St", "C3-HO-6", Lot(9774, 70.0, 140.0, (), 9019, 0),
+     14, "parking", {"lot_area_per_unit": 15, "parking": 14}),
+    ("1440 W 178th St", "M1-HO-4", Lot(17182, 96.5, 183.0, (), 15910, 0),
+     11, "lot_area_per_unit", {"lot_area_per_unit": 11}),
+]
+
+
+@pytest.fixture(scope="module")
+def gardena():
+    rules = load_zone_rules(REPO / "cities" / "gardena" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", GARDENA, ids=[c[0] for c in GARDENA])
+def test_hand_checked_gardena_parcel(gardena, address, zone, lot, max_units, binding, limits):
+    rules, state, a = gardena
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

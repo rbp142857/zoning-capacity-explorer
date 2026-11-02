@@ -1,0 +1,36 @@
+# Gardena C3-HO-6. Every value cites the Gardena Municipal Code, Title 18 (eCode360, read 2026-11-01).
+zone: "C3-HO-6"
+name: "Housing Overlay 6 on C3"
+family: commercial
+
+sources:
+  Z:
+    section: "GMC Ch. 18.21 (Housing Overlays)"
+    url: https://ecode360.com/48209055
+  P:
+    section: "GMC Ch. 18.40 (off-street parking)"
+    url: https://ecode360.com/48209742
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [mixed_use, multifamily], source: Z}
+lot_area_per_unit_sqft: {value: 622.29, source: Z, assumption: "Homes per acre converted to land per home."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 622.29
+
+setbacks:
+  front_ft: {value: 5, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 75, source: Z}
+max_stories: {value: 6, source: Z}
+parking_per_unit: {value: 1.5, source: Z, assumption: "1.5 for 1 or 2 bedrooms (§18.21). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Residential-only height used; mixed-use buildings get 10 to 15 ft more. Upper-story setbacks of 10 ft and open space are not modeled."

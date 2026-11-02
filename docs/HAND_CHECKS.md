@@ -797,3 +797,36 @@ Checked against the Lancaster Municipal Code, Ch. 17.08 (Municode), read Novembe
 ### N5. 902 W Newgrove St · HDR · 8,232 sq ft
 
 - 30 per acre = 1,452 sq ft per home → 5.7 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+## Gardena
+
+Checked against the Gardena Municipal Code, Title 18 (eCode360), read November 1, 2026.
+
+### G1. 1911 W 160th St · R-1 · 5,006 sq ft
+
+- One home (§18.12.050). **Result: 4, SB 9.** Engine: 4 ✓
+
+### G2. 1658 W 166th St · R-3 · 7,500 sq ft
+
+- 17 per acre → 2.93, rounded up at .5 (§18.16.050) → **3**. **Result: 3, lot area.** Engine: 3 ✓
+
+### G3. 14807 S Normandie Ave · R-4 · 18,438 sq ft
+
+- Under ½ acre: 25 per acre → 10.6, rounded up → **11**. **Result: 11, lot area.** 19 homes today. Engine: 11 ✓
+
+### G4. 15210 S Ave A · R-4 · 30,894 sq ft
+
+- ½ acre or more: 30 per acre → 21.3 → **21**. **Result: 21, lot area.** Engine: 21 ✓
+
+### G5. 16321 S Western Ave · C3-HO-5 · 12,904 sq ft
+
+- HO-5: 50 per acre (Ch. 18.21) → 14.8 → **14**. **Result: 14, lot area.** Engine: 14 ✓
+
+### G6. 1957 W 144th St · C3-HO-6 · 9,774 sq ft (70 × 140)
+
+- HO-6: 70 per acre → 15.7 → 15. Parking at 1.5 per home, 6 stories: 14 homes 2,479 + 6,300 fits in 9,425 sq ft; 15 homes 2,656 + 6,900 doesn't → **14**.
+- **Result: 14, parking.** Engine: 14 ✓
+
+### G7. 1440 W 178th St · M1-HO-4 · 17,182 sq ft
+
+- HO-4: 30 per acre → 11.8 → **11**. **Result: 11, lot area.** Engine: 11 ✓
