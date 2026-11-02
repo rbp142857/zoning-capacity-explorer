@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -391,6 +391,45 @@ def monrovia():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", MONROVIA, ids=[c[0] for c in MONROVIA])
 def test_hand_checked_monrovia_parcel(monrovia, address, zone, lot, max_units, binding, limits):
     rules, state, a = monrovia
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+SANTA_CLARITA = [
+    ("19771 Terri Dr", "UR2", Lot(22211, 154.3, 158.0, (), 3937, None),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("23453 Darcy Ln", "UR1", Lot(9287, 153.6, 191.0, (), 8183, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("15906 Pashley St", "NU5", Lot(109170, 330.1, 332.5, (), 16929, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("26476 Township St", "UR3", Lot(7736, 69.0, 116.5, (), 3615, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "state_adu": 3}),
+    ("28494 N Herrera Street", "UR4", Lot(31130, 188.9, 193.7, (), 19518, 14),
+     12, "lot_area_per_unit", {"lot_area_per_unit": 12}),
+    ("27905 Tyler Ln", "UR5", Lot(61197, 171.1, 403.5, (), 6956, 52),
+     42, "lot_area_per_unit", {"lot_area_per_unit": 42}),
+    ("23310 Cinema Dr", "MX-C", Lot(40532, 171.9, 283.5, (), 6061, 1),
+     27, "lot_area_per_unit", {"lot_area_per_unit": 27}),
+    ("22432 12th St", "MX-N", Lot(4869, 49.5, 100.0, (), 1454, 0),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "parking": None, "state_adu": 3}),
+    ("17737 Sierra Hwy", "CC", Lot(14644, 119.3, 123.5, (), 10003, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def santa_clarita():
+    rules = load_zone_rules(REPO / "cities" / "santa_clarita" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", SANTA_CLARITA, ids=[c[0] for c in SANTA_CLARITA])
+def test_hand_checked_santa_clarita_parcel(santa_clarita, address, zone, lot, max_units, binding, limits):
+    rules, state, a = santa_clarita
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

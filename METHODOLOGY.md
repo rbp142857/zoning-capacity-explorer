@@ -636,3 +636,27 @@ RCC, RCM, O/RD/LM, BE, M and P/QP.
 we read the minimum as applying to new lots. RH sets no story limit in the code; we use
 3, and FAR limits first. RM/RH uses RM's height. NC homes aren't counted, since the code
 allows them only where the Land Use Element says, which we have no map of.
+
+## 19. Santa Clarita
+
+Not on the site yet: publishing a new city's site files is the owner's call.
+
+**Zoning data.** SCAG's table. 88.1% of lots are modeled. Not modeled: specific plans
+(3,713 lots), 1,287 lots with no zone, and PI, CP and the OS zones, whose rules weren't
+read. The OS zones likely allow no homes.
+
+**Rules.** 17 zone files from Title 17: NU1 to NU5, UR1 to UR5, MX-C, MX-N, and no homes
+counted in CC, CN, CR, BP and I.
+
+**Judgment calls, please review:**
+
+- **Density is per gross acre.** We use lot area, so small infill numbers lean low and
+  numbers for a lot within a larger project can differ.
+- **The use chart's multifamily row didn't come through cell by cell.** We count
+  multifamily homes in UR3 to UR5, as each zone's text describes, and not in CC and CR
+  (single-family and two-family are marked X there), which may be too low. Read
+  this row directly before relying on the commercial numbers.
+- **Large single-family lots show one home,** since subdividing isn't modeled, so
+  NU and UR1 are too low where lots could be split.
+- **BP lots hold 2,570 homes today** but allow none, which suggests that SCAG's zones or
+  planned developments don't tell the whole story there.

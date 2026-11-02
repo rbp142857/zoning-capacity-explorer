@@ -43,7 +43,7 @@ building. Each is a Glendale-sized job via the SCAG fast path
 | Inglewood ⚠️ | 18,375 | 29 (8) | 146 | 215 |
 | West Hollywood ✅ | 4,314 | 23 (10) | 146 | 171 |
 | Monrovia ✅ | 9,783 | 30 (11) | 140 | 188 |
-| Santa Clarita | 51,872 | 25 (5) | 128 | 495 |
+| Santa Clarita ✅ | 51,872 | 25 (5) | 128 | 495 |
 | Burbank ✅ | 25,423 | 41 (7) | 104 | 321 |
 | Duarte | 5,503 | 18 (6) | 103 | 122 |
 

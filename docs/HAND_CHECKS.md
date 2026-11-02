@@ -681,3 +681,44 @@ November 1, 2026.
 
 - Homes in NC are marked LUE (only where the Land Use Element allows). We have no map, so none counted.
 - **Result: 0, not counted.** Engine: 0 ✓
+
+## Santa Clarita
+
+Checked against the Santa Clarita Municipal Code, Title 17 (eCode360), read
+November 1, 2026. Density is per acre, so land per home is 43,560 divided by it.
+
+### C1. 19771 Terri Dr · UR2 · 22,211 sq ft
+
+- Single-family only (Ch. 17.42) → 1 home. **Result: 4, SB 9.** Engine: 4 ✓
+
+### C2. 23453 Darcy Ln · UR1 · 9,287 sq ft
+
+- Single-family only → 1 home. **Result: 4, SB 9.** Engine: 4 ✓
+
+### C3. 15906 Pashley St · NU5 · 109,170 sq ft
+
+- Single-family only → 1 home; subdividing isn't modeled. **Result: 4, SB 9.** Engine: 4 ✓
+
+### C4. 26476 Township St · UR3 · 7,736 sq ft
+
+- 11 per acre = 3,960 sq ft per home → 1.95 → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### C5. 28494 N Herrera Street · UR4 · 31,130 sq ft
+
+- 18 per acre = 2,420 sq ft per home → 12.9 → **12**. **Result: 12, lot area.** 14 homes today. Engine: 12 ✓
+
+### C6. 27905 Tyler Ln · UR5 · 61,197 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 42.1 → **42**. **Result: 42, lot area.** 52 homes today. Engine: 42 ✓
+
+### C7. 23310 Cinema Dr · MX-C · 40,532 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 27.9 → **27**. **Result: 27, lot area.** Engine: 27 ✓
+
+### C8. 22432 12th St · MX-N · 4,869 sq ft
+
+- 18 per acre = 2,420 sq ft per home → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### C9. 17737 Sierra Hwy · CC · 14,644 sq ft
+
+- Homes not counted in CC (see METHODOLOGY). **Result: 0.** Engine: 0 ✓

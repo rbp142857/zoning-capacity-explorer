@@ -1,0 +1,31 @@
+# Santa Clarita NU1. Every value cites the Santa Clarita Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "NU1"
+name: "Non-Urban (NU1)"
+family: single_family
+
+sources:
+  Z:
+    section: "SCMC Ch. 17.32 (Non-Urban Zones)"
+    url: https://ecode360.com/48595289
+  U:
+    section: "SCMC Ch. 17.42 (residential use types and parking)"
+    url: https://ecode360.com/48595809
+
+residential_allowed: {value: true, source: U}
+housing_types: {value: [single_family], source: U}
+min_lot_area_sqft: {value: 871200, source: Z}
+min_lot_width_ft: {value: 200, source: Z}
+max_units_per_lot: {value: 1, source: U, assumption: "Only single-family homes are allowed here. Density is 0.05 homes per gross acre, which governs subdividing, not a lot already there."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits height to 35 ft without a CUP, not stories; we fit 3."}
+parking_per_unit: {value: 2, source: U, assumption: "2 enclosed spaces. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Subdividing large lots to the zone's density is not modeled, so large lots can be too low."
+  - "Hillside and oak tree rules (Ch. 17.51) are not modeled."
