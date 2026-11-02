@@ -791,3 +791,10 @@ R-3, R-4. Not done: C-1, C-2, C-M, C-R, M-1, M-2, and 386 lots with no zone.
 local zoning allows fewer homes than already exist: 16,732 against 18,911. A limit of 1 bedroom
 per 1,000 sq ft of lot also applies and isn't modeled. We use the south of Beverly Boulevard
 minimum lot size in R-1.
+
+## 31. Rolling Hills Estates (R-A zones so far)
+
+Not on the site yet. 4 files from Chapter 17.06 cover 1,979 of 3,232 lots (61.2%): RA-20,000,
+RA-15,000, RA-10,000, RAE. All allow one home per lot. Not done: RPD (1,031 lots), CG-MU-OD, the
+commercial zones and others. The lot coverage formula and parking weren't read in detail,
+since one home binds first. The minimum lot sizes come from a search summary of §17.04.080.

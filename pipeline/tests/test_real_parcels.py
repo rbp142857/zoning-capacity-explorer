@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -777,6 +777,33 @@ def montebello():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", MONTEBELLO, ids=[c[0] for c in MONTEBELLO])
 def test_hand_checked_montebello_parcel(montebello, address, zone, lot, max_units, binding, limits):
     rules, state, a = montebello
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+ROLLING_HILLS_ESTATES = [
+    ("78 Dapplegray Ln", "RA-20,000", Lot(19571, 110.7, 251.9, (), 16140, 1),
+     4, "state_law:sb9", {"density": 1, "state_adu": 3, "state_sb9": 4}),
+    ("5228 Bluemound Rd", "RA-10,000", Lot(7262, 66.1, 110.1, (), 28781, 1),
+     4, "state_law:sb9", {"density": 1, "state_adu": 3, "state_sb9": 4}),
+    ("2 Strawberry Ln", "RAE", Lot(49621, 185.0, 348.7, (), 18183, 1),
+     4, "state_law:sb9", {"density": 1, "state_adu": 3, "state_sb9": 4}),
+]
+
+
+@pytest.fixture(scope="module")
+def rolling_hills_estates():
+    rules = load_zone_rules(REPO / "cities" / "rolling_hills_estates" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", ROLLING_HILLS_ESTATES, ids=[c[0] for c in ROLLING_HILLS_ESTATES])
+def test_hand_checked_rolling_hills_estates_parcel(rolling_hills_estates, address, zone, lot, max_units, binding, limits):
+    rules, state, a = rolling_hills_estates
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

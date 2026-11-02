@@ -1,0 +1,25 @@
+# Rolling Hills Estates RAE. Every value cites the Rolling Hills Estates Municipal Code, Title 17 (Municode, read 2026-11-01).
+zone: "RAE"
+name: "Residential-Limited Agricultural (R-A-E)"
+family: single_family
+
+sources:
+  Z:
+    section: "RHEMC Ch. 17.06 (Residential Districts Generally) and §17.04.080"
+    url: https://library.municode.com/ca/rolling_hills_estates/codes/code_of_ordinances?nodeId=TIT17ZO_CH17.06REDIGE
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 43560, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "§17.06.050: one dwelling per lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 10, source: Z}
+  rear_ft: {value: 35, source: Z}
+
+max_height_ft: {value: 27, source: Z, assumption: "27 ft, or 21 ft with a flat roof."}
+max_stories: {value: 2, source: Z, assumption: "The code limits feet, not stories; we fit 2."}
+
+simplifications:
+  - "The lot coverage formula (§17.06.070) and parking are not read in detail; the one-home limit binds either way."

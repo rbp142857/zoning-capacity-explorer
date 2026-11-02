@@ -983,3 +983,11 @@ Checked against the Montebello Municipal Code, Exhibit 17.10.020 (Municode), rea
 ### T5. 633 N Taylor Ave · R-4 · 48,727 sq ft
 
 - 2,000 per home → 24.4 → **24**. **Result: 24, lot area.** 41 homes today. Engine: 24 ✓
+
+## Rolling Hills Estates (R-A zones)
+
+Checked against the Rolling Hills Estates Municipal Code, Ch. 17.06 (Municode), read November 1, 2026.
+
+### R1 to R3. 78 Dapplegray Ln, 5228 Bluemound Rd, 2 Strawberry Ln
+
+- §17.06.050 allows one dwelling per lot. SB 9 path: 4. **Result: 4, SB 9.** Engine: 4 ✓
