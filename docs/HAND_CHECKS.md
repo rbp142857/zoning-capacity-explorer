@@ -1019,3 +1019,43 @@ Checked against the West Covina Municipal Code, Ch. 26 Art. II (Municode), read 
 ### W-6. 2117 E Garvey Ave N · MF-45 · 6,200 sq ft
 
 - 45 per acre = 968 sq ft per home → 6.4 → **6**. **Result: 6, lot area.** Engine: 6 ✓
+
+## Westlake Village
+
+Rules: Westlake Village Municipal Code, Article 9, read on Municode 2026-11-01, plus the city's pages for the two mixed-use districts. The yards area is scaled by lot area ÷ (width × depth), as the engine does for irregular lots.
+
+### WL-1. 6156 Hedgewall Dr · R-1 · 8,256 sq ft, 75.1 × 110.5 ft
+
+- One home (§9.5.020) → **1**.
+- Sides 10% of width = 7.51 ft each; front 20, rear 25. (75.1 − 15.02) × (110.5 − 45) = 3,935; × 0.995 = 3,915; × 2 stories = 7,830 ÷ 1,062.5 = 7.4 → 7.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### WL-2. 6148 Hedgewall Dr · R-1 · 7,803 sq ft, 71.0 × 110.5 ft
+
+- Under the 8,000 sq ft minimum, but a lot that exists keeps its one home → **1**.
+- (71 − 14.2) × 65.5 = 3,720; × 0.995 = 3,700; × 2 = 7,400 ÷ 1,062.5 = 6.96 → 6.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### WL-3. 3956 Freshwind Cir · RPD · 10,390 sq ft, 112.0 × 137.4 ft
+
+- Homes follow the General Plan designation, which we have no map of: one per lot (assumed) → **1**.
+- Sides capped at 10 ft: (112 − 20) × 92.4 = 8,501; × 0.675 = 5,739; × 2 = 11,478 ÷ 1,062.5 = 10.8 → 10.
+- ADU law: 3. No SB 9 (conservative; see methodology). **Result: 3, ADU law.** Engine: 3 ✓
+
+### WL-4. 1 Sherwood Dr · MHP · 5,595 sq ft, 75.5 × 94.6 ft
+
+- §9.7.040: one home per mobile home lot → **1**.
+- Front 15, others 5: 65.5 × 74.6 = 4,886; × 0.783 = 3,827; × 1 story ÷ 1,062.5 = 3.6 → 3.
+- ADU law: 3, which likely runs high here. **Result: 3, ADU law.** Engine: 3 ✓
+
+### WL-5. 5711 Corsa Ave · Mixed-Use Corsa · 56,092 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 25.75 → **25**.
+- 40% coverage = 22,437 × 3 stories = 67,310 ÷ 1,062.5 = 63.
+- **Result: 25, lot area.** Engine: 25 ✓
+
+### WL-6. 5701 Lindero Canyon Rd · Mixed-Use Lindero · 330,577 sq ft
+
+- 32 per acre = 1,361.25 sq ft per home → 242.85 → **242**.
+- 40% coverage = 132,231 × 3 = 396,692 ÷ 1,062.5 = 373.
+- **Result: 242, lot area.** Engine: 242 ✓

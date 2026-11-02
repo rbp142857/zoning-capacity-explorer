@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -837,6 +837,39 @@ def west_covina():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", WEST_COVINA, ids=[c[0] for c in WEST_COVINA])
 def test_hand_checked_west_covina_parcel(west_covina, address, zone, lot, max_units, binding, limits):
     rules, state, a = west_covina
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+WESTLAKE_VILLAGE = [
+    ("6156 Hedgewall Dr", "R-1", Lot(8256, 75.1, 110.5, (), 48513, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 7, "state_sb9": 4}),
+    ("6148 Hedgewall Dr", "R-1", Lot(7803, 71.0, 110.5, (), 48556, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 6, "state_sb9": 4}),
+    ("3956 Freshwind Cir", "RPD", Lot(10390, 112.0, 137.4, (), 54399, 1),
+     3, "state_law:adu", {"density": 1, "envelope": 10, "state_adu": 3}),
+    ("1 Sherwood Dr", "MHP", Lot(5595, 75.5, 94.6, (), 58285, 1),
+     3, "state_law:adu", {"density": 1, "envelope": 3, "state_adu": 3}),
+    ("5711 Corsa Ave", "SP No. 2-Mixed-Use Corsa", Lot(56092, 254.7, 413.8, (), 52113, 0),
+     25, "lot_area_per_unit", {"lot_area_per_unit": 25, "envelope": 63}),
+    ("5701 Lindero Canyon Rd", "SP No. 2-Mixed-Use Lindero", Lot(330577, 612.1, 619.7, (), 52028, 0),
+     242, "lot_area_per_unit", {"lot_area_per_unit": 242, "envelope": 373}),
+]
+
+
+@pytest.fixture(scope="module")
+def westlake_village():
+    rules = load_zone_rules(REPO / "cities" / "westlake_village" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", WESTLAKE_VILLAGE, ids=[c[0] for c in WESTLAKE_VILLAGE])
+def test_hand_checked_westlake_village_parcel(westlake_village, address, zone, lot, max_units, binding, limits):
+    rules, state, a = westlake_village
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

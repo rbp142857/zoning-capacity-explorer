@@ -808,3 +808,20 @@ commercial and others.
 Judgment calls: SCAG drops the lot-size suffix (R-1-6,000 up to 40,000), so all R-1 lots use the
 smallest yards and minimum. Lower MF heights within 100 ft of single-family zones aren't modeled.
 Parking wasn't read.
+
+## 33. Westlake Village (most zones)
+
+Not on the site yet. 11 files from Article 9 and two city district pages cover 2,930 of 2,976 lots (98.5%):
+R-1, RPD, MHP, CPD, CR, BP, PI, OS, MU-SP No. 1, and the Corsa and Lindero districts of the North Business
+Park Specific Plan. Not done: that plan's La Baya, Cedar Valley, Office, BP, CPD and PI districts (42 lots),
+because its PDF is over the size our reader takes and no city page gives their standards.
+
+Judgment calls, most of them conservative:
+
+- **RPD (1,412 lots) counts one home per lot.** §9.6.080 ties homes to each site's General Plan designation,
+  and we have no parcel map of those. Existing multifamily sites therefore show no new homes.
+- **No SB 9 in RPD.** §9.14.090 names seven numbered RPD zones as single-family, but SCAG drops the number.
+- **MHP counts one home per lot** (§9.7.040). The state ADU path still applies, which likely runs high.
+- **MU-SP No. 1 counts no homes.** Only Planning Area F allows them, and we have no map of planning areas.
+- **Corsa and Lindero run high.** The districts are capped at 145 and 462 homes, and the engine has no
+  district cap: we get 306 and 637. The city's FAQ calls the 35-per-acre figure in the plan a typo, so we use its 32.

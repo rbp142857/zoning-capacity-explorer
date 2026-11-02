@@ -1,0 +1,34 @@
+# Westlake Village R-1. Every value cites the Westlake Village Municipal Code, Article 9 (Municode, read 2026-11-01).
+zone: "R-1"
+name: "Single-Family Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "WVMC Ch. 9.5 (R-1 Zone)"
+    url: https://library.municode.com/ca/westlake_village/codes/code_of_ordinances?nodeId=ART9ZORE_CH9.5SIMIREZO
+  S:
+    section: "WVMC §9.14.020 (Development Standards)"
+    url: https://library.municode.com/ca/westlake_village/codes/code_of_ordinances?nodeId=ART9ZORE_CH9.14DEST
+  P:
+    section: "WVMC Ch. 9.19 (Number of Parking Spaces Required)"
+    url: https://library.municode.com/ca/westlake_village/codes/code_of_ordinances?nodeId=ART9ZORE_CH9.19OREPALOST
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 8000, source: S}
+min_lot_width_ft: {value: 65, source: S}
+max_units_per_lot: {value: 1, source: Z, assumption: "One single-family home. State law (ADU, SB 9, §9.14.090) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: S}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 0, max_ft: 10}, source: S, assumption: "10% of average lot width, to a maximum of 10 ft."}
+  rear_ft: {value: 25, source: S}
+
+max_height_ft: {value: 35, source: S}
+max_stories: {value: 2, source: S}
+parking_per_unit: {value: 2, source: P, assumption: "2 covered spaces per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Conditions on individual subdivisions can replace these standards; we use the code."
+  - "Hillside and oak tree rules (Ch. 9.17, 9.21) are not modeled."

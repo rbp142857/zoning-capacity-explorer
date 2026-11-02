@@ -86,6 +86,9 @@ single-family, apartment, commercial, no-housing and Chapter 1A zones. Not done:
 4,133 lots, mostly in specific plan zones, and incentive programs. LA isn't on the site
 yet: its 140 MB of site files need the owner's go-ahead. See METHODOLOGY section 14.
 
+**Waiting on the owner: Westlake Village's North Business Park plan.** Its PDF is over the fetch tool's 10 MB limit, and saving a file needs
+the owner's OK: https://www.wlv.org/DocumentCenter/View/5961/NBPSP-revised-September-2025. It holds the standards for six districts (42 lots).
+
 **Waiting on the owner: Pomona.** Its data is downloaded and its config is in `cities/pomona/`, but it has no rule files.
 Its 2024 code, with zones like RND1 and NED1, is a PDF on the city's site that the fetch tool can't read, and saving a file needs
 the owner's OK: https://www.pomonaca.gov/home/showpublisheddocument/9137/639197017052930000 (effective July 15, 2026).
@@ -148,7 +151,7 @@ Break it into sub-steps, each shipped and validated on its own:
 
 - **Long Beach** ⚠️ (residential zones done; mixed-use, PD and commercial not): 87,000 parcels, ~590 homes/yr; 177 zone codes (20 for
   90%), many of them planned-development districts. Treat like a small LA.
-- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27); South Gate NL and NM ⚠️ (section 28); Culver City residential ⚠️ (section 29); Montebello residential ⚠️ (section 30); Pomona skipped ⚠️ (below); Rolling Hills Estates R-A ⚠️ (section 31); West Covina residential ⚠️ (section 32).
+- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27); South Gate NL and NM ⚠️ (section 28); Culver City residential ⚠️ (section 29); Montebello residential ⚠️ (section 30); Pomona skipped ⚠️ (below); Rolling Hills Estates R-A ⚠️ (section 31); West Covina residential ⚠️ (section 32). Westlake Village most zones ⚠️ (section 33).
 - **23 cities with 30–100 homes/yr in 2+ unit buildings:** Lancaster,
   Gardena, Norwalk, Santa Fe Springs, Whittier, Arcadia, South Gate, Culver
   City, Montebello, Pomona, Rolling Hills Estates, West Covina, Westlake
