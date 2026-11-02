@@ -720,3 +720,14 @@ per acre on land where housing is otherwise barred, and that's where most new ca
 is. Their numbers use residential-only height; mixed-use gets more. R-3 and R-4 round
 density up at .5; other zones' rounding wasn't stated, so we round down. M1 and C3 show
 1,777 homes today but allow none, worth a second look.
+
+## 24. Norwalk (R-1, R-2, R-3 so far)
+
+Not on the site yet. 3 files from Chapter 17.05, including 2025's Ord. 25-1762, cover 20,444
+of 21,751 lots (94%), since R-1 is 19,716 of them. Not done: R-4, R-H, commercial and
+manufacturing zones, specific plans, and 128 lots with no zone. These zones aren't marked as
+no-housing, as their chapters weren't read for homes.
+
+**What stands out:** the 2025 FAR limits, 0.40 in R-1, 0.45 in R-2 and 0.50 in R-3, now
+often limit homes as tightly as density. R-1's FAR means a 5,000 sq ft lot barely holds
+one average new home.

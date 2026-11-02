@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -566,6 +566,37 @@ def gardena():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", GARDENA, ids=[c[0] for c in GARDENA])
 def test_hand_checked_gardena_parcel(gardena, address, zone, lot, max_units, binding, limits):
     rules, state, a = gardena
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+NORWALK = [
+    ("13508 Leibacher Ave", "R-1", Lot(5196, 51.9, 100.6, (), 1793, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 1, "parking": None, "state_sb9": 4}),
+    ("11037 Barnwall St", "R-2", Lot(15059, 100.0, 150.7, (), 8020, 10),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 6}),
+    ("12165 Pine St", "R-3", Lot(6791, 48.9, 140.9, (), 5838, 4),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 3}),
+    ("12226 Sproul St", "R-3", Lot(11157, 74.5, 150.1, (), 4522, 6),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 5}),
+    ("11433 Excelsior Dr", "R-2", Lot(43864, 110.0, 399.0, (), 7502, 16),
+     16, "lot_area_per_unit", {"lot_area_per_unit": 16}),
+]
+
+
+@pytest.fixture(scope="module")
+def norwalk():
+    rules = load_zone_rules(REPO / "cities" / "norwalk" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", NORWALK, ids=[c[0] for c in NORWALK])
+def test_hand_checked_norwalk_parcel(norwalk, address, zone, lot, max_units, binding, limits):
+    rules, state, a = norwalk
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

@@ -830,3 +830,27 @@ Checked against the Gardena Municipal Code, Title 18 (eCode360), read November 1
 ### G7. 1440 W 178th St · M1-HO-4 · 17,182 sq ft
 
 - HO-4: 30 per acre → 11.8 → **11**. **Result: 11, lot area.** Engine: 11 ✓
+
+## Norwalk (residential zones)
+
+Checked against the Norwalk Municipal Code, Ch. 17.05 (eCode360), read November 1, 2026.
+
+### O1. 13508 Leibacher Ave · R-1 · 5,196 sq ft
+
+- One home. FAR 0.40 = 2,078 sq ft → 1.96 → 1. **Result: 4, SB 9.** Engine: 4 ✓
+
+### O2. 11037 Barnwall St · R-2 · 15,059 sq ft
+
+- At 9,000 sq ft or more: 2,722 per home → 5.5 → **5**. FAR 0.45 = 6,777 sq ft → 6. **Result: 5, lot area.** 10 homes today. Engine: 5 ✓
+
+### O3. 12165 Pine St · R-3 · 6,791 sq ft
+
+- 5,000 to 6,999 sq ft: 3 homes. FAR 0.50 = 3,396 sq ft → 3. **Result: 3, lot area.** Engine: 3 ✓
+
+### O4. 12226 Sproul St · R-3 · 11,157 sq ft
+
+- 1,980 per home → 5.6 → **5**. FAR 0.50 → 5. **Result: 5, lot area.** Engine: 5 ✓
+
+### O5. 11433 Excelsior Dr · R-2 · 43,864 sq ft
+
+- 2,722 per home → 16.1 → **16**. **Result: 16, lot area.** Engine: 16 ✓
