@@ -100,7 +100,7 @@ South Gate NL duplexes; SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 und
 
 **How old SCAG's zoning data is** (YEAR_ZN, checked November 2026). An old date matters only where a city has rezoned or renamed zones since, which
 has been checked only for Alhambra, Carson, Azusa, Lomita and Hawthorne. 2005: Azusa. 2015: Bradbury. 2016: Glendale, Monrovia, Montebello, Santa Clarita, West Covina, Carson, Hawthorne, San Gabriel, Agoura Hills.
-2017: South Gate, Baldwin Park. 2018: Alhambra, Avalon, Bell. 2021 to 2025: the other 26 downloaded cities, including Torrance, Artesia, Bell Gardens, Bellflower, Beverly Hills and Calabasas. Pomona's is 2025, but it has no rule files yet.
+2017: South Gate, Baldwin Park. 2018: Alhambra, Avalon, Bell. 2021 to 2025: the other 27 downloaded cities, including Torrance, Artesia, Bell Gardens, Bellflower, Beverly Hills, Calabasas and Cerritos. Pomona's is 2025, but it has no rule files yet.
 
 **Open data gap:** Inglewood's Transit Oriented plan areas need the city's own zoning
 map and plan (⚠️ above; see METHODOLOGY section 16). SP-4 in El Monte is similar. Agoura Hills' SP lots (Agoura Village and other plans) hold 94% of its recent 5+ unit homes and are not modeled. Torrance's DT (78 of its 145 recent 5+ unit homes) needs Downtown densities that Article 40 doesn't state.
@@ -180,7 +180,7 @@ what that wave teaches about suffixes and overlays.
 
 ### Wave 5: the long tail (53 jurisdictions)
 
-**Progress:** Artesia most zones ⚠️ (METHODOLOGY section 44). Avalon most zones ⚠️ (section 45). Baldwin Park most zones ⚠️ (section 46). Bell most zones ⚠️ (section 47). Bell Gardens most zones ⚠️ (section 48). Bellflower most zones ⚠️ (section 49). Beverly Hills most zones ⚠️ (section 50). Bradbury done ⚠️ (section 51). Calabasas done ⚠️ (section 52).
+**Progress:** Artesia most zones ⚠️ (METHODOLOGY section 44). Avalon most zones ⚠️ (section 45). Baldwin Park most zones ⚠️ (section 46). Bell most zones ⚠️ (section 47). Bell Gardens most zones ⚠️ (section 48). Bellflower most zones ⚠️ (section 49). Beverly Hills most zones ⚠️ (section 50). Bradbury done ⚠️ (section 51). Calabasas done ⚠️ (section 52). Cerritos most zones ⚠️ (section 53).
 
 Together 1.3% of the county's multi-unit building. Many are almost entirely
 single-family (in 20 of them, 1–4 zone codes cover 90% of parcels), so each

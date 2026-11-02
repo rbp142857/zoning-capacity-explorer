@@ -1764,3 +1764,35 @@ Rules: Calabasas Municipal Code, Title 17, read on Municode 2026-11-02. Each hom
 ### CA-10. 4830 Las Virgenes Rd · CR · 31,647 sq ft
 
 - Table 2-2 lists no homes here. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Cerritos
+
+Rules: Cerritos Municipal Code, Title 22, read on eCode360 2026-11-02. Each home uses 1,062.5 sq ft of building. Parking uses 2 spaces per home at 300 sq ft each; ground excludes the front yard.
+
+### CE-1. 16628 Greenbrook Cir · RS-5000 · 5,724 sq ft
+
+- One home → **1**. FAR 0.70 = 4,007 ÷ 1,062.5 = 3.8 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CE-2. 12510 Yosemite St · RS-6500 · 6,519 sq ft
+
+- One home → **1**. FAR 0.70 = 4,563 → 4.3 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CE-3. 12659 Liddington St · ADP-4, using RS-6500 · 8,833 sq ft
+
+- One home → **1**. FAR 0.70 = 6,183 → 5.8 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CE-4. 12458 Dawn Ln · RM · 6,679 sq ft
+
+- Under 3 acres, one home → **1**. Yards leave 28.5 × 39.7 × 0.984 = 1,113; × 2 ÷ 1,062.5 = 2.1 → 2. Parking: ground 4,797 ÷ 1,131 → 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓ (4 homes today.)
+
+### CE-5. 18944 Vickie Ave · RM · 280,589 sq ft
+
+- 20 per acre = 2,178 → 128.8 → **128**. 40% coverage × 2 → 211.3 → 211. Parking: ground 269,675 ÷ 1,131 → 238. **Result: 128, lot area.** Engine: 128 ✓ (203 homes today.)
+
+### CE-6. 16230 Drycreek Ln · ADP-3 · 5,125 sq ft
+
+- Under an acre, one home → **1**. 40% coverage × 2 → 3.9 → 3. Parking: ground 4,125 ÷ 1,131 → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CE-7. 13363 Artesia Blvd · CN · 25,000 sq ft
+
+- Chapter 22.25 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓

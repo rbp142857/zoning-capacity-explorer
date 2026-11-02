@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1585,6 +1585,41 @@ def calabasas():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CALABASAS, ids=[c[0] for c in CALABASAS])
 def test_hand_checked_calabasas_parcel(calabasas, address, zone, lot, max_units, binding, limits):
     rules, state, a = calabasas
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+CERRITOS = [
+    ("16628 Greenbrook Cir", "RS-5000", Lot(5724, 60.0, 96.7, (), 13319, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 3, "state_adu": 3, "state_sb9": 4}),
+    ("12510 Yosemite St", "RS-6500", Lot(6519, 60.4, 109.0, (), 16317, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 4, "state_sb9": 4}),
+    ("12659 Liddington St", "RS-6500", Lot(8833, 70.6, 146.6, (), 22451, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 5, "state_sb9": 4}),
+    ("12458 Dawn Ln", "RM", Lot(6679, 76.5, 88.7, (), 13406, 4),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 2, "parking": 4, "state_adu": 3}),
+    ("18944 Vickie Ave", "RM", Lot(280589, 491.3, 642.7, (), 19700, 203),
+     128, "lot_area_per_unit", {"lot_area_per_unit": 128, "envelope": 211, "parking": 238}),
+    ("16230 Drycreek Ln", "ADP-3", Lot(5125, 50.5, 102.5, (), 12098, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 3, "parking": 3, "state_adu": 3}),
+    ("13363 Artesia Blvd", "CN", Lot(25000, 158.7, 159.1, (), 15939, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def cerritos():
+    rules = load_zone_rules(REPO / "cities" / "cerritos" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CERRITOS, ids=[c[0] for c in CERRITOS])
+def test_hand_checked_cerritos_parcel(cerritos, address, zone, lot, max_units, binding, limits):
+    rules, state, a = cerritos
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

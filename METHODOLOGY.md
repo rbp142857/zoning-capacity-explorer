@@ -1054,3 +1054,14 @@ Not on the site yet. 16 files cover 7,321 of 7,332 lots (99.8%); only 11 lots wi
 Other calls: multifamily parking uses the two-bedroom figure of 2 spaces plus 1 guest per 3 homes. We have no slope data, so the hillside rules (§17.20.150) aren't modeled, and much of the city is hilly, so totals can run high. CL, CO and CB allow no homes under Table 2-6; CR lists none in Table 2-2; OS-DR and PF allow none under Table 2-7. The Affordable Housing overlay isn't in our data, so its sites run low.
 
 Known artifact: 324 lots show 0 homes because yards leave too little room, 303 of them small RM lots such as townhomes, with 300 homes on them today.
+
+## 53. Cerritos (most zones)
+
+Not on the site yet. 15 files cover 14,759 of 15,310 lots (96.4%); RS-5000, RS-6500, ADP-4 (through RS-6500), RM and ADP-3 count homes. Not done: 14 other Area Development Plans (528 lots, 1,119 homes), A (2 lots) and 21 lots with no zone. Area Development Plans replace normal zoning, so each needs its own chapter read. SCAG's records are from March 2023. The state's reports show no homes permitted in 5+ unit buildings in 2019-2025.
+
+**RM.** Multi-family use needs a 3-acre lot (§22.23.700), so smaller RM lots count one single-family home, even though many hold more today. RM holds 1,262 homes against 525 allowed. Up to 20 homes per acre applies above that, and the approving authority sets the exact number, so large lots can run high. We didn't capture the zone's height limit and fit 2 stories.
+**ADP-3.** 1 home per 3,260 sq ft on parcels of an acre or more; smaller parcels are single-family under RS-6500's standards. We use RS-6500's yards and coverage everywhere, an assumption for larger parcels. Most lots here are single townhomes or small homes.
+**ADP-4.** Single-family only, under RS-6500's standards. Its added standards, which govern where stricter, weren't read; the one-home limit binds.
+**RS.** Coverage is 40%, or 45% for RS-5000 lots meeting the chapter's other standards, with FAR 0.70. SB 9 is what lifts these lots above one home.
+
+Other calls: OS allows only caretakers' residences, and we don't count its 295 homes on the roll; we didn't check what those are. CN lists no homes. We didn't read the uses of COP, CC, CR, M, MC, MC-1, MC-2, M-1 or OS-1, which count none. We wrote MC's name from the Ch. 22.29 title without checking the map symbol.
