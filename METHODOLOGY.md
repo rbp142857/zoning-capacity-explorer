@@ -922,3 +922,15 @@ Not on the site yet. 12 files cover 13,209 of 13,300 lots (99.3%), but only R-1,
 **R-3 conflict.** The chapter says 25 homes per acre. A city handout dated October 2024 (Ord. 2247) says 30, and the Housing Element called 25 inconsistent with the General Plan. We use 25 and record the question as an open decision.
 
 Other calls: parking uses 1 space for 2 or fewer bedrooms, with no guest parking; larger homes need more. Open space of up to 850 sq ft per home isn't modeled, so R-2 and R-3 can run high. N-S, C-B, R-S and C-S allow mixed use only in General Plan Mixed-Use areas we have no map of, so they count none and those lots run low. S-C and C-P are marked X. O-P, O-S and S-P count none, and their uses weren't read.
+
+## 42. Agoura Hills (most zones)
+
+Not on the site yet. 17 files cover 6,427 of 6,531 lots (98.4%); RS, RM, RL, RV, RH, CS-MU and OS-R count homes. Not done: SP (83 lots, 475 homes on the roll) and 21 lots with no zone. The SP lots matter most: 278 of the 296 homes permitted in 5+ unit buildings in 2018-2025 are there, in specific plans such as Agoura Village that we haven't read. §9497 sends those lots to each plan. SCAG's records are from July 2016, and we haven't checked for rezoning since, so newer zones such as the Affordable Housing overlay's sites may not show.
+
+**Density.** The code sets density by a number after the zone, such as RM-10 or RH-25, and SCAG drops it. RM uses RM-6 (6,000 sq ft per home) and RH uses RH-15 (2,400), the lowest of each range, so lots zoned higher run low.
+**Parking.** RM, RH and CS-MU use 2.5 spaces per home, the §9654.2 figure for one bedroom and up. Studios need 1.5.
+**OS-R.** One home per lot is allowed, but only with a conditional use permit (§§9482 and 9483). We count it, with its 50, 25 and 50 ft yards and 10% coverage, and ADUs under §9484. We don't apply SB 9, since this is an open space district. This is an open decision.
+
+Other calls: we have no slope data, so the hillside rules (§9652, lots over 10% average slope) aren't modeled and hilly lots can run high. RS uses 20 ft front and rear yards and 9 ft sides at every size; lots of 10,000 sq ft or more really need 25, 25 and 11, so they can run high, though their 35% coverage usually binds first. CS-MU counts each lot alone, ignoring its 5-acre project minimum and required commercial space, so small lots run high. The Affordable Housing overlay isn't in our data, so its sites run low. CRS and BP-M allow only a caretaker's residence, which we don't count. The assessor counts some hotels as homes in those zones, so the existing-homes column runs high there. Section 1 of the validation is skipped until the state's E-5 file is saved; no city has it yet.
+
+Rule file check added: a `lot_coverage` band written with `value` under 1 now fails to load. `value` means square feet in those bands, and the first Agoura draft's RS file showed zero local homes on 4,530 lots because of it. No other city's files had this mistake.

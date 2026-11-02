@@ -1,0 +1,41 @@
+# Agoura Hills RH. Every value cites the Agoura Hills Municipal Code, Article IX (Municode, read 2026-11-02).
+zone: "RH"
+name: "Residential, High Density (RH)"
+family: multifamily
+
+sources:
+  Z:
+    section: "AHMC §§9273.1 to 9273.6"
+    url: https://library.municode.com/ca/agoura_hills/codes/code_of_ordinances?nodeId=ARTIXZO_CH2RELAUSDI_PT8RHREGHDEDI
+  P:
+    section: "AHMC §9654.2 parking table (Ch. 6, Part 2, Div. 4)"
+    url: https://library.municode.com/ca/agoura_hills/codes/code_of_ordinances?nodeId=ARTIXZO_CH6REPR_PT2SPRE_DIV4OREPALOLA
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, multifamily], source: Z}
+min_lot_area_sqft: {value: 17500, source: Z}
+min_lot_width_ft: {value: 100, source: Z}
+lot_area_per_unit_sqft: {value: 2400, source: Z, assumption: "SCAG drops the number after the zone letters, so we use the lowest density of the range, RH-15 (2,400 sq ft per home); lots zoned higher run low."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 2400
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 7, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.5, source: Z}
+
+parking_per_unit: {value: 2.5, source: P, assumption: "One bedroom and up, condominiums and townhouses need 2.5 spaces (2 or 1.5 covered plus guest spaces); studios need 1.5. We use 2.5. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Lots over 10% average slope follow the hillside rules (§9652), and we have no slope data, so hilly lots can run high."
+  - "300 sq ft of group open space per home is not modeled."

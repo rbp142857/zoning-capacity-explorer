@@ -1,0 +1,26 @@
+# Agoura Hills OS-R. Every value cites the Agoura Hills Municipal Code, Article IX (Municode, read 2026-11-02).
+zone: "OS-R"
+name: "Open Space-Restricted (OS-R)"
+family: single_family
+
+sources:
+  Z:
+    section: "AHMC §§9483 to 9488.4"
+    url: https://library.municode.com/ca/agoura_hills/codes/code_of_ordinances?nodeId=ARTIXZO_CH4SPDI
+
+residential_allowed: {value: true, source: Z, assumption: "One home per lot, and only with a conditional use permit (§§9482, 9483). §9484 also allows an ADU once that permit is granted."}
+housing_types: {value: [single_family], source: Z}
+max_units_per_lot: {value: 1, source: Z}
+sb9_allowed: {value: false, source: Z, assumption: "SB 9 covers single-family residential zones. This is an open space district where a home needs a conditional use permit, so we don't apply SB 9 (conservative)."}
+
+setbacks:
+  front_ft: {value: 50, source: Z}
+  side_ft: {value: 25, source: Z}
+  rear_ft: {value: 50, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height to 35 ft, not stories; we fit 2 (conservative)."}
+lot_coverage: {value: 0.10, source: Z}
+
+simplifications:
+  - "The minimum lot and these standards are subject to the hillside rules (§9652), and we have no slope data, so hilly lots can run high. §9489.2 adds findings on habitat and hazards that can't be modeled."

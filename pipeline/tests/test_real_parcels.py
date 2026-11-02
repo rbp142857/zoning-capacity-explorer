@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1147,3 +1147,52 @@ def test_hand_checked_monterey_park_parcel(monterey_park, address, zone, lot, ma
     assert r.binding_constraint == binding
     for name, value in limits.items():
         assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+AGOURA_HILLS = [
+    ("6309 Aquarius Ave", "RS", Lot(6671, 61.2, 113.3, (), 41916, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 5, "state_adu": 3, "state_sb9": 4}),
+    ("4014 Patrick Henry Pl", "RS", Lot(12760, 74.8, 187.3, (), 38783, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 8, "state_adu": 3, "state_sb9": 4}),
+    ("4965 Kingsgate Court", "RM", Lot(6204, 76.1, 81.7, (), 40022, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 6, "parking": 3, "state_adu": 3}),
+    ("5322 Colodny Dr", "RH", Lot(27939, 124.3, 235.6, (), 40797, 18),
+     11, "lot_area_per_unit", {"lot_area_per_unit": 11, "envelope": 26, "parking": 20}),
+    ("5321 Colodny Dr", "RH", Lot(22123, 61.3, 362.9, (), 40903, 14),
+     9, "lot_area_per_unit", {"lot_area_per_unit": 9, "envelope": 20, "parking": 16}),
+    ("5515 Foothill Dr", "RL", Lot(20101, 88.2, 228.0, (), 41606, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 13, "state_sb9": 4}),
+    ("5909 1/2 Chesebro Rd", "RV", Lot(49685, 145.3, 375.0, (), 37223, 0),
+     4, "state_law:sb9", {"density": 1, "envelope": 23, "state_sb9": 4}),
+    ("5601 Kanan Rd", "CS-MU", Lot(35246, 160.0, 229.0, (), 44405, 0),
+     12, "lot_area_per_unit", {"lot_area_per_unit": 12, "envelope": 33, "parking": 24}),
+    ("28700 Thousand Oaks Blvd", "OS-R", Lot(91984, 239.9, 387.0, (), 41960, None),
+     3, "state_law:adu", {"density": 1, "envelope": 17, "state_adu": 3}),
+    ("28230 Dorothy Dr", "CRS", Lot(21836, 66.6, 340.1, (), 41525, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def agoura_hills():
+    rules = load_zone_rules(REPO / "cities" / "agoura_hills" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", AGOURA_HILLS, ids=[c[0] for c in AGOURA_HILLS])
+def test_hand_checked_agoura_hills_parcel(agoura_hills, address, zone, lot, max_units, binding, limits):
+    rules, state, a = agoura_hills
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+def test_coverage_band_with_a_share_as_value_is_rejected(agoura_hills):
+    rules, _, _ = agoura_hills
+    data = rules["RS"].model_dump(exclude_none=True)
+    data["lot_coverage"]["value"]["bands"][0] = {"below": 10000, "value": 0.5}
+    with pytest.raises(ValueError, match="lot_coverage bands"):
+        type(rules["RS"]).model_validate(data)

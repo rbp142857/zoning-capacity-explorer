@@ -151,6 +151,14 @@ class ZoneRules(Strict):
     simplifications: list[str] = []  # things the MVP deliberately leaves out
 
     @model_validator(mode="after")
+    def _coverage_bands_use_share(self):
+        """A coverage band's `value` means square feet, so 0.5 there is a typo for `share`."""
+        rule = self.lot_coverage.value if self.lot_coverage else None
+        if isinstance(rule, Banded) and any(b.value is not None and b.value <= 1 for b in rule.bands):
+            raise ValueError(f"{self.zone}: lot_coverage bands give a share of the lot as `share`, not `value`")
+        return self
+
+    @model_validator(mode="after")
     def _citations_exist(self):
         """Every `source:` key used in the file must be defined in `sources:`."""
         missing = sorted(k for k in _source_keys(self) if k not in self.sources)

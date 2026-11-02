@@ -1,0 +1,18 @@
+# Agoura Hills CRS. Every value cites the Agoura Hills Municipal Code, Article IX (Municode, read 2026-11-02).
+zone: "CRS"
+name: "Commercial Retail/Service (CRS)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "AHMC §9312.2 and Ch. 3, Part 4"
+    url: https://library.municode.com/ca/agoura_hills/codes/code_of_ordinances?nodeId=ARTIXZO_CH3CODI_PT4CRCORESEDI
+
+residential_allowed: {value: false, source: Z, assumption: "Table I (§9312.2) allows only a caretaker's or owner's residence, with a conditional use permit; we count no homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

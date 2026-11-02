@@ -1312,3 +1312,47 @@ Rules: Monterey Park Municipal Code, Title 21, read on eCode360 2026-11-01.
 ### MP-6. 1501 S Atlantic Blvd · R-3 · 22,604 sq ft
 
 - 25 per acre → 12.97 → **12**. **Result: 12, lot area.** Engine: 12 ✓
+
+## Agoura Hills
+
+Rules: Agoura Hills Municipal Code, Article IX, read on Municode 2026-11-02. Each home uses 1,062.5 sq ft of building. Parking uses 2.5 spaces per home at 300 sq ft each.
+
+### AH-1. 6309 Aquarius Ave · RS · 6,671 sq ft
+
+- One home → **1**. Under 10,000 sq ft: 50% coverage = 3,336; yards of 20, 20 and 9 ft leave (61.2 − 18) × (113.3 − 40) × 0.962 = 3,046, which binds. Two stories = 6,092 ÷ 1,062.5 = 5.7 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AH-2. 4014 Patrick Henry Pl · RS · 12,760 sq ft
+
+- One home → **1**. Over 10,000 sq ft: 35% coverage = 4,466, which binds. Two stories = 8,932 ÷ 1,062.5 = 8.4 → 8. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AH-3. 4965 Kingsgate Court · RM · 6,204 sq ft
+
+- 6,000 sq ft per home → **1**. Yards leave 62.1 × 51.7 × 0.998 = 3,204, under 60% coverage (3,722); × 2 ÷ 1,062.5 = 6.03 → 6. Parking: ground 6,204 − 1,139 = 5,065; 3 homes need 8 stalls (2,400) + 1,594 = 3,994, which fits; 4 homes need 3,000 + 2,125 = 5,125, which doesn't → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AH-4. 5322 Colodny Dr · RH · 27,939 sq ft
+
+- 2,400 sq ft per home → 11.6 → **11**. 50% coverage = 13,969; × 2 ÷ 1,062.5 = 26.3 → 26. Parking: ground 26,160; 20 homes need 15,000 + 10,625 = 25,625, which fits; 21 need 15,900 + 11,156 = 27,056, which doesn't → 20. **Result: 11, lot area.** Engine: 11 ✓ (18 homes today, so no net new.)
+
+### AH-5. 5321 Colodny Dr · RH · 22,123 sq ft
+
+- 2,400 sq ft per home → 9.2 → **9**. **Result: 9, lot area.** Engine: 9 ✓ (Flagged: 61.3 ft wide, under the 100 ft minimum. 14 homes today.)
+
+### AH-6. 5515 Foothill Dr · RL · 20,101 sq ft
+
+- One home → **1**. 35% coverage = 7,035; × 2 ÷ 1,062.5 = 13.2 → 13. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AH-7. 5909 1/2 Chesebro Rd · RV · 49,685 sq ft
+
+- One home → **1**. 25% coverage = 12,421; × 2 ÷ 1,062.5 = 23.4 → 23. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AH-8. 5601 Kanan Rd · CS-MU · 35,246 sq ft
+
+- 15 per acre = 2,904 sq ft per home → 12.1 → **12**. 50% coverage = 17,623; × 2 ÷ 1,062.5 = 33.2 → 33. Parking: ground 32,168; 24 homes need 18,000 + 12,750 = 30,750, which fits; 25 need 18,900 + 13,281 = 32,181, which doesn't → 24. **Result: 12, lot area.** Engine: 12 ✓ (The 5-acre project minimum isn't modeled.)
+
+### AH-9. 28700 Thousand Oaks Blvd · OS-R · 91,984 sq ft
+
+- One home with a conditional use permit → **1**. 10% coverage = 9,198; × 2 ÷ 1,062.5 = 17.3 → 17. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AH-10. 28230 Dorothy Dr · CRS · 21,836 sq ft
+
+- Table I allows only a caretaker's or owner's residence. **Result: 0, use not permitted.** Engine: 0 ✓

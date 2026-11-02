@@ -1,0 +1,27 @@
+# Agoura Hills RV. Every value cites the Agoura Hills Municipal Code, Article IX (Municode, read 2026-11-02).
+zone: "RV"
+name: "Residential, Very Low Density (RV)"
+family: single_family
+
+sources:
+  Z:
+    section: "AHMC §§9223.1 to 9223.4"
+    url: https://library.municode.com/ca/agoura_hills/codes/code_of_ordinances?nodeId=ARTIXZO_CH2RELAUSDI_PT3RVRERYLODEDI
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 43560, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. The zone's density and minimum lot govern subdividing. State law (ADU, SB 9, Ch. 2 Part 11) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 12, source: Z, assumption: "12 ft per side."}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.25, source: Z}
+
+simplifications:
+  - "Parking (2 covered spaces, §9654.2) isn't modeled; the one-home limit binds. Lots over 10% average slope follow the hillside rules (§9652), and we have no slope data."
+  - "The 25% site coverage also counts driveways and patios, so the buildable area can be smaller."
