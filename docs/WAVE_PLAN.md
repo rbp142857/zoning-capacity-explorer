@@ -1,7 +1,8 @@
 # Wave plan: covering LA County
 
-Goal: model every jurisdiction in Los Angeles County (88 cities and the
-unincorporated county), in an order that gets the most useful coverage soonest.
+Goal: model all 88 cities in Los Angeles County, in an order that gets the most
+useful coverage soonest. The owner took the unincorporated county (Title 22) out
+of scope in November 2026; see wave 4.
 
 The numbers come from `make waves` →
 [`reports/la_county/city_ranking.md`](../reports/la_county/city_ranking.md), which
@@ -168,7 +169,9 @@ Break it into sub-steps, each shipped and validated on its own:
   standards in the plan's Chapter 4). These three are worth doing earlier
   than the rest of wave 3, since each is where its city builds most.
 
-### Wave 4: unincorporated LA County
+### Wave 4: unincorporated LA County (out of scope)
+
+**Skipped at the owner's request (November 2, 2026). Don't start it unless the owner asks.** No rule files were written. If it comes back, two things found so far will save time: density comes from each lot's General Plan or Area Plan designation, not its zone (Title 22 §22.02.050.C; General Plan Ch. 6, pp. 67-68), and SCAG's `GeneralPlan_poly_LA` table gives that designation by parcel number. A zoning adapter could combine them into codes like `R-3-H30`, with the plain zone as the fallback. The earlier scoping notes follow.
 
 312,000 parcels in scattered areas from East LA to the Antelope Valley, ~510
 homes/yr in 2+ unit buildings. One code (Title 22) but 259 zone codes (32
@@ -215,7 +218,7 @@ and later, worth paying for:
   setup. A similar city should now take about one session.
 - **Wave 1:** about 8 sessions.
 - **City of Los Angeles:** many sessions, likely 10–20 across its sub-steps.
-- **Waves 3–5:** roughly 25 cities, then 53 smaller ones (2–3 per session).
+- **Waves 3 and 5:** roughly 25 cities, then 53 smaller ones (2–3 per session). Wave 4 is out of scope.
 
 That's many months of steady work. The order above means that after wave 2,
 the tool covers about **90% of the county's multi-unit housing production**,
