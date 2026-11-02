@@ -781,3 +781,19 @@ November 1, 2026.
 ### B7. 3737 Atlantic Ave · R-4-N · 58,572 sq ft
 
 - Over 22,500 sq ft: 975 per home → 60.1 → **60**. **Result: 60, lot area.** 169 homes stand here today. Engine: 60 ✓
+
+## Lancaster (residential zones)
+
+Checked against the Lancaster Municipal Code, Ch. 17.08 (Municode), read November 1, 2026.
+
+### N1 to N3. R-7000, R-10,000 and RR-1 lots
+
+- 1132 Langhorn St, 1723 Granville Way, 43710 Ryckebosch Ln: one home each. **Result: 4, SB 9.** Engine: 4 ✓
+
+### N4. 45537 Corkwood Ave · MDR · 6,000 sq ft
+
+- 15 per acre = 2,904 sq ft per home → 2.07 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### N5. 902 W Newgrove St · HDR · 8,232 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 5.7 → **5**. **Result: 5, lot area.** Engine: 5 ✓

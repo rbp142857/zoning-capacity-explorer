@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -500,6 +500,37 @@ def long_beach():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", LONG_BEACH, ids=[c[0] for c in LONG_BEACH])
 def test_hand_checked_long_beach_parcel(long_beach, address, zone, lot, max_units, binding, limits):
     rules, state, a = long_beach
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+LANCASTER = [
+    ("1132 Langhorn St", "R-7000", Lot(6307, 60.0, 105.5, (), 8015, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("1723 Granville Way", "R-10,000", Lot(10975, 91.4, 128.2, (), 14329, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("43710 Ryckebosch Ln", "RR-1", Lot(40232, 237.0, 239.6, (), 22355, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("45537 Corkwood Ave", "MDR", Lot(6000, 60.0, 101.6, (), 5315, 2),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "state_adu": 3}),
+    ("902 W Newgrove St", "HDR", Lot(8232, 54.9, 150.5, (), 3336, 1),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5}),
+]
+
+
+@pytest.fixture(scope="module")
+def lancaster():
+    rules = load_zone_rules(REPO / "cities" / "lancaster" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", LANCASTER, ids=[c[0] for c in LANCASTER])
+def test_hand_checked_lancaster_parcel(lancaster, address, zone, lot, max_units, binding, limits):
+    rules, state, a = lancaster
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

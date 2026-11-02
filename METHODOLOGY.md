@@ -696,3 +696,14 @@ those are done, which is why this city is marked ⚠️ in WAVE_PLAN.
 **Judgment calls:** the density table sets bands by both area and width; we use area,
 which can run high on narrow lots. R-2-A also allows three-family homes under a note
 we didn't read, so it can run low. Parking uses 1.5 per home, for one bedroom.
+
+## 22. Lancaster (residential zones only so far)
+
+Not on the site yet. 8 files from Chapter 17.08 cover 43,082 of 52,372 lots (82.3%): RR-2.5,
+RR-1, SRR, R-15,000, R-10,000, R-7000, MDR and HDR. Not done: specific plans (3,201 lots),
+TOD (1,263), the MU zones, commercial and industrial zones, and 1,690 lots with no zone.
+
+Judgment calls: where the code sets a sum of two side yards, we use half per side.
+Corner-lot duplexes aren't modeled. MDR and HDR use the 55 ft height for smaller
+complexes; larger ones can reach 72 ft. Open space and landscaping shares aren't
+modeled, so those two can run high.
