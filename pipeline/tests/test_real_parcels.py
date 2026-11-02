@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -465,6 +465,41 @@ def duarte():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", DUARTE, ids=[c[0] for c in DUARTE])
 def test_hand_checked_duarte_parcel(duarte, address, zone, lot, max_units, binding, limits):
     rules, state, a = duarte
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+LONG_BEACH = [
+    ("5507 E Pageantry St", "R-1-N", Lot(5214, 52.8, 99.6, (), 11094, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 2, "state_sb9": 4}),
+    ("5521 E Sorrento Dr", "R-1-S", Lot(3287, 40.1, 82.4, (), 5899, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 3, "state_sb9": 4}),
+    ("771 Freeman Ave", "R-2-N", Lot(6754, 50.0, 135.1, (), 3509, 4),
+     3, "state_law:adu", {"density": 2, "lot_area_per_unit": 2, "envelope": 3, "state_adu": 3}),
+    ("3901 E 4th St", "R-3-T", Lot(38283, 128.0, 300.0, (), 5686, 1),
+     15, "lot_area_per_unit", {"lot_area_per_unit": 15}),
+    ("3637 E Ocean Blvd", "R-4-R", Lot(11217, 55.1, 217.7, (), 7411, 8),
+     7, "lot_area_per_unit", {"lot_area_per_unit": 7}),
+    ("2907 Claremore Ln", "R-4-R", Lot(25626, 155.6, 285.2, (), 17496, 8),
+     17, "lot_area_per_unit", {"lot_area_per_unit": 17}),
+    ("3737 Atlantic Ave", "R-4-N", Lot(58572, 211.0, 278.5, (), 3652, 169),
+     60, "lot_area_per_unit", {"lot_area_per_unit": 60}),
+]
+
+
+@pytest.fixture(scope="module")
+def long_beach():
+    rules = load_zone_rules(REPO / "cities" / "long_beach" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", LONG_BEACH, ids=[c[0] for c in LONG_BEACH])
+def test_hand_checked_long_beach_parcel(long_beach, address, zone, lot, max_units, binding, limits):
+    rules, state, a = long_beach
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

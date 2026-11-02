@@ -748,3 +748,36 @@ November 1, 2026.
 ### D7. 1475 Huntington Dr · CG · 16,967 sq ft
 
 - Table 2-5 lists no dwellings. **Result: 0, not allowed.** Engine: 0 ✓
+
+## Long Beach (residential zones)
+
+Checked against the Long Beach Municipal Code, Title 21 (Municode, Ch. 21.31), read
+November 1, 2026.
+
+### B1. 5507 E Pageantry St · R-1-N · 5,214 sq ft
+
+- One home. FAR 0.6 = 3,128 sq ft → 2.9 → 2. **Result: 4, SB 9.** Engine: 4 ✓
+
+### B2. 5521 E Sorrento Dr · R-1-S · 3,287 sq ft
+
+- One home. FAR 1.2 = 3,944 sq ft → 3.7 → 3. **Result: 4, SB 9.** Engine: 4 ✓
+
+### B3. 771 Freeman Ave · R-2-N · 6,754 sq ft
+
+- 2 per lot; 3,000 per home → **2**. FAR 0.6 = 4,052 sq ft → 3. ADU law: 3. **Result: 3, ADU law.** 4 homes today. Engine: 3 ✓
+
+### B4. 3901 E 4th St · R-3-T · 38,283 sq ft
+
+- Over 15,000 sq ft: 2,400 per home (Table 31-2B) → 15.95 → **15**. **Result: 15, lot area.** Engine: 15 ✓
+
+### B5. 3637 E Ocean Blvd · R-4-R · 11,217 sq ft
+
+- 3,201 to 15,000 sq ft: 1,500 per home → 7.5 → **7**. **Result: 7, lot area.** Engine: 7 ✓
+
+### B6. 2907 Claremore Ln · R-4-R · 25,626 sq ft
+
+- Over 15,000 sq ft: 1,450 per home → 17.7 → **17**. **Result: 17, lot area.** Engine: 17 ✓
+
+### B7. 3737 Atlantic Ave · R-4-N · 58,572 sq ft
+
+- Over 22,500 sq ft: 975 per home → 60.1 → **60**. **Result: 60, lot area.** 169 homes stand here today. Engine: 60 ✓

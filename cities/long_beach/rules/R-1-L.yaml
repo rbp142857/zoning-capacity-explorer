@@ -1,0 +1,32 @@
+# Long Beach R-1-L. Every value cites the Long Beach Municipal Code, Title 21 (Municode, read 2026-11-01).
+zone: "R-1-L"
+name: "Residential (R-1-L)"
+family: single_family
+
+sources:
+  Z:
+    section: "LBMC Ch. 21.31, Tables 31-1, 31-2A and 31-2B"
+    url: https://library.municode.com/ca/long_beach/codes/municipal_code?nodeId=TIT21ZO_CH21.31REDI
+  P:
+    section: "LBMC Ch. 21.41 (off-street parking)"
+    url: https://library.municode.com/ca/long_beach/codes/municipal_code?nodeId=TIT21ZO_CH21.41OREPALORE
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 12000, source: Z}
+min_lot_width_ft: {value: 60, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 6, source: Z}
+  rear_ft: {value: 30, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.4, source: Z}
+max_far: {value: 0.6, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces for two or more bedrooms. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Open space per home, second-story rear yards and Height Overlay (HL) reductions are not modeled."

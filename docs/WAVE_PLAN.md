@@ -141,7 +141,7 @@ Break it into sub-steps, each shipped and validated on its own:
 
 ### Wave 3: Long Beach, the next 23 cities, and the specific plans already started
 
-- **Long Beach**: 87,000 parcels, ~590 homes/yr; 177 zone codes (20 for
+- **Long Beach** ⚠️ (residential zones done; mixed-use, PD and commercial not): 87,000 parcels, ~590 homes/yr; 177 zone codes (20 for
   90%), many of them planned-development districts. Treat like a small LA.
 - **23 cities with 30–100 homes/yr in 2+ unit buildings:** Lancaster,
   Gardena, Norwalk, Santa Fe Springs, Whittier, Arcadia, South Gate, Culver

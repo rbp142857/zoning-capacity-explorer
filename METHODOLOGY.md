@@ -675,3 +675,24 @@ and no homes in CG, CP, CF, H, M and PF. R-1F isn't on the map.
 multi-family isn't allowed there. Parking is heavy: 2 garage spaces per home plus
 half a space more in apartments. R-3 and R-4 can go higher with a use permit, which
 we don't count. M lots show 742 homes today but allow none, worth a second look.
+
+## 21. Long Beach (residential zones only so far)
+
+Not on the site yet: publishing a new city's site files is the owner's call.
+
+**Zoning data.** SCAG's table has 174 zone codes. 70,010 of 87,365 lots (80.1%) are
+modeled, and the rest hold 68,123 of 191,022 homes.
+
+**Rules.** 14 files from Chapter 21.31: R-1-S, R-1-M, R-1-N, R-1-L, R-2-S, R-2-I, R-2-N,
+R-2-A, R-2-L, R-3-S, R-3-4, R-3-T, R-4-R, R-4-N. Height-overlay versions such as
+`R-2-N (HL-25/2)` use the same file; the overlay's lower height isn't modeled.
+
+**Not done, and this is where Long Beach grows:** the newer mixed-use and multifamily
+zones (MFR-L, MFR-M, MU-1 to MU-3, RMU3, RMU4), neighborhood commercial (CN*, CC*),
+PD-30 Downtown and the other planned developments (3,882 lots), specific plans (2,990
+lots), and institutional and industrial zones. Capacity is well understated until
+those are done, which is why this city is marked ⚠️ in WAVE_PLAN.
+
+**Judgment calls:** the density table sets bands by both area and width; we use area,
+which can run high on narrow lots. R-2-A also allows three-family homes under a note
+we didn't read, so it can run low. Parking uses 1.5 per home, for one bedroom.
