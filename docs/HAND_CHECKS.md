@@ -1220,3 +1220,35 @@ Rules: Lomita Municipal Code, Title XI, Chapter 1, read on Municode 2026-11-01 (
 ### LO-5. 25620 Oak St · RVD5000 (read as R-1) · 9,077 sq ft
 
 - One home → **1**. FAR 0.60 = 5,446 ÷ 1,062.5 = 5.1 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+## Hawthorne
+
+Rules: Hawthorne Municipal Code, Title 17, read on eCode360 2026-11-01 (includes Ord. 2263, June 2026).
+
+### HW-1. 12236 Ramona Ave · R-1 · 5,970 sq ft
+
+- One home → **1**. 50% coverage = 2,985 × 2 stories = 5,970 ÷ 1,062.5 = 5.6 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### HW-2. 3737 W 119th St · R-2 · 7,832 sq ft
+
+- At least 7,000 sq ft, so a duplex → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### HW-3. 3747 W 119th St · R-2 · 5,566 sq ft
+
+- Under the 7,000 sq ft duplex minimum → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### HW-4. 12220 Grevillea Ave · R-3 · 7,876 sq ft
+
+- 1,452 sq ft per home → 5.4 → **5**. **Result: 5, lot area.** Engine: 5 ✓ (9 homes today, so no net new.)
+
+### HW-5. 4510 W 120th St · R-3 · 4,682 sq ft
+
+- Under 5,000 sq ft, only a single-family home (§17.21.020) → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### HW-6. 3833 W 139th St · R-4 · 8,322 sq ft
+
+- 1,452 sq ft per home → 5.7 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### HW-7. 3831 W Rosecrans Ave · C-3 with Mixed Use Overlay · 15,141 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 10.4 → **10**. **Result: 10, lot area.** Engine: 10 ✓

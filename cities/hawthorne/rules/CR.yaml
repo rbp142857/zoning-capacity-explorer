@@ -1,0 +1,18 @@
+# Hawthorne CR. Every value cites the Hawthorne Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "CR"
+name: "C-R, Regional Commercial"
+family: nonresidential
+
+sources:
+  Z:
+    section: "HMC Ch. 17.30d (C-R Zone)"
+    url: https://ecode360.com/42648145
+
+residential_allowed: {value: false, source: Z, assumption: "We didn't read the use list closely. Homes come through the Mixed Use and Housing overlays; we don't count them here (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

@@ -890,3 +890,14 @@ A city rezoning under the new code could change any of these.
 Conservative calls: commercial zones count no homes, because homes need a conditional use permit in a mixed-use project, and stand-alone homes are
 limited to a Housing overlay we don't have. Lots in the overlay run low. Stories aren't in the code, so we fit 2 at 27 ft and 3 at 35 ft. South of Pacific Coast Highway the limit is 16 ft and one story
 without a variation permit, which we don't map, so those lots run high.
+
+## 39. Hawthorne (most zones)
+
+Not on the site yet. 16 files cover 11,199 of 11,536 lots (97.1%). Not done: SP (281 lots) and 56 lots with no zone. SCAG's records are dated 2016, and the code
+still uses the same zone names, though Ord. 2263 reorganized its residential standards in June 2026. A lot rezoned since 2016 would be wrong.
+
+Judgment calls: R-2 counts two homes at 7,000 sq ft and one below, reading the duplex minimum with §17.21.020. R-3 and R-4 count one home under 5,000 sq ft, and 1,452 sq ft per home above it.
+Stories come from §17.21.025 at 22 ft (2); it says nothing for 45 and 60 ft, so we fit 3 and 5. The 12 ft limit on narrow small lots and per-home open space aren't modeled, so those run high.
+The Mixed Use Overlay counts all-residential buildings at 30 per acre, which runs high unless 20% of homes are affordable, since it otherwise requires commercial space.
+
+Conservative calls: plain C-3, C-R, C-2, C-M, M-1, M-2, UOS, H, P and AMP count no homes, and most of their use lists weren't read closely. The Housing overlay isn't in our data, so lots there run low.

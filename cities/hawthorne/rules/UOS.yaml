@@ -1,0 +1,18 @@
+# Hawthorne UOS. Every value cites the Hawthorne Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "UOS"
+name: "UOS (SCAG's code)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "HMC Title 17 (Zoning)"
+    url: https://ecode360.com/42647075
+
+residential_allowed: {value: false, source: Z, assumption: "We didn't read this zone's chapter. We don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

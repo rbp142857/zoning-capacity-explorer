@@ -1,0 +1,41 @@
+# Hawthorne R-2. Every value cites the Hawthorne Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "R-2"
+name: "R-2 Zone"
+family: multifamily
+
+sources:
+  Z:
+    section: "HMC Ch. 17.20b (R-2 Zone)"
+    url: https://ecode360.com/42647604
+  G:
+    section: "HMC §§17.21.020 and 17.21.025"
+    url: https://ecode360.com/42647933
+  P:
+    section: "HMC Ch. 17.10f (Parking)"
+    url: https://ecode360.com/42649022
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit], source: Z}
+max_units_per_lot: {value: 2, source: Z}
+lot_area_per_unit_sqft: {value: 3500, source: Z, assumption: "A two-family home needs a 7,000 sq ft lot; that is 3,500 per home."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot under 7,000 sq ft keeps one home (assumed from the duplex minimum and §17.21.020)."
+small_lot_units_below_sqft: 7000
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3.5, max_ft: 5}, source: Z, assumption: "10% of lot width, at most 5 ft and at least 3.5 ft."}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 22, source: Z, assumption: "12 ft on lots under 40 ft average width and under 5,000 sq ft; not modeled, so those lots can run high."}
+max_stories: {value: 2, source: G, assumption: "§17.21.025: buildings limited to 22 ft have at most two stories."}
+lot_coverage: {value: 0.50, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Open space of 1,000 sq ft per home is not modeled, so these can run high."

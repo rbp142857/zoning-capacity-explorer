@@ -1,0 +1,39 @@
+# Hawthorne CR (MU). Every value cites the Hawthorne Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "CR (MU)"
+name: "C-R, Regional Commercial, with Mixed Use Overlay"
+family: commercial
+
+sources:
+  Z:
+    section: "HMC Ch. 17.05h (Mixed Use Overlay)"
+    url: https://ecode360.com/42649534
+  P:
+    section: "HMC Ch. 17.10f (Parking)"
+    url: https://ecode360.com/42649022
+
+residential_allowed: {value: true, source: Z, assumption: "Homes in combination with commercial uses, or stand-alone with 20% of homes affordable to lower-income households."}
+housing_types: {value: [multifamily, mixed_use], source: Z}
+lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "30 homes per acre: 43,560 divided by 30."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1452
+
+setbacks:
+  front_ft: {value: 15, source: Z, assumption: "15 ft for ground-floor residential; 5 ft for ground-floor commercial."}
+  side_ft: {value: 0, source: Z, assumption: "None, or 10 ft next to residential zones, not modeled."}
+  rear_ft: {value: 0, source: Z, assumption: "None, or 10 ft next to residential zones, not modeled."}
+
+max_height_ft: {value: 60, source: Z}
+max_stories: {value: 5, source: Z}
+lot_coverage: {value: 0.90, source: Z, assumption: "Building coverage and parking facilities together may not exceed 90% of the project area."}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces for a two- or three-bedroom home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: P, assumption: "1 guest space per 4 homes at four or more homes."}
+guest_parking_min_units: 4
+
+simplifications:
+  - "An all-residential building is counted, which runs high unless 20% of homes are affordable, since the code otherwise requires commercial space."
