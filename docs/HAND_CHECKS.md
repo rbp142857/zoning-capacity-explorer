@@ -898,3 +898,27 @@ Checked against the Whittier Municipal Code, Title 18 (Municode), read November 
 ### H6. 8930 Painter Ave · R-4 · 119,792 sq ft
 
 - 20,000 sq ft or more: 1,250 per home → 95.8 → **95**. **Result: 95, lot area.** Engine: 95 ✓
+
+## Arcadia (residential zones)
+
+Checked against the Arcadia Development Code (Municode), read November 1, 2026.
+
+### A1. 45 W Magna Vista Ave · R-1 · 11,655 sq ft
+
+- One home. Floor area: 4,375 + 35% of 1,655 = 4,954 sq ft → 4.7 → 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### A2. 462 Arbolada Dr · R (read as R-0) · 20,494 sq ft
+
+- One home. Floor area: 7,375 + 20% of 494 = 7,474 sq ft → 7. **Result: 4, SB 9.** Engine: 4 ✓
+
+### A3. 307 Genoa St · R-2 · 10,144 sq ft
+
+- 3,750 per home → 2.7 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### A4. 135 Diamond St · R-3 · 7,966 sq ft
+
+- 1,089 per home (40 per acre) → 7.3 → **7**. **Result: 7, lot area.** Engine: 7 ✓
+
+### A5. 437 S Baldwin Ave · R-3-R · 11,000 sq ft (50.1 × 219.9)
+
+- 1,450 per home → 7. Envelope: 18 ft, one story: 30.1 × 184.9 × 0.998 = 5,556 sq ft → 5.2 → **5**. **Result: 5, envelope.** Engine: 5 ✓

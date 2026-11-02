@@ -750,3 +750,14 @@ Specific Plan zone (809 lots), R-E and H-R, the MU zones, C-O, C-2, INV, MED, an
 Whittier sets density by lot-size steps, and its height limit is 35 ft in every one of
 these zones. **Parking wasn't read, so it isn't modeled here,** which can run high. R-4's
 optional development standards allow more on small lots; we use base figures.
+
+## 27. Arcadia (residential zones so far)
+
+Not on the site yet. 6 files from §9102.01 cover 12,159 of 13,375 lots (90.9%): R-1, R-M, SCAG's
+`R`, R-2, R-3, R-3-R. Not done: MU, DMU, CBD, commercial and industrial zones, R-R, OS, and
+the SP-ALC plan. Ord. No. 2400 changed density and added zones recently; the Municode text
+we read has R-3 at 40 per acre, which may be the updated figure.
+
+**Judgment calls, please review:** SCAG's `R` isn't a zone in the code; we read it as R-0, as
+its lots are large. It's capped at one home either way, so little depends on it. Floor area
+uses the schedule for north of Huntington Drive; south allows more. Parking wasn't read.
