@@ -1,0 +1,18 @@
+# Duarte H. Every value cites the Duarte Development Code (Municode, through Ord. No. 927, read 2026-11-01).
+zone: "H"
+name: "Hospital (H)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "Duarte Development Code Ch. 19.14, Table 2-7"
+    url: https://library.municode.com/ca/duarte/codes/development_code?nodeId=ART2ZOALUSDEST_CH19.14HOZOH
+
+residential_allowed: {value: false, source: Z, assumption: "Table 2-7 lists no dwellings."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not allowed."}

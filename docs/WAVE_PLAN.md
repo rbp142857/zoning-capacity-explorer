@@ -45,7 +45,7 @@ building. Each is a Glendale-sized job via the SCAG fast path
 | Monrovia ✅ | 9,783 | 30 (11) | 140 | 188 |
 | Santa Clarita ✅ | 51,872 | 25 (5) | 128 | 495 |
 | Burbank ✅ | 25,423 | 41 (7) | 104 | 321 |
-| Duarte | 5,503 | 18 (6) | 103 | 122 |
+| Duarte ✅ | 5,503 | 18 (6) | 103 | 122 |
 
 Together: 147,000 parcels, ~1,175 homes/yr in 2+ unit buildings (4.5%).
 Good order: Burbank first (closest to Glendale), then Santa Monica (most

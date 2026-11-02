@@ -660,3 +660,18 @@ counted in CC, CN, CR, BP and I.
   NU and UR1 are too low where lots could be split.
 - **BP lots hold 2,570 homes today** but allow none, which suggests that SCAG's zones or
   planned developments don't tell the whole story there.
+
+## 20. Duarte
+
+Not on the site yet: publishing a new city's site files is the owner's call.
+
+**Zoning data.** SCAG's table. 89.9% of lots are modeled. Not modeled: specific plans
+(468 lots, including the Town Center area), O (71 lots), RMH and 11 lots with no zone.
+
+**Rules.** 14 zone files from the Development Code: R1, R1A, R1B, R1D, R1E, R2, R3, R4,
+and no homes in CG, CP, CF, H, M and PF. R-1F isn't on the map.
+
+**How Duarte differs:** R-2 has no density table, so we cap it at two homes, since
+multi-family isn't allowed there. Parking is heavy: 2 garage spaces per home plus
+half a space more in apartments. R-3 and R-4 can go higher with a use permit, which
+we don't count. M lots show 742 homes today but allow none, worth a second look.

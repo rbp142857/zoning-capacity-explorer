@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -430,6 +430,41 @@ def santa_clarita():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", SANTA_CLARITA, ids=[c[0] for c in SANTA_CLARITA])
 def test_hand_checked_santa_clarita_parcel(santa_clarita, address, zone, lot, max_units, binding, limits):
     rules, state, a = santa_clarita
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+DUARTE = [
+    ("1835 Bradbury Ave", "R1", Lot(6415, 59.7, 108.5, (), 4554, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("2621 Starcrest Dr", "R1A", Lot(8774, 64.0, 161.4, (), 9165, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("2228 High Mesa Dr", "R1D", Lot(19505, 140.0, 170.2, (), 8670, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("1709 3rd St", "R2", Lot(7412, 59.3, 125.7, (), 3081, 1),
+     3, "state_law:adu", {"density": 2, "state_adu": 3}),
+    ("1392 3rd St", "R3", Lot(6424, 60.5, 106.7, (), 3699, 4),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 8}),
+    ("1709 Huntington Dr", "R4", Lot(28287, 106.2, 267.7, (), 2658, 0),
+     18, "lot_area_per_unit", {"lot_area_per_unit": 18}),
+    ("1475 Huntington Dr", "CG", Lot(16967, 119.8, 148.8, (), 3198, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def duarte():
+    rules = load_zone_rules(REPO / "cities" / "duarte" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", DUARTE, ids=[c[0] for c in DUARTE])
+def test_hand_checked_duarte_parcel(duarte, address, zone, lot, max_units, binding, limits):
+    rules, state, a = duarte
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

@@ -1,0 +1,31 @@
+# Duarte R1B. Every value cites the Duarte Development Code (Municode, through Ord. No. 927, read 2026-11-01).
+zone: "R1B"
+name: "Single-Family (R-1B)"
+family: single_family
+
+sources:
+  Z:
+    section: "Duarte Development Code §19.10.030, Tables 2-1 and 2-3"
+    url: https://library.municode.com/ca/duarte/codes/development_code?nodeId=ART2ZOALUSDEST_CH19.10REZO
+  P:
+    section: "Duarte Development Code Ch. 19.38 (off-street parking)"
+    url: https://library.municode.com/ca/duarte/codes/development_code?nodeId=ART3REAPALZO_CH19.38OREPAREDE
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 10000, source: Z}
+min_lot_width_ft: {value: 70, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. Duplexes under §19.10.035 and ADUs follow state law, modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 20, source: Z, assumption: "20 ft for two stories, 10 ft for one; we use 20 ft."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.35, source: Z, assumption: "35%; 40% for single-story homes on lots of 8,000 sq ft or less in R-1 and R-1A isn't used."}
+parking_per_unit: {value: 2, source: P, assumption: "2 in a garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "The multi-story setback (§19.10.040) and minimum home sizes are not modeled."

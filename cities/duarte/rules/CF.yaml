@@ -1,0 +1,18 @@
+# Duarte CF. Every value cites the Duarte Development Code (Municode, through Ord. No. 927, read 2026-11-01).
+zone: "CF"
+name: "Freeway Commercial (C-F)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "Duarte Development Code Ch. 19.12, Table 2-5"
+    url: https://library.municode.com/ca/duarte/codes/development_code?nodeId=ART2ZOALUSDEST_CH19.12COZO
+
+residential_allowed: {value: false, source: Z, assumption: "Table 2-5 lists no dwellings."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not allowed."}

@@ -722,3 +722,29 @@ November 1, 2026. Density is per acre, so land per home is 43,560 divided by it.
 ### C9. 17737 Sierra Hwy · CC · 14,644 sq ft
 
 - Homes not counted in CC (see METHODOLOGY). **Result: 0.** Engine: 0 ✓
+
+## Duarte
+
+Checked against the Duarte Development Code (Municode, through Ord. No. 927), read
+November 1, 2026.
+
+### D1 to D3. R1, R1A and R1D lots
+
+- 1835 Bradbury Ave, 2621 Starcrest Dr, 2228 High Mesa Dr: one home each (Table 2-1 and 2-3). **Result: 4, SB 9.** Engine: 4 ✓
+
+### D4. 1709 3rd St · R2 · 7,412 sq ft
+
+- Two-family at most (Table 2-1) → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### D5. 1392 3rd St · R3 · 6,424 sq ft (60.5 × 106.7)
+
+- 2,074 sq ft per home (Table 2-4) → 3.1 → **3**. Envelope: 50.5 × 56.7 × 0.995 × 3 stories = 8,547 sq ft → 8.
+- **Result: 3, lot area.** 4 homes today. Engine: 3 ✓
+
+### D6. 1709 Huntington Dr · R4 · 28,287 sq ft
+
+- 1,556 sq ft per home → 18.2 → **18**. **Result: 18, lot area.** Engine: 18 ✓
+
+### D7. 1475 Huntington Dr · CG · 16,967 sq ft
+
+- Table 2-5 lists no dwellings. **Result: 0, not allowed.** Engine: 0 ✓
