@@ -591,8 +591,8 @@ Article 35 (ADUs) wasn't checked against the state path.
 
 Not on the site yet: publishing a new city's site files is the owner's call.
 
-**Zoning data.** SCAG's table. 94.4% of lots are modeled. Not modeled: Sunset Specific
-Plan (SSP, 151 lots), other specific plans, and 78 lots SCAG doesn't match.
+**Zoning data.** SCAG's table. 94.4% of lots are modeled. Not modeled: the
+SSP zone (151 lots), other specific plans, and 78 lots SCAG doesn't match.
 
 **Rules.** 17 zone files from Title 19: R1A, R1B, R1C, R2, R3A, R3B, R3C, R4A, R4B,
 R4B-C, CN1, CC1, CC2, CA, CR, and no homes in CN2 and PF.
@@ -666,7 +666,7 @@ counted in CC, CN, CR, BP and I.
 Not on the site yet: publishing a new city's site files is the owner's call.
 
 **Zoning data.** SCAG's table. 89.9% of lots are modeled. Not modeled: specific plans
-(468 lots, including the Town Center area), O (71 lots), RMH and 11 lots with no zone.
+(468 lots), O (71 lots), RMH and 11 lots with no zone.
 
 **Rules.** 14 zone files from the Development Code: R1, R1A, R1B, R1D, R1E, R2, R3, R4,
 and no homes in CG, CP, CF, H, M and PF. R-1F isn't on the map.
@@ -689,7 +689,7 @@ R-2-A, R-2-L, R-3-S, R-3-4, R-3-T, R-4-R, R-4-N. Height-overlay versions such as
 
 **Not done, and this is where Long Beach grows:** the newer mixed-use and multifamily
 zones (MFR-L, MFR-M, MU-1 to MU-3, RMU3, RMU4), neighborhood commercial (CN*, CC*),
-PD-30 Downtown and the other planned developments (3,882 lots), specific plans (2,990
+PD-30 and the other planned developments (3,882 lots), specific plans (2,990
 lots), and institutional and industrial zones. Capacity is well understated until
 those are done, which is why this city is marked ⚠️ in WAVE_PLAN.
 
@@ -745,7 +745,7 @@ are all to the code on Municode. Minimum lot sizes are read as applying to new l
 ## 26. Whittier (R-1 to R-4 so far)
 
 Not on the site yet. 4 files from Title 18 cover 18,779 of 21,964 lots (85.5%). Not done: the
-Specific Plan (809 lots, Uptown), R-E and H-R, the MU zones, C-O, C-2, INV, MED, and others.
+Specific Plan zone (809 lots), R-E and H-R, the MU zones, C-O, C-2, INV, MED, and others.
 
 Whittier sets density by lot-size steps, and its height limit is 35 ft in every one of
 these zones. **Parking wasn't read, so it isn't modeled here,** which can run high. R-4's
