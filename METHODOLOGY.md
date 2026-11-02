@@ -741,3 +741,12 @@ modeled", not zero. Also not done: MU, C-1, C-4, A-1, and RR.
 Judgment calls: `-PD` and `-D` lots use the base zone's rules, though a PD can set its own.
 The city's site didn't load in our browser because of a certificate error, so the citations
 are all to the code on Municode. Minimum lot sizes are read as applying to new lots.
+
+## 26. Whittier (R-1 to R-4 so far)
+
+Not on the site yet. 4 files from Title 18 cover 18,779 of 21,964 lots (85.5%). Not done: the
+Specific Plan (809 lots, Uptown), R-E and H-R, the MU zones, C-O, C-2, INV, MED, and others.
+
+Whittier sets density by lot-size steps, and its height limit is 35 ft in every one of
+these zones. **Parking wasn't read, so it isn't modeled here,** which can run high. R-4's
+optional development standards allow more on small lots; we use base figures.

@@ -1,0 +1,39 @@
+# Whittier R-3. Every value cites the Whittier Municipal Code, Title 18 (Municode, read 2026-11-01).
+zone: "R-3"
+name: "Medium Multiple Residential (R-3)"
+family: multifamily
+
+sources:
+  Z:
+    section: "WMC §§18.20.020 and 18.20.030"
+    url: https://library.municode.com/ca/whittier/codes/code_of_ordinances?nodeId=TIT18ZO_DIVIZO_CH18.20MEMUREZO
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+min_lot_area_sqft: {value: 7000, source: Z, assumption: "For new lots; existing smaller lots get the density rule."}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 7001, value: 2050}
+      - {value: 1750}
+  source: Z
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 2050
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: {pct_of_width: 0.15, min_ft: 5, max_ft: 50}, source: Z, assumption: "Both sides total 30% of lot width within the front 50 ft, each at least 10% and 5 ft; we use 15% per side."}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits 35 ft, not stories; we fit 3."}
+
+simplifications:
+  - "Parking (not read for this pass) is not modeled, so these can run high."

@@ -870,3 +870,31 @@ Checked against the Santa Fe Springs Code of Ordinances, Ch. 155 (Municode), rea
 ### F3. 12341 Heritage Springs Dr · R-3 · 59,585 sq ft
 
 - 1,742.4 sq ft per home → 34.2 → **34**. **Result: 34, lot area.** Engine: 34 ✓
+
+## Whittier (residential zones)
+
+Checked against the Whittier Municipal Code, Title 18 (Municode), read November 1, 2026.
+
+### H1. 14854 Carnell St · R-1 · 15,981 sq ft
+
+- One home (§18.16.020). **Result: 4, SB 9.** Engine: 4 ✓
+
+### H2. 13719 Mar Vista St · R-2 · 15,104 sq ft
+
+- 3,000 sq ft per home (§18.18.020) → 5.03 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### H3. 7703 Comstock Ave · R-3 · 7,035 sq ft
+
+- Over 7,000 sq ft: 1,750 per home (§18.20.020) → 4.02 → **4**. **Result: 4, lot area.** 8 homes today. Engine: 4 ✓
+
+### H4. 7727 Newlin Ave · R-4 · 5,965 sq ft
+
+- 7,000 sq ft or less: 2,050 per home (§18.22.020) → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### H5. 7723 Milton Ave · R-4 · 7,196 sq ft
+
+- 7,001 to 19,999 sq ft: 1,400 per home → 5.1 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### H6. 8930 Painter Ave · R-4 · 119,792 sq ft
+
+- 20,000 sq ft or more: 1,250 per home → 95.8 → **95**. **Result: 95, lot area.** Engine: 95 ✓

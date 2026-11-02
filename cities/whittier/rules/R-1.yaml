@@ -1,0 +1,26 @@
+# Whittier R-1. Every value cites the Whittier Municipal Code, Title 18 (Municode, read 2026-11-01).
+zone: "R-1"
+name: "Single-Family Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "WMC §§18.16.020 and 18.16.030"
+    url: https://library.municode.com/ca/whittier/codes/code_of_ordinances?nodeId=TIT18ZO_DIVIZO_CH18.16SIMIREZO
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 7000, source: Z}
+min_lot_width_ft: {value: 60, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One single-family home. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits 35 ft, not stories; we fit 3."}
+
+simplifications:
+  - "Parking (not read for this pass) is not modeled, so these can run high."

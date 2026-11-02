@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -624,6 +624,39 @@ def santa_fe_springs():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", SANTA_FE_SPRINGS, ids=[c[0] for c in SANTA_FE_SPRINGS])
 def test_hand_checked_santa_fe_springs_parcel(santa_fe_springs, address, zone, lot, max_units, binding, limits):
     rules, state, a = santa_fe_springs
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+WHITTIER = [
+    ("14854 Carnell St", "R-1", Lot(15981, 50.0, 325.0, (), 17437, 1),
+     4, "state_law:sb9", {"density": 1, "state_sb9": 4}),
+    ("13719 Mar Vista St", "R-2", Lot(15104, 83.0, 184.2, (), 19395, 9),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5}),
+    ("7703 Comstock Ave", "R-3", Lot(7035, 50.5, 140.4, (), 17326, 8),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4}),
+    ("7727 Newlin Ave", "R-4", Lot(5965, 48.8, 122.8, (), 16960, 3),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "state_adu": 3}),
+    ("7723 Milton Ave", "R-4", Lot(7196, 51.5, 140.2, (), 17180, 8),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5}),
+    ("8930 Painter Ave", "R-4", Lot(119792, 285.1, 421.6, (), 15554, 92),
+     95, "lot_area_per_unit", {"lot_area_per_unit": 95}),
+]
+
+
+@pytest.fixture(scope="module")
+def whittier():
+    rules = load_zone_rules(REPO / "cities" / "whittier" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", WHITTIER, ids=[c[0] for c in WHITTIER])
+def test_hand_checked_whittier_parcel(whittier, address, zone, lot, max_units, binding, limits):
+    rules, state, a = whittier
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding
