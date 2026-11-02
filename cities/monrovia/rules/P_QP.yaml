@@ -1,0 +1,18 @@
+# Monrovia P/QP. Every value cites the Monrovia Municipal Code, Title 17 (American Legal, read 2026-11-01).
+zone: "P/QP"
+name: "Public/Quasi-Public (P/QP)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "MMC Ch. 17.08 (permitted uses)"
+    url: https://codelibrary.amlegal.com/codes/monrovia/latest/monrovia_ca/0-0-0-71610
+
+residential_allowed: {value: false, source: Z, assumption: "No housing use in Table 17.08."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

@@ -630,3 +630,54 @@ parking rarely applies.
 
 - Mixed-use projects aren't allowed in CN2 (Table 2-5 note 12).
 - **Result: 0, not allowed.** Engine: 0 ✓
+
+## Monrovia
+
+Checked against the Monrovia Municipal Code, Title 17 (American Legal), read
+November 1, 2026.
+
+### M1. 438 Kirkwood Ln · RL · 7,093 sq ft
+
+- One home. Floor area (§17.12.020): 40% of the first 5,000 + 35% of the rest = 2,000 + 733 = 2,733 sq ft → 2.6 → 2.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### M2. 523 W Hillcrest Blvd · RE · 19,141 sq ft
+
+- Floor area: 2,000 + 1,750 + 15% of 9,141 = 5,121 sq ft → 4.8 → 4.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### M3. Unaddressed lot · RF · 55,280 sq ft
+
+- Floor area (§17.12.010): 35% of 20,000 + 10% of 35,280 = 10,528 sq ft → 9.9 → 9.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### M4. 816 Bonita St · RM3500 · 8,252 sq ft
+
+- 3,500 per home → 2.4 → **2**. FAR 40% = 3,301 sq ft → 3. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### M5. 1703 Alamitas Ave · RM4000 · 16,421 sq ft
+
+- 4,000 per home → 4.1 → **4**. FAR 40% = 6,568 sq ft → 6.
+- **Result: 4, lot area.** Engine: 4 ✓
+
+### M6. 856 W Olive Ave · RM/RH · 17,297 sq ft (142.6 × 179.4)
+
+- Over 15,000 sq ft: no density limit, FAR 75% = 12,973 sq ft → 12.
+- Parking: 14,887 sq ft of ground left after the front yard. 11 homes: 5,844 + 28 spaces (8,400) fits. 12 homes: 6,375 + 30 spaces (9,000) doesn't → **11**.
+- **Result: 11, parking.** Engine: 11 ✓
+
+### M7. 526 Fano St D · RM/RH · 2,753 sq ft
+
+- Under 15,000 sq ft and under 5,000: 1 home at 2,500 sq ft each. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### M8. 543 W Duarte Rd · RH · 23,281 sq ft
+
+- Over 15,000 sq ft: FAR 75% = 17,461 sq ft → 16.4 → **16**. Near transit: no parking.
+- **Result: 16, envelope.** Engine: 16 ✓
+
+### M9. 950 W Foothill Blvd · NC · 19,596 sq ft
+
+- Homes in NC are marked LUE (only where the Land Use Element allows). We have no map, so none counted.
+- **Result: 0, not counted.** Engine: 0 ✓

@@ -610,3 +610,29 @@ R4B-C, CN1, CC1, CC2, CA, CR, and no homes in CN2 and PF.
 
 **Worth a second reading:** R4B-C's FAR of 0.58 is printed in Table 2-3 and used as
 printed, though it looks low for four stories (11 lots).
+
+## 18. Monrovia
+
+Not on the site yet: publishing a new city's site files is the owner's call.
+
+**Zoning data.** SCAG's table. 85% of lots are modeled. The gap is planned
+developments: 1,186 lots coded `PD`, each with its own ordinance. Also not modeled:
+HC-D (72 lots; downtown's Chapter 17.14 wasn't read for density), specific plans,
+HWP, ANF, 71 lots with no zone, and SCAG codes such as `1/5` that aren't in the code.
+
+**Rules.** 17 zone files from Title 17: RF, RE, RL, RM2500, RM3000, RM3500, RM4000
+(`/PUD` versions use the same files), RM/RH, RH, and no homes counted in NC, C-R/S,
+RCC, RCM, O/RD/LM, BE, M and P/QP.
+
+**How Monrovia differs:**
+
+- **Home size has a sliding scale** in single-family zones, such as 40% of the first
+  5,000 sq ft, 35% of the next 5,000, and 15% of the rest.
+- **RM/RH and RH change at 15,000 sq ft.** Below it, homes are counted per lot area.
+  Above it, there's no density limit, only 75% FAR, so large lots jump in capacity.
+- **Six or more homes need more parking:** 2.5 spaces per home.
+
+**Judgment calls:** lots smaller than a zone's minimum still get its density, since
+we read the minimum as applying to new lots. RH sets no story limit in the code; we use
+3, and FAR limits first. RM/RH uses RM's height. NC homes aren't counted, since the code
+allows them only where the Land Use Element says, which we have no map of.
