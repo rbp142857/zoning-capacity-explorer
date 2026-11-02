@@ -761,3 +761,14 @@ we read has R-3 at 40 per acre, which may be the updated figure.
 **Judgment calls, please review:** SCAG's `R` isn't a zone in the code; we read it as R-0, as
 its lots are large. It's capped at one home either way, so little depends on it. Floor area
 uses the schedule for north of Huntington Drive; south allows more. Parking wasn't read.
+
+## 28. South Gate (NL and NM so far)
+
+Not on the site yet. 2 files from Chapter 11.25 cover 13,817 of 16,268 lots (84.9%). Not done: the
+mixed-use and corridor zones (MS, TMU, HMU, CDR, CC, UN), which is where the city plans more
+homes, and industrial and other zones. Parking wasn't read.
+
+**Open question, please review:** NL's table allows 5 homes per acre and "max. 2 separate living
+units" on a 5,000 sq ft lot. We read the second unit as an ADU, so one main home. NL lots
+average about 1.4 homes today, so a duplex reading is plausible and would raise local capacity
+a lot. State-law numbers (SB 9) are unaffected.

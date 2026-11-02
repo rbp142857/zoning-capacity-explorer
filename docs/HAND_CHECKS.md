@@ -922,3 +922,19 @@ Checked against the Arcadia Development Code (Municode), read November 1, 2026.
 ### A5. 437 S Baldwin Ave · R-3-R · 11,000 sq ft (50.1 × 219.9)
 
 - 1,450 per home → 7. Envelope: 18 ft, one story: 30.1 × 184.9 × 0.998 = 5,556 sq ft → 5.2 → **5**. **Result: 5, envelope.** Engine: 5 ✓
+
+## South Gate (NL and NM)
+
+Checked against the South Gate Municipal Code, Ch. 11.25 (eCode360), read November 1, 2026.
+
+### Q1. 8976 Annetta Ave · NL · 5,108 sq ft
+
+- One main home (see METHODOLOGY section 28). **Result: 4, SB 9.** Engine: 4 ✓
+
+### Q2. 9739 Elizabeth Ave · NM · 4,177 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 1.9 → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### Q3. 4100 Firestone Blvd · NM · 18,030 sq ft
+
+- 2,178 sq ft per home → 8.3 → **8**. **Result: 8, lot area.** Engine: 8 ✓

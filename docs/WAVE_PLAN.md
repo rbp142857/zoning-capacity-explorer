@@ -87,7 +87,7 @@ single-family, apartment, commercial, no-housing and Chapter 1A zones. Not done:
 yet: its 140 MB of site files need the owner's go-ahead. See METHODOLOGY section 14.
 
 **Open decisions for the owner** (the conservative reading is in use for now):
-SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 under Chapter 1A; publishing LA.
+South Gate NL duplexes; SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 under Chapter 1A; publishing LA.
 
 **Open data gap:** Inglewood's Transit Oriented plan areas need the city's own zoning
 map and plan (⚠️ above; see METHODOLOGY section 16). SP-4 in El Monte is similar.
@@ -143,7 +143,7 @@ Break it into sub-steps, each shipped and validated on its own:
 
 - **Long Beach** ⚠️ (residential zones done; mixed-use, PD and commercial not): 87,000 parcels, ~590 homes/yr; 177 zone codes (20 for
   90%), many of them planned-development districts. Treat like a small LA.
-- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27).
+- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27); South Gate NL and NM ⚠️ (section 28).
 - **23 cities with 30–100 homes/yr in 2+ unit buildings:** Lancaster,
   Gardena, Norwalk, Santa Fe Springs, Whittier, Arcadia, South Gate, Culver
   City, Montebello, Pomona, Rolling Hills Estates, West Covina, Westlake
