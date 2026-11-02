@@ -1,0 +1,24 @@
+# Torrance A1. Every value cites the Torrance Municipal Code, Division 9 (Code Publishing, read 2026-11-02; current through Ord. 3969, June 23, 2026).
+zone: "A1"
+name: "Light Agricultural (A-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "TMC §§91.15.1 to 91.15.4"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.15
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
+sb9_allowed: {value: false, source: Z, assumption: "SB 9 covers single-family residential zones. This is an agricultural district, so we don't apply it (conservative), as with LA's A1 and A2; see the open decision."}
+
+setbacks:
+  front_ft: {value: 20, source: Z, assumption: "R-1's yards, per §91.15.4."}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 3, max_ft: 100}, source: Z, assumption: "R-1's yards, per §91.15.4."}
+  rear_ft: {value: 20, source: Z, assumption: "R-1's yards, per §91.15.4."}
+
+max_height_ft: {value: 27, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height to 27 ft; we fit 2."}

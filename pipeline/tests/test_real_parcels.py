@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1196,3 +1196,52 @@ def test_coverage_band_with_a_share_as_value_is_rejected(agoura_hills):
     data["lot_coverage"]["value"]["bands"][0] = {"below": 10000, "value": 0.5}
     with pytest.raises(ValueError, match="lot_coverage bands"):
         type(rules["RS"]).model_validate(data)
+
+
+TORRANCE = [
+    ("3313 W 166th St", "R1", Lot(5350, 53.5, 100.0, (), 6724, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 3, "state_adu": 3, "state_sb9": 4}),
+    ("4566 Mindora Dr", "R1", Lot(9000, 60.0, 150.1, (), 19127, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 5, "state_sb9": 4}),
+    ("2116 Santa Cruz Ct", "R2", Lot(6406, 61.0, 105.0, (), 17792, 2),
+     3, "state_law:adu", {"density": 2, "envelope": 3, "parking": 3, "state_adu": 3}),
+    ("3564 Del Amo Blvd", "R3", Lot(6000, 50.0, 120.0, (), 9444, 4),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 5, "parking": 4}),
+    ("16817 Yukon Ave", "R3", Lot(10001, 50.0, 200.0, (), 5114, 9),
+     6, "lot_area_per_unit", {"lot_area_per_unit": 6, "envelope": 9, "parking": 7}),
+    ("21010 Anza Ave", "R3", Lot(35755, 132.0, 272.0, (), 12928, 34),
+     20, "envelope", {"lot_area_per_unit": 22, "envelope": 20, "parking": 29}),
+    ("2407 Gramercy Ave", "R33", Lot(6209, 50.0, 124.2, (), 17678, 3),
+     3, "density", {"density": 3, "lot_area_per_unit": 3, "envelope": 5}),
+    ("4033 W 182nd St", "RR3", Lot(9555, 51.1, 186.8, (), 3719, 5),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 12, "parking": 7}),
+    ("16700 Yukon Ave", "R4", Lot(58769, 235.1, 250.0, (), 5481, 50),
+     58, "lot_area_per_unit", {"lot_area_per_unit": 58, "envelope": 186, "parking": 62}),
+    ("2202 W 230th St", "RP", Lot(7571, 65.0, 118.7, (), 16673, 1),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 9, "parking": 5}),
+    ("17305 Crenshaw Blvd", "C2", Lot(27114, 123.0, 220.5, (), 7684, 1),
+     16, "lot_area_per_unit", {"lot_area_per_unit": 16, "envelope": 81, "parking": 28}),
+    ("4565 Sharynne Ln", "A1", Lot(72755, 167.9, 434.7, (), 19338, 3),
+     3, "state_law:adu", {"density": 1, "state_adu": 3}),
+    ("3811 Jason Cir", "RTH", Lot(6444, 55.2, 120.0, (), 19603, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "parking": 4, "state_adu": 3}),
+    ("1855 Del Amo Blvd", "M2", Lot(20428, 102.7, 212.7, (), 15829, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def torrance():
+    rules = load_zone_rules(REPO / "cities" / "torrance" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", TORRANCE, ids=[c[0] for c in TORRANCE])
+def test_hand_checked_torrance_parcel(torrance, address, zone, lot, max_units, binding, limits):
+    rules, state, a = torrance
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"

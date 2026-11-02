@@ -1356,3 +1356,63 @@ Rules: Agoura Hills Municipal Code, Article IX, read on Municode 2026-11-02. Eac
 ### AH-10. 28230 Dorothy Dr · CRS · 21,836 sq ft
 
 - Table I allows only a caretaker's or owner's residence. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Torrance
+
+Rules: Torrance Municipal Code, Division 9, read on Code Publishing 2026-11-02 (current through Ord. 3969). Each home uses 1,062.5 sq ft of building. Parking uses 300 sq ft per space, and ground excludes the front yard.
+
+### TO-1. 3313 W 166th St · R1 · 5,350 sq ft
+
+- One home → **1**. 40% coverage = 2,140 × 2 stories = 4,280; FAR 0.6 = 3,210, which binds; ÷ 1,062.5 = 3.02 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### TO-2. 4566 Mindora Dr · R1 · 9,000 sq ft
+
+- One home → **1**. FAR 0.6 = 5,400 ÷ 1,062.5 = 5.08 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### TO-3. 2116 Santa Cruz Ct · R2 · 6,406 sq ft
+
+- Two homes → **2**. FAR 0.65 = 4,164 ÷ 1,062.5 = 3.9 → 3. Parking: ground is the two-thirds left after open space, 4,270; each home takes 531 + 600 = 1,131, so 3 fit. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### TO-4. 3564 Del Amo Blvd · R3 · 6,000 sq ft
+
+- 1,600 sq ft per home → 3.75 → **3**. A 3-home lot gets FAR 1.0 = 6,000 ÷ 1,062.5 = 5.6 → 5. Parking: ground 5,000; 4 homes need 2,400 + 2,125 = 4,525, which fits; 5 need 3,000 + 2,656 = 5,656, which doesn't → 4. **Result: 3, lot area.** Engine: 3 ✓ (4 homes today, so no net new.)
+
+### TO-5. 16817 Yukon Ave · R3 · 10,001 sq ft
+
+- 1,600 → 6.25 → **6**. FAR 1.0 → 9.4 → 9. Parking: ground 9,001; 7 homes need 4,200 + 3,719 = 7,919, which fits; 8 need 4,800 + 4,250 = 9,050, which doesn't → 7. **Result: 6, lot area.** Engine: 6 ✓ (9 homes today.)
+
+### TO-6. 21010 Anza Ave · R3 · 35,755 sq ft
+
+- 1,600 → 22.3 → 22. Too large for the 3-to-10-home allowance, so FAR 0.6 = 21,453 ÷ 1,062.5 = 20.2 → **20**. **Result: 20, envelope.** Engine: 20 ✓ (34 homes today.)
+
+### TO-7. 2407 Gramercy Ave · R33 · 6,209 sq ft
+
+- At most 3 per lot; 1,600 → 3.88 → 3. FAR 1.0 → 5.8 → 5. **Result: 3, the cap.** Engine: 3 ✓
+
+### TO-8. 4033 W 182nd St · RR3 · 9,555 sq ft
+
+- 1,600 → 5.97 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### TO-9. 16700 Yukon Ave · R4 · 58,769 sq ft
+
+- 1,000 → 58.8 → **58**. Yards leave 225.1 × 220 = 49,522 × 4 stories ÷ 1,062.5 = 186. Parking: ground 54,067; each home takes 266 + 600 = 866 → 62. **Result: 58, lot area.** Engine: 58 ✓
+
+### TO-10. 2202 W 230th St · RP · 7,571 sq ft
+
+- 1,600 → 4.7 → **4**. Yards leave 55 × 88.7 × 0.981 = 4,787; × 2 ÷ 1,062.5 = 9. **Result: 4, lot area.** Engine: 4 ✓
+
+### TO-11. 17305 Crenshaw Blvd · C2 · 27,114 sq ft
+
+- 1,600 (the stricter of the article's two figures) → 16.9 → **16**. Yards leave 113 × 190.5 = 21,520; × 4 ÷ 1,062.5 = 81. Parking: ground 24,654 ÷ 866 → 28. **Result: 16, lot area.** Engine: 16 ✓
+
+### TO-12. 4565 Sharynne Ln · A1 · 72,755 sq ft
+
+- One home → **1**. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### TO-13. 3811 Jason Cir · RTH · 6,444 sq ft
+
+- 12 per acre = 3,630 → 1.8 → **1**. Parking: 4 homes need 3,000 + 2,125 = 5,125 of 6,444; 5 need 3,900 + 2,656 = 6,556 → 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### TO-14. 1855 Del Amo Blvd · M2 · 20,428 sq ft
+
+- Article 31 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓

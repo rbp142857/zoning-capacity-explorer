@@ -1,0 +1,38 @@
+# Torrance R4. Every value cites the Torrance Municipal Code, Division 9 (Code Publishing, read 2026-11-02; current through Ord. 3969, June 23, 2026).
+zone: "R4"
+name: "Unlimited Multiple Family Residential (R-4)"
+family: multifamily
+
+sources:
+  Z:
+    section: "TMC §§91.9.1 to 91.9.13"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.9
+  P:
+    section: "TMC §93.2.3 (multiple-family parking)"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0903.html#93.2.3
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 1000, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1000
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 3, max_ft: 5}, source: Z, assumption: "As in R-3, plus 1 ft per story above the second, never over 5 ft."}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 50, source: Z}
+max_stories: {value: 4, source: Z, assumption: "The code limits height to 50 ft, not stories; we fit 4 (assumed)."}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces for 2 bedrooms or fewer; 3 bedrooms or more need 3. We use 2. None within ½ mile of a major transit stop (the AB 2097 path), and none under the Housing Corridor Overlay, which is not in our data."}
+
+simplifications:
+  - "300 sq ft of usable open space per home is not modeled, so these can run high. The Planning Commission reviews plans (§91.9.13)."

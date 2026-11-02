@@ -1,0 +1,29 @@
+# Torrance R1. Every value cites the Torrance Municipal Code, Division 9 (Code Publishing, read 2026-11-02; current through Ord. 3969, June 23, 2026).
+zone: "R1"
+name: "Single Family Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "TMC §§91.4.1 to 91.4.11"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.4
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z, assumption: "20 ft on average; parts can reach 15 ft. We use 20."}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 3, max_ft: 100}, source: Z, assumption: "A two-story home needs 10% of the lot width each side, at least 3 ft, with no 5 ft cap. One-story homes cap at 5 ft."}
+  rear_ft: {value: 20, source: Z, assumption: "20 ft on average for two stories, never under 15 ft; 15 ft on average for one story."}
+
+max_height_ft: {value: 27, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.40, source: Z, assumption: "40% for two stories; 50% for one story, which fits less floor area."}
+max_far: {value: 0.6, source: Z, assumption: "The 0.6 includes the garage, which we don't subtract, so the envelope can run high. The one-home limit binds either way."}
+min_open_space_share: {value: 0.3333, source: Z}
+
+simplifications:
+  - "The Hillside and Local Coastal Overlay (Art. 41) isn't in our data; its lots can have lower limits."
