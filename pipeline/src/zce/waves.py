@@ -30,7 +30,7 @@ CKAN_SQL = "https://data.ca.gov/api/3/action/datastore_search_sql"
 APR_A2 = "fe505d9b-8c36-42ba-ba30-08bc4f34e022"
 HEADERS = {"User-Agent": "zoning-capacity-explorer (open-source research tool)"}
 YEARS = (2018, 2025)
-DONE = {"Pasadena", "Glendale", "Burbank", "Santa Monica", "El Monte", "Inglewood", "West Hollywood", "Monrovia", "Santa Clarita", "Duarte", "Long Beach", "Lancaster", "Gardena", "Norwalk", "Santa Fe Springs", "Whittier", "Arcadia", "South Gate", "Culver City", "Montebello", "Rolling Hills Estates", "West Covina", "Westlake Village", "Alhambra", "Palmdale", "Carson", "Azusa", "Lomita", "Hawthorne", "San Gabriel", "Monterey Park", "Agoura Hills", "Torrance", "Artesia", "Avalon", "Baldwin Park", "Bell", "Bell Gardens", "Bellflower"}
+DONE = {"Pasadena", "Glendale", "Burbank", "Santa Monica", "El Monte", "Inglewood", "West Hollywood", "Monrovia", "Santa Clarita", "Duarte", "Long Beach", "Lancaster", "Gardena", "Norwalk", "Santa Fe Springs", "Whittier", "Arcadia", "South Gate", "Culver City", "Montebello", "Rolling Hills Estates", "West Covina", "Westlake Village", "Alhambra", "Palmdale", "Carson", "Azusa", "Lomita", "Hawthorne", "San Gabriel", "Monterey Park", "Agoura Hills", "Torrance", "Artesia", "Avalon", "Baldwin Park", "Bell", "Bell Gardens", "Bellflower", "Beverly Hills"}
 OUT_DIR = REPO_ROOT / "reports" / "la_county"
 
 

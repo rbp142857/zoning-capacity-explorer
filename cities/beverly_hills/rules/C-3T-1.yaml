@@ -1,0 +1,18 @@
+# Beverly Hills C-3T-1. Every value cites the Beverly Hills Municipal Code, Title 10, Chapter 3 (American Legal, through Ord. 26-O-2938 of 8-4-2026, read 2026-11-02).
+zone: "C-3T-1"
+name: "Commercial-Transition (C-3T-1)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "BHMC Art. 16.2"
+    url: https://codelibrary.amlegal.com/codes/beverlyhillsca/latest/beverlyhills_ca/0-0-0-15213
+
+residential_allowed: {value: false, source: Z, assumption: "We read C-3T-2's article, which follows C-3's uses, and assume the same here. We don't count homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

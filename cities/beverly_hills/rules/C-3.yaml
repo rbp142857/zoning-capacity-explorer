@@ -1,0 +1,18 @@
+# Beverly Hills C-3. Every value cites the Beverly Hills Municipal Code, Title 10, Chapter 3 (American Legal, through Ord. 26-O-2938 of 8-4-2026, read 2026-11-02).
+zone: "C-3"
+name: "Commercial (C-3)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "BHMC §10-3-1601"
+    url: https://codelibrary.amlegal.com/codes/beverlyhillsca/latest/beverlyhills_ca/0-0-0-14888
+
+residential_allowed: {value: false, source: Z, assumption: "§10-3-1601 lists no homes. Mixed-use overlays (Arts. 18.7, 19.3, 19.8, 19.9, 19.95) are not in our data."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

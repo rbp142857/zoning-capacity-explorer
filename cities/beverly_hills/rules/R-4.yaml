@@ -1,0 +1,43 @@
+# Beverly Hills R-4. Every value cites the Beverly Hills Municipal Code, Title 10, Chapter 3 (American Legal, through Ord. 26-O-2938 of 8-4-2026, read 2026-11-02).
+zone: "R-4"
+name: "Multiple Residential (R-4, and R-4X1, R-4X2, R-3, R-4-P and RMCP by alias)"
+family: multifamily
+
+sources:
+  Z:
+    section: "BHMC §10-3-1202 and Art. 28 (§§10-3-2801, 2804, 2806 to 2808, 2816)"
+    url: https://codelibrary.amlegal.com/codes/beverlyhillsca/latest/beverlyhills_ca/0-0-0-17542
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, multifamily], source: Z}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_width_ft
+    bands:
+      - {below: 60, value: 1700}
+      - {below: 120.01, value: 1450}
+      - {value: 1200}
+  source: Z
+  assumption: "Condition A of §10-3-2801, for sites within 170 ft of a single-family lot. Other sites may reach 1,500/1,200/1,000 or 1,300/1,100/900 sq ft per home depending on street width and distance. We have no street widths, so we use the strictest (conservative), and those sites run low."
+density_rounding: {value: up_above_0_75, source: Z, assumption: "A remainder over 75% of the per-home area rounds up. The one efficiency bonus home (§10-3-2801.D) isn't counted."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1700
+
+setbacks:
+  front_ft: {value: 15, source: Z, assumption: "15 ft unless the city's setback map says otherwise, plus façade modulation of 6 or 10 ft, not modeled."}
+  side_ft: {value: 8.5, source: Z, assumption: "Two sides must sum to 17 ft at up to 3 stories."}
+  rear_ft: {value: 15, source: Z, assumption: "15 ft, or 22.5 ft from an alley's centerline if greater."}
+
+max_height_ft: {value: 33, source: Z, assumption: "Height districts A, B and C allow 33, 45 and 55 ft. We have no district map, so we use A (conservative); B and C lots can fit more, though density usually binds."}
+max_stories: {value: 3, source: Z}
+parking_per_unit: {value: 2.5, source: Z, assumption: "2.5 spaces for two bedrooms; 2 for one, 1 for an efficiency, 3 for three or four. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: Z, assumption: "1 guest space per 4 homes."}
+
+simplifications:
+  - "200 sq ft of outdoor living space per home is not modeled, so these can run high."

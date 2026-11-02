@@ -1017,3 +1017,19 @@ Not on the site yet. 10 files cover 11,814 of 11,938 lots (99.0%); S-F, R-1, A-E
 Other calls: C-G, M-1, Public Uses and Open Space list no homes. The roll shows homes in C-G and M-1 (2,191 and 1,799), which may be mobile home parks or older uses; we didn't check them. These lots count no capacity. The Housing Opportunity and planned development overlays aren't in our data, so those sites run low.
 
 Known artifact: 202 lots show 0 homes because yards or parking leave too little room, mostly narrow R-2 lots, with 160 homes on them today.
+
+## 50. Beverly Hills (most zones)
+
+Not on the site yet. 11 files cover 7,982 of 8,065 lots (99.0%); only R-1 and R-4 count homes, through aliases for their variants. Not done: PRG (56 lots), two specific plans (6 lots), C-3B and C-Z (1 lot each) and 19 lots with no zone. SCAG's records are from May 2023. Of 136 homes permitted in 5+ unit buildings in 2018-2025, 54 are on C-3 lots, where we count none, and 33 couldn't be placed on a zoned lot.
+
+**C-3.** §10-3-1601 lists no homes, but the city has several mixed-use overlays (Arts. 18.7, 19.3, 19.8, 19.9, 19.95) that aren't in our data. The 54 permitted homes suggest they're being used, so commercial lots run low.
+**R-4 density.** §10-3-2801 sets density by lot width and by site: within 170 ft of a single-family lot, on a street under 34 ft wide, or neither. We have no street widths, so all sites use the strictest set: 1,700, 1,450 or 1,200 sq ft per home for lots under 60, 60 to 120, and over 120 ft wide. A remainder over 75% rounds up. Other sites can reach 900 sq ft per home, so many lots run low. We leave out the efficiency bonus home. This is an open decision.
+**R-4 aliases.** Article 14 restricts R-4X2 as Article 12. R-4X1, R-3, R-4-P and RMCP allow multiple-family homes, and we use R-4's standards for them. R-4-P's other uses need a planned development; RMCP also allows convenience retail.
+**Existing homes.** R-4 lots hold 10,762 homes against 6,984 allowed. §10-3-2801.E lets lawful existing homes be rebuilt, which we don't count as new capacity.
+**Heights.** Districts A, B and C allow 33, 45 and 55 ft. We have no district map, so all use A's 33 ft and 3 stories.
+
+**R-1.** R-1 and R-1.X through R-1.8X give the same one-family use (Arts. 5 to 11). We use the Central Area's floor area of 1,500 sq ft plus 40% of the lot. The Hillside and Trousdale standards aren't modeled, and we have no map of those areas. Front and rear yards are assumed, and we didn't read all of §10-3-2406's side yard rules; the one-home limit binds either way.
+
+We didn't read C-3A, P-S, S or T-1's uses or all of C-5's, and assumed C-3T-1 and C-3T-3 follow C-3T-2; all count no homes.
+
+Known artifact: 50 R-4 lots end at parking, mostly large lots, with 1,452 homes on them today. The surface parking model likely runs low where real projects use garages.

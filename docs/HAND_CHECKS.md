@@ -1660,3 +1660,35 @@ Rules: Bellflower Municipal Code, Title 17, read on eCode360 2026-11-02 (through
 ### BF-9. 9824 Maple St · T-C · 7,879 sq ft
 
 - Upper-floor homes need Planning Commission approval, and no density is stated, so none are counted. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Beverly Hills
+
+Rules: Beverly Hills Municipal Code, Title 10, Chapter 3, read on American Legal 2026-11-02 (through Ord. 26-O-2938). Each home uses 1,062.5 sq ft of building. R-4 parking uses 2.5 spaces plus 1 guest space per 4 homes, at 300 sq ft each; ground excludes the front yard.
+
+### BH-1. 126 N Palm Dr · R-1 · 7,500 sq ft
+
+- One home → **1**. Floor area 1,500 + 40% = 4,500 ÷ 1,062.5 = 4.2 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BH-2. 912 N Roxbury Dr · R-1 · 24,596 sq ft
+
+- One home → **1**. Floor area 1,500 + 9,838 = 11,338 ÷ 1,062.5 = 10.7 → 10. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BH-3. 174 N Almont Dr · R-4 · 6,762 sq ft, 59 ft wide
+
+- Under 60 ft wide, 1,700 sq ft per home → 3.98; a remainder over 75% rounds up → **4**. Yards leave 3,562; × 3 ÷ 1,062.5 = 10.06 → 10. Parking: ground 5,883; 4 homes need 11 stalls (3,300) + 1,417 = 4,717, which fits; 5 need 14 (4,200) + 1,771 = 5,971, which doesn't → 4. **Result: 4, lot area.** Engine: 4 ✓ (13 homes today, which §10-3-2801.E lets it rebuild.)
+
+### BH-4. 434 S Canon Dr · R-4 · 12,124 sq ft, 100 ft wide
+
+- 60 to 120 ft wide, 1,450 → 8.36 → **8**. Yards leave 7,574; × 3 ÷ 1,062.5 = 21.4 → 21. Parking: ground 10,625; 8 fit; 9 need 25 stalls (7,500) + 3,187 = 10,687, which don't → 8. **Result: 8, lot area.** Engine: 8 ✓ (29 homes today.)
+
+### BH-5. 441 N Oakhurst Dr · R-4 · 22,503 sq ft, 150.1 ft wide
+
+- Over 120 ft wide, 1,200 → 18.75, and the remainder is just over 75% → 19. Parking: ground 20,254; 17 homes need 47 stalls (14,100) + 6,021 = 20,121, which fits; 18 need 50 (15,000) + 6,375 = 21,375, which doesn't → **17**. **Result: 17, parking.** Engine: 17 ✓ (36 homes today.)
+
+### BH-6. 9901 Durant Dr · R-4 · 11,005 sq ft, 100.1 ft wide
+
+- 1,450 → 7.6 → **7**. Yards leave 6,644; × 3 ÷ 1,062.5 = 18.8 → 18. Within ½ mile of transit, so no parking limit. **Result: 7, lot area.** Engine: 7 ✓
+
+### BH-7. 140 N Robertson Blvd · C-3 · 6,713 sq ft
+
+- §10-3-1601 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓

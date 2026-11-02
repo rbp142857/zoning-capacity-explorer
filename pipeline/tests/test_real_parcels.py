@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1476,6 +1476,41 @@ def bellflower():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BELLFLOWER, ids=[c[0] for c in BELLFLOWER])
 def test_hand_checked_bellflower_parcel(bellflower, address, zone, lot, max_units, binding, limits):
     rules, state, a = bellflower
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+BEVERLY_HILLS = [
+    ("126 N Palm Dr", "R-1", Lot(7500, 50.0, 150.0, (), 4837, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 4, "state_adu": 3, "state_sb9": 4}),
+    ("912 N Roxbury Dr", "R-1", Lot(24596, 114.9, 231.3, (), 5255, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 10, "state_sb9": 4}),
+    ("174 N Almont Dr", "R-4", Lot(6762, 59.0, 115.4, (), 3599, 13),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 10, "parking": 4}),
+    ("434 S Canon Dr", "R-4", Lot(12124, 100.0, 121.3, (), 5144, 29),
+     8, "lot_area_per_unit", {"lot_area_per_unit": 8, "envelope": 21, "parking": 8}),
+    ("441 N Oakhurst Dr", "R-4", Lot(22503, 150.1, 150.1, (), 3107, 36),
+     17, "parking", {"lot_area_per_unit": 19, "envelope": 45, "parking": 17}),
+    ("9901 Durant Dr", "R-4", Lot(11005, 100.1, 110.0, (), 752, 8),
+     7, "lot_area_per_unit", {"lot_area_per_unit": 7, "envelope": 18}),
+    ("140 N Robertson Blvd", "C-3", Lot(6713, 50.0, 134.5, (), 2808, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def beverly_hills():
+    rules = load_zone_rules(REPO / "cities" / "beverly_hills" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BEVERLY_HILLS, ids=[c[0] for c in BEVERLY_HILLS])
+def test_hand_checked_beverly_hills_parcel(beverly_hills, address, zone, lot, max_units, binding, limits):
+    rules, state, a = beverly_hills
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

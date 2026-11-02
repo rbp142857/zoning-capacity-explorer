@@ -1,0 +1,18 @@
+# Beverly Hills C-5. Every value cites the Beverly Hills Municipal Code, Title 10, Chapter 3 (American Legal, through Ord. 26-O-2938 of 8-4-2026, read 2026-11-02).
+zone: "C-5"
+name: "Commercial (C-5)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "BHMC Art. 20"
+    url: https://codelibrary.amlegal.com/codes/beverlyhillsca/latest/beverlyhills_ca/0-0-0-16084
+
+residential_allowed: {value: false, source: Z, assumption: "We didn't read every section of this article and found no homes. We don't count any (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
