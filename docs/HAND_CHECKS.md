@@ -1692,3 +1692,31 @@ Rules: Beverly Hills Municipal Code, Title 10, Chapter 3, read on American Legal
 ### BH-7. 140 N Robertson Blvd · C-3 · 6,713 sq ft
 
 - §10-3-1601 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Bradbury
+
+Rules: Bradbury Code of Ordinances, Title IX, read on Municode 2026-11-02 (through Ord. 400). Each home uses 1,062.5 sq ft of building. Every zone allows one home, and SB 9 gives 4 on these lots.
+
+### BR-1. 2332 Gardi St · R-7,500 · 6,854 sq ft
+
+- One home → **1**. FAR 0.50 = 3,427 ÷ 1,062.5 = 3.2 → 3. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-2. 2341 Freeborn St · R-7,500 · 8,834 sq ft
+
+- One home → **1**. FAR 0.50 = 4,417 → 4.2 → 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-3. 2205 Gardi St · R-20,000 · 20,296 sq ft
+
+- One home → **1**. Yards leave 80.5 × 135.1 × 0.992 = 10,792; × 2 ÷ 1,062.5 = 20.3 → 20. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-4. 1395 Lemon Ave · A-1 · 45,243 sq ft
+
+- One home → **1**. Yards leave 96 × 237 × 0.993 = 22,598; × 2 ÷ 1,062.5 = 42.5 → 42. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-5. 4 Bradbury Hills Rd · A-2 · 82,650 sq ft
+
+- One home → **1**. Yards leave 168.7 × 335.6 × 0.920 = 52,108; × 2 ÷ 1,062.5 = 98.1 → 98. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-6. 368 Old Ranch Rd · A-5 · 188,692 sq ft
+
+- One home → **1**. Yards leave 276.3 × 540.1 × 0.940 = 140,295; × 2 ÷ 1,062.5 = 264.1 → 264. **Result: 4, SB 9.** Engine: 4 ✓

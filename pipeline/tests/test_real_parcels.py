@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1511,6 +1511,39 @@ def beverly_hills():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BEVERLY_HILLS, ids=[c[0] for c in BEVERLY_HILLS])
 def test_hand_checked_beverly_hills_parcel(beverly_hills, address, zone, lot, max_units, binding, limits):
     rules, state, a = beverly_hills
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+BRADBURY = [
+    ("2332 Gardi St", "R-7,500", Lot(6854, 72.2, 95.5, (), 5687, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 3, "state_adu": 3, "state_sb9": 4}),
+    ("2341 Freeborn St", "R-7,500", Lot(8834, 83.5, 126.5, (), 6074, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 4, "state_sb9": 4}),
+    ("2205 Gardi St", "R-20,000", Lot(20296, 110.5, 185.1, (), 5235, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 20, "state_sb9": 4}),
+    ("1395 Lemon Ave", "A-1", Lot(45243, 146.0, 312.0, (), 5744, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 42, "state_sb9": 4}),
+    ("4 Bradbury Hills Rd", "A-2", Lot(82650, 218.7, 410.6, (), 4872, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 98, "state_sb9": 4}),
+    ("368 Old Ranch Rd", "A-5", Lot(188692, 326.3, 615.1, (), 6639, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 264, "state_sb9": 4}),
+]
+
+
+@pytest.fixture(scope="module")
+def bradbury():
+    rules = load_zone_rules(REPO / "cities" / "bradbury" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", BRADBURY, ids=[c[0] for c in BRADBURY])
+def test_hand_checked_bradbury_parcel(bradbury, address, zone, lot, max_units, binding, limits):
+    rules, state, a = bradbury
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

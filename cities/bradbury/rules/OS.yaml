@@ -1,0 +1,18 @@
+# Bradbury OS. Every value cites the Bradbury Code of Ordinances, Title IX (Municode, through Ord. 400 of January 20, 2026, read 2026-11-02).
+zone: "OS"
+name: "OS Open Space"
+family: nonresidential
+
+sources:
+  Z:
+    section: "Bradbury Code Ch. 9.76"
+    url: https://library.municode.com/ca/bradbury/codes/code_of_ordinances?nodeId=COOR_TITIXDECO_PTVZODIALLAUS_CH76OSOPSPZODI
+
+residential_allowed: {value: false, source: Z, assumption: "The chapter says no dwelling units are permitted in this zone."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
