@@ -850,3 +850,16 @@ names in the tables we read. IND is treated like LI and HI, and EMPFX and CA cou
 count none, and their chapters weren't read. RC counts none, because its homes are limited to two areas we don't
 map. SFR side yards use the 7.5 ft average of 5 and 10. RN 1 is read as attached and detached homes, with 2 stories
 instead of the table's 2.5. Multifamily parking uses 1.5 spaces and 0.2 guest, the two-bedroom figure for 5 or more homes.
+
+## 36. Carson (base zones)
+
+Not on the site yet. 15 files from Article IX cover 19,829 of 21,183 lots (93.6%). Not done: SP (786 lots) and 568
+lots with no zone. SCAG's Carson records are dated 2016. The code on eCode360, dated July 2026, still uses the same
+zone names, so no name matching was needed, but a lot rezoned since 2016 would be wrong. City drafts from 2023 and 2024
+describe a replacement code with LDR, MDR and HDR districts, which we did not find in the code as published.
+
+Judgment calls: the code limits RS and RM to 30 ft without a story count, so we fit 2 stories. Front and rear yards use
+the fixed 20 and 15 ft, which runs low on lots under 100 ft deep, because the code takes the lesser of that or a percent of
+depth. Coverage uses RM's 40%, not the 70% with structured parking. MU zones need a conditional use permit and 100 ft of
+frontage; we count them, and narrower lots are flagged, not zeroed. The Mixed-Use Residential overlay isn't in our data, so
+CG, CN and CR count no homes. ML, MH, OS and SU count none, and we didn't read their uses.

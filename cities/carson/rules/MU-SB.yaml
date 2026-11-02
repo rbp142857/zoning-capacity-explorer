@@ -1,0 +1,41 @@
+# Carson MU-SB. Every value cites the Carson Municipal Code, Article IX (eCode360, read 2026-11-01).
+zone: "MU-SB"
+name: "Mixed-Use, Sepulveda Boulevard (MU-SB)"
+family: commercial
+
+sources:
+  Z:
+    section: "CMC §§9138.17 and 9138.18"
+    url: https://ecode360.com/48528267
+  P:
+    section: "CMC §9162.21 (parking table, Art. IX, Pt. 6, Div. 2)"
+    url: https://ecode360.com/48529873
+
+residential_allowed: {value: true, source: Z, assumption: "Multiple-family and mixed-use need a conditional use permit and at least 100 ft of street frontage (Pt. 3, Div. 1)."}
+housing_types: {value: [multifamily, mixed_use], source: Z}
+min_lot_width_ft: {value: 100, source: Z}
+lot_area_per_unit_sqft: {value: 1742.4, source: Z, assumption: "25 homes per net acre: 43,560 divided by 25."}
+density_rounding: {value: nearest_half_up, source: Z, assumption: "A fraction of one-half or more permits another home."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "At least one home is allowed on each lawfully established lot."
+small_lot_units_below_sqft: 1742.4
+
+setbacks:
+  front_ft: {value: 5, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 45, source: Z}
+max_stories: {value: 3, source: Z}
+max_far: {value: 1.5, source: Z, assumption: "We count the whole FAR as homes, which runs high in a mixed-use building."}
+parking_per_unit: {value: 2, source: P, assumption: "2 covered spaces for a home with 1 or more bedrooms. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: P, assumption: "1 guest space per 4 homes."}
+guest_parking_min_units: 2
+
+simplifications:
+  - "§9138.18; 10 ft above the second floor is not modeled. 33 per acre for affordable or senior homes is not modeled."

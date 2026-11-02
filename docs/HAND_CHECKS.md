@@ -1132,3 +1132,36 @@ Rules: Palmdale Municipal Code, Title 17, read on eCode360 2026-11-01.
 ### PA-8. 803 W Palmdale Blvd · MEDFX · 21,802 sq ft
 
 - 30 per acre = 1,452 sq ft per home → 15.01 → **15**. **Result: 15, lot area.** Engine: 15 ✓
+
+## Carson
+
+Rules: Carson Municipal Code, Article IX, read on eCode360 2026-11-01. A fraction of one-half or more permits another home (§9124.1).
+
+### CA-1. 559 E 169th St · RS · 5,530 sq ft
+
+- One dwelling per lot (§9124.1) → **1**. Sides 5 ft, front 20, rear 15: 44.9 × 65.7 = 2,950 × 2 stories = 5,900 ÷ 1,062.5 = 5.6 → 5.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-2. 118 W 234th St · RM-8 · 6,424 sq ft
+
+- 8 per acre = 5,445 sq ft per home → 1.2 → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CA-3. 750 Alondra Blvd · RM-12 · 12,158 sq ft
+
+- 12 per acre = 3,630 sq ft per home → 3.35 → **3**. **Result: 3, lot area.** Engine: 3 ✓
+
+### CA-4. 21105 S Santa Fe Ave · RM-25 · 8,772 sq ft
+
+- 25 per acre = 1,742.4 sq ft per home → 5.03 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### CA-5. 2543 E Carson St · RM-25 · 39,819 sq ft
+
+- 39,819 ÷ 1,742.4 = 22.85, and the fraction rounds up → **23**. **Result: 23, lot area.** Engine: 23 ✓
+
+### CA-6. 714 E Carson St · MU-CS · 51,680 sq ft
+
+- 35 per acre = 1,244.57 sq ft per home → 41.5, which rounds up → **42**. **Result: 42, lot area.** Engine: 42 ✓ (86 homes today, so no net new.)
+
+### CA-7. 440 E Sepulveda Blvd · MU-SB · 18,595 sq ft, 94 ft wide
+
+- 25 per acre = 1,742.4 sq ft per home → 10.67, which rounds up → **11**. **Result: 11, lot area.** Engine: 11 ✓ (Under the 100 ft frontage for multiple-family, so the engine flags it.)

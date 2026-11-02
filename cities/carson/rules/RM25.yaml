@@ -1,0 +1,43 @@
+# Carson RM (25). Every value cites the Carson Municipal Code, Article IX (eCode360, read 2026-11-01).
+zone: "RM (25)"
+name: "Residential, Multiple Dwelling, 25 per acre (RM-25)"
+family: multifamily
+
+sources:
+  Z:
+    section: "CMC §9124.1 (Dwelling Units)"
+    url: https://ecode360.com/48527874
+  S:
+    section: "CMC Art. IX, Pt. 2, Div. 6 (§§9126.12-9126.25)"
+    url: https://ecode360.com/48527883
+  P:
+    section: "CMC §9162.21 (parking table, Art. IX, Pt. 6, Div. 2)"
+    url: https://ecode360.com/48529873
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, multifamily], source: Z}
+lot_area_per_unit_sqft: {value: 1742.4, source: Z, assumption: "25 homes per net acre: 43,560 divided by 25."}
+density_rounding: {value: nearest_half_up, source: Z, assumption: "A fraction of one-half or more permits another home."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "At least one home is allowed on each lawfully established lot."
+small_lot_units_below_sqft: 1742.4
+
+setbacks:
+  front_ft: {value: 20, source: S, assumption: "20 ft or 20% of lot depth, whichever is less; we use 20 ft, which runs low on lots under 100 ft deep."}
+  side_ft: {value: {pct_of_width: 0.2, min_ft: 6, max_ft: 10}, source: S, assumption: "6 ft under 30 ft wide, 20% of width at 30 to 50 ft, 10 ft over 50 ft."}
+  rear_ft: {value: 15, source: S, assumption: "15 ft or 15% of lot depth, whichever is less; we use 15 ft, which runs low on lots under 100 ft deep."}
+
+max_height_ft: {value: 30, source: S}
+max_stories: {value: 2, source: S, assumption: "The code limits height to 30 ft, not stories; we fit 2 (conservative)."}
+lot_coverage: {value: 0.40, source: S, assumption: "40% of net lot area. 70% with a parking structure or underground parking, not modeled."}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces in a garage or carport. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "1 guest space per 2 homes of 2 bedrooms or fewer."}
+guest_parking_min_units: 2
+
+simplifications:
+  - "Usable open space (§9126.28) and spacing between buildings are not modeled."
