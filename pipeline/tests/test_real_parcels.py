@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1281,6 +1281,45 @@ def artesia():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", ARTESIA, ids=[c[0] for c in ARTESIA])
 def test_hand_checked_artesia_parcel(artesia, address, zone, lot, max_units, binding, limits):
     rules, state, a = artesia
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+AVALON = [
+    ("358 Claressa Ave", "HD-R", Lot(2366, 48.8, 50.0, (), 159301, 2),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "envelope": 2, "parking": 2, "state_adu": 3}),
+    ("341 Clemente Ave", "HD-R", Lot(1951, 39.1, 50.0, (), 159235, 3),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 2, "parking": 2, "state_adu": 3}),
+    ("323 Metropole Ave", "HD-R", Lot(6326, 39.9, 159.8, (), 158505, 4),
+     5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 7, "parking": 7}),
+    ("233 W Whittley Ave", "HD-R", Lot(6918, 54.8, 129.8, (), 157876, 17),
+     6, "lot_area_per_unit", {"lot_area_per_unit": 6, "envelope": 8, "parking": 8}),
+    ("191 Lower Terrace", "MD-R", Lot(2640, 53.8, 54.5, (), 158439, 2),
+     3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 1, "parking": 2, "state_adu": 3}),
+    ("127 Vieudelou Ave", "MD-R", Lot(6926, 57.8, 120.1, (), 157566, 5),
+     3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 6, "parking": 7}),
+    ("103 Vieudelou Ave", "LD-R", Lot(4706, 39.2, 120.0, (), 157370, 1),
+     4, "state_law:sb9", {"lot_area_per_unit": 1, "envelope": 3, "parking": 5, "state_sb9": 4}),
+    ("313 Beacon St", "SC", Lot(2314, 18.5, 125.0, (), 158439, 1),
+     3, "state_law:adu", {"lot_area_per_unit": 2, "envelope": 2, "parking": 2, "state_adu": 3}),
+    ("122 Sumner Ave", "C", Lot(4802, 40.2, 120.2, (), 158056, 0),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def avalon():
+    rules = load_zone_rules(REPO / "cities" / "avalon" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", AVALON, ids=[c[0] for c in AVALON])
+def test_hand_checked_avalon_parcel(avalon, address, zone, lot, max_units, binding, limits):
+    rules, state, a = avalon
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

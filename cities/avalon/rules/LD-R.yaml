@@ -1,0 +1,37 @@
+# Avalon LD-R. Every value cites the Avalon Municipal Code, Title 9 (eCode360, code dated 2026-09-01, read 2026-11-02).
+zone: "LD-R"
+name: "Low Density Residential and Low Intensity Recreation (LD)"
+family: single_family
+
+sources:
+  Z:
+    section: "AMC §§9-5.202, 9-5.204 and 9-5.205"
+    url: https://ecode360.com/35895140
+
+residential_allowed: {value: true, source: Z, assumption: "Detached homes on slopes under 30 degrees by right; steeper slopes and clustered or attached homes need a conditional use permit."}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 4400, source: Z, assumption: "Doubled on slopes of 30 to 50 degrees and multiplied by 10 above 50 degrees, not modeled."}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 43560, source: Z, assumption: "Density is 10 homes per acre under 30 degrees, 5 from 30 to 50 degrees, and 1 at 50 degrees or more. We have no slope data, and this zone covers Avalon's undeveloped slopes, so we use 1 per acre (conservative); gentler lots run low."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot under an acre keeps one home (assumed)."
+small_lot_units_below_sqft: 43560
+
+setbacks:
+  front_ft: {value: 10, source: Z}
+  side_ft: {value: 10, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 28, source: Z, assumption: "For lots of 14 degrees or less; hillside lots allow 3 stories."}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.40, source: Z}
+max_far: {value: 0.8, source: Z, assumption: "80% at two levels."}
+parking_per_unit: {value: 1, source: Z}
+
+simplifications:
+  - "Large parcels get one home per acre even where slopes, the 75-ft ridgeline setback, or the Annual Growth Policy (Ch. 9-12) would allow far fewer, so they can run high."

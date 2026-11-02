@@ -1,0 +1,18 @@
+# Avalon P. Every value cites the Avalon Municipal Code, Title 9 (eCode360, code dated 2026-09-01, read 2026-11-02).
+zone: "P"
+name: "Public (P)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "AMC Ch. 9-6, Art. 5"
+    url: https://ecode360.com/35895495
+
+residential_allowed: {value: false, source: Z, assumption: "We didn't read this public zone's uses. We don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

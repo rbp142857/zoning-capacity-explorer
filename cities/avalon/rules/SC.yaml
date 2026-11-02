@@ -1,0 +1,37 @@
+# Avalon SC. Every value cites the Avalon Municipal Code, Title 9 (eCode360, code dated 2026-09-01, read 2026-11-02).
+zone: "SC"
+name: "Special Commercial (SC)"
+family: commercial
+
+sources:
+  Z:
+    section: "AMC §§9-6.303, 9-6.304 and 9-5.405"
+    url: https://ecode360.com/35895453
+
+residential_allowed: {value: true, source: Z, assumption: "Residential structures need a conditional use permit and follow HD's standards (§9-6.303(b))."}
+housing_types: {value: [multifamily], source: Z}
+min_lot_area_sqft: {value: 2000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 1089, source: Z, assumption: "HD's 40 homes per acre."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1089
+
+setbacks:
+  front_ft: {value: 3, source: Z, assumption: "3 ft on all sides; 5 ft on hillside lots."}
+  side_ft: {value: 3, source: Z}
+  rear_ft: {value: 3, source: Z}
+
+max_height_ft: {value: 28, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.80, source: Z, assumption: "70% on hillside lots."}
+max_far: {value: 1.3, source: Z, assumption: "130% at two levels for lots of 14° or less; 100% on hillside lots."}
+parking_per_unit: {value: 1, source: Z}
+
+simplifications:
+  - "We have no slope data, so the standards for lots of 14° or less are used; hillside lots allow 3 stories but less floor area (§9-5.305/405), so they can differ either way."

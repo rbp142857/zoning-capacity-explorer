@@ -96,11 +96,11 @@ the owner's OK: https://www.pomonaca.gov/home/showpublisheddocument/9137/6391970
 Municode only has the older code, whose zones don't match the map.
 
 **Open decisions for the owner** (the conservative reading is in use for now):
-South Gate NL duplexes; SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 under Chapter 1A; publishing LA; whether Alhambra's old CPD lots count as CMU (48 homes per acre) rather than none; getting a post-2024 Alhambra zoning map; getting Azusa's TOD Specific Plan map (SCAG's Azusa data is from 2005); what San Gabriel's letter suffixes (R-1 V, R-2 G, R-3 A) mean; whether Monterey Park's R-3 is 25 homes per acre (the code) or 30 (a 2024 city handout); whether Agoura Hills' OS-R lots count one home with a conditional use permit (in use) and whether SB 9 reaches them (not applied); whether Torrance's C-1 and C-2 use 1,600 sq ft per home (in use) or R-4's 1,000; SB 9 in Torrance's and Artesia's A-1 (not applied).
+South Gate NL duplexes; SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 under Chapter 1A; publishing LA; whether Alhambra's old CPD lots count as CMU (48 homes per acre) rather than none; getting a post-2024 Alhambra zoning map; getting Azusa's TOD Specific Plan map (SCAG's Azusa data is from 2005); what San Gabriel's letter suffixes (R-1 V, R-2 G, R-3 A) mean; whether Monterey Park's R-3 is 25 homes per acre (the code) or 30 (a 2024 city handout); whether Agoura Hills' OS-R lots count one home with a conditional use permit (in use) and whether SB 9 reaches them (not applied); whether Torrance's C-1 and C-2 use 1,600 sq ft per home (in use) or R-4's 1,000; SB 9 in Torrance's and Artesia's A-1 (not applied); whether Avalon's 169-acre HD-R lot should count its 6,748 paper homes (counted, flagged in METHODOLOGY section 45).
 
 **How old SCAG's zoning data is** (YEAR_ZN, checked November 2026). An old date matters only where a city has rezoned or renamed zones since, which
 has been checked only for Alhambra, Carson, Azusa, Lomita and Hawthorne. 2005: Azusa. 2016: Glendale, Monrovia, Montebello, Santa Clarita, West Covina, Carson, Hawthorne, San Gabriel, Agoura Hills.
-2017: South Gate. 2018: Alhambra. 2021 to 2025: the other 22 downloaded cities, including Torrance and Artesia. Pomona's is 2025, but it has no rule files yet.
+2017: South Gate. 2018: Alhambra, Avalon. 2021 to 2025: the other 22 downloaded cities, including Torrance and Artesia. Pomona's is 2025, but it has no rule files yet.
 
 **Open data gap:** Inglewood's Transit Oriented plan areas need the city's own zoning
 map and plan (⚠️ above; see METHODOLOGY section 16). SP-4 in El Monte is similar. Agoura Hills' SP lots (Agoura Village and other plans) hold 94% of its recent 5+ unit homes and are not modeled. Torrance's DT (78 of its 145 recent 5+ unit homes) needs Downtown densities that Article 40 doesn't state.
@@ -180,7 +180,7 @@ what that wave teaches about suffixes and overlays.
 
 ### Wave 5: the long tail (53 jurisdictions)
 
-**Progress:** Artesia most zones ⚠️ (METHODOLOGY section 44).
+**Progress:** Artesia most zones ⚠️ (METHODOLOGY section 44). Avalon most zones ⚠️ (section 45).
 
 Together 1.3% of the county's multi-unit building. Many are almost entirely
 single-family (in 20 of them, 1–4 zone codes cover 90% of parcels), so each

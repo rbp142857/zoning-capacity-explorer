@@ -956,3 +956,14 @@ Not on the site yet. 13 files cover 3,719 of 3,793 lots (98.0%); R-1, M-R, M-D-R
 **C-O.** Condominiums only, at 3,000 sq ft per home and 2 stories (Art. 36). Its 60,000 sq ft minimum flags most of these lots but doesn't reduce them.
 
 Other calls: M-R parking uses 2 spaces plus about 1 guest space per 3 homes at 4 or more homes; more bedrooms need more. Outdoor living space isn't modeled, so M-R can run high. A-1 gets no SB 9, as an open decision. C-G, C-S-P, CPD, M-1, M-2 and OS-R list no homes; M-1's shelters aren't counted. We couldn't confirm H-D's uses, so its 2 lots count none. The Housing Opportunity (Art. 29.7) and Mixed-Use (Art. 48) overlays aren't in our data, so their sites run low.
+
+## 45. Avalon (most zones)
+
+Not on the site yet. 8 files cover 1,037 of 1,054 lots (98.4%); HD-R, MD-R, LD-R and SC count homes. Not done: PB-SP (7 lots), 8 lots with no zone, HD-R-CH (1 lot with 62 homes) and LI (1 lot). SCAG's records are from September 2018, and we haven't checked for rezoning since.
+
+**Don't trust the city total.** One 169-acre lot mapped HD-R gets 6,748 of the 7,704 HD-R homes, and 6,739 of the 6,963 "likely to redevelop" homes. That's what 40 homes per acre gives on paper, but the lot is far larger than any other HD-R lot, and the slopes, fire access and the Annual Growth Policy (Ch. 9-12) aren't modeled. It's more than twice the 2,593 homes on the whole city's roll. The map may also be wrong for this lot. We report it as computed and record it as an open decision. Likewise, three LD-R parcels of 251 to 514 acres get 1,119 of that zone's 1,529 local homes.
+
+**Slopes.** Avalon's limits depend on slope, and we have no slope data. HD-R, MD-R and SC use the standards for lots of 14 degrees or less. Hillside lots allow 3 stories but less floor area at two levels, so they can differ either way. LD-R's density runs from 10 homes per acre under 30 degrees to 1 at 50 degrees or more; we use 1 per acre, and lots under an acre keep one home, so gentler lots run low.
+**SC.** Homes need a conditional use permit and follow HD's standards (§9-6.303(b)).
+
+Other calls: parking is 1 space per home. MD-R's attached and clustered homes need a conditional use permit, but we count them up to the density. C and R/R list hotels and mobile home parks but no other homes, so they count none. We didn't read P's uses, so its 9 lots count none. The Article 5 low and moderate income zone isn't among SCAG's codes, unless that's what LI means. Avalon's inclusionary and growth rules aren't modeled.

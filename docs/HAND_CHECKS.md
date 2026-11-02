@@ -1460,3 +1460,43 @@ Rules: Artesia Municipal Code, Title 9, Chapter 2, read on eCode360 2026-11-02 (
 ### AR-10. 18642 Pioneer Blvd · C-G · 7,446 sq ft
 
 - Article 32 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Avalon
+
+Rules: Avalon Municipal Code, Title 9, read on eCode360 2026-11-02 (code dated 2026-09-01). Each home uses 1,062.5 sq ft of building. Parking is 1 space per home at 300 sq ft, and ground excludes the front yard.
+
+### AV-1. 358 Claressa Ave · HD-R · 2,366 sq ft
+
+- 40 per acre = 1,089 sq ft per home → 2.17 → **2**. FAR 1.3 = 3,076 ÷ 1,062.5 = 2.9 → 2. Parking: ground 2,224 ÷ 831 → 2. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AV-2. 341 Clemente Ave · HD-R · 1,951 sq ft
+
+- 1,089 → 1.8 → **1**. FAR 1.3 = 2,536 → 2.4 → 2. Parking → 2. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AV-3. 323 Metropole Ave · HD-R · 6,326 sq ft
+
+- 1,089 → 5.8 → **5**. FAR 1.3 = 8,224 → 7.7 → 7. Parking: ground 6,207 ÷ 831 → 7. **Result: 5, lot area.** Engine: 5 ✓
+
+### AV-4. 233 W Whittley Ave · HD-R · 6,918 sq ft
+
+- 1,089 → 6.35 → **6**. FAR 1.3 → 8.46 → 8. Parking → 8. **Result: 6, lot area.** Engine: 6 ✓ (17 homes today.)
+
+### AV-5. 191 Lower Terrace · MD-R · 2,640 sq ft
+
+- 20 per acre = 2,178 → 1.2 → **1**. Yards leave 33.8 × 34.5 × 0.900 = 1,050; × 2 ÷ 1,062.5 = 1.98 → 1. Parking → 2. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AV-6. 127 Vieudelou Ave · MD-R · 6,926 sq ft
+
+- 2,178 → 3.2 → **3**. 50% coverage × 2 = 6,926 → 6.5 → 6. Parking → 7. **Result: 3, lot area.** Engine: 3 ✓ (5 homes today.)
+
+### AV-7. 103 Vieudelou Ave · LD-R · 4,706 sq ft
+
+- Under an acre keeps one home → **1**. FAR 0.8 = 3,765 → 3.5 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AV-8. 313 Beacon St · SC · 2,314 sq ft
+
+- HD's 1,089 → 2.1 → **2**. Yards leave 12.5 × 119 = 1,488; × 2 ÷ 1,062.5 = 2.8 → 2. Parking → 2. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AV-9. 122 Sumner Ave · C · 4,802 sq ft
+
+- Article 2 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
