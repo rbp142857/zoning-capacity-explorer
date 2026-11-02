@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1240,6 +1240,47 @@ def torrance():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", TORRANCE, ids=[c[0] for c in TORRANCE])
 def test_hand_checked_torrance_parcel(torrance, address, zone, lot, max_units, binding, limits):
     rules, state, a = torrance
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+ARTESIA = [
+    ("11674 168th St", "R-1", Lot(5680, 56.2, 108.5, (), 14160, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 5, "state_adu": 3, "state_sb9": 4}),
+    ("17602 Summer Ave", "R-1", Lot(6167, 60.0, 105.7, (), 15961, 1),
+     4, "state_law:sb9", {"density": 1, "envelope": 5, "state_sb9": 4}),
+    ("18004 Roseton Ave", "M-R", Lot(7053, 51.6, 136.9, (), 17500, 1),
+     4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 6, "parking": 5}),
+    ("18601 Arline Ave", "M-R", Lot(21719, 149.5, 157.0, (), 19622, 12),
+     12, "lot_area_per_unit", {"lot_area_per_unit": 12, "envelope": 20, "parking": 16}),
+    ("11512 186th St", "M-R", Lot(22195, 94.1, 236.1, (), 19003, 1),
+     12, "lot_area_per_unit", {"lot_area_per_unit": 12, "envelope": 20, "parking": 16}),
+    ("18863 Clarkdale Ave", "M-D-R", Lot(4494, 46.0, 103.6, (), 21052, 1),
+     3, "state_law:adu", {"density": 2, "envelope": 4, "parking": 3, "state_adu": 3}),
+    ("19212 Norwalk Blvd", "M-C-R", Lot(7318, 77.6, 94.9, (), 22199, 1),
+     3, "state_law:adu", {"density": 1, "envelope": 8, "state_adu": 3}),
+    ("11555 187th St", "A-1", Lot(10574, 45.3, 233.8, (), 19338, 2),
+     3, "state_law:adu", {"density": 1, "envelope": 9, "state_adu": 3}),
+    ("11424 186th St", "C-O", Lot(50247, 165.6, 338.7, (), 18801, 15),
+     17, "lot_area_per_unit", {"lot_area_per_unit": 17, "envelope": 80, "parking": 42}),
+    ("18642 Pioneer Blvd", "C-G", Lot(7446, 52.2, 143.3, (), 19879, 1),
+     0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def artesia():
+    rules = load_zone_rules(REPO / "cities" / "artesia" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", ARTESIA, ids=[c[0] for c in ARTESIA])
+def test_hand_checked_artesia_parcel(artesia, address, zone, lot, max_units, binding, limits):
+    rules, state, a = artesia
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

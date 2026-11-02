@@ -1416,3 +1416,47 @@ Rules: Torrance Municipal Code, Division 9, read on Code Publishing 2026-11-02 (
 ### TO-14. 1855 Del Amo Blvd · M2 · 20,428 sq ft
 
 - Article 31 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Artesia
+
+Rules: Artesia Municipal Code, Title 9, Chapter 2, read on eCode360 2026-11-02 (code dated 2026-04-13). Each home uses 1,062.5 sq ft of building. Parking uses 300 sq ft per space, and ground excludes the front yard.
+
+### AR-1. 11674 168th St · R-1 · 5,680 sq ft
+
+- One home → **1**. 50% coverage = 2,840 × 2 ÷ 1,062.5 = 5.3 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AR-2. 17602 Summer Ave · R-1 · 6,167 sq ft
+
+- One home → **1**. 50% coverage = 3,083 × 2 ÷ 1,062.5 = 5.8 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AR-3. 18004 Roseton Ave · M-R · 7,053 sq ft
+
+- 1,800 sq ft per home → 3.92, rounded to the nearest → **4**. Coverage × 2 → 6.6 → 6. Parking: ground 6,280; 5 homes need 12 stalls (3,600) + 2,656 = 6,256, which fits; 6 don't → 5. **Result: 4, lot area.** Engine: 4 ✓
+
+### AR-4. 18601 Arline Ave · M-R · 21,719 sq ft
+
+- 1,800 → 12.07 → **12**. Coverage × 2 → 20.4 → 20. Parking: ground 19,644; 16 homes need 37 stalls (11,100) + 8,500 = 19,600, which fits; 17 don't → 16. **Result: 12, lot area.** Engine: 12 ✓ (12 homes today.)
+
+### AR-5. 11512 186th St · M-R · 22,195 sq ft
+
+- 1,800 → 12.3 → **12**. Coverage × 2 → 20.9 → 20. Parking → 16. **Result: 12, lot area.** Engine: 12 ✓
+
+### AR-6. 18863 Clarkdale Ave · M-D-R · 4,494 sq ft
+
+- R-1 uses or a duplex → **2**. Coverage × 2 → 4.2 → 4. Parking: ground 3,887 ÷ (531 + 600) → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AR-7. 19212 Norwalk Blvd · M-C-R · 7,318 sq ft
+
+- R-1's use, one home → **1**. Yards leave 67.6 × 69.9 × 0.994 = 4,695; × 2 ÷ 1,062.5 = 8.8 → 8. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AR-8. 11555 187th St · A-1 · 10,574 sq ft
+
+- One home → **1**. Coverage × 2 → 9.95 → 9. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AR-9. 11424 186th St · C-O · 50,247 sq ft
+
+- 3,000 → 16.75, rounded to the nearest → **17**. Yards leave 155.6 × 308.7 × 0.896 = 43,030; × 2 ÷ 1,062.5 = 80.997 → 80. Parking: ground 48,022 ÷ 1,131 → 42. **Result: 17, lot area.** Engine: 17 ✓ (Flagged: under the 60,000 sq ft minimum.)
+
+### AR-10. 18642 Pioneer Blvd · C-G · 7,446 sq ft
+
+- Article 32 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓

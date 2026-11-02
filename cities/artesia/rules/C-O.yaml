@@ -1,0 +1,35 @@
+# Artesia C-O. Every value cites the Artesia Municipal Code, Title 9, Chapter 2 (eCode360, code dated 2026-04-13, read 2026-11-02).
+zone: "C-O"
+name: "Condominium (C-O)"
+family: multifamily
+
+sources:
+  Z:
+    section: "AMC §§9-2.3502, 9-2.3503 and Art. 36"
+    url: https://ecode360.com/43222206
+
+residential_allowed: {value: true, source: Z, assumption: "Condominiums only."}
+housing_types: {value: [multifamily], source: Z}
+min_lot_area_sqft: {value: 60000, source: Z}
+min_lot_width_ft: {value: 100, source: Z}
+lot_area_per_unit_sqft: {value: 3000, source: Z, assumption: "Rounded to the nearest whole home, with exactly .5 rounding up, per §9-2.3503(a)(2)."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 3000
+density_rounding: {value: nearest_half_up, source: Z}
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_stories: {value: 2, source: Z, assumption: "Article 36 limits condominiums to 2 stories above any subterranean parking."}
+parking_per_unit: {value: 2, source: Z, assumption: "2 enclosed spaces per condominium (Art. 36); guest parking wasn't read."}
+
+simplifications:
+  - "Article 36's open space standards are not modeled, so these can run high. Many of these lots are small, and each keeps one home."

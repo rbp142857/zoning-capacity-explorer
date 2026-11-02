@@ -946,3 +946,13 @@ Not on the site yet. 22 files cover 32,150 of 33,738 lots (95.3%). Not done: PD 
 Other calls: parking uses 2 spaces, the figure for 2 bedrooms or fewer; 3 bedrooms or more need 3. R-3 and similar zones use 2 stories, since more needs a permit. R-4, C-1 and C-2 limit height to 50 ft, and we fit 4 stories. R-5 has no fixed height, so we assume 6 stories and its table's FAR of 0.78. A-1 gets no SB 9, as with LA's A1 and A2. R-TH uses 12 homes per acre and sets no yards. Open space per home isn't modeled in the apartment zones, so they can run high. Not in our data: the Housing Corridor Overlay and the religious and higher education housing overlay, so those sites run low, and the hillside overlay, so those lots can run high.
 
 Known artifact: 54 lots show 0 homes because surface parking takes the room, 43 of them single townhome lots in R-TH with homes on them today. Their real parking is in shared areas the lot-by-lot model can't see. R-1's 6,000 sq ft minimum flags about 15,000 smaller existing lots; it doesn't reduce their capacity.
+
+## 44. Artesia (most zones)
+
+Not on the site yet. 13 files cover 3,719 of 3,793 lots (98.0%); R-1, M-R, M-D-R, M-C-R, C-O and A-1 count homes. Not done: five specific plans (52 lots) and 22 lots with no zone. SCAG's records are from December 2022. Of 81 homes permitted in 5+ unit buildings in 2018-2025, 64 are on unmodeled lots, 26 of them in the Arkansas Street plan.
+
+**Rounding.** M-R and C-O round to the nearest home, with exactly .5 rounding up (§§9-2.2904 and 9-2.3503), so a lot can get a home it's slightly short of.
+**M-C-R.** It allows R-1's uses, so one home per lot. We treat it as commercial, so ADU law applies and SB 9 doesn't.
+**C-O.** Condominiums only, at 3,000 sq ft per home and 2 stories (Art. 36). Its 60,000 sq ft minimum flags most of these lots but doesn't reduce them.
+
+Other calls: M-R parking uses 2 spaces plus about 1 guest space per 3 homes at 4 or more homes; more bedrooms need more. Outdoor living space isn't modeled, so M-R can run high. A-1 gets no SB 9, as an open decision. C-G, C-S-P, CPD, M-1, M-2 and OS-R list no homes; M-1's shelters aren't counted. We couldn't confirm H-D's uses, so its 2 lots count none. The Housing Opportunity (Art. 29.7) and Mixed-Use (Art. 48) overlays aren't in our data, so their sites run low.
