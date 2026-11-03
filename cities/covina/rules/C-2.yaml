@@ -1,0 +1,18 @@
+# Covina C-2. Every value cites the Covina Municipal Code, Title 17 (eCode360, read 2026-11-03).
+zone: "C-2"
+name: "C-2 Neighborhood Shopping Center"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Ch. 17.38"
+    url: https://ecode360.com/46920601
+
+residential_allowed: {value: false, source: Z, assumption: "The chapter lists residential uses as prohibited. We don't count homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

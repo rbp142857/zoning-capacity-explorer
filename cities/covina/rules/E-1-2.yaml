@@ -1,0 +1,26 @@
+# Covina E-1/2. Every value cites the Covina Municipal Code, Title 17 (eCode360, read 2026-11-03).
+zone: "E-1/2"
+name: "E-1/2 Estate Residential"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC Ch. 17.12"
+    url: https://ecode360.com/46919375
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "No more than one home per lot, besides an accessory dwelling unit. State law (ADU, SB 9) is modeled separately."}
+min_lot_area_sqft: {value: 21780, source: Z}
+
+setbacks:
+  front_ft: {value: 40, source: Z}
+  side_ft: {value: 15, source: Z, assumption: "The first-story side yard; §17.26.130 adds 2.5 ft per story above the first, not modeled."}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code allows two and one-half stories or 35 ft; we fit 2."}
+parking_per_unit: {value: 2, source: Z, assumption: "A two-car garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "This chapter's height section as published repeats the density text, so we use the 35 ft and two and one-half stories of the other estate and R-1 chapters. We found no coverage limit."

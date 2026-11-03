@@ -1107,3 +1107,13 @@ Claremont's zones come from Claremont Municipal Code Title 16 (eCode360, through
 **P/RC, WP, P and CR.** We searched these chapters for residential uses rather than reading each in full, and found none.
 
 The state's reports show 14 homes a year in 5+ unit buildings, 2018 to 2025. Half of the matched ones fall in zones we don't model.
+
+## 57. Covina (Title 17, most zones ⚠️)
+
+Covina's zones come from Covina Municipal Code Title 17 (eCode360, read November 3, 2026). 25 rule files cover 9,885 of 11,599 lots (85.2%). SCAG's zoning here dates from 2022.
+
+**The big gaps are plans, not zones.** 1,170 lots are in Planned Community Development (PCD) districts, each built to its own precise plan (Chapter 17.58), so we don't use the underlying zone. 428 are in the Town Center Specific Plan (TCSP), and 40 in the CFSP and CBSP plans, which we didn't read. The rest are 73 with no zone, two in A-1 and A-2, and one coded COUNTY. Of homes permitted in 5+ unit buildings since 2018, 96% of those we matched fall in these unmodeled areas, so the totals here miss where Covina builds most. The Affordable Housing and Mixed-Use Overlay (Chapter 17.31) and the Mixed-Use Overlay (Chapter 17.59) aren't in SCAG's data and aren't modeled.
+
+**R-1 and E.** One home per lot. R-1-8500 uses R-1-7500's standards (§17.24.050), and R-1-10,000, R-1-20,000 and the estate zones set their own side yards. We found a 35% coverage limit only in R-1-7500, R-1-8500 and E-1. The code allows two and one-half stories; we fit 2. SB 9 is what lifts these lots above one home.
+**RD.** The zone names give square feet per home, including RD-1500 and RD-1250, but Table 17.28.040 caps high-density zones at 22 per acre, which is 1,980 sq ft per home, and that's what we use. Under 15,000 sq ft, attached homes can't meet the lot minimum and detached homes aren't allowed in RD 3000 or less, so note 2 limits existing lots to the bottom of the range, 14.1 per acre, or 3,090 sq ft per home. These are conservative readings, and they run below what's on the ground: RD-1250 and RD-1500 hold 2,134 homes on the roll against 1,542 under local rules. Medium zones (RD-3400 and up) use the table's 10 per acre under 15,000 sq ft. We apply the second-story yards to the whole building. Open space and the 2021 objective design standards aren't modeled.
+**Commercial and other zones.** C-2 lists residential as prohibited, and M-1 allows only security staff housing. C-P prohibits residences except as §17.34.020 provides, yet applies RD-1500's standards to residential uses; we count none. We didn't read the uses of C-3, C-3A, C-4, C-5, TC-C, TC-P, R-R or R-TP, and count none. The roll shows 885 homes in M-1 and 419 in R-TP.

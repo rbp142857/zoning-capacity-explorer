@@ -1,0 +1,24 @@
+# Covina R-1-8500. Every value cites the Covina Municipal Code, Title 17 (eCode360, read 2026-11-03).
+zone: "R-1-8500"
+name: "R-1-8500 Single-Family"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §§17.24.050 to 17.24.080, using R-1-7500's standards"
+    url: https://ecode360.com/46919633
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "No more than one home per lot, besides an accessory dwelling unit. State law (ADU, SB 9) is modeled separately."}
+min_lot_area_sqft: {value: 8500, source: Z}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "The first-story side yard; §17.26.130 adds 2.5 ft per story above the first, not modeled."}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code allows two and one-half stories or 35 ft; we fit 2."}
+lot_coverage: {value: 0.35, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "A two-car garage. None within ½ mile of a major transit stop (the AB 2097 path)."}

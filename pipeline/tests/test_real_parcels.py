@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce, nine in Compton, ten in Claremont).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce, nine in Compton, ten in Claremont, ten in Covina).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1710,6 +1710,37 @@ def claremont():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CLAREMONT, ids=[c[0] for c in CLAREMONT])
 def test_hand_checked_claremont_parcel(claremont, address, zone, lot, max_units, binding, limits):
     rules, state, a = claremont
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+COVINA = [
+    ("568 W Alcross St", "R-1-7500", Lot(6756, 73.5, 101.4, (), 6026, 1), 4, "state_law:sb9", {"density": 1, "envelope": 4, "parking": 4}),
+    ("413 S Farber Ave", "R-1-10,000", Lot(10042, 72.8, 138.5, (), 7101, 1), 4, "state_law:sb9", {"envelope": 8, "parking": 7}),
+    ("1438 E Holt Ave", "E-1", Lot(141069, 299.2, 700.9, (), 11401, 1), 4, "state_law:sb9", {"envelope": 92, "parking": 114}),
+    ("671 S Calvados Ave", "RD-4000", Lot(106394, 319.8, 336.2, (), 5199, 24), 26, "lot_area_per_unit", {"lot_area_per_unit": 26, "envelope": 162, "parking": 83}),
+    ("258 W Hampton Ct", "RD-3000", Lot(5653, 38.4, 148.6, (), 1612, 1), 3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 5}),
+    ("351 E College St", "RD-3000", Lot(10280, 53.5, 192.7, (), 1972, 2), 3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 10}),
+    ("1375 N Sunflower Ave", "RD-3000", Lot(17059, 79.1, 216.7, (), 13364, 2), 5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 16, "parking": 15}),
+    ("341 E School St", "RD-1500", Lot(30641, 151.0, 203.6, (), 1470, 24), 15, "lot_area_per_unit", {"lot_area_per_unit": 15, "envelope": 30}),
+    ("248 E Dexter St", "RD-1250", Lot(9247, 50.0, 185.4, (), 3101, 1), 3, "state_law:adu", {"lot_area_per_unit": 2, "envelope": 9, "parking": 8}),
+    ("900 N Citrus Ave", "C-2", Lot(18702, 125.5, 150.4, (), 1384, 0), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def covina():
+    rules = load_zone_rules(REPO / "cities" / "covina" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", COVINA, ids=[c[0] for c in COVINA])
+def test_hand_checked_covina_parcel(covina, address, zone, lot, max_units, binding, limits):
+    rules, state, a = covina
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

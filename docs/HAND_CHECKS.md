@@ -1916,3 +1916,47 @@ Lots from the county roll, checked against CMC Title 16 (eCode360, read November
 ### CL-10. 655 E Foothill Blvd · CH · 25,815 sq ft
 
 - Homes need a conditional use permit within a mixed-use project, and no density is stated, so we count none. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Covina
+
+Lots from the county roll, checked against CMC Title 17 (eCode360, read November 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CV-1. 568 W Alcross St · R-1-7500 · 6,756 sq ft
+
+- One home per lot. Coverage 35% × 2 stories → 4. Parking: 5,090 ÷ 1,131 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CV-2. 413 S Farber Ave · R-1-10,000 · 10,042 sq ft
+
+- One home per lot. No coverage limit found; yards with 10 ft sides: envelope 8. Parking: 8,229 ÷ 1,131 → 7. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CV-3. 1438 E Holt Ave · E-1 · 141,069 sq ft
+
+- One home per lot, on over three acres. Coverage 35% × 2 stories → 92. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CV-4. 671 S Calvados Ave · RD-4000 · 106,394 sq ft
+
+- 106,394 ÷ 4,000 = 26.6 → **26**. Parking 83. **Result: 26, lot area per home.** Engine: 26 ✓
+
+### CV-5. 258 W Hampton Ct · RD-3000 · 5,653 sq ft
+
+- Under 15,000 sq ft, so 14.1 per acre: 5,653 ÷ 3,090 → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CV-6. 351 E College St · RD-3000 · 10,280 sq ft
+
+- 10,280 ÷ 3,090 = 3.3 → **3**. Envelope 10. Within ½ mile of transit, so no parking limit. **Result: 3, lot area per home.** Engine: 3 ✓
+
+### CV-7. 1375 N Sunflower Ave · RD-3000 · 17,059 sq ft
+
+- At 15,000 sq ft and up, the RD figure: 17,059 ÷ 3,000 = 5.7 → **5**. **Result: 5, lot area per home.** Engine: 5 ✓
+
+### CV-8. 341 E School St · RD-1500 · 30,641 sq ft
+
+- 22 per acre caps RD-1500 at 1,980 sq ft per home: 30,641 ÷ 1,980 = 15.5 → **15**. The roll shows 24 homes, which 1,500 sq ft per home would nearly allow (20). **Result: 15, lot area per home.** Engine: 15 ✓
+
+### CV-9. 248 E Dexter St · RD-1250 · 9,247 sq ft
+
+- 9,247 ÷ 3,090 = 2.99 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CV-10. 900 N Citrus Ave · C-2 · 18,702 sq ft
+
+- The chapter lists residential uses as prohibited. **Result: 0, use not permitted.** Engine: 0 ✓

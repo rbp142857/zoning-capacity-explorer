@@ -1,0 +1,18 @@
+# Covina M-1. Every value cites the Covina Municipal Code, Title 17 (eCode360, read 2026-11-03).
+zone: "M-1"
+name: "M-1 Light Manufacturing"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Ch. 17.54"
+    url: https://ecode360.com/46921229
+
+residential_allowed: {value: false, source: Z, assumption: "Only residential uses for plant security personnel. We don't count those as homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
