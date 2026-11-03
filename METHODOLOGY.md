@@ -1200,3 +1200,13 @@ Rosemead's zones come from Rosemead Municipal Code Title 17 (Municode, through O
 **Commercial.** The use table lists no dwellings. The Mixed Use Development Overlay allows homes, but its standards weren't read, so those lots run low. Planned development and the Garvey specific plan aren't modeled. Parking wasn't read.
 
 20 rule files cover 9,719 of 10,409 lots (93.4%). By-right approval is confirmed on 9,282 of them. Not modeled: 478 009:P-D, 74 no zone, 58 103:GSP-MU, 56 101:GSP, 18 102:GSP-R/C, 1 P, 1 GSP, 1 009:P.
+
+## 65. San Fernando (most zones ⚠️)
+
+San Fernando's zones come from San Fernando City Code Chapter 106 (Municode, read November 3, 2026).
+
+**R-1.** One home, 50% coverage, on a 7,500 sq ft minimum. **R-2 and R-3.** One home per 2,562 and 1,013 sq ft, 40% coverage, and 35 and 45 ft. In these zones a single home on a lot that only fits one needs a conditional use permit, so the by-right number overstates those small lots. Stories are our fit to the height limit.
+
+**Commercial and industrial.** Tables 160-72 and 160-102 list no dwellings apart from conditional single room occupancy units. Specific Plan 5, planned development and the RPD overlay aren't modeled. Parking wasn't read.
+
+8 rule files cover 4,305 of 4,962 lots (86.8%). By-right approval is confirmed on 4,305 of them. Not modeled: 137 SP-5 - M, 107 SP-5 - D, 71 SP-5 - MUC, 68 SP-5 - GN, 63 no zone, 57 SP-5 - WF, 41 SP-5 - AC, 38 RPD.

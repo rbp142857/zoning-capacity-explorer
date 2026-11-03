@@ -2212,3 +2212,21 @@ Each lot's by-right number, checked against the code's use list. Square footage 
 ### RO-4. 3141 Del Mar Ave Rosemead Ca 91770 · 006:C-3 · 7,342 sq ft
 
 - homes not counted. **Result: 0, use not permitted.** By right: 0. Engine: 0 ✓
+
+## San Fernando
+
+### SF-1. 2008 Knox St San Fernando Ca 91340 · R-1 · 6,887 sq ft
+
+- density 1, envelope 6, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### SF-2. 623 Coronel St San Fernando Ca 91340 · R-2 · 5,000 sq ft
+
+- lot_area_per_unit 1, envelope 3, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### SF-3. 227 N Hagar St San Fernando Ca 91340 · R-3 · 7,071 sq ft
+
+- lot_area_per_unit 6, envelope 7, state_adu 3. **Result: 6, lot area per unit.** By right: 6. Engine: 6 ✓
+
+### SF-4. 539 Library St San Fernando Ca 91340 · M-1 · 19,990 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: 0. Engine: 0 ✓

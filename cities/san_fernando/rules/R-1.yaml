@@ -1,0 +1,22 @@
+# San Fernando R-1. Every value cites the San Fernando City Code, Chapter 106 (Municode), read 2026-11-03.
+zone: R-1
+name: Single-Family Residential (R-1)
+family: single_family
+sources:
+  Z: {section: 'SFCC Tables 106-42, 106-43.1 and 106-43.2', url: 'https://library.municode.com/ca/san_fernando/codes/code_of_ordinances?nodeId=CO_CH106ZO_ARTIIBAOVZO_DIV2REZOR'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family]
+  source: Z
+approval: {value: by_right, source: Z, assumption: Table 106-42 marks single-unit dwellings P.}
+min_lot_area_sqft: {value: 7500, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: 'One home per lot. State law (ADU, SB 9) is modeled separately.'}
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: 'The table limits height, not stories; we fit 2 at 35 ft.'}
+lot_coverage: {value: 0.5, source: Z}
+simplifications: ['Parking wasn''t read, so small lots can run high.', 'Rear yard next to a street is 20 ft, not modeled.']

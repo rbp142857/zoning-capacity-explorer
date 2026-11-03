@@ -1,0 +1,16 @@
+# San Fernando M-1. Every value cites the San Fernando City Code, Chapter 106 (Municode), read 2026-11-03.
+zone: M-1
+name: M-1 (Table 160-102)
+family: nonresidential
+sources:
+  Z: {section: SFCC Table 160-102 (industrial uses), url: 'https://library.municode.com/ca/san_fernando/codes/code_of_ordinances?nodeId=CO_CH106ZO_ARTIIBAOVZO_DIV4INZOM'}
+residential_allowed: {value: false, source: Z, assumption: Table 160-102 lists no dwellings.}
+housing_types:
+  value: []
+  source: Z
+approval: {value: not_allowed, source: Z, assumption: Table 160-102 lists no dwellings.}
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: 'Not relevant: homes not counted.'}

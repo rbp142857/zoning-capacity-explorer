@@ -1,0 +1,16 @@
+# San Fernando SC. Every value cites the San Fernando City Code, Chapter 106 (Municode), read 2026-11-03.
+zone: SC
+name: SC (Table 160-72)
+family: nonresidential
+sources:
+  Z: {section: SFCC Table 160-72 (commercial uses), url: 'https://library.municode.com/ca/san_fernando/codes/code_of_ordinances?nodeId=CO_CH106ZO_ARTIIBAOVZO_DIV3COZOC'}
+residential_allowed: {value: false, source: Z, assumption: 'Table 160-72 lists only single room occupancy units, with a conditional use permit in C-1 and C-2.'}
+housing_types:
+  value: []
+  source: Z
+approval: {value: not_allowed, source: Z, assumption: Table 160-72 lists no dwellings apart from conditional single room occupancy units.}
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: 'Not relevant: homes not counted.'}

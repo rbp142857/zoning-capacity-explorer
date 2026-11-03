@@ -1909,3 +1909,28 @@ def test_hand_checked_rosemead_parcel(rosemead, address, zone, lot, max_units, b
     assert r.binding_constraint == binding
     for name, value in limits.items():
         assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+SAN_FERNANDO = [
+    ("2008 Knox St San Fernando Ca 91340", "R-1", Lot(6887, 51.0, 138.5, (), 6358, 1, 0), 4, "state_law:sb9", {'density': 1, 'envelope': 6, 'state_adu': 3, 'state_sb9': 4}),
+    ("623 Coronel St San Fernando Ca 91340", "R-2", Lot(5000, 50.0, 100.1, (), 1550, 1, 60), 3, "state_law:adu", {'lot_area_per_unit': 1, 'envelope': 3, 'state_adu': 3}),
+    ("227 N Hagar St San Fernando Ca 91340", "R-3", Lot(7071, 49.9, 141.9, (), 1579, 1, 519), 6, "lot_area_per_unit", {'lot_area_per_unit': 6, 'envelope': 7, 'state_adu': 3}),
+    ("539 Library St San Fernando Ca 91340", "M-1", Lot(19990, 100.1, 199.9, (), 2800, 0, 880), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def san_fernando():
+    rules = load_zone_rules(REPO / "cities" / "san_fernando" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", SAN_FERNANDO, ids=[c[0] for c in SAN_FERNANDO])
+def test_hand_checked_san_fernando_parcel(san_fernando, address, zone, lot, max_units, binding, limits):
+    rules, state, a = san_fernando
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
