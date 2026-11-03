@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily, mixed_use], source: Z}
+approval: {value: conditional, source: Z, assumption: "Chapter 17.47's table marks multifamily residential CUP."}
 lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "30 homes per acre: 43,560 divided by 30."}
 small_lot_units:
   value:

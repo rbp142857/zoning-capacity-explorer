@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Mixed-use projects are not allowed in CN2 (Table 2-5 note 12)."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Residential uses are prohibited in CN2."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

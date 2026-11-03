@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Table 2-2 lists no homes here."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Table 2-2 leaves homes blank here."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

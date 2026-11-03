@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Chapter 17.35's table marks single-family detached dwellings P."}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. The zone's 1 homes per acre and minimum lot sizes govern new lots, not a lot already there. State law (ADU, SB 9) is modeled separately."}
 
 setbacks:

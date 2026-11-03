@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "A single-family dwelling is a permitted use in the R-1 Zone."}
 min_lot_area_sqft: {value: 8000, source: S}
 min_lot_width_ft: {value: 65, source: S}
 max_units_per_lot: {value: 1, source: Z, assumption: "One single-family home. State law (ADU, SB 9, §9.14.090) is modeled separately."}

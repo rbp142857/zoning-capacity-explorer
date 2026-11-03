@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§18.16.020 lists one single-family dwelling as a principal use."}
 min_lot_area_sqft: {value: 7000, source: Z}
 min_lot_width_ft: {value: 60, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "One single-family home. State law (ADU, SB 9) is modeled separately."}

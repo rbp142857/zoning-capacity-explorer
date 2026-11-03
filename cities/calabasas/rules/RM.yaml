@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-2 marks apartments, condominiums and single-family housing P."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 lot_area_per_unit_sqft: {value: 1815, source: Z, assumption: "24 homes per acre: 43,560 divided by 24. A zoning map suffix (such as RM-12D) can lower this, and SCAG drops suffixes, so we can't see it. Lots with a lower suffix run high; see the open decision."}

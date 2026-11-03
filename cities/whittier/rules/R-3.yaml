@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The chapter's permitted uses list dwelling units as a principal use."}
 min_lot_area_sqft: {value: 7000, source: Z, assumption: "For new lots; existing smaller lots get the density rule."}
 lot_area_per_unit_sqft:
   value:

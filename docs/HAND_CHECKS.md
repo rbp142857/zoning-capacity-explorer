@@ -2088,3 +2088,23 @@ Each lot's by-right number, checked against the code's use list. Square footage 
 ### BR-12. El Monte parcel 8103026013 · M-1 · 10,201 sq ft
 
 - The citywide use matrix marks dwellings — in M-1. Max 0. **By right: 0.** Engine: 0 ✓
+
+### BR-13. Santa Clarita parcel 3244061072 · UR2 · 7,100 sq ft
+
+- §17.42.010's table marks single-family dwellings P; SB 9 gives more where it applies. Max 4. **By right: 4.** Engine: 4 ✓
+
+### BR-14. Palmdale parcel 3010002009 · RN3 · 9,035 sq ft
+
+- Chapter 17.35's table marks multifamily dwellings P. Max 6. **By right: 6.** Engine: 6 ✓
+
+### BR-15. Palmdale parcel 3004004048 · MEDFX · 113,112 sq ft
+
+- Chapter 17.47's table marks multifamily residential CUP. Max 77. **By right: 0.** Engine: 0 ✓
+
+### BR-16. Whittier parcel 8134022019 · R-3 · 6,389 sq ft
+
+- §18.20.020 lists dwelling units as a principal use. Max 3. **By right: 3.** Engine: 3 ✓
+
+### BR-17. Calabasas parcel 2069066032 · OS-DR · 37,224 sq ft
+
+- Table 2-2 leaves homes blank. Max 0. **By right: 0.** Engine: 0 ✓

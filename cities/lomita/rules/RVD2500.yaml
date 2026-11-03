@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 11-1.30.A marks multifamily housing P in R-2 and R-3, with note 1, which we didn't read closely."}
 lot_area_per_unit_sqft: {value: 2500, source: Z, assumption: "We read the number in RVD2500 as sq ft per home, about 17.4 per acre. That is within R-2's maximum of 19.79 per acre, so we keep the lower figure."}
 small_lot_units:
   value:

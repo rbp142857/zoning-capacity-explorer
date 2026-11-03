@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [two_unit, multifamily, mixed_use], source: Z}
+approval: {value: by_right, source: Z, assumption: "Chapter 17.54's table marks attached, two-family and multifamily homes P."}
 lot_area_per_unit_sqft: {value: 871.2, source: Z, assumption: "50 homes per acre: 43,560 divided by 50."}
 small_lot_units:
   value:

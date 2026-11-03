@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Single-family and two-family homes are marked X in the use chart. The multifamily row could not be read cell by cell, so we don't count homes (conservative)."}
 housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "§17.42.010's table marks multifamily dwellings C with note 2."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

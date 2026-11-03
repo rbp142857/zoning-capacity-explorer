@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: U, assumption: "Two-family homes are allowed outright. The multifamily row of the use chart could not be read cell by cell; the zone text describes these as residential at this density, so we count them."}
 housing_types: {value: [two_unit, multifamily], source: U}
+approval: {value: by_right, source: U, assumption: "§17.42.010's table marks two-family and multifamily dwellings P."}
 min_lot_area_sqft: {value: 4500, source: Z}
 min_lot_width_ft: {value: 40, source: Z}
 lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "43,560 sq ft per acre divided by the zone's density. The code counts gross acres; we use the lot."}

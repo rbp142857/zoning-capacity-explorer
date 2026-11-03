@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-2 marks single-family housing P."}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, Table 2-5. Subdivision densities are not modeled. State law is modeled separately."}
 sb9_allowed: {value: false, source: Z, assumption: "This is a recreation district, not a single-family residential zone, so we don't apply SB 9 (conservative); see the open decision."}
 

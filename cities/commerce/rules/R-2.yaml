@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit], source: Z}
+approval: {value: by_right, source: Z, assumption: "§19.07's table marks duplexes and single-family dwellings P."}
 max_units_per_lot: {value: 2, source: Z, assumption: "§19.07.010 says R-2 lots may hold one or two detached homes or duplex units."}
 lot_area_per_unit_sqft: {value: 3000, source: Z, assumption: "3,000 sq ft per home for two detached homes (14.52 per acre, the top of the range). An attached duplex needs 5,000 sq ft per home (8.71 per acre), so the count assumes detached homes."}
 small_lot_units:

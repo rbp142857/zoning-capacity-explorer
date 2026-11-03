@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Mobile homes only; the code applies this zone to the city's existing park."}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Table 2-2 marks mobilehome parks C."}
 lot_area_per_unit_sqft: {value: 5445, source: Z, assumption: "8 mobile homes per acre: 43,560 divided by 8."}
 small_lot_units:
   value:

@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 11-1.30.A marks single-family residences P."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "Table 11-1.30.A allows a single-family home here and no multifamily. Its 10.89 homes per acre governs subdividing. State law (ADU, SB 9) is modeled separately."}

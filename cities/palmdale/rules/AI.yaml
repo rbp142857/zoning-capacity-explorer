@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Table 17.66.010-1 gives AI no residential density."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Chapter 17.65's table marks homes –."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

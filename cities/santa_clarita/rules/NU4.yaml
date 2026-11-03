@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: U}
 housing_types: {value: [single_family], source: U}
+approval: {value: by_right, source: U, assumption: "§17.42.010's table marks single-family dwellings P."}
 min_lot_area_sqft: {value: 87120, source: Z}
 min_lot_width_ft: {value: 100, source: Z}
 max_units_per_lot: {value: 1, source: U, assumption: "Only single-family homes are allowed here. Density is 0.5 homes per gross acre, which governs subdividing, not a lot already there."}

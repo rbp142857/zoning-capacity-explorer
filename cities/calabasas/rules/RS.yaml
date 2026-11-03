@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-2 marks single-family housing P."}
 min_lot_area_sqft: {value: 5000, source: Z, assumption: "A zoning map suffix can require up to 20,000 sq ft; SCAG drops suffixes."}
 min_lot_width_ft: {value: 50, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, Table 2-5. Subdivision densities are not modeled. State law is modeled separately."}

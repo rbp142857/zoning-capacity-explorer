@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [mixed_use, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Chapter 17.35's table marks single-family, two-family and multifamily dwellings P."}
 lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "43,560 sq ft per acre divided by the zone's density. The code counts gross acres; we use the lot."}
 small_lot_units:
   value:

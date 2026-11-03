@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "§19.07's table marks multifamily dwellings P."}
 min_lot_area_sqft: {value: 7500, source: Z}
 lot_area_per_unit_sqft: {value: 2000, source: Z, assumption: "2,000 sq ft per home; the table also states 21.78 per acre, the same density. Its note (b) says rounding up may allow greater density. We round down (conservative)."}
 small_lot_units:
