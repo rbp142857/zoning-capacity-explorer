@@ -1996,3 +1996,43 @@ Lots from the county roll, checked against CMC Title 20 (ICC Code Solutions, rea
 ### CU-8. 8420 S Atlantic Ave · Ent · 24,742 sq ft
 
 - Homes only in mixed-use projects, with density listed as N/A, so we count none. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Diamond Bar
+
+Lots from the county roll, checked against DBCC Title 22 (Municode, read November 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### DB-1. 22442 Mountain Laurel Way · RL · 7,011 sq ft
+
+- One home per lot. Coverage 40% × 2 stories → 5. Parking: 5,768 ÷ 1,131 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### DB-2. 867 Golden Prados Dr · RLM · 8,161 sq ft
+
+- One home per lot. Coverage 40% × 2 stories → 6. Parking: 6,988 ÷ 1,131 → 6. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### DB-3. 2601 Wagon Train Ln · RR · 38,229 sq ft
+
+- One home per lot, under the one-acre minimum. Coverage 30% × 2 stories → 21. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### DB-4. 805 Windwood Dr · RM · 16,032 sq ft
+
+- 12 per acre is 3,630 sq ft each: 4.4 → **4**. The roll shows 8. Within ½ mile of transit, so no parking limit. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### DB-5. 20767 E Crest Ln · RM · 133,244 sq ft
+
+- 133,244 ÷ 3,630 = 36.7 → **36**. Envelope 112, parking 115. **Result: 36, lot area per home.** Engine: 36 ✓
+
+### DB-6. 22886 Hilton Head Dr · RMH · 112,234 sq ft
+
+- 16 per acre is 2,722.5 sq ft each: 41.2 → **41**. Envelope 95, parking 97. **Result: 41, lot area per home.** Engine: 41 ✓
+
+### DB-7. 338 Torito Ln · RH · 8,136 sq ft
+
+- 20 per acre is 2,178 sq ft each: 3.7 → **3**. Coverage 30% × 3 stories → 6. Parking: 7,045 ÷ 1,104 → 6. The roll shows 7. **Result: 3, lot area per home.** Engine: 3 ✓
+
+### DB-8. 876 Sunset Place · OS · 37,926 sq ft
+
+- One home per existing parcel; no SB 9. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### DB-9. 2751 S Diamond Bar Blvd · C-2 · 108,837 sq ft
+
+- The chapter lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓

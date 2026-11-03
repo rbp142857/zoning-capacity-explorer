@@ -1,0 +1,18 @@
+# Diamond Bar CO. Every value cites the Diamond Bar City Code, Title 22 (Municode, read 2026-11-03).
+zone: "CO"
+name: "CO Commercial Office"
+family: nonresidential
+
+sources:
+  Z:
+    section: "DBCC Ch. 22.10"
+    url: https://library.municode.com/ca/diamond_bar/codes/code_of_ordinances?nodeId=CICO_TIT22DECO_ARTIIZODIALLAUS_CH22.10COINZODI
+
+residential_allowed: {value: false, source: Z, assumption: "The chapter's text and use tables list no homes apart from single-room occupancy housing with a conditional use permit and transitional or supportive housing. We don't count those as homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

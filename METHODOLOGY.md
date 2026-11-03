@@ -1126,3 +1126,17 @@ Cudahy's zones come from Cudahy Municipal Code Title 20 (ICC Code Solutions, thr
 **CMU and CivicMU.** We use the residential-only 30 homes per acre. Mixed-use projects may reach 40, with more stories in exchange for community benefits, so large sites here run low. §20.28.020.D expressly allows stand-alone residential only in CMU, though the table gives CivicMU a residential-only density too.
 **I-Ind.** Multifamily homes with a conditional use permit, at 30 homes per acre, which we assume is granted.
 **NC, Ent, LI, P, S and LAR.** NC needs a conditional use permit and lists density as N/A. Ent allows homes only in mixed-use projects, not on the ground floor, with density N/A. LI allows only live/work units. We count none. Cudahy's capacity is mostly in multifamily zones, and nearly all 5+ unit permits since 2019 match to modeled zones. The River and Urban Agriculture overlays and Planned Developments aren't in SCAG's data.
+
+## 59. Diamond Bar (Title 22, most zones ⚠️)
+
+Diamond Bar's zones come from Diamond Bar City Code Title 22 (Municode, read November 3, 2026). 15 rule files cover 14,066 of 14,402 lots (97.7%). SCAG's zoning here dates from 2023.
+
+Not modeled: 120 lots with no zone, which hold 813 homes on the roll; 135 in SP and SUB-PA areas, whose plans we didn't read; 35 labeled Town Center Mixed Use, governed by the Town Center Specific Plan, which is a separate document (§22.11.030); 26 labeled Transit Oriented and 18 labeled Neighborhood Mixed Use, which Chapter 22.11 no longer lists after Ord. 03(2026); and two labeled Public Facility, also unlisted.
+
+**RR, RL and RLM.** One home per lot, with 30% or 40% coverage. The per-acre figures (3 and 5) apply to gross acreage in subdivisions. The code limits height to 35 ft, and we fit 2 stories. Unequal side yards are averaged. SB 9 is what lifts these lots above one home.
+**RM, RMH and RH.** 12, 16 and 20 homes per gross acre, with 30% coverage and parking at 2 spaces plus a half guest space. We use the lot's area rather than gross acreage. Several built complexes exceed these limits on the roll. RH-30, at 30 per acre on 5-acre sites, is in the code, but SCAG doesn't show it, so any RH-30 sites count as RH or something older and run low.
+**Hillside.** Chapter 22.22 can lower density and change yards on sloped lots. Much of this city is hilly and we have no slope data, so those lots can run high, including what SB 9 adds. We didn't read that chapter.
+**OS.** One home per existing parcel, unless the county previously restricted building there, which we can't tell. It counts 67 homes on lots where the roll shows 3, so this may overstate; we don't apply SB 9.
+**Commercial and industrial.** OP, OB, CO, C-1, C-2, C-3 and I list no homes apart from single-room occupancy and supportive housing, which we don't count. PK lots use REC's no-homes rule, and C-3-PD/Hotel uses C-3's. The roll shows 197 homes in OB.
+
+The state's reports show no homes permitted in 5+ unit buildings in 2018 to 2025; ADUs make up most of what gets built.

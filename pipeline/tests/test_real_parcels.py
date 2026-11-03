@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce, nine in Compton, ten in Claremont, ten in Covina, eight in Cudahy).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce, nine in Compton, ten in Claremont, ten in Covina, eight in Cudahy, nine in Diamond Bar).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1770,6 +1770,36 @@ def cudahy():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CUDAHY, ids=[c[0] for c in CUDAHY])
 def test_hand_checked_cudahy_parcel(cudahy, address, zone, lot, max_units, binding, limits):
     rules, state, a = cudahy
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+DIAMOND_BAR = [
+    ("22442 Mountain Laurel Way", "RL", Lot(7011, 63.7, 112.8, (), 8566, 1), 4, "state_law:sb9", {"density": 1, "envelope": 5, "parking": 5}),
+    ("867 Golden Prados Dr", "RLM", Lot(8161, 59.1, 139.1, (), 10288, 1), 4, "state_law:sb9", {"envelope": 6, "parking": 6}),
+    ("2601 Wagon Train Ln", "RR", Lot(38229, 203.5, 327.1, (), 12658, 1), 4, "state_law:sb9", {"envelope": 21, "parking": 30}),
+    ("805 Windwood Dr", "RM", Lot(16032, 118.8, 135.5, (), 1013, 8), 4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 13}),
+    ("20767 E Crest Ln", "RM", Lot(133244, 443.4, 443.6, (), 10415, 28), 36, "lot_area_per_unit", {"lot_area_per_unit": 36, "envelope": 112, "parking": 115}),
+    ("22886 Hilton Head Dr", "RMH", Lot(112234, 324.4, 535.8, (), 8807, 1), 41, "lot_area_per_unit", {"lot_area_per_unit": 41, "envelope": 95, "parking": 97}),
+    ("338 Torito Ln", "RH", Lot(8136, 54.6, 149.2, (), 12345, 7), 3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 6, "parking": 6}),
+    ("876 Sunset Place", "OS", Lot(37926, 186.0, 315.7, (), 7922, 3), 3, "state_law:adu", {"envelope": 71, "parking": 33}),
+    ("2751 S Diamond Bar Blvd", "C-2", Lot(108837, 370.9, 443.3, (), 11593, 0), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def diamond_bar():
+    rules = load_zone_rules(REPO / "cities" / "diamond_bar" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", DIAMOND_BAR, ids=[c[0] for c in DIAMOND_BAR])
+def test_hand_checked_diamond_bar_parcel(diamond_bar, address, zone, lot, max_units, binding, limits):
+    rules, state, a = diamond_bar
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

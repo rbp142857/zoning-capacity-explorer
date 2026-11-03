@@ -1,0 +1,33 @@
+# Diamond Bar RM. Every value cites the Diamond Bar City Code, Title 22 (Municode, read 2026-11-03).
+zone: "RM"
+name: "RM Medium Density Residential"
+family: multifamily
+
+sources:
+  Z:
+    section: "DBCC §§22.08.030, 22.08.040 and 22.30"
+    url: https://library.municode.com/ca/diamond_bar/codes/code_of_ordinances?nodeId=CICO_TIT22DECO_ARTIIZODIALLAUS_CH22.08REZODI
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+min_lot_area_sqft: {value: 5000, source: Z}
+lot_area_per_unit_sqft: {value: 3630, source: Z, assumption: "12 homes per gross acre. We use the lot's area and don't add half of any street; hillside limits can lower it."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "An existing lot too small for one home at this density keeps one."
+small_lot_units_below_sqft: 3630
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits feet, not stories; we fit one per 10 ft."}
+lot_coverage: {value: 0.30, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "2 garage spaces per home with one or more bedrooms, plus half a space for each bedroom over two. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: Z, assumption: "One guest space for each four required spaces."}
