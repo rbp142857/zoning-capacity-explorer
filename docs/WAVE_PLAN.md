@@ -90,6 +90,8 @@ yet: its 140 MB of site files need the owner's go-ahead. See METHODOLOGY section
 **Waiting on the owner: Westlake Village's North Business Park plan.** Its PDF is over the fetch tool's 10 MB limit, and saving a file needs
 the owner's OK: https://www.wlv.org/DocumentCenter/View/5961/NBPSP-revised-September-2025. It holds the standards for six districts (42 lots).
 
+**Waiting on the owner: Maywood.** The Municipal Code only continues its zoning ordinances in effect, so the text is in city PDFs (https://www.cityofmaywood.com/174/Standards-Permits-Maps), and saving a file needs the owner's OK. Its data is downloaded, but it has no rule files.
+
 **Waiting on the owner: Pomona.** Its data is downloaded and its config is in `cities/pomona/`, but it has no rule files.
 Its 2024 code, with zones like RND1 and NED1, is a PDF on the city's site that the fetch tool can't read, and saving a file needs
 the owner's OK: https://www.pomonaca.gov/home/showpublisheddocument/9137/639197017052930000 (effective July 15, 2026).
