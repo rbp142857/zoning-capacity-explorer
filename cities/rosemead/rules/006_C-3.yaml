@@ -1,0 +1,16 @@
+# Rosemead 006:C-3. Every value cites the Rosemead Municipal Code, Title 17 (Municode, through Ord. 1033 of May 2026), read 2026-11-03.
+zone: 006:C-3
+name: 006:C-3 (SCAG's code)
+family: nonresidential
+sources:
+  Z: {section: RMC §17.16.020 (commercial uses), url: 'https://library.municode.com/ca/rosemead/codes/code_of_ordinances?nodeId=CD_ORD_TIT17ZO_ART2ZODIALLAUSZOECST_CH17.16COZODI'}
+residential_allowed: {value: false, source: Z, assumption: The commercial use table lists no dwellings.}
+housing_types:
+  value: []
+  source: Z
+approval: {value: not_allowed, source: Z, assumption: The commercial use table lists no dwellings for this zone without the mixed-use overlay.}
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: 'Not relevant: homes not counted.'}

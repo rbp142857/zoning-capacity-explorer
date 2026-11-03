@@ -1,0 +1,33 @@
+# Rosemead 002:R-2. Every value cites the Rosemead Municipal Code, Title 17 (Municode, through Ord. 1033 of May 2026), read 2026-11-03.
+zone: 002:R-2
+name: Medium Density Residential (R-2)
+family: multifamily
+sources:
+  Z: {section: RMC §§17.12.020 and 17.12.030 (residential uses and standards), url: 'https://library.municode.com/ca/rosemead/codes/code_of_ordinances?nodeId=CD_ORD_TIT17ZO_ART2ZODIALLAUSZOECST_CH17.12REZODI'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family, two_unit]
+  source: Z
+approval: {value: by_right, source: Z, assumption: Table marks two-family dwellings P.}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 4500, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+    - {value: 1}
+  source: Z
+  assumption: A lot too small for one home keeps one home (assumed).
+small_lot_units_below_sqft: 4500
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft:
+    value: {pct_of_width: 0.1, min_ft: 5, max_ft: 50}
+    source: Z
+    assumption: The greater of 5 ft or 10% of lot width.
+  rear_ft: {value: 20, source: Z, assumption: The lesser of 20 ft or 20% of lot depth; we use 20 ft (conservative).}
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+max_far: {value: 0.35, source: Z}
+simplifications: ['Parking wasn''t read, so small lots can run high.']

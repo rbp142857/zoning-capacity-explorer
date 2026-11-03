@@ -180,7 +180,7 @@ what that wave teaches about suffixes and overlays.
 
 ### Wave 5: the long tail (53 jurisdictions)
 
-**Progress:** Artesia most zones ⚠️ (METHODOLOGY section 44). Avalon most zones ⚠️ (section 45). Baldwin Park most zones ⚠️ (section 46). Bell most zones ⚠️ (section 47). Bell Gardens most zones ⚠️ (section 48). Bellflower most zones ⚠️ (section 49). Beverly Hills most zones ⚠️ (section 50). Bradbury done ⚠️ (section 51). Calabasas done ⚠️ (section 52). Cerritos most zones ⚠️ (section 53). Commerce most zones ⚠️ (section 54). Compton most zones ⚠️ (section 55). Claremont most zones ⚠️ (section 56). Covina most zones ⚠️ (section 57). Cudahy most zones ⚠️ (section 58). Diamond Bar most zones ⚠️ (section 59). Downey most zones ⚠️ (section 61). El Segundo most zones ⚠️ (section 62). Irwindale most zones ⚠️ (section 63).
+**Progress:** Artesia most zones ⚠️ (METHODOLOGY section 44). Avalon most zones ⚠️ (section 45). Baldwin Park most zones ⚠️ (section 46). Bell most zones ⚠️ (section 47). Bell Gardens most zones ⚠️ (section 48). Bellflower most zones ⚠️ (section 49). Beverly Hills most zones ⚠️ (section 50). Bradbury done ⚠️ (section 51). Calabasas done ⚠️ (section 52). Cerritos most zones ⚠️ (section 53). Commerce most zones ⚠️ (section 54). Compton most zones ⚠️ (section 55). Claremont most zones ⚠️ (section 56). Covina most zones ⚠️ (section 57). Cudahy most zones ⚠️ (section 58). Diamond Bar most zones ⚠️ (section 59). Downey most zones ⚠️ (section 61). El Segundo most zones ⚠️ (section 62). Irwindale most zones ⚠️ (section 63). Rosemead most zones ⚠️ (section 64).
 
 Together 1.3% of the county's multi-unit building. Many are almost entirely
 single-family (in 20 of them, 1–4 zone codes cover 90% of parcels), so each

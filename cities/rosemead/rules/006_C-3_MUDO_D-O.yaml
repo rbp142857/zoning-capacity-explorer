@@ -1,0 +1,15 @@
+# Rosemead 006:C-3 MUDO D-O. Every value cites the Rosemead Municipal Code, Title 17 (Municode, through Ord. 1033 of May 2026), read 2026-11-03.
+zone: 006:C-3 MUDO D-O
+name: 006:C-3 MUDO D-O (SCAG's code)
+family: nonresidential
+sources:
+  Z: {section: RMC §17.16.020 (commercial uses), url: 'https://library.municode.com/ca/rosemead/codes/code_of_ordinances?nodeId=CD_ORD_TIT17ZO_ART2ZODIALLAUSZOECST_CH17.16COZODI'}
+residential_allowed: {value: false, source: Z, assumption: 'The Mixed Use Development Overlay allows homes, but we didn''t read its standards. We don''t count homes (conservative); these lots run low.'}
+housing_types:
+  value: []
+  source: Z
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: 'Not relevant: homes not counted.'}

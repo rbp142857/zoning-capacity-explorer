@@ -1884,3 +1884,28 @@ def test_hand_checked_irwindale_parcel(irwindale, address, zone, lot, max_units,
     assert r.binding_constraint == binding
     for name, value in limits.items():
         assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+ROSEMEAD = [
+    ("3527 Marybeth Ave Rosemead Ca 91770", "001:R-1", Lot(6896, 52.3, 132.7, (), 4219, 1, 0), 4, "state_law:sb9", {'density': 1, 'envelope': 2, 'state_adu': 3, 'state_sb9': 4}),
+    ("3410 Kelburn Ave Rosemead Ca 91770", "002:R-2", Lot(7409, 76.8, 129.4, (), 9452, 2, 1570), 3, "state_law:adu", {'lot_area_per_unit': 1, 'envelope': 2, 'state_adu': 3}),
+    ("2522 New Ave Rosemead Ca 91770", "003:R-3", Lot(9206, 44.3, 211.0, (), 8056, 1, 1479), 3, "envelope", {'lot_area_per_unit': 6, 'envelope': 3, 'state_adu': 3}),
+    ("3141 Del Mar Ave Rosemead Ca 91770", "006:C-3", Lot(7342, 40.8, 181.3, (), 10318, 1, 1250), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def rosemead():
+    rules = load_zone_rules(REPO / "cities" / "rosemead" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", ROSEMEAD, ids=[c[0] for c in ROSEMEAD])
+def test_hand_checked_rosemead_parcel(rosemead, address, zone, lot, max_units, binding, limits):
+    rules, state, a = rosemead
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"

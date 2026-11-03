@@ -2194,3 +2194,21 @@ Each lot's by-right number, checked against the code's use list. Square footage 
 ### IR-5. 13654 Live Oak Ln Irwindale Ca 91706 · M2 · 57,512 sq ft
 
 - homes not counted. **Result: 0, use not permitted.** By right: not confirmed. Engine: 0 ✓
+
+## Rosemead
+
+### RO-1. 3527 Marybeth Ave Rosemead Ca 91770 · 001:R-1 · 6,896 sq ft
+
+- density 1, envelope 2, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### RO-2. 3410 Kelburn Ave Rosemead Ca 91770 · 002:R-2 · 7,409 sq ft
+
+- lot_area_per_unit 1, envelope 2, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### RO-3. 2522 New Ave Rosemead Ca 91770 · 003:R-3 · 9,206 sq ft
+
+- lot_area_per_unit 6, envelope 3, state_adu 3. **Result: 3, envelope.** By right: 3. Engine: 3 ✓
+
+### RO-4. 3141 Del Mar Ave Rosemead Ca 91770 · 006:C-3 · 7,342 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: 0. Engine: 0 ✓
