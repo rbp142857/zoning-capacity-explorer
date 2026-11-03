@@ -1,0 +1,27 @@
+# Downey R-1 8,500. Every value cites the Downey Municipal Code, Article IX (eCode360, through Ord. 25-1520), read 2026-11-03.
+zone: R-1 8,500
+name: Single-Family Residential (R-1 8,500)
+family: single_family
+sources:
+  Z: {section: 'DMC §9312.06, Table 9.3.2 (uses); §9312.08, Tables 9.3.3 and 9.3.4 (standards)', url: 'https://ecode360.com/44400897'}
+  P: {section: 'DMC Ch. 7, Table 9.7.2 (residential parking)', url: 'https://ecode360.com/44402935'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family]
+  source: Z
+approval: {value: by_right, source: Z, assumption: Table 9.3.2 marks detached single-family dwellings P.}
+min_lot_area_sqft: {value: 8500, source: Z}
+min_lot_width_ft: {value: 65, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: 'One home per lot. State law (ADU, SB 9) is modeled separately.'}
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft:
+    value: {pct_of_width: 0.1, min_ft: 5, max_ft: 14}
+    source: Z
+  rear_ft: {value: 20, source: Z}
+max_height_ft: {value: 28, source: Z}
+max_stories: {value: 2, source: Z, assumption: 'The table limits height to 28 ft, not stories; we fit 2.'}
+lot_coverage: {value: 0.45, source: Z}
+max_far: {value: 0.45, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: '2 spaces under 3,375 sq ft of habitable space; 3 above. None within ½ mile of a major transit stop (the AB 2097 path).'}
+simplifications: [Second-floor setback and mass rules aren't modeled.]

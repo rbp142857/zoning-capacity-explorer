@@ -1161,3 +1161,12 @@ Every rule file can now say how its zone permits homes, in `approval`: `by_right
 
 **The site.** The lot panel now shows the building's square footage, by-right homes, net add under today's rules, and net add by right. `building_sqft` comes from the Assessor and doesn't enter any calculation. It's in `parcels.json` for the four cities whose site files are in the repo. Net add by right is worked out in the panel, not stored.
 
+## 61. Downey (most zones ⚠️)
+
+Downey's zones come from Downey Municipal Code Article IX (eCode360, through Ord. 25-1520 of January 2025, read November 3, 2026).
+
+**R-1.** One detached home with 45% coverage and FAR, 28 ft, 20 ft front and rear yards, and a side yard of 10% of width. **R-2.** 2,500 sq ft per home. **R-3 and R-3-O.** 1,980 sq ft per home, or 1,815 on lots over 15,000 sq ft. R-3-O's table allows condominiums but not apartments; we count condominiums. The R-3 rear yard depends on what it abuts, and we use 20 ft, so some lots run high.
+
+**Commercial and manufacturing.** Tables 9.3.5 and 9.3.9 list no homes. O-S and P-B weren't read closely and count none. DDSP and the SP areas are specific plans we didn't read, so they aren't modeled. The Housing Overlay zones in Table 9.3.15 aren't in our data, so those lots run low.
+
+20 rule files cover 21,929 of 22,422 lots (97.8%). By-right approval is confirmed on 21,894 of them. Not modeled: 319 DDSP, 51 no zone, 37 SP 91-2, 36 SP 01-1, 26 SP 89-1, 11 SP 88-1, 11 SP 90-1, 2 SP 85-1.

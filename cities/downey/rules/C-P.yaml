@@ -1,0 +1,16 @@
+# Downey C-P. Every value cites the Downey Municipal Code, Article IX (eCode360, through Ord. 25-1520), read 2026-11-03.
+zone: C-P
+name: C-P (Table 9.3.5)
+family: nonresidential
+sources:
+  Z: {section: 'DMC §9314.04, Table 9.3.5 (commercial uses)', url: 'https://ecode360.com/44400897'}
+residential_allowed: {value: false, source: Z, assumption: Table 9.3.5 lists no homes apart from single resident occupancy in H-M.}
+housing_types:
+  value: []
+  source: Z
+approval: {value: not_allowed, source: Z, assumption: Table 9.3.5 lists no homes here.}
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: 'Not relevant: homes not counted.'}

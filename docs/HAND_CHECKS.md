@@ -2124,3 +2124,33 @@ Each lot's by-right number, checked against the code's use list. Square footage 
 ### BR-21. Carson parcel 7329037002 · RM (12) · 7,226 sq ft
 
 - The table marks multiple-family dwellings C; the zone is mixed, so only SB 9 homes would count, and SB 9 doesn't apply here. Max 3. **By right: not confirmed.** Engine: not confirmed ✓
+
+## Downey
+
+### DO-1. 8506 Puritan St Downey Ca 90242 · R-1 5,000 · 6,090 sq ft
+
+- density 1, envelope 2, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### DO-2. 7539 Buell St Downey Ca 90241 · R-1 7,500 · 7,798 sq ft
+
+- density 1, envelope 3, parking 5, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### DO-3. 10702 Lesterford Ave Downey Ca 90241 · R-1 6,000 · 6,106 sq ft
+
+- density 1, envelope 2, parking 4, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### DO-4. 7524 Stewart And Gray Rd Downey Ca 90241 · R-3 · 8,779 sq ft
+
+- lot_area_per_unit 4, envelope 12, parking 7, state_adu 3. **Result: 4, lot area per unit.** By right: 4. Engine: 4 ✓
+
+### DO-5. 8144 Comolette St Downey Ca 90242 · R-2 · 5,781 sq ft
+
+- lot_area_per_unit 2, envelope 5, parking 3, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### DO-6. 9129 Lubec St Downey Ca 90240 · R-1 10,000 · 10,373 sq ft
+
+- density 1, envelope 4, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### DO-7. 7501 Firestone Blvd Downey Ca 90241 · C-2 · 15,360 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: 0. Engine: 0 ✓

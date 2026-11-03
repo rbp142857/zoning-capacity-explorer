@@ -1805,3 +1805,31 @@ def test_hand_checked_diamond_bar_parcel(diamond_bar, address, zone, lot, max_un
     assert r.binding_constraint == binding
     for name, value in limits.items():
         assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+DOWNEY = [
+    ("8506 Puritan St Downey Ca 90242", "R-1 5,000", Lot(6090, 50.2, 122.0, (), 1937, 1, 0), 4, "state_law:sb9", {'density': 1, 'envelope': 2, 'state_adu': 3, 'state_sb9': 4}),
+    ("7539 Buell St Downey Ca 90241", "R-1 7,500", Lot(7798, 65.1, 123.1, (), 5539, 1, 0), 4, "state_law:sb9", {'density': 1, 'envelope': 3, 'parking': 5, 'state_adu': 3, 'state_sb9': 4}),
+    ("10702 Lesterford Ave Downey Ca 90241", "R-1 6,000", Lot(6106, 54.0, 113.3, (), 4978, 1, 0), 4, "state_law:sb9", {'density': 1, 'envelope': 2, 'parking': 4, 'state_adu': 3, 'state_sb9': 4}),
+    ("7524 Stewart And Gray Rd Downey Ca 90241", "R-3", Lot(8779, 51.8, 171.9, (), 8522, 5, 0), 4, "lot_area_per_unit", {'lot_area_per_unit': 4, 'envelope': 12, 'parking': 7, 'state_adu': 3}),
+    ("8144 Comolette St Downey Ca 90242", "R-2", Lot(5781, 55.3, 105.9, (), 3781, 2, 185), 3, "state_law:adu", {'lot_area_per_unit': 2, 'envelope': 5, 'parking': 3, 'state_adu': 3}),
+    ("9129 Lubec St Downey Ca 90240", "R-1 10,000", Lot(10373, 78.0, 133.0, (), 1600, 1, 0), 4, "state_law:sb9", {'density': 1, 'envelope': 4, 'state_adu': 3, 'state_sb9': 4}),
+    ("7501 Firestone Blvd Downey Ca 90241", "C-2", Lot(15360, 106.5, 153.2, (), 6355, 0, 20), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def downey():
+    rules = load_zone_rules(REPO / "cities" / "downey" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", DOWNEY, ids=[c[0] for c in DOWNEY])
+def test_hand_checked_downey_parcel(downey, address, zone, lot, max_units, binding, limits):
+    rules, state, a = downey
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
