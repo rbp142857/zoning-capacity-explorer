@@ -1185,7 +1185,7 @@ El Segundo's zones come from El Segundo Municipal Code Title 15 (American Legal,
 
 Irwindale's zones come from Irwindale Municipal Code Title 17 (Municode, read November 3, 2026). SCAG writes them without hyphens (R1, A1), and we read them as the code's R-1 and A-1.
 
-**R-1, A-1 and C-3.** One home with 20 ft front, 5 ft side and 15 ft rear yards. A-1 needs 5,000 sq ft per home. C-3 allows single-family homes under R-1's restrictions. **R-2.** 3,000 sq ft per home. A-1's per-home rule gives large numbers on Irwindale's biggest A-1 lots, so its 24,132 local capacity runs high until those lots are checked. SCAG shows no R-3 here, though the code has one.
+**R-1, A-1 and C-3.** One home with 20 ft front, 5 ft side and 15 ft rear yards. A-1 needs 5,000 sq ft per home. C-3 allows single-family homes under R-1's restrictions. **R-2.** 3,000 sq ft per home. A-1's per-home rule gives large numbers on Irwindale's biggest A-1 lots, so its 24,132 local capacity runs high. Checked November 3, 2026: 42 Government Parcel lots (2,117 acres, 18,424 homes) and 4 Mineral Processing lots (528 acres, 4,598 homes) give 23,022 of those homes, or 95%. The other lots give 1,110, against 1,034 existing homes. Nothing in the rule file changed, because the code's 5,000 sq ft per home does apply to them on paper; treat the citywide total as an artifact of these lots, not as buildable capacity. SCAG shows no R-3 here, though the code has one.
 
 **Commercial and manufacturing.** C-1, C-2, C-M, M-1 and M-2 weren't read closely and count no homes. Quarry (Q) and specific plan lots aren't modeled.
 

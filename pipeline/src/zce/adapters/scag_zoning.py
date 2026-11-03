@@ -54,6 +54,8 @@ def split_zone(zone_code: str, plan_prefixes: dict[str, str]) -> tuple[str | Non
 def load_zone_table(raw_path: Path, plan_prefixes: dict[str, str], aliases: dict[str, str] | None = None) -> pd.DataFrame:
     """One row per parcel number with its zone, from SCAG's attribute records."""
     records = json.loads(Path(raw_path).read_text())
+    if not records:
+        raise ValueError(f"{raw_path} has no zoning records. Check that the `where` city name in city.yaml matches SCAG's spelling.")
     df = pd.DataFrame(records)[["APN24", "ZN24_CITY", "ZN24_SCAG"]]
     df["apn"] = df["APN24"].map(lambda v: re.sub(r"\D", "", str(v or "")))
     df["zone_code"] = df["ZN24_CITY"].fillna("").astype(str).str.strip()
