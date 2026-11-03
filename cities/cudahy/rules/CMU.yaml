@@ -1,0 +1,26 @@
+# Cudahy CMU. Every value cites the Cudahy Municipal Code, Title 20 (ICC Code Solutions, through Ord. 772 of August 18, 2026, read 2026-11-03).
+zone: "CMU"
+name: "CMU Commercial Mixed-Use"
+family: commercial
+
+sources:
+  Z:
+    section: "CMC §§20.28.020 and 20.28.030 and 20.64.040"
+    url: https://cudahy.municipal.codes/CMC/20.28.030
+
+residential_allowed: {value: true, source: Z, assumption: "Multifamily homes are permitted. A stand-alone residential project needs commercial uses such as lobbies facing the street (§20.28.020.D)."}
+housing_types: {value: [multifamily, mixed_use], source: Z}
+min_lot_area_sqft: {value: 6000, source: Z}
+lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "30 homes per acre, the residential-only figure. Mixed-use projects may reach 40, not modeled, so those run low (conservative)."}
+
+setbacks:
+  front_ft: {value: 10, source: Z, assumption: "10 ft for ground-floor homes."}
+  side_ft: {value: 10, source: Z, assumption: "10 ft for ground-floor homes."}
+  rear_ft: {value: 10, source: Z, assumption: "10 ft for ground-floor homes."}
+
+max_stories: {value: 3, source: Z, assumption: "Extra stories with a community benefit and city council approval aren't counted."}
+parking_per_unit: {value: 1.5, source: Z, assumption: "1.5 spaces for multifamily homes with one or two bedrooms; 2 for larger homes, detached homes and duplexes. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: Z}
+
+simplifications:
+  - "Total open space of 280 sq ft per home isn't modeled."

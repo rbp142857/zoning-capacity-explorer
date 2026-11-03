@@ -1960,3 +1960,39 @@ Lots from the county roll, checked against CMC Title 17 (eCode360, read November
 ### CV-10. 900 N Citrus Ave · C-2 · 18,702 sq ft
 
 - The chapter lists residential uses as prohibited. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Cudahy
+
+Lots from the county roll, checked against CMC Title 20 (ICC Code Solutions, read November 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CU-1. 5108 Cecilia St · LDR · 5,464 sq ft
+
+- 15 per acre is 2,904 sq ft each: 5,464 ÷ 2,904 = 1.9 → **1**. Envelope 25.9 × 107.3 × 2 stories → 5. Parking: 25% open space leaves 4,098 ÷ 1,056 → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CU-2. 5009 Elizabeth St · MDR · 25,965 sq ft
+
+- 25 per acre is 1,742.4 sq ft each: 14.9 → **14**. Envelope 54, parking 27. **Result: 14, lot area per home.** Engine: 14 ✓
+
+### CU-3. 5155 Clara St · MDR · 10,412 sq ft
+
+- 10,412 ÷ 1,742.4 = 5.98 → **5**. Envelope 17, parking 10. **Result: 5, lot area per home.** Engine: 5 ✓
+
+### CU-4. 4926 Live Oak St · HDR · 40,453 sq ft
+
+- 40 per acre is 1,089 sq ft each: 37.1 → **37**. Envelope 112, parking 49. **Result: 37, lot area per home.** Engine: 37 ✓
+
+### CU-5. 4534 Live Oak St · CMU · 8,480 sq ft
+
+- The residential-only 30 per acre is 1,452 sq ft each: 5.8 → **5**. Envelope 12. Within ½ mile of transit, so no parking limit. **Result: 5, lot area per home.** Engine: 5 ✓
+
+### CU-6. 4528 Elizabeth St · CivicMU · 10,123 sq ft
+
+- 10,123 ÷ 1,452 = 6.97 → **6**. Envelope 21. Within ½ mile of transit, so no parking limit. **Result: 6, lot area per home.** Engine: 6 ✓
+
+### CU-7. 4505 Santa Ana St · I-Ind · 39,888 sq ft
+
+- 39,888 ÷ 1,452 = 27.5 → **27**, with a conditional use permit. FAR 1.25 → 46. Parking: 38,825 ÷ 879 → 44. **Result: 27, lot area per home.** Engine: 27 ✓
+
+### CU-8. 8420 S Atlantic Ave · Ent · 24,742 sq ft
+
+- Homes only in mixed-use projects, with density listed as N/A, so we count none. **Result: 0, use not permitted.** Engine: 0 ✓

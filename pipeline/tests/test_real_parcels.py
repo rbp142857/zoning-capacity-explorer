@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce, nine in Compton, ten in Claremont, ten in Covina).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce, nine in Compton, ten in Claremont, ten in Covina, eight in Cudahy).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1741,6 +1741,35 @@ def covina():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", COVINA, ids=[c[0] for c in COVINA])
 def test_hand_checked_covina_parcel(covina, address, zone, lot, max_units, binding, limits):
     rules, state, a = covina
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+CUDAHY = [
+    ("5108 Cecilia St", "LDR", Lot(5464, 39.9, 137.3, (), 2898, 1), 3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 5, "parking": 3}),
+    ("5009 Elizabeth St", "MDR", Lot(25965, 99.3, 262.4, (), 3910, 8), 14, "lot_area_per_unit", {"lot_area_per_unit": 14, "envelope": 54, "parking": 27}),
+    ("5155 Clara St", "MDR", Lot(10412, 54.9, 190.0, (), 4408, 2), 5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 17, "parking": 10}),
+    ("4926 Live Oak St", "HDR", Lot(40453, 105.3, 385.5, (), 2830, 12), 37, "lot_area_per_unit", {"lot_area_per_unit": 37, "envelope": 112, "parking": 49}),
+    ("4534 Live Oak St", "CMU", Lot(8480, 51.3, 168.3, (), 1044, 1), 5, "lot_area_per_unit", {"lot_area_per_unit": 5, "envelope": 12}),
+    ("4528 Elizabeth St", "CivicMU", Lot(10123, 53.4, 192.6, (), 2530, 3), 6, "lot_area_per_unit", {"lot_area_per_unit": 6, "envelope": 21}),
+    ("4505 Santa Ana St", "I-Ind", Lot(39888, 107.9, 375.2, (), 2902, 12), 27, "lot_area_per_unit", {"lot_area_per_unit": 27, "envelope": 46, "parking": 44}),
+    ("8420 S Atlantic Ave", "Ent", Lot(24742, 150.9, 196.3, (), 1495, 0), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def cudahy():
+    rules = load_zone_rules(REPO / "cities" / "cudahy" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CUDAHY, ids=[c[0] for c in CUDAHY])
+def test_hand_checked_cudahy_parcel(cudahy, address, zone, lot, max_units, binding, limits):
+    rules, state, a = cudahy
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

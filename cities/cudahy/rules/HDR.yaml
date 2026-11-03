@@ -1,0 +1,36 @@
+# Cudahy HDR. Every value cites the Cudahy Municipal Code, Title 20 (ICC Code Solutions, through Ord. 772 of August 18, 2026, read 2026-11-03).
+zone: "HDR"
+name: "HDR High Density Residential"
+family: multifamily
+
+sources:
+  Z:
+    section: "CMC §§20.16.010 to 20.16.040 and 20.64.040"
+    url: https://cudahy.municipal.codes/CMC/20.16.030
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+min_lot_area_sqft: {value: 6000, source: Z}
+lot_area_per_unit_sqft: {value: 1089, source: Z, assumption: "40 homes per acre. We round down."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "§20.56.040 accepts the area of a pre-existing lot, so a smaller lot keeps one home."
+small_lot_units_below_sqft: 1089
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 11, source: Z, assumption: "5 ft plus 2 ft per story above the first, which the director or planning commission may waive."}
+  rear_ft: {value: 10, source: Z, assumption: "The figure for two or more stories."}
+
+max_height_ft: {value: 55, source: Z}
+max_stories: {value: 4, source: Z}
+parking_per_unit: {value: 1.5, source: Z, assumption: "1.5 spaces for multifamily homes with one or two bedrooms; 2 for larger homes, detached homes and duplexes. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: Z}
+
+simplifications:
+  - "Total open space of 280 sq ft per home isn't modeled."
+  - "New projects must reach at least 20 homes per acre (§20.16.040.F), which isn't modeled; small lots may not be able to, so a low count here can overstate what a new project may build."

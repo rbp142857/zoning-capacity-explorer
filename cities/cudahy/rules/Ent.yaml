@@ -1,0 +1,18 @@
+# Cudahy Ent. Every value cites the Cudahy Municipal Code, Title 20 (ICC Code Solutions, through Ord. 772 of August 18, 2026, read 2026-11-03).
+zone: "Ent"
+name: "Ent Entertainment"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC §§20.20.020.F and 20.20.030"
+    url: https://cudahy.municipal.codes/CMC/20.20.020
+
+residential_allowed: {value: false, source: Z, assumption: "Homes are allowed only in mixed-use projects, not on the ground floor and under two-thirds of the floor area, with density listed as N/A. We don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
