@@ -1832,3 +1832,43 @@ Lots from the county roll, checked against CMC Title 19 (Municode, read November
 ### CO-8. 6048 Triangle Dr · M-2 · 32,453 sq ft
 
 - M-2 allows only caretaker quarters, which we don't count. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Compton
+
+Lots from the county roll, checked against CMC Chapter 30 (eCode360, read November 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CP-1. 1214 W 130th St · R-L · 9,457 sq ft
+
+- 9,457 ÷ 5,000 → **1**. Envelope 40.1 × 149.1 × 2 stories → 11. Parking: 8,457 ÷ 1,131 → 7. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CP-2. 2313 E Killen Ct · R-L · 15,864 sq ft
+
+- 15,864 ÷ 5,000 → **3**, if each home's area could be divided off, which we don't test. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CP-3. 805 E Clemmer Dr · R-A · 22,251 sq ft
+
+- 22,251 ÷ 10,000 → **2**. Envelope 29. Within ½ mile of transit, so no parking limit. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CP-4. 612 S Harris Ave · R-M · 11,268 sq ft
+
+- 11,268 ÷ 2,500 = 4.5 → **4**. Envelope 70.3 × 105 × shape 0.97 × 3 stories → 20. Parking: 9,714 ÷ 879 → 11. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### CP-5. 812 W Arbutus St · R-M · 4,995 sq ft
+
+- 4,995 ÷ 2,500 → **1**, five sq ft short of two. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CP-6. 1004 N Sloan Ave · R-H · 7,069 sq ft
+
+- 7,069 ÷ 1,500 = 4.7 → **4**. Envelope 13. Parking: 6,334 ÷ 879 → 7. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### CP-7. 209 S Willow Ave · R-H · 6,758 sq ft
+
+- 6,758 ÷ 1,500 = 4.5 → **4**. Envelope 12. Within ½ mile of transit, so no parking limit. The roll shows 6 homes, over this limit. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### CP-8. 408 N Bowen Ave · C-L · 19,855 sq ft
+
+- 19,855 ÷ 1,500 = 13.2 → **13**, with a conditional use permit. Coverage 40% × 7 stories → 52. Parking: 18,435 ÷ 677 → 27. **Result: 13, lot area per home.** Engine: 13 ✓
+
+### CP-9. 500 E Pine St · M-H · 43,673 sq ft
+
+- Residences are prohibited apart from caretakers' quarters and permitted live-work units. **Result: 0, use not permitted.** Engine: 0 ✓

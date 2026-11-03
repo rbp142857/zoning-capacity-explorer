@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce, nine in Compton).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1649,6 +1649,36 @@ def commerce():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", COMMERCE, ids=[c[0] for c in COMMERCE])
 def test_hand_checked_commerce_parcel(commerce, address, zone, lot, max_units, binding, limits):
     rules, state, a = commerce
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+COMPTON = [
+    ("1214 W 130th St", "R-L", Lot(9457, 50.1, 189.1, (), 3606, 1), 4, "state_law:sb9", {"lot_area_per_unit": 1, "envelope": 11, "parking": 7}),
+    ("2313 E Killen Ct", "R-L", Lot(15864, 134.8, 153.4, (), 4706, 1), 4, "state_law:sb9", {"lot_area_per_unit": 3, "envelope": 20, "parking": 12}),
+    ("805 E Clemmer Dr", "R-A", Lot(22251, 130.1, 175.3, (), 1855, 1), 4, "state_law:sb9", {"lot_area_per_unit": 2, "envelope": 29}),
+    ("612 S Harris Ave", "R-M", Lot(11268, 80.3, 145.0, (), 6246, 3), 4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 20, "parking": 11}),
+    ("812 W Arbutus St", "R-M", Lot(4995, 49.9, 102.6, (), 4312, 1), 3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 6, "parking": 4}),
+    ("1004 N Sloan Ave", "R-H", Lot(7069, 49.9, 144.3, (), 4527, 5), 4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 13, "parking": 7}),
+    ("209 S Willow Ave", "R-H", Lot(6758, 45.0, 152.7, (), 2140, 6), 4, "lot_area_per_unit", {"lot_area_per_unit": 4, "envelope": 12}),
+    ("408 N Bowen Ave", "C-L", Lot(19855, 97.1, 209.7, (), 5102, 0), 13, "lot_area_per_unit", {"lot_area_per_unit": 13, "envelope": 52, "parking": 27}),
+    ("500 E Pine St", "M-H", Lot(43673, 145.3, 300.7, (), 4848, 1), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def compton():
+    rules = load_zone_rules(REPO / "cities" / "compton" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", COMPTON, ids=[c[0] for c in COMPTON])
+def test_hand_checked_compton_parcel(compton, address, zone, lot, max_units, binding, limits):
+    rules, state, a = compton
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

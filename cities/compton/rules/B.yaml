@@ -1,0 +1,18 @@
+# Compton B. Every value cites the Compton Municipal Code, Chapter 30 (eCode360, through July 14, 2026, read 2026-11-03).
+zone: "B"
+name: "B Buffer"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC §§30-16.2 and 30-16.3"
+    url: https://ecode360.com/35622209
+
+residential_allowed: {value: false, source: Z, assumption: "Buildings are prohibited in this zone."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

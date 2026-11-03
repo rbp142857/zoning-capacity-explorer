@@ -1077,3 +1077,15 @@ Commerce's zones come from Commerce Municipal Code Title 19 (Municode, Supp. 15,
 **Manufacturing and PF.** C/M-1, M-1, M-2 and PF allow only caretaker quarters, art studios with an associated residence (C/M-1 and M-1), or a caretaker dwelling with a conditional use permit (PF). We count none, though the roll shows 635 homes in these zones.
 
 Not modeled: the Modelo Specific Plan (§19.16.020), which isn't in SCAG's data and whose standards we didn't read; the Planned Development overlay (Chapter 19.15); the conditional use permit for homes over 2,300 sq ft.
+
+## 55. Compton (Chapter 30, most zones ⚠️)
+
+Compton's zones come from Compton Municipal Code Chapter 30 (eCode360, through July 14, 2026, read November 3, 2026). Ten rule files cover 19,490 of 19,633 lots (99.3%). The other 143 are 130 lots with no zone and 13 in SP, a zone whose plans we didn't read. SCAG's zoning here dates from 2023.
+
+**PR zones.** §30-17.2 combines the parking zone with residential zones. SCAG's PRL, PRM and PRH use R-L's, R-M's and R-H's rules.
+**R-L and R-A.** 5,000 and 10,000 sq ft per home. The code allows more than one home on a lot only if each could be legally divided off and fits the original subdivision. We don't test that, so large lots can run high: local rules give 14,128 homes on R-L's 11,057 lots. SB 9 is what lifts most of these lots above one home.
+**R-M and R-H.** 2,500 and 1,500 sq ft per home. Five or more homes on a parcel need a conditional use permit, which we assume is granted. Parking assumes attached homes with two or fewer bedrooms: 1.5 spaces plus a quarter guest space. The code limits height to 35 ft, not stories, and we fit 3.
+**C-L.** Homes need a conditional use permit, then 1,500 sq ft per home with R-H's yards. This matters: C-L adds 14,372 homes under local rules, more than R-H, and its largest lots are shopping centers such as 101 Towne Center Dr at 308 homes. The state's reports show no homes permitted in 5+ unit buildings in 2019 to 2023, so treat this as a legal limit, not a forecast.
+**C-M, M-L, M-H, B and P.** C-M, M-L and M-H prohibit homes apart from small caretakers' quarters and permitted live-work units; B prohibits buildings; P alone is parking. We count none, though the roll shows 805 homes in these zones.
+
+Not modeled: senior homes at 1,250 sq ft each; unit size limits; R-H's open space; Planned Development (§30-18); the Emergency Shelter Overlay. §30-20.2 accepts a smaller lot's area only if its deed predates September 20, 1946; we count one home on every smaller lot, since we can't tell.

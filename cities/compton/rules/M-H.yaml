@@ -1,0 +1,18 @@
+# Compton M-H. Every value cites the Compton Municipal Code, Chapter 30 (eCode360, through July 14, 2026, read 2026-11-03).
+zone: "M-H"
+name: "M-H Heavy Manufacturing"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC §30-15"
+    url: https://ecode360.com/35622209
+
+residential_allowed: {value: false, source: Z, assumption: "Residences are prohibited, except a caretaker's residence of up to 600 sq ft and live-work units with a conditional use permit. We don't count those as homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
