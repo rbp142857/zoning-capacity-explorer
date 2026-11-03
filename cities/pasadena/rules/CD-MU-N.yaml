@@ -1,0 +1,20 @@
+# Pasadena CD-MU-N. Every value cites the Pasadena Municipal Code, Ch. 17.30, Central District Specific Plan (Municode), read 2026-11-03.
+zone: CD-MU-N
+name: Central District Mixed-Use, Neighborhood (CD-MU-N)
+family: commercial
+sources:
+  Z: {section: PMC §17.30 land use table and Table of Development & Design Standards; Figures CDSP-6 and CDSP-8, url: 'https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART3SPPLST_CH17.30CEDISPPL'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [multifamily, mixed_use]
+  source: Z
+approval: {value: by_right, source: Z, assumption: 'The land use table marks multi-family housing and mixed-use projects P. Other reviews, such as design review, aren''t checked.'}
+units_per_acre: {value: 48, source: Z}
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_height_ft: {value: 40, source: Z}
+max_stories: {value: 3, source: Z, assumption: We fit 3 stories at 40 ft.}
+simplifications: ['Figure CDSP-6 sets 87, 64 or 48 homes per acre by block, and most of the district is 87. We have no parcel map of it, so we use 48 (conservative); many lots run low.', 'Figure CDSP-8 sets 36 to 75 ft by block; we use 40 ft, a low value for these areas. Street setbacks in Figure CDSP-12 and floor area in Figure CDSP-7 aren''t modeled, so some lots can run high.', Parking isn't modeled
+    here.]

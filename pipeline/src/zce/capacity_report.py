@@ -48,6 +48,13 @@ def write_capacity_report(df: pd.DataFrame, rules: dict, state, city: CityConfig
                f"zone's approval path confirmed on **{_fmt(confirmed.sum())}** of {_fmt(len(ok))} modeled lots "
                f"({confirmed.mean():.1%}). On other lots, only SB 9 homes count.")
 
+    sb79 = ok["sb79_units"].notna()
+    out.append(f"- SB 79, as a separate path: **{_fmt(sb79.sum())}** lots could reach **{_fmt(ok.loc[sb79, 'sb79_units'].sum())}** homes, "
+               "before local delay plans, tenant history and affordability limits. Not included above.")
+    db = ok["density_bonus_50_units"].notna()
+    out.append(f"- 50% density bonus, as a separate path: **{_fmt(db.sum())}** lots could reach **{_fmt(ok.loc[db, 'density_bonus_50_units'].sum())}** homes "
+               "with 24% lower income or 15% very low income homes. Not included above.")
+
     res = ok[ok["rules_zone"].map(lambda z: rules[z].residential_allowed.value if z in rules else False)]
     one_unit = res["local_units"] <= 1
     share = res.loc[one_unit, "lot_area_sqft"].sum() / res["lot_area_sqft"].sum()

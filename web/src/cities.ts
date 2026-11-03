@@ -61,7 +61,7 @@ export function mergeParcelData(cities: ParcelData[], names: string[]): ParcelDa
       single_home_land_share: 0, residential_land_sqft: 0,
     },
     columns: {
-      parcel_id: [], zone: [], existing_units: [], building_sqft: [], local_units: [], max_units: [], net_new_units: [], binding: [],
+      parcel_id: [], zone: [], existing_units: [], building_sqft: [], dist_sb79_t1_ft: [], dist_sb79_t2_ft: [], sb79_zone_ok: [], sb79_half_mile: [], local_units: [], max_units: [], net_new_units: [], binding: [],
       lot_area_sqft: [], lot_width_ft: [], lot_depth_ft: [], dist_major_transit_ft: [], dist_single_family_ft: [],
       rules_zone: [], overlay_set: [], district: [], redev_mask: [],
     },
@@ -98,6 +98,10 @@ export function mergeParcelData(cities: ParcelData[], names: string[]): ParcelDa
       o.lot_depth_ft.push(c.lot_depth_ft[pid]);
       o.dist_major_transit_ft.push(c.dist_major_transit_ft[pid]);
       o.dist_single_family_ft.push(c.dist_single_family_ft[pid]);
+      o.dist_sb79_t1_ft?.push(c.dist_sb79_t1_ft?.[pid] ?? null);
+      o.dist_sb79_t2_ft?.push(c.dist_sb79_t2_ft?.[pid] ?? null);
+      o.sb79_zone_ok?.push(c.sb79_zone_ok?.[pid] ?? 0);
+      o.sb79_half_mile?.push(c.sb79_half_mile?.[pid] ?? 0);
       o.rules_zone.push(c.rules_zone[pid] >= 0 ? ruleBase + c.rules_zone[pid] : -1);
       o.overlay_set.push(overlayBase + c.overlay_set[pid]);
       o.district.push(cityIndex); // charts show one bar per city

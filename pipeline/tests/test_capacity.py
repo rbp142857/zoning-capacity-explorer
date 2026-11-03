@@ -1,10 +1,12 @@
 """By-right homes: how a zone's approval path turns into a number."""
 
+import json
 from pathlib import Path
 
 import pytest
 
 from zce.engine.capacity import by_right_units
+from zce.engine.state_paths import density_bonus_units, sb79_units
 from zce.rules.schema import ZoneRules, load_zone_rules
 
 REPO = Path(__file__).resolve().parents[2]
@@ -77,3 +79,28 @@ HAND_CHECKED = [
 def test_hand_checked_by_right_lot(city, zone, max_units, sb9, expected):
     rules = load_zone_rules(REPO / "cities" / city / "rules")
     assert by_right_units(rules[zone], max_units, sb9) == expected
+
+
+# Worked by hand: 10,000 sq ft is 0.2296 acres. Tier 1 within a quarter mile: 120 per acre gives 27, FAR 3.5 gives 32.
+def test_sb79_hand_checked():
+    assert sb79_units(10000, 1000, None, True, True, 1062.5) == 27
+    assert sb79_units(10000, 100, None, True, True, 1062.5) == 36  # adjacent: 160 per acre gives 36, FAR 4.5 gives 42
+    assert sb79_units(10000, 2000, None, True, True, 1062.5) == 22  # 100 per acre
+    assert sb79_units(10000, 2000, None, True, False, 1062.5) is None  # city under 35,000
+    assert sb79_units(10000, None, 2000, True, True, 1062.5) == 18  # Tier 2, 80 per acre
+    assert sb79_units(1500, 500, None, True, True, 1062.5) is None  # under 5 homes
+
+
+def test_density_bonus_hand_checked():
+    assert density_bonus_units({"density": 10}, 0.5) == 15
+    assert density_bonus_units({"density": 7}, 0.8) == 13  # 12.6 rounds up
+    assert density_bonus_units({"density": 4}, 0.5) is None
+    assert density_bonus_units({"envelope": 30}, 0.5) is None
+
+
+def test_state_paths_fixture_is_current():
+    data = json.loads((REPO / "shared" / "fixtures" / "state_paths.json").read_text())
+    for c in data["sb79"]:
+        assert sb79_units(*c["args"]) == c["want"]
+    for c in data["bonus"]:
+        assert density_bonus_units(c["limits"], c["share"]) == c["want"]

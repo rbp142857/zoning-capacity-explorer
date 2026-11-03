@@ -12,12 +12,13 @@ zone's rules, and stores the engine's answer back as columns.
 import geopandas as gpd
 import pandas as pd
 
-from zce import spatial
+from zce import sb79, spatial, transit
 from zce.adapters.la_city_zoning import NEW_CODE
 from zce.capacity_report import write_capacity_report
 from zce.config import DATA_DIR, REPO_ROOT, CityConfig
 from zce.engine import EngineAssumptions, Lot, compute_capacity
 from zce.engine.redevelop import redevelopment, screens_from_config, static_mask
+from zce.engine.state_paths import density_bonus_units, sb79_units
 from zce.rules.schema import load_state_overrides, load_zone_rules
 
 LIMIT_NAMES = ["density", "lot_area_per_unit", "envelope", "parking", "state_adu", "state_sb9"]
@@ -55,6 +56,11 @@ def rules_for_lot(row, rules: dict):
     rule files are written.
     """
     flags = []
+    # A plan district can have its own file, named for its full code ("CD-MU-G"),
+    # because the same base zone can mean different things in different plans.
+    code = row.get("zone_code")
+    if isinstance(code, str) and code != row["base_zone"] and code in rules:
+        return rules[code], flags
     base = row["base_zone"]
     if isinstance(base, str) and base.startswith("PD"):
         return None, ["planned_development_not_modeled"]
@@ -82,6 +88,11 @@ def _in_single_family_zone(row, rules: dict) -> bool:
     return zone_rules is not None and zone_rules.family == "single_family"
 
 
+def _allows_homes(row, rules: dict) -> bool:
+    zone_rules, _ = rules_for_lot(row, rules)
+    return zone_rules is not None and zone_rules.residential_allowed.value
+
+
 def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
     parcels = gpd.read_parquet(city.clean_dir / "parcels.parquet")
     rules = load_zone_rules(city.rules_dir)
@@ -98,6 +109,12 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
     single_family = parcels.apply(_in_single_family_zone, axis=1, rules=rules)
     parcels["dist_single_family_ft"] = spatial.distance_to_lots_ft(parcels, single_family)
     parcels = round_engine_inputs(parcels)
+    for tier, col in (("T1", "dist_sb79_t1_ft"), ("T2", "dist_sb79_t2_ft")):
+        parcels[col] = transit.distance_to_nearest_ft(parcels, sb79.load_stops(tier, parcels.crs)).round(0)
+    # Some plan areas have no useful category, but a modeled zone that allows homes qualifies.
+    allows_homes = parcels.apply(_allows_homes, axis=1, rules=rules)
+    parcels["sb79_zone_ok"] = parcels["zone_category"].map(sb79.zone_eligible) | allows_homes
+    parcels["sb79_half_mile"] = sb79.half_mile_lots(parcels)
 
     records = []
     for row in parcels.itertuples(index=False):
@@ -113,6 +130,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
             dist_single_family_ft=_number_or_none(row["dist_single_family_ft"]),
         )
         result = compute_capacity(zone_rules, lot, a, state)
+        modeled = result.status == "ok"
         mask = static_mask(
             screens,
             year_built=_number_or_none(row["year_built"]),
@@ -135,6 +153,10 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
                 "net_new_units": result.net_new_units,
                 "approval": result.approval,
                 "by_right_units": result.by_right_units,
+                "sb79_units": sb79_units(lot.area_sqft, _number_or_none(row["dist_sb79_t1_ft"]), _number_or_none(row["dist_sb79_t2_ft"]),
+                                         bool(row["sb79_zone_ok"]), bool(row["sb79_half_mile"]), a.gross_sqft_per_unit) if modeled else None,
+                "density_bonus_50_units": density_bonus_units(result.limits, 0.5) if modeled else None,
+                "density_bonus_80_units": density_bonus_units(result.limits, 0.8) if modeled else None,
                 "binding_constraint": result.binding_constraint,
                 "local_binding_constraint": result.local_binding_constraint,
                 "state_laws_applied": result.state_laws_applied,
@@ -148,7 +170,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
         )
     out = parcels.join(pd.DataFrame(records, index=parcels.index))
     # Integer columns that may hold "unknown" use pandas' nullable Int64.
-    for col in ["max_units", "local_units", "net_new_units", "by_right_units"] + [f"limit_{k}" for k in LIMIT_NAMES]:
+    for col in ["max_units", "local_units", "net_new_units", "by_right_units", "sb79_units", "density_bonus_50_units", "density_bonus_80_units"] + [f"limit_{k}" for k in LIMIT_NAMES]:
         out[col] = out[col].astype("Int64")
 
     # Sanity checks (see the brief): nothing negative, nothing dropped.

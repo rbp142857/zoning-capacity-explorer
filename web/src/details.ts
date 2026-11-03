@@ -5,6 +5,7 @@ import { BINDING_LABELS } from "./colors";
 import type { ParcelData } from "./data";
 import type { CapacityResult } from "./engine/capacity";
 import { redevelopment } from "./engine/redevelop";
+import { densityBonusUnits, sb79Units } from "./engine/statePaths";
 import type { LotInputs } from "./engine/run";
 import { type Scenario, applyScenario, adjustForLot, capacityUnderScenario } from "./engine/scenario";
 import type { RulesFile, Sourced, ZoneRules } from "./engine/types";
@@ -126,6 +127,8 @@ function redevSection(rules: RulesFile, mask: number, r: CapacityResult, existin
   return `<h3>Likely to redevelop?</h3><p>${verdict}</p><ul class="screens">${items}</ul>`;
 }
 
+const stateOr = (v: number | null) => (v === null ? "doesn't apply" : fmt.format(v));
+
 const APPROVAL_TEXT: Record<string, string> = {
   by_right: "The zone's code permits these homes without a use permit. Other reviews, such as design review, aren't checked.",
   conditional: "The zone's homes need a use permit. Only state-law SB 9 homes count as by right here.",
@@ -167,6 +170,8 @@ export function renderLotDetails(
   const label = (r: CapacityResult) => BINDING_LABELS[r.binding_constraint ?? ""] ?? "–";
   const n = (v: number | null) => (v === null ? "unknown" : fmt.format(v));
 
+  const sb79 = sb79Units(lot.area_sqft, c.dist_sb79_t1_ft?.[pid] ?? null, c.dist_sb79_t2_ft?.[pid] ?? null,
+    Boolean(c.sb79_zone_ok?.[pid]), Boolean(c.sb79_half_mile?.[pid]), rules.assumptions.gross_sqft_per_unit);
   const byRight = today.result.by_right_units;
   const netByRight = byRight === null || lot.existing_units === null ? null : Math.max(0, byRight - Math.trunc(lot.existing_units));
 
@@ -191,6 +196,13 @@ export function renderLotDetails(
       ${reform ? `<div class="scenario-col"><dt>Net add, this scenario</dt><dd>${n(now.result.net_new_units)}</dd></div>` : ""}
     </dl>
     <p class="fineprint">${APPROVAL_TEXT[today.result.approval ?? "unknown"]}</p>
+    <h3>Extra paths under state law</h3>
+    <dl class="details-summary">
+      <div><dt>SB 79 (near transit)</dt><dd>${stateOr(sb79)}</dd></div>
+      <div><dt>Density bonus, 50%</dt><dd>${stateOr(densityBonusUnits(today.result.limits, 0.5))}</dd></div>
+      <div><dt>Density bonus, 80%</dt><dd>${stateOr(densityBonusUnits(today.result.limits, 0.8))}</dd></div>
+    </dl>
+    <p class="fineprint">Not included in the numbers above. SB 79 needs 5 or more homes and, above 10 homes, affordable homes; local delay ordinances and alternative plans, including LA's, aren't modeled, so it may not apply yet. A 50% bonus needs 24% lower-income or 15% very-low-income homes. An 80% bonus needs a 100% affordable project, which has no density limit within ½ mile of a major transit stop. Each is an upper estimate; confirm with the city.</p>
     <p><strong>What limits it${reform ? " today" : ""}:</strong> ${label(today.result)}</p>
     ${reform ? `<p class="scenario-col"><strong>Under this scenario:</strong> ${label(now.result)}</p>` : ""}
     ${

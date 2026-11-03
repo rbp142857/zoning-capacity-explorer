@@ -683,7 +683,7 @@
    "redev_mask": 7
   },
   {
-   "zone": null,
+   "zone": "CD-MU-G",
    "area_sqft": 2740.0,
    "width_ft": 34.0,
    "depth_ft": 80.7,
@@ -930,7 +930,7 @@
    "redev_mask": 30
   },
   {
-   "zone": null,
+   "zone": "CD-MU-G",
    "area_sqft": 64384.0,
    "width_ft": 227.4,
    "depth_ft": 297.8,
@@ -1355,7 +1355,7 @@
    "redev_mask": 7
   },
   {
-   "zone": null,
+   "zone": "CD-MU-N",
    "area_sqft": 7001.0,
    "width_ft": 50.0,
    "depth_ft": 140.1,
@@ -1722,7 +1722,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "CD-MU-G",
    "area_sqft": 4696.0,
    "width_ft": 35.0,
    "depth_ft": 134.2,
@@ -1748,7 +1748,7 @@
    "redev_mask": 23
   },
   {
-   "zone": null,
+   "zone": "CD-MU-C",
    "area_sqft": 76639.0,
    "width_ft": 214.7,
    "depth_ft": 373.1,
@@ -1934,7 +1934,7 @@
    "redev_mask": 7
   },
   {
-   "zone": null,
+   "zone": "CD-MU-G",
    "area_sqft": 53507.0,
    "width_ft": 195.2,
    "depth_ft": 380.9,
@@ -2004,7 +2004,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "CD-RM-87",
    "area_sqft": 70426.0,
    "width_ft": 219.3,
    "depth_ft": 373.9,
@@ -2137,7 +2137,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "CD-MU-C",
    "area_sqft": 26959.0,
    "width_ft": 110.2,
    "depth_ft": 245.0,
@@ -2691,7 +2691,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "CD-MU-G",
    "area_sqft": 16458.0,
    "width_ft": 140.0,
    "depth_ft": 196.9,
@@ -2702,7 +2702,7 @@
    "redev_mask": 24
   },
   {
-   "zone": null,
+   "zone": "CD-MU-C",
    "area_sqft": 5515.0,
    "width_ft": 51.5,
    "depth_ft": 107.2,
@@ -3372,7 +3372,7 @@
    "redev_mask": 14
   },
   {
-   "zone": null,
+   "zone": "CD-MU-C",
    "area_sqft": 2750.0,
    "width_ft": 25.0,
    "depth_ft": 110.0,
@@ -3774,7 +3774,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "CD-MU-G",
    "area_sqft": 32381.0,
    "width_ft": 168.0,
    "depth_ft": 200.2,
@@ -4261,7 +4261,7 @@
    "redev_mask": 13
   },
   {
-   "zone": null,
+   "zone": "CD-MU-G",
    "area_sqft": 16379.0,
    "width_ft": 30.3,
    "depth_ft": 546.9,
@@ -4745,7 +4745,7 @@
    "redev_mask": 15
   },
   {
-   "zone": null,
+   "zone": "CD-MU-G",
    "area_sqft": 5649.0,
    "width_ft": 60.2,
    "depth_ft": 95.6,
@@ -5813,13 +5813,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 2,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -6157,13 +6163,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 70,
+    "local_units": 70,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 70,
+    "limits": {
+     "density": 70,
+     "lot_area_per_unit": null,
+     "envelope": 181,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -6763,13 +6775,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "density",
+    "net_new_units": 7,
+    "approval": "by_right",
+    "by_right_units": 7,
+    "limits": {
+     "density": 7,
+     "lot_area_per_unit": null,
+     "envelope": 19,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -7290,13 +7308,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 5,
+    "local_units": 5,
+    "binding_constraint": "density",
+    "net_new_units": 5,
+    "approval": "by_right",
+    "by_right_units": 5,
+    "limits": {
+     "density": 5,
+     "lot_area_per_unit": null,
+     "envelope": 13,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -7310,15 +7334,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 84,
+    "max_units": 84,
+    "local_units": 84,
+    "binding_constraint": "density",
+    "net_new_units": 84,
+    "approval": "by_right",
+    "by_right_units": 84,
+    "limits": {
+     "density": 84,
+     "lot_area_per_unit": null,
+     "envelope": 216,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -7576,13 +7606,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 58,
+    "local_units": 58,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 58,
+    "limits": {
+     "density": 58,
+     "lot_area_per_unit": null,
+     "envelope": 151,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -7675,13 +7711,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 140,
+    "local_units": 140,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 140,
+    "limits": {
+     "density": 140,
+     "lot_area_per_unit": null,
+     "envelope": 198,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -7847,15 +7889,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 28,
+    "max_units": 29,
+    "local_units": 29,
+    "binding_constraint": "density",
+    "net_new_units": 28,
+    "approval": "by_right",
+    "by_right_units": 29,
+    "limits": {
+     "density": 29,
+     "lot_area_per_unit": null,
+     "envelope": 76,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -8643,24 +8691,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -9625,15 +9685,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 3,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -10209,15 +10275,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 35,
+    "max_units": 35,
+    "local_units": 35,
+    "binding_constraint": "density",
+    "net_new_units": 35,
+    "approval": "by_right",
+    "by_right_units": 35,
+    "limits": {
+     "density": 35,
+     "lot_area_per_unit": null,
+     "envelope": 91,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -10920,15 +10992,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 18,
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -11623,13 +11701,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -12777,13 +12861,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 2,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -13121,13 +13211,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 70,
+    "local_units": 70,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 70,
+    "limits": {
+     "density": 70,
+     "lot_area_per_unit": null,
+     "envelope": 181,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -13727,13 +13823,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "density",
+    "net_new_units": 7,
+    "approval": "by_right",
+    "by_right_units": 7,
+    "limits": {
+     "density": 7,
+     "lot_area_per_unit": null,
+     "envelope": 19,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -14254,13 +14356,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 5,
+    "local_units": 5,
+    "binding_constraint": "density",
+    "net_new_units": 5,
+    "approval": "by_right",
+    "by_right_units": 5,
+    "limits": {
+     "density": 5,
+     "lot_area_per_unit": null,
+     "envelope": 13,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -14274,15 +14382,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 84,
+    "max_units": 84,
+    "local_units": 84,
+    "binding_constraint": "density",
+    "net_new_units": 84,
+    "approval": "by_right",
+    "by_right_units": 84,
+    "limits": {
+     "density": 84,
+     "lot_area_per_unit": null,
+     "envelope": 216,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -14540,13 +14654,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 58,
+    "local_units": 58,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 58,
+    "limits": {
+     "density": 58,
+     "lot_area_per_unit": null,
+     "envelope": 151,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -14639,13 +14759,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 140,
+    "local_units": 140,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 140,
+    "limits": {
+     "density": 140,
+     "lot_area_per_unit": null,
+     "envelope": 198,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -14811,15 +14937,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 28,
+    "max_units": 29,
+    "local_units": 29,
+    "binding_constraint": "density",
+    "net_new_units": 28,
+    "approval": "by_right",
+    "by_right_units": 29,
+    "limits": {
+     "density": 29,
+     "lot_area_per_unit": null,
+     "envelope": 76,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -15607,24 +15739,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -16589,15 +16733,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 3,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -17173,15 +17323,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 35,
+    "max_units": 35,
+    "local_units": 35,
+    "binding_constraint": "density",
+    "net_new_units": 35,
+    "approval": "by_right",
+    "by_right_units": 35,
+    "limits": {
+     "density": 35,
+     "lot_area_per_unit": null,
+     "envelope": 91,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -17884,15 +18040,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 18,
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -18587,13 +18749,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -19741,13 +19909,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 2,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -20085,13 +20259,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 70,
+    "local_units": 70,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 70,
+    "limits": {
+     "density": 70,
+     "lot_area_per_unit": null,
+     "envelope": 181,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -20691,13 +20871,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "density",
+    "net_new_units": 7,
+    "approval": "by_right",
+    "by_right_units": 7,
+    "limits": {
+     "density": 7,
+     "lot_area_per_unit": null,
+     "envelope": 19,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -21218,13 +21404,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 5,
+    "local_units": 5,
+    "binding_constraint": "density",
+    "net_new_units": 5,
+    "approval": "by_right",
+    "by_right_units": 5,
+    "limits": {
+     "density": 5,
+     "lot_area_per_unit": null,
+     "envelope": 13,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -21238,15 +21430,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 84,
+    "max_units": 84,
+    "local_units": 84,
+    "binding_constraint": "density",
+    "net_new_units": 84,
+    "approval": "by_right",
+    "by_right_units": 84,
+    "limits": {
+     "density": 84,
+     "lot_area_per_unit": null,
+     "envelope": 216,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -21504,13 +21702,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 58,
+    "local_units": 58,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 58,
+    "limits": {
+     "density": 58,
+     "lot_area_per_unit": null,
+     "envelope": 151,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -21603,13 +21807,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 140,
+    "local_units": 140,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 140,
+    "limits": {
+     "density": 140,
+     "lot_area_per_unit": null,
+     "envelope": 198,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -21775,15 +21985,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 28,
+    "max_units": 29,
+    "local_units": 29,
+    "binding_constraint": "density",
+    "net_new_units": 28,
+    "approval": "by_right",
+    "by_right_units": 29,
+    "limits": {
+     "density": 29,
+     "lot_area_per_unit": null,
+     "envelope": 76,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -22571,24 +22787,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -23553,15 +23781,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 3,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -24137,15 +24371,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 35,
+    "max_units": 35,
+    "local_units": 35,
+    "binding_constraint": "density",
+    "net_new_units": 35,
+    "approval": "by_right",
+    "by_right_units": 35,
+    "limits": {
+     "density": 35,
+     "lot_area_per_unit": null,
+     "envelope": 91,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -24848,15 +25088,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 18,
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -25551,13 +25797,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -26705,13 +26957,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 2,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -27049,13 +27307,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 70,
+    "local_units": 70,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 70,
+    "limits": {
+     "density": 70,
+     "lot_area_per_unit": null,
+     "envelope": 181,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -27655,13 +27919,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "density",
+    "net_new_units": 7,
+    "approval": "by_right",
+    "by_right_units": 7,
+    "limits": {
+     "density": 7,
+     "lot_area_per_unit": null,
+     "envelope": 19,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -28182,13 +28452,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 5,
+    "local_units": 5,
+    "binding_constraint": "density",
+    "net_new_units": 5,
+    "approval": "by_right",
+    "by_right_units": 5,
+    "limits": {
+     "density": 5,
+     "lot_area_per_unit": null,
+     "envelope": 13,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -28202,15 +28478,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 84,
+    "max_units": 84,
+    "local_units": 84,
+    "binding_constraint": "density",
+    "net_new_units": 84,
+    "approval": "by_right",
+    "by_right_units": 84,
+    "limits": {
+     "density": 84,
+     "lot_area_per_unit": null,
+     "envelope": 216,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -28468,13 +28750,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 58,
+    "local_units": 58,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 58,
+    "limits": {
+     "density": 58,
+     "lot_area_per_unit": null,
+     "envelope": 151,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -28567,13 +28855,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 140,
+    "local_units": 140,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 140,
+    "limits": {
+     "density": 140,
+     "lot_area_per_unit": null,
+     "envelope": 198,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -28739,15 +29033,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 28,
+    "max_units": 29,
+    "local_units": 29,
+    "binding_constraint": "density",
+    "net_new_units": 28,
+    "approval": "by_right",
+    "by_right_units": 29,
+    "limits": {
+     "density": 29,
+     "lot_area_per_unit": null,
+     "envelope": 76,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -29535,24 +29835,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -30517,15 +30829,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 3,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -31101,15 +31419,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 35,
+    "max_units": 35,
+    "local_units": 35,
+    "binding_constraint": "density",
+    "net_new_units": 35,
+    "approval": "by_right",
+    "by_right_units": 35,
+    "limits": {
+     "density": 35,
+     "lot_area_per_unit": null,
+     "envelope": 91,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -31812,15 +32136,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 18,
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -32515,13 +32845,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -33669,13 +34005,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 2,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -34013,13 +34355,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 70,
+    "local_units": 70,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 70,
+    "limits": {
+     "density": 70,
+     "lot_area_per_unit": null,
+     "envelope": 181,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -34619,13 +34967,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "density",
+    "net_new_units": 7,
+    "approval": "by_right",
+    "by_right_units": 7,
+    "limits": {
+     "density": 7,
+     "lot_area_per_unit": null,
+     "envelope": 19,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -35146,13 +35500,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 5,
+    "local_units": 5,
+    "binding_constraint": "density",
+    "net_new_units": 5,
+    "approval": "by_right",
+    "by_right_units": 5,
+    "limits": {
+     "density": 5,
+     "lot_area_per_unit": null,
+     "envelope": 13,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -35166,15 +35526,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 84,
+    "max_units": 84,
+    "local_units": 84,
+    "binding_constraint": "density",
+    "net_new_units": 84,
+    "approval": "by_right",
+    "by_right_units": 84,
+    "limits": {
+     "density": 84,
+     "lot_area_per_unit": null,
+     "envelope": 216,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -35432,13 +35798,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 58,
+    "local_units": 58,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 58,
+    "limits": {
+     "density": 58,
+     "lot_area_per_unit": null,
+     "envelope": 151,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -35531,13 +35903,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 140,
+    "local_units": 140,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 140,
+    "limits": {
+     "density": 140,
+     "lot_area_per_unit": null,
+     "envelope": 198,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -35703,15 +36081,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 28,
+    "max_units": 29,
+    "local_units": 29,
+    "binding_constraint": "density",
+    "net_new_units": 28,
+    "approval": "by_right",
+    "by_right_units": 29,
+    "limits": {
+     "density": 29,
+     "lot_area_per_unit": null,
+     "envelope": 76,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -36499,24 +36883,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -37481,15 +37877,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 3,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -38065,15 +38467,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 35,
+    "max_units": 35,
+    "local_units": 35,
+    "binding_constraint": "density",
+    "net_new_units": 35,
+    "approval": "by_right",
+    "by_right_units": 35,
+    "limits": {
+     "density": 35,
+     "lot_area_per_unit": null,
+     "envelope": 91,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -38776,15 +39184,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 18,
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -39479,13 +39893,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -40631,15 +41051,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 5,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 5,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 12,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -40977,13 +41403,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 70,
+    "local_units": 70,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 70,
+    "limits": {
+     "density": 70,
+     "lot_area_per_unit": null,
+     "envelope": 181,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -41583,13 +42015,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 15,
+    "local_units": 15,
+    "binding_constraint": "density",
+    "net_new_units": 15,
+    "approval": "by_right",
+    "by_right_units": 15,
+    "limits": {
+     "density": 15,
+     "lot_area_per_unit": null,
+     "envelope": 32,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -42110,13 +42548,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 10,
+    "local_units": 10,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 10,
+    "limits": {
+     "density": 10,
+     "lot_area_per_unit": null,
+     "envelope": 22,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -42130,15 +42574,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 168,
+    "max_units": 168,
+    "local_units": 168,
+    "binding_constraint": "density",
+    "net_new_units": 168,
+    "approval": "by_right",
+    "by_right_units": 168,
+    "limits": {
+     "density": 168,
+     "lot_area_per_unit": null,
+     "envelope": 360,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -42396,13 +42846,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 58,
+    "local_units": 58,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 58,
+    "limits": {
+     "density": 58,
+     "lot_area_per_unit": null,
+     "envelope": 151,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -42495,13 +42951,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 281,
+    "local_units": 281,
+    "binding_constraint": "density",
+    "net_new_units": 141,
+    "approval": "by_right",
+    "by_right_units": 281,
+    "limits": {
+     "density": 281,
+     "lot_area_per_unit": null,
+     "envelope": 331,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -42667,15 +43129,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 28,
+    "max_units": 29,
+    "local_units": 29,
+    "binding_constraint": "density",
+    "net_new_units": 28,
+    "approval": "by_right",
+    "by_right_units": 29,
+    "limits": {
+     "density": 29,
+     "lot_area_per_unit": null,
+     "envelope": 76,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -43463,24 +43931,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 12,
+    "local_units": 12,
+    "binding_constraint": "density",
+    "net_new_units": 12,
+    "approval": "by_right",
+    "by_right_units": 12,
+    "limits": {
+     "density": 12,
+     "lot_area_per_unit": null,
+     "envelope": 25,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -44445,15 +44925,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 6,
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 12,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -45029,15 +45515,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 71,
+    "max_units": 71,
+    "local_units": 71,
+    "binding_constraint": "density",
+    "net_new_units": 71,
+    "approval": "by_right",
+    "by_right_units": 71,
+    "limits": {
+     "density": 71,
+     "lot_area_per_unit": null,
+     "envelope": 152,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -45740,15 +46232,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 36,
+    "max_units": 36,
+    "local_units": 36,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 36,
+    "limits": {
+     "density": 36,
+     "lot_area_per_unit": null,
+     "envelope": 77,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -46443,13 +46941,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -47601,13 +48105,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 2,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -47945,13 +48455,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 70,
+    "local_units": 70,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 70,
+    "limits": {
+     "density": 70,
+     "lot_area_per_unit": null,
+     "envelope": 181,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -48551,13 +49067,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "density",
+    "net_new_units": 7,
+    "approval": "by_right",
+    "by_right_units": 7,
+    "limits": {
+     "density": 7,
+     "lot_area_per_unit": null,
+     "envelope": 19,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -49078,13 +49600,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 5,
+    "local_units": 5,
+    "binding_constraint": "density",
+    "net_new_units": 5,
+    "approval": "by_right",
+    "by_right_units": 5,
+    "limits": {
+     "density": 5,
+     "lot_area_per_unit": null,
+     "envelope": 13,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -49098,15 +49626,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 84,
+    "max_units": 84,
+    "local_units": 84,
+    "binding_constraint": "density",
+    "net_new_units": 84,
+    "approval": "by_right",
+    "by_right_units": 84,
+    "limits": {
+     "density": 84,
+     "lot_area_per_unit": null,
+     "envelope": 216,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -49364,13 +49898,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 58,
+    "local_units": 58,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 58,
+    "limits": {
+     "density": 58,
+     "lot_area_per_unit": null,
+     "envelope": 151,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -49463,13 +50003,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 140,
+    "local_units": 140,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 140,
+    "limits": {
+     "density": 140,
+     "lot_area_per_unit": null,
+     "envelope": 198,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -49635,15 +50181,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 28,
+    "max_units": 29,
+    "local_units": 29,
+    "binding_constraint": "density",
+    "net_new_units": 28,
+    "approval": "by_right",
+    "by_right_units": 29,
+    "limits": {
+     "density": 29,
+     "lot_area_per_unit": null,
+     "envelope": 76,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -50431,24 +50983,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -51413,15 +51977,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 3,
+    "local_units": 3,
+    "binding_constraint": "density",
+    "net_new_units": 3,
+    "approval": "by_right",
+    "by_right_units": 3,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -51997,15 +52567,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 35,
+    "max_units": 35,
+    "local_units": 35,
+    "binding_constraint": "density",
+    "net_new_units": 35,
+    "approval": "by_right",
+    "by_right_units": 35,
+    "limits": {
+     "density": 35,
+     "lot_area_per_unit": null,
+     "envelope": 91,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -52708,15 +53284,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 18,
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -53415,13 +53997,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 3
+    }
    },
    {
     "likely_redevelop": false,
@@ -54569,13 +55157,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 4,
+    "local_units": 3,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 3,
+    "approval": "by_right",
+    "by_right_units": 4,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -54913,13 +55507,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 70,
+    "local_units": 70,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 70,
+    "limits": {
+     "density": 70,
+     "lot_area_per_unit": null,
+     "envelope": 181,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -55519,13 +56119,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "density",
+    "net_new_units": 7,
+    "approval": "by_right",
+    "by_right_units": 7,
+    "limits": {
+     "density": 7,
+     "lot_area_per_unit": null,
+     "envelope": 19,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -56046,13 +56652,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 5,
+    "local_units": 5,
+    "binding_constraint": "density",
+    "net_new_units": 5,
+    "approval": "by_right",
+    "by_right_units": 5,
+    "limits": {
+     "density": 5,
+     "lot_area_per_unit": null,
+     "envelope": 13,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -56066,15 +56678,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 84,
+    "max_units": 84,
+    "local_units": 84,
+    "binding_constraint": "density",
+    "net_new_units": 84,
+    "approval": "by_right",
+    "by_right_units": 84,
+    "limits": {
+     "density": 84,
+     "lot_area_per_unit": null,
+     "envelope": 216,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -56332,13 +56950,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 58,
+    "local_units": 58,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 58,
+    "limits": {
+     "density": 58,
+     "lot_area_per_unit": null,
+     "envelope": 151,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -56431,13 +57055,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 140,
+    "local_units": 140,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 140,
+    "limits": {
+     "density": 140,
+     "lot_area_per_unit": null,
+     "envelope": 198,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -56603,15 +57233,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 28,
+    "max_units": 29,
+    "local_units": 29,
+    "binding_constraint": "density",
+    "net_new_units": 28,
+    "approval": "by_right",
+    "by_right_units": 29,
+    "limits": {
+     "density": 29,
+     "lot_area_per_unit": null,
+     "envelope": 76,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -57399,24 +58035,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
+    "net_new_units": 10,
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -58381,15 +59029,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 4,
+    "local_units": 3,
+    "binding_constraint": "state_law:adu",
+    "net_new_units": 4,
+    "approval": "by_right",
+    "by_right_units": 4,
+    "limits": {
+     "density": 3,
+     "lot_area_per_unit": null,
+     "envelope": 7,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -58965,15 +59619,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 35,
+    "max_units": 35,
+    "local_units": 35,
+    "binding_constraint": "density",
+    "net_new_units": 35,
+    "approval": "by_right",
+    "by_right_units": 35,
+    "limits": {
+     "density": 35,
+     "lot_area_per_unit": null,
+     "envelope": 91,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -59676,15 +60336,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 18,
+    "max_units": 18,
+    "local_units": 18,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 18,
+    "limits": {
+     "density": 18,
+     "lot_area_per_unit": null,
+     "envelope": 46,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -60379,13 +61045,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 6,
+    "local_units": 6,
+    "binding_constraint": "density",
+    "net_new_units": 6,
+    "approval": "by_right",
+    "by_right_units": 6,
+    "limits": {
+     "density": 6,
+     "lot_area_per_unit": null,
+     "envelope": 15,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -61535,15 +62207,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 3,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "density",
+    "net_new_units": 3,
+    "approval": "by_right",
+    "by_right_units": 4,
+    "limits": {
+     "density": 4,
+     "lot_area_per_unit": null,
+     "envelope": 10,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -61881,13 +62559,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 106,
+    "local_units": 106,
+    "binding_constraint": "density",
+    "net_new_units": 106,
+    "approval": "by_right",
+    "by_right_units": 106,
+    "limits": {
+     "density": 106,
+     "lot_area_per_unit": null,
+     "envelope": 242,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -62487,13 +63171,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 11,
+    "local_units": 11,
+    "binding_constraint": "density",
+    "net_new_units": 11,
+    "approval": "by_right",
+    "by_right_units": 11,
+    "limits": {
+     "density": 11,
+     "lot_area_per_unit": null,
+     "envelope": 26,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -63014,13 +63704,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 7,
+    "local_units": 7,
+    "binding_constraint": "density",
+    "net_new_units": 7,
+    "approval": "by_right",
+    "by_right_units": 7,
+    "limits": {
+     "density": 7,
+     "lot_area_per_unit": null,
+     "envelope": 17,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -63034,15 +63730,21 @@
     "limits": {}
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 126,
+    "max_units": 126,
+    "local_units": 126,
+    "binding_constraint": "density",
+    "net_new_units": 126,
+    "approval": "by_right",
+    "by_right_units": 126,
+    "limits": {
+     "density": 126,
+     "lot_area_per_unit": null,
+     "envelope": 288,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -63300,13 +64002,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 88,
+    "local_units": 88,
+    "binding_constraint": "density",
+    "net_new_units": 0,
+    "approval": "by_right",
+    "by_right_units": 88,
+    "limits": {
+     "density": 88,
+     "lot_area_per_unit": null,
+     "envelope": 201,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -63399,13 +64107,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 210,
+    "local_units": 210,
+    "binding_constraint": "density",
+    "net_new_units": 70,
+    "approval": "by_right",
+    "by_right_units": 210,
+    "limits": {
+     "density": 210,
+     "lot_area_per_unit": null,
+     "envelope": 265,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -63571,15 +64285,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 43,
+    "max_units": 44,
+    "local_units": 44,
+    "binding_constraint": "density",
+    "net_new_units": 43,
+    "approval": "by_right",
+    "by_right_units": 44,
+    "limits": {
+     "density": 44,
+     "lot_area_per_unit": null,
+     "envelope": 101,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -64367,24 +65087,36 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 27,
+    "local_units": 27,
+    "binding_constraint": "density",
+    "net_new_units": 19,
+    "approval": "by_right",
+    "by_right_units": 27,
+    "limits": {
+     "density": 27,
+     "lot_area_per_unit": null,
+     "envelope": 61,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 9,
+    "local_units": 9,
+    "binding_constraint": "density",
+    "net_new_units": 9,
+    "approval": "by_right",
+    "by_right_units": 9,
+    "limits": {
+     "density": 9,
+     "lot_area_per_unit": null,
+     "envelope": 20,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -65349,15 +66081,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 4,
+    "max_units": 4,
+    "local_units": 4,
+    "binding_constraint": "density",
+    "net_new_units": 4,
+    "approval": "by_right",
+    "by_right_units": 4,
+    "limits": {
+     "density": 4,
+     "lot_area_per_unit": null,
+     "envelope": 10,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -65934,15 +66672,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "likely_redevelop": true,
+    "realistic_new_units": 53,
+    "max_units": 53,
+    "local_units": 53,
+    "binding_constraint": "density",
+    "net_new_units": 53,
+    "approval": "by_right",
+    "by_right_units": 53,
+    "limits": {
+     "density": 53,
+     "lot_area_per_unit": null,
+     "envelope": 121,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -66645,15 +67389,21 @@
     }
    },
    {
-    "likely_redevelop": false,
-    "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
+    "likely_redevelop": true,
+    "realistic_new_units": 27,
+    "max_units": 27,
+    "local_units": 27,
+    "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "approval": "by_right",
+    "by_right_units": 27,
+    "limits": {
+     "density": 27,
+     "lot_area_per_unit": null,
+     "envelope": 61,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,
@@ -67352,13 +68102,19 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": null,
-    "local_units": null,
-    "binding_constraint": null,
-    "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
-    "limits": {}
+    "max_units": 9,
+    "local_units": 9,
+    "binding_constraint": "density",
+    "net_new_units": 9,
+    "approval": "by_right",
+    "by_right_units": 9,
+    "limits": {
+     "density": 9,
+     "lot_area_per_unit": null,
+     "envelope": 21,
+     "parking": null,
+     "state_adu": 4
+    }
    },
    {
     "likely_redevelop": false,

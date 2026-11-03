@@ -34,6 +34,11 @@ export interface ParcelData {
     lot_depth_ft: number[];
     dist_major_transit_ft: (number | null)[];
     dist_single_family_ft: (number | null)[];
+    // Absent in files exported before SB 79 was added.
+    dist_sb79_t1_ft?: (number | null)[];
+    dist_sb79_t2_ft?: (number | null)[];
+    sb79_zone_ok?: number[];
+    sb79_half_mile?: number[];
     rules_zone: number[]; // index into codes.rules_zone, -1 = not modeled
     overlay_set: number[]; // index into codes.overlay_sets
     district: number[]; // index into codes.district, -1 = none

@@ -1210,3 +1210,16 @@ San Fernando's zones come from San Fernando City Code Chapter 106 (Municode, rea
 **Commercial and industrial.** Tables 160-72 and 160-102 list no dwellings apart from conditional single room occupancy units. Specific Plan 5, planned development and the RPD overlay aren't modeled. Parking wasn't read.
 
 8 rule files cover 4,305 of 4,962 lots (86.8%). By-right approval is confirmed on 4,305 of them. Not modeled: 137 SP-5 - M, 107 SP-5 - D, 71 SP-5 - MUC, 68 SP-5 - GN, 63 no zone, 57 SP-5 - WF, 41 SP-5 - AC, 38 RPD.
+
+## 66. SB 79, the Density Bonus Law, and Pasadena's Central District (November 2026)
+
+**SB 79 (Gov. Code §§65912.155 to 65912.161).** Near qualifying stops, the state sets floors on height, density and floor area for projects of 5 or more homes on residential, mixed or commercial land. Tier 1 is 120 homes per acre and FAR 3.5 within a quarter mile, then 100 and 3 out to a half mile. Tier 2 is 100 and 3, then 80 and 2.5. Sites within 200 ft get +40 homes per acre and +1 FAR. Stops, tiers and half-mile zones come from SCAG's official map, updated October 29, 2026. Cities under 35,000 people get only the quarter-mile band, which SCAG's zones already reflect. The state's own site blocked automated reading, so the numbers come from a site that republishes the code (california.public.law), and they match a law firm's summary.
+
+**Density Bonus Law (Gov. Code §65915).** We report a 50% bonus, which takes 24% lower income or 15% very low income homes, and an 80% bonus for 100% affordable projects. The percentage tables come from a law firm's 2022 chart, because the statute's tables weren't readable. It needs a numeric base density of at least 5 homes, so zones limited only by floor area show no number. AB 1287's extra stacked bonus isn't modeled.
+
+**Why these are separate rows.** They aren't in `max_units`, `net_new_units` or the map's colors. Each comes with conditions we can't test, and adding them would overstate what a lot can do by default. They ignore many physical limits, so each is an upper estimate.
+
+**What SB 79 doesn't check.** The City of LA adopted a phased ordinance that it expects to delay SB 79 until about 2030, and we found no final state finding on it. Other cities, including Pasadena, have taken up their own responses. Local delay plans, alternative plans, tenant history, rent-controlled demolition limits, the 1,750 sq ft average home size, airport rules and fire rules aren't modeled, so a lot's SB 79 number may not apply today.
+
+**Pasadena's Central District.** CD-MU-G, CD-MU-N, CD-MU-C and CD-RM-87 now have rule files. Density and height are set block by block in Figures CDSP-6 and CDSP-8, images with no parcel data. We use 48 homes per acre for the mixed-use districts, though most blocks allow 87, and 40 ft for height, so many lots run low. Street setbacks, floor area and parking aren't modeled, which can push some lots high. A lot now looks for a file named for its full plan code before its base zone, since MU-G means different things in different plans. East Colorado's MU districts and the other Pasadena plans still aren't modeled.
+

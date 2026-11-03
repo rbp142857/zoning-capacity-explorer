@@ -1,0 +1,19 @@
+# Pasadena CD-RM-87. Every value cites the Pasadena Municipal Code, Ch. 17.30, Central District Specific Plan (Municode), read 2026-11-03.
+zone: CD-RM-87
+name: Central District Multi-Family (CD-RM-87)
+family: multifamily
+sources:
+  Z: {section: PMC §17.30 land use table and Figure CDSP-6, url: 'https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17ZOCO_ART3SPPLST_CH17.30CEDISPPL'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [multifamily]
+  source: Z
+approval: {value: by_right, source: Z, assumption: The land use table marks multi-family housing P. Other reviews aren't checked.}
+units_per_acre: {value: 87, source: Z}
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_height_ft: {value: 40, source: Z}
+max_stories: {value: 3, source: Z, assumption: We fit 3 stories at 40 ft.}
+simplifications: ['Figure CDSP-8 sets height by block; we use 40 ft, a low value. Street setbacks and parking aren''t modeled, so some lots can run high.']

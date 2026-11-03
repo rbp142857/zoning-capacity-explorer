@@ -89,6 +89,8 @@ single-family, apartment, commercial, no-housing and Chapter 1A zones. Not done:
 **Waiting on the owner: Westlake Village's North Business Park plan.** Its PDF is over the fetch tool's 10 MB limit, and saving a file needs
 the owner's OK: https://www.wlv.org/DocumentCenter/View/5961/NBPSP-revised-September-2025. It holds the standards for six districts (42 lots).
 
+**Waiting on the owner: Glendale's Downtown Specific Plan and Santa Monica's Downtown Community Plan.** Their standards appear to be in city PDFs, and saving a file needs the owner's OK. Other Pasadena plans and LA's specific plans, such as Central City West, are still to read.
+
 **Waiting on the owner: Maywood.** The Municipal Code only continues its zoning ordinances in effect, so the text is in city PDFs (https://www.cityofmaywood.com/174/Standards-Permits-Maps), and saving a file needs the owner's OK. Its data is downloaded, but it has no rule files.
 
 **Waiting on the owner: Pomona.** Its data is downloaded and its config is in `cities/pomona/`, but it has no rule files.
