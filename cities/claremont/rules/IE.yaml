@@ -1,0 +1,18 @@
+# Claremont IE. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "IE"
+name: "IE Institutional Educational"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC §16.069.010"
+    url: https://ecode360.com/43834899
+
+residential_allowed: {value: false, source: Z, assumption: "Campus housing for students, staff and faculty, under master plans. We don't count it as homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

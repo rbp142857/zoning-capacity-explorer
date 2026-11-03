@@ -1089,3 +1089,21 @@ Compton's zones come from Compton Municipal Code Chapter 30 (eCode360, through J
 **C-M, M-L, M-H, B and P.** C-M, M-L and M-H prohibit homes apart from small caretakers' quarters and permitted live-work units; B prohibits buildings; P alone is parking. We count none, though the roll shows 805 homes in these zones.
 
 Not modeled: senior homes at 1,250 sq ft each; unit size limits; R-H's open space; Planned Development (§30-18); the Emergency Shelter Overlay. §30-20.2 accepts a smaller lot's area only if its deed predates September 20, 1946; we count one home on every smaller lot, since we can't tell.
+
+## 56. Claremont (Title 16, most zones ⚠️)
+
+Claremont's zones come from Claremont Municipal Code Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read November 2 and 3, 2026). 31 rule files cover 9,526 of 10,014 lots (95.1%). The other 488 are 368 lots in Specific Plan areas, 118 with no zone, and one each coded HDRO and LA COUNTY. SCAG's zoning here dates from 2016.
+
+**The biggest gap is the Housing Opportunity Site Overlay.** Chapter 16.014 (2024) allows 30 to 60 homes per acre on the Housing Element's sites, with a minimum of 20 per acre. SCAG's 2016 data doesn't show it, and we have no map, so these sites count their older base zone and run low. We read the MFR 30 table and part of MFR 60's.
+**Specific Plan areas.** Chapter 16.081 lists them, but each plan is a separate document we didn't read. SP2 and SP5 to SP9 hold most of those lots, and the areas have 834 homes on the roll in all. Their homes aren't counted.
+
+**RS, RR, HC and AV.** One home per lot. Floor area limits apply: 2,000 sq ft plus 15% of the lot, up to each zone's cap (1,500 plus 25% in AV), and they include attached garages. SB 9 is what lifts these lots above one home.
+**RM.** 4,000, 3,000 and 2,000 sq ft per home. Lots in RM (3000) and RM (2000) under 12,000 sq ft use 4,000, and any RM lot under 8,000 sq ft gets one home, as the chapter says. Outdoor living area, 400 sq ft per bedroom on larger homes, isn't modeled and could bind before density. Parking uses the rate for homes of 720 sq ft or more.
+**MU1, MU2 and MU3.** 22, 22 and 15 homes per acre, with parking at 2 spaces plus a half guest space. The one-acre minimum applies to new lots; most MU lots are smaller, and we count them. The Planning Commission reviews many projects.
+**CP.** Multiple-family homes with a conditional use permit at 3,000 sq ft each, under RM (3000)'s standards. The roll shows 1,261 homes against 770 under local rules. Lots under 8,000 sq ft count none.
+**CN, CL, CH, CV.** Homes need a conditional use permit as part of a mixed-use project, with no stated density. We count none, and the same for CF, B/IP and CR.
+**IE and IR.** Campus and senior housing under master plans, with no density we could find. We count none, though the roll shows 2,316 homes in IE and 322 in IR.
+**H (Hillside).** The slope tables set 1.08 to 19.61 acres per home, and homes are allowed only in a mapped overlay near two roads. We have neither slope data nor that map, so each lot counts one home with no SB 9. This may count lots where no home is allowed.
+**P/RC, WP, P and CR.** We searched these chapters for residential uses rather than reading each in full, and found none.
+
+The state's reports show 14 homes a year in 5+ unit buildings, 2018 to 2025. Half of the matched ones fall in zones we don't model.

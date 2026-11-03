@@ -1,0 +1,23 @@
+# Claremont H/SD1. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "H/SD1"
+name: "H Hillside, Slope-Density 1"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §§16.010.010 and 16.010.020"
+    url: https://ecode360.com/43834164
+
+residential_allowed: {value: true, source: Z, assumption: "Homes are allowed only in the General Plan's Hillside Residential Overlay within 500 ft of Webb Canyon Road or 300 ft of Base Line Road. We can't map that, so this may count lots where no home is allowed."}
+housing_types: {value: [single_family], source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. The slope tables require 1.08 to 19.61 acres per home by slope; we have no slope data, so we count one home on each existing lot."}
+sb9_allowed: {value: false, source: Z, assumption: "A hillside district under slope-density limits, so we don't apply SB 9 (conservative)."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 10, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height to 25 ft, not stories; we fit 2."}
+parking_per_unit: {value: 2, source: Z}

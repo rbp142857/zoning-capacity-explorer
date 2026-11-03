@@ -1872,3 +1872,47 @@ Lots from the county roll, checked against CMC Chapter 30 (eCode360, read Novemb
 ### CP-9. 500 E Pine St · M-H · 43,673 sq ft
 
 - Residences are prohibited apart from caretakers' quarters and permitted live-work units. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Claremont
+
+Lots from the county roll, checked against CMC Title 16 (eCode360, read November 2 and 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CL-1. 1490 Towne Ave · RS (10,000) · 10,021 sq ft
+
+- One home per lot. Floor area 2,000 + 15% = 3,503 sq ft → envelope 3. Parking: 8,107 ÷ 1,131 → 7. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CL-2. 1046 Moab Dr · RR (35,000) · 27,510 sq ft
+
+- One home per lot, on a lot under the district's minimum. Floor area 2,000 + 15% = 6,126 sq ft → envelope 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CL-3. 254 W 11th St · HC · 7,500 sq ft
+
+- One home per lot. Floor area 3,125 sq ft → envelope 2. Parking: 6,501 ÷ 1,131 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CL-4. 237 Spring St · RM (4000) · 8,321 sq ft
+
+- 8,321 ÷ 4,000 → **2**. Envelope 32.8 × 139.1 × shape 0.99 × 2 stories → 8. Within ½ mile of transit, so no parking limit. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CL-5. 450 Champlain Dr · RM (3000) · 8,898 sq ft
+
+- Under 12,000 sq ft, so RM (4000) density: 8,898 ÷ 4,000 → **2**. Envelope 10. Parking: 6,982 ÷ 1,356 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CL-6. 928 Heritage Ct · RM (3000) · 14,781 sq ft
+
+- 14,781 ÷ 3,000 = 4.9 → **4**. Envelope 19, parking 9. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### CL-7. 645 Colby Cir · RM (2000) · 16,821 sq ft
+
+- 16,821 ÷ 2,000 = 8.4 → **8**. Three stories: envelope 37. Parking: 14,933 ÷ 1,179 → 12. **Result: 8, lot area per home.** Engine: 8 ✓
+
+### CL-8. 150 Olive St · MU2 · 25,810 sq ft
+
+- 22 homes per acre is 1,980 sq ft each: 25,810 ÷ 1,980 → **13**. Envelope 68. Within ½ mile of transit, so no parking limit. **Result: 13, lot area per home.** Engine: 13 ✓
+
+### CL-9. 735 S Mills Ave · CP · 81,512 sq ft
+
+- 81,512 ÷ 3,000 = 27.2 → **27**, with a conditional use permit. RM (3000)'s yards and 2 stories: envelope 130, parking 56. **Result: 27, lot area per home.** Engine: 27 ✓
+
+### CL-10. 655 E Foothill Blvd · CH · 25,815 sq ft
+
+- Homes need a conditional use permit within a mixed-use project, and no density is stated, so we count none. **Result: 0, use not permitted.** Engine: 0 ✓

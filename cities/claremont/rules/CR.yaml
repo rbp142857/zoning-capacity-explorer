@@ -1,0 +1,18 @@
+# Claremont CR. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "CR"
+name: "CR Commercial Recreation"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Ch. 16.066"
+    url: https://ecode360.com/43834881
+
+residential_allowed: {value: false, source: Z, assumption: "We found no residential use in this chapter's text search. We don't count homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

@@ -1,0 +1,32 @@
+# Claremont AV1. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "AV1"
+name: "AV1 Arbol Verde Single-Family"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §§16.019.010 and 16.019.070"
+    url: https://ecode360.com/43834368
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One single-family dwelling per lot. State law (ADU, SB 9) is modeled separately."}
+min_lot_area_sqft: {value: 7500, source: Z}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.35, source: Z}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {share: 0.25, plus_sqft: 1500}
+  source: Z
+  assumption: "The main home's floor area: 1,500 sq ft plus 25% of the lot."
+parking_per_unit: {value: 2, source: Z, assumption: "2 covered spaces. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
