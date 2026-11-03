@@ -18,6 +18,15 @@
   "zoom": 12.6
  },
  {
+  "id": "los_angeles",
+  "name": "Los Angeles, California",
+  "center": [
+   -118.35,
+   34.05
+  ],
+  "zoom": 10.0
+ },
+ {
   "id": "pasadena",
   "name": "Pasadena, California",
   "center": [

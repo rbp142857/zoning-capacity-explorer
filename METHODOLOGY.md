@@ -449,7 +449,7 @@ housing count still needs its manual download.
 
 ## 14. Los Angeles (in progress)
 
-LA is being added in steps and is not on the site yet. It has a zoning adapter
+LA is on the site as of November 2026. Its files are large: loading it uses about 470 MB of browser memory, so phones may struggle, and it's not the default city. It has a zoning adapter
 and 259 rule files from the Los Angeles Municipal Code (American Legal and the
 city's zoning.lacity.gov, read November 1, 2026), covering 668,189 of its 672,322
 lots (99.4%). A lot looks for a
