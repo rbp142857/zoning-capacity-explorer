@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Multi-family homes as part of a mixed-use shopping center."}
 housing_types: {value: [mixed_use], source: Z}
+approval: {value: conditional, source: Z, assumption: "§9343 needs a conditional use permit, which we assume is granted in the home count."}
 lot_area_per_unit_sqft: {value: 2904, source: Z, assumption: "At most 15 homes per acre: 43,560 divided by 15."}
 small_lot_units:
   value:

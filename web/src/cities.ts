@@ -61,7 +61,7 @@ export function mergeParcelData(cities: ParcelData[], names: string[]): ParcelDa
       single_home_land_share: 0, residential_land_sqft: 0,
     },
     columns: {
-      parcel_id: [], zone: [], existing_units: [], local_units: [], max_units: [], net_new_units: [], binding: [],
+      parcel_id: [], zone: [], existing_units: [], building_sqft: [], local_units: [], max_units: [], net_new_units: [], binding: [],
       lot_area_sqft: [], lot_width_ft: [], lot_depth_ft: [], dist_major_transit_ft: [], dist_single_family_ft: [],
       rules_zone: [], overlay_set: [], district: [], redev_mask: [],
     },
@@ -88,6 +88,7 @@ export function mergeParcelData(cities: ParcelData[], names: string[]): ParcelDa
       o.parcel_id.push(c.parcel_id[pid]);
       o.zone.push(c.zone[pid] >= 0 ? zones[c.zone[pid]] : -1);
       o.existing_units.push(c.existing_units[pid]);
+      o.building_sqft?.push(c.building_sqft?.[pid] ?? null);
       o.local_units.push(c.local_units[pid]);
       o.max_units.push(c.max_units[pid]);
       o.net_new_units.push(c.net_new_units[pid]);

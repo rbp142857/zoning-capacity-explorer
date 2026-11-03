@@ -11,6 +11,7 @@ sources:
 
 residential_allowed: {value: false, source: T14A, assumption: "Multiple dwellings need an Administrative Use Permit (Table 30.14-A, 'A'): a discretionary approval, so not counted as allowed by right."}
 housing_types: {value: [], source: T14A}
+approval: {value: conditional, source: T14A, assumption: "Multiple dwellings need an Administrative Use Permit (Table 30.14-A, 'A')."}
 
 setbacks:
   front_ft: {value: 0, source: T14A}

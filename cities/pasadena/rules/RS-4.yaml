@@ -26,6 +26,7 @@ housing_types:
     "Two-unit developments" in RS (Table 2-2 note 5) are Pasadena's
     implementation of state law SB 9. We model them under state law
     (cities/_california/state_overrides.yaml), not as local density.
+approval: {value: by_right, source: T2-2, assumption: "Table 2-2 marks single-family housing P, and two-unit developments P."}
 
 min_lot_area_sqft:
   value: 12000

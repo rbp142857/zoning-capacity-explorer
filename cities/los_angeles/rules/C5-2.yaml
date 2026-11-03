@@ -4,6 +4,9 @@ name: "Commercial (C5), Height District 2"
 family: commercial
 
 sources:
+  PR:
+    section: "LAMC §16.05 C.1.(b) (Project Review, 50 or more homes)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lapz/0-0-0-13183
   Z:
     section: "LAMC §12.17 (C5 Commercial Zone; homes as in R4)"
     url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-111178
@@ -16,6 +19,8 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily, mixed_use], source: Z}
+approval: {value: by_right, source: Z, assumption: "Homes as the use list allows them through R3 or R4, with no use permit. C2 reaches them through C1.5, and C4 and C5 through C2. 50 or more homes needs Project Review (§16.05 C.1.(b))."}
+by_right_max_units: {value: 49, source: PR}
 lot_area_per_unit_sqft: {value: 400, source: Z}
 small_lot_units:
   value:

@@ -1140,3 +1140,18 @@ Not modeled: 120 lots with no zone, which hold 813 homes on the roll; 135 in SP 
 **Commercial and industrial.** OP, OB, CO, C-1, C-2, C-3 and I list no homes apart from single-room occupancy and supportive housing, which we don't count. PK lots use REC's no-homes rule, and C-3-PD/Hotel uses C-3's. The roll shows 197 homes in OB.
 
 The state's reports show no homes permitted in 5+ unit buildings in 2018 to 2025; ADUs make up most of what gets built.
+
+## 60. By-right homes, building size and net add (November 2026)
+
+Every rule file can now say how its zone permits homes, in `approval`: `by_right` (no use permit or similar discretionary approval), `conditional`, `mixed` or `not_allowed`, with a citation. `by_right_max_units` records a project size above which discretionary review starts. A file with no `approval` is **not confirmed**, and we never fill one in by guess.
+
+`by_right_units` follows from that. A by-right zone gets the lot's maximum, up to any cap. A conditional or not-allowed zone gets only its SB 9 homes, or 0. A mixed or unconfirmed zone gets its SB 9 homes, or "not confirmed" where SB 9 doesn't apply. SB 9 counts everywhere because its approval is ministerial. The ADU path doesn't count unless the zone is by right, since it needs a house to go with.
+
+**What "by right" doesn't cover.** It means the zone's use list needs no use permit. Design review, hillside review, coastal permits, CEQA and specific plans aren't checked, except where a rule file says so. So it's a ceiling on what's truly by right, not a promise of approval. Pasadena's mixed-use projects over 25,000 sq ft need a Conditional Use Permit, which isn't capped, so those can run high.
+
+**How the values were set.** LA's LAMC zones and all of Pasadena were read from the code on November 2, 2026. LA's multi-family and commercial zones are by right up to 49 homes, because 50 or more needs Project Review (§16.05 C.1.(b)). LA's Chapter 1A districts where homes are allowed, CM's joint living uses, RU, PF and P aren't confirmed. Elsewhere, 91 files were set only from what they already recorded, without rereading the code. Burbank's and Glendale's administrative use permits count as conditional, though they are staff-level.
+
+**Coverage.** 696,784 of 1,385,457 modeled lots (50.3%) have a confirmed approval, 649,693 of them in LA. Outside LA it's 47,091 of 717,268 (6.6%), and 27 of the 50 cities have none. A by-right number, confirmed or SB 9 alone, exists on 1,216,955 lots.
+
+**The site.** The lot panel now shows the building's square footage, by-right homes, net add under today's rules, and net add by right. `building_sqft` comes from the Assessor and doesn't enter any calculation. It's in `parcels.json` for the four cities whose site files are in the repo. Net add by right is worked out in the panel, not stored.
+

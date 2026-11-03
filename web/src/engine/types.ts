@@ -61,6 +61,8 @@ export interface ZoneRules {
   guest_parking_per_unit: Sourced<number> | null;
   guest_parking_min_units: number | null;
   sb9_allowed?: Sourced<boolean> | null;
+  approval?: Sourced<"by_right" | "conditional" | "mixed" | "not_allowed"> | null;
+  by_right_max_units?: Sourced<number> | null;
   simplifications: string[];
 }
 

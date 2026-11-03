@@ -20,6 +20,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "The zone's use list permits one-family dwellings with no use permit; Project Review doesn't reach one home."}
 min_lot_area_sqft: {value: 87120, source: Z}
 min_lot_width_ft: {value: 150, source: Z}
 max_units_per_lot: {value: 2, source: Z, assumption: "One acre per home, at most two homes on a lot (§12.06 C.2)."}

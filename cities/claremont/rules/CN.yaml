@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Homes need a conditional use permit and must be part of a mixed-use project with ground-floor commercial, and the chapter states no density. We don't count homes (conservative)."}
 housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "Homes need a conditional use permit as part of a mixed-use project."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

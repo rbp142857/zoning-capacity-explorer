@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Multiple-family units and mixed use are marked X for M-1 in the use table."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Multiple-family units and mixed use are marked X for M-1 in the use table."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

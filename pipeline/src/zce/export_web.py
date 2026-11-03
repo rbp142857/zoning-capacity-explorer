@@ -202,6 +202,7 @@ def export_city(city: CityConfig) -> None:
             "parcel_id": lots["parcel_id"].tolist(),
             "zone": [zone_index.get(z, -1) if isinstance(z, str) else -1 for z in lots["zone_code"]],
             "existing_units": _int_column(lots["existing_units"]),
+            "building_sqft": _int_column(lots["building_sqft"]),
             "local_units": _int_column(lots["local_units"]),
             "max_units": _int_column(lots["max_units"]),
             "net_new_units": _int_column(lots["net_new_units"]),

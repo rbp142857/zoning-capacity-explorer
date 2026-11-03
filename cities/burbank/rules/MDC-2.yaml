@@ -18,6 +18,7 @@ sources:
 
 residential_allowed: {value: true, source: T502, assumption: "Homes are allowed as part of a mixed-use project with an administrative use permit (AUP), a staff-level approval; we count them. Residential-only buildings are allowed only where state law requires it, which is not modeled."}
 housing_types: {value: [mixed_use], source: T502}
+approval: {value: conditional, source: T502, assumption: "Homes need an administrative use permit, a staff-level approval, as part of a mixed-use project. We treat it as a use permit, as we do in Glendale."}
 min_lot_area_sqft: {value: 6000, source: S920, assumption: "For new lots only."}
 
 units_per_acre: {value: 58, source: GPC, assumption: "Density comes from the General Plan designation, not the zone. 98% of MDC-2 lots are designated Media District (58 homes per acre) in SCAG's General Plan table, so we use that for all MDC-2 lots."}

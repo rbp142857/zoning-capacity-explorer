@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Table 19.13.020A allows only an accessory or caretaker dwelling, with a conditional use permit. We don't count that as a home."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Only an accessory or caretaker dwelling, with a conditional use permit."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

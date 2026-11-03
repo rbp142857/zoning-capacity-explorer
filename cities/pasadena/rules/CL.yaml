@@ -23,6 +23,7 @@ sources:
 
 residential_allowed: {value: true, source: T2-5}
 housing_types: {value: [single_family, multifamily, mixed_use], source: T2-5}
+approval: {value: by_right, source: T2-5, assumption: "Table 2-5 marks multi-family housing P. Mixed-use new construction over 25,000 sq ft needs a Conditional Use Permit (note 8), which isn't capped here, so large mixed-use projects run high."}
 
 min_lot_area_sqft: {value: 7200, source: T2-6, assumption: "Table 2-6 lists 7,200 sf for CO; for CL/CG lot size is set through subdivision. Used for flagging only."}
 

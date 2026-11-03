@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Homes need a conditional use permit, and Table 20.20-2 lists residential density as N/A. We don't count homes (conservative)."}
 housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "Homes need a conditional use permit."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

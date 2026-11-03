@@ -19,6 +19,7 @@ sources:
 
 residential_allowed: {value: false, source: U, assumption: "Dwellings only as an accessory use here; we don't count these homes."}
 housing_types: {value: [], source: U}
+approval: {value: not_allowed, source: U, assumption: "Dwellings only as an accessory use here; we don't count these homes."}
 
 setbacks:
   front_ft: {value: 0, source: F}

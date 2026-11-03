@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: T2-5, assumption: "Table 2-5 shows housing as not allowed in IG."}
 housing_types: {value: [], source: T2-5}
+approval: {value: not_allowed, source: T2-5, assumption: "Table 2-5 marks housing — (not allowed)."}
 
 setbacks:
   front_ft: {value: 0, source: T2-5, assumption: "Not relevant: housing not allowed."}

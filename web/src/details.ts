@@ -126,6 +126,14 @@ function redevSection(rules: RulesFile, mask: number, r: CapacityResult, existin
   return `<h3>Likely to redevelop?</h3><p>${verdict}</p><ul class="screens">${items}</ul>`;
 }
 
+const APPROVAL_TEXT: Record<string, string> = {
+  by_right: "The zone's code permits these homes without a use permit. Other reviews, such as design review, aren't checked.",
+  conditional: "The zone's homes need a use permit. Only state-law SB 9 homes count as by right here.",
+  mixed: "Some kinds of home here need a use permit and some don't; see the rule file. Only state-law SB 9 homes are confirmed as by right.",
+  not_allowed: "The zone's code doesn't permit homes. Only state-law SB 9 homes, if any, count as by right here.",
+  unknown: "We haven't confirmed from the code whether this zone's homes need a use permit. Only state-law SB 9 homes are confirmed as by right.",
+};
+
 export function renderLotDetails(
   el: HTMLElement,
   pid: number,
@@ -159,6 +167,9 @@ export function renderLotDetails(
   const label = (r: CapacityResult) => BINDING_LABELS[r.binding_constraint ?? ""] ?? "–";
   const n = (v: number | null) => (v === null ? "unknown" : fmt.format(v));
 
+  const byRight = today.result.by_right_units;
+  const netByRight = byRight === null || lot.existing_units === null ? null : Math.max(0, byRight - Math.trunc(lot.existing_units));
+
   const flags = [...new Set([...today.result.flags, ...now.result.flags])];
   const flagText: Record<string, string> = {
     substandard_lot_area: "Smaller than today's minimum for new lots (an existing lot can still be built on).",
@@ -171,9 +182,15 @@ export function renderLotDetails(
   el.innerHTML = `${head}
     <dl class="details-summary">
       <div><dt>Homes today</dt><dd>${n(lot.existing_units)}</dd></div>
+      <div><dt>Building today (sq ft)</dt><dd>${n(c.building_sqft?.[pid] ?? null)}</dd></div>
       <div><dt>Allowed, today's rules</dt><dd>${n(today.result.max_units)}</dd></div>
       ${reform ? `<div class="scenario-col"><dt>Allowed, this scenario</dt><dd>${n(now.result.max_units)}</dd></div>` : ""}
+      <div><dt>By right (no use permit)</dt><dd>${today.result.by_right_units === null ? "not confirmed" : fmt.format(today.result.by_right_units)}</dd></div>
+      <div><dt>Net add, today's rules</dt><dd>${n(today.result.net_new_units)}</dd></div>
+      <div><dt>Net add, by right</dt><dd>${netByRight === null ? "not confirmed" : fmt.format(netByRight)}</dd></div>
+      ${reform ? `<div class="scenario-col"><dt>Net add, this scenario</dt><dd>${n(now.result.net_new_units)}</dd></div>` : ""}
     </dl>
+    <p class="fineprint">${APPROVAL_TEXT[today.result.approval ?? "unknown"]}</p>
     <p><strong>What limits it${reform ? " today" : ""}:</strong> ${label(today.result)}</p>
     ${reform ? `<p class="scenario-col"><strong>Under this scenario:</strong> ${label(now.result)}</p>` : ""}
     ${

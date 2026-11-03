@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "One home per lot, and only with a conditional use permit (§§9482, 9483). §9484 also allows an ADU once that permit is granted."}
 housing_types: {value: [single_family], source: Z}
+approval: {value: conditional, source: Z, assumption: "One home, only with a conditional use permit (§§9482, 9483)."}
 max_units_per_lot: {value: 1, source: Z}
 sb9_allowed: {value: false, source: Z, assumption: "SB 9 covers single-family residential zones. This is an open space district where a home needs a conditional use permit, so we don't apply SB 9 (conservative)."}
 

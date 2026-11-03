@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Multi-unit dwellings need a conditional use permit here, unless a state by-right law applies. We don't count them (conservative)."}
 housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "Multi-unit dwellings need a conditional use permit, unless a state by-right law applies."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

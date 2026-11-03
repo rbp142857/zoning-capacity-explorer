@@ -2036,3 +2036,40 @@ Lots from the county roll, checked against DBCC Title 22 (Municode, read Novembe
 ### DB-9. 2751 S Diamond Bar Blvd · C-2 · 108,837 sq ft
 
 - The chapter lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## By-right homes (section BR)
+
+Each lot's by-right number, checked against the code's use list. Square footage comes from the Assessor.
+
+### BR-1. Los Angeles parcel 5581003003 · R3 · 4,596,295 sq ft
+
+- §12.10 A permits multiple dwellings. §16.05 C.1.(b) needs Project Review at 50 or more homes. Max 5,690, so **by right: 49.** Engine: 49 ✓
+
+### BR-2. Los Angeles parcel 2004026001 · R1 · 6,231 sq ft
+
+- §12.08 A permits a one-family dwelling; SB 9 gives 4 with a lot split. **By right: 4.** Engine: 4 ✓
+
+### BR-3. Los Angeles parcel 2005002016 · M1 · 995,747 sq ft
+
+- §12.17.6 allows only a guard's or caretaker's home. **By right: 0.** Engine: 0 ✓
+
+### BR-4. Pasadena parcel 5721001027 · RS-6 · 15,013 sq ft
+
+- Table 2-2 marks single-family housing and two-unit developments P; SB 9 gives 4. **By right: 4.** Engine: 4 ✓
+
+### BR-5. Pasadena parcel 5848019024 · CO · 8,206 sq ft
+
+- Table 2-5 marks multi-family housing P in CO. Max 6. **By right: 6.** Engine: 6 ✓
+
+### BR-6. Compton parcel 6178013010 · R-H · 7,270 sq ft
+
+- Up to four homes by right (§§30-10.2, 30-10.3). Max 4. **By right: 4.** Engine: 4 ✓
+
+### BR-7. Torrance parcel 7535004011 · C2 · 14,108 sq ft
+
+- Homes need a conditional use permit; no SB 9 here. Max 8. **By right: 0.** Engine: 0 ✓
+
+### BR-8. Torrance parcel 4092020007 · R1 · 5,528 sq ft
+
+- The zone's approval isn't confirmed yet, but SB 9 is ministerial: **by right: 4.** Engine: 4 ✓
+

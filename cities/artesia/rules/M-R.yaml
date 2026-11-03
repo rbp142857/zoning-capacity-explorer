@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: mixed, source: Z, assumption: "Over two stories or 35 ft needs a conditional use permit."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 lot_area_per_unit_sqft: {value: 1800, source: Z, assumption: "Rounded to the nearest whole home, with exactly .5 rounding up, per §9-2.2904(a)(2)."}

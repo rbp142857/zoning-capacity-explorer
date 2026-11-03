@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Multiple and single-family residences need a conditional use permit (§30-12.2), which we assume is granted."}
 housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Residences need a conditional use permit (§30-12.2)."}
 min_lot_area_sqft: {value: 10000, source: Z}
 lot_area_per_unit_sqft: {value: 1500, source: Z, assumption: "1,250 sq ft for senior homes isn't modeled."}
 small_lot_units:

@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Townhouses need a conditional use permit; R-1 uses are also allowed."}
 housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: mixed, source: Z, assumption: "Townhouses need a conditional use permit; other homes weren't confirmed."}
 lot_area_per_unit_sqft: {value: 3630, source: Z, assumption: "12 homes per net acre, for developments under 5 acres. We use it everywhere; 15 per acre at 5 acres or more isn't modeled, so large sites run low."}
 small_lot_units:
   value:

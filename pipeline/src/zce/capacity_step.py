@@ -133,6 +133,8 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
                 "max_units": result.max_units,
                 "local_units": result.local_units,
                 "net_new_units": result.net_new_units,
+                "approval": result.approval,
+                "by_right_units": result.by_right_units,
                 "binding_constraint": result.binding_constraint,
                 "local_binding_constraint": result.local_binding_constraint,
                 "state_laws_applied": result.state_laws_applied,
@@ -146,7 +148,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
         )
     out = parcels.join(pd.DataFrame(records, index=parcels.index))
     # Integer columns that may hold "unknown" use pandas' nullable Int64.
-    for col in ["max_units", "local_units", "net_new_units"] + [f"limit_{k}" for k in LIMIT_NAMES]:
+    for col in ["max_units", "local_units", "net_new_units", "by_right_units"] + [f"limit_{k}" for k in LIMIT_NAMES]:
         out[col] = out[col].astype("Int64")
 
     # Sanity checks (see the brief): nothing negative, nothing dropped.

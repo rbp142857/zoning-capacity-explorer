@@ -10,6 +10,8 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit, multifamily], source: Z, assumption: "Up to four homes by right; five or more on a parcel need a conditional use permit, which we assume is granted."}
+approval: {value: by_right, source: Z, assumption: "Up to four homes by right; five or more on a parcel need a conditional use permit."}
+by_right_max_units: {value: 4, source: Z}
 min_lot_area_sqft: {value: 5000, source: Z}
 lot_area_per_unit_sqft: {value: 1500, source: Z, assumption: "1,250 sq ft for senior homes isn't modeled."}
 small_lot_units:

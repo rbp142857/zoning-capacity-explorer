@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "R-3's principal uses are allowed, and residential uses are also listed with a conditional use permit. We count them."}
 housing_types: {value: [multifamily, mixed_use], source: Z}
+approval: {value: mixed, source: Z, assumption: "R-3's principal uses are allowed, and residential uses are also listed with a conditional use permit."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "Chapter 17.28 states no density. We use R-3's, since R-3's uses are what it allows (assumed); see the open decision."}

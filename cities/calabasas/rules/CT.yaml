@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Apartments, condominiums and duplexes need a conditional use permit (Table 2-2)."}
 housing_types: {value: [mixed_use, multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Apartments, condominiums and duplexes need a conditional use permit (Table 2-2)."}
 lot_area_per_unit_sqft: {value: 2178, source: Z, assumption: "20 homes per acre: 43,560 divided by 20."}
 small_lot_units:
   value:

@@ -120,6 +120,8 @@ def compute_expected(city: CityConfig, lots: list[dict]) -> dict:
                 "local_units": res.local_units,
                 "binding_constraint": res.binding_constraint,
                 "net_new_units": res.net_new_units,
+                "approval": res.approval,
+                "by_right_units": res.by_right_units,
                 "limits": res.limits,
             })
         results[name] = out

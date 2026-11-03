@@ -4,6 +4,9 @@ name: "Restricted Density Multiple Dwelling (RD5)"
 family: multifamily
 
 sources:
+  PR:
+    section: "LAMC §16.05 C.1.(b) (Project Review, 50 or more homes)"
+    url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lapz/0-0-0-13183
   Z:
     section: "LAMC §12.09.1 (RD Restricted Density Multiple Dwelling Zone)"
     url: https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-109838
@@ -16,6 +19,8 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The use list permits these homes with no use permit. Under 50 homes on a project needs no Project Review; 50 or more does, and it's a discretionary step (§16.05 C.1.(b))."}
+by_right_max_units: {value: 49, source: PR}
 min_lot_area_sqft: {value: 10000, source: Z}
 min_lot_width_ft: {value: 70, source: Z}
 lot_area_per_unit_sqft: {value: 5000, source: Z}

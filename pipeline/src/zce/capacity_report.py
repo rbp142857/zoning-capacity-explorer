@@ -43,6 +43,11 @@ def write_capacity_report(df: pd.DataFrame, rules: dict, state, city: CityConfig
     out.append(f"- Maximum legal homes **with state law** (SB 9, ADUs, AB 2097): **{_fmt(ok['max_units'].sum())}**")
     out.append(f"- Net new capacity (max legal minus existing, never below 0 per lot): **{_fmt(ok['net_new_units'].sum())}**")
 
+    confirmed = ok["approval"].notna()
+    out.append(f"- Homes allowed by right (no use permit), where confirmed: **{_fmt(ok['by_right_units'].sum())}**; "
+               f"zone's approval path confirmed on **{_fmt(confirmed.sum())}** of {_fmt(len(ok))} modeled lots "
+               f"({confirmed.mean():.1%}). On other lots, only SB 9 homes count.")
+
     res = ok[ok["rules_zone"].map(lambda z: rules[z].residential_allowed.value if z in rules else False)]
     one_unit = res["local_units"] <= 1
     share = res.loc[one_unit, "lot_area_sqft"].sum() / res["lot_area_sqft"].sum()

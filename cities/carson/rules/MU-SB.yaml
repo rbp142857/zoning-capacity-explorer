@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Multiple-family and mixed-use need a conditional use permit and at least 100 ft of street frontage (Pt. 3, Div. 1)."}
 housing_types: {value: [multifamily, mixed_use], source: Z}
+approval: {value: conditional, source: Z, assumption: "Multiple-family and mixed-use need a conditional use permit."}
 min_lot_width_ft: {value: 100, source: Z}
 lot_area_per_unit_sqft: {value: 1742.4, source: Z, assumption: "25 homes per net acre: 43,560 divided by 25."}
 density_rounding: {value: nearest_half_up, source: Z, assumption: "A fraction of one-half or more permits another home."}

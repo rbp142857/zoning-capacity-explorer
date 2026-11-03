@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Detached homes on slopes under 30 degrees by right; steeper slopes and clustered or attached homes need a conditional use permit."}
 housing_types: {value: [single_family], source: Z}
+approval: {value: mixed, source: Z, assumption: "Detached homes on slopes under 30 degrees by right; steeper slopes and clustered or attached homes need a conditional use permit."}
 min_lot_area_sqft: {value: 4400, source: Z, assumption: "Doubled on slopes of 30 to 50 degrees and multiplied by 10 above 50 degrees, not modeled."}
 min_lot_width_ft: {value: 50, source: Z}
 lot_area_per_unit_sqft: {value: 43560, source: Z, assumption: "Density is 10 homes per acre under 30 degrees, 5 from 30 to 50 degrees, and 1 at 50 degrees or more. We have no slope data, and this zone covers Avalon's undeveloped slopes, so we use 1 per acre (conservative); gentler lots run low."}

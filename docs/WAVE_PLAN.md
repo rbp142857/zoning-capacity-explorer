@@ -198,6 +198,10 @@ Rivera, Rancho Palos Verdes, Redondo Beach, Rolling Hills, Rosemead, San
 Dimas, San Fernando, San Marino, Sierra Madre, Signal Hill, South El Monte,
 South Pasadena, Temple City, Vernon, Walnut.
 
+## By-right approval pass
+
+Every rule file should say how its zone permits homes (`approval`, METHODOLOGY section 60). **Done from the code:** Los Angeles' LAMC zones, Pasadena. **Done only from what the files already recorded:** 91 files across 21 cities. **Still to read, one use table per city:** the other 48 cities' zones, and LA's Chapter 1A districts. New cities should set `approval` from the start.
+
 ## Definition of done, for every city
 
 The same bar Pasadena and Glendale met. It's what makes the data trustworthy,

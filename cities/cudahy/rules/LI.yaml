@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Homes aren't allowed, apart from live/work units with a conditional use permit, which we don't count."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Homes aren't allowed, apart from live/work units with a conditional use permit."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

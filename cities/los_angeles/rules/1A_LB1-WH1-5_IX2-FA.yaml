@@ -19,6 +19,7 @@ sources:
 
 residential_allowed: {value: false, source: U, assumption: "Dwellings are not allowed in this district."}
 housing_types: {value: [], source: U}
+approval: {value: not_allowed, source: U, assumption: "Dwellings are not allowed in this district."}
 
 setbacks:
   front_ft: {value: 0, source: F}

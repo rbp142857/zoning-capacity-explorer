@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Homes need a conditional use permit."}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Homes need a conditional use permit."}
 lot_area_per_unit_sqft: {value: 1600, source: Z, assumption: "The article says both R-4's area (1,000 sq ft) and 1,600 sq ft per home. We use 1,600 (conservative); see the open decision."}
 small_lot_units:
   value:

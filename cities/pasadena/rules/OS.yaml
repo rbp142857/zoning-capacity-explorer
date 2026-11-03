@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: C17-26, assumption: "Open space district; housing not allowed. Not yet checked line by line against the Chapter 17.26 use table."}
 housing_types: {value: [], source: C17-26}
+approval: {value: not_allowed, source: C17-26, assumption: "Table 2-7 marks housing — in OS."}
 
 setbacks:
   front_ft: {value: 0, source: C17-26, assumption: "Not relevant: housing not allowed."}

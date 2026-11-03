@@ -18,6 +18,7 @@ sources:
 
 residential_allowed: {value: true, source: U13, assumption: "Multi-unit housing is permitted by right."}
 housing_types: {value: [multifamily, mixed_use], source: U13}
+approval: {value: by_right, source: U13, assumption: "Multi-unit housing is permitted by right."}
 min_lot_area_sqft: {value: 7500, source: T13, assumption: "For new lots only."}
 
 setbacks:

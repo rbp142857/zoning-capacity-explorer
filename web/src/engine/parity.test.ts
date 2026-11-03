@@ -55,6 +55,8 @@ describe(`TypeScript engine matches Python (${file})`, () => {
           local_units: got.local_units,
           binding_constraint: got.binding_constraint,
           net_new_units: got.net_new_units,
+          approval: got.approval,
+          by_right_units: got.by_right_units,
           limits: got.limits,
         };
         if (JSON.stringify(sortKeys(actual)) !== JSON.stringify(sortKeys(want))) {

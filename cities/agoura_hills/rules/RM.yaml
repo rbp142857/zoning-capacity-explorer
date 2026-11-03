@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: mixed, source: Z, assumption: "Apartment houses need a conditional use permit (§9252.4); other homes weren't confirmed."}
 min_lot_area_sqft: {value: 6000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 lot_area_per_unit_sqft: {value: 6000, source: Z, assumption: "SCAG drops the number after the zone letters, so we use the lowest density of the range, RM-6 (6,000 sq ft per home); lots zoned higher run low."}

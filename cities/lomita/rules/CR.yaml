@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "§11-1.43.01: homes need a conditional use permit as part of a mixed-use project; stand-alone homes only in the Housing overlay, which our data does not show. We don't count homes (conservative); overlay lots run low."}
 housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "§11-1.43.01: homes need a conditional use permit as part of a mixed-use project; stand-alone homes only in the Housing overlay, which our data does not show."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

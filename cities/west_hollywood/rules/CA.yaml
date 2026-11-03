@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Homes through mixed-use projects, allowed by right except in the commercial-only overlay, which our data does not show."}
 housing_types: {value: [mixed_use], source: Z}
+approval: {value: by_right, source: Z, assumption: "Homes through mixed-use projects, allowed by right except in the commercial-only overlay, which our data does not show, so those lots run high."}
 min_lot_area_sqft: {value: 5000, source: Z}
 
 setbacks:

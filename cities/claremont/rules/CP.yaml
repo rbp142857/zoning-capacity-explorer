@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Multiple-family homes need a conditional use permit, which we assume is granted."}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Multiple-family homes need a conditional use permit."}
 min_lot_area_sqft: {value: 12000, source: Z, assumption: "RM (3000)'s standards apply to multiple-family buildings here."}
 lot_area_per_unit_sqft:
   value:

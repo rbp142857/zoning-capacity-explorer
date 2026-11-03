@@ -24,6 +24,7 @@ export interface ParcelData {
     parcel_id: string[];
     zone: number[];
     existing_units: (number | null)[];
+    building_sqft?: (number | null)[]; // absent in files exported before it was added
     local_units: (number | null)[];
     max_units: (number | null)[];
     net_new_units: (number | null)[];

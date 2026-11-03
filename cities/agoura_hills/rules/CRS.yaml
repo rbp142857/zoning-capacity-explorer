@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Table I (§9312.2) allows only a caretaker's or owner's residence, with a conditional use permit; we count no homes."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Only a caretaker's or owner's residence, with a conditional use permit."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

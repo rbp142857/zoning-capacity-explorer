@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Mobile home parks, with a conditional use permit."}
 housing_types: {value: [single_family], source: Z}
+approval: {value: conditional, source: Z, assumption: "Mobile home parks, with a conditional use permit."}
 max_units_per_lot: {value: 1, source: Z, assumption: "§9.7.040: at most one home per mobile home lot. A park on one parcel is counted as one lot, so it runs low; park density follows the General Plan, which we have no parcel map of."}
 
 setbacks:

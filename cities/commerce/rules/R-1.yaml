@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z, assumption: "Table 19.07.020A permits single-family homes and bars duplexes and multifamily. New homes over 2,300 sq ft of total floor area need a conditional use permit."}
+approval: {value: mixed, source: Z, assumption: "New homes over 2,300 sq ft of total floor area need a conditional use permit."}
 max_units_per_lot: {value: 1, source: Z, assumption: "The table permits a single-family dwelling, and 8.70 homes per acre is 5,007 sq ft per home. We count one home per lot."}
 min_lot_area_sqft: {value: 4000, source: Z}
 

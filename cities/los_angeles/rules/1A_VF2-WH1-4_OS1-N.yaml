@@ -19,6 +19,7 @@ sources:
 
 residential_allowed: {value: false, source: U, assumption: "The N Density District means no homes are permitted (Sec. 6A.1.3)."}
 housing_types: {value: [], source: U}
+approval: {value: not_allowed, source: U, assumption: "The N Density District means no homes are permitted (Sec. 6A.1.3)."}
 
 setbacks:
   front_ft: {value: 0, source: F}
