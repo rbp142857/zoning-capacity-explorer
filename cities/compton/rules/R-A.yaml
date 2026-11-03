@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "One-family dwellings are principal permitted uses (§§30-7.2, 30-8.2)."}
 min_lot_area_sqft: {value: 10000, source: Z}
 lot_area_per_unit_sqft: {value: 10000, source: Z, assumption: "More than one home may share a lot only if each could be legally divided off and fits the original subdivision (§30-7.4.b). We don't test that, so larger lots can run high."}
 small_lot_units:

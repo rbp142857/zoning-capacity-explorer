@@ -200,7 +200,7 @@ South Pasadena, Temple City, Vernon, Walnut.
 
 ## By-right approval pass
 
-Every rule file should say how its zone permits homes (`approval`, METHODOLOGY section 60). **Done from the code:** Los Angeles' LAMC zones, Pasadena, and the cities listed in METHODOLOGY section 60's second pass. **Done only from what the files already recorded:** 91 files across 21 cities. **Still to read, one use table per city:** the other 48 cities' zones, and LA's Chapter 1A districts. New cities should set `approval` from the start.
+Every rule file should say how its zone permits homes (`approval`, METHODOLOGY section 60). **Done from the code:** Los Angeles' LAMC zones, Pasadena, and the cities listed in METHODOLOGY section 60's second pass. **Done only from what the files already recorded:** 91 files across 21 cities. **Still to read:** 396 rule files, listed by the check that `approval` is empty, including LA's Chapter 1A districts and Azusa, whose table columns couldn't be matched to zones. New cities should set `approval` from the start.
 
 ## Definition of done, for every city
 

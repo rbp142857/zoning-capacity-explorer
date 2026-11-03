@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§153.031 permits single-family dwellings by right in R-1."}
 max_units_per_lot: {value: 1, source: Z, assumption: "One single-family home. State law (ADU, SB 9, §153.048) is modeled separately."}
 
 setbacks:

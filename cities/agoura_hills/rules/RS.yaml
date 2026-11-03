@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "One single-family dwelling per lot is a permitted use."}
 min_lot_area_sqft: {value: 6000, source: Z, assumption: "The smallest of the range (RS-6-6,000); SCAG drops the suffix."}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. The zone's density and minimum lot govern subdividing. State law (ADU, SB 9, Ch. 2 Part 11) is modeled separately."}
 

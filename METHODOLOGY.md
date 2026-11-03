@@ -1157,7 +1157,7 @@ Every rule file can now say how its zone permits homes, in `approval`: `by_right
 
 **Fourth pass (November 2026).** Added Culver City, Monrovia, Baldwin Park, South Gate and Claremont's residential zones, Alhambra's residential and CBD and EMC zones, Montebello's R-A to R-3, Carson's residential zones, Santa Fe Springs' R-3 and R-4, and Beverly Hills' R-1. Alhambra's R-1, R-2 and R-3 are read as its current RL, RM and RH. Monrovia's NC marks multiple-family P, though our file counts no homes; recorded as an open decision. Carson's RM zones are mixed because multiple-family homes need a conditional use permit, so they show "not confirmed".
 
-**Coverage.** 1,302,301 of 1,385,457 modeled lots (94.0%) have a confirmed approval, in 527 of 932 rule files. Outside LA it's 652,608 of 717,268 (91.0%). 2 of the 50 cities have none: Azusa, Rolling Hills Estates.
+**Coverage.** 1,325,614 of 1,385,457 modeled lots (95.7%) have a confirmed approval, in 536 of 932 rule files. Outside LA it's 675,921 of 717,268 (94.2%). 36 of the 50 cities are at least 90% confirmed. Cities with none: Azusa. A by-right number, confirmed or SB 9 alone, exists on 1,333,169 lots. The 396 files left are mostly commercial, industrial and open space zones where we count no homes, so they're conservative.
 
 **The site.** The lot panel now shows the building's square footage, by-right homes, net add under today's rules, and net add by right. `building_sqft` comes from the Assessor and doesn't enter any calculation. It's in `parcels.json` for the four cities whose site files are in the repo. Net add by right is worked out in the panel, not stored.
 
