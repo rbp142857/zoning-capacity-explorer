@@ -1,0 +1,36 @@
+# Commerce R-3. Every value cites the Commerce Municipal Code, Title 19 (Municode, Supp. 15, through Ord. 829, read 2026-11-02).
+zone: "R-3"
+name: "R-3 High Density Residential"
+family: multifamily
+
+sources:
+  Z:
+    section: "CMC §§19.07.010 to 19.07.030 and Table 19.21.040A"
+    url: https://library.municode.com/ca/commerce/codes/code_of_ordinances?nodeId=TIT19ZO_CH19.07REZO_DIV1PEUSDEST_19.07.030DEST
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+min_lot_area_sqft: {value: 7500, source: Z}
+lot_area_per_unit_sqft: {value: 2000, source: Z, assumption: "2,000 sq ft per home; the table also states 21.78 per acre, the same density. Its note (b) says rounding up may allow greater density. We round down (conservative)."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "The minimum for apartments is 7,500 sq ft, and we found no rule for smaller lots. An existing smaller lot keeps one home (conservative), though the table also permits duplexes in R-3."
+small_lot_units_below_sqft: 7500
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "2 garage spaces for homes with two or more bedrooms; 1 for studios and one-bedrooms. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: Z}
+
+simplifications:
+  - "The 40% floor area and 45% coverage limits apply only to lots with one home (Table 19.07.030A, rows 15 and 16), so they aren't applied here."
+  - "The 20 ft or more between buildings isn't applied."

@@ -1,0 +1,35 @@
+# Commerce R-2. Every value cites the Commerce Municipal Code, Title 19 (Municode, Supp. 15, through Ord. 829, read 2026-11-02).
+zone: "R-2"
+name: "R-2 Medium Density Residential"
+family: multifamily
+
+sources:
+  Z:
+    section: "CMC §§19.07.010 to 19.07.030 and Table 19.21.040A"
+    url: https://library.municode.com/ca/commerce/codes/code_of_ordinances?nodeId=TIT19ZO_CH19.07REZO_DIV1PEUSDEST_19.07.030DEST
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit], source: Z}
+max_units_per_lot: {value: 2, source: Z, assumption: "§19.07.010 says R-2 lots may hold one or two detached homes or duplex units."}
+lot_area_per_unit_sqft: {value: 3000, source: Z, assumption: "3,000 sq ft per home for two detached homes (14.52 per acre, the top of the range). An attached duplex needs 5,000 sq ft per home (8.71 per acre), so the count assumes detached homes."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "The code has no rule we found for lots under 3,000 sq ft. An existing lot keeps one home."
+small_lot_units_below_sqft: 3000
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 3, max_ft: 5}, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "A 2-car garage per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "The 40% floor area and 45% coverage limits apply only to lots with one home (Table 19.07.030A, rows 15 and 16), so they aren't applied here. A one-home lot could be limited more than shown."
+  - "The 10 ft between homes isn't applied."

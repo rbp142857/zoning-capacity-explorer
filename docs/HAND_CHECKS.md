@@ -1796,3 +1796,39 @@ Rules: Cerritos Municipal Code, Title 22, read on eCode360 2026-11-02. Each home
 ### CE-7. 13363 Artesia Blvd · CN · 25,000 sq ft
 
 - Chapter 22.25 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Commerce
+
+Lots from the county roll, checked against CMC Title 19 (Municode, read November 2, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CO-1. 2116 Fitzgerald Ave · R-1 · 4,984 sq ft
+
+- One home. Sides 10% of width, 4.03 ft. Coverage 45% is 2,243 sq ft, but FAR 0.40 caps floor area at 1,994 → envelope **1**. Parking: ground 4,181 ÷ 1,131 → 3. SB 9 lifts it to 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CO-2. 5217 Harbor St · R-1 · 2,134 sq ft
+
+- FAR allows 854 sq ft, under one 1,062.5 sq ft home but over the 500 sq ft minimum → envelope 1. Parking: 1,682 ÷ 1,131 → 1. Too small for an SB 9 split; ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CO-3. 4483 Lovett St · R-2 · 6,668 sq ft
+
+- 6,668 ÷ 3,000 → **2**, the zone's cap. Envelope 40.5 × 97 × 2 stories → 7. Parking: 5,658 ÷ 1,131 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CO-4. 1444 S McDonnell Ave · R-2 · 5,691 sq ft
+
+- 5,691 ÷ 3,000 → **1**. Shape factor 0.50 on this irregular lot: envelope 7, parking 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CO-5. 6734 Agra St · R-3 · 6,763 sq ft
+
+- Under 7,500 sq ft, one home by our conservative reading. Envelope 13; parking 6,132 ÷ 1,104 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CO-6. 6742 Lanto St · R-3 · 7,670 sq ft
+
+- 7,670 ÷ 2,000 = 3.8 → **3**, rounded down. Envelope 14; parking 6,855 ÷ 1,104 → 6. **Result: 3, lot area per home.** Engine: 3 ✓
+
+### CO-7. 5440 Telegraph Rd · C-2 · 21,279 sq ft
+
+- No density stated. FAR 0.5 is 10,640 sq ft ÷ 1,062.5 → **10**. Parking: 20,878 ÷ 1,281 → 16. **Result: 10, envelope.** Engine: 10 ✓
+
+### CO-8. 6048 Triangle Dr · M-2 · 32,453 sq ft
+
+- M-2 allows only caretaker quarters, which we don't count. **Result: 0, use not permitted.** Engine: 0 ✓

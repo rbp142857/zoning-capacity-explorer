@@ -1,5 +1,5 @@
 """Real lots checked by hand against each city's zoning code text
-(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos).
+(ten in Pasadena, five in Glendale, six in Burbank, seven in Santa Monica, 29 in Los Angeles, nine in El Monte, nine in Inglewood, nine in West Hollywood, nine in Monrovia, nine in Santa Clarita, seven in Duarte, seven in Long Beach, five in Lancaster, seven in Gardena, five in Norwalk, three in Santa Fe Springs, six in Whittier, five in Arcadia, three in South Gate, five in Culver City, five in Montebello, three in Rolling Hills Estates, six in West Covina, six in Westlake Village, six in Alhambra, eight in Palmdale, seven in Carson, six in Azusa, five in Lomita, seven in Hawthorne, seven in San Gabriel, six in Monterey Park, ten in Agoura Hills, 14 in Torrance, ten in Artesia, nine in Avalon, ten in Baldwin Park, eight in Bell, nine in Bell Gardens, nine in Bellflower, seven in Beverly Hills, six in Bradbury, ten in Calabasas, seven in Cerritos, eight in Commerce).
 
 The arithmetic for each is written out in docs/HAND_CHECKS.md. Inputs are the
 pipeline's values for these lots (area, width, depth, overlays, distance to
@@ -1620,6 +1620,35 @@ def cerritos():
 @pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", CERRITOS, ids=[c[0] for c in CERRITOS])
 def test_hand_checked_cerritos_parcel(cerritos, address, zone, lot, max_units, binding, limits):
     rules, state, a = cerritos
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+COMMERCE = [
+    ("2116 Fitzgerald Ave", "R-1", Lot(4984, 40.3, 124.2, (), 3250, 1), 4, "state_law:sb9", {"density": 1, "envelope": 1, "parking": 3}),
+    ("5217 Harbor St", "R-1", Lot(2134, 24.8, 94.5, (), 4100, 1), 3, "state_law:adu", {"envelope": 1, "parking": 1}),
+    ("4483 Lovett St", "R-2", Lot(6668, 50.5, 132.0, (), 4944, 2), 3, "state_law:adu", {"lot_area_per_unit": 2, "density": 2, "envelope": 7, "parking": 5}),
+    ("1444 S McDonnell Ave", "R-2", Lot(5691, 64.2, 177.3, (), 3467, 0), 3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 7, "parking": 4}),
+    ("6734 Agra St", "R-3", Lot(6763, 76.0, 160.7, (), 4650, 1), 3, "state_law:adu", {"lot_area_per_unit": 1, "envelope": 13, "parking": 5}),
+    ("6742 Lanto St", "R-3", Lot(7670, 66.5, 141.2, (), 5081, 3), 3, "lot_area_per_unit", {"lot_area_per_unit": 3, "envelope": 14, "parking": 6}),
+    ("5440 Telegraph Rd", "C-2", Lot(21279, 117.8, 265.0, (), 2802, 0), 10, "envelope", {"envelope": 10, "parking": 16}),
+    ("6048 Triangle Dr", "M-2", Lot(32453, 140.0, 231.8, (), 5131, 1), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def commerce():
+    rules = load_zone_rules(REPO / "cities" / "commerce" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", COMMERCE, ids=[c[0] for c in COMMERCE])
+def test_hand_checked_commerce_parcel(commerce, address, zone, lot, max_units, binding, limits):
+    rules, state, a = commerce
     r = compute_capacity(rules[zone], lot, a, state)
     assert r.max_units == max_units
     assert r.binding_constraint == binding

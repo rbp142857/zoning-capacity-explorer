@@ -1065,3 +1065,15 @@ Not on the site yet. 15 files cover 14,759 of 15,310 lots (96.4%); RS-5000, RS-6
 **RS.** Coverage is 40%, or 45% for RS-5000 lots meeting the chapter's other standards, with FAR 0.70. SB 9 is what lifts these lots above one home.
 
 Other calls: OS allows only caretakers' residences, and we don't count its 295 homes on the roll; we didn't check what those are. CN lists no homes. We didn't read the uses of COP, CC, CR, M, MC, MC-1, MC-2, M-1 or OS-1, which count none. We wrote MC's name from the Ch. 22.29 title without checking the map symbol.
+
+## 54. Commerce (Title 19, most zones ⚠️)
+
+Commerce's zones come from Commerce Municipal Code Title 19 (Municode, Supp. 15, through Ord. 829, read November 2, 2026). Eight rule files cover 3,918 of 4,022 lots (97.4%). The other 104 have no zone in SCAG's data. SCAG's zoning here dates from 2016.
+
+**R-1.** One home per lot, with a 40% floor area limit and 45% coverage. SB 9 is what lifts these lots above one home.
+**R-2.** The table's two figures match its density range: 3,000 sq ft per home for two detached homes (14.52 per acre) and 5,000 per duplex home (8.71 per acre). We use 3,000, with two homes at most, so the count assumes detached homes.
+**R-3.** 2,000 sq ft per home. A note says rounding up "may allow" more density; we round down. Lots under the 7,500 sq ft minimum count one home, which covers 255 of the zone's 414 lots, though the table also permits duplexes. R-3 holds 1,120 homes on the roll against 1,539 at our maximum, and some lots are already far over: 7141 E Gage Ave has 15 homes where the rule gives 5.
+**C-2.** Its use table permits multifamily and single-family homes outright but states no density, so its floor area ratio of 0.5, coverage and parking set the count. That gives 1,969 homes, mostly paper: four lots over 400,000 sq ft hold 1,000 of them.
+**Manufacturing and PF.** C/M-1, M-1, M-2 and PF allow only caretaker quarters, art studios with an associated residence (C/M-1 and M-1), or a caretaker dwelling with a conditional use permit (PF). We count none, though the roll shows 635 homes in these zones.
+
+Not modeled: the Modelo Specific Plan (§19.16.020), which isn't in SCAG's data and whose standards we didn't read; the Planned Development overlay (Chapter 19.15); the conditional use permit for homes over 2,300 sq ft.
