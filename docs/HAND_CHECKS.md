@@ -2172,3 +2172,25 @@ Each lot's by-right number, checked against the code's use list. Square footage 
 ### ES-4. 215 S Douglas St El Segundo Ca 90245 · M-1 · 69,679 sq ft
 
 - homes not counted. **Result: 0, use not permitted.** By right: not confirmed. Engine: 0 ✓
+
+## Irwindale
+
+### IR-1. 4808 Sabre Ln Irwindale Ca 91706 · A1 · 7,296 sq ft
+
+- lot_area_per_unit 1, envelope 8, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### IR-2. 16015 Calle Breceda Irwindale Ca 91706 · R1 · 6,032 sq ft
+
+- density 1, envelope 6, parking 4, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### IR-3. 5124 Irwindale Ave Irwindale Ca 91706 · C3 · 6,928 sq ft
+
+- density 1, envelope 7, parking 5, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### IR-4. 15830 Hidalgo St Irwindale Ca 91706 · R2 · 9,050 sq ft
+
+- lot_area_per_unit 3, envelope 10, parking 6, state_adu 3. **Result: 3, lot area per unit.** By right: 3. Engine: 3 ✓
+
+### IR-5. 13654 Live Oak Ln Irwindale Ca 91706 · M2 · 57,512 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: not confirmed. Engine: 0 ✓

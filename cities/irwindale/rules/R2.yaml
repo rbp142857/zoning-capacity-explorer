@@ -1,0 +1,31 @@
+# Irwindale R2. Every value cites the Irwindale Municipal Code, Title 17 (Municode), read 2026-11-03.
+zone: R2
+name: R-2 Light-Multiple Residential (R2 in SCAG's table)
+family: multifamily
+sources:
+  Z: {section: IMC Ch. 17.20, url: 'https://library.municode.com/ca/irwindale/codes/code_of_ordinances?nodeId=TIT17ZO_CH17.20LILTREZO'}
+  P: {section: IMC §17.20.100, url: 'https://library.municode.com/ca/irwindale/codes/code_of_ordinances?nodeId=TIT17ZO_CH17.20LILTREZO'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family, two_unit]
+  source: Z
+approval: {value: by_right, source: Z, assumption: §17.20.020 lists two-family dwellings and condominiums as permitted uses.}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 60, source: Z}
+lot_area_per_unit_sqft: {value: 3000, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+    - {value: 1}
+  source: Z
+  assumption: A lot too small for one home keeps one home (assumed).
+small_lot_units_below_sqft: 3000
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: Two stories is our fit to the 35 ft limit; the code sets no story count here.}
+parking_per_unit: {value: 2, source: P, assumption: 2 spaces in a garage. None within ½ mile of a major transit stop (the AB 2097 path).}
+simplifications: ['The R-2-10,000 suffix has its own lot area per home; SCAG doesn''t show it, so those lots can run high.']

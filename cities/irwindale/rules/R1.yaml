@@ -1,0 +1,23 @@
+# Irwindale R1. Every value cites the Irwindale Municipal Code, Title 17 (Municode), read 2026-11-03.
+zone: R1
+name: R-1 Single-Family Residential (R1 in SCAG's table)
+family: single_family
+sources:
+  Z: {section: IMC Ch. 17.16, url: 'https://library.municode.com/ca/irwindale/codes/code_of_ordinances?nodeId=TIT17ZO_CH17.16SIMIREZO'}
+  P: {section: IMC §17.16.100, url: 'https://library.municode.com/ca/irwindale/codes/code_of_ordinances?nodeId=TIT17ZO_CH17.16SIMIREZO'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family]
+  source: Z
+approval: {value: by_right, source: Z, assumption: §17.16.020 lists single-family dwellings as a permitted use.}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: 'One home per lot. State law (ADU, SB 9) is modeled separately.'}
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: 2 spaces in a garage. None within ½ mile of a major transit stop (the AB 2097 path).}
+simplifications: [Open space of at least 300 sq ft (§17.16.080) isn't modeled.]

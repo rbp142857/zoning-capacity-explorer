@@ -1180,3 +1180,13 @@ El Segundo's zones come from El Segundo Municipal Code Title 15 (American Legal,
 **Commercial, mixed-use and industrial.** We didn't read these zones' uses and count no homes, so MU-N and MU-S can run low. Specific plan areas, including Smoky Hollow and Downtown, aren't modeled.
 
 15 rule files cover 3,934 of 4,511 lots (87.2%). By-right approval is confirmed on 3,486 of them. Not modeled: 276 SHSP, 145 DSP, 56 no zone, 42 CCSP, 29 540EIASP, 14 ESSCSP, 5 222KSSP, 3 888NSBSP.
+
+## 63. Irwindale (most zones ⚠️)
+
+Irwindale's zones come from Irwindale Municipal Code Title 17 (Municode, read November 3, 2026). SCAG writes them without hyphens (R1, A1), and we read them as the code's R-1 and A-1.
+
+**R-1, A-1 and C-3.** One home with 20 ft front, 5 ft side and 15 ft rear yards. A-1 needs 5,000 sq ft per home. C-3 allows single-family homes under R-1's restrictions. **R-2.** 3,000 sq ft per home, with two homes in a garage-parked layout. SCAG shows no R-3 here, though the code has one.
+
+**Commercial and manufacturing.** C-1, C-2, C-M, M-1 and M-2 weren't read closely and count no homes. Quarry (Q) and specific plan lots aren't modeled.
+
+9 rule files cover 1,038 of 1,095 lots (94.8%). By-right approval is confirmed on 487 of them. Not modeled: 23 no zone, 23 Q, 11 SP.

@@ -1858,3 +1858,29 @@ def test_hand_checked_el_segundo_parcel(el_segundo, address, zone, lot, max_unit
     assert r.binding_constraint == binding
     for name, value in limits.items():
         assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+IRWINDALE = [
+    ("4808 Sabre Ln Irwindale Ca 91706", "A1", Lot(7296, 65.3, 113.5, (), 8322, 1, 0), 4, "state_law:sb9", {'lot_area_per_unit': 1, 'envelope': 8, 'state_adu': 3, 'state_sb9': 4}),
+    ("16015 Calle Breceda Irwindale Ca 91706", "R1", Lot(6032, 63.5, 97.7, (), 8587, 1, 0), 4, "state_law:sb9", {'density': 1, 'envelope': 6, 'parking': 4, 'state_adu': 3, 'state_sb9': 4}),
+    ("5124 Irwindale Ave Irwindale Ca 91706", "C3", Lot(6928, 51.7, 134.5, (), 8436, 1, 0), 3, "state_law:adu", {'density': 1, 'envelope': 7, 'parking': 5, 'state_adu': 3}),
+    ("15830 Hidalgo St Irwindale Ca 91706", "R2", Lot(9050, 80.0, 113.2, (), 8367, 1, 429), 3, "lot_area_per_unit", {'lot_area_per_unit': 3, 'envelope': 10, 'parking': 6, 'state_adu': 3}),
+    ("13654 Live Oak Ln Irwindale Ca 91706", "M2", Lot(57512, 246.9, 261.7, (), 7195, 0, 450), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def irwindale():
+    rules = load_zone_rules(REPO / "cities" / "irwindale" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", IRWINDALE, ids=[c[0] for c in IRWINDALE])
+def test_hand_checked_irwindale_parcel(irwindale, address, zone, lot, max_units, binding, limits):
+    rules, state, a = irwindale
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"

@@ -1,0 +1,15 @@
+# Irwindale CM. Every value cites the Irwindale Municipal Code, Title 17 (Municode), read 2026-11-03.
+zone: CM
+name: C-M Commercial Manufacturing (CM in SCAG's table)
+family: nonresidential
+sources:
+  Z: {section: IMC 17.48 (C-M Commercial Manufacturing), url: 'https://library.municode.com/ca/irwindale/codes/code_of_ordinances?nodeId=TIT17ZO_CH17.48COMAZO'}
+residential_allowed: {value: false, source: Z, assumption: We didn't read this zone's uses. We don't count homes (conservative).}
+housing_types:
+  value: []
+  source: Z
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: 'Not relevant: homes not counted.'}
