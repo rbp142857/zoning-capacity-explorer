@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Detached dwelling units or duplexes are principal permitted uses."}
 min_lot_area_sqft: {value: 6000, source: Z, assumption: "For new lots; smaller existing lots get the density rule."}
 max_units_per_lot: {value: 2, source: Z, assumption: "1 home per 3,000 sq ft, up to the limit in the exhibit; Chapter 17.16 is two-family."}
 lot_area_per_unit_sqft: {value: 3000, source: Z}

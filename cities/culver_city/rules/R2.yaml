@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [two_unit], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-2 (§17.210.015) marks single-family dwellings P."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 40, source: Z}
 max_units_per_lot: {value: 2, source: Z, assumption: "17.4 per acre, at most 2 per parcel."}

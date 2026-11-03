@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 23.04.020 marks single-unit dwellings P and multi-unit dwellings P with note 1 in RL, which we read R-1 as."}
 max_units_per_lot: {value: 1, source: Z, assumption: "Only a detached single-unit dwelling; multi-unit is limited to the SB 9 path, modeled separately. The zone's 5 homes per acre governs subdividing, not a lot already there."}
 
 setbacks:

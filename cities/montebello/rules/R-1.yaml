@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single-family detached dwellings are principal permitted uses."}
 min_lot_area_sqft: {value: 5000, source: Z, assumption: "5,000 sq ft south of Beverly Blvd, 6,000 north; we use 5,000."}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
 

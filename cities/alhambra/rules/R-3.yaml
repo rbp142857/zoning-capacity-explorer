@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 23.04.020 marks multi-unit dwellings P in RM and RH, which we read these as."}
 lot_area_per_unit_sqft:
   value:
     by: lot_area_sqft

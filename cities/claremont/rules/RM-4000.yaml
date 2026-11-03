@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single- and multiple-family structures are permitted as a matter of right."}
 min_lot_area_sqft: {value: 8000, source: Z}
 lot_area_per_unit_sqft: {value: 4000, source: Z}
 small_lot_units:

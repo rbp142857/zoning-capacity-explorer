@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-2 (§17.210.015) marks multiple-family dwellings P."}
 min_lot_area_sqft: {value: 20000, source: Z, assumption: "For new lots."}
 min_lot_width_ft: {value: 100, source: Z}
 lot_area_per_unit_sqft: {value: 622.29, source: Z, assumption: "70 homes per gross acre converted to land per home."}

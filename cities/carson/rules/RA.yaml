@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "The residential use table marks single-family dwellings on a lot X, automatically permitted."}
 max_units_per_lot: {value: 1, source: Z, assumption: "One dwelling per lawfully established lot. State law (ADU, SB 9, CMC §9128.81 on) is modeled separately."}
 
 setbacks:

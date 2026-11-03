@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-2 (§17.210.015) marks single-family dwellings P."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 40, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "8.7 per acre, at most 1 per parcel. State law (ADU, SB 9) is modeled separately."}

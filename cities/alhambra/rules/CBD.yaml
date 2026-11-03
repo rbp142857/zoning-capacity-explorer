@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily, mixed_use], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 23.05.020 marks multi-unit dwellings P. Condominium projects need more approvals, not modeled."}
 lot_area_per_unit_sqft: {value: 680.63, source: Z, assumption: "64 homes per acre: 43,560 divided by 64."}
 small_lot_units:
   value:

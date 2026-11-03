@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 11.21-5 marks duplex and single-family homes P."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "The table allows up to 5 homes per acre, and at most 2 separate living units on a 5,000 sq ft lot. We read the second as an ADU, which the state-law path counts. So one main home per lot; a duplex reading would add capacity."}

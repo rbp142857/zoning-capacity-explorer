@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "§17.08.010's table marks multiple-family dwellings P."}
 min_lot_area_sqft: {value: 15000, source: Z}
 min_lot_width_ft: {value: 100, source: Z}
 small_lot_units:

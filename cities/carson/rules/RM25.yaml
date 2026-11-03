@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: mixed, source: Z, assumption: "The residential use table marks single-family dwellings X and multiple-family dwellings C."}
 lot_area_per_unit_sqft: {value: 1742.4, source: Z, assumption: "25 homes per net acre: 43,560 divided by 25."}
 density_rounding: {value: nearest_half_up, source: Z, assumption: "A fraction of one-half or more permits another home."}
 small_lot_units:

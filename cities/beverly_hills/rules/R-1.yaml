@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§10-3-302's table marks single-family dwellings P."}
 max_units_per_lot: {value: 1, source: Z, assumption: "A private one-family residence. State law (ADU, SB 9) is modeled separately."}
 
 setbacks:

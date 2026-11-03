@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§153.040.020's table marks single-family dwellings P."}
 min_lot_area_sqft: {value: 5000, source: Z, assumption: "SCAG writes R1 for both R-1 and R-1-7,500, whose 7,500 sq ft minimum, 40% coverage and 5.8 homes per acre are stricter. Those lots can run high."}
 min_lot_width_ft: {value: 50, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "The use table lists single-family homes only. The zone's intent, amended by Ord. 1503, mentions duplexes; we use one home (conservative) and record it as an open decision. State law (ADU, SB 9) is modeled separately."}

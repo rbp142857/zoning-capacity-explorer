@@ -2108,3 +2108,19 @@ Each lot's by-right number, checked against the code's use list. Square footage 
 ### BR-17. Calabasas parcel 2069066032 · OS-DR · 37,224 sq ft
 
 - Table 2-2 leaves homes blank. Max 0. **By right: 0.** Engine: 0 ✓
+
+### BR-18. Culver City parcel 4134009083 · RHD · 28,238 sq ft
+
+- Table 2-2 marks multiple-family dwellings P. Max 45. **By right: 45.** Engine: 45 ✓
+
+### BR-19. Monrovia parcel 8516003043 · RH · 7,131 sq ft
+
+- §17.08.010's table marks multiple-family dwellings P. Max 3. **By right: 3.** Engine: 3 ✓
+
+### BR-20. South Gate parcel 6234004008 · NL · 5,634 sq ft
+
+- Table 11.21-5 marks duplex and single-family homes P. Max 4. **By right: 4.** Engine: 4 ✓
+
+### BR-21. Carson parcel 7329037002 · RM (12) · 7,226 sq ft
+
+- The table marks multiple-family dwellings C; the zone is mixed, so only SB 9 homes would count, and SB 9 doesn't apply here. Max 3. **By right: not confirmed.** Engine: not confirmed ✓
