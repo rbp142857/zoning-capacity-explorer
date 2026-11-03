@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: U, assumption: "Multiple-family homes are allowed. Note 6 bars them in the East Valley Entryway and on Valley Blvd at Baldwin and Peck; not modeled."}
 housing_types: {value: [multifamily], source: U}
+approval: {value: by_right, source: U, assumption: "The citywide use matrix marks multi-family dwellings P."}
 min_lot_area_sqft: {value: 6000, source: Z, assumption: "15,000 sq ft on major arterials, otherwise R-4's 6,000. We have no arterial map, so we use 6,000; arterial lots can be too high."}
 min_lot_width_ft: {value: 60, source: Z}
 lot_area_per_unit_sqft:

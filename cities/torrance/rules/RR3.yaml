@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The zone's permissible uses list apartment houses and flat buildings."}
 lot_area_per_unit_sqft: {value: 1600, source: Z}
 small_lot_units:
   value:

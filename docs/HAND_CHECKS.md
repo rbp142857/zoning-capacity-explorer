@@ -2073,3 +2073,18 @@ Each lot's by-right number, checked against the code's use list. Square footage 
 
 - The zone's approval isn't confirmed yet, but SB 9 is ministerial: **by right: 4.** Engine: 4 ✓
 
+### BR-9. Long Beach parcel 7202038026 · R-1-N · 5,917 sq ft
+
+- Chapter 21.31's table marks single-family detached Y; SB 9 gives more where it applies. Max 4. **By right: 4.** Engine: 4 ✓
+
+### BR-10. Glendale parcel 5636015024 · C2 · 7,804 sq ft
+
+- Table 30.12-A marks multiple residential dwellings P. Max 6. **By right: 6.** Engine: 6 ✓
+
+### BR-11. Burbank parcel 2468008008 · R-3 · 6,604 sq ft
+
+- The land use table marks multiple family dwellings P. Max 3. **By right: 3.** Engine: 3 ✓
+
+### BR-12. El Monte parcel 8103026013 · M-1 · 10,201 sq ft
+
+- The citywide use matrix marks dwellings — in M-1. Max 0. **By right: 0.** Engine: 0 ✓

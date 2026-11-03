@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "§91.11.1 lists multiple family dwellings as a permissible use."}
 min_lot_area_sqft: {value: 43560, source: Z}
 min_lot_width_ft: {value: 200, source: Z}
 small_lot_units:

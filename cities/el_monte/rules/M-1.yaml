@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "The use matrix allows no homes in M-1."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "The citywide use matrix marks dwellings — in M-1 and M-2."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

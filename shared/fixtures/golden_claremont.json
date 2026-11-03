@@ -6203,7 +6203,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -13092,7 +13092,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -19981,7 +19981,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 2,
@@ -26871,7 +26871,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -33768,7 +33768,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -40662,7 +40662,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -47551,7 +47551,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -54440,7 +54440,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -61330,7 +61330,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:adu",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 8,

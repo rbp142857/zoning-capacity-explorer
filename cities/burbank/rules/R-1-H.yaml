@@ -18,6 +18,7 @@ sources:
 
 residential_allowed: {value: true, source: T602}
 housing_types: {value: [single_family], source: T602}
+approval: {value: by_right, source: T602, assumption: "The land use table marks one single-family dwelling P. Additional ones need a conditional use permit, and hillside lots a Hillside Development Permit, not modeled."}
 min_lot_area_sqft: {value: 6000, source: T603}
 min_lot_width_ft: {value: 50, source: T603}
 max_units_per_lot: {value: 1, source: T602, assumption: "One home per lot by right. A second home needs a conditional use permit (and 5,750 sq ft more land), which is discretionary, so it is not counted."}

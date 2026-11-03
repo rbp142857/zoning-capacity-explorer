@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§§91.4.1 and 91.15.1 list a single-family residence as a permissible use."}
 min_lot_area_sqft: {value: 6000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}

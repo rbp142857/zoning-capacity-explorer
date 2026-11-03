@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-1 marks single-family and two-family dwellings P, permitted by right."}
 min_lot_area_sqft: {value: 6500, source: Z}
 min_lot_width_ft: {value: 60, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. Duplexes under §19.10.035 and ADUs follow state law, modeled separately."}

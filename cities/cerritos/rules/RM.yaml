@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single-family and multi-family dwellings are permitted uses."}
 min_lot_area_sqft: {value: 6500, source: Z, assumption: "For single-family use; multi-family lots need 3 acres."}
 lot_area_per_unit_sqft: {value: 2178, source: Z, assumption: "No more than 20 homes per acre: 43,560 divided by 20. The approving authority sets the exact density, so sites can get less."}
 small_lot_units:

@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The use table marks multifamily dwellings P."}
 min_lot_area_sqft: {value: 5000, source: Z}
 lot_area_per_unit_sqft: {value: 2722.5, source: Z, assumption: "16 homes per gross acre. We use the lot's area and don't add half of any street; hillside limits can lower it."}
 small_lot_units:

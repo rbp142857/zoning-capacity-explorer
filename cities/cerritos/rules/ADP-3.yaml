@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single-family and multi-family dwellings are permitted uses."}
 lot_area_per_unit_sqft: {value: 3260, source: Z, assumption: "1 home per 3,260 sq ft of net land. Tri-level projects may reach 3,100 sq ft, not modeled."}
 small_lot_units:
   value:

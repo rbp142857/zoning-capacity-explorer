@@ -57,6 +57,10 @@ HAND_CHECKED = [
     ("compton", "R-H", 4, None, 4),
     ("torrance", "C2", 8, None, 0),
     ("torrance", "R1", 4, 4, 4),
+    ("long_beach", "R-1-N", 4, 4, 4),
+    ("glendale", "C2", 6, None, 6),
+    ("burbank", "R-3", 3, None, 3),
+    ("el_monte", "M-1", 0, None, 0),
 ]
 
 

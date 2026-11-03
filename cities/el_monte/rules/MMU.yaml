@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: U}
 housing_types: {value: [multifamily, mixed_use], source: U}
+approval: {value: by_right, source: U, assumption: "The citywide use matrix marks multi-family dwellings P."}
 min_lot_area_sqft: {value: 20000, source: Z}
 min_lot_width_ft: {value: 100, source: Z}
 lot_area_per_unit_sqft:

@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: U}
 housing_types: {value: [single_family], source: U}
+approval: {value: by_right, source: U, assumption: "The citywide use matrix marks single-family dwellings P, with director's review for some in R-1B and R-1C, which isn't checked."}
 min_lot_area_sqft: {value: 7260, source: Z}
 min_lot_width_ft: {value: 60, source: Z}
 lot_area_per_unit_sqft:
