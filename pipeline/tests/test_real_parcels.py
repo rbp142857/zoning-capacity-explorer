@@ -1833,3 +1833,28 @@ def test_hand_checked_downey_parcel(downey, address, zone, lot, max_units, bindi
     assert r.binding_constraint == binding
     for name, value in limits.items():
         assert r.limits.get(name) == value, f"{address}: {name}"
+
+
+EL_SEGUNDO = [
+    ("619 Maryland St El Segundo Ca 90245", "R-1", Lot(6424, 53.5, 120.1, (), 5870, 1, 0), 4, "state_law:sb9", {'density': 1, 'envelope': 3, 'state_adu': 3, 'state_sb9': 4}),
+    ("135 W Palm Ave El Segundo Ca 90245", "R-3", Lot(6718, 44.7, 150.1, (), 8992, 4, 0), 4, "density", {'density': 4, 'envelope': 6, 'state_adu': 3}),
+    ("514 Sheldon St El Segundo Ca 90245", "R-2", Lot(6000, 40.0, 150.0, (), 7001, 1, 210), 3, "state_law:adu", {'density': 2, 'lot_area_per_unit': 3, 'envelope': 5, 'state_adu': 3}),
+    ("215 S Douglas St El Segundo Ca 90245", "M-1", Lot(69679, 215.0, 325.0, (), 1050, 0, 5147), 0, "use_not_permitted", {}),
+]
+
+
+@pytest.fixture(scope="module")
+def el_segundo():
+    rules = load_zone_rules(REPO / "cities" / "el_segundo" / "rules")
+    state = load_state_overrides(REPO / "cities" / "_california" / "state_overrides.yaml")
+    return rules, state, EngineAssumptions(gross_sqft_per_unit=1062.5, parking_stall_sqft=300, min_home_sqft=500)
+
+
+@pytest.mark.parametrize("address, zone, lot, max_units, binding, limits", EL_SEGUNDO, ids=[c[0] for c in EL_SEGUNDO])
+def test_hand_checked_el_segundo_parcel(el_segundo, address, zone, lot, max_units, binding, limits):
+    rules, state, a = el_segundo
+    r = compute_capacity(rules[zone], lot, a, state)
+    assert r.max_units == max_units
+    assert r.binding_constraint == binding
+    for name, value in limits.items():
+        assert r.limits.get(name) == value, f"{address}: {name}"

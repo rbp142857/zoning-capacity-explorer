@@ -1,0 +1,32 @@
+# El Segundo R-2. Every value cites the El Segundo Municipal Code, Title 15 (American Legal), read 2026-11-03.
+zone: R-2
+name: Two-Family Residential (R-2)
+family: multifamily
+sources:
+  Z: {section: ESMC §§15-4A-1 and 15-4C-3, url: 'https://codelibrary.amlegal.com/codes/elsegundoca/latest/elsegundo_ca/0-0-0-11330'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family, two_unit]
+  source: Z
+approval: {value: by_right, source: Z, assumption: Table No. 1 marks two-family dwellings P.}
+min_lot_area_sqft: {value: 7000, source: Z}
+max_units_per_lot: {value: 2, source: Z}
+lot_area_per_unit_sqft: {value: 2000, source: Z, assumption: '§15-4C-3 says lots under 4,000 sq ft hold one home; we express that as 2,000 per home with a two-home limit.'}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+    - {value: 1}
+  source: Z
+  assumption: A lot too small for one home keeps one home (assumed).
+small_lot_units_below_sqft: 4000
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft:
+    value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}
+    source: Z
+  rear_ft: {value: 5, source: Z}
+max_height_ft: {value: 26, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.5, source: Z}
+simplifications: ['Parking wasn''t read, so small lots can run high.', We use the 26 ft flat-roof limit; pitched roofs may reach 32 ft.]

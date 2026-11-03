@@ -2154,3 +2154,21 @@ Each lot's by-right number, checked against the code's use list. Square footage 
 ### DO-7. 7501 Firestone Blvd Downey Ca 90241 · C-2 · 15,360 sq ft
 
 - homes not counted. **Result: 0, use not permitted.** By right: 0. Engine: 0 ✓
+
+## El Segundo
+
+### ES-1. 619 Maryland St El Segundo Ca 90245 · R-1 · 6,424 sq ft
+
+- density 1, envelope 3, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### ES-2. 135 W Palm Ave El Segundo Ca 90245 · R-3 · 6,718 sq ft
+
+- density 4, envelope 6, state_adu 3. **Result: 4, density.** By right: 4. Engine: 4 ✓
+
+### ES-3. 514 Sheldon St El Segundo Ca 90245 · R-2 · 6,000 sq ft
+
+- density 2, lot_area_per_unit 3, envelope 5, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### ES-4. 215 S Douglas St El Segundo Ca 90245 · M-1 · 69,679 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: not confirmed. Engine: 0 ✓

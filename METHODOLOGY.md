@@ -1170,3 +1170,13 @@ Downey's zones come from Downey Municipal Code Article IX (eCode360, through Ord
 **Commercial and manufacturing.** Tables 9.3.5 and 9.3.9 list no homes. O-S and P-B weren't read closely and count none. DDSP and the SP areas are specific plans we didn't read, so they aren't modeled. The Housing Overlay zones in Table 9.3.15 aren't in our data, so those lots run low.
 
 20 rule files cover 21,929 of 22,422 lots (97.8%). By-right approval is confirmed on 21,894 of them. Not modeled: 319 DDSP, 51 no zone, 37 SP 91-2, 36 SP 01-1, 26 SP 89-1, 11 SP 88-1, 11 SP 90-1, 2 SP 85-1.
+
+## 62. El Segundo (most zones ⚠️)
+
+El Segundo's zones come from El Segundo Municipal Code Title 15 (American Legal, read November 3, 2026).
+
+**R-1.** One home, FAR 0.60, 22 ft front and 5 ft rear yards. **R-2.** Two homes, one on lots under 4,000 sq ft, 50% coverage. **R-3.** 30 homes per acre, 53% coverage. We use the 26 ft flat-roof limit in all three, though pitched roofs may reach 32 ft. Parking wasn't read.
+
+**Commercial, mixed-use and industrial.** We didn't read these zones' uses and count no homes, so MU-N and MU-S can run low. Specific plan areas, including Smoky Hollow and Downtown, aren't modeled.
+
+15 rule files cover 3,934 of 4,511 lots (87.2%). By-right approval is confirmed on 3,486 of them. Not modeled: 276 SHSP, 145 DSP, 56 no zone, 42 CCSP, 29 540EIASP, 14 ESSCSP, 5 222KSSP, 3 888NSBSP.
