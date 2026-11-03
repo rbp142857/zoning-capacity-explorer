@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The table of uses lists multifamily dwellings of at least 3 homes with no use permit; it marks the uses that need one (CUP)."}
 lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "1,452 sq ft per home, or 30 per acre, for multifamily of at least 3 homes."}
 small_lot_units:
   value:

@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "The uses matrix marks a house on its own lot D, director's review, not a use permit. That review isn't checked."}
 min_lot_area_sqft: {value: 20000, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. Duplexes on corner lots of 10,000 sq ft aren't modeled; ADUs and SB 9 are state law, modeled separately."}
 

@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Chapter 21.31's land use table marks the zone's home types Y, a permitted use."}
 min_lot_area_sqft: {value: 4500, source: Z, assumption: "For new lots. Smaller existing lots get the density table."}
 min_lot_width_ft: {value: 50, source: Z}
 max_units_per_lot: {value: 4, source: Z}

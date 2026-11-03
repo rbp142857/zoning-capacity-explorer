@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "A single-family home is a permitted use."}
 min_lot_area_sqft: {value: 10000, source: Z}
 lot_area_per_unit_sqft: {value: 9900, source: Z}
 small_lot_units:

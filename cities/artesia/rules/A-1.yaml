@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Homes are listed as principal permitted uses."}
 max_units_per_lot: {value: 1, source: Z, assumption: "R-1's principal uses apply. State law (ADU) is modeled separately."}
 sb9_allowed: {value: false, source: Z, assumption: "This is an agricultural-residential district, so we don't apply SB 9 (conservative), as with LA's A1 and A2 and Torrance's A-1; see the open decision."}
 

@@ -21,6 +21,7 @@ sources:
 
 residential_allowed: {value: true, source: U08}
 housing_types: {value: [single_family, two_unit, multifamily], source: U08}
+approval: {value: by_right, source: U08, assumption: "Chapter 9.08's table marks multiple-unit dwellings P."}
 min_lot_area_sqft: {value: 5000, source: T08}
 min_lot_width_ft: {value: 50, source: T08}
 

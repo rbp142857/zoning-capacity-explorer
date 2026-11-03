@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The permitted use table marks multi-family homes X, allowed with no use permit."}
 min_lot_area_sqft: {value: 20000, source: Z, assumption: "Minimum site size; smaller existing lots get the density rule."}
 lot_area_per_unit_sqft: {value: 2178, source: Z, assumption: "20 homes per net acre converted to land per home."}
 small_lot_units:

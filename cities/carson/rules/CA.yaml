@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "The use table leaves CA blank for multiple-family and mixed-use, as we read its columns."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "The commercial use table leaves homes blank in CA."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

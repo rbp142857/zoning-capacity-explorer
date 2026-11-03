@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Homes are allowed only in the General Plan's Hillside Residential Overlay within 500 ft of Webb Canyon Road or 300 ft of Base Line Road. We can't map that, so this may count lots where no home is allowed."}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "One single-family dwelling per lot is a permitted use."}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. The slope tables require 1.08 to 19.61 acres per home by slope; we have no slope data, so we count one home on each existing lot."}
 sb9_allowed: {value: false, source: Z, assumption: "A hillside district under slope-density limits, so we don't apply SB 9 (conservative)."}
 

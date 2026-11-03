@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z, assumption: "Condominiums only."}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Premises in Zone C-O may be used for condominiums."}
 min_lot_area_sqft: {value: 60000, source: Z}
 min_lot_width_ft: {value: 100, source: Z}
 lot_area_per_unit_sqft: {value: 3000, source: Z, assumption: "Rounded to the nearest whole home, with exactly .5 rounding up, per §9-2.3503(a)(2)."}

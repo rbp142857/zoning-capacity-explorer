@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 21.08(A) marks these homes P."}
 min_lot_area_sqft: {value: 6000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 lot_area_per_unit_sqft: {value: 2722.5, source: Z, assumption: "Zero to 16 homes per acre (§21.08). Table 21.08F, which we could not read, sets the homes by lot; its top tiers match this density, and lower tiers on smaller lots may allow fewer."}

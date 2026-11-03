@@ -11,6 +11,7 @@ sources:
 
 residential_allowed: {value: false, source: T12A, assumption: "Table 30.12-A allows no dwellings in CA (ADUs only with an existing home)."}
 housing_types: {value: [], source: T12A}
+approval: {value: not_allowed, source: T12A, assumption: "Table 30.12-A leaves dwellings blank in CA."}
 
 setbacks:
   front_ft: {value: 0, source: T12A}

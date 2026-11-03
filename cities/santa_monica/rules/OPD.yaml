@@ -18,6 +18,7 @@ sources:
 
 residential_allowed: {value: true, source: U09}
 housing_types: {value: [single_family, two_unit], source: U09}
+approval: {value: by_right, source: U09, assumption: "Chapter 9.09's table marks single-unit dwellings P, and multiple-unit dwellings P or limited depending on the district."}
 min_lot_area_sqft: {value: 5000, source: T09}
 max_units_per_lot: {value: 2, source: T09}
 

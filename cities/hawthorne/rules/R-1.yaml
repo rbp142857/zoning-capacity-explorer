@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "The table of uses lists single-family detached dwellings with no use permit; it marks the uses that need one (CUP)."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 max_units_per_lot: {value: 1, source: Z, assumption: "One single-family detached home. State law (ADU, SB 9, Ch. 17.24f) is modeled separately."}

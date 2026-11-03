@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Only a caretaker's residence, which we do not count."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Table 9.08A allows only a caretaker's residence, as an accessory use."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

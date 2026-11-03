@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "§9.12.020 allows no homes outside M-U."}
 housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "Table 9.12A marks apartment houses C."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "The table allows 30 homes per acre for senior housing only, which we do not count."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Table 9.12A leaves homes blank in C-S."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

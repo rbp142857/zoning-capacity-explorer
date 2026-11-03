@@ -5251,8 +5251,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -8723,8 +8723,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -8844,8 +8844,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -10132,8 +10132,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -10217,8 +10217,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -12080,8 +12080,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -15552,8 +15552,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -15673,8 +15673,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -16961,8 +16961,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -17046,8 +17046,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -18909,8 +18909,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -22381,8 +22381,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -22502,8 +22502,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -23790,8 +23790,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -23875,8 +23875,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -25738,8 +25738,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -29210,8 +29210,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -29331,8 +29331,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -30619,8 +30619,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -30704,8 +30704,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -32567,8 +32567,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -36039,8 +36039,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -36160,8 +36160,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -37448,8 +37448,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -37533,8 +37533,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -39396,8 +39396,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -42868,8 +42868,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -42989,8 +42989,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -44277,8 +44277,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -44362,8 +44362,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -46225,8 +46225,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -49697,8 +49697,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -49818,8 +49818,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -51106,8 +51106,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -51191,8 +51191,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -53054,8 +53054,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -56526,8 +56526,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -56647,8 +56647,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -57935,8 +57935,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -58020,8 +58020,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -59883,8 +59883,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -63355,8 +63355,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -63476,8 +63476,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -64764,8 +64764,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }
@@ -64849,8 +64849,8 @@
     "local_units": 0,
     "binding_constraint": "use_not_permitted",
     "net_new_units": 0,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "conditional",
+    "by_right_units": 0,
     "limits": {
      "use_not_permitted": 0
     }

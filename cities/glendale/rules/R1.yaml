@@ -20,6 +20,7 @@ sources:
 
 residential_allowed: {value: true, source: T11A}
 housing_types: {value: [single_family], source: T11A}
+approval: {value: by_right, source: T11A, assumption: "Table 30.11-A marks one residential dwelling per lot P."}
 min_lot_area_sqft: {value: 5500, source: S060, assumption: "5,500 sq ft for new lots (5,000 sq ft for lots divided before June 26, 1986); flagged only."}
 max_units_per_lot: {value: 1, source: T11B}
 

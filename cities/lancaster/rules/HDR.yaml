@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The uses matrix marks multi family P*, with site plan review, which isn't checked."}
 min_lot_area_sqft: {value: 6000, source: Z}
 lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "30 homes per acre. Per acre converted to land per home."}
 small_lot_units:

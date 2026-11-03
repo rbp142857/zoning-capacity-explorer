@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Any use permitted in R-3 is permitted."}
 lot_area_per_unit_sqft:
   value:
     by: lot_width_ft

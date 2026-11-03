@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit], source: Z}
+approval: {value: by_right, source: Z, assumption: "One two-family dwelling or two single-family dwellings are principal uses."}
 min_lot_area_sqft: {value: 5000, source: Z}
 min_lot_width_ft: {value: 50, source: Z}
 max_units_per_lot: {value: 2, source: Z, assumption: "One two-family home or two single-family homes."}

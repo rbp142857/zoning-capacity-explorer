@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [mixed_use, multifamily], source: Z}
+approval: {value: mixed, source: Z, assumption: "Table 9.12A marks apartment houses P but multiple-family and condominium homes C."}
 min_lot_area_sqft: {value: 15000, source: Z}
 min_lot_width_ft: {value: 50, source: Z, assumption: "Plus 5 ft per 1,000 sq ft of lot, up to 100 ft; not modeled."}
 lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "30 homes per acre: 43,560 divided by 30."}

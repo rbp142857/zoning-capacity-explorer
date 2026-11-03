@@ -16,6 +16,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit], source: Z}
+approval: {value: by_right, source: Z, assumption: "The table of uses lists two-family dwellings with no use permit; it marks the uses that need one (CUP)."}
 max_units_per_lot: {value: 2, source: Z}
 lot_area_per_unit_sqft: {value: 3500, source: Z, assumption: "A two-family home needs a 7,000 sq ft lot; that is 3,500 per home."}
 small_lot_units:

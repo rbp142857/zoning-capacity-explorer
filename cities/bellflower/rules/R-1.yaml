@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "A single-family home is a permitted use."}
 min_lot_area_sqft: {value: 5000, source: Z}
 lot_area_per_unit_sqft: {value: 5000, source: Z, assumption: "§17.24.100 sets 5,000 sq ft per dwelling unit, and §17.24.110 covers properties with two or more single-family homes, so a larger lot can hold more. SCAG drops any larger-lot suffix, so those lots can run high."}
 small_lot_units:

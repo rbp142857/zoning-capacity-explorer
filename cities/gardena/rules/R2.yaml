@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single and two-family dwellings are permitted, subject to design review, which isn't checked."}
 min_lot_area_sqft: {value: 5000, source: Z}
 max_units_per_lot: {value: 2, source: Z}
 lot_area_per_unit_sqft: {value: 2562.35, source: Z, assumption: "Homes per acre converted to land per home."}

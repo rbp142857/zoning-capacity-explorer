@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Multiple-family only inside the Mixed-Use Residential overlay, which our data does not show. We don't count homes (conservative); lots in the overlay run low."}
 housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "The commercial use table marks multiple-family and mixed-use homes C."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

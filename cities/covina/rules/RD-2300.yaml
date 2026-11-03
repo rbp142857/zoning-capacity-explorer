@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 17.28.030 marks townhouses and apartments P."}
 min_lot_area_sqft: {value: 15000, source: Z, assumption: "The minimum for attached housing types."}
 lot_area_per_unit_sqft:
   value:

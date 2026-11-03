@@ -17,6 +17,7 @@ sources:
 
 residential_allowed: {value: true, source: T11A}
 housing_types: {value: [single_family, multifamily], source: T11A}
+approval: {value: by_right, source: T11A, assumption: "Table 30.11-A marks multiple residential dwellings P."}
 
 lot_area_per_unit_sqft: {value: 3050, source: T11MF}
 density_rounding: {value: floor, source: T11MF, assumption: "The code states no rounding rule; fractions are rounded down."}

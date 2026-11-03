@@ -17,6 +17,7 @@ sources:
 
 residential_allowed: {value: true, source: T12A}
 housing_types: {value: [single_family, multifamily, mixed_use], source: T12A}
+approval: {value: by_right, source: T12A, assumption: "Table 30.12-A marks multiple residential dwellings P, subject to Chapter 30.17."}
 
 lot_area_per_unit_sqft:
   value:

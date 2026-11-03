@@ -17,6 +17,7 @@ sources:
 
 residential_allowed: {value: true, source: T14A}
 housing_types: {value: [multifamily, mixed_use], source: T14A}
+approval: {value: by_right, source: T14A, assumption: "Table 30.14-A marks multiple dwelling units P with note 5, which we didn't read closely."}
 min_lot_area_sqft: {value: 10000, source: T14B, assumption: "For new parcels; flagged only."}
 min_lot_width_ft: {value: 100, source: T14B}
 units_per_acre: {value: 87, source: T14B, assumption: "Density is 35, 87 or 100 homes per acre depending on whether the lot abuts single-family, multifamily or neither. SCAG's table can't tell us which, so we use the middle tier (87)."}

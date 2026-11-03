@@ -4578,7 +4578,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -5792,7 +5792,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -5972,7 +5972,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -6363,7 +6363,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -8591,7 +8591,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -9507,7 +9507,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -10126,7 +10126,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -10263,7 +10263,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -10857,8 +10857,8 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 3,
     "limits": {
      "density": 1,
      "lot_area_per_unit": null,
@@ -10910,7 +10910,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -11070,7 +11070,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -11467,7 +11467,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -12681,7 +12681,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -12861,7 +12861,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -13252,7 +13252,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -15480,7 +15480,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -16396,7 +16396,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -17015,7 +17015,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -17152,7 +17152,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -17746,8 +17746,8 @@
     "local_units": 4,
     "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 4,
     "limits": {
      "density": 4,
      "lot_area_per_unit": null,
@@ -17799,7 +17799,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -17959,7 +17959,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -18356,7 +18356,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -19570,7 +19570,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 3,
@@ -19750,7 +19750,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 2,
@@ -20141,7 +20141,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 2,
@@ -22369,7 +22369,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 2,
@@ -23285,7 +23285,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 2,
@@ -23904,7 +23904,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -24041,7 +24041,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 2,
@@ -24635,8 +24635,8 @@
     "local_units": 28,
     "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 28,
     "limits": {
      "density": 28,
      "lot_area_per_unit": null,
@@ -24688,7 +24688,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 4,
@@ -24848,7 +24848,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 3,
@@ -25245,7 +25245,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -26459,7 +26459,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -26639,7 +26639,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -27031,7 +27031,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -29262,7 +29262,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -30178,7 +30178,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -30798,7 +30798,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -30935,7 +30935,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -31530,8 +31530,8 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 3,
     "limits": {
      "density": 1,
      "lot_area_per_unit": null,
@@ -31583,7 +31583,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -31744,7 +31744,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -32142,7 +32142,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -33356,7 +33356,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -33536,7 +33536,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -33928,7 +33928,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -36158,7 +36158,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -37074,7 +37074,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -37694,7 +37694,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -37831,7 +37831,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -38426,8 +38426,8 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 3,
     "limits": {
      "density": 1,
      "lot_area_per_unit": null,
@@ -38479,7 +38479,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -38639,7 +38639,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -39037,7 +39037,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -40251,7 +40251,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -40431,7 +40431,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -40822,7 +40822,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -43050,7 +43050,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -43966,7 +43966,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -44585,7 +44585,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -44722,7 +44722,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -45316,8 +45316,8 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 3,
     "limits": {
      "density": 1,
      "lot_area_per_unit": null,
@@ -45369,7 +45369,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -45529,7 +45529,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -45926,7 +45926,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -47140,7 +47140,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -47320,7 +47320,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -47711,7 +47711,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -49939,7 +49939,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -50855,7 +50855,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -51474,7 +51474,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -51611,7 +51611,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -52205,8 +52205,8 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 3,
     "limits": {
      "density": 1,
      "lot_area_per_unit": null,
@@ -52258,7 +52258,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -52418,7 +52418,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:sb9",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -52815,7 +52815,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -54029,7 +54029,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -54209,7 +54209,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -54600,7 +54600,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -56828,7 +56828,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -57744,7 +57744,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -58363,7 +58363,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -58500,7 +58500,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -59094,8 +59094,8 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 4,
     "limits": {
      "density": 1,
      "lot_area_per_unit": null,
@@ -59147,7 +59147,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -59307,7 +59307,7 @@
     "local_units": 1,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 1,
@@ -59704,7 +59704,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:adu",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 8,
@@ -60918,7 +60918,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:adu",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 16,
@@ -61098,7 +61098,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 12,
@@ -61490,7 +61490,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 12,
@@ -63721,7 +63721,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:adu",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 8,
@@ -64637,7 +64637,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:adu",
     "net_new_units": 2,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 12,
@@ -65257,7 +65257,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:adu",
     "net_new_units": 0,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 20,
@@ -65394,7 +65394,7 @@
     "local_units": 2,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 12,
@@ -65989,8 +65989,8 @@
     "local_units": 136,
     "binding_constraint": "density",
     "net_new_units": null,
-    "approval": null,
-    "by_right_units": null,
+    "approval": "by_right",
+    "by_right_units": 136,
     "limits": {
      "density": 136,
      "lot_area_per_unit": null,
@@ -66042,7 +66042,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 16,
@@ -66203,7 +66203,7 @@
     "local_units": 3,
     "binding_constraint": "state_law:adu",
     "net_new_units": 3,
-    "approval": null,
+    "approval": "by_right",
     "by_right_units": 4,
     "limits": {
      "density": 16,

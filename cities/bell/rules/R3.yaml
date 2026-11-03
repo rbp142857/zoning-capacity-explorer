@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Multiple dwelling units are a principal use."}
 min_lot_area_sqft: {value: 7200, source: Z, assumption: "Applies to lots created after 1989; most older lots are smaller and flagged."}
 min_lot_width_ft: {value: 60, source: Z, assumption: "65 ft on corner lots."}
 lot_area_per_unit_sqft: {value: 1452, source: Z}

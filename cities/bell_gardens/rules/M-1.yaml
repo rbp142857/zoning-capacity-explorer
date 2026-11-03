@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: Z, assumption: "Chapter 9.14 lists no homes."}
 housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "The zone's use list has no homes."}
 
 setbacks:
   front_ft: {value: 0, source: Z}

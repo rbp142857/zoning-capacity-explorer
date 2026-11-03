@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Two or more single-family dwellings and multiple dwellings are permitted uses, subject to precise development plans (§17.02.205), which aren't checked."}
 min_lot_area_sqft: {value: 5000, source: Z}
 lot_area_per_unit_sqft: {value: 2722, source: Z, assumption: "At 9,000 sq ft or more."}
 small_lot_units:

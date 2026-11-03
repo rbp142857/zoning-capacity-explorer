@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "One-family dwellings are a permitted use."}
 max_units_per_lot: {value: 1, source: Z}
 
 setbacks:

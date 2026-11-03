@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "The permitted use table marks single-family homes X, allowed with no use permit."}
 min_lot_area_sqft: {value: 6000, source: Z, assumption: "Ranges from 6,000 to 40,000 sq ft by mapped suffix, which SCAG drops. We use 6,000, so larger minimums aren't reflected."}
 max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
 

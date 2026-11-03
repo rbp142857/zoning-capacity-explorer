@@ -13,6 +13,7 @@ sources:
 
 residential_allowed: {value: true, source: Z}
 housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "One or more one-family dwellings and multiple dwellings are permitted uses."}
 small_lot_units:
   value:
     by: lot_area_sqft
