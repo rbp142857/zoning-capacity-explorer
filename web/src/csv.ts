@@ -21,7 +21,7 @@ export function lotsCsvParts(data: ParcelData, today: Results, now: Results, url
   if (reform) head.push("max_homes_scenario", "new_homes_scenario", "likely_new_homes_scenario");
   const parts: string[] = [];
   let rows = [
-    `# Zoning Capacity Explorer. An estimate for research, not legal or zoning advice. Scenario: ${url.replace(/[\r\n]/g, "")}`,
+    `# Zoning Capacity Explorer. Unreviewed prototype, no longer maintained: zoning and home counts may be wrong. An estimate, not legal or zoning advice. Scenario: ${url.replace(/[\r\n]/g, "")}`,
     head.join(","),
   ];
   for (let pid = 0; pid < data.count; pid++) {
