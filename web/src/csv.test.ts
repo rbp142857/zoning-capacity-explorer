@@ -1,22 +1,23 @@
 import { describe, expect, it } from "vitest";
 import { lotsCsv } from "./csv";
-import type { ParcelData } from "./data";
+import { NA, type ParcelData } from "./data";
 import type { Results } from "./engine/run";
 
 const data = {
   count: 2,
   codes: { zone: ["R3", 'A,"B"'] },
+  parcel_id_exceptions: {},
   columns: {
-    parcel_id: ["111", "222"], zone: [0, 1], lot_area_sqft: [5000, 9000], existing_units: [1, null],
-    redev_mask: [63, 31], dist_major_transit_ft: [2640, null],
+    parcel_id: new Float64Array([111, 222]), zone: [0, 1], lot_area_sqft: [5000, 9000], existing_units: [1, NA],
+    redev_mask: [63, 31], dist_major_transit_ft: [2640, NA],
   },
 } as unknown as ParcelData;
 
 const results = (over: Partial<Results> = {}): Results =>
-  ({ max: [4, null], net: [3, null], realistic: [3, 0], binding: [2, -1], ...over }) as unknown as Results;
+  ({ max: [4, NA], net: [3, NA], realistic: [3, 0], binding: [2, -1], ...over }) as unknown as Results;
 
 describe("lotsCsv", () => {
-  const lines = lotsCsv(data, results(), results({ max: [8, null], net: [7, null], realistic: [7, 0] }), "https://x/?a=1", true).trim().split("\n");
+  const lines = lotsCsv(data, results(), results({ max: [8, NA] as unknown as Int32Array, net: [7, NA] as unknown as Int32Array, realistic: [7, 0] as unknown as Int32Array }), "https://x/?a=1", true).trim().split("\n");
 
   it("starts with the source and disclaimer, then a header", () => {
     expect(lines[0]).toContain("not legal or zoning advice");

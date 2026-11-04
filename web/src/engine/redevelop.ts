@@ -28,6 +28,19 @@ export interface Thresholds {
   min_net_new_units: number;
 }
 
+const ALL_SCREENS = SCREEN_NAMES.reduce((all, [bit]) => all | bit, 0);
+
+/**
+ * New homes if the lot is likely to redevelop, or -1 if not. Same answer as
+ * redevelopment() below, without building a list of reasons for each of 1.3 million lots.
+ */
+export function likelyNewUnits(t: Thresholds, mask: number, localUnits: number | null, existingUnits: number | null): number {
+  if (localUnits === null || (mask & ALL_SCREENS) !== ALL_SCREENS) return -1;
+  const existing = existingUnits === null ? 0 : Math.trunc(existingUnits);
+  if (localUnits < t.min_capacity_multiple * Math.max(existing, 1) || localUnits - existing < t.min_net_new_units) return -1;
+  return Math.max(0, localUnits - existing);
+}
+
 export function redevelopment(
   t: Thresholds,
   mask: number,

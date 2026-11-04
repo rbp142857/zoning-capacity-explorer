@@ -21,7 +21,7 @@ from zce.config import load_city
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="zce", description="Zoning Capacity Explorer pipeline")
-    parser.add_argument("step", choices=["download", "clean", "capacity", "export", "golden", "validate", "all", "waves", "accuracy", "release", "study"])
+    parser.add_argument("step", choices=["download", "clean", "capacity", "export", "tiles", "golden", "validate", "all", "waves", "accuracy", "release", "study"])
     parser.add_argument("city", nargs="?", default="pasadena", help="city id (a folder name under cities/), or for `study`, a scenario file")
     parser.add_argument("--only", nargs="*", help="download only these sources")
     args = parser.parse_args()
@@ -30,6 +30,11 @@ def main() -> None:
         from zce.waves import write_ranking
 
         write_ranking()
+        return
+    if args.step == "tiles":  # shared map tiles for every city on the map
+        from zce.export_web import build_tiles
+
+        build_tiles()
         return
     if args.step == "accuracy":
         from zce.accuracy import write_accuracy

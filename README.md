@@ -8,7 +8,7 @@ Rule files cover 55 of the county's 88 cities, with every value cited
 ([how complete each city is](reports/la_county/coverage.md)). The map shows 45 of the 46 rated Fuller or Usable. Avalon is held off, because wildlife restrictions
 on Catalina Island limit development in ways the rules here don't model. The 9 rated Partial stay off too,
 because their totals run low.
-Tick one or more cities in the site's header (or **Select all**), or link to them
+The site opens on every city on a computer and on Pasadena on a phone. Tick cities in the header, or link to them
 with `?city=santa_monica`, `?cities=burbank,glendale` or `?cities=all`.
 
 **Live site: <https://rbp142857.github.io/zoning-capacity-explorer/>**
@@ -66,10 +66,10 @@ cities/_california/state_overrides.yaml      SB 9, ADUs, AB 2097, ...
 data.nosync/out/pasadena/capacity.parquet    max units, binding constraint per lot
 reports/pasadena/capacity_report.md          totals by zone, district, transit
         ▼  make export           tippecanoe + JSON
-web/public/data/pasadena/parcels.pmtiles     lot shapes (committed, ~4 MB)
-web/public/data/pasadena/parcels.json        numbers + engine inputs per lot (committed, ~1.6 MB, ~340 kB gzipped)
+web/public/data/tiles/*.pmtiles              lot shapes and today's colors, all cities (committed, ~105 MB)
+web/public/data/pasadena/lots.bin.gz         numbers + engine inputs per lot, as binary columns (committed, ~0.4 MB)
 web/public/data/pasadena/rules.json          rule files + state law for the browser engine
-web/public/data/pasadena/addresses.json      address search index (loaded on first search)
+web/public/data/pasadena/search.bin.gz        addresses and map points (loaded on first search)
         ▼  make golden           Python answers for 415 lots x 9 scenarios
 shared/fixtures/golden.json                  the browser engine must match these exactly
         ▼  web/ (Vite + TypeScript + MapLibre)  static site, no server

@@ -455,7 +455,7 @@ housing count still needs its manual download.
 
 ## 14. Los Angeles (in progress)
 
-LA is on the site as of November 2026. Its files are large: in a November 2026 test on a desktop computer, loading it used about 340 MB of JavaScript memory, with the map's own memory on top, so phones may struggle, and it's not the default city. Selecting all 46 Fuller and Usable cities, in a test that included Avalon before it was held off the map, used about 1 GB and worked on that computer, so the picker labels it as large. It has a zoning adapter
+LA is on the site as of November 2026. Its files are large: and phones open on Pasadena rather than on every city. See the note on site performance in docs/WAVE_PLAN.md. It has a zoning adapter
 and 259 rule files from the Los Angeles Municipal Code (American Legal and the
 city's zoning.lacity.gov, read November 1, 2026), covering 668,189 of its 672,322
 lots (99.4%). A lot looks for a

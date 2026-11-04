@@ -36,7 +36,7 @@ def test_partial_cities_stay_off_the_map(tmp_path, monkeypatch):
     # azusa is rated Partial in this table; avalon is held off whatever its level.
     for city in ["burbank", "azusa", "avalon"]:
         (data_root / city).mkdir(parents=True)
-        (data_root / city / "parcels.json").write_text("{}")
+        export_web.write_lots(data_root / city / "lots.bin.gz", {"count": 2, "bounds": [0, 0, 1, 1]}, {})
     table = tmp_path / "reports" / "la_county" / "coverage.csv"
     table.parent.mkdir(parents=True)
     table.write_text("city_id,coverage_level\nburbank,Fuller\nazusa,Partial\navalon,Usable\n")
@@ -46,3 +46,51 @@ def test_partial_cities_stay_off_the_map(tmp_path, monkeypatch):
 
     listed = json.loads((data_root / "cities.json").read_text())
     assert [(c["id"], c["level"]) for c in listed] == [("burbank", "Fuller")]
+
+
+def test_lots_file_round_trip(tmp_path):
+    import gzip
+    import struct
+
+    import numpy as np
+
+    from zce import export_web
+
+    path = tmp_path / "lots.bin.gz"
+    export_web.write_lots(path, {"count": 3}, {"a": np.array([1, export_web.NA, 3], dtype="int32"), "b": np.array([7, 8, 9], dtype="uint8")})
+    assert export_web.read_lots_header(path)["count"] == 3
+    raw = gzip.decompress(path.read_bytes())
+    size = struct.unpack("<I", raw[:4])[0]
+    assert (4 + size) % 8 == 0  # columns start on an 8-byte boundary
+    header = json.loads(raw[4 : 4 + size])
+    b = next(c for c in header["columns"] if c["name"] == "b")
+    assert b["offset"] % 8 == 0
+    assert list(raw[4 + size + b["offset"] :][:3]) == [7, 8, 9]
+
+
+def test_tiles_match_the_city_index():
+    # A lot's number in the tiles depends on every city before it. If this fails,
+    # run `python -m zce tiles`, or the map would color the wrong lots.
+    root = R.REPO_ROOT / "web" / "public" / "data"
+    cities = json.loads((root / "cities.json").read_text())
+    built = json.loads((root / "tiles" / "built_for.json").read_text())
+    for group in {c["tiles"] for c in cities}:
+        assert (root / "tiles" / f"{group}.pmtiles").stat().st_size < 100_000_000  # GitHub's limit per file
+    assert [[c["id"], c["tiles"], c["start"], c["count"]] for c in cities] == built
+
+
+def test_tile_colors_cap_at_the_top_class():
+    import pandas as pd
+
+    from zce import export_web
+
+    lots = pd.DataFrame({
+        "model_status": ["ok", "ok", "not_modeled"],
+        "max_units": [120, 3, None], "net_new_units": [None, 2, None], "realistic_new_units": [60, 0, 0],
+        "binding_constraint": ["density", "state_law:adu", None],
+    })
+    p = export_web.tile_properties(lots)
+    assert p["m"].tolist() == [50, 3, -1]
+    assert p["n"].tolist() == [-1, 2, -1]  # unknown existing homes: no answer
+    assert p["l"].tolist() == [50, 0, -1]
+    assert p["b"].tolist() == [export_web.BINDING_CODES.index("density"), export_web.BINDING_CODES.index("state_law:adu"), -1]

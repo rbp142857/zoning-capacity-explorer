@@ -2,11 +2,10 @@
 // and the code sections behind each number (for builders and planners).
 
 import { BINDING_LABELS } from "./colors";
-import type { ParcelData } from "./data";
+import { type ParcelData, lotAt, na, parcelId, zoneAt } from "./data";
 import type { CapacityResult } from "./engine/capacity";
 import { redevelopment } from "./engine/redevelop";
 import { densityBonusUnits, sb79Units } from "./engine/statePaths";
-import type { LotInputs } from "./engine/run";
 import { type Scenario, applyScenario, adjustForLot, capacityUnderScenario } from "./engine/scenario";
 import type { RulesFile, Sourced, ZoneRules } from "./engine/types";
 import { isBanded, isSideSetback, pick } from "./engine/types";
@@ -142,17 +141,16 @@ export function renderLotDetails(
   el: HTMLElement,
   pid: number,
   data: ParcelData,
-  inputs: LotInputs,
   rules: RulesFile,
   scenario: Scenario,
   reform: boolean,
   todayScenario: Scenario,
 ) {
   const c = data.columns;
-  const lot = inputs.lots[pid];
-  const zone = inputs.zones[pid];
+  const lot = lotAt(data, pid);
+  const zone = zoneAt(data, pid);
   const zoneCode = c.zone[pid] >= 0 ? data.codes.zone[c.zone[pid]] : "unknown";
-  const head = `<h2 id="details-title">Lot ${esc(c.parcel_id[pid])}</h2>
+  const head = `<h2 id="details-title">Lot ${esc(parcelId(data, pid))}</h2>
     <p class="details-meta">Zone <strong>${esc(zoneCode)}</strong> · ${fmt.format(lot.area_sqft)} sq ft
     (about ${Math.round(lot.width_ft)} × ${Math.round(lot.depth_ft)} ft) ·
     ${lot.dist_major_transit_ft === null ? "transit distance unknown" : `${fmt.format(lot.dist_major_transit_ft)} ft from a major transit stop`}</p>`;
@@ -171,8 +169,8 @@ export function renderLotDetails(
   const label = (r: CapacityResult) => BINDING_LABELS[r.binding_constraint ?? ""] ?? "–";
   const n = (v: number | null) => (v === null ? "unknown" : fmt.format(v));
 
-  const sb79 = sb79Units(lot.area_sqft, c.dist_sb79_t1_ft?.[pid] ?? null, c.dist_sb79_t2_ft?.[pid] ?? null,
-    Boolean(c.sb79_zone_ok?.[pid]), Boolean(c.sb79_half_mile?.[pid]), rules.assumptions.gross_sqft_per_unit);
+  const sb79 = sb79Units(lot.area_sqft, na(c.dist_sb79_t1_ft[pid]), na(c.dist_sb79_t2_ft[pid]),
+    Boolean(c.sb79_zone_ok[pid]), Boolean(c.sb79_half_mile[pid]), rules.assumptions.gross_sqft_per_unit);
   const byRight = today.result.by_right_units;
   const netByRight = byRight === null || lot.existing_units === null ? null : Math.max(0, byRight - Math.trunc(lot.existing_units));
 
@@ -188,7 +186,7 @@ export function renderLotDetails(
   el.innerHTML = `${head}
     <dl class="details-summary">
       <div><dt>Homes today</dt><dd>${n(lot.existing_units)}</dd></div>
-      <div><dt>Building today (sq ft)</dt><dd>${n(c.building_sqft?.[pid] ?? null)}</dd></div>
+      <div><dt>Building today (sq ft)</dt><dd>${n(na(c.building_sqft[pid]))}</dd></div>
       <div><dt>Allowed, today's rules</dt><dd>${n(today.result.max_units)}</dd></div>
       ${reform ? `<div class="scenario-col"><dt>Allowed, this scenario</dt><dd>${n(now.result.max_units)}</dd></div>` : ""}
       <div><dt>By right (no use permit)</dt><dd>${today.result.by_right_units === null ? "not confirmed" : fmt.format(today.result.by_right_units)}</dd></div>
