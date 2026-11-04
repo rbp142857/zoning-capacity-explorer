@@ -22,7 +22,7 @@ import math
 from dataclasses import asdict, dataclass
 
 from zce.engine.capacity import CapacityResult, compute_capacity
-from zce.engine.constraints import EngineAssumptions, Lot
+from zce.engine.constraints import EngineAssumptions, Lot, lot_area_per_unit_limit
 from zce.rules.schema import Band, Banded, Citation, Sourced, StateOverrides, ZoneRules
 
 SCENARIO_SOURCE = "scenario"
@@ -94,7 +94,13 @@ def apply_scenario(
     out: dict[str, ZoneRules] = {}
     for zone, r in rules.items():
         updates = {}
-        if r.family == "single_family" and r.residential_allowed.value and s.sf_units_per_lot is not None:
+        # A zone that limits homes by land per home has no cap to replace;
+        # adjust_for_lot handles it, because the answer depends on the lot.
+        has_area_rule_only = r.max_units_per_lot is None and (r.lot_area_per_unit_sqft or r.small_lot_units)
+        if (
+            r.family == "single_family" and r.residential_allowed.value
+            and s.sf_units_per_lot is not None and not has_area_rule_only
+        ):
             updates["max_units_per_lot"] = _cite(s.sf_units_per_lot)
         if s.parking_per_unit is not None and r.parking_per_unit is not None:
             updates["parking_per_unit"] = _cite(s.parking_per_unit)
@@ -133,13 +139,27 @@ def adjust_for_lot(r: ZoneRules, lot: Lot, s: Scenario) -> ZoneRules:
     """Lot-dependent changes (lot splits, upzoning near transit)."""
     updates = {}
 
-    # Smaller minimum lot size in single-family zones -> the lot could be
-    # split, multiplying the per-lot cap. Assumption: every split lot is
-    # buildable (no check of street frontage or access).
-    if r.family == "single_family" and r.residential_allowed.value and s.sf_min_lot_sqft:
-        per_lot = r.max_units_per_lot.value if r.max_units_per_lot else 1
-        lots = max(1, math.floor(lot.area_sqft / s.sf_min_lot_sqft + 1e-9))
-        updates["max_units_per_lot"] = _cite(per_lot * lots)
+    # Homes-per-lot and minimum-lot-size levers. A smaller minimum lot size
+    # means the lot could be split, multiplying the per-lot allowance.
+    # Assumption: every split lot is buildable (no check of street frontage or
+    # access).
+    #
+    # Some cities write their one-home rule as land per home (5,000 sf per home)
+    # rather than a cap of 1. The levers replace that rule too, or a fourplex
+    # would still need 20,000 sf. A big lot keeps what the land rule already
+    # allowed, so loosening the rules can't lower its number.
+    if (
+        r.family == "single_family" and r.residential_allowed.value
+        and (s.sf_min_lot_sqft or s.sf_units_per_lot is not None)
+    ):
+        per_lot = r.max_units_per_lot.value if r.max_units_per_lot else (s.sf_units_per_lot or 1)
+        lots = max(1, math.floor(lot.area_sqft / s.sf_min_lot_sqft + 1e-9)) if s.sf_min_lot_sqft else 1
+        allowed = per_lot * lots
+        if r.lot_area_per_unit_sqft or r.small_lot_units:
+            if r.max_units_per_lot is None:
+                allowed = max(allowed, lot_area_per_unit_limit(r, lot) or 0)
+            updates.update(lot_area_per_unit_sqft=None, small_lot_units=None, small_lot_units_below_sqft=None)
+        updates["max_units_per_lot"] = _cite(allowed)
 
     near_transit = lot.dist_major_transit_ft is not None and lot.dist_major_transit_ft <= s.transit_radius_ft
     if (

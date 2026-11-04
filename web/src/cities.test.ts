@@ -10,7 +10,7 @@ describe("city selection in the address", () => {
   it("keeps old links working", () => {
     expect(selectionFromSearch("", ALL)).toEqual(["pasadena"]);
     expect(selectionFromSearch("?city=burbank", ALL)).toEqual(["burbank"]);
-    expect(selectionFromSearch("?city=nowhere", ALL)).toEqual(["burbank"]);
+    expect(selectionFromSearch("?city=nowhere", ALL)).toEqual(["pasadena"]);
   });
   it("reads several cities, all cities, or none", () => {
     expect(selectionFromSearch("?cities=glendale,burbank", ALL)).toEqual(["burbank", "glendale"]);

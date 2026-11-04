@@ -211,7 +211,9 @@ Every rule file should say how its zone permits homes (`approval`, METHODOLOGY s
 
 ## Direction (November 2026)
 
-The owner chose to make this a research and policy tool rather than a paid developer product (see docs/USE_CASES.md). Accuracy on totals, clear labels and citable outputs come first. The waves above still set the order, weighted toward the plans and programs where cities actually build. **Waiting on the owner:** publishing the other 50 cities on the map, which adds roughly 180 MB of site files.
+The owner chose to make this a research and policy tool rather than a paid developer product (see docs/USE_CASES.md). Accuracy on totals, clear labels and citable outputs come first. The waves above still set the order, weighted toward the plans and programs where cities actually build. 
+
+**Cities on the map (November 2026):** the owner chose to publish cities rated Fuller or Usable in reports/la_county/coverage.md, which is 46 of the 55 with rule files. 45 are on it. The owner held Avalon off because it is on Catalina Island, where wildlife restrictions limit development and the rule files don't model them. The 9 Partial cities stay off too. `write_city_index` enforces both. Site files total about 290 MB, under GitHub Pages' 1 GB limit. Numbers to review: one lot makes up 97% of Avalon's likely homes (169 acres in HD-R, APN 7480003009) and 89% of Lomita's (12.5 acres in RVD1452, APN 7552001903). Neither has been checked against the city's map. Lomita's lot is listed as apartments with a blank home count, so existing homes aren't subtracted.
 
 ## Definition of done, for every city
 

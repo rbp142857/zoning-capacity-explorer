@@ -73,12 +73,14 @@ body {
   border: 1px solid var(--border); background: var(--page); color: var(--ink);
 }
 .city-picker fieldset {
-  position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; min-width: 190px; margin: 0;
+  position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; min-width: 250px; margin: 0;
   padding: 6px; display: grid; gap: 1px; border-radius: 6px;
+  max-height: min(70vh, 480px); overflow-y: auto;
   border: 1px solid var(--border); background: var(--surface); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 .city-picker label { display: flex; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 4px; cursor: pointer; }
 .city-picker label:hover { background: var(--page); }
+.city-picker .city-level { margin-left: auto; padding-left: 12px; font-size: 12px; color: var(--ink-2); }
 .city-picker .select-all { font-weight: 600; border-bottom: 1px solid var(--border); border-radius: 4px 4px 0 0; margin-bottom: 3px; }
 .disclaimer {
   margin: 0; padding: 4px 10px; border-radius: 6px; font-size: 13px;

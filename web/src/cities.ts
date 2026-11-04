@@ -13,7 +13,11 @@ export interface CityInfo {
   name: string;
   center: [number, number];
   zoom: number;
+  level?: string; // "Fuller" or "Usable", from reports/la_county/coverage.md
 }
+
+/** Where the map opens with no city selected. */
+export const COUNTY_VIEW: { center: [number, number]; zoom: number } = { center: [-118.25, 34.1], zoom: 9 };
 
 /** `city` of combined data, whose district codes are city names. */
 export const COMBINED = "(several cities)";
@@ -33,7 +37,8 @@ export function selectionFromSearch(search: string, allIds: string[]): string[] 
   const wanted = many !== null ? many.split(",") : [params.get("city") ?? DEFAULT_CITY];
   const known = allIds.filter((id) => wanted.includes(id));
   if (known.length || many === "") return known;
-  return allIds.slice(0, 1); // a link to a city that doesn't exist
+  // A link to a city that doesn't exist.
+  return allIds.includes(DEFAULT_CITY) ? [DEFAULT_CITY] : allIds.slice(0, 1);
 }
 
 /** The address's search part for a selection, leaving other params alone. */

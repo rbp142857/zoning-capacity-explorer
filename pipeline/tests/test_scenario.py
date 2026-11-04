@@ -136,3 +136,40 @@ def test_permissive_levers_never_reduce_capacity(base, zone, lot, levers):
     # Every lever only loosens rules, so no lot may end up with fewer homes.
     # (This caught a bug where legalizing duplexes switched off the ADU path.)
     assert run(base, zone, lot, **levers).max_units >= run(base, zone, lot).max_units
+
+
+# Bellflower R-1 writes its one-home rule as 5,000 sq ft per home, with no cap.
+@pytest.fixture(scope="module")
+def land_rule_zone():
+    from zce.config import load_city
+    from zce.rules.schema import load_state_overrides, load_zone_rules
+
+    city = load_city("bellflower")
+    return load_zone_rules(city.rules_dir), load_state_overrides(city.state_law_file), city.assumptions
+
+
+def _land_rule_units(setup, lot, **levers):
+    rules, state, assumptions = setup
+    s = Scenario(**levers)
+    scenario_rules, scenario_state = apply_scenario(rules, state, s)
+    return capacity_under_scenario("R-1", lot, assumptions, scenario_rules, scenario_state, s)
+
+
+def test_homes_per_lot_lever_replaces_a_land_per_home_rule(land_rule_zone):
+    lot = Lot(12_000, 80, 150, dist_major_transit_ft=9_000)
+    today = _land_rule_units(land_rule_zone, lot)
+    fourplex = _land_rule_units(land_rule_zone, lot, sf_units_per_lot=4)
+    assert fourplex.local_units == 4 > today.local_units
+
+
+def test_homes_per_lot_lever_keeps_a_big_lots_higher_number(land_rule_zone):
+    lot = Lot(164_245, 300, 547, dist_major_transit_ft=9_000)
+    today = _land_rule_units(land_rule_zone, lot)
+    assert today.local_units > 4
+    assert _land_rule_units(land_rule_zone, lot, sf_units_per_lot=4).local_units == today.local_units
+
+
+def test_minimum_lot_lever_keeps_a_big_lots_higher_number(land_rule_zone):
+    lot = Lot(164_245, 300, 547, dist_major_transit_ft=9_000)
+    today = _land_rule_units(land_rule_zone, lot)
+    assert _land_rule_units(land_rule_zone, lot, sf_min_lot_sqft=20_000).local_units >= today.local_units

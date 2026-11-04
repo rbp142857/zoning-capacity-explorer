@@ -171,7 +171,7 @@ def write_release() -> Path:
         "**Levels** are simple thresholds, not a measure of accuracy. **Fuller:** 95%+ of lots modeled, 80%+ with approval type confirmed, zoning map from 2021 or newer "
         "(or the city's own). **Usable:** 85%+ of lots modeled. **Partial:** under 85%, usually because the plans where a city builds most are missing, so totals run low. "
         "No level accounts for bonus programs such as LA's TOC, which aren't modeled anywhere.", "",
-        f"Today: {int(counts.get('Fuller', 0))} Fuller, {int(counts.get('Usable', 0))} Usable, {int(counts.get('Partial', 0))} Partial, of {len(table)} cities with rule files (88 in the county).", "",
+        f"Today: {int(counts.get('Fuller', 0))} Fuller, {int(counts.get('Usable', 0))} Usable, {int(counts.get('Partial', 0))} Partial, of {len(table)} cities with rule files (88 in the county). Avalon is rated Usable but held off the map, because wildlife restrictions on Catalina Island limit development and aren't modeled.", "",
         "**Lots reviewed** counts lots in `docs/HAND_CHECKS.md`. In recent cities these review engine results rather than redo the arithmetic independently. "
         "**Special land** is government, utility, quarry, cemetery, golf and private school land, which counts in theoretical totals but not in likely new homes.", "",
         _table(view), "",
