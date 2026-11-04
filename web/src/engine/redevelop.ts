@@ -7,12 +7,14 @@ export const VALUE = 2;
 export const OWNERSHIP = 4;
 export const HISTORIC = 8;
 export const ZONE = 16;
+export const LAND = 32;
 export const SCREEN_NAMES: [number, string][] = [
   [AGE, "building_too_new"],
   [VALUE, "building_worth_more_than_land"],
   [OWNERSHIP, "condo_many_owners"],
   [HISTORIC, "historic_district"],
   [ZONE, "single_family_zone"],
+  [LAND, "public_or_special_land"],
 ];
 
 export interface Redevelopment {

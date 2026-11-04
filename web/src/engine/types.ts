@@ -55,11 +55,14 @@ export interface ZoneRules {
   lot_coverage: Sourced<number | Banded> | null;
   max_floor_area: Sourced<Banded> | null;
   max_far: Sourced<number> | null;
+  max_buildable_multiple: Sourced<number> | null;
   min_open_space_share: Sourced<number | Banded> | null;
   parking_per_unit: Sourced<number> | null;
   guest_parking_per_unit: Sourced<number> | null;
   guest_parking_min_units: number | null;
   sb9_allowed?: Sourced<boolean> | null;
+  approval?: Sourced<"by_right" | "conditional" | "mixed" | "not_allowed"> | null;
+  by_right_max_units?: Sourced<number> | null;
   simplifications: string[];
 }
 

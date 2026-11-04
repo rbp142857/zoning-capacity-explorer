@@ -7,6 +7,9 @@
     uv run python -m zce golden pasadena
     uv run python -m zce validate pasadena
     uv run python -m zce all pasadena
+    uv run python -m zce accuracy                     (all cities)
+    uv run python -m zce release                      (all cities)
+    uv run python -m zce study studies/some_file.yaml
 
 The Makefile at the repo root wraps these.
 """
@@ -18,8 +21,8 @@ from zce.config import load_city
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog="zce", description="Zoning Capacity Explorer pipeline")
-    parser.add_argument("step", choices=["download", "clean", "capacity", "export", "golden", "validate", "all", "waves"])
-    parser.add_argument("city", nargs="?", default="pasadena", help="city id, i.e. a folder name under cities/")
+    parser.add_argument("step", choices=["download", "clean", "capacity", "export", "golden", "validate", "all", "waves", "accuracy", "release", "study"])
+    parser.add_argument("city", nargs="?", default="pasadena", help="city id (a folder name under cities/), or for `study`, a scenario file")
     parser.add_argument("--only", nargs="*", help="download only these sources")
     args = parser.parse_args()
 
@@ -27,6 +30,21 @@ def main() -> None:
         from zce.waves import write_ranking
 
         write_ranking()
+        return
+    if args.step == "accuracy":
+        from zce.accuracy import write_accuracy
+
+        write_accuracy()
+        return
+    if args.step == "release":
+        from zce.release import write_release
+
+        write_release()
+        return
+    if args.step == "study":
+        from zce.study import write_study
+
+        write_study(args.city)
         return
 
     city = load_city(args.city)

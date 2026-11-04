@@ -1,0 +1,19 @@
+# Carson CG. Every value cites the Carson Municipal Code, Article IX (eCode360, read 2026-11-01).
+zone: "CG"
+name: "Commercial, General (CG)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Art. IX, Pt. 3, Div. 1 (Uses Permitted)"
+    url: https://ecode360.com/48528132
+
+residential_allowed: {value: false, source: Z, assumption: "Multiple-family only inside the Mixed-Use Residential overlay, which our data does not show. We don't count homes (conservative); lots in the overlay run low."}
+housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "The commercial use table marks multiple-family and mixed-use homes C."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

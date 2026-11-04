@@ -1,0 +1,30 @@
+# San Gabriel R-1. Every value cites the San Gabriel Municipal Code, Chapter 153 (American Legal, read 2026-11-01).
+zone: "R-1"
+name: "Single-Family Residence (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "SGMC §§153.035 to 153.039"
+    url: https://codelibrary.amlegal.com/codes/sangabriel/latest/sangabriel_ca/0-0-0-26088
+  H:
+    section: "City of San Gabriel, R-1 Development Regulations (2019 handout)"
+    url: https://sangabrielcity.com/DocumentCenter/View/3809/R-1-Development-Regulations-2019?bidId=
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§153.031 permits single-family dwellings by right in R-1."}
+max_units_per_lot: {value: 1, source: Z, assumption: "One single-family home. State law (ADU, SB 9, §153.048) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 8, source: Z, assumption: "Total side yards of 16 ft, at least 6 ft on one side; we use 8 ft per side."}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 28, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.35, source: H, assumption: "From the city handout; we did not read this section of the code."}
+max_far: {value: 0.35, source: H, assumption: "From the city handout; we did not read this section of the code."}
+
+simplifications:
+  - "Parking for a single home wasn't read; the one-home limit binds either way."

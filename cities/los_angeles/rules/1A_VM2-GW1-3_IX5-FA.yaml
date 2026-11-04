@@ -1,0 +1,28 @@
+# Los Angeles [VM2-GW1-3][IX5-FA]. Chapter 1A (new zoning code), read on zoning.lacity.gov on 2026-11-01.
+zone: "[VM2-GW1-3][IX5-FA]"
+name: "VM2 form, GW1 frontage, Standards 3, IX5 use, FA density"
+family: nonresidential
+
+sources:
+  F:
+    section: "LA Zoning Code (Ch. 1A) Sec. 2B.5.2 (VM2 Form District)"
+    url: https://zoning.lacity.gov/browse/2#2B.5.2
+  U:
+    section: "LA Zoning Code (Ch. 1A) Sec. 5B.6.5 (IX5 Use District)"
+    url: https://zoning.lacity.gov/browse/5#5B.6.5
+  D:
+    section: "LA Zoning Code (Ch. 1A) Part 6B (Density Districts)"
+    url: https://zoning.lacity.gov/browse/6#6B
+  P:
+    section: "LA Zoning Code (Ch. 1A) Sec. 4C.4.1, Table 1 (Package C, assigned by Development Standards District 3)"
+    url: https://zoning.lacity.gov/browse/4#4C.4.1
+
+residential_allowed: {value: false, source: U, assumption: "Dwellings are not allowed in this district."}
+housing_types: {value: [], source: U}
+approval: {value: not_allowed, source: U, assumption: "Dwellings are not allowed in this district."}
+
+setbacks:
+  front_ft: {value: 0, source: F}
+  side_ft: {value: 0, source: F}
+  rear_ft: {value: 0, source: F}
+max_stories: {value: 0, source: F, assumption: "Not relevant: homes not counted."}

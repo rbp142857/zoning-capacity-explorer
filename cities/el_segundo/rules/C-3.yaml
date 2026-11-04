@@ -1,0 +1,15 @@
+# El Segundo C-3. Every value cites the El Segundo Municipal Code, Title 15 (American Legal), read 2026-11-03.
+zone: C-3
+name: C-3 (SCAG's code)
+family: nonresidential
+sources:
+  Z: {section: 'ESMC Title 15, Ch. 5 (Commercial Zones)', url: 'https://codelibrary.amlegal.com/codes/elsegundoca/latest/elsegundo_ca/0-0-0-11443'}
+residential_allowed: {value: false, source: Z, assumption: We didn't read this zone's uses. We don't count homes (conservative).}
+housing_types:
+  value: []
+  source: Z
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: 'Not relevant: homes not counted.'}

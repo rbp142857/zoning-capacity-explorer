@@ -15,6 +15,7 @@ sources:
 
 residential_allowed: {value: true, source: T627}
 housing_types: {value: [single_family, multifamily], source: T627}
+approval: {value: by_right, source: T627, assumption: "The land use table marks multiple family dwellings P."}
 min_lot_area_sqft: {value: 6000, source: T628}
 min_lot_width_ft: {value: 50, source: T628}
 

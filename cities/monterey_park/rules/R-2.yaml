@@ -1,0 +1,39 @@
+# Monterey Park R-2. Every value cites the Monterey Park Municipal Code, Title 21 (eCode360, read 2026-11-01).
+zone: "R-2"
+name: "Medium-Density Residential (R-2)"
+family: multifamily
+
+sources:
+  Z:
+    section: "MPMC Ch. 21.08, Table 21.08(E) (Development Standards in Residential Zones)"
+    url: https://ecode360.com/43882731
+  P:
+    section: "MPMC Ch. 21.22, Art. II (Residential Zones), Table 21.22(A)"
+    url: https://ecode360.com/43884306
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 21.08(A) marks these homes P."}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 2722.5, source: Z, assumption: "Zero to 16 homes per acre (§21.08). Table 21.08F, which we could not read, sets the homes by lot; its top tiers match this density, and lower tiers on smaller lots may allow fewer."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 2722.5
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on the first floor and 10 ft on the second; we use 5 ft for the ground floor. Hillside fronts of 10 ft are not modeled."}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+parking_per_unit: {value: 1, source: P, assumption: "1 space for 2 or fewer bedrooms, with no guest parking. Three bedrooms need 2 plus guest spaces. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Open space of up to 850 sq ft per home at 3 or more homes is not modeled, so these can run high."

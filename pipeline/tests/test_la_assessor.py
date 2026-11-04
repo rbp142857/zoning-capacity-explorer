@@ -61,6 +61,15 @@ def test_condo_stack_becomes_one_lot(write_raw_parcels, lot):
     assert condo["address"] == "10 MAIN ST PASADENA CA 91101"  # unit number removed
 
 
+def test_blank_parcel_number_in_a_condo_stack_is_kept(write_raw_parcels, lot):
+    # Baldwin Park has a record with no parcel number sharing a shape with numbered ones.
+    rows = [raw_assessor_row("1", lot), raw_assessor_row(None, lot)]
+    lots, _ = load_parcels(write_raw_parcels(rows), CRS)
+    assert len(lots) == 1
+    assert lots.loc[0, "ains"] == ["1"]
+    assert lots.loc[0, "ain_count"] == 2
+
+
 def test_unique_parcel_ids_keeps_every_lot():
     ids = pd.Series(["111", "222", "111", " ", None])
     assert unique_parcel_ids(ids).tolist() == ["111", "222", "111-2", "unnumbered", "unnumbered-2"]

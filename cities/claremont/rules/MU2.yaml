@@ -1,0 +1,28 @@
+# Claremont MU2. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "MU2"
+name: "MU2 Mixed Use"
+family: commercial
+
+sources:
+  Z:
+    section: "CMC §§16.040.020, 16.040.050 and 16.040.060"
+    url: https://ecode360.com/43834732
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily, mixed_use], source: Z}
+min_lot_area_sqft: {value: 43560, source: Z}
+lot_area_per_unit_sqft: {value: 1980, source: Z, assumption: "22 homes per acre, with areas in commercial use counted in the density."}
+
+setbacks:
+  front_ft: {value: 10, source: Z}
+  side_ft: {value: 0, source: Z, assumption: "None, except 10 ft along a street or residential district; not modeled."}
+  rear_ft: {value: 0, source: Z, assumption: "None, except 10 ft along a street or residential district; not modeled."}
+
+max_height_ft: {value: 42, source: Z}
+max_stories: {value: 3, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "2 covered spaces for homes over 600 sq ft. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: Z}
+
+simplifications:
+  - "Usable open space of 120 to 150 sq ft per home isn't modeled."
+  - "The Planning Commission reviews many projects here, and may ask for a commercial component (§16.040.070)."

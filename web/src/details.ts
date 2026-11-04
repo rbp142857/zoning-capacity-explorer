@@ -5,6 +5,7 @@ import { BINDING_LABELS } from "./colors";
 import type { ParcelData } from "./data";
 import type { CapacityResult } from "./engine/capacity";
 import { redevelopment } from "./engine/redevelop";
+import { densityBonusUnits, sb79Units } from "./engine/statePaths";
 import type { LotInputs } from "./engine/run";
 import { type Scenario, applyScenario, adjustForLot, capacityUnderScenario } from "./engine/scenario";
 import type { RulesFile, Sourced, ZoneRules } from "./engine/types";
@@ -66,6 +67,7 @@ function rulesTable(r: ZoneRules, area: number, width: number, distSf: number | 
     ["Lot coverage", r.lot_coverage],
     ["Floor area", r.max_floor_area],
     ["Floor area ratio", r.max_far],
+    ["Floor area (times the lot minus yards)", r.max_buildable_multiple],
     ["Garden / open space", r.min_open_space_share],
     ["Parking per home", r.parking_per_unit],
   ];
@@ -108,6 +110,7 @@ const SCREEN_TEXT: Record<string, [string, string]> = {
   condo_many_owners: ["Not a condo", "Condo (many owners)"],
   historic_district: ["Not in a landmark district", "In a landmark (historic) district"],
   single_family_zone: ["Not in a single-family zone", "In a single-family zone (small-scale infill is counted separately)"],
+  public_or_special_land: ["Not public or special land", "Public or special land (government, utility, quarry, cemetery, golf, private school)"],
 };
 
 function redevSection(rules: RulesFile, mask: number, r: CapacityResult, existing: number | null, reform: boolean): string {
@@ -124,6 +127,16 @@ function redevSection(rules: RulesFile, mask: number, r: CapacityResult, existin
     : `Not likely to redevelop${reform ? " under this scenario" : ""}.`;
   return `<h3>Likely to redevelop?</h3><p>${verdict}</p><ul class="screens">${items}</ul>`;
 }
+
+const stateOr = (v: number | null) => (v === null ? "doesn't apply" : fmt.format(v));
+
+const APPROVAL_TEXT: Record<string, string> = {
+  by_right: "The zone's code permits these homes without a use permit. Other reviews, such as design review, aren't checked.",
+  conditional: "The zone's homes need a use permit. Only state-law SB 9 homes count as by right here.",
+  mixed: "Some kinds of home here need a use permit and some don't; see the rule file. Only state-law SB 9 homes are confirmed as by right.",
+  not_allowed: "The zone's code doesn't permit homes. Only state-law SB 9 homes, if any, count as by right here.",
+  unknown: "We haven't confirmed from the code whether this zone's homes need a use permit. Only state-law SB 9 homes are confirmed as by right.",
+};
 
 export function renderLotDetails(
   el: HTMLElement,
@@ -158,6 +171,11 @@ export function renderLotDetails(
   const label = (r: CapacityResult) => BINDING_LABELS[r.binding_constraint ?? ""] ?? "–";
   const n = (v: number | null) => (v === null ? "unknown" : fmt.format(v));
 
+  const sb79 = sb79Units(lot.area_sqft, c.dist_sb79_t1_ft?.[pid] ?? null, c.dist_sb79_t2_ft?.[pid] ?? null,
+    Boolean(c.sb79_zone_ok?.[pid]), Boolean(c.sb79_half_mile?.[pid]), rules.assumptions.gross_sqft_per_unit);
+  const byRight = today.result.by_right_units;
+  const netByRight = byRight === null || lot.existing_units === null ? null : Math.max(0, byRight - Math.trunc(lot.existing_units));
+
   const flags = [...new Set([...today.result.flags, ...now.result.flags])];
   const flagText: Record<string, string> = {
     substandard_lot_area: "Smaller than today's minimum for new lots (an existing lot can still be built on).",
@@ -170,9 +188,22 @@ export function renderLotDetails(
   el.innerHTML = `${head}
     <dl class="details-summary">
       <div><dt>Homes today</dt><dd>${n(lot.existing_units)}</dd></div>
+      <div><dt>Building today (sq ft)</dt><dd>${n(c.building_sqft?.[pid] ?? null)}</dd></div>
       <div><dt>Allowed, today's rules</dt><dd>${n(today.result.max_units)}</dd></div>
       ${reform ? `<div class="scenario-col"><dt>Allowed, this scenario</dt><dd>${n(now.result.max_units)}</dd></div>` : ""}
+      <div><dt>By right (no use permit)</dt><dd>${today.result.by_right_units === null ? "not confirmed" : fmt.format(today.result.by_right_units)}</dd></div>
+      <div><dt>Net add, today's rules</dt><dd>${n(today.result.net_new_units)}</dd></div>
+      <div><dt>Net add, by right</dt><dd>${netByRight === null ? "not confirmed" : fmt.format(netByRight)}</dd></div>
+      ${reform ? `<div class="scenario-col"><dt>Net add, this scenario</dt><dd>${n(now.result.net_new_units)}</dd></div>` : ""}
     </dl>
+    <p class="fineprint">${APPROVAL_TEXT[today.result.approval ?? "unknown"]}</p>
+    <h3>Extra paths under state law</h3>
+    <dl class="details-summary">
+      <div><dt>SB 79 (near transit)</dt><dd>${stateOr(sb79)}</dd></div>
+      <div><dt>Density bonus, 50%</dt><dd>${stateOr(densityBonusUnits(today.result.limits, 0.5))}</dd></div>
+      <div><dt>Density bonus, 80%</dt><dd>${stateOr(densityBonusUnits(today.result.limits, 0.8))}</dd></div>
+    </dl>
+    <p class="fineprint">Not included in the numbers above. SB 79 needs 5 or more homes and, above 10 homes, affordable homes; local delay ordinances and alternative plans, including LA's, aren't modeled, so it may not apply yet. A 50% bonus needs 24% lower-income or 15% very-low-income homes. An 80% bonus needs a 100% affordable project, which has no density limit within ½ mile of a major transit stop. Each is an upper estimate; confirm with the city.</p>
     <p><strong>What limits it${reform ? " today" : ""}:</strong> ${label(today.result)}</p>
     ${reform ? `<p class="scenario-col"><strong>Under this scenario:</strong> ${label(now.result)}</p>` : ""}
     ${

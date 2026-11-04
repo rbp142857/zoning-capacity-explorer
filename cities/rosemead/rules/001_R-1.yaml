@@ -1,0 +1,25 @@
+# Rosemead 001:R-1. Every value cites the Rosemead Municipal Code, Title 17 (Municode, through Ord. 1033 of May 2026), read 2026-11-03.
+zone: 001:R-1
+name: Single-Family Residential (R-1)
+family: single_family
+sources:
+  Z: {section: RMC §§17.12.020 and 17.12.030 (residential uses and standards), url: 'https://library.municode.com/ca/rosemead/codes/code_of_ordinances?nodeId=CD_ORD_TIT17ZO_ART2ZODIALLAUSZOECST_CH17.12REZODI'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family]
+  source: Z
+approval: {value: by_right, source: Z, assumption: Table marks single-family dwellings P.}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: 'One home per lot. State law (ADU, SB 9) is modeled separately.'}
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft:
+    value: {pct_of_width: 0.1, min_ft: 5, max_ft: 50}
+    source: Z
+    assumption: The greater of 5 ft or 10% of lot width.
+  rear_ft: {value: 25, source: Z, assumption: The lesser of 25 ft or 20% of lot depth; we use 25 ft (conservative). Larger homes may differ.}
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+max_far: {value: 0.35, source: Z}
+simplifications: ['Parking wasn''t read, so small lots can run high.']

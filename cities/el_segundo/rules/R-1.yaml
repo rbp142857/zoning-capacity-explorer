@@ -1,0 +1,23 @@
+# El Segundo R-1. Every value cites the El Segundo Municipal Code, Title 15 (American Legal), read 2026-11-03.
+zone: R-1
+name: Single-Family Residential (R-1)
+family: single_family
+sources:
+  Z: {section: ESMC §§15-4A-1 and 15-4B-3, url: 'https://codelibrary.amlegal.com/codes/elsegundoca/latest/elsegundo_ca/0-0-0-11238'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family]
+  source: Z
+approval: {value: by_right, source: Z, assumption: Table No. 1 marks single-family dwellings P.}
+min_lot_area_sqft: {value: 5000, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: 'One home per lot. State law (ADU, SB 9) is modeled separately.'}
+setbacks:
+  front_ft: {value: 22, source: Z}
+  side_ft:
+    value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}
+    source: Z
+  rear_ft: {value: 5, source: Z}
+max_height_ft: {value: 26, source: Z}
+max_stories: {value: 2, source: Z}
+max_far: {value: 0.6, source: Z}
+simplifications: ['Parking wasn''t read, so small lots can run high.', We use the 26 ft flat-roof limit; pitched roofs may reach 32 ft. The second-floor FAR limit of 0.25 isn't modeled.]

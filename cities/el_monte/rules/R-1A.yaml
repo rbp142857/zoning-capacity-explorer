@@ -1,0 +1,46 @@
+# El Monte R-1A. Every value cites the El Monte Municipal Code, Title 17 (Municode, Ord. No. 3053, read 2026-11-01).
+zone: R-1A
+name: "One-family Dwelling (R-1A)"
+family: single_family
+
+sources:
+  Z:
+    section: "EMMC §17.20.050, Table 17.20-2"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIV2REZODIOV_CH17.20OMIDWZODI_17.20.050DEST
+  U:
+    section: "EMMC Table 17.A-1 (citywide use matrix)"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIVACIMAPEUS_CH17.AMAPEUS_17.AMAPEUS
+  P:
+    section: "EMMC §17.70 Tables 17.70-2 and 17.70-3 (parking)"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIV7PALARE_CH17.70PARE
+
+residential_allowed: {value: true, source: U}
+housing_types: {value: [single_family], source: U}
+approval: {value: by_right, source: U, assumption: "The citywide use matrix marks single-family dwellings P, with director's review for some in R-1B and R-1C, which isn't checked."}
+min_lot_area_sqft: {value: 7260, source: Z}
+min_lot_width_ft: {value: 60, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on the first story, 5 ft more above; we use the first story."}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.35, source: Z}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 8001, share: 0.35}
+      - {below: 12001, share: 0.30, at_least_sqft: 2800}
+      - {below: 20001, share: 0.25, at_least_sqft: 3600}
+      - {share: 0.20, at_least_sqft: 5000}
+  source: Z
+parking_per_unit: {value: 2, source: P, assumption: "2 enclosed spaces for the first 2,000 sq ft. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Upper-story setbacks and top-plate limits are not modeled."
+  - "The 1,000 sq ft minimum home size is not modeled; floor area limits usually allow it."
+  - "The Rurban Homestead Overlay is not in our zoning data."

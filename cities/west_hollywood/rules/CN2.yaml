@@ -1,0 +1,19 @@
+# West Hollywood CN2. Every value cites the West Hollywood Municipal Code, Title 19 (eCode360, read 2026-11-01).
+zone: "CN2"
+name: "Commercial Neighborhood 2 (CN2)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "WHMC Ch. 19.10, Tables 2-5 and 2-6"
+    url: https://ecode360.com/43927979
+
+residential_allowed: {value: false, source: Z, assumption: "Mixed-use projects are not allowed in CN2 (Table 2-5 note 12)."}
+housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Residential uses are prohibited in CN2."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not allowed."}

@@ -1,0 +1,40 @@
+# Inglewood R-1.5. Every value cites the Inglewood Municipal Code, Chapter 12 (eCode360, read 2026-11-01).
+zone: "R-1.5"
+name: "R-1½ Limited Two-Family Zone"
+family: multifamily
+
+sources:
+  Z:
+    section: "IMC Ch. 12, Article 2.2 (R-1½ Limited Two-Family Zone)"
+    url: https://ecode360.com/43786331
+  P:
+    section: "IMC Ch. 12, Article 19 (Parking Regulations)"
+    url: https://ecode360.com/43787806
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [two_unit], source: Z}
+approval: {value: by_right, source: Z, assumption: "Two-family dwellings are a permitted use."}
+min_lot_area_sqft: {value: 6000, source: Z}
+max_units_per_lot: {value: 2, source: Z}
+lot_area_per_unit_sqft: {value: 5000, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A two-family dwelling needs 5,000 sq ft per family; a smaller lot keeps one home."
+small_lot_units_below_sqft: 10000
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}, source: Z, assumption: "10% of lot width, at least 3 ft, at most 5 ft."}
+  rear_ft: {value: 25, source: Z, assumption: "25% of lot depth, at most 25 ft; we use 25 ft."}
+
+max_height_ft: {value: 20, source: Z}
+max_stories: {value: 1, source: Z}
+lot_coverage: {value: 0.60, source: Z, assumption: "60% on an inside lot, 70% on a corner lot; we use 60%."}
+parking_per_unit: {value: 2, source: P, assumption: "Two enclosed spaces per home (§ 12-Article 19, Residential Parking Requirements). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Objective Design Standards and any lot coverage limit outside the sections cited are not modeled."

@@ -102,6 +102,11 @@ class Setbacks(Strict):
 
 HousingType = Literal["single_family", "two_unit", "multifamily", "mixed_use"]
 Rounding = Literal["floor", "up_above_0_75", "nearest_half_up", "up"]
+# How the zone's code permits homes. by_right: no use permit or similar
+# discretionary approval. conditional: only with one. mixed: some kinds of home
+# each way. not_allowed: the code doesn't permit them. No value means we haven't
+# confirmed it from the code, and a value is never filled in by guess.
+Approval = Literal["by_right", "conditional", "mixed", "not_allowed"]
 
 
 class ZoneRules(Strict):
@@ -112,6 +117,9 @@ class ZoneRules(Strict):
 
     residential_allowed: Sourced[bool]
     housing_types: Sourced[list[HousingType]]
+    approval: Sourced[Approval] | None = None
+    # Above this many homes on a lot, a discretionary approval is needed.
+    by_right_max_units: Sourced[int] | None = None
 
     # Lot size: applies to NEW lots (subdivision). Existing smaller lots can
     # still be built on, so the engine flags them but does not zero them out.
@@ -135,6 +143,8 @@ class ZoneRules(Strict):
     lot_coverage: Sourced[float | Banded] | None = None  # share of lot, or banded rule
     max_floor_area: Sourced[Banded] | None = None  # banded floor-area formula
     max_far: Sourced[float] | None = None  # floor area ratio
+    # Floor area as a multiple of the lot minus required yards (LA's "buildable area").
+    max_buildable_multiple: Sourced[float] | None = None
     min_open_space_share: Sourced[float | Banded] | None = None  # e.g. Pasadena gardens
 
     # Parking (spaces per unit). Guest spaces only kick in at a project size.
@@ -147,6 +157,26 @@ class ZoneRules(Strict):
     sb9_allowed: Sourced[bool] | None = None
 
     simplifications: list[str] = []  # things the MVP deliberately leaves out
+
+    @model_validator(mode="after")
+    def _coverage_bands_use_share(self):
+        """A coverage band's `value` means square feet, so 0.5 there is a typo for `share`."""
+        rule = self.lot_coverage.value if self.lot_coverage else None
+        if isinstance(rule, Banded) and any(b.value is not None and b.value <= 1 for b in rule.bands):
+            raise ValueError(f"{self.zone}: lot_coverage bands give a share of the lot as `share`, not `value`")
+        return self
+
+    @model_validator(mode="after")
+    def _approval_fits_use(self):
+        """A file can't say homes are by right and not allowed at the same time."""
+        approval = self.approval.value if self.approval else None
+        if approval == "by_right" and not self.residential_allowed.value:
+            raise ValueError(f"{self.zone}: approval is by_right but residential_allowed is false")
+        if approval == "not_allowed" and self.residential_allowed.value:
+            raise ValueError(f"{self.zone}: approval is not_allowed but residential_allowed is true")
+        if self.by_right_max_units and approval != "by_right":
+            raise ValueError(f"{self.zone}: by_right_max_units needs approval: by_right")
+        return self
 
     @model_validator(mode="after")
     def _citations_exist(self):

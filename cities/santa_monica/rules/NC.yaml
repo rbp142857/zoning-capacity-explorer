@@ -18,6 +18,7 @@ sources:
 
 residential_allowed: {value: true, source: U11, assumption: "Multi-unit housing is permitted by right (in NC, as a limited use)."}
 housing_types: {value: [multifamily, mixed_use], source: U11}
+approval: {value: by_right, source: U11, assumption: "Multi-unit housing is permitted by right, as a limited use."}
 min_lot_area_sqft: {value: 5000, source: T11, assumption: "For new lots only."}
 
 setbacks:

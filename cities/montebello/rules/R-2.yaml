@@ -1,0 +1,37 @@
+# Montebello R-2. Every value cites the Montebello Municipal Code, Title 17 (Municode, read 2026-11-01).
+zone: "R-2"
+name: "Two-Family Residential (R-2)"
+family: multifamily
+
+sources:
+  Z:
+    section: "MMC Ch. 17.10, Exhibit 17.10.020 and §17.10.040"
+    url: https://library.municode.com/ca/montebello/codes/code_of_ordinances?nodeId=TIT17ZO_CH17.10REZOGE
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Detached dwelling units or duplexes are principal permitted uses."}
+min_lot_area_sqft: {value: 6000, source: Z, assumption: "For new lots; smaller existing lots get the density rule."}
+max_units_per_lot: {value: 2, source: Z, assumption: "1 home per 3,000 sq ft, up to the limit in the exhibit; Chapter 17.16 is two-family."}
+lot_area_per_unit_sqft: {value: 3000, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 3000
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "5 ft; more with height over 15 ft unless upper stories step back, which we assume they do."}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits 25 ft, not stories; we fit 2."}
+lot_coverage: {value: 0.5, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "2 enclosed spaces. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "The limit of 1 bedroom per 1,000 sq ft and open space per home are not modeled."

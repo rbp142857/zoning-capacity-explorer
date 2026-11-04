@@ -1,0 +1,39 @@
+# Agoura Hills CS-MU. Every value cites the Agoura Hills Municipal Code, Article IX (Municode, read 2026-11-02).
+zone: "CS-MU"
+name: "Commercial Shopping Center-Mixed Use (CS-MU)"
+family: commercial
+
+sources:
+  Z:
+    section: "AHMC Ch. 3, Part 5 (§§9341 to 9344)"
+    url: https://library.municode.com/ca/agoura_hills/codes/code_of_ordinances?nodeId=ARTIXZO_CH3CODI_PT5COSHCEXEUSDI
+  P:
+    section: "AHMC §9654.2 parking table (Ch. 6, Part 2, Div. 4)"
+    url: https://library.municode.com/ca/agoura_hills/codes/code_of_ordinances?nodeId=ARTIXZO_CH6REPR_PT2SPRE_DIV4OREPALOLA
+
+residential_allowed: {value: true, source: Z, assumption: "Multi-family homes as part of a mixed-use shopping center."}
+housing_types: {value: [mixed_use], source: Z}
+approval: {value: conditional, source: Z, assumption: "§9343 needs a conditional use permit, which we assume is granted in the home count."}
+lot_area_per_unit_sqft: {value: 2904, source: Z, assumption: "At most 15 homes per acre: 43,560 divided by 15."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 2904
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 0, source: Z, assumption: "None; 20 ft next to a residential district, not modeled."}
+  rear_ft: {value: 35, source: Z, assumption: "Equal to the tallest building; we use the 35 ft limit."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height to 35 ft, not stories; we fit 2 (conservative)."}
+lot_coverage: {value: 0.50, source: Z}
+parking_per_unit: {value: 2.5, source: P, assumption: "Homes follow the apartment table. One bedroom and up, condominiums and townhouses need 2.5 spaces (2 or 1.5 covered plus guest spaces); studios need 1.5. We use 2.5. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "§9344.1 sets a 5-acre minimum project site and §9343 needs a conditional use permit and commercial uses on the site. We don't model assembling lots; each lot is counted on its own, so small lots can run high."
+  - "20% to 33% of the floor area must be commercial; we count all of it as homes up to the density, which can run high."

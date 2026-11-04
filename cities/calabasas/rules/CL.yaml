@@ -1,0 +1,19 @@
+# Calabasas CL. Every value cites the Calabasas Municipal Code, Title 17 (Municode, read 2026-11-02).
+zone: "CL"
+name: "Commercial, Limited (CL)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Table 2-6"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE_ARTIIZODIALLAUS_CH17.14CODI
+
+residential_allowed: {value: false, source: Z, assumption: "Table 2-6: residential density none allowed."}
+housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Table 2-2 leaves homes blank here."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

@@ -1,0 +1,42 @@
+# Norwalk R-3. Every value cites the Norwalk Municipal Code, Title 17 (eCode360, including Ord. 25-1762, read 2026-11-01).
+zone: "R-3"
+name: "Multi-Family High Density (R-3)"
+family: multifamily
+
+sources:
+  Z:
+    section: "NMC Ch. 17.05, Art. III (§§17.05.210 to .270)"
+    url: https://ecode360.com/43504428
+  P:
+    section: "NMC §17.03.040 (parking matrix)"
+    url: https://ecode360.com/43503014
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Multiple dwellings are permitted uses, subject to precise development plans (§17.02.205). Those with elevators need a conditional use permit, not modeled."}
+min_lot_area_sqft: {value: 5000, source: Z}
+lot_area_per_unit_sqft: {value: 1980, source: Z, assumption: "At 9,000 sq ft or more."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 5000, value: 1}
+      - {below: 7000, value: 3}
+      - {value: 4}
+  source: Z
+  assumption: "The code sets homes by lot size under 9,000 sq ft. Under 5,000 sq ft a lot of record keeps one home (assumed)."
+small_lot_units_below_sqft: 9000
+
+setbacks:
+  front_ft: {value: 15, source: Z, assumption: "15% of depth, at most 15 ft; we use 15 ft."}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on the first story, more on the second and 20 ft next to R-1; we use 5 ft."}
+  rear_ft: {value: 20, source: Z, assumption: "20% of depth, at most 20 ft; we use 20 ft."}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.5, source: Z}
+max_far: {value: 0.5, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Second-story setbacks and top plate limits are not modeled."

@@ -1,0 +1,28 @@
+# Bell Gardens R-1. Every value cites the Bell Gardens Municipal Code, Title 9 (eCode360, through 06-29-2026, read 2026-11-02).
+zone: "R-1"
+name: "Low Density Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "BGMC §§9.10.020 to 9.10.040, Tables 9.10A and 9.10B"
+    url: https://ecode360.com/48053893
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 9.10A marks one-family dwellings P."}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The table limits height to 35 ft, not stories, and sets second-story setbacks; we fit 2 (conservative)."}
+lot_coverage: {value: 0.45, source: Z}
+
+simplifications:
+  - "Added second-story setbacks and parking aren't modeled; the one-home limit binds."

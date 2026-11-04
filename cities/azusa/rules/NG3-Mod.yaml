@@ -1,0 +1,39 @@
+# Azusa NG3-Mod. Every value cites the Azusa Development Code, Chapter 88 (Municode, read 2026-11-01).
+zone: "NG3-Mod"
+name: "Neighborhood General 3, Moderate Density (NG3-Mod)"
+family: multifamily
+
+sources:
+  Z:
+    section: "Azusa Development Code §88.22.065 (Table 2-1) and §88.22.070"
+    url: https://library.municode.com/ca/azusa/codes/code_of_ordinances?nodeId=CH88DECO_ART2URST_CH88.22NE_88.22.070NESIPLBUDE
+  P:
+    section: "Azusa Development Code Ch. 88.36 (Parking and Loading)"
+    url: https://library.municode.com/ca/azusa/codes/code_of_ordinances?nodeId=CH88DECO_ART3SIDEOPST_CH88.36PALO
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+min_lot_area_sqft: {value: 6000, source: Z, assumption: "The minimum parcel applies to each subdivision and residential development; we flag smaller lots rather than zero them."}
+lot_area_per_unit_sqft: {value: 1613.33, source: Z, assumption: "27 homes per acre: 43,560 divided by 27."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1613.33
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2.5, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces for a home of two to four bedrooms. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.3333, source: P, assumption: "1 guest space per 3 homes at five or more homes."}
+guest_parking_min_units: 5
+
+simplifications:
+  - "Lot coverage and floor area limits outside §88.22.070, and open space, are not modeled."

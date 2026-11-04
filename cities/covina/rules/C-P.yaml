@@ -1,0 +1,18 @@
+# Covina C-P. Every value cites the Covina Municipal Code, Title 17 (eCode360, read 2026-11-03).
+zone: "C-P"
+name: "C-P Commercial, Administrative and Professional Office"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC §§17.34.040 and 17.34.050"
+    url: https://ecode360.com/46920496
+
+residential_allowed: {value: false, source: Z, assumption: "§17.34.040 prohibits residences except as §17.34.020 provides, and §17.34.050 applies RD-1500's standards to residential uses. We didn't resolve what §17.34.020 allows, so we don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

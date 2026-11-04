@@ -1,0 +1,41 @@
+# West Hollywood R4A. Every value cites the West Hollywood Municipal Code, Title 19 (eCode360, read 2026-11-01).
+zone: "R4A"
+name: "Multi-Family High (R4-A)"
+family: multifamily
+
+sources:
+  Z:
+    section: "WHMC §19.06.040, Table 2-3"
+    url: https://ecode360.com/43913027
+  P:
+    section: "WHMC §19.28, Table 3-6 (parking by land use)"
+    url: https://ecode360.com/43927992
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table marks multi-family dwellings P1."}
+min_lot_area_sqft: {value: 5000, source: Z}
+lot_area_per_unit_sqft: {value: 872, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 872
+
+setbacks:
+  front_ft: {value: 7.5, source: Z, assumption: "The average of neighbors, with this minimum; we use the minimum."}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 6}, source: Z, assumption: "5 ft, or 10% of width (at least 3 ft) on narrow lots; plus 1 ft per story above the second in R3 and R4."}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z}
+parking_per_unit: {value: 1.5, source: P, assumption: "1.5 spaces for a 1-bedroom home; none within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: P, assumption: "1 covered guest space per 4 homes, for 5 or more homes."}
+guest_parking_min_units: 5
+
+simplifications:
+  - "Density bonuses and incentives (Ch. 19.22, §19.10.050) are not modeled, so numbers are base zoning only."
+  - "Added 2nd-story front setback of 6 ft is not modeled."

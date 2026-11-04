@@ -1,0 +1,18 @@
+# Alhambra CPD. Every value cites the Alhambra Municipal Code, Title 23 (American Legal, read 2026-11-01).
+zone: "CPD"
+name: "CPD (SCAG's code, from before the 2024 code)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "AMC §23.05.030, Table 23.05.030"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-136054
+
+residential_allowed: {value: false, source: Z, assumption: "Not a zone in the 2024 code. It could have become CMU (homes allowed, 48 per acre) or AC (no homes), and the 2018 table can't say which. We don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

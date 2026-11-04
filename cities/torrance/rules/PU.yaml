@@ -1,0 +1,18 @@
+# Torrance PU. Every value cites the Torrance Municipal Code, Division 9 (Code Publishing, read 2026-11-02; current through Ord. 3969, June 23, 2026).
+zone: "PU"
+name: "Public Use (P-U)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "TMC Art. 37"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.37
+
+residential_allowed: {value: false, source: Z, assumption: "§91.37.2 lists public and quasi-public uses only. The religious and higher education housing overlay (Art. 52) is not in our data."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

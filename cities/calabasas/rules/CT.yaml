@@ -1,0 +1,40 @@
+# Calabasas CT. Every value cites the Calabasas Municipal Code, Title 17 (Municode, read 2026-11-02).
+zone: "CT"
+name: "Commercial, Old Town (CT)"
+family: commercial
+
+sources:
+  Z:
+    section: "CMC §17.11.010 Table 2-2 and §17.14 Table 2-6"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE_ARTIIZODIALLAUS_CH17.14CODI
+  P:
+    section: "CMC Ch. 17.28, Table 3-11"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE_ARTIIISIPLPRDEST_CH17.28PALO
+
+residential_allowed: {value: true, source: Z, assumption: "Apartments, condominiums and duplexes need a conditional use permit (Table 2-2)."}
+housing_types: {value: [mixed_use, multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Apartments, condominiums and duplexes need a conditional use permit (Table 2-2)."}
+lot_area_per_unit_sqft: {value: 2178, source: Z, assumption: "20 homes per acre: 43,560 divided by 20."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 2178
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z, assumption: "None required here; more next to residential zones, not modeled."}
+  rear_ft: {value: 30, source: Z, assumption: "We read this table's rear yard row as 30 ft and use it everywhere (conservative)."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The table limits height to 35 ft, not stories; we fit 2 (conservative)."}
+lot_coverage: {value: 0.72, source: Z}
+max_far: {value: 1.0, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces for two bedrooms; 1.5 for one, 1 for a studio; 0.5 more per bedroom over two. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.33, source: P, assumption: "1 guest space per 3 homes."}
+
+simplifications:
+  - "Commercial space isn't subtracted, so these can run high."

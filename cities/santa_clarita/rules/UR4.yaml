@@ -1,0 +1,41 @@
+# Santa Clarita UR4. Every value cites the Santa Clarita Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "UR4"
+name: "Urban Residential 4 (UR4)"
+family: multifamily
+
+sources:
+  Z:
+    section: "SCMC §17.33.040"
+    url: https://ecode360.com/48595305
+  U:
+    section: "SCMC Ch. 17.42 (residential use types and parking)"
+    url: https://ecode360.com/48595809
+
+residential_allowed: {value: true, source: U, assumption: "Two-family homes are allowed outright. The multifamily row of the use chart could not be read cell by cell; the zone text describes these as residential at this density, so we count them."}
+housing_types: {value: [two_unit, multifamily], source: U}
+approval: {value: by_right, source: U, assumption: "§17.42.010's table marks two-family and multifamily dwellings P."}
+min_lot_area_sqft: {value: 4500, source: Z}
+min_lot_width_ft: {value: 40, source: Z}
+lot_area_per_unit_sqft: {value: 2420, source: Z, assumption: "43,560 sq ft per acre divided by the zone's density. The code counts gross acres; we use the lot."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 2420
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits height to 35 ft without a CUP, not stories; we fit 3."}
+parking_per_unit: {value: 2, source: U, assumption: "2 enclosed spaces for 1 or 2 bedrooms. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: U, assumption: "1 guest space per 2 homes, for more than 3 homes."}
+guest_parking_min_units: 4
+
+simplifications:
+  - "18 homes per acre. Open space and distance between buildings are not modeled, so these can be too high."

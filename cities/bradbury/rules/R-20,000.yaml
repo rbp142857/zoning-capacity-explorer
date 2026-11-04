@@ -1,0 +1,26 @@
+# Bradbury R-20,000. Every value cites the Bradbury Code of Ordinances, Title IX (Municode, through Ord. 400 of January 20, 2026, read 2026-11-02).
+zone: "R-20,000"
+name: "R-20,000 Single-Family Residential"
+family: single_family
+
+sources:
+  Z:
+    section: "Bradbury Code §§9.64.020 and 9.64.040"
+    url: https://library.municode.com/ca/bradbury/codes/code_of_ordinances?nodeId=COOR_TITIXDECO_PTVZODIALLAUS_CH64R-SIMIREZODI
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 20000, source: Z}
+min_lot_width_ft: {value: 80, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One single-family dwelling. State law (ADU, SB 9) is modeled separately; §9.85 Art. IV names this zone as single-family for SB 9."}
+
+setbacks:
+  front_ft: {value: 35, source: Z}
+  side_ft: {value: 15, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 28, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The chapter limits height to 28 ft, not stories; we fit 2."}
+
+simplifications:
+  - "Ridgeline and private street setbacks, and the SB 9 exclusion for very high fire hazard zones, aren't modeled. We have no fire map, so SB 9 can run high. Parking isn't modeled; the one-home limit binds."

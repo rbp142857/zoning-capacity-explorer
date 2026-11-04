@@ -1,0 +1,36 @@
+# Calabasas RMH. Every value cites the Calabasas Municipal Code, Title 17 (Municode, read 2026-11-02).
+zone: "RMH"
+name: "Residential, Mobilehome (RMH)"
+family: multifamily
+
+sources:
+  Z:
+    section: "CMC §17.13.020 Table 2-5"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE_ARTIIZODIALLAUS_CH17.13REDI
+  P:
+    section: "CMC Ch. 17.28, Table 3-11"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE_ARTIIISIPLPRDEST_CH17.28PALO
+
+residential_allowed: {value: true, source: Z, assumption: "Mobile homes only; the code applies this zone to the city's existing park."}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Table 2-2 marks mobilehome parks C."}
+lot_area_per_unit_sqft: {value: 5445, source: Z, assumption: "8 mobile homes per acre: 43,560 divided by 8."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 5445
+
+setbacks:
+  front_ft: {value: 30, source: Z}
+  side_ft: {value: 10, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 18, source: Z}
+max_stories: {value: 1, source: Z}
+lot_coverage: {value: 0.55, source: Z}
+parking_per_unit: {value: 2, source: P}
+guest_parking_per_unit: {value: 0.33, source: P}

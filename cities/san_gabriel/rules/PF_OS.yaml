@@ -1,0 +1,18 @@
+# San Gabriel PF/OS. Every value cites the San Gabriel Municipal Code, Chapter 153 (American Legal, read 2026-11-01).
+zone: "PF/OS"
+name: "Public Facilities/Open Space (PF/OS)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "SGMC §153.015 (Zones Established)"
+    url: https://codelibrary.amlegal.com/codes/sangabriel/latest/sangabriel_ca/0-0-0-25995
+
+residential_allowed: {value: false, source: Z, assumption: "We didn't read this zone's uses. We don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

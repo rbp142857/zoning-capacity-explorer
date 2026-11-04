@@ -1,0 +1,43 @@
+# Claremont CP. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "CP"
+name: "CP Commercial Professional"
+family: commercial
+
+sources:
+  Z:
+    section: "CMC §§16.051.010.A and 16.013.020"
+    url: https://ecode360.com/43834771
+
+residential_allowed: {value: true, source: Z, assumption: "Multiple-family homes need a conditional use permit, which we assume is granted."}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Multiple-family homes need a conditional use permit."}
+min_lot_area_sqft: {value: 12000, source: Z, assumption: "RM (3000)'s standards apply to multiple-family buildings here."}
+lot_area_per_unit_sqft:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 12000, value: 4000}
+      - {value: 3000}
+  source: Z
+  assumption: "One home per 3,000 sq ft. RM (3000)'s standards apply, so we also apply its small-lot limit."
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 0}
+  source: Z
+  assumption: "RM (3000)'s rule sends lots under 8,000 sq ft to RS (8000) standards, which CP doesn't allow as a use, so no homes (conservative)."
+small_lot_units_below_sqft: 8000
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 8, source: Z}
+  rear_ft: {value: 8, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+parking_per_unit: {value: 2.25, source: Z, assumption: "RM (3000)'s rate for homes of 720 sq ft or more. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: Z}
+
+simplifications:
+  - "Outdoor living area isn't modeled."

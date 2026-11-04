@@ -1,0 +1,32 @@
+# Beverly Hills R-1. Every value cites the Beverly Hills Municipal Code, Title 10, Chapter 3 (American Legal, through Ord. 26-O-2938 of 8-4-2026, read 2026-11-02).
+zone: "R-1"
+name: "One-Family Residential (R-1 and its R-1.X variants)"
+family: single_family
+
+sources:
+  Z:
+    section: "BHMC §10-3-501 and Art. 24 (§§10-3-2402 to 10-3-2406)"
+    url: https://codelibrary.amlegal.com/codes/beverlyhillsca/latest/beverlyhills_ca/0-0-0-16333
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§10-3-302's table marks single-family dwellings P."}
+max_units_per_lot: {value: 1, source: Z, assumption: "A private one-family residence. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z, assumption: "Set lot by lot in the city's records, which we don't have. We use 20 ft (assumed); the one-home limit binds."}
+  side_ft: {value: 9, source: Z, assumption: "§10-3-2406 refers to a 9 ft side setback; we didn't read its full lot-width rules (assumed). The one-home limit binds."}
+  rear_ft: {value: 20, source: Z, assumption: "30% of lot depth minus 9 ft in the Central Area (§10-3-2405), which we can't express. We use 20 ft (assumed); the one-home limit binds."}
+
+max_height_ft: {value: 28, source: Z, assumption: "Flat roofs north of Santa Monica Blvd in the Central Area; other roofs and areas differ."}
+max_stories: {value: 2, source: Z, assumption: "The code limits height and plate height, not stories; we fit 2."}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {share: 0.40, plus_sqft: 1500}
+  source: Z
+  assumption: "1,500 sq ft plus 40% of the site, for the Central Area (§10-3-2402)."
+
+simplifications:
+  - "These are the Central Area's standards. The Hillside (Art. 25) and Trousdale (Art. 26) standards aren't modeled, and we have no map of those areas. The one-home limit binds either way."

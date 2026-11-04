@@ -1,0 +1,43 @@
+# Artesia M-R. Every value cites the Artesia Municipal Code, Title 9, Chapter 2 (eCode360, code dated 2026-04-13, read 2026-11-02).
+zone: "M-R"
+name: "Multiple Residential (M-R)"
+family: multifamily
+
+sources:
+  Z:
+    section: "AMC §§9-2.2902 and 9-2.2904"
+    url: https://ecode360.com/43221493
+  P:
+    section: "AMC Art. 11, Residential Uses, subsection (a)(2)"
+    url: https://ecode360.com/43220263
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: mixed, source: Z, assumption: "Over two stories or 35 ft needs a conditional use permit."}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 1800, source: Z, assumption: "Rounded to the nearest whole home, with exactly .5 rounding up, per §9-2.2904(a)(2)."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1800
+density_rounding: {value: nearest_half_up, source: Z}
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.50, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 enclosed spaces for 2 bedrooms or fewer; 2.5 for 3 bedrooms, 3 for 4. We use 2. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.33, source: P, assumption: "1 guest space at 4 homes, plus 1 for each 3 after the fourth; we use about 1 per 3 homes."}
+guest_parking_min_units: 4
+
+simplifications:
+  - "Outdoor living space (200 sq ft per apartment up to 12, 100 sq ft after; 400 sq ft per condominium) is not modeled, so these can run high. Over two stories or 35 ft needs a conditional use permit; we use 2."

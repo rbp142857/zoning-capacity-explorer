@@ -1,0 +1,18 @@
+# Monrovia NC. Every value cites the Monrovia Municipal Code, Title 17 (American Legal, read 2026-11-01).
+zone: "NC"
+name: "Neighborhood Commercial (NC)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "MMC Ch. 17.08 (permitted uses)"
+    url: https://codelibrary.amlegal.com/codes/monrovia/latest/monrovia_ca/0-0-0-71610
+
+residential_allowed: {value: false, source: Z, assumption: "Multiple-family homes are marked LUE, allowed only where the Land Use Element says so, and we have no map of that. We don't count them (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

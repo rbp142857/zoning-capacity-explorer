@@ -1,0 +1,29 @@
+# Baldwin Park R1. Every value cites the Baldwin Park Code of Ordinances, Chapter 153 (American Legal, through legislation of 12-17-25, read 2026-11-02).
+zone: "R1"
+name: "Single-Family Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "BPC §§153.040.020 and 153.040.030"
+    url: https://codelibrary.amlegal.com/codes/baldwinpark/latest/baldwinpark_ca/0-0-0-9451
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§153.040.020's table marks single-family dwellings P."}
+min_lot_area_sqft: {value: 5000, source: Z, assumption: "SCAG writes R1 for both R-1 and R-1-7,500, whose 7,500 sq ft minimum, 40% coverage and 5.8 homes per acre are stricter. Those lots can run high."}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "The use table lists single-family homes only. The zone's intent, amended by Ord. 1503, mentions duplexes; we use one home (conservative) and record it as an open decision. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 27, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height to 27 ft, not stories; we fit 2."}
+lot_coverage: {value: 0.45, source: Z}
+min_open_space_share: {value: 0.20, source: Z, assumption: "Private open space of 20% of the net lot area."}
+
+simplifications:
+  - "Density is 8.7 homes per acre, which the one-home limit doesn't exceed on most lots. Garage parking isn't modeled; the one-home limit binds."

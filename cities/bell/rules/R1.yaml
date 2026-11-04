@@ -1,0 +1,27 @@
+# Bell R1. Every value cites the Bell Municipal Code, Title 17 (eCode360, through Ord. 1297, read 2026-11-02).
+zone: "R1"
+name: "R-1 Single-Family Residential"
+family: single_family
+
+sources:
+  Z:
+    section: "BMC §§17.16.020 and 17.16.040"
+    url: https://ecode360.com/44225857
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "One single-family dwelling is a principal use."}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One single-family home. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z, assumption: "25 ft, or the block's average if less. We use 25."}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+
+simplifications:
+  - "We found no coverage or floor area limit in this chapter. Garage parking isn't modeled; the one-home limit binds."

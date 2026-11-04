@@ -1,0 +1,33 @@
+# Lomita R1-7000. Every value cites the Lomita Municipal Code, Title XI, Chapter 1 (Municode, read 2026-11-01).
+zone: "R1-7000"
+name: "Residential, Low Density (R-1; R1-7000 in SCAG's table)"
+family: single_family
+
+sources:
+  Z:
+    section: "LMC §11-1.30.01 and §11-1.30.03, Tables 11-1.30.A and B (Ord. 891, June 2026)"
+    url: https://library.municode.com/ca/lomita/codes/code_of_ordinances?nodeId=MUCO_TITXIPLZO_CH1ZO_PT3REZO_ART30REZO
+  P:
+    section: "LMC Art. 66 (Off-Street Parking and Loading)"
+    url: https://library.municode.com/ca/lomita/codes/code_of_ordinances?nodeId=MUCO_TITXIPLZO_CH1ZO_PT6GESTDE_ART66OREPASTLO
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 11-1.30.A marks single-family residences P."}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "Table 11-1.30.A allows a single-family home here and no multifamily. Its 10.89 homes per acre governs subdividing. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}, source: Z, assumption: "10% of lot width, at least 3 ft, at most 5 ft (Table 11-1.30.B note 4)."}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 27, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height, not stories; we fit 2 at 27 ft."}
+max_far: {value: 0.60, source: Z}
+parking_per_unit: {value: 3, source: P, assumption: "3 spaces per home of up to four bedrooms and dens (§11-1.66.04). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "SCAG's Lomita table is from 2023, before Ord. 891 (June 2026), and uses older zone names. We read R1-7000 as R-1, whose minimum lot is 5,000 sq ft, and we don't know if the 7,000 still applies."
+  - "South of Pacific Coast Highway the limit is 16 ft and one story without a height variation permit; we don't map that, so those lots can run high."

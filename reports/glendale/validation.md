@@ -19,40 +19,40 @@ Homes **permitted** per year, by building type (ADU = accessory dwelling unit, S
 | YEAR | 2 to 4 | 5+ | ADU | SFD | Total |
 |---|---|---|---|---|---|
 | 2018 | 5 | 115 | 72 | 13 | 205 |
-| 2019 | 17 | 467 | 177 | 27 | 688 |
-| 2020 | 10 | 460 | 244 | 31 | 745 |
-| 2021 | 14 | 319 | 422 | 48 | 803 |
-| 2022 | 17 | 1210 | 684 | 57 | 1968 |
-| 2023 | 13 | 1100 | 583 | 49 | 1745 |
-| 2024 | 5 | 1042 | 561 | 47 | 1655 |
-| 2025 | 6 | 828 | 695 | 44 | 1573 |
+| 2019 | 17 | 352 | 111 | 17 | 497 |
+| 2020 | 2 | 257 | 165 | 13 | 437 |
+| 2021 | 6 | 90 | 268 | 19 | 383 |
+| 2022 | 3 | 892 | 262 | 9 | 1166 |
+| 2023 | 0 | 7 | 266 | 10 | 283 |
+| 2024 | 3 | 67 | 236 | 7 | 313 |
+| 2025 | 4 | 0 | 390 | 10 | 404 |
 
-Average per year, 2018–2025: **1,173 homes**, of which 693 in buildings of 5+ homes, 430 ADUs, and 11 in 2–4 unit buildings.
+Average per year, 2018–2025: **461 homes**, of which 222 in buildings of 5+ homes, 221 ADUs, and 5 in 2–4 unit buildings.
 
-Where homes in **5+ unit buildings** were permitted (100% of them matched to a lot: 706 by address, 3,388 by nearest lot, 1,447 by parcel number):
+Where homes in **5+ unit buildings** were permitted (100% of them matched to a lot: 189 by address, 966 by nearest lot, 625 by parcel number):
 
 | area | homes permitted | share |
 |---|---|---|
-| Modeled base zones | 3,434 | 62% |
-| Other zones not modeled (PDs, no zone found, ...) | 1,617 | 29% |
-| Downtown Specific Plan | 490 | 9% |
+| Modeled base zones | 1,257 | 71% |
+| Other zones not modeled (PDs, no zone found, ...) | 425 | 24% |
+| Downtown Specific Plan | 98 | 6% |
 
 Top zone codes for these homes:
 
 | zone_code | homes permitted |
 |---|---|
-| (not matched or no zone) | 1,617 |
-| R3050 | 1,348 |
-| SFMU | 590 |
-| R1250 | 550 |
-| DSP/GAT | 490 |
-| R1650 | 354 |
-| R2250 | 165 |
-| C3 | 160 |
+| (not matched or no zone) | 425 |
+| SFMU | 350 |
+| R3050 | 337 |
+| R1250 | 144 |
 | IMU-R | 141 |
-| C2 | 110 |
+| R1650 | 111 |
+| DSP/GAT | 98 |
+| R2250 | 73 |
+| C2 | 55 |
+| C3 | 40 |
 
-- In the zones this tool models, 5+ unit buildings added about **429 homes a year**. Our likely-to-redevelop estimate for those zones is **13,388 homes**, roughly **31 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
-- 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 11 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
-- Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. 62% of new apartment homes are in zones this tool models.
+- In the zones this tool models, 5+ unit buildings added about **157 homes a year**. Our likely-to-redevelop estimate for those zones is **11,279 homes**, roughly **72 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
+- 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 5 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
+- Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. 71% of new apartment homes are in zones this tool models.
 

@@ -1,0 +1,30 @@
+# San Fernando R-2. Every value cites the San Fernando City Code, Chapter 106 (Municode), read 2026-11-03.
+zone: R-2
+name: Medium Density Residential (R-2)
+family: multifamily
+sources:
+  Z: {section: 'SFCC Tables 106-42, 106-43.1 and 106-43.2', url: 'https://library.municode.com/ca/san_fernando/codes/code_of_ordinances?nodeId=CO_CH106ZO_ARTIIBAOVZO_DIV2REZOR'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family, two_unit, multifamily]
+  source: Z
+approval: {value: by_right, source: Z, assumption: 'Table 106-42 marks duplexes, triplexes, fourplexes, apartments and condominiums P. A single home on a lot that only fits one needs a conditional use permit (note 4).'}
+min_lot_area_sqft: {value: 7500, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 2562, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+    - {value: 1}
+  source: Z
+  assumption: A lot too small for one home keeps one home (assumed).
+small_lot_units_below_sqft: 2562
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: 'The table limits height, not stories; we fit 2 at 35 ft.'}
+lot_coverage: {value: 0.4, source: Z}
+simplifications: ['Parking wasn''t read, so small lots can run high.']

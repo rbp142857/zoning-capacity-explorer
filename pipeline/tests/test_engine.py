@@ -368,3 +368,11 @@ def test_city_can_exclude_sb9():
     r1h = compute_capacity(rules["R-1-H"], lot, a, state)
     assert "state_sb9" not in r1h.limits
     assert "sb9_excluded_by_city" in r1h.flags
+
+
+def test_buildable_multiple_caps_floor_area_by_the_lot_minus_yards():
+    rules = load_zone_rules(REPO / "cities" / "los_angeles" / "rules")["C2"]
+    a = EngineAssumptions(gross_sqft_per_unit=1000, parking_stall_sqft=300)
+    lot = Lot(area_sqft=10000, width_ft=100, depth_ft=100)
+    # Yards: 6 ft sides, 15 ft rear -> 88 x 85 = 7,480 buildable; x 1.5 = 11,220 sq ft.
+    assert envelope_limit(rules, lot, a) == 11

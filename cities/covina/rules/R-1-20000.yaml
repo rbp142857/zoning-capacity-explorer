@@ -1,0 +1,27 @@
+# Covina R-1-20,000. Every value cites the Covina Municipal Code, Title 17 (eCode360, read 2026-11-03).
+zone: "R-1-20,000"
+name: "R-1-20,000 Single-Family"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC Ch. 17.20, using R-1-7500's yards"
+    url: https://ecode360.com/46919555
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single-family dwellings, one per lot, are a permitted use."}
+max_units_per_lot: {value: 1, source: Z, assumption: "No more than one home per lot, besides an accessory dwelling unit. State law (ADU, SB 9) is modeled separately."}
+min_lot_area_sqft: {value: 20000, source: Z}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 10, source: Z, assumption: "The first-story side yard; §17.26.130 adds 2.5 ft per story above the first, not modeled."}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code allows two and one-half stories or 35 ft; we fit 2."}
+parking_per_unit: {value: 2, source: Z, assumption: "A two-car garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "We found no coverage limit in this chapter, so none is applied."

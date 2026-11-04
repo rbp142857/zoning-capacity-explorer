@@ -89,7 +89,7 @@ export function renderPrintSummary(el: HTMLElement, d: PrintData) {
     </div>
     <p class="print-foot">* Lots passing every redevelopment screen (zoning allows 2x the existing homes and 3+ more,
       building 50+ years old, building assessed below land value, not a condo, not in a landmark district, not in a
-      single-family zone); counts the city's or scenario's allowance only. A screen, not a forecast.<br>
+      single-family zone, not public or special land); counts the city's or scenario's allowance only. A screen, not a forecast.<br>
       Interactive version and method: ${esc(d.url)}<br>
       Data: LA County Assessor parcels, ${esc(place)} zoning (sources in METHODOLOGY.md), SCAG major transit stops.
       Specific-plan and planned-development lots are not modeled yet. Generated ${esc(d.generatedAt)}.</p>`;

@@ -1,0 +1,19 @@
+# Santa Clarita I. Every value cites the Santa Clarita Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "I"
+name: "Industrial (I)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "SCMC Ch. 17.42 (residential use types and parking)"
+    url: https://ecode360.com/48595809
+
+residential_allowed: {value: false, source: Z, assumption: "Dwellings are marked X in the use chart."}
+housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Dwellings are marked X in the use chart."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

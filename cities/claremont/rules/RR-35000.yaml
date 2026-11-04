@@ -1,0 +1,34 @@
+# Claremont RR-35000. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "RR-35000"
+name: "RR (35,000) Rural Residential"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §§16.007.010 and 16.007.040"
+    url: https://ecode360.com/43834091
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "One single-family dwelling per lot is permitted as a matter of right."}
+max_units_per_lot: {value: 1, source: Z, assumption: "One single-family dwelling per lot. State law (ADU, SB 9) is modeled separately."}
+min_lot_area_sqft: {value: 35000, source: Z}
+
+setbacks:
+  front_ft: {value: 60, source: Z, assumption: "60 ft for anything over 12 ft high; 40 ft for lower homes. We fit two stories, so we use 60."}
+  side_ft: {value: {pct_of_width: 0.15, min_ft: 15, max_ft: 1000}, source: Z, assumption: "Both side yards total 30% of width, at least 15 ft each."}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.2, source: Z}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 51666, share: 0.15, plus_sqft: 2000}
+      - {value: 9750}
+  source: Z
+  assumption: "The main home's floor area, including attached garages: 2,000 sq ft plus 15% of net lot area, up to the cap. We use gross lot area."
+parking_per_unit: {value: 2, source: Z, assumption: "2 covered spaces. None within ½ mile of a major transit stop (the AB 2097 path)."}
+

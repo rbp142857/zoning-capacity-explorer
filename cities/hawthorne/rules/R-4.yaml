@@ -1,0 +1,43 @@
+# Hawthorne R-4. Every value cites the Hawthorne Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "R-4"
+name: "R-4 Zone"
+family: multifamily
+
+sources:
+  Z:
+    section: "HMC Ch. 17.20d (R-4 Zone)"
+    url: https://ecode360.com/42647719
+  G:
+    section: "HMC §§17.21.020 and 17.21.025"
+    url: https://ecode360.com/42647933
+  P:
+    section: "HMC Ch. 17.10f (Parking)"
+    url: https://ecode360.com/42649022
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The table of uses lists multifamily dwellings of at least 3 homes with no use permit; it marks the uses that need one (CUP)."}
+lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "1,452 sq ft per home, or 30 per acre, for multifamily of at least 3 homes."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: G
+  assumption: "§17.21.020: a lot under 5,000 sq ft allows only a single-family home."
+small_lot_units_below_sqft: 5000
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3.5, max_ft: 5}, source: Z, assumption: "10% of lot width, at most 5 ft and at least 3.5 ft."}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 60, source: Z}
+max_stories: {value: 5, source: G, assumption: "§17.21.025 sets no story limit at 60 ft; we fit 5."}
+lot_coverage: {value: 0.80, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces for a two- or three-bedroom home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: P, assumption: "1 guest space per 4 homes at four or more homes."}
+guest_parking_min_units: 4
+
+simplifications:
+  - "Open space of 150 sq ft per home and the larger street-side yard are not modeled."

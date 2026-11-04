@@ -1,0 +1,37 @@
+# Bellflower R-3. Every value cites the Bellflower Municipal Code, Title 17 (eCode360, through Ord. 1461 of September 28, 2026, read 2026-11-02).
+zone: "R-3"
+name: "R-3 Multiple Residential"
+family: multifamily
+
+sources:
+  Z:
+    section: "BMC §§17.32.020 and 17.32.050 to 17.32.130"
+    url: https://ecode360.com/43108321
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Multiple family residential uses are permitted uses, subject to the chapter's standards."}
+min_lot_area_sqft: {value: 6000, source: Z}
+lot_area_per_unit_sqft: {value: 1980, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot of record too small for one home keeps one (§17.32.060)."
+small_lot_units_below_sqft: 1980
+
+setbacks:
+  front_ft: {value: 15, source: Z, assumption: "15 ft for two stories; 10 ft for one."}
+  side_ft: {value: 8, source: Z, assumption: "8 ft for living and bedroom walls; 5 ft for secondary walls. We use 8 (conservative)."}
+  rear_ft: {value: 8, source: Z, assumption: "8 ft next to living areas and bedrooms; 5 ft for secondary walls. We use 8 (conservative)."}
+
+max_height_ft: {value: 40, source: Z}
+max_stories: {value: 3, source: Z}
+min_open_space_share: {value: 0.25, source: Z, assumption: "25% of the land in group open space (§17.32.110). Private open space, including 20% of the lot at 10 homes or fewer, isn't added, so these can run high."}
+parking_per_unit: {value: 2, source: Z, assumption: "2 enclosed spaces for the first two bedrooms; each further bedroom adds 1. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 1, source: Z, assumption: "1 uncovered visitor space per home."}
+
+simplifications:
+  - "The 2/3 rule for top stories isn't modeled."

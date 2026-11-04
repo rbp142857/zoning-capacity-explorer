@@ -1,0 +1,29 @@
+# Cerritos RS-5000. Every value cites the Cerritos Municipal Code, Title 22 (eCode360, read 2026-11-02).
+zone: "RS-5000"
+name: "RS-5000 Single-Family Residential"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §§22.22.300, 22.22.600 and 22.22.700"
+    url: https://ecode360.com/50811524
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "One single-family dwelling per lot is a permitted use."}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One dwelling per lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The chapter limits height to 35 ft, not stories; we fit 2 (conservative)."}
+lot_coverage: {value: 0.45, source: Z, assumption: "40%, raised to 45% for RS-5000 lots that meet the chapter's other standards."}
+max_far: {value: 0.70, source: Z}
+
+simplifications:
+  - "A rear yard area of 20% of the lot and parking aren't modeled; the one-home limit binds."

@@ -1,0 +1,19 @@
+# Bell Gardens O-S. Every value cites the Bell Gardens Municipal Code, Title 9 (eCode360, through 06-29-2026, read 2026-11-02).
+zone: "O-S"
+name: "Open Space (O-S)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "BGMC Ch. 9.08"
+    url: https://ecode360.com/48053888
+
+residential_allowed: {value: false, source: Z, assumption: "Only a caretaker's residence, which we do not count."}
+housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Table 9.08A allows only a caretaker's residence, as an accessory use."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

@@ -1,0 +1,18 @@
+# Azusa DWL. Every value cites the Azusa Development Code, Chapter 88 (Municode, read 2026-11-01).
+zone: "DWL"
+name: "West End Light Industrial District (DWL)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "Azusa Development Code §88.24.005 (Allowable Uses in Districts)"
+    url: https://library.municode.com/ca/azusa/codes/code_of_ordinances?nodeId=CH88DECO_ART2URST_CH88.24DI_88.24.005ALUSDI
+
+residential_allowed: {value: false, source: Z, assumption: "We found only caretaker/manager units in the part of the use table we read, and don't count those as homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

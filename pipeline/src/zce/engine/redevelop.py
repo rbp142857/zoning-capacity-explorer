@@ -26,11 +26,21 @@ candidates will actually be rebuilt.
 from dataclasses import dataclass
 
 # Bit positions of the static screens in the mask (1 = passed).
-AGE, VALUE, OWNERSHIP, HISTORIC, ZONE = 1, 2, 4, 8, 16
-ALL_STATIC = AGE | VALUE | OWNERSHIP | HISTORIC | ZONE
+AGE, VALUE, OWNERSHIP, HISTORIC, ZONE, LAND = 1, 2, 4, 8, 16, 32
+ALL_STATIC = AGE | VALUE | OWNERSHIP | HISTORIC | ZONE | LAND
 SCREEN_NAMES = {AGE: "building_too_new", VALUE: "building_worth_more_than_land",
                 OWNERSHIP: "condo_many_owners", HISTORIC: "historic_district",
-                ZONE: "single_family_zone"}
+                ZONE: "single_family_zone", LAND: "public_or_special_land"}
+
+# Assessor use labels for land that rarely comes up for private rebuilding. Exempt
+# public land has no assessed value, so without this screen it looks like a vacant lot.
+# Lower case; labels are matched by their start because the Assessor's get cut off.
+SPECIAL_LAND_USES = ("government parcel", "utility commercial", "mineral processing",
+                     "cemeteries", "golf courses", "schools (private)")
+
+
+def is_special_land(use_description) -> bool:
+    return isinstance(use_description, str) and use_description.strip().lower().startswith(SPECIAL_LAND_USES)
 
 
 @dataclass(frozen=True)
@@ -55,6 +65,7 @@ def static_mask(
     is_condo: bool,
     overlays: tuple[str, ...],
     single_family_zone: bool = False,
+    special_land: bool = False,
 ) -> int:
     """Which static screens a lot passes, as a bit mask."""
     nan = lambda v: v is None or v != v  # noqa: E731  (NaN is the only value not equal to itself)
@@ -72,6 +83,8 @@ def static_mask(
         mask |= HISTORIC
     if not (s.exclude_single_family_zones and single_family_zone):
         mask |= ZONE
+    if not special_land:
+        mask |= LAND
     return mask
 
 

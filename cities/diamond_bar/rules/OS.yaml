@@ -1,0 +1,23 @@
+# Diamond Bar OS. Every value cites the Diamond Bar City Code, Title 22 (Municode, read 2026-11-03).
+zone: "OS"
+name: "OS Open Space/Conservation"
+family: single_family
+
+sources:
+  Z:
+    section: "DBCC §22.12.030 and Table 2-9"
+    url: https://library.municode.com/ca/diamond_bar/codes/code_of_ordinances?nodeId=CICO_TIT22DECO_ARTIIZODIALLAUS_CH22.12SPPUZODI
+
+residential_allowed: {value: true, source: Z, assumption: "One home per existing parcel, unless the county previously restricted building there. We can't tell which parcels are restricted, so this may count some with no right to build."}
+housing_types: {value: [single_family], source: Z}
+max_units_per_lot: {value: 1, source: Z}
+sb9_allowed: {value: false, source: Z, assumption: "An open space district, so we don't apply SB 9 (conservative)."}
+
+setbacks:
+  front_ft: {value: 0, source: Z, assumption: "Set through development review; not modeled."}
+  side_ft: {value: 0, source: Z, assumption: "Set through development review; not modeled."}
+  rear_ft: {value: 0, source: Z, assumption: "Set through development review; not modeled."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height to 35 ft, not stories; we fit 2."}
+parking_per_unit: {value: 2, source: Z}

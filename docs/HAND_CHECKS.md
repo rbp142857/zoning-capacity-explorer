@@ -364,3 +364,1869 @@ rule file is the zone alone (`R1`).
 
 - Density: under the 2-acre minimum (§12.06 C.2), so it keeps its **1** home. SB 9 left out in A2.
 - **Result: 3, ADU law.** Engine: 3 ✓
+
+## Los Angeles (apartment and commercial zones)
+
+LA caps floor area at a multiple of the "buildable area", the lot minus required
+yards (§12.21.1 A): 3 times in residential Height District 1, 1.5 times in
+commercial Height District 1, 6 times in Height District 2. 1XL allows 2 stories.
+Parking is surface parking at 1.5 spaces per home (rounded up per project) and 300
+sq ft per space, within reach of the ground left after the front yard. "Shape" is
+the lot's area over its width times depth.
+
+### L11. 2276 Ewing St · R2 · 7,502 sq ft (50 × 150.6)
+
+- Lot area: 2,500 per home (§12.09 C.4) = 3, but R2 allows 2 homes. Local: **2**. ADU law: 3.
+- **Result: 3, ADU law.** 3 homes today. Engine: 3 ✓
+
+### L12. 1925 W 35th St · RD1.5 · 6,907 sq ft (50 × 138.3)
+
+- Lot area: 1,500 per home (§12.09.1 C.4) → 4.6 → **4**.
+- Envelope: 40 × 108.3 × 0.999 = 4,327; × 3 = 12,981 sq ft → 12. Parking: 7 homes need 11 spaces, 2,479 + 3,300 = 5,779 of 6,158 sq ft; 8 don't fit.
+- **Result: 4, lot area.** Engine: 4 ✓
+
+### L13. 1501 S Dunsmuir Ave · RD2 · 6,100 sq ft (50 × 122.1)
+
+- Lot area: 2,000 per home → **3**. Envelope: 40 × 92.1 × 0.999 × 3 = 11,043 sq ft → 10.
+- **Result: 3, lot area.** Engine: 3 ✓
+
+### L14. 7124 Flight Ave · R3 · 7,201 sq ft (60 × 120)
+
+- Lot area: 800 per home (§12.10 C.4) → 9. Envelope: 48 × 90 × 3 = 12,960 sq ft → 12.
+- Parking: 6,301 sq ft of ground. 7 homes: 2,479 + 3,300 = 5,779 fits. 8 homes: 2,833 + 3,600 = 6,433 doesn't → **7**.
+- **Result: 7, parking.** 6 homes today. Engine: 7 ✓
+
+### L15. 1069 S Cloverdale Ave · R3, HPOZ · 6,905 sq ft (50 × 138.1)
+
+- Lot area: 800 per home → 8.6 → **8**. 1,107 ft from transit: no parking.
+- **Result: 8, lot area.** Engine: 8 ✓
+
+### L16. 2100 N Cahuenga Blvd · R3-1XL · 6,638 sq ft (50 × 132.9)
+
+- Lot area: **8**. Envelope: 40 × 102.9 × 0.999 × 2 stories = 8,223 sq ft → 7.
+- Parking: 5,889 sq ft of ground. 6 homes: 3,188 + 2,700 = 5,888 just fits; 7 don't → **6**.
+- **Result: 6, parking.** Engine: 6 ✓
+
+### L17. 11124 La Maida St · R4-2 · 7,749 sq ft (50 × 155.1)
+
+- Lot area: 400 per home (§12.11 C.4) → 19. Envelope: 6 times buildable, rear yard 18 ft: 40 × 122.1 × 0.999 × 6 = 29,281 sq ft → 27.
+- Parking: 7,000 sq ft of ground. 10 homes: 1,771 + 4,500 fits; 11 homes: 1,948 + 5,100 doesn't → **10**.
+- **Result: 10, parking.** Engine: 10 ✓
+
+### L18. 7802 Foothill Blvd · C2-1VL · 10,466 sq ft (79.4 × 172.1)
+
+- Lot area: R4's 400 per home (§12.14 C.3) → 26. Envelope: no front yard, R4 side yards at 3 stories (6 ft), 15 ft rear: 67.4 × 157.1 × 0.766 = 8,110 sq ft buildable; × 1.5 = 12,165 → 11.4 → **11**. Parking fits 12.
+- **Result: 11, envelope.** Vacant today. Engine: 11 ✓
+
+### L19. 4801 S Broadway · C2-1VL · 6,740 sq ft (67.4 × 100.1)
+
+- Envelope: 55.4 × 85.1 × 0.999 × 1.5 = 7,065 sq ft → 6.6 → **6**. Near transit: no parking.
+- **Result: 6, envelope.** Engine: 6 ✓
+
+### L20. 4615 Lankershim Blvd · C2-2 · 6,340 sq ft (50 × 139.9)
+
+- Lot area: 15. Envelope: 40 × 121.9 × 0.906 × 6 = 26,518 sq ft → 24.
+- Parking: 10 homes: 1,771 + 4,500 = 6,271 of 6,340 fits; 11 don't → **10**.
+- **Result: 10, parking.** Engine: 10 ✓
+
+### L21. 17827 Chatsworth St · C1-1XL · 6,847 sq ft (50 × 137)
+
+- Lot area: R3's 800 per home (§12.13 C.4) → 8. Envelope: 40 × 112 × 1.0 × 1.5 = 6,717 sq ft → **6**. Parking fits 6 too; envelope comes first in the tie order.
+- **Result: 6, envelope.** Engine: 6 ✓
+
+### L22. 3731 S Grand Ave · CM-1 · 6,907 sq ft (48.3 × 143.2)
+
+- Lot area: R3's 800 per home (§12.17.1 C.2) → 8. Envelope: 38.6 × 128.2 × 0.999 × 1.5 = 7,420 sq ft → 7.0 → **6**, just short of 7.
+- **Result: 6, envelope.** Engine: 6 ✓
+
+### L23. 18428 Gault St · M1 · 14,995 sq ft (100 × 150)
+
+- M1 allows MR1 uses and C2's commercial uses, so homes only for a guard or caretaker.
+- **Result: 0, not allowed.** Engine: 0 ✓
+
+## Los Angeles (Chapter 1A, downtown and Boyle Heights)
+
+Read on zoning.lacity.gov. The zone string gives the Form District (floor area,
+yards), the Use District (are homes allowed) and the Density District (lot area
+per home). Base floor area only, without public benefit bonuses.
+
+### L24. 960 N Broadway · [DM5-SH2-5][CX1-FA] · 8,598 sq ft
+
+- FA density: floor area is the only limit. DM5 base FAR 6.0 (Sec. 2B.16.5) = 51,588 sq ft → 48.6 → **48**. Near transit, and Package A needs no parking.
+- **Result: 48, envelope.** Engine: 48 ✓
+
+### L25. 770 S Grand Avenue · [HB5-G1-5][CX3-FA] · 129,533 sq ft
+
+- HB5 base FAR 9.0 (Sec. 2B.20.5) = 1,165,797 sq ft → **1,097**.
+- **Result: 1,097, envelope.** 700 homes today. Engine: 1,097 ✓
+
+### L26. 3216 Eagle St · [H3-MU3-3][RX2-2L] · 5,112 sq ft
+
+- 2L density: 2 homes per lot (Div. 6B.1). H3 FAR 0.6 (Sec. 2B.3.3) = 3,067 sq ft → 2.9 → 2. Local: **2**. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### L27. 647 Camulos St · [VN1-MU3-3][RX2-15] · 5,600 sq ft
+
+- 15 density: 1,500 sq ft per home (Div. 6B.2) → 3.7 → **3**. VN1 FAR 1.0 (Sec. 2B.4.1) = 5,600 sq ft → 5.
+- **Result: 3, lot area.** Engine: 3 ✓
+
+### L28. 2624 E Cesar E Chavez Ave · [LM3-CC1-4][CX5-8] · 4,000 sq ft
+
+- 8 density: 800 per home → **5**. LM3 FAR 1.5 (Sec. 2B.9.3) = 6,000 sq ft → 5.6 → 5. A tie; lot area comes first.
+- **Result: 5, lot area.** Engine: 5 ✓
+
+### L29. 525 E 6th St · [MB2-G1-5][IX1-FA] · 6,019 sq ft
+
+- MB2 base FAR 3.0 (Sec. 2B.14.2) = 18,057 sq ft → 16.99 → **16**. No height limit, so floor area sets the answer.
+- **Result: 16, envelope.** Engine: 16 ✓
+
+## El Monte
+
+Checked against the El Monte Municipal Code, Title 17 (Municode, Ord. No. 3053),
+read November 1, 2026.
+
+### E1. 11421 Elmcrest St · R-1A · 9,546 sq ft (60 × 160)
+
+- Density: 1 home. Floor area: 8,001 to 12,000 sq ft row, 30% = 2,864 sq ft, above the 2,800 floor → 2.7 → 2.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### E2. 4726 Maxson Rd · R-1B · 13,472 sq ft (73 × 201.8)
+
+- Land per home: 8,720 sq ft at up to 100 ft of frontage → 1. Floor area: 25% = 3,368, below the 3,600 floor, so 3,600 → 3.4 → 3.
+- **Result: 4, SB 9.** 2 homes today. Engine: 4 ✓
+
+### E3. 12043 Cherrylee Dr · R-1C · 33,763 sq ft (133.4 × 254.9)
+
+- Density: 1. Floor area: over 20,000 sq ft, 20% = 6,753 sq ft → 6.4 → 6.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### E4. 11066 McGirk Ave · R-2 · 6,010 sq ft (60 × 102.4)
+
+- Land per home: 5,445 → **1**. FAR 0.40 = 2,404 sq ft → 2. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### E5. 3641 Durfee Ave · R-3 · 22,937 sq ft (81.4 × 283)
+
+- Land per home: 4,356 under 100 ft of frontage → 5.3 → **5**. FAR 0.50 = 11,469 sq ft → 10.
+- **Result: 5, lot area.** 13 homes stand here today, more than zoning now allows. Engine: 5 ✓
+
+### E6. 9743 Valley Blvd · R-4 · 42,178 sq ft (100.1 × 634.9)
+
+- Land per home: 1,740 → 24. FAR 0.60 = 25,307 sq ft → 23.8 → **23**.
+- **Result: 23, envelope.** Engine: 23 ✓
+
+### E7. 3141 Peck Rd · C-3 · 52,139 sq ft (195.5 × 367.3)
+
+- Land per home: 1,450 at 30,000 sq ft or more → 35. FAR 0.60 = 31,283 sq ft → 29.4 → **29**. 2,176 ft from transit: no parking.
+- **Result: 29, envelope.** Engine: 29 ✓
+
+### E8. 2822 Durfee Ave · MMU · 34,445 sq ft (140 × 248.9)
+
+- Land per home: 1,400 in the 30,001 to 35,000 sq ft row → 24.6 → **24**.
+- **Result: 24, lot area.** Engine: 24 ✓
+
+### E9. 12315 Dahlia Ave · M-1 · 11,605 sq ft (80.2 × 148)
+
+- The use matrix allows no homes in M-1.
+- **Result: 0, not allowed.** Engine: 0 ✓
+
+## Inglewood
+
+Checked against the Inglewood Municipal Code, Chapter 12 (eCode360), read
+November 1, 2026.
+
+### I1. 9120 S 8th Ave · R-1 · 8,505 sq ft
+
+- One home per family at 6,000 sq ft (Article 2). 2,015 ft from transit: no parking.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### I2. 3249 W 108th St · R-2 · 6,066 sq ft
+
+- 2,500 sq ft each for 1 or 2 homes (Article 3) → **2**. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### I3. 3714 W 105th St · R-2 · 14,588 sq ft
+
+- 3 homes need 8,000 sq ft, and each extra home 3,000 more: 4 at 11,000, 5 at 14,000, 6 at 17,000 → **5**.
+- **Result: 5, lot area.** Engine: 5 ✓
+
+### I4. 500 E Fairview Blvd · R-2A · 12,771 sq ft
+
+- 3 homes need 9,000 sq ft, and each extra home 4,000 more: 4 at 13,000 → **3**.
+- **Result: 3, lot area.** 4 homes stand here today. Engine: 3 ✓
+
+### I5. 134 E Spruce Ave · R-3 · 9,625 sq ft (50 wide)
+
+- Under 12,000 sq ft: 1,400 per home (Article 4) → 6.9 → **6**.
+- **Result: 6, lot area.** Engine: 6 ✓
+
+### I6. 709 Venice Way · R-3 · 18,503 sq ft (80 wide)
+
+- At least 12,000 sq ft and 80 ft wide: 1,100 per home → 16.8 → **16**.
+- **Result: 16, lot area.** Engine: 16 ✓
+
+### I7. 816 N Market St · R-4 · 12,476 sq ft (50 wide)
+
+- Big enough but under 80 ft wide, so 1,250 per home (Article 5) → 9.98 → **9**.
+- **Result: 9, lot area.** Engine: 9 ✓
+
+### I8. 910 Myrtle Ave · R-M · 12,260 sq ft (52.5 wide)
+
+- Residential-only follows R-3; under 80 ft wide: 1,400 per home → 8.8 → **8**.
+- **Result: 8, lot area.** Engine: 8 ✓
+
+### I9. 400 E Kelso St · C-2 · 31,107 sq ft
+
+- No new dwellings in C-2 outside one mixed-use area around Crenshaw and Manchester, which this lot isn't in.
+- **Result: 0, not counted.** Engine: 0 ✓
+
+## West Hollywood
+
+Checked against the West Hollywood Municipal Code, Title 19 (eCode360), read
+November 1, 2026. Most of the city is within ½ mile of a major transit stop, so
+parking rarely applies.
+
+### W1. 419 Huntley Dr · R1-B · 6,004 sq ft
+
+- Table 2-4: 2 homes under 8,500 sq ft. FAR 0.5 = 3,002 sq ft → 2.8 → 2.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### W2. 1249 N Ogden Dr · R2 · 7,484 sq ft
+
+- Table 2-4: 3 homes from 4,000 to 7,999 sq ft → **3**.
+- **Result: 3, lot area.** 10 homes stand here today, far more than zoning now allows. Engine: 3 ✓
+
+### W3. 1015 N Stanley Ave · R3-B · 6,495 sq ft
+
+- 1,210 sq ft per home (Table 2-3) → 5.4 → **5**.
+- **Result: 5, lot area.** 9 homes today. Engine: 5 ✓
+
+### W4. 1217 Havenhurst Dr · R4-A · 15,240 sq ft
+
+- 872 sq ft per home → 17.5 → **17**.
+- **Result: 17, lot area.** 19 homes today. Engine: 17 ✓
+
+### W5. 1342 N Crescent Heights Blvd · R4-B · 14,983 sq ft
+
+- 872 sq ft per home → 17.2 → **17**.
+- **Result: 17, lot area.** Engine: 17 ✓
+
+### W6. 1019 N Fairfax Ave · CC1 · 6,672 sq ft
+
+- FAR 1.5 (Table 2-6) = 10,008 sq ft → 9.4 → **9**. No density limit.
+- **Result: 9, envelope.** Engine: 9 ✓
+
+### W7. 7906 Santa Monica Blvd · CC2 · 9,375 sq ft
+
+- FAR 2.0 = 18,750 sq ft → 17.6 → **17**.
+- **Result: 17, envelope.** Engine: 17 ✓
+
+### W8. 369 N Robertson Blvd · CN1 · 13,343 sq ft
+
+- FAR 1.0 = 13,343 sq ft → 12.6 → **12**.
+- **Result: 12, envelope.** Engine: 12 ✓
+
+### W9. 500 N Doheny Dr · CN2 · 5,174 sq ft
+
+- Mixed-use projects aren't allowed in CN2 (Table 2-5 note 12).
+- **Result: 0, not allowed.** Engine: 0 ✓
+
+## Monrovia
+
+Checked against the Monrovia Municipal Code, Title 17 (American Legal), read
+November 1, 2026.
+
+### M1. 438 Kirkwood Ln · RL · 7,093 sq ft
+
+- One home. Floor area (§17.12.020): 40% of the first 5,000 + 35% of the rest = 2,000 + 733 = 2,733 sq ft → 2.6 → 2.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### M2. 523 W Hillcrest Blvd · RE · 19,141 sq ft
+
+- Floor area: 2,000 + 1,750 + 15% of 9,141 = 5,121 sq ft → 4.8 → 4.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### M3. Unaddressed lot · RF · 55,280 sq ft
+
+- Floor area (§17.12.010): 35% of 20,000 + 10% of 35,280 = 10,528 sq ft → 9.9 → 9.
+- **Result: 4, SB 9.** Engine: 4 ✓
+
+### M4. 816 Bonita St · RM3500 · 8,252 sq ft
+
+- 3,500 per home → 2.4 → **2**. FAR 40% = 3,301 sq ft → 3. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### M5. 1703 Alamitas Ave · RM4000 · 16,421 sq ft
+
+- 4,000 per home → 4.1 → **4**. FAR 40% = 6,568 sq ft → 6.
+- **Result: 4, lot area.** Engine: 4 ✓
+
+### M6. 856 W Olive Ave · RM/RH · 17,297 sq ft (142.6 × 179.4)
+
+- Over 15,000 sq ft: no density limit, FAR 75% = 12,973 sq ft → 12.
+- Parking: 14,887 sq ft of ground left after the front yard. 11 homes: 5,844 + 28 spaces (8,400) fits. 12 homes: 6,375 + 30 spaces (9,000) doesn't → **11**.
+- **Result: 11, parking.** Engine: 11 ✓
+
+### M7. 526 Fano St D · RM/RH · 2,753 sq ft
+
+- Under 15,000 sq ft and under 5,000: 1 home at 2,500 sq ft each. ADU law: 3.
+- **Result: 3, ADU law.** Engine: 3 ✓
+
+### M8. 543 W Duarte Rd · RH · 23,281 sq ft
+
+- Over 15,000 sq ft: FAR 75% = 17,461 sq ft → 16.4 → **16**. Near transit: no parking.
+- **Result: 16, envelope.** Engine: 16 ✓
+
+### M9. 950 W Foothill Blvd · NC · 19,596 sq ft
+
+- Homes in NC are marked LUE (only where the Land Use Element allows). We have no map, so none counted.
+- **Result: 0, not counted.** Engine: 0 ✓
+
+## Santa Clarita
+
+Checked against the Santa Clarita Municipal Code, Title 17 (eCode360), read
+November 1, 2026. Density is per acre, so land per home is 43,560 divided by it.
+
+### C1. 19771 Terri Dr · UR2 · 22,211 sq ft
+
+- Single-family only (Ch. 17.42) → 1 home. **Result: 4, SB 9.** Engine: 4 ✓
+
+### C2. 23453 Darcy Ln · UR1 · 9,287 sq ft
+
+- Single-family only → 1 home. **Result: 4, SB 9.** Engine: 4 ✓
+
+### C3. 15906 Pashley St · NU5 · 109,170 sq ft
+
+- Single-family only → 1 home; subdividing isn't modeled. **Result: 4, SB 9.** Engine: 4 ✓
+
+### C4. 26476 Township St · UR3 · 7,736 sq ft
+
+- 11 per acre = 3,960 sq ft per home → 1.95 → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### C5. 28494 N Herrera Street · UR4 · 31,130 sq ft
+
+- 18 per acre = 2,420 sq ft per home → 12.9 → **12**. **Result: 12, lot area.** 14 homes today. Engine: 12 ✓
+
+### C6. 27905 Tyler Ln · UR5 · 61,197 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 42.1 → **42**. **Result: 42, lot area.** 52 homes today. Engine: 42 ✓
+
+### C7. 23310 Cinema Dr · MX-C · 40,532 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 27.9 → **27**. **Result: 27, lot area.** Engine: 27 ✓
+
+### C8. 22432 12th St · MX-N · 4,869 sq ft
+
+- 18 per acre = 2,420 sq ft per home → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### C9. 17737 Sierra Hwy · CC · 14,644 sq ft
+
+- Homes not counted in CC (see METHODOLOGY). **Result: 0.** Engine: 0 ✓
+
+## Duarte
+
+Checked against the Duarte Development Code (Municode, through Ord. No. 927), read
+November 1, 2026.
+
+### D1 to D3. R1, R1A and R1D lots
+
+- 1835 Bradbury Ave, 2621 Starcrest Dr, 2228 High Mesa Dr: one home each (Table 2-1 and 2-3). **Result: 4, SB 9.** Engine: 4 ✓
+
+### D4. 1709 3rd St · R2 · 7,412 sq ft
+
+- Two-family at most (Table 2-1) → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### D5. 1392 3rd St · R3 · 6,424 sq ft (60.5 × 106.7)
+
+- 2,074 sq ft per home (Table 2-4) → 3.1 → **3**. Envelope: 50.5 × 56.7 × 0.995 × 3 stories = 8,547 sq ft → 8.
+- **Result: 3, lot area.** 4 homes today. Engine: 3 ✓
+
+### D6. 1709 Huntington Dr · R4 · 28,287 sq ft
+
+- 1,556 sq ft per home → 18.2 → **18**. **Result: 18, lot area.** Engine: 18 ✓
+
+### D7. 1475 Huntington Dr · CG · 16,967 sq ft
+
+- Table 2-5 lists no dwellings. **Result: 0, not allowed.** Engine: 0 ✓
+
+## Long Beach (residential zones)
+
+Checked against the Long Beach Municipal Code, Title 21 (Municode, Ch. 21.31), read
+November 1, 2026.
+
+### B1. 5507 E Pageantry St · R-1-N · 5,214 sq ft
+
+- One home. FAR 0.6 = 3,128 sq ft → 2.9 → 2. **Result: 4, SB 9.** Engine: 4 ✓
+
+### B2. 5521 E Sorrento Dr · R-1-S · 3,287 sq ft
+
+- One home. FAR 1.2 = 3,944 sq ft → 3.7 → 3. **Result: 4, SB 9.** Engine: 4 ✓
+
+### B3. 771 Freeman Ave · R-2-N · 6,754 sq ft
+
+- 2 per lot; 3,000 per home → **2**. FAR 0.6 = 4,052 sq ft → 3. ADU law: 3. **Result: 3, ADU law.** 4 homes today. Engine: 3 ✓
+
+### B4. 3901 E 4th St · R-3-T · 38,283 sq ft
+
+- Over 15,000 sq ft: 2,400 per home (Table 31-2B) → 15.95 → **15**. **Result: 15, lot area.** Engine: 15 ✓
+
+### B5. 3637 E Ocean Blvd · R-4-R · 11,217 sq ft
+
+- 3,201 to 15,000 sq ft: 1,500 per home → 7.5 → **7**. **Result: 7, lot area.** Engine: 7 ✓
+
+### B6. 2907 Claremore Ln · R-4-R · 25,626 sq ft
+
+- Over 15,000 sq ft: 1,450 per home → 17.7 → **17**. **Result: 17, lot area.** Engine: 17 ✓
+
+### B7. 3737 Atlantic Ave · R-4-N · 58,572 sq ft
+
+- Over 22,500 sq ft: 975 per home → 60.1 → **60**. **Result: 60, lot area.** 169 homes stand here today. Engine: 60 ✓
+
+## Lancaster (residential zones)
+
+Checked against the Lancaster Municipal Code, Ch. 17.08 (Municode), read November 1, 2026.
+
+### N1 to N3. R-7000, R-10,000 and RR-1 lots
+
+- 1132 Langhorn St, 1723 Granville Way, 43710 Ryckebosch Ln: one home each. **Result: 4, SB 9.** Engine: 4 ✓
+
+### N4. 45537 Corkwood Ave · MDR · 6,000 sq ft
+
+- 15 per acre = 2,904 sq ft per home → 2.07 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### N5. 902 W Newgrove St · HDR · 8,232 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 5.7 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+## Gardena
+
+Checked against the Gardena Municipal Code, Title 18 (eCode360), read November 1, 2026.
+
+### G1. 1911 W 160th St · R-1 · 5,006 sq ft
+
+- One home (§18.12.050). **Result: 4, SB 9.** Engine: 4 ✓
+
+### G2. 1658 W 166th St · R-3 · 7,500 sq ft
+
+- 17 per acre → 2.93, rounded up at .5 (§18.16.050) → **3**. **Result: 3, lot area.** Engine: 3 ✓
+
+### G3. 14807 S Normandie Ave · R-4 · 18,438 sq ft
+
+- Under ½ acre: 25 per acre → 10.6, rounded up → **11**. **Result: 11, lot area.** 19 homes today. Engine: 11 ✓
+
+### G4. 15210 S Ave A · R-4 · 30,894 sq ft
+
+- ½ acre or more: 30 per acre → 21.3 → **21**. **Result: 21, lot area.** Engine: 21 ✓
+
+### G5. 16321 S Western Ave · C3-HO-5 · 12,904 sq ft
+
+- HO-5: 50 per acre (Ch. 18.21) → 14.8 → **14**. **Result: 14, lot area.** Engine: 14 ✓
+
+### G6. 1957 W 144th St · C3-HO-6 · 9,774 sq ft (70 × 140)
+
+- HO-6: 70 per acre → 15.7 → 15. Parking at 1.5 per home, 6 stories: 14 homes 2,479 + 6,300 fits in 9,425 sq ft; 15 homes 2,656 + 6,900 doesn't → **14**.
+- **Result: 14, parking.** Engine: 14 ✓
+
+### G7. 1440 W 178th St · M1-HO-4 · 17,182 sq ft
+
+- HO-4: 30 per acre → 11.8 → **11**. **Result: 11, lot area.** Engine: 11 ✓
+
+## Norwalk (residential zones)
+
+Checked against the Norwalk Municipal Code, Ch. 17.05 (eCode360), read November 1, 2026.
+
+### O1. 13508 Leibacher Ave · R-1 · 5,196 sq ft
+
+- One home. FAR 0.40 = 2,078 sq ft → 1.96 → 1. **Result: 4, SB 9.** Engine: 4 ✓
+
+### O2. 11037 Barnwall St · R-2 · 15,059 sq ft
+
+- At 9,000 sq ft or more: 2,722 per home → 5.5 → **5**. FAR 0.45 = 6,777 sq ft → 6. **Result: 5, lot area.** 10 homes today. Engine: 5 ✓
+
+### O3. 12165 Pine St · R-3 · 6,791 sq ft
+
+- 5,000 to 6,999 sq ft: 3 homes. FAR 0.50 = 3,396 sq ft → 3. **Result: 3, lot area.** Engine: 3 ✓
+
+### O4. 12226 Sproul St · R-3 · 11,157 sq ft
+
+- 1,980 per home → 5.6 → **5**. FAR 0.50 → 5. **Result: 5, lot area.** Engine: 5 ✓
+
+### O5. 11433 Excelsior Dr · R-2 · 43,864 sq ft
+
+- 2,722 per home → 16.1 → **16**. **Result: 16, lot area.** Engine: 16 ✓
+
+## Santa Fe Springs (residential zones)
+
+Checked against the Santa Fe Springs Code of Ordinances, Ch. 155 (Municode), read November 1, 2026.
+
+### F1. 11030 Davenrich St · R-1 · 7,471 sq ft
+
+- One home (§155.066). Coverage 40% × 2 stories = 5,977 sq ft → 5.6 → 5. **Result: 4, SB 9.** Engine: 4 ✓
+
+### F2. 10800 Pioneer Blvd · R-3 · 193,333 sq ft
+
+- 25 per acre = 1,742.4 sq ft per home → 110.96 → **110**. **Result: 110, lot area.** 107 homes today. Engine: 110 ✓
+
+### F3. 12341 Heritage Springs Dr · R-3 · 59,585 sq ft
+
+- 1,742.4 sq ft per home → 34.2 → **34**. **Result: 34, lot area.** Engine: 34 ✓
+
+## Whittier (residential zones)
+
+Checked against the Whittier Municipal Code, Title 18 (Municode), read November 1, 2026.
+
+### H1. 14854 Carnell St · R-1 · 15,981 sq ft
+
+- One home (§18.16.020). **Result: 4, SB 9.** Engine: 4 ✓
+
+### H2. 13719 Mar Vista St · R-2 · 15,104 sq ft
+
+- 3,000 sq ft per home (§18.18.020) → 5.03 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### H3. 7703 Comstock Ave · R-3 · 7,035 sq ft
+
+- Over 7,000 sq ft: 1,750 per home (§18.20.020) → 4.02 → **4**. **Result: 4, lot area.** 8 homes today. Engine: 4 ✓
+
+### H4. 7727 Newlin Ave · R-4 · 5,965 sq ft
+
+- 7,000 sq ft or less: 2,050 per home (§18.22.020) → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### H5. 7723 Milton Ave · R-4 · 7,196 sq ft
+
+- 7,001 to 19,999 sq ft: 1,400 per home → 5.1 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### H6. 8930 Painter Ave · R-4 · 119,792 sq ft
+
+- 20,000 sq ft or more: 1,250 per home → 95.8 → **95**. **Result: 95, lot area.** Engine: 95 ✓
+
+## Arcadia (residential zones)
+
+Checked against the Arcadia Development Code (Municode), read November 1, 2026.
+
+### A1. 45 W Magna Vista Ave · R-1 · 11,655 sq ft
+
+- One home. Floor area: 4,375 + 35% of 1,655 = 4,954 sq ft → 4.7 → 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### A2. 462 Arbolada Dr · R (read as R-0) · 20,494 sq ft
+
+- One home. Floor area: 7,375 + 20% of 494 = 7,474 sq ft → 7. **Result: 4, SB 9.** Engine: 4 ✓
+
+### A3. 307 Genoa St · R-2 · 10,144 sq ft
+
+- 3,750 per home → 2.7 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### A4. 135 Diamond St · R-3 · 7,966 sq ft
+
+- 1,089 per home (40 per acre) → 7.3 → **7**. **Result: 7, lot area.** Engine: 7 ✓
+
+### A5. 437 S Baldwin Ave · R-3-R · 11,000 sq ft (50.1 × 219.9)
+
+- 1,450 per home → 7. Envelope: 18 ft, one story: 30.1 × 184.9 × 0.998 = 5,556 sq ft → 5.2 → **5**. **Result: 5, envelope.** Engine: 5 ✓
+
+## South Gate (NL and NM)
+
+Checked against the South Gate Municipal Code, Ch. 11.25 (eCode360), read November 1, 2026.
+
+### Q1. 8976 Annetta Ave · NL · 5,108 sq ft
+
+- One main home (see METHODOLOGY section 28). **Result: 4, SB 9.** Engine: 4 ✓
+
+### Q2. 9739 Elizabeth Ave · NM · 4,177 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 1.9 → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### Q3. 4100 Firestone Blvd · NM · 18,030 sq ft
+
+- 2,178 sq ft per home → 8.3 → **8**. **Result: 8, lot area.** Engine: 8 ✓
+
+## Culver City (residential zones)
+
+Checked against the Culver City Municipal Code, §17.210.020 (American Legal), read November 1, 2026.
+The city has no minimum parking (§17.320.020).
+
+### V1. 10826 Franklin Ave · R1 · 4,987 sq ft
+
+- One home. FAR 0.45 = 2,244 sq ft → 2.1 → 2. **Result: 4, SB 9.** Engine: 4 ✓
+
+### V2. 4174 Baldwin Ave · R2 · 6,755 sq ft
+
+- 2 per parcel. Floor area: 1,500 + 40% = 4,202 sq ft → 3.95 → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### V3. 3845 Sawtelle Blvd · RLD · 6,299 sq ft
+
+- 35 per acre = 1,244.57 sq ft per home → 5.06 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### V4. 4450 Overland Ave · RMD · 9,504 sq ft
+
+- 50 per acre = 871.2 sq ft per home → 10.9 → **10**. **Result: 10, lot area.** Engine: 10 ✓
+
+### V5. 6060 Buckingham Pkwy · RHD · 35,407 sq ft
+
+- 70 per acre = 622.29 sq ft per home → 56.9 → **56**. **Result: 56, lot area.** 50 homes today. Engine: 56 ✓
+
+## Montebello (residential zones)
+
+Checked against the Montebello Municipal Code, Exhibit 17.10.020 (Municode), read November 1, 2026.
+
+### T1, T2. 1319 Via Camille (R-1), 641 N Maple Ave (R-A)
+
+- One home per lot. **Result: 4, SB 9.** Engine: 4 ✓
+
+### T3. 817 Palm Pl · R-2 · 4,982 sq ft
+
+- 3,000 per home → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### T4. 216 N 4th St · R-3 · 6,753 sq ft
+
+- 3,000 per home → **2**. ADU law: 3. **Result: 3, ADU law.** 4 homes today. Engine: 3 ✓
+
+### T5. 633 N Taylor Ave · R-4 · 48,727 sq ft
+
+- 2,000 per home → 24.4 → **24**. **Result: 24, lot area.** 41 homes today. Engine: 24 ✓
+
+## Rolling Hills Estates (R-A zones)
+
+Checked against the Rolling Hills Estates Municipal Code, Ch. 17.06 (Municode), read November 1, 2026.
+
+### R1 to R3. 78 Dapplegray Ln, 5228 Bluemound Rd, 2 Strawberry Ln
+
+- §17.06.050 allows one dwelling per lot. SB 9 path: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+## West Covina (R-1, R-A and MF zones)
+
+Checked against the West Covina Municipal Code, Ch. 26 Art. II (Municode), read November 1, 2026.
+
+### W-1. 521 S Astell Ave · R-1 · 9,408 sq ft
+
+- One home. Floor area: 3,100 + 20% of 1,908 = 3,482 sq ft → 3.3 → 3. **Result: 4, SB 9.** Engine: 4 ✓
+
+### W-2. 3330 E Holt Ave · R-A · 15,109 sq ft
+
+- One home. Floor area: 3,600 + 20% of 5,109 = 4,622 sq ft → 4.3 → 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### W-3. 1912 Tanglewood Dr · MF-8 · 5,724 sq ft
+
+- 8 per net acre = 5,445 sq ft per home → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### W-4. 1799 Aspen Village Way · MF-15 · 28,350 sq ft
+
+- 15 per acre = 2,904 sq ft per home → 9.8 → **9**. **Result: 9, lot area.** Engine: 9 ✓
+
+### W-5. 223 S Bandy Ave · MF-20 · 6,759 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 3.1 → **3**. **Result: 3, lot area.** Engine: 3 ✓
+
+### W-6. 2117 E Garvey Ave N · MF-45 · 6,200 sq ft
+
+- 45 per acre = 968 sq ft per home → 6.4 → **6**. **Result: 6, lot area.** Engine: 6 ✓
+
+## Westlake Village
+
+Rules: Westlake Village Municipal Code, Article 9, read on Municode 2026-11-01, plus the city's pages for the two mixed-use districts. The yards area is scaled by lot area ÷ (width × depth), as the engine does for irregular lots.
+
+### WL-1. 6156 Hedgewall Dr · R-1 · 8,256 sq ft, 75.1 × 110.5 ft
+
+- One home (§9.5.020) → **1**.
+- Sides 10% of width = 7.51 ft each; front 20, rear 25. (75.1 − 15.02) × (110.5 − 45) = 3,935; × 0.995 = 3,915; × 2 stories = 7,830 ÷ 1,062.5 = 7.4 → 7.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### WL-2. 6148 Hedgewall Dr · R-1 · 7,803 sq ft, 71.0 × 110.5 ft
+
+- Under the 8,000 sq ft minimum, but a lot that exists keeps its one home → **1**.
+- (71 − 14.2) × 65.5 = 3,720; × 0.995 = 3,700; × 2 = 7,400 ÷ 1,062.5 = 6.96 → 6.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### WL-3. 3956 Freshwind Cir · RPD · 10,390 sq ft, 112.0 × 137.4 ft
+
+- Homes follow the General Plan designation, which we have no map of: one per lot (assumed) → **1**.
+- Sides capped at 10 ft: (112 − 20) × 92.4 = 8,501; × 0.675 = 5,739; × 2 = 11,478 ÷ 1,062.5 = 10.8 → 10.
+- ADU law: 3. No SB 9 (conservative; see methodology). **Result: 3, ADU law.** Engine: 3 ✓
+
+### WL-4. 1 Sherwood Dr · MHP · 5,595 sq ft, 75.5 × 94.6 ft
+
+- §9.7.040: one home per mobile home lot → **1**.
+- Front 15, others 5: 65.5 × 74.6 = 4,886; × 0.783 = 3,827; × 1 story ÷ 1,062.5 = 3.6 → 3.
+- ADU law: 3, which likely runs high here. **Result: 3, ADU law.** Engine: 3 ✓
+
+### WL-5. 5711 Corsa Ave · Mixed-Use Corsa · 56,092 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 25.75 → **25**.
+- 40% coverage = 22,437 × 3 stories = 67,310 ÷ 1,062.5 = 63.
+- **Result: 25, lot area.** Engine: 25 ✓
+
+### WL-6. 5701 Lindero Canyon Rd · Mixed-Use Lindero · 330,577 sq ft
+
+- 32 per acre = 1,361.25 sq ft per home → 242.85 → **242**.
+- 40% coverage = 132,231 × 3 = 396,692 ÷ 1,062.5 = 373.
+- **Result: 242, lot area.** Engine: 242 ✓
+
+## Alhambra
+
+Rules: Alhambra Municipal Code, Title 23, read on American Legal 2026-11-01. SCAG's R-1, R-2 and R-3 are read as RL, RM and RH (see methodology).
+
+### AL-1. 2600 Orange Grove Ave · R-1 (RL) · 6,137 sq ft
+
+- One detached home → **1**. FAR 0.40 = 2,455 ÷ 1,062.5 = 2.3 → 2.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AL-2. 2040 S 3rd St · R-2 (RM) · 7,015 sq ft
+
+- 18 per acre = 2,420 sq ft per home → 2.9 → **2**.
+- 45% coverage = 3,157 × 3 stories = 9,470 ÷ 1,062.5 = 8.9 → 8.
+- ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AL-3. 1850 Garvey Ave · R-3 (RH) · 7,925 sq ft
+
+- Under 10,000 sq ft: 24 per acre = 1,815 sq ft per home → 4.4 → **4**. **Result: 4, lot area.** Engine: 4 ✓
+
+### AL-4. 2916 W Ramona Rd · R-3 (RH) · 12,451 sq ft, 103.2 × 122.1 ft
+
+- At 10,000 sq ft and up: 43 per acre = 1,013 sq ft per home → 12.3 → 12.
+- Parking: 12,451 − front strip (15 × 103.2 × 0.988 = 1,530) = 10,921 of ground. 11 homes: 2,338 + 28 spaces (8,400) = 10,738 fits. 12 homes: 2,550 + 30 spaces (9,000) doesn't → **11**.
+- **Result: 11, parking.** Engine: 11 ✓ (The lot has 12 homes today, so no net new.)
+
+### AL-5. 150 N Garfield Ave · CBD · 11,332 sq ft
+
+- 64 per acre = 680.6 sq ft per home → 16.6 → 16.
+- Parking at 1.5 + 0.3 guest: 15 homes: 3,188 + 27 spaces (8,100) = 11,288 fits. 16 homes: 3,400 + 29 spaces (8,700) doesn't → **15**.
+- **Result: 15, parking.** Engine: 15 ✓
+
+### AL-6. 1129 E Main St · EMC · 7,410 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 5.1 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+## Palmdale
+
+Rules: Palmdale Municipal Code, Title 17, read on eCode360 2026-11-01.
+
+### PA-1. 4648 Paseo Hermoso · SFR 3 · 7,755 sq ft
+
+- One home → **1**. 50% coverage = 3,877 × 2 stories = 7,755 ÷ 1,062.5 = 7.3 → 7.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### PA-2. 40332 Tesoro Ln · SFR 1 · 24,183 sq ft
+
+- One home → **1**. 30% coverage = 7,255 × 2 = 14,510 ÷ 1,062.5 = 13.7 → 13.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### PA-3. 2637 E Avenue Q4 · RN 1 · 11,402 sq ft
+
+- 10 per acre = 4,356 sq ft per home → 2.6 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### PA-4. 39039 Yucca Tree St · RN 2 · 11,204 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 5.1 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### PA-5. 1623 Watling Dr · RN 3 · 19,348 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 13.3 → **13**. **Result: 13, lot area.** Engine: 13 ✓
+
+### PA-6. 38533 11th St E · RN 4 · 22,134 sq ft
+
+- 50 per acre = 871.2 sq ft per home → 25.4 → **25**. **Result: 25, lot area.** Engine: 25 ✓
+
+### PA-7. 1358 E Palmdale Blvd · MU 1 · 17,794 sq ft
+
+- 20 per acre = 2,178 sq ft per home → 8.2 → **8**. **Result: 8, lot area.** Engine: 8 ✓ (This lot fronts Palmdale Boulevard, where the frontage must hold nonresidential space, so it can run high.)
+
+### PA-8. 803 W Palmdale Blvd · MEDFX · 21,802 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 15.01 → **15**. **Result: 15, lot area.** Engine: 15 ✓
+
+## Carson
+
+Rules: Carson Municipal Code, Article IX, read on eCode360 2026-11-01. A fraction of one-half or more permits another home (§9124.1).
+
+### CA-1. 559 E 169th St · RS · 5,530 sq ft
+
+- One dwelling per lot (§9124.1) → **1**. Sides 5 ft, front 20, rear 15: 44.9 × 65.7 = 2,950 × 2 stories = 5,900 ÷ 1,062.5 = 5.6 → 5.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-2. 118 W 234th St · RM-8 · 6,424 sq ft
+
+- 8 per acre = 5,445 sq ft per home → 1.2 → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CA-3. 750 Alondra Blvd · RM-12 · 12,158 sq ft
+
+- 12 per acre = 3,630 sq ft per home → 3.35 → **3**. **Result: 3, lot area.** Engine: 3 ✓
+
+### CA-4. 21105 S Santa Fe Ave · RM-25 · 8,772 sq ft
+
+- 25 per acre = 1,742.4 sq ft per home → 5.03 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### CA-5. 2543 E Carson St · RM-25 · 39,819 sq ft
+
+- 39,819 ÷ 1,742.4 = 22.85, and the fraction rounds up → **23**. **Result: 23, lot area.** Engine: 23 ✓
+
+### CA-6. 714 E Carson St · MU-CS · 51,680 sq ft
+
+- 35 per acre = 1,244.57 sq ft per home → 41.5, which rounds up → **42**. **Result: 42, lot area.** Engine: 42 ✓ (86 homes today, so no net new.)
+
+### CA-7. 440 E Sepulveda Blvd · MU-SB · 18,595 sq ft, 94 ft wide
+
+- 25 per acre = 1,742.4 sq ft per home → 10.67, which rounds up → **11**. **Result: 11, lot area.** Engine: 11 ✓ (Under the 100 ft frontage for multiple-family, so the engine flags it.)
+
+## Azusa
+
+Rules: Azusa Development Code, Chapter 88, read on Municode 2026-11-01. Stories use the code's 2.5.
+
+### AZ-1. 1350 N Alameda Ave · NG3-Low · 8,518 sq ft, 71.9 × 122.0 ft
+
+- One home (no duplexes in the low column) → **1**.
+- Yards 25, 25, 5 each side: 61.9 × 72 = 4,457; × 0.971 = 4,328; × 2.5 = 10,820 ÷ 1,062.5 = 10.2 → 10.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AZ-2. 556 W 11th St · NG1-Low · 7,374 sq ft, 53.0 × 139.3 ft
+
+- One home → **1**. Yards 20, 20, 5: 43 × 99.3 = 4,270; × 0.999 = 4,265; × 2.5 = 10,662 ÷ 1,062.5 = 10.03 → 10.
+- SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AZ-3. 309 N Soldano Ave · NG2-Med · 7,569 sq ft
+
+- 15 per acre = 2,904 sq ft per home → 2.6 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AZ-4. 1325 N Azusa Ave · NG3-Mod · 20,271 sq ft
+
+- 27 per acre = 1,613.33 sq ft per home → 12.6 → **12**. **Result: 12, lot area.** Engine: 12 ✓
+
+### AZ-5. 246 N Azusa Ave · CAZ · 13,830 sq ft
+
+- 27 per acre → 8.6 → **8**. **Result: 8, lot area.** Engine: 8 ✓
+
+### AZ-6. 843 W Arrow Hwy · CAH · 32,862 sq ft
+
+- 27 per acre → 20.4 → **20**. **Result: 20, lot area.** Engine: 20 ✓
+
+## Lomita
+
+Rules: Lomita Municipal Code, Title XI, Chapter 1, read on Municode 2026-11-01 (Art. 30 as reenacted by Ord. 891, June 2026).
+
+### LO-1. 23826 Eshelman Ave · R1 (read as R-1) · 7,014 sq ft
+
+- One home → **1**. FAR 0.60 = 4,208 ÷ 1,062.5 = 3.96 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### LO-2. 25542 Pennsylvania Ave · A1 (read as A-1) · 8,647 sq ft
+
+- One home → **1**. FAR 0.60 = 5,188 ÷ 1,062.5 = 4.9 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### LO-3. 2269 243rd St · RVD2500 (read as R-2) · 7,072 sq ft
+
+- 2,500 sq ft per home → 2.8 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### LO-4. 2309 241st St · RVD1500 (read as R-3) · 11,827 sq ft
+
+- 1,500 sq ft per home → 7.9 → **7**. **Result: 7, lot area.** Engine: 7 ✓
+
+### LO-5. 25620 Oak St · RVD5000 (read as R-1) · 9,077 sq ft
+
+- One home → **1**. FAR 0.60 = 5,446 ÷ 1,062.5 = 5.1 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+## Hawthorne
+
+Rules: Hawthorne Municipal Code, Title 17, read on eCode360 2026-11-01 (includes Ord. 2263, June 2026).
+
+### HW-1. 12236 Ramona Ave · R-1 · 5,970 sq ft
+
+- One home → **1**. 50% coverage = 2,985 × 2 stories = 5,970 ÷ 1,062.5 = 5.6 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### HW-2. 3737 W 119th St · R-2 · 7,832 sq ft
+
+- At least 7,000 sq ft, so a duplex → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### HW-3. 3747 W 119th St · R-2 · 5,566 sq ft
+
+- Under the 7,000 sq ft duplex minimum → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### HW-4. 12220 Grevillea Ave · R-3 · 7,876 sq ft
+
+- 1,452 sq ft per home → 5.4 → **5**. **Result: 5, lot area.** Engine: 5 ✓ (9 homes today, so no net new.)
+
+### HW-5. 4510 W 120th St · R-3 · 4,682 sq ft
+
+- Under 5,000 sq ft, only a single-family home (§17.21.020) → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### HW-6. 3833 W 139th St · R-4 · 8,322 sq ft
+
+- 1,452 sq ft per home → 5.7 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### HW-7. 3831 W Rosecrans Ave · C-3 with Mixed Use Overlay · 15,141 sq ft
+
+- 30 per acre = 1,452 sq ft per home → 10.4 → **10**. **Result: 10, lot area.** Engine: 10 ✓
+
+## San Gabriel
+
+Rules: San Gabriel Municipal Code, Chapter 153, read on American Legal 2026-11-01, plus two city handouts where noted.
+
+### SG-1. 711 Los Olivos Dr · R-1 · 8,842 sq ft
+
+- One home → **1**. FAR 0.35 (handout) = 3,095 ÷ 1,062.5 = 2.9 → 2. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### SG-2. 305 N San Marino Ave · R-1A · 11,505 sq ft
+
+- One home per 5,500 sq ft → 2.09 → **2**. FAR 0.35 = 4,027 ÷ 1,062.5 = 3.8 → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### SG-3. 1708 Jackson Ave · R-2 · 8,693 sq ft
+
+- Over 7,920 sq ft; 3,960 sq ft per home → 2.2 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### SG-4. 266 W Bencamp St · R-2 · 6,518 sq ft
+
+- Under 7,920 sq ft, one home only (§153.082) → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### SG-5. 1244 S Ramona St · R-3 · 6,920 sq ft
+
+- 1,742 sq ft per home → 3.97 → **3**. **Result: 3, lot area.** Engine: 3 ✓
+
+### SG-6. 1240 S Ramona St · R-3 · 22,916 sq ft
+
+- 1,742 sq ft per home → 13.2 → **13**. **Result: 13, lot area.** Engine: 13 ✓
+
+### SG-7. 235 S Arroyo Dr · R-3 A (read as R-3) · 10,482 sq ft
+
+- 1,742 sq ft per home → 6.02 → **6**. **Result: 6, lot area.** Engine: 6 ✓
+
+## Monterey Park
+
+Rules: Monterey Park Municipal Code, Title 21, read on eCode360 2026-11-01.
+
+### MP-1. 1890 Verde Vista Dr · R-1 · 5,550 sq ft
+
+- One home → **1**. Under 6,000 sq ft, FAR 0.50 = 2,775 ÷ 1,062.5 = 2.6 → 2. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### MP-2. 546 Casuda Canyon Dr · R-1 · 8,029 sq ft
+
+- One home → **1**. FAR 0.40 = 3,212 ÷ 1,062.5 = 3.02 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### MP-3. 577 Casuda Canyon Dr · R-1 · 14,036 sq ft
+
+- One home → **1**. Over 10,000 sq ft, FAR 0.35 = 4,913 ÷ 1,062.5 = 4.6 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### MP-4. 101 Campanita Ct · R-2 · 7,201 sq ft
+
+- 16 per acre = 2,722.5 sq ft per home → 2.6 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### MP-5. 1581 College View Dr · R-3 · 8,238 sq ft
+
+- 25 per acre = 1,742.4 sq ft per home → 4.7 → **4**. **Result: 4, lot area.** Engine: 4 ✓ (5 homes today, so no net new.)
+
+### MP-6. 1501 S Atlantic Blvd · R-3 · 22,604 sq ft
+
+- 25 per acre → 12.97 → **12**. **Result: 12, lot area.** Engine: 12 ✓
+
+## Agoura Hills
+
+Rules: Agoura Hills Municipal Code, Article IX, read on Municode 2026-11-02. Each home uses 1,062.5 sq ft of building. Parking uses 2.5 spaces per home at 300 sq ft each.
+
+### AH-1. 6309 Aquarius Ave · RS · 6,671 sq ft
+
+- One home → **1**. Under 10,000 sq ft: 50% coverage = 3,336; yards of 20, 20 and 9 ft leave (61.2 − 18) × (113.3 − 40) × 0.962 = 3,046, which binds. Two stories = 6,092 ÷ 1,062.5 = 5.7 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AH-2. 4014 Patrick Henry Pl · RS · 12,760 sq ft
+
+- One home → **1**. Over 10,000 sq ft: 35% coverage = 4,466, which binds. Two stories = 8,932 ÷ 1,062.5 = 8.4 → 8. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AH-3. 4965 Kingsgate Court · RM · 6,204 sq ft
+
+- 6,000 sq ft per home → **1**. Yards leave 62.1 × 51.7 × 0.998 = 3,204, under 60% coverage (3,722); × 2 ÷ 1,062.5 = 6.03 → 6. Parking: ground 6,204 − 1,139 = 5,065; 3 homes need 8 stalls (2,400) + 1,594 = 3,994, which fits; 4 homes need 3,000 + 2,125 = 5,125, which doesn't → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AH-4. 5322 Colodny Dr · RH · 27,939 sq ft
+
+- 2,400 sq ft per home → 11.6 → **11**. 50% coverage = 13,969; × 2 ÷ 1,062.5 = 26.3 → 26. Parking: ground 26,160; 20 homes need 15,000 + 10,625 = 25,625, which fits; 21 need 15,900 + 11,156 = 27,056, which doesn't → 20. **Result: 11, lot area.** Engine: 11 ✓ (18 homes today, so no net new.)
+
+### AH-5. 5321 Colodny Dr · RH · 22,123 sq ft
+
+- 2,400 sq ft per home → 9.2 → **9**. **Result: 9, lot area.** Engine: 9 ✓ (Flagged: 61.3 ft wide, under the 100 ft minimum. 14 homes today.)
+
+### AH-6. 5515 Foothill Dr · RL · 20,101 sq ft
+
+- One home → **1**. 35% coverage = 7,035; × 2 ÷ 1,062.5 = 13.2 → 13. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AH-7. 5909 1/2 Chesebro Rd · RV · 49,685 sq ft
+
+- One home → **1**. 25% coverage = 12,421; × 2 ÷ 1,062.5 = 23.4 → 23. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AH-8. 5601 Kanan Rd · CS-MU · 35,246 sq ft
+
+- 15 per acre = 2,904 sq ft per home → 12.1 → **12**. 50% coverage = 17,623; × 2 ÷ 1,062.5 = 33.2 → 33. Parking: ground 32,168; 24 homes need 18,000 + 12,750 = 30,750, which fits; 25 need 18,900 + 13,281 = 32,181, which doesn't → 24. **Result: 12, lot area.** Engine: 12 ✓ (The 5-acre project minimum isn't modeled.)
+
+### AH-9. 28700 Thousand Oaks Blvd · OS-R · 91,984 sq ft
+
+- One home with a conditional use permit → **1**. 10% coverage = 9,198; × 2 ÷ 1,062.5 = 17.3 → 17. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AH-10. 28230 Dorothy Dr · CRS · 21,836 sq ft
+
+- Table I allows only a caretaker's or owner's residence. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Torrance
+
+Rules: Torrance Municipal Code, Division 9, read on Code Publishing 2026-11-02 (current through Ord. 3969). Each home uses 1,062.5 sq ft of building. Parking uses 300 sq ft per space, and ground excludes the front yard.
+
+### TO-1. 3313 W 166th St · R1 · 5,350 sq ft
+
+- One home → **1**. 40% coverage = 2,140 × 2 stories = 4,280; FAR 0.6 = 3,210, which binds; ÷ 1,062.5 = 3.02 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### TO-2. 4566 Mindora Dr · R1 · 9,000 sq ft
+
+- One home → **1**. FAR 0.6 = 5,400 ÷ 1,062.5 = 5.08 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### TO-3. 2116 Santa Cruz Ct · R2 · 6,406 sq ft
+
+- Two homes → **2**. FAR 0.65 = 4,164 ÷ 1,062.5 = 3.9 → 3. Parking: ground is the two-thirds left after open space, 4,270; each home takes 531 + 600 = 1,131, so 3 fit. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### TO-4. 3564 Del Amo Blvd · R3 · 6,000 sq ft
+
+- 1,600 sq ft per home → 3.75 → **3**. A 3-home lot gets FAR 1.0 = 6,000 ÷ 1,062.5 = 5.6 → 5. Parking: ground 5,000; 4 homes need 2,400 + 2,125 = 4,525, which fits; 5 need 3,000 + 2,656 = 5,656, which doesn't → 4. **Result: 3, lot area.** Engine: 3 ✓ (4 homes today, so no net new.)
+
+### TO-5. 16817 Yukon Ave · R3 · 10,001 sq ft
+
+- 1,600 → 6.25 → **6**. FAR 1.0 → 9.4 → 9. Parking: ground 9,001; 7 homes need 4,200 + 3,719 = 7,919, which fits; 8 need 4,800 + 4,250 = 9,050, which doesn't → 7. **Result: 6, lot area.** Engine: 6 ✓ (9 homes today.)
+
+### TO-6. 21010 Anza Ave · R3 · 35,755 sq ft
+
+- 1,600 → 22.3 → 22. Too large for the 3-to-10-home allowance, so FAR 0.6 = 21,453 ÷ 1,062.5 = 20.2 → **20**. **Result: 20, envelope.** Engine: 20 ✓ (34 homes today.)
+
+### TO-7. 2407 Gramercy Ave · R33 · 6,209 sq ft
+
+- At most 3 per lot; 1,600 → 3.88 → 3. FAR 1.0 → 5.8 → 5. **Result: 3, the cap.** Engine: 3 ✓
+
+### TO-8. 4033 W 182nd St · RR3 · 9,555 sq ft
+
+- 1,600 → 5.97 → **5**. **Result: 5, lot area.** Engine: 5 ✓
+
+### TO-9. 16700 Yukon Ave · R4 · 58,769 sq ft
+
+- 1,000 → 58.8 → **58**. Yards leave 225.1 × 220 = 49,522 × 4 stories ÷ 1,062.5 = 186. Parking: ground 54,067; each home takes 266 + 600 = 866 → 62. **Result: 58, lot area.** Engine: 58 ✓
+
+### TO-10. 2202 W 230th St · RP · 7,571 sq ft
+
+- 1,600 → 4.7 → **4**. Yards leave 55 × 88.7 × 0.981 = 4,787; × 2 ÷ 1,062.5 = 9. **Result: 4, lot area.** Engine: 4 ✓
+
+### TO-11. 17305 Crenshaw Blvd · C2 · 27,114 sq ft
+
+- 1,600 (the stricter of the article's two figures) → 16.9 → **16**. Yards leave 113 × 190.5 = 21,520; × 4 ÷ 1,062.5 = 81. Parking: ground 24,654 ÷ 866 → 28. **Result: 16, lot area.** Engine: 16 ✓
+
+### TO-12. 4565 Sharynne Ln · A1 · 72,755 sq ft
+
+- One home → **1**. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### TO-13. 3811 Jason Cir · RTH · 6,444 sq ft
+
+- 12 per acre = 3,630 → 1.8 → **1**. Parking: 4 homes need 3,000 + 2,125 = 5,125 of 6,444; 5 need 3,900 + 2,656 = 6,556 → 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### TO-14. 1855 Del Amo Blvd · M2 · 20,428 sq ft
+
+- Article 31 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Artesia
+
+Rules: Artesia Municipal Code, Title 9, Chapter 2, read on eCode360 2026-11-02 (code dated 2026-04-13). Each home uses 1,062.5 sq ft of building. Parking uses 300 sq ft per space, and ground excludes the front yard.
+
+### AR-1. 11674 168th St · R-1 · 5,680 sq ft
+
+- One home → **1**. 50% coverage = 2,840 × 2 ÷ 1,062.5 = 5.3 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AR-2. 17602 Summer Ave · R-1 · 6,167 sq ft
+
+- One home → **1**. 50% coverage = 3,083 × 2 ÷ 1,062.5 = 5.8 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AR-3. 18004 Roseton Ave · M-R · 7,053 sq ft
+
+- 1,800 sq ft per home → 3.92, rounded to the nearest → **4**. Coverage × 2 → 6.6 → 6. Parking: ground 6,280; 5 homes need 12 stalls (3,600) + 2,656 = 6,256, which fits; 6 don't → 5. **Result: 4, lot area.** Engine: 4 ✓
+
+### AR-4. 18601 Arline Ave · M-R · 21,719 sq ft
+
+- 1,800 → 12.07 → **12**. Coverage × 2 → 20.4 → 20. Parking: ground 19,644; 16 homes need 37 stalls (11,100) + 8,500 = 19,600, which fits; 17 don't → 16. **Result: 12, lot area.** Engine: 12 ✓ (12 homes today.)
+
+### AR-5. 11512 186th St · M-R · 22,195 sq ft
+
+- 1,800 → 12.3 → **12**. Coverage × 2 → 20.9 → 20. Parking → 16. **Result: 12, lot area.** Engine: 12 ✓
+
+### AR-6. 18863 Clarkdale Ave · M-D-R · 4,494 sq ft
+
+- R-1 uses or a duplex → **2**. Coverage × 2 → 4.2 → 4. Parking: ground 3,887 ÷ (531 + 600) → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AR-7. 19212 Norwalk Blvd · M-C-R · 7,318 sq ft
+
+- R-1's use, one home → **1**. Yards leave 67.6 × 69.9 × 0.994 = 4,695; × 2 ÷ 1,062.5 = 8.8 → 8. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AR-8. 11555 187th St · A-1 · 10,574 sq ft
+
+- One home → **1**. Coverage × 2 → 9.95 → 9. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AR-9. 11424 186th St · C-O · 50,247 sq ft
+
+- 3,000 → 16.75, rounded to the nearest → **17**. Yards leave 155.6 × 308.7 × 0.896 = 43,030; × 2 ÷ 1,062.5 = 80.997 → 80. Parking: ground 48,022 ÷ 1,131 → 42. **Result: 17, lot area.** Engine: 17 ✓ (Flagged: under the 60,000 sq ft minimum.)
+
+### AR-10. 18642 Pioneer Blvd · C-G · 7,446 sq ft
+
+- Article 32 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Avalon
+
+Rules: Avalon Municipal Code, Title 9, read on eCode360 2026-11-02 (code dated 2026-09-01). Each home uses 1,062.5 sq ft of building. Parking is 1 space per home at 300 sq ft, and ground excludes the front yard.
+
+### AV-1. 358 Claressa Ave · HD-R · 2,366 sq ft
+
+- 40 per acre = 1,089 sq ft per home → 2.17 → **2**. FAR 1.3 = 3,076 ÷ 1,062.5 = 2.9 → 2. Parking: ground 2,224 ÷ 831 → 2. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AV-2. 341 Clemente Ave · HD-R · 1,951 sq ft
+
+- 1,089 → 1.8 → **1**. FAR 1.3 = 2,536 → 2.4 → 2. Parking → 2. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AV-3. 323 Metropole Ave · HD-R · 6,326 sq ft
+
+- 1,089 → 5.8 → **5**. FAR 1.3 = 8,224 → 7.7 → 7. Parking: ground 6,207 ÷ 831 → 7. **Result: 5, lot area.** Engine: 5 ✓
+
+### AV-4. 233 W Whittley Ave · HD-R · 6,918 sq ft
+
+- 1,089 → 6.35 → **6**. FAR 1.3 → 8.46 → 8. Parking → 8. **Result: 6, lot area.** Engine: 6 ✓ (17 homes today.)
+
+### AV-5. 191 Lower Terrace · MD-R · 2,640 sq ft
+
+- 20 per acre = 2,178 → 1.2 → **1**. Yards leave 33.8 × 34.5 × 0.900 = 1,050; × 2 ÷ 1,062.5 = 1.98 → 1. Parking → 2. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AV-6. 127 Vieudelou Ave · MD-R · 6,926 sq ft
+
+- 2,178 → 3.2 → **3**. 50% coverage × 2 = 6,926 → 6.5 → 6. Parking → 7. **Result: 3, lot area.** Engine: 3 ✓ (5 homes today.)
+
+### AV-7. 103 Vieudelou Ave · LD-R · 4,706 sq ft
+
+- Under an acre keeps one home → **1**. FAR 0.8 = 3,765 → 3.5 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### AV-8. 313 Beacon St · SC · 2,314 sq ft
+
+- HD's 1,089 → 2.1 → **2**. Yards leave 12.5 × 119 = 1,488; × 2 ÷ 1,062.5 = 2.8 → 2. Parking → 2. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### AV-9. 122 Sumner Ave · C · 4,802 sq ft
+
+- Article 2 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Baldwin Park
+
+Rules: Baldwin Park Code of Ordinances, Chapter 153, read on American Legal 2026-11-02 (through legislation of 12-17-25). Each home uses 1,062.5 sq ft of building. Apartments use 2 spaces plus 1 guest space per 3 homes, at 300 sq ft each; ground excludes the front yard.
+
+### BP-1. 13308 Demblon St · R1 · 5,873 sq ft
+
+- One home → **1**. 45% coverage = 2,643 × 2 ÷ 1,062.5 = 4.97 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BP-2. 14432 Olive St · R1 · 15,707 sq ft
+
+- One home → **1**. Coverage 7,068 × 2 ÷ 1,062.5 = 13.3 → 13. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BP-3. 14567 Pacific Ave · RG · 5,689 sq ft
+
+- 12 per acre = 3,630 → 1.6 → **1**. Yards leave 30.1 × 89 × 0.996 = 2,668; × 2 ÷ 1,062.5 = 5.02 → 5. ADU law: 3. No parking limit within ½ mile of transit. **Result: 3, ADU law.** Engine: 3 ✓ (3 homes today.)
+
+### BP-4. 3833 Bresee Ave · RG · 19,014 sq ft
+
+- 3,630 → 5.2 → **5**. Coverage × 2 → 17.9 → 17. Parking: ground 18,071; 14 homes need 33 stalls (9,900) + 7,437 = 17,337, which fits; 15 don't → 14. **Result: 5, lot area.** Engine: 5 ✓ (9 homes today.)
+
+### BP-5. 13727 Los Angeles St · R3 · 8,993 sq ft
+
+- 20 per acre = 2,178 → 4.1 → **4**. Yards leave 5,032; × 2 ÷ 1,062.5 = 9.5 → 9. Parking: ground 8,082; 6 homes need 14 stalls (4,200) + 3,187 = 7,387, which fits; 7 don't → 6. **Result: 4, lot area.** Engine: 4 ✓
+
+### BP-6. 4135 La Rica Ave · R3 · 29,471 sq ft
+
+- 2,178 → 13.5 → **13**. 60% coverage × 2 → 33.3 → 33. Parking → 22. **Result: 13, lot area.** Engine: 13 ✓ (13 homes today.)
+
+### BP-7. 14514 Central Ave · MU-1 · 31,030 sq ft
+
+- 30 per acre = 1,452 → 21.4 → **21**. FAR 2.0 = 62,060 ÷ 1,062.5 = 58.4 → 58. No parking limit within ½ mile of transit. **Result: 21, lot area.** Engine: 21 ✓
+
+### BP-8. 14914 Pacific Ave · MU-2 · 16,110 sq ft
+
+- Under 20,000 sq ft, 15 per acre = 2,904 → 5.5 → **5**. 60% coverage × 2 → 18.2 → 18. Parking → 13. **Result: 5, lot area.** Engine: 5 ✓
+
+### BP-9. 14864 Pacific Ave · MU-2 · 24,653 sq ft
+
+- Over 20,000 sq ft, 30 per acre = 1,452 → 16.98 → **16**. Coverage × 2 → 27.8 → 27. Parking → 19. **Result: 16, lot area.** Engine: 16 ✓
+
+### BP-10. 14064 Francisquito Ave · C2 · 8,870 sq ft
+
+- Table 153.050.020 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Bell
+
+Rules: Bell Municipal Code, Title 17, read on eCode360 2026-11-02 (through Ord. 1297). Each home uses 1,062.5 sq ft of building. Parking applies beyond ½ mile of a major transit stop.
+
+### BE-1. 6936 Prospect Ave · R1 · 5,315 sq ft
+
+- One home → **1**. Yards leave 39.4 × 73.3 × 0.994 = 2,869; × 2 ÷ 1,062.5 = 5.4 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BE-2. 3629 Anita Dr · R2 · 5,127 sq ft
+
+- Two homes → **2**. Yards leave 2,696; × 2 ÷ 1,062.5 = 5.07 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### BE-3. 6322 Flora Ave · R3 · 5,956 sq ft
+
+- 1,452 sq ft per home → 4.1 → **4**. 50% coverage × 3 stories = 8,934 ÷ 1,062.5 = 8.4 → 8. Parking: ground 5,361; 4 homes need 9 stalls (2,700) + 1,417 = 4,117, which fits; 5 need 3,600 + 1,771 = 5,371, which doesn't → 4. **Result: 4, lot area.** Engine: 4 ✓
+
+### BE-4. 7032 Bear Ave · R3 · 5,925 sq ft
+
+- 1,452 → 4.08 → **4**. Coverage × 3 → 8.4 → 8. Parking → 4. **Result: 4, lot area.** Engine: 4 ✓
+
+### BE-5. 6815 California Ave · R3 · 18,768 sq ft
+
+- 1,452 → 12.9 → **12**. Coverage × 3 → 26.5 → 26. Within ½ mile of transit, so no parking limit. **Result: 12, lot area.** Engine: 12 ✓ (12 homes today.)
+
+### BE-6. 4345 Florence Ave · C3R · 5,973 sq ft
+
+- R-3's 1,452 (assumed) → 4.1 → **4**. Coverage × 3 → 8.4 → 8. **Result: 4, lot area.** Engine: 4 ✓
+
+### BE-7. 4828 Florence Ave · C3R · 19,197 sq ft
+
+- 1,452 → 13.2 → **13**. Coverage × 3 → 27.1 → 27. **Result: 13, lot area.** Engine: 13 ✓
+
+### BE-8. 4511 Gage Ave · C3 · 6,219 sq ft
+
+- Chapter 17.32 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Bell Gardens
+
+Rules: Bell Gardens Municipal Code, Title 9, read on eCode360 2026-11-02 (through 06-29-2026). Each home uses 1,062.5 sq ft of building. Parking uses 2 spaces per home, plus 1 per 2 homes at 5 or more homes, at 300 sq ft each; ground excludes the front yard.
+
+### BG-1. 5554 Agra St · R-1 · 6,387 sq ft
+
+- One home → **1**. 45% coverage = 2,874 × 2 ÷ 1,062.5 = 5.4 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BG-2. 5900 Agra St · R-2 · 6,751 sq ft
+
+- 2,500 sq ft per home → 2.7 → **2**; cap of 3. Coverage × 2 → 5.7 → 5. Parking: ground 5,770 ÷ 1,131 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### BG-3. 5951 Watcher St · R-2 · 10,002 sq ft
+
+- 2,500 → 4; cap of **3**. Coverage × 2 → 8.5 → 8. Parking → 7. **Result: 3, the cap.** Engine: 3 ✓
+
+### BG-4. 6632 Specht Ave · R-3 · 6,888 sq ft
+
+- Under 15,000 sq ft, 2,500 → 2.76 → **2**. Coverage × 2 → 5.8 → 5. Parking: ground 6,278; 4 homes need 2,400 + 2,125 = 4,525, which fits; 5 need 13 stalls (3,900) + 2,656 = 6,556, which doesn't → 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### BG-5. 5826 Live Oak St · R-3 · 23,346 sq ft
+
+- 15,000 to 43,560 sq ft, 2,000 → 11.7 → **11**. Coverage × 2 → 19.8 → 19. Parking: ground 22,005; 17 homes need 43 stalls (12,900) + 9,031 = 21,931, which fits; 18 don't → 17. **Result: 11, lot area.** Engine: 11 ✓
+
+### BG-6. 5720 Clara St · R-3 · 74,849 sq ft
+
+- 43,560 sq ft and over, 1,750 → 42.8 → **42**. Coverage × 2 → 63.4 → 63. Parking → 55. **Result: 42, lot area.** Engine: 42 ✓ (65 homes today.)
+
+### BG-7. 5526 Clara St · R-4 · 11,900 sq ft
+
+- R-3's figures (assumed), 2,500 → 4.76 → **4**. Coverage × 2 → 10.08 → 10. Parking → 8. **Result: 4, lot area.** Engine: 4 ✓
+
+### BG-8. 6357 Eastern Ave · M-U · 18,763 sq ft
+
+- 30 per acre = 1,452 → 12.9 → **12**. Yards leave 127 × 113.8 × 0.987 = 14,261; × 4 stories ÷ 1,062.5 = 53.7 → 53. Parking: ground 16,735 ÷ (266 + 750) → 16. **Result: 12, lot area.** Engine: 12 ✓
+
+### BG-9. 6320 Florence Ave · C-4 · 31,641 sq ft
+
+- §9.12.020 allows no homes outside M-U. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Bellflower
+
+Rules: Bellflower Municipal Code, Title 17, read on eCode360 2026-11-02 (through Ord. 1461). Each home uses 1,062.5 sq ft of building. Parking uses 300 sq ft per space, and ground excludes the front yard.
+
+### BF-1. 14002 Dunrobin Ave · S-F · 5,419 sq ft
+
+- One home → **1**. 45% coverage = 2,439 × 2 ÷ 1,062.5 = 4.6 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BF-2. 9448 Rose St · R-1 · 5,266 sq ft
+
+- 5,000 sq ft per home → 1.05 → **1**. 45% coverage × 2 → 4.5 → 4. Parking: ground 3,886 ÷ (531 + 600) → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BF-3. 14544 Bellflower Blvd · R-1 · 17,056 sq ft
+
+- 5,000 → 3.4 → **3**. Coverage × 2 → 14.4 → 14. Parking: ground 15,737 ÷ 1,131 → 13. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BF-4. 16261 California Ave · A-E · 11,343 sq ft
+
+- 9,900 → 1.1 → **1**. FAR 0.40 = 4,537 → 4.3 → 4. Parking: ground 9,705 ÷ (531 + 900) → 6. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### BF-5. 9438 Mayne St · R-2 · 7,844 sq ft
+
+- 3,350 → 2.3 → **2**. Yards leave 44 × 102.7 = 4,519; × 2 ÷ 1,062.5 = 8.5 → 8. Parking: ground 6,644 ÷ 1,431 → 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓ (5 homes today.)
+
+### BF-6. 8539 Rose St · R-2 · 18,293 sq ft
+
+- 3,350 → 5.5 → **5**. Yards leave 12,624; × 2 ÷ 1,062.5 = 23.8 → 23. Parking: ground 16,891 ÷ 1,431 → 11. **Result: 5, lot area.** Engine: 5 ✓ (7 homes today.)
+
+### BF-7. 10136 Maple St · R-3 · 8,911 sq ft
+
+- 1,980 → 4.5 → **4**. Yards leave 50 × 112 = 5,600; × 3 ÷ 1,062.5 = 15.8 → 15. Parking: ground limited to 75% for open space = 6,683 ÷ (354 + 900) → 5. **Result: 4, lot area.** Engine: 4 ✓
+
+### BF-8. 16336 Cornuta Ave · R-3 · 40,045 sq ft
+
+- 1,980 → 20.2 → **20**. Footprint limited to 75% = 30,034; × 3 ÷ 1,062.5 = 84.8 → 84. Parking: 30,034 ÷ 1,254 → 23. **Result: 20, lot area.** Engine: 20 ✓
+
+### BF-9. 9824 Maple St · T-C · 7,879 sq ft
+
+- Upper-floor homes need Planning Commission approval, and no density is stated, so none are counted. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Beverly Hills
+
+Rules: Beverly Hills Municipal Code, Title 10, Chapter 3, read on American Legal 2026-11-02 (through Ord. 26-O-2938). Each home uses 1,062.5 sq ft of building. R-4 parking uses 2.5 spaces plus 1 guest space per 4 homes, at 300 sq ft each; ground excludes the front yard.
+
+### BH-1. 126 N Palm Dr · R-1 · 7,500 sq ft
+
+- One home → **1**. Floor area 1,500 + 40% = 4,500 ÷ 1,062.5 = 4.2 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BH-2. 912 N Roxbury Dr · R-1 · 24,596 sq ft
+
+- One home → **1**. Floor area 1,500 + 9,838 = 11,338 ÷ 1,062.5 = 10.7 → 10. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BH-3. 174 N Almont Dr · R-4 · 6,762 sq ft, 59 ft wide
+
+- Under 60 ft wide, 1,700 sq ft per home → 3.98; a remainder over 75% rounds up → **4**. Yards leave 3,562; × 3 ÷ 1,062.5 = 10.06 → 10. Parking: ground 5,883; 4 homes need 11 stalls (3,300) + 1,417 = 4,717, which fits; 5 need 14 (4,200) + 1,771 = 5,971, which doesn't → 4. **Result: 4, lot area.** Engine: 4 ✓ (13 homes today, which §10-3-2801.E lets it rebuild.)
+
+### BH-4. 434 S Canon Dr · R-4 · 12,124 sq ft, 100 ft wide
+
+- 60 to 120 ft wide, 1,450 → 8.36 → **8**. Yards leave 7,574; × 3 ÷ 1,062.5 = 21.4 → 21. Parking: ground 10,625; 8 fit; 9 need 25 stalls (7,500) + 3,187 = 10,687, which don't → 8. **Result: 8, lot area.** Engine: 8 ✓ (29 homes today.)
+
+### BH-5. 441 N Oakhurst Dr · R-4 · 22,503 sq ft, 150.1 ft wide
+
+- Over 120 ft wide, 1,200 → 18.75, and the remainder is just over 75% → 19. Parking: ground 20,254; 17 homes need 47 stalls (14,100) + 6,021 = 20,121, which fits; 18 need 50 (15,000) + 6,375 = 21,375, which doesn't → **17**. **Result: 17, parking.** Engine: 17 ✓ (36 homes today.)
+
+### BH-6. 9901 Durant Dr · R-4 · 11,005 sq ft, 100.1 ft wide
+
+- 1,450 → 7.6 → **7**. Yards leave 6,644; × 3 ÷ 1,062.5 = 18.8 → 18. Within ½ mile of transit, so no parking limit. **Result: 7, lot area.** Engine: 7 ✓
+
+### BH-7. 140 N Robertson Blvd · C-3 · 6,713 sq ft
+
+- §10-3-1601 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Bradbury
+
+Rules: Bradbury Code of Ordinances, Title IX, read on Municode 2026-11-02 (through Ord. 400). Each home uses 1,062.5 sq ft of building. Every zone allows one home, and SB 9 gives 4 on these lots.
+
+### BR-1. 2332 Gardi St · R-7,500 · 6,854 sq ft
+
+- One home → **1**. FAR 0.50 = 3,427 ÷ 1,062.5 = 3.2 → 3. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-2. 2341 Freeborn St · R-7,500 · 8,834 sq ft
+
+- One home → **1**. FAR 0.50 = 4,417 → 4.2 → 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-3. 2205 Gardi St · R-20,000 · 20,296 sq ft
+
+- One home → **1**. Yards leave 80.5 × 135.1 × 0.992 = 10,792; × 2 ÷ 1,062.5 = 20.3 → 20. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-4. 1395 Lemon Ave · A-1 · 45,243 sq ft
+
+- One home → **1**. Yards leave 96 × 237 × 0.993 = 22,598; × 2 ÷ 1,062.5 = 42.5 → 42. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-5. 4 Bradbury Hills Rd · A-2 · 82,650 sq ft
+
+- One home → **1**. Yards leave 168.7 × 335.6 × 0.920 = 52,108; × 2 ÷ 1,062.5 = 98.1 → 98. **Result: 4, SB 9.** Engine: 4 ✓
+
+### BR-6. 368 Old Ranch Rd · A-5 · 188,692 sq ft
+
+- One home → **1**. Yards leave 276.3 × 540.1 × 0.940 = 140,295; × 2 ÷ 1,062.5 = 264.1 → 264. **Result: 4, SB 9.** Engine: 4 ✓
+
+## Calabasas
+
+Rules: Calabasas Municipal Code, Title 17, read on Municode 2026-11-02. Each home uses 1,062.5 sq ft of building. Multifamily parking uses 2 spaces plus 1 guest space per 3 homes, at 300 sq ft each.
+
+### CA-1. 23015 Wrencrest Dr · RS · 9,029 sq ft
+
+- One home → **1**. Under 1/3 acre, 50% coverage = 4,514 × 2 ÷ 1,062.5 = 8.5 → 8. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-2. 3940 Prado De Verde · RS · 15,172 sq ft
+
+- One home → **1**. Over 1/3 acre, 35% is 5,310, so the 7,260 sq ft floor applies; × 2 ÷ 1,062.5 = 13.7 → 13. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-3. 4559 Cielo Cir · RM · 12,100 sq ft
+
+- 24 per acre = 1,815 → 6.7 → **6**. 55% coverage × 2 → 12.5 → 12. Parking: ground 10,258 ÷ 1,230 → 8. **Result: 6, lot area.** Engine: 6 ✓
+
+### CA-4. 4654 Cielo Cir · RM · 54,378 sq ft
+
+- 1,815 → 29.96 → **29**. Coverage × 2 → 56.3 → 56. Parking: ground 50,854 ÷ 1,230 → 41. **Result: 29, lot area.** Engine: 29 ✓
+
+### CA-5. 3889 Old Topanga Road · RR · 43,822 sq ft
+
+- One home → **1**. 30% coverage × 2 → 24.7 → 24. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-6. 3485 Old Topanga Canyon Rd · RC · 16,563 sq ft
+
+- One home → **1**. 35% coverage × 2 → 10.9 → 10. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CA-7. 24325 Mulholland Hwy · HM · 48,190 sq ft
+
+- One home → **1**. Yards leave 179.9 × 138.7 × 0.878 = 21,910; × 2 ÷ 1,062.5 = 41.2 → 41. ADU law: 3. SB 9 isn't applied. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CA-8. 26050 Mureau Rd · CMU · 69,222 sq ft
+
+- 24 per acre = 1,815 → 38.1 → **38**. FAR 1.0 ÷ 1,062.5 = 65.2 → 65. Parking: 69,222 ÷ 1,230 → 56. **Result: 38, lot area.** Engine: 38 ✓
+
+### CA-9. 23556 Calabasas Rd · CT · 14,398 sq ft
+
+- 20 per acre = 2,178 → 6.6 → **6**. FAR 1.0 → 13.6 → 13. Parking → 11. **Result: 6, lot area.** Engine: 6 ✓
+
+### CA-10. 4830 Las Virgenes Rd · CR · 31,647 sq ft
+
+- Table 2-2 lists no homes here. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Cerritos
+
+Rules: Cerritos Municipal Code, Title 22, read on eCode360 2026-11-02. Each home uses 1,062.5 sq ft of building. Parking uses 2 spaces per home at 300 sq ft each; ground excludes the front yard.
+
+### CE-1. 16628 Greenbrook Cir · RS-5000 · 5,724 sq ft
+
+- One home → **1**. FAR 0.70 = 4,007 ÷ 1,062.5 = 3.8 → 3. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CE-2. 12510 Yosemite St · RS-6500 · 6,519 sq ft
+
+- One home → **1**. FAR 0.70 = 4,563 → 4.3 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CE-3. 12659 Liddington St · ADP-4, using RS-6500 · 8,833 sq ft
+
+- One home → **1**. FAR 0.70 = 6,183 → 5.8 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CE-4. 12458 Dawn Ln · RM · 6,679 sq ft
+
+- Under 3 acres, one home → **1**. Yards leave 28.5 × 39.7 × 0.984 = 1,113; × 2 ÷ 1,062.5 = 2.1 → 2. Parking: ground 4,797 ÷ 1,131 → 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓ (4 homes today.)
+
+### CE-5. 18944 Vickie Ave · RM · 280,589 sq ft
+
+- 20 per acre = 2,178 → 128.8 → **128**. 40% coverage × 2 → 211.3 → 211. Parking: ground 269,675 ÷ 1,131 → 238. **Result: 128, lot area.** Engine: 128 ✓ (203 homes today.)
+
+### CE-6. 16230 Drycreek Ln · ADP-3 · 5,125 sq ft
+
+- Under an acre, one home → **1**. 40% coverage × 2 → 3.9 → 3. Parking: ground 4,125 ÷ 1,131 → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CE-7. 13363 Artesia Blvd · CN · 25,000 sq ft
+
+- Chapter 22.25 lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Commerce
+
+Lots from the county roll, checked against CMC Title 19 (Municode, read November 2, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CO-1. 2116 Fitzgerald Ave · R-1 · 4,984 sq ft
+
+- One home. Sides 10% of width, 4.03 ft. Coverage 45% is 2,243 sq ft, but FAR 0.40 caps floor area at 1,994 → envelope **1**. Parking: ground 4,181 ÷ 1,131 → 3. SB 9 lifts it to 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CO-2. 5217 Harbor St · R-1 · 2,134 sq ft
+
+- FAR allows 854 sq ft, under one 1,062.5 sq ft home but over the 500 sq ft minimum → envelope 1. Parking: 1,682 ÷ 1,131 → 1. Too small for an SB 9 split; ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CO-3. 4483 Lovett St · R-2 · 6,668 sq ft
+
+- 6,668 ÷ 3,000 → **2**, the zone's cap. Envelope 40.5 × 97 × 2 stories → 7. Parking: 5,658 ÷ 1,131 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CO-4. 1444 S McDonnell Ave · R-2 · 5,691 sq ft
+
+- 5,691 ÷ 3,000 → **1**. Shape factor 0.50 on this irregular lot: envelope 7, parking 4. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CO-5. 6734 Agra St · R-3 · 6,763 sq ft
+
+- Under 7,500 sq ft, one home by our conservative reading. Envelope 13; parking 6,132 ÷ 1,104 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CO-6. 6742 Lanto St · R-3 · 7,670 sq ft
+
+- 7,670 ÷ 2,000 = 3.8 → **3**, rounded down. Envelope 14; parking 6,855 ÷ 1,104 → 6. **Result: 3, lot area per home.** Engine: 3 ✓
+
+### CO-7. 5440 Telegraph Rd · C-2 · 21,279 sq ft
+
+- No density stated. FAR 0.5 is 10,640 sq ft ÷ 1,062.5 → **10**. Parking: 20,878 ÷ 1,281 → 16. **Result: 10, envelope.** Engine: 10 ✓
+
+### CO-8. 6048 Triangle Dr · M-2 · 32,453 sq ft
+
+- M-2 allows only caretaker quarters, which we don't count. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Compton
+
+Lots from the county roll, checked against CMC Chapter 30 (eCode360, read November 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CP-1. 1214 W 130th St · R-L · 9,457 sq ft
+
+- 9,457 ÷ 5,000 → **1**. Envelope 40.1 × 149.1 × 2 stories → 11. Parking: 8,457 ÷ 1,131 → 7. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CP-2. 2313 E Killen Ct · R-L · 15,864 sq ft
+
+- 15,864 ÷ 5,000 → **3**, if each home's area could be divided off, which we don't test. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CP-3. 805 E Clemmer Dr · R-A · 22,251 sq ft
+
+- 22,251 ÷ 10,000 → **2**. Envelope 29. Within ½ mile of transit, so no parking limit. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CP-4. 612 S Harris Ave · R-M · 11,268 sq ft
+
+- 11,268 ÷ 2,500 = 4.5 → **4**. Envelope 70.3 × 105 × shape 0.97 × 3 stories → 20. Parking: 9,714 ÷ 879 → 11. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### CP-5. 812 W Arbutus St · R-M · 4,995 sq ft
+
+- 4,995 ÷ 2,500 → **1**, five sq ft short of two. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CP-6. 1004 N Sloan Ave · R-H · 7,069 sq ft
+
+- 7,069 ÷ 1,500 = 4.7 → **4**. Envelope 13. Parking: 6,334 ÷ 879 → 7. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### CP-7. 209 S Willow Ave · R-H · 6,758 sq ft
+
+- 6,758 ÷ 1,500 = 4.5 → **4**. Envelope 12. Within ½ mile of transit, so no parking limit. The roll shows 6 homes, over this limit. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### CP-8. 408 N Bowen Ave · C-L · 19,855 sq ft
+
+- 19,855 ÷ 1,500 = 13.2 → **13**, with a conditional use permit. Coverage 40% × 7 stories → 52. Parking: 18,435 ÷ 677 → 27. **Result: 13, lot area per home.** Engine: 13 ✓
+
+### CP-9. 500 E Pine St · M-H · 43,673 sq ft
+
+- Residences are prohibited apart from caretakers' quarters and permitted live-work units. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Claremont
+
+Lots from the county roll, checked against CMC Title 16 (eCode360, read November 2 and 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CL-1. 1490 Towne Ave · RS (10,000) · 10,021 sq ft
+
+- One home per lot. Floor area 2,000 + 15% = 3,503 sq ft → envelope 3. Parking: 8,107 ÷ 1,131 → 7. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CL-2. 1046 Moab Dr · RR (35,000) · 27,510 sq ft
+
+- One home per lot, on a lot under the district's minimum. Floor area 2,000 + 15% = 6,126 sq ft → envelope 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CL-3. 254 W 11th St · HC · 7,500 sq ft
+
+- One home per lot. Floor area 3,125 sq ft → envelope 2. Parking: 6,501 ÷ 1,131 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CL-4. 237 Spring St · RM (4000) · 8,321 sq ft
+
+- 8,321 ÷ 4,000 → **2**. Envelope 32.8 × 139.1 × shape 0.99 × 2 stories → 8. Within ½ mile of transit, so no parking limit. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CL-5. 450 Champlain Dr · RM (3000) · 8,898 sq ft
+
+- Under 12,000 sq ft, so RM (4000) density: 8,898 ÷ 4,000 → **2**. Envelope 10. Parking: 6,982 ÷ 1,356 → 5. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CL-6. 928 Heritage Ct · RM (3000) · 14,781 sq ft
+
+- 14,781 ÷ 3,000 = 4.9 → **4**. Envelope 19, parking 9. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### CL-7. 645 Colby Cir · RM (2000) · 16,821 sq ft
+
+- 16,821 ÷ 2,000 = 8.4 → **8**. Three stories: envelope 37. Parking: 14,933 ÷ 1,179 → 12. **Result: 8, lot area per home.** Engine: 8 ✓
+
+### CL-8. 150 Olive St · MU2 · 25,810 sq ft
+
+- 22 homes per acre is 1,980 sq ft each: 25,810 ÷ 1,980 → **13**. Envelope 68. Within ½ mile of transit, so no parking limit. **Result: 13, lot area per home.** Engine: 13 ✓
+
+### CL-9. 735 S Mills Ave · CP · 81,512 sq ft
+
+- 81,512 ÷ 3,000 = 27.2 → **27**, with a conditional use permit. RM (3000)'s yards and 2 stories: envelope 130, parking 56. **Result: 27, lot area per home.** Engine: 27 ✓
+
+### CL-10. 655 E Foothill Blvd · CH · 25,815 sq ft
+
+- Homes need a conditional use permit within a mixed-use project, and no density is stated, so we count none. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Covina
+
+Lots from the county roll, checked against CMC Title 17 (eCode360, read November 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CV-1. 568 W Alcross St · R-1-7500 · 6,756 sq ft
+
+- One home per lot. Coverage 35% × 2 stories → 4. Parking: 5,090 ÷ 1,131 → 4. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CV-2. 413 S Farber Ave · R-1-10,000 · 10,042 sq ft
+
+- One home per lot. No coverage limit found; yards with 10 ft sides: envelope 8. Parking: 8,229 ÷ 1,131 → 7. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CV-3. 1438 E Holt Ave · E-1 · 141,069 sq ft
+
+- One home per lot, on over three acres. Coverage 35% × 2 stories → 92. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### CV-4. 671 S Calvados Ave · RD-4000 · 106,394 sq ft
+
+- 106,394 ÷ 4,000 = 26.6 → **26**. Parking 83. **Result: 26, lot area per home.** Engine: 26 ✓
+
+### CV-5. 258 W Hampton Ct · RD-3000 · 5,653 sq ft
+
+- Under 15,000 sq ft, so 14.1 per acre: 5,653 ÷ 3,090 → **1**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CV-6. 351 E College St · RD-3000 · 10,280 sq ft
+
+- 10,280 ÷ 3,090 = 3.3 → **3**. Envelope 10. Within ½ mile of transit, so no parking limit. **Result: 3, lot area per home.** Engine: 3 ✓
+
+### CV-7. 1375 N Sunflower Ave · RD-3000 · 17,059 sq ft
+
+- At 15,000 sq ft and up, the RD figure: 17,059 ÷ 3,000 = 5.7 → **5**. **Result: 5, lot area per home.** Engine: 5 ✓
+
+### CV-8. 341 E School St · RD-1500 · 30,641 sq ft
+
+- 22 per acre caps RD-1500 at 1,980 sq ft per home: 30,641 ÷ 1,980 = 15.5 → **15**. The roll shows 24 homes, which 1,500 sq ft per home would nearly allow (20). **Result: 15, lot area per home.** Engine: 15 ✓
+
+### CV-9. 248 E Dexter St · RD-1250 · 9,247 sq ft
+
+- 9,247 ÷ 3,090 = 2.99 → **2**. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CV-10. 900 N Citrus Ave · C-2 · 18,702 sq ft
+
+- The chapter lists residential uses as prohibited. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Cudahy
+
+Lots from the county roll, checked against CMC Title 20 (ICC Code Solutions, read November 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### CU-1. 5108 Cecilia St · LDR · 5,464 sq ft
+
+- 15 per acre is 2,904 sq ft each: 5,464 ÷ 2,904 = 1.9 → **1**. Envelope 25.9 × 107.3 × 2 stories → 5. Parking: 25% open space leaves 4,098 ÷ 1,056 → 3. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### CU-2. 5009 Elizabeth St · MDR · 25,965 sq ft
+
+- 25 per acre is 1,742.4 sq ft each: 14.9 → **14**. Envelope 54, parking 27. **Result: 14, lot area per home.** Engine: 14 ✓
+
+### CU-3. 5155 Clara St · MDR · 10,412 sq ft
+
+- 10,412 ÷ 1,742.4 = 5.98 → **5**. Envelope 17, parking 10. **Result: 5, lot area per home.** Engine: 5 ✓
+
+### CU-4. 4926 Live Oak St · HDR · 40,453 sq ft
+
+- 40 per acre is 1,089 sq ft each: 37.1 → **37**. Envelope 112, parking 49. **Result: 37, lot area per home.** Engine: 37 ✓
+
+### CU-5. 4534 Live Oak St · CMU · 8,480 sq ft
+
+- The residential-only 30 per acre is 1,452 sq ft each: 5.8 → **5**. Envelope 12. Within ½ mile of transit, so no parking limit. **Result: 5, lot area per home.** Engine: 5 ✓
+
+### CU-6. 4528 Elizabeth St · CivicMU · 10,123 sq ft
+
+- 10,123 ÷ 1,452 = 6.97 → **6**. Envelope 21. Within ½ mile of transit, so no parking limit. **Result: 6, lot area per home.** Engine: 6 ✓
+
+### CU-7. 4505 Santa Ana St · I-Ind · 39,888 sq ft
+
+- 39,888 ÷ 1,452 = 27.5 → **27**, with a conditional use permit. FAR 1.25 → 46. Parking: 38,825 ÷ 879 → 44. **Result: 27, lot area per home.** Engine: 27 ✓
+
+### CU-8. 8420 S Atlantic Ave · Ent · 24,742 sq ft
+
+- Homes only in mixed-use projects, with density listed as N/A, so we count none. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## Diamond Bar
+
+Lots from the county roll, checked against DBCC Title 22 (Municode, read November 3, 2026). Each home is 1,062.5 gross sq ft and each parking stall takes 300 sq ft.
+
+### DB-1. 22442 Mountain Laurel Way · RL · 7,011 sq ft
+
+- One home per lot. Coverage 40% × 2 stories → 5. Parking: 5,768 ÷ 1,131 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### DB-2. 867 Golden Prados Dr · RLM · 8,161 sq ft
+
+- One home per lot. Coverage 40% × 2 stories → 6. Parking: 6,988 ÷ 1,131 → 6. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### DB-3. 2601 Wagon Train Ln · RR · 38,229 sq ft
+
+- One home per lot, under the one-acre minimum. Coverage 30% × 2 stories → 21. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓
+
+### DB-4. 805 Windwood Dr · RM · 16,032 sq ft
+
+- 12 per acre is 3,630 sq ft each: 4.4 → **4**. The roll shows 8. Within ½ mile of transit, so no parking limit. **Result: 4, lot area per home.** Engine: 4 ✓
+
+### DB-5. 20767 E Crest Ln · RM · 133,244 sq ft
+
+- 133,244 ÷ 3,630 = 36.7 → **36**. Envelope 112, parking 115. **Result: 36, lot area per home.** Engine: 36 ✓
+
+### DB-6. 22886 Hilton Head Dr · RMH · 112,234 sq ft
+
+- 16 per acre is 2,722.5 sq ft each: 41.2 → **41**. Envelope 95, parking 97. **Result: 41, lot area per home.** Engine: 41 ✓
+
+### DB-7. 338 Torito Ln · RH · 8,136 sq ft
+
+- 20 per acre is 2,178 sq ft each: 3.7 → **3**. Coverage 30% × 3 stories → 6. Parking: 7,045 ÷ 1,104 → 6. The roll shows 7. **Result: 3, lot area per home.** Engine: 3 ✓
+
+### DB-8. 876 Sunset Place · OS · 37,926 sq ft
+
+- One home per existing parcel; no SB 9. ADU law: 3. **Result: 3, ADU law.** Engine: 3 ✓
+
+### DB-9. 2751 S Diamond Bar Blvd · C-2 · 108,837 sq ft
+
+- The chapter lists no homes. **Result: 0, use not permitted.** Engine: 0 ✓
+
+## By-right homes (section BR)
+
+Each lot's by-right number, checked against the code's use list. Square footage comes from the Assessor.
+
+### BR-1. Los Angeles parcel 5581003003 · R3 · 4,596,295 sq ft
+
+- §12.10 A permits multiple dwellings. §16.05 C.1.(b) needs Project Review at 50 or more homes. Max 5,690, so **by right: 49.** Engine: 49 ✓
+
+### BR-2. Los Angeles parcel 2004026001 · R1 · 6,231 sq ft
+
+- §12.08 A permits a one-family dwelling; SB 9 gives 4 with a lot split. **By right: 4.** Engine: 4 ✓
+
+### BR-3. Los Angeles parcel 2005002016 · M1 · 995,747 sq ft
+
+- §12.17.6 allows only a guard's or caretaker's home. **By right: 0.** Engine: 0 ✓
+
+### BR-4. Pasadena parcel 5721001027 · RS-6 · 15,013 sq ft
+
+- Table 2-2 marks single-family housing and two-unit developments P; SB 9 gives 4. **By right: 4.** Engine: 4 ✓
+
+### BR-5. Pasadena parcel 5848019024 · CO · 8,206 sq ft
+
+- Table 2-5 marks multi-family housing P in CO. Max 6. **By right: 6.** Engine: 6 ✓
+
+### BR-6. Compton parcel 6178013010 · R-H · 7,270 sq ft
+
+- Up to four homes by right (§§30-10.2, 30-10.3). Max 4. **By right: 4.** Engine: 4 ✓
+
+### BR-7. Torrance parcel 7535004011 · C2 · 14,108 sq ft
+
+- Homes need a conditional use permit; no SB 9 here. Max 8. **By right: 0.** Engine: 0 ✓
+
+### BR-8. Torrance parcel 4092020007 · R1 · 5,528 sq ft
+
+- The zone's approval isn't confirmed yet, but SB 9 is ministerial: **by right: 4.** Engine: 4 ✓
+
+### BR-9. Long Beach parcel 7202038026 · R-1-N · 5,917 sq ft
+
+- Chapter 21.31's table marks single-family detached Y; SB 9 gives more where it applies. Max 4. **By right: 4.** Engine: 4 ✓
+
+### BR-10. Glendale parcel 5636015024 · C2 · 7,804 sq ft
+
+- Table 30.12-A marks multiple residential dwellings P. Max 6. **By right: 6.** Engine: 6 ✓
+
+### BR-11. Burbank parcel 2468008008 · R-3 · 6,604 sq ft
+
+- The land use table marks multiple family dwellings P. Max 3. **By right: 3.** Engine: 3 ✓
+
+### BR-12. El Monte parcel 8103026013 · M-1 · 10,201 sq ft
+
+- The citywide use matrix marks dwellings — in M-1. Max 0. **By right: 0.** Engine: 0 ✓
+
+### BR-13. Santa Clarita parcel 3244061072 · UR2 · 7,100 sq ft
+
+- §17.42.010's table marks single-family dwellings P; SB 9 gives more where it applies. Max 4. **By right: 4.** Engine: 4 ✓
+
+### BR-14. Palmdale parcel 3010002009 · RN3 · 9,035 sq ft
+
+- Chapter 17.35's table marks multifamily dwellings P. Max 6. **By right: 6.** Engine: 6 ✓
+
+### BR-15. Palmdale parcel 3004004048 · MEDFX · 113,112 sq ft
+
+- Chapter 17.47's table marks multifamily residential CUP. Max 77. **By right: 0.** Engine: 0 ✓
+
+### BR-16. Whittier parcel 8134022019 · R-3 · 6,389 sq ft
+
+- §18.20.020 lists dwelling units as a principal use. Max 3. **By right: 3.** Engine: 3 ✓
+
+### BR-17. Calabasas parcel 2069066032 · OS-DR · 37,224 sq ft
+
+- Table 2-2 leaves homes blank. Max 0. **By right: 0.** Engine: 0 ✓
+
+### BR-18. Culver City parcel 4134009083 · RHD · 28,238 sq ft
+
+- Table 2-2 marks multiple-family dwellings P. Max 45. **By right: 45.** Engine: 45 ✓
+
+### BR-19. Monrovia parcel 8516003043 · RH · 7,131 sq ft
+
+- §17.08.010's table marks multiple-family dwellings P. Max 3. **By right: 3.** Engine: 3 ✓
+
+### BR-20. South Gate parcel 6234004008 · NL · 5,634 sq ft
+
+- Table 11.21-5 marks duplex and single-family homes P. Max 4. **By right: 4.** Engine: 4 ✓
+
+### BR-21. Carson parcel 7329037002 · RM (12) · 7,226 sq ft
+
+- The table marks multiple-family dwellings C; the zone is mixed, so only SB 9 homes would count, and SB 9 doesn't apply here. Max 3. **By right: not confirmed.** Engine: not confirmed ✓
+
+## Downey
+
+### DO-1. 8506 Puritan St Downey Ca 90242 · R-1 5,000 · 6,090 sq ft
+
+- density 1, envelope 2, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### DO-2. 7539 Buell St Downey Ca 90241 · R-1 7,500 · 7,798 sq ft
+
+- density 1, envelope 3, parking 5, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### DO-3. 10702 Lesterford Ave Downey Ca 90241 · R-1 6,000 · 6,106 sq ft
+
+- density 1, envelope 2, parking 4, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### DO-4. 7524 Stewart And Gray Rd Downey Ca 90241 · R-3 · 8,779 sq ft
+
+- lot_area_per_unit 4, envelope 12, parking 7, state_adu 3. **Result: 4, lot area per unit.** By right: 4. Engine: 4 ✓
+
+### DO-5. 8144 Comolette St Downey Ca 90242 · R-2 · 5,781 sq ft
+
+- lot_area_per_unit 2, envelope 5, parking 3, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### DO-6. 9129 Lubec St Downey Ca 90240 · R-1 10,000 · 10,373 sq ft
+
+- density 1, envelope 4, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### DO-7. 7501 Firestone Blvd Downey Ca 90241 · C-2 · 15,360 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: 0. Engine: 0 ✓
+
+## El Segundo
+
+### ES-1. 619 Maryland St El Segundo Ca 90245 · R-1 · 6,424 sq ft
+
+- density 1, envelope 3, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### ES-2. 135 W Palm Ave El Segundo Ca 90245 · R-3 · 6,718 sq ft
+
+- density 4, envelope 6, state_adu 3. **Result: 4, density.** By right: 4. Engine: 4 ✓
+
+### ES-3. 514 Sheldon St El Segundo Ca 90245 · R-2 · 6,000 sq ft
+
+- density 2, lot_area_per_unit 3, envelope 5, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### ES-4. 215 S Douglas St El Segundo Ca 90245 · M-1 · 69,679 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: not confirmed. Engine: 0 ✓
+
+## Irwindale
+
+### IR-1. 4808 Sabre Ln Irwindale Ca 91706 · A1 · 7,296 sq ft
+
+- lot_area_per_unit 1, envelope 8, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### IR-2. 16015 Calle Breceda Irwindale Ca 91706 · R1 · 6,032 sq ft
+
+- density 1, envelope 6, parking 4, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### IR-3. 5124 Irwindale Ave Irwindale Ca 91706 · C3 · 6,928 sq ft
+
+- density 1, envelope 7, parking 5, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### IR-4. 15830 Hidalgo St Irwindale Ca 91706 · R2 · 9,050 sq ft
+
+- lot_area_per_unit 3, envelope 10, parking 6, state_adu 3. **Result: 3, lot area per unit.** By right: 3. Engine: 3 ✓
+
+### IR-5. 13654 Live Oak Ln Irwindale Ca 91706 · M2 · 57,512 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: not confirmed. Engine: 0 ✓
+
+## Rosemead
+
+### RO-1. 3527 Marybeth Ave Rosemead Ca 91770 · 001:R-1 · 6,896 sq ft
+
+- density 1, envelope 2, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### RO-2. 3410 Kelburn Ave Rosemead Ca 91770 · 002:R-2 · 7,409 sq ft
+
+- lot_area_per_unit 1, envelope 2, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### RO-3. 2522 New Ave Rosemead Ca 91770 · 003:R-3 · 9,206 sq ft
+
+- lot_area_per_unit 6, envelope 3, state_adu 3. **Result: 3, envelope.** By right: 3. Engine: 3 ✓
+
+### RO-4. 3141 Del Mar Ave Rosemead Ca 91770 · 006:C-3 · 7,342 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: 0. Engine: 0 ✓
+
+## San Fernando
+
+### SF-1. 2008 Knox St San Fernando Ca 91340 · R-1 · 6,887 sq ft
+
+- density 1, envelope 6, state_adu 3, state_sb9 4. **Result: 4, state law:sb9.** By right: 4. Engine: 4 ✓
+
+### SF-2. 623 Coronel St San Fernando Ca 91340 · R-2 · 5,000 sq ft
+
+- lot_area_per_unit 1, envelope 3, state_adu 3. **Result: 3, state law:adu.** By right: 3. Engine: 3 ✓
+
+### SF-3. 227 N Hagar St San Fernando Ca 91340 · R-3 · 7,071 sq ft
+
+- lot_area_per_unit 6, envelope 7, state_adu 3. **Result: 6, lot area per unit.** By right: 6. Engine: 6 ✓
+
+### SF-4. 539 Library St San Fernando Ca 91340 · M-1 · 19,990 sq ft
+
+- homes not counted. **Result: 0, use not permitted.** By right: 0. Engine: 0 ✓

@@ -110,6 +110,58 @@ def housing_element_text(pdf: Path) -> str:
 # --- 3. Annual Progress Report production ------------------------------------------
 
 
+def _tracking_numbers(value) -> set[str]:
+    """'18010-20000-02208; 18010-20000-02209' -> both numbers, digits only. Very short ones aren't reliable."""
+    parts = (re.sub(r"\D", "", part) for part in re.split(r"[;,/\s]+", str(value or "")))
+    return {part for part in parts if len(part) >= 5}
+
+
+def drop_repeat_permits(apr: pd.DataFrame) -> pd.DataFrame:
+    """Count each building permit once.
+
+    Some cities (LA, Glendale) report a project again in later years, for example when
+    it's finished, and repeat its permit figures. LA may also list a project's permits
+    together in one row ("A; B" or "A B"), and separately in another. Rows with the same
+    building type and issue date that share a tracking number are one group. A group's
+    homes are the larger of its biggest row and its earliest year's rows added up, and
+    they stay on its earliest row. Rows without a tracking number or date stay as they are.
+    """
+    out = apr.copy()
+    issued = out["BP_ISSUE_DT1"].fillna("").astype(str).str[:10]
+    usable = out.index[(out["permitted"] > 0) & (issued != "")]
+    parent: dict = {}
+
+    def find(x):
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    members: dict = {}
+    for i in usable:
+        numbers = _tracking_numbers(out.at[i, "JURS_TRACKING_ID"])
+        if not numbers:
+            continue
+        date_key = (issued[i], out.at[i, "UNIT_CAT"])
+        first = find((date_key, next(iter(numbers))))
+        for number in numbers:
+            parent[find((date_key, number))] = first
+        members[i] = (date_key, next(iter(numbers)))
+    groups: dict = {}
+    for i, key in members.items():
+        groups.setdefault(find(key), []).append(i)
+    for rows in groups.values():
+        if len(rows) < 2:
+            continue
+        rows = sorted(rows, key=lambda i: out.at[i, "YEAR"])
+        earliest = out.at[rows[0], "YEAR"]
+        homes = max(max(out.at[i, "permitted"] for i in rows), sum(out.at[i, "permitted"] for i in rows if out.at[i, "YEAR"] == earliest))
+        out.loc[rows, "permitted"] = 0
+        out.at[rows[0], "permitted"] = homes
+    return out
+
+
 def load_apr(path: Path) -> pd.DataFrame:
     apr = pd.DataFrame(json.loads(path.read_text()))
     bp = [c for c in apr.columns if c.startswith("BP_") and c.endswith(("_DR", "_NDR", "_INCOME"))]
@@ -120,7 +172,7 @@ def load_apr(path: Path) -> pd.DataFrame:
     apr["completed"] = apr[co].sum(axis=1)
     apr["apn"] = apr["APN"].map(_digits)
     apr["YEAR"] = apr["YEAR"].astype(int)
-    return apr
+    return drop_repeat_permits(apr)
 
 
 # --- Report ----------------------------------------------------------------------------

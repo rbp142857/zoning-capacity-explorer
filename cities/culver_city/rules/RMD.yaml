@@ -1,0 +1,39 @@
+# Culver City RMD. Every value cites the Culver City Municipal Code, Title 17 (American Legal, read 2026-11-01).
+zone: "RMD"
+name: "Medium Density Multiple-Family (RMD)"
+family: multifamily
+
+sources:
+  Z:
+    section: "CCMC §17.210.020, Table 2-4"
+    url: https://codelibrary.amlegal.com/codes/culvercity/latest/culvercity_ca/0-0-0-17951
+  P:
+    section: "CCMC §17.320.020 (no minimum required parking)"
+    url: https://codelibrary.amlegal.com/codes/culvercity/latest/culvercity_ca/0-0-0-18658
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-2 (§17.210.015) marks multiple-family dwellings P."}
+min_lot_area_sqft: {value: 5000, source: Z, assumption: "For new lots."}
+min_lot_width_ft: {value: 50, source: Z}
+lot_area_per_unit_sqft: {value: 871.2, source: Z, assumption: "50 homes per gross acre converted to land per home."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 871.2
+
+setbacks:
+  front_ft: {value: 10, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 43, source: Z}
+max_stories: {value: 4, source: Z, assumption: "The code limits feet, not stories; we fit one per 10 ft or so."}
+
+simplifications:
+  - "No minimum required parking (§17.320.020), so parking doesn't limit homes here."
+  - "Open space per home and stepbacks next to R1 and R2 are not modeled, so these can run high."

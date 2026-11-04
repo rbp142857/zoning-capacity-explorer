@@ -1,0 +1,28 @@
+# Gardena R1. Every value cites the Gardena Municipal Code, Title 18 (eCode360, read 2026-11-01).
+zone: "R1"
+name: "Single-Family Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "GMC §18.12.050"
+    url: https://ecode360.com/48208226
+  P:
+    section: "GMC Ch. 18.40 (off-street parking)"
+    url: https://ecode360.com/48209742
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single-family dwellings are a permitted use."}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. ADUs and two-unit projects (§18.12.060, SB 9) are state law, modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces per home. None within ½ mile of a major transit stop (the AB 2097 path)."}

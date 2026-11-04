@@ -1,0 +1,43 @@
+# Monrovia RM3000. Every value cites the Monrovia Municipal Code, Title 17 (American Legal, read 2026-11-01).
+zone: "RM3000"
+name: "Multiple-Family (RM3000)"
+family: multifamily
+
+sources:
+  Z:
+    section: "MMC §17.12.030"
+    url: https://codelibrary.amlegal.com/codes/monrovia/latest/monrovia_ca/0-0-0-71985
+  P:
+    section: "MMC §17.24.030 (residential parking)"
+    url: https://codelibrary.amlegal.com/codes/monrovia/latest/monrovia_ca/0-0-0-72371
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "§17.08.010's table marks multiple-family dwellings P."}
+min_lot_area_sqft: {value: 10000, source: Z}
+min_lot_width_ft: {value: 75, source: Z}
+lot_area_per_unit_sqft: {value: 3000, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 3000
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 5, max_ft: 15}, source: Z, assumption: "First story: 10% of lot width, at least 5 ft, at most 15 ft. Second story setbacks are not modeled."}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 27, source: Z}
+max_stories: {value: 2, source: Z}
+max_far: {value: 0.40, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "Half a guest space per home at six or more homes."}
+guest_parking_min_units: 6
+
+simplifications:
+  - "Lots under the minimum area are given their density anyway; the minimum applies to new lots (our reading). Lot averaging is not modeled."
+  - "Attached two-story homes aren't allowed in RM; that shapes design, not the count here."

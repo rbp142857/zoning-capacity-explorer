@@ -1,0 +1,26 @@
+# Commerce R-1. Every value cites the Commerce Municipal Code, Title 19 (Municode, Supp. 15, through Ord. 829, read 2026-11-02).
+zone: "R-1"
+name: "R-1 Low Density Residential"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §§19.07.010 to 19.07.030 and Table 19.21.040A"
+    url: https://library.municode.com/ca/commerce/codes/code_of_ordinances?nodeId=TIT19ZO_CH19.07REZO_DIV1PEUSDEST_19.07.030DEST
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z, assumption: "Table 19.07.020A permits single-family homes and bars duplexes and multifamily. New homes over 2,300 sq ft of total floor area need a conditional use permit."}
+approval: {value: mixed, source: Z, assumption: "New homes over 2,300 sq ft of total floor area need a conditional use permit."}
+max_units_per_lot: {value: 1, source: Z, assumption: "The table permits a single-family dwelling, and 8.70 homes per acre is 5,007 sq ft per home. We count one home per lot."}
+min_lot_area_sqft: {value: 4000, source: Z}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 3, max_ft: 5}, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.45, source: Z}
+max_far: {value: 0.40, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "A 2-car garage per home, plus one space for each bedroom over four. None within ½ mile of a major transit stop (the AB 2097 path)."}

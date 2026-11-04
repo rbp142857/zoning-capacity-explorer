@@ -1,0 +1,28 @@
+# Los Angeles [LF1-WH1-6][I1-N]. Chapter 1A (new zoning code), read on zoning.lacity.gov on 2026-11-01.
+zone: "[LF1-WH1-6][I1-N]"
+name: "LF1 form, WH1 frontage, Standards 6, I1 use, N density"
+family: nonresidential
+
+sources:
+  F:
+    section: "LA Zoning Code (Ch. 1A) Sec. 2B.11.1 (LF1 Form District)"
+    url: https://zoning.lacity.gov/browse/2#2B.11.1
+  U:
+    section: "LA Zoning Code (Ch. 1A) Sec. 5B.7.1 (I1 Use District)"
+    url: https://zoning.lacity.gov/browse/5#5B.7.1
+  D:
+    section: "LA Zoning Code (Ch. 1A) Part 6B (Density Districts)"
+    url: https://zoning.lacity.gov/browse/6#6B
+  P:
+    section: "LA Zoning Code (Ch. 1A) Sec. 4C.4.1, Table 1 (Package A, assigned by Development Standards District 6)"
+    url: https://zoning.lacity.gov/browse/4#4C.4.1
+
+residential_allowed: {value: false, source: U, assumption: "The N Density District means no homes are permitted (Sec. 6A.1.3)."}
+housing_types: {value: [], source: U}
+approval: {value: not_allowed, source: U, assumption: "The N Density District means no homes are permitted (Sec. 6A.1.3)."}
+
+setbacks:
+  front_ft: {value: 0, source: F}
+  side_ft: {value: 0, source: F}
+  rear_ft: {value: 0, source: F}
+max_stories: {value: 0, source: F, assumption: "Not relevant: homes not counted."}

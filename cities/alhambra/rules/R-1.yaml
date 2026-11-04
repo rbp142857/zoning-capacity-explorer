@@ -1,0 +1,30 @@
+# Alhambra R-1. Every value cites the Alhambra Municipal Code, Title 23 (American Legal, read 2026-11-01).
+zone: "R-1"
+name: "Residential Low Density (RL; R-1 in SCAG's table)"
+family: single_family
+
+sources:
+  Z:
+    section: "AMC §23.04.030, Table 23.04.030"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-136023
+  P:
+    section: "AMC §23.20.040, Table 23.20.040"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-137138
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 23.04.020 marks single-unit dwellings P and multi-unit dwellings P with note 1 in RL, which we read R-1 as."}
+max_units_per_lot: {value: 1, source: Z, assumption: "Only a detached single-unit dwelling; multi-unit is limited to the SB 9 path, modeled separately. The zone's 5 homes per acre governs subdividing, not a lot already there."}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on the first story and 6 ft above; we use 5 ft for the ground floor."}
+  rear_ft: {value: 15, source: Z, assumption: "20% of lot depth, up to 15 ft; we use 15 ft."}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+max_far: {value: 0.40, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces in an enclosed garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "SCAG's zoning table for Alhambra dates from 2018 and uses the zone names from before the 2024 code. We read this as RL, the zone that implements the same General Plan designation; a lot rezoned since 2018 would be wrong."

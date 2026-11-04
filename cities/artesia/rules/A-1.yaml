@@ -1,0 +1,27 @@
+# Artesia A-1. Every value cites the Artesia Municipal Code, Title 9, Chapter 2 (eCode360, code dated 2026-04-13, read 2026-11-02).
+zone: "A-1"
+name: "Agriculture-Single-Family Residential (A-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "AMC Art. 27 (§9-2.2702 and development standards)"
+    url: https://ecode360.com/43221281
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Homes are listed as principal permitted uses."}
+max_units_per_lot: {value: 1, source: Z, assumption: "R-1's principal uses apply. State law (ADU) is modeled separately."}
+sb9_allowed: {value: false, source: Z, assumption: "This is an agricultural-residential district, so we don't apply SB 9 (conservative), as with LA's A1 and A2 and Torrance's A-1; see the open decision."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 3, max_ft: 5}, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.50, source: Z}
+
+simplifications:
+  - "The zone's minimum lot wasn't captured; lots are not flagged for size. Article 11 parking isn't modeled; the one-home limit binds."

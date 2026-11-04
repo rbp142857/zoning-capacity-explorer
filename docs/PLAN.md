@@ -56,7 +56,7 @@ zoning-capacity-explorer/
   shared/fixtures/golden.json# sample parcels + scenarios + expected results (used by BOTH Python and JS tests)
   web/                       # Vite + plain TypeScript, MapLibre GL JS, PMTiles
   Makefile                   # make download / clean / capacity / tiles / site
-  docs: README, METHODOLOGY, ADDING_A_CITY, LEARNING, LICENSE
+  docs: README, METHODOLOGY, ADDING_A_CITY, LICENSE
 ```
 
 Key decisions:
@@ -97,7 +97,7 @@ The result records `binding_constraint` (the argmin, with a tie order documented
 8. **METHODOLOGY / ADDING_A_CITY**, validation against the official figures, 10 hand-checked real parcels, final deploy.
 9. *(Optional)* **Pro forma.**
 
-Each milestone ends with: a summary, "what to understand", exercises, open questions, and a commit. `LEARNING.md` grows each milestone.
+Each milestone ends with: a summary, "what to understand", exercises, open questions, and a commit.
 
 ## Verification
 - `make test`: pytest (every constraint, with hand-calculated parcels; sanity checks: no negative capacity, flagged parcels counted and never dropped) plus vitest (golden parity Python↔TS).

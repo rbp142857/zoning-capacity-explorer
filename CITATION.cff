@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this data or software, please cite it as below, and link the scenario you used."
+title: "Zoning Capacity Explorer"
+type: software
+authors:
+  - name: "Zoning Capacity Explorer contributors"
+abstract: "Estimates of what zoning allows on each parcel in LA County cities, and how reforms would change it. For research and advocacy, not legal or zoning advice."
+repository-code: "https://github.com/rbp142857/zoning-capacity-explorer"
+url: "https://rbp142857.github.io/zoning-capacity-explorer/"
+license: MIT
+keywords: [zoning, housing, land use, Los Angeles County, California]

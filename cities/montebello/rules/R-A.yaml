@@ -1,0 +1,25 @@
+# Montebello R-A. Every value cites the Montebello Municipal Code, Title 17 (Municode, read 2026-11-01).
+zone: "R-A"
+name: "Residential Agricultural (R-A)"
+family: single_family
+
+sources:
+  Z:
+    section: "MMC Ch. 17.10, Exhibit 17.10.020 and §17.10.040"
+    url: https://library.municode.com/ca/montebello/codes/code_of_ordinances?nodeId=TIT17ZO_CH17.10REZOGE
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single-family detached dwellings are principal permitted uses."}
+min_lot_area_sqft: {value: 5000, source: Z, assumption: "5,000 sq ft south of Beverly Blvd, 6,000 north; we use 5,000."}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "5 ft; more with height over 15 ft unless upper stories step back, which we assume they do."}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits 35 ft, not stories; we fit 3."}
+lot_coverage: {value: 0.40, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "2 enclosed spaces. None within ½ mile of a major transit stop (the AB 2097 path)."}

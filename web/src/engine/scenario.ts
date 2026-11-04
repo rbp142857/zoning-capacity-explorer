@@ -103,10 +103,12 @@ export function adjustForLot(r: ZoneRules, lot: Lot, s: Scenario): ZoneRules {
     const extra = s.transit_extra_stories;
     if (extra) {
       u.max_stories = cite(addStories(r.max_stories.value, extra));
-      if (r.max_far) {
-        const base = r.max_stories.value;
-        const baseStories = typeof base === "number" ? base : pick(base, lot.area_sqft, lot.width_ft, lot.dist_single_family_ft).value;
-        if (baseStories) u.max_far = cite((r.max_far.value * (baseStories + extra)) / baseStories);
+      const base = r.max_stories.value;
+      const baseStories = typeof base === "number" ? base : pick(base, lot.area_sqft, lot.width_ft, lot.dist_single_family_ft).value;
+      if (baseStories) {
+        const growth = (baseStories + extra) / baseStories;
+        if (r.max_far) u.max_far = cite(r.max_far.value * growth);
+        if (r.max_buildable_multiple) u.max_buildable_multiple = cite(r.max_buildable_multiple.value * growth);
       }
     }
     if (m !== 1) {

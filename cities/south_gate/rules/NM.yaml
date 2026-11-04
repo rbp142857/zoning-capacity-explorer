@@ -1,0 +1,34 @@
+# South Gate NM. Every value cites the South Gate Municipal Code, Title 11 (eCode360, read 2026-11-01).
+zone: "NM"
+name: "Neighborhood Medium (NM)"
+family: multifamily
+
+sources:
+  Z:
+    section: "SGMC Ch. 11.25, Table 11.25-3"
+    url: https://ecode360.com/48149520
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 11.21-5 marks multifamily homes P, with an A-P note and standards in §11.25.070."}
+lot_area_per_unit_sqft: {value: 2178, source: Z, assumption: "20 homes per acre converted to land per home."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 2178
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 10, source: Z, assumption: "10 ft to living space, 20 ft next to NL; we use 10 ft."}
+  rear_ft: {value: 10, source: Z, assumption: "The interior lot line rule; we use 10 ft."}
+
+max_height_ft: {value: 50, source: Z}
+max_stories: {value: 3, source: Z}
+lot_coverage: {value: 0.60, source: Z}
+
+simplifications:
+  - "Parking and open space weren't read for this pass, so these can run high."

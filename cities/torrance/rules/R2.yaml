@@ -1,0 +1,30 @@
+# Torrance R2. Every value cites the Torrance Municipal Code, Division 9 (Code Publishing, read 2026-11-02; current through Ord. 3969, June 23, 2026).
+zone: "R2"
+name: "Two Family Residential (R-2)"
+family: multifamily
+
+sources:
+  Z:
+    section: "TMC §§91.6.1 to 91.6.10"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.6
+  P2:
+    section: "TMC §93.2.2 (two family parking)"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0903.html#93.2.2
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit], source: Z}
+approval: {value: by_right, source: Z, assumption: "§91.6.1 lists two single-family dwellings or one two-family dwelling as a permissible use."}
+min_lot_area_sqft: {value: 6000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 2, source: Z}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: {pct_of_width: 0.10, min_ft: 3, max_ft: 5}, source: Z}
+  rear_ft: {value: 10, source: Z, assumption: "10 ft. Lots backing onto R-1 use R-1's rear yard, not modeled."}
+
+max_height_ft: {value: 27, source: Z}
+max_stories: {value: 2, source: Z, assumption: "Over 2 stories needs a conditional use permit; we use 2."}
+max_far: {value: 0.65, source: Z, assumption: "Excludes the garage."}
+min_open_space_share: {value: 0.3333, source: Z}
+parking_per_unit: {value: 2, source: P2, assumption: "Garage space for 4 cars on a duplex lot."}

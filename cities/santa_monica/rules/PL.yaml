@@ -12,6 +12,7 @@ sources:
 
 residential_allowed: {value: false, source: U15, assumption: "Table 9.15.020 allows no homes in PL (emergency shelters only)."}
 housing_types: {value: [], source: U15}
+approval: {value: not_allowed, source: U15, assumption: "Chapter 9.15's table marks dwellings —."}
 
 setbacks:
   front_ft: {value: 0, source: U15}

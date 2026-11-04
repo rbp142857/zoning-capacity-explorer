@@ -1,0 +1,38 @@
+# Torrance RTH. Every value cites the Torrance Municipal Code, Division 9 (Code Publishing, read 2026-11-02; current through Ord. 3969, June 23, 2026).
+zone: "RTH"
+name: "Residential Townhouse (R-TH)"
+family: multifamily
+
+sources:
+  Z:
+    section: "TMC §§91.39.1 to 91.39.14"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.39
+  P2:
+    section: "TMC §§91.39.11 and 93.2.1 (townhouse parking)"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.39.11
+
+residential_allowed: {value: true, source: Z, assumption: "Townhouses need a conditional use permit; R-1 uses are also allowed."}
+housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: mixed, source: Z, assumption: "Townhouses need a conditional use permit; other homes weren't confirmed."}
+lot_area_per_unit_sqft: {value: 3630, source: Z, assumption: "12 homes per net acre, for developments under 5 acres. We use it everywhere; 15 per acre at 5 acres or more isn't modeled, so large sites run low."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 3630
+
+setbacks:
+  front_ft: {value: 0, source: Z, assumption: "Article 39 sets no yards; the conditional use permit does. We model none."}
+  side_ft: {value: 0, source: Z, assumption: "See front."}
+  rear_ft: {value: 0, source: Z, assumption: "See front."}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits height to 35 ft, not stories; we fit 2 (conservative)."}
+parking_per_unit: {value: 2, source: P2}
+guest_parking_per_unit: {value: 0.5, source: P2}
+
+simplifications:
+  - "1,000 sq ft of open space per home is not modeled. Many of these lots are single townhomes, each keeping one home."

@@ -22,6 +22,8 @@ export interface CapacityResult {
   state_laws_applied: string[];
   net_new_units: number | null;
   flags: string[];
+  approval: string | null;
+  by_right_units: number | null;
 }
 
 export function localCapacity(
@@ -43,6 +45,17 @@ export function localCapacity(
   return [units, binding, limits];
 }
 
+/** by_right_units() in capacity.py. */
+export function byRightUnits(r: ZoneRules, bestUnits: number, sb9Units: number | null): number | null {
+  const approval = r.approval?.value ?? null;
+  if (approval === "by_right") {
+    if (r.by_right_max_units) return Math.min(bestUnits, Math.max(r.by_right_max_units.value, sb9Units ?? 0));
+    return bestUnits;
+  }
+  if (approval === "conditional" || approval === "not_allowed") return sb9Units ?? 0;
+  return sb9Units;
+}
+
 function hasExcludedOverlay(lot: Lot, prefixes: string[]): boolean {
   return lot.overlays.some((o) => prefixes.some((p) => o.startsWith(p)));
 }
@@ -57,7 +70,7 @@ export function computeCapacity(
     return {
       status: "not_modeled", max_units: null, local_units: null, binding_constraint: null,
       local_binding_constraint: null, limits: {}, state_laws_applied: [], net_new_units: null,
-      flags: ["zone_not_modeled"],
+      flags: ["zone_not_modeled"], approval: null, by_right_units: null,
     };
   }
   const flags: string[] = [];
@@ -110,5 +123,7 @@ export function computeCapacity(
     state_laws_applied: applied,
     net_new_units: netNew,
     flags,
+    approval: r.approval?.value ?? null,
+    by_right_units: byRightUnits(r, bestUnits, limits.state_sb9 ?? null),
   };
 }

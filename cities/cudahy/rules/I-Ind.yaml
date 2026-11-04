@@ -1,0 +1,25 @@
+# Cudahy I-Ind. Every value cites the Cudahy Municipal Code, Title 20 (ICC Code Solutions, through Ord. 772 of August 18, 2026, read 2026-11-03).
+zone: "I-Ind"
+name: "I-Ind Innovative Industrial"
+family: commercial
+
+sources:
+  Z:
+    section: "CMC §§20.20.020 and 20.20.030 and 20.64.040"
+    url: https://cudahy.municipal.codes/CMC/20.20.030
+
+residential_allowed: {value: true, source: Z, assumption: "Multifamily homes need a conditional use permit, which we assume is granted."}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Multifamily homes need a conditional use permit."}
+min_lot_area_sqft: {value: 6000, source: Z}
+lot_area_per_unit_sqft: {value: 1452, source: Z, assumption: "30 homes per acre."}
+
+setbacks:
+  front_ft: {value: 10, source: Z, assumption: "0 to 10 ft; we use 10 (conservative)."}
+  side_ft: {value: 0, source: Z, assumption: "None, except next to a residential zone; not modeled."}
+  rear_ft: {value: 0, source: Z, assumption: "None, except next to a residential zone; not modeled."}
+
+max_stories: {value: 3, source: Z}
+max_far: {value: 1.25, source: Z}
+parking_per_unit: {value: 1.5, source: Z, assumption: "1.5 spaces for multifamily homes with one or two bedrooms; 2 for larger homes, detached homes and duplexes. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: Z}

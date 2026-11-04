@@ -1,0 +1,730 @@
+city,apn,address,category,permitted,first_year,zone,local_units,max_units,result
+los_angeles,5144009079,960 W 7TH ST,5+,785,2020,[HB5-SH1-5][CX4-FA],472.0,472.0,over_and_unexplained
+los_angeles,4125024020,9750 S AIRPORT BLVD,5+,572,2025,C2-2,310.0,310.0,over_and_unexplained
+los_angeles,2246020015,11401 N PORTER RANCH DR BLDG 8,5+,499,2018,R1,1.0,4.0,over_and_unexplained
+los_angeles,5094007001,685 S CATALINA ST,5+,336,2020,C4-2,163.0,163.0,over_and_unexplained
+los_angeles,7442001911,1547-1571 W AUSTYN DR; 1550-1570 W AUSTYN DR; 1547-1567 W AUSTYN DR; 1575-1599 W NICOLE WAY; 27802-27820 W AUSTYN DR; 1511-1538 W AUSTYN DR; 1574-1598 W NICOLE WAY,5+,260,2022,OS,0.0,0.0,over_and_unexplained
+los_angeles,2215028018,7650 N VAN NUYS BLVD 1-124,5+,248,2022,C2,34.0,34.0,over_and_unexplained
+los_angeles,5141007001,2500 WILSHIRE BLVD,5+,248,2018,C4-2,90.0,90.0,over_and_unexplained
+los_angeles,5502027010,3325 W WILSHIRE BLVD,5+,236,2024,C4-2,129.0,129.0,over_and_unexplained
+los_angeles,5502028020,3345 W WILSHIRE BLVD,5+,202,2020,C4-2,75.0,75.0,over_and_unexplained
+los_angeles,2230024011,17150 W VICTORY BLVD,5+,193,2025,PF,0.0,0.0,over_and_unexplained
+los_angeles,5149020010,125 W 4TH ST,5+,188,2021,[HM2-CHC1-5][CX3-FA],145.0,145.0,over_and_unexplained
+los_angeles,4314010081,3667 S KEYSTONE AVE; 3688 S OVERLAND AVE,5+,187,2021,C2,6.0,6.0,over_and_unexplained
+monterey_park,5256002102,419 N. Chandler,5+,168,2021,R-S,0.0,0.0,over_and_unexplained
+duarte,8530004120,1411-1413 Huntington Dr,5+,161,2019,CG,0.0,0.0,over_and_unexplained
+los_angeles,5141020019,831 S WESTLAKE AVE 1-79,5+,158,2022,R4,13.0,13.0,over_and_unexplained
+los_angeles,5501001016,345 N MADISON AVE 1-148,5+,148,2025,M1,0.0,0.0,over_and_unexplained
+los_angeles,5110026033,5138 S BROADWAY,5+,145,2021,C2,12.0,12.0,over_and_unexplained
+los_angeles,2335020022,6201 N KRAFT AVE,5+,140,2023,R1,1.0,4.0,over_and_unexplained
+los_angeles,5144013020,404 W 7TH ST 1-125,5+,125,2022,[HB5-SH1-5][CX4-FA],101.0,101.0,over_and_unexplained
+los_angeles,5087022030,5935 W PICO BLVD,5+,123,2020,C4,30.0,30.0,over_and_unexplained
+los_angeles,5501002032,320 N MADISON AVE,5+,122,2020,M1,0.0,0.0,over_and_unexplained
+los_angeles,4317001004,10400 W SANTA MONICA BLVD,5+,120,2025,C2,5.0,5.0,over_and_unexplained
+los_angeles,5080007021,988 S MANHATTAN PL,5+,118,2022,C2,18.0,18.0,over_and_unexplained
+los_angeles,5144016058,208 W 8TH ST,5+,110,2020,[DM4-CHC1-5][CX4-FA],46.0,46.0,over_and_unexplained
+los_angeles,5080014012,1011 S SERRANO AVE,5+,104,2019,C2,6.0,6.0,over_and_unexplained
+los_angeles,6012004047,6501 S BROADWAY 1-51,5+,102,2022,C2,12.0,12.0,over_and_unexplained
+los_angeles,5148024026,401 7TH ST   E  90014,5+,99,2018,[MB2-SH1-5][CX2-FA],55.0,55.0,over_and_unexplained
+los_angeles,4006018003,6501 S CRENSHAW BLVD,2 to 4,98,2023,R3,19.0,19.0,over_and_unexplained
+los_angeles,5148013004,401 E 6TH ST,5+,94,2021,[MB2-G1-5][CX2-FA],61.0,61.0,over_and_unexplained
+west_covina,8441027903,510 TAMARIND,5+,94,2022,R-1,1.0,4.0,over_and_unexplained
+los_angeles,4319009031,10310 W SANTA MONICA BLVD 1-91,5+,91,2021,C2,5.0,5.0,over_and_unexplained
+los_angeles,5148025024,519 7TH ST,5+,81,2018,[MB2-SH1-5][CX2-FA],32.0,32.0,over_and_unexplained
+los_angeles,5402038033,715 N ALVARADO ST,5+,81,2022,C2,4.0,4.0,over_and_unexplained
+san_gabriel,5369017012,101 E Valley,5+,81,2024,C-3,0.0,0.0,over_and_unexplained
+calabasas,2068003020,4719 Commons Way,5+,80,2025,CMU,36.0,36.0,over_and_unexplained
+los_angeles,6016025004,6901 S WESTERN AVE 1-88,5+,80,2023,C2,5.0,5.0,over_and_unexplained
+los_angeles,4208007039,10424 W VENICE BLVD,5+,79,2020,C2,18.0,18.0,over_and_unexplained
+los_angeles,4125012016,8911 S RAMSGATE AVE 1-77,5+,77,2025,R3,15.0,15.0,over_and_unexplained
+los_angeles,5077015017,2801 W LEEWARD AVE 1-38,5+,76,2022,C2,9.0,9.0,over_and_unexplained
+los_angeles,4259020900,11998 W MISSOURI AVE 1-74,5+,74,2019,PF,0.0,0.0,over_and_unexplained
+los_angeles,5040021006,1408 W JEFFERSON BLVD 1-69,5+,69,2025,C2,7.0,7.0,over_and_unexplained
+los_angeles,5078014012,1045 S DEWEY AVE 1-67,5+,67,2021,R4,10.0,10.0,over_and_unexplained
+los_angeles,5183009909,111 S SOTO ST 1-64,5+,64,2021,[LM6-SH3-4][CX2-4],14.0,14.0,over_and_unexplained
+gardena,6106027028,16819 S NORMANDIE AVE,5+,63,2020,M1,0.0,0.0,over_and_unexplained
+los_angeles,5006003013,3471 W SLAUSON AVE 1-63,5+,63,2024,C2,7.0,7.0,over_and_unexplained
+los_angeles,5110006028,4507 S MAIN ST,5+,61,2022,C2,12.0,12.0,over_and_unexplained
+los_angeles,2681011042,16245 W SAN FERNANDO MISSION BLVD BLDG A,5+,60,2022,C1,20.0,20.0,over_and_unexplained
+los_angeles,5101030030,100 W 55TH ST 1-56,5+,57,2021,C2,12.0,12.0,over_and_unexplained
+pasadena,5723028033,88 N Oakland Ave,5+,55,2020,CD-MU-G,29.0,29.0,over_and_unexplained
+los_angeles,2787019008,17361 W ROSCOE BLVD,5+,53,2019,RA,1.0,4.0,over_and_unexplained
+los_angeles,5109003014,4758 S MAIN ST 1-53,5+,53,2023,C2,6.0,6.0,over_and_unexplained
+los_angeles,5524011014,6535 W MELROSE AVE,5+,52,2020,CM,18.0,18.0,over_and_unexplained
+monterey_park,5256002117,419 N CHANDLER AVE,5+,52,2024,R-S,0.0,0.0,over_and_unexplained
+los_angeles,5503032006,601 S MANHATTAN PL,5+,51,2023,C2,11.0,11.0,over_and_unexplained
+los_angeles,2353006021,11013 W HARTSOOK ST 1-25,5+,50,2022,R4,13.0,13.0,over_and_unexplained
+los_angeles,6023009002,7410 S AVALON BLVD 1-49,5+,49,2023,C2,3.0,3.0,over_and_unexplained
+san_gabriel,5371004041,860 E VALLEY BLVD,5+,49,2024,C-3,0.0,0.0,over_and_unexplained
+los_angeles,5204005901,216 S AVENUE 24 1-48,5+,48,2025,PF,0.0,0.0,over_and_unexplained
+los_angeles,4214010009,3968 S BERRYMAN AVE,5+,47,2021,R1V2,1.0,4.0,over_and_unexplained
+los_angeles,5062003032,4973 W 21ST ST,5+,47,2024,C2,8.0,8.0,over_and_unexplained
+los_angeles,5080022026,1047 S HARVARD BLVD 1-47,5+,47,2021,R4,10.0,10.0,over_and_unexplained
+los_angeles,4258009031,11671-11677 NATIONAL BLVD,5+,46,2018,R3,11.0,11.0,over_and_unexplained
+los_angeles,5036015027,3901 S NORMANDIE AVE 1-47,5+,46,2023,C2,5.0,5.0,over_and_unexplained
+los_angeles,5157025045,1919 W COURT ST,5+,46,2022,RD1.5,2.0,3.0,over_and_unexplained
+los_angeles,6035009003,8111 S WESTERN AVE 1-45,5+,46,2024,C2,9.0,9.0,over_and_unexplained
+los_angeles,2338028006,5645 N FARMDALE AVE,5+,44,2019,R3,9.0,9.0,over_and_unexplained
+los_angeles,5078012005,1025 S BERENDO ST,5+,44,2019,R4,10.0,10.0,over_and_unexplained
+los_angeles,4256015014,2600 S SEPULVEDA BLVD,5+,43,2022,R3,6.0,6.0,over_and_unexplained
+los_angeles,5082026013,1141 S CRENSHAW BLVD,5+,43,2021,R3,10.0,10.0,over_and_unexplained
+los_angeles,5589029023,1825 N NEW HAMPSHIRE AVE 1-21,5+,42,2022,R3,11.0,11.0,over_and_unexplained
+los_angeles,2416009029,5205 N HARMONY AVE #1 to #40,5+,40,2021,C4,5.0,5.0,over_and_unexplained
+los_angeles,5001029901,5215 S FIGUEROA ST 1-40,5+,40,2021,C2,6.0,6.0,over_and_unexplained
+los_angeles,5586035013,5717 W CARLTON WAY 1-39,5+,39,2021,R4-2,21.0,21.0,over_and_unexplained
+santa_monica,4282025017,1445  10TH ST,5+,39,2020,MUBL,20.0,20.0,over_and_unexplained
+los_angeles,2378004016,10867 W FRUITLAND DR 1-19,5+,38,2022,R3,10.0,10.0,over_and_unexplained
+pasadena,5723021013,"136 N FAIR OAKS AVE MIXED USE
+PASADENA, CA 91103",5+,38,2025,CD-MU-C,11.0,11.0,over_and_unexplained
+san_gabriel,5370007007,1616  EUCLID AVE,5+,38,2024,R-3,4.0,4.0,over_and_unexplained
+santa_monica,4289002006,2120  LINCOLN BLVD,5+,37,2020,GC-LINCOLN,22.0,22.0,over_and_unexplained
+los_angeles,5201014012,1041 N CUMMINGS ST 1-18,5+,36,2022,[VN1-MU3-4][RX2-15],5.0,5.0,over_and_unexplained
+los_angeles,5521012025,539 N HOBART BLVD,5+,35,2023,R3,7.0,7.0,over_and_unexplained
+pasadena,5731021056,409 N Madison Ave,5+,35,2021,RM-48,15.0,15.0,over_and_unexplained
+los_angeles,5048017008,5551 W JEFFERSON BLVD 1-17,5+,34,2022,R3,8.0,8.0,over_and_unexplained
+los_angeles,5092023011,930 S GRAMERCY DR 1-17,5+,34,2022,R3,9.0,9.0,over_and_unexplained
+los_angeles,5180002002,2424 E MICHIGAN AVE Units 1-17,5+,34,2022,[LN1-MU3-4][RX2-6],9.0,9.0,over_and_unexplained
+los_angeles,5540014005,1227 N BERENDO ST #1-17,5+,34,2022,R3-1XL,9.0,9.0,over_and_unexplained
+pasadena,5738015130,"252 N MICHIGAN AVE CONDOMINIUM
+PASADENA, CA 91106",5+,34,2025,RM-32,12.0,12.0,over_and_unexplained
+santa_monica,4275005016,1450  CLOVERFIELD BLVD,5+,34,2019,MUBL,19.0,19.0,over_and_unexplained
+los_angeles,5113036019,4347 S WOODLAWN AVE,5+,33,2023,C2,7.0,7.0,over_and_unexplained
+carson,7343020101,21809-21811 FIGUEROA ST,5+,32,2024,RM (12),9.0,9.0,over_and_unexplained
+glendale,5637004030,352-358 W. Milford St.,5+,32,2019,R-1250,6.0,6.0,over_and_unexplained
+los_angeles,5210008022,1817 N SICHEL ST 1-18,5+,32,2022,R3,11.0,11.0,over_and_unexplained
+monterey_park,5256002116,419 N CHANDLER AVE,5+,32,2024,R-S,0.0,0.0,over_and_unexplained
+los_angeles,5085015032,1233 S DUNSMUIR AVE,5+,31,2018,R3,8.0,8.0,over_and_unexplained
+los_angeles,6018007001,7206 S HALLDALE AVE 1-31,5+,31,2024,C2,6.0,6.0,over_and_unexplained
+los_angeles,2354012049,11445 RIVERSIDE DR,5+,29,2018,R3,6.0,6.0,over_and_unexplained
+los_angeles,5402024006,517 N ROSEMONT AVE 1-14,5+,28,2022,R3,9.0,9.0,over_and_unexplained
+los_angeles,7451026002,685 W 4TH ST 1-28,5+,28,2021,C2,4.0,4.0,over_and_unexplained
+glendale,5637008010,348 Salem St.,5+,24,2019,R-1250,5.0,5.0,over_and_unexplained
+los_angeles,2787017012,17455 W ROSCOE BLVD #1-24,5+,24,2019,RA,1.0,4.0,over_and_unexplained
+los_angeles,4260038029,2460 S PURDUE AVE 1-27,5+,24,2023,R3,9.0,9.0,over_and_unexplained
+los_angeles,5111023025,4057 S MAIN ST,5+,24,2023,CM,7.0,7.0,over_and_unexplained
+los_angeles,5520003020,612 N NORMANDIE AVE 1-12,5+,24,2022,R3,9.0,9.0,over_and_unexplained
+los_angeles,5540009010,1111 N KENMORE AVE,5+,24,2019,RD1.5-1XL,4.0,4.0,over_and_unexplained
+los_angeles,7442001911,1479-1491 W VISTA WAY,2 to 4,24,2022,OS,0.0,0.0,over_and_unexplained
+norwalk,8082017022,12325 Cheshire Ave.,5+,24,2018,R-3,6.0,6.0,over_and_unexplained
+pasadena,5723002047,160 CHESTNUT ST APARTMENT,5+,24,2022,CD-MU-G,11.0,11.0,over_and_unexplained
+los_angeles,2217009025,14411 W VANOWEN ST,5+,22,2021,P,0.0,0.0,over_and_unexplained
+pasadena,5732010045,"1105 E VILLA ST
+Pasadena, CA 91106",5+,22,2025,RM-32,4.0,4.0,over_and_unexplained
+los_angeles,6032010024,833 W 84TH ST 1-21,5+,21,2025,R3,11.0,11.0,over_and_unexplained
+gardena,6102018017,13919 S NORMANDIE AVE,5+,20,2023,M1,0.0,0.0,over_and_unexplained
+los_angeles,5046009019,3434 S CHESAPEAKE AVE 201-305,5+,20,2022,RD1.5,6.0,6.0,over_and_unexplained
+los_angeles,5051011007,4000 W MONT CLAIR ST 1-15,5+,20,2022,R3,10.0,10.0,over_and_unexplained
+los_angeles,5122028006,3761 S HILL ST,5+,20,2022,M1,0.0,0.0,over_and_unexplained
+long_beach,7268014001,"1000 NEW YORK, 90813",5+,19,2019,R-1-N,1.0,4.0,over_and_unexplained
+los_angeles,5040018003,1192 W 35TH ST,5+,19,2024,R3,9.0,9.0,over_and_unexplained
+los_angeles,5404003033,1925 W MONTROSE ST 1-19,5+,19,2025,R3,10.0,10.0,over_and_unexplained
+alhambra,5347022015,"749 S Sierra Vista Unit: D, E, F
+Alhambra, CA 91801",2 to 4,18,2024,R-3,4.0,4.0,over_and_unexplained
+alhambra,5357020014,713-727 s Stoneman 18 units,5+,18,2019,R-1,1.0,4.0,over_and_unexplained
+los_angeles,4006001011,6012 S 10TH AVE 1-18,5+,18,2024,R3,9.0,9.0,over_and_unexplained
+los_angeles,5128022025,1009 E 29TH ST 1-18,5+,18,2024,R3,9.0,9.0,over_and_unexplained
+los_angeles,5177034007,2432 E CINCINNATI ST 1-18,5+,18,2024,[VN1-MU3-4][RX2-8],6.0,6.0,over_and_unexplained
+los_angeles,5518026006,226 N BERENDO ST 1-18,5+,18,2021,R3,9.0,9.0,over_and_unexplained
+los_angeles,5689003017,1750 W COLORADO BLVD D1 & D2; 1750 W COLORADO BLVD F1 & F2; 1750 W COLORADO BLVD G1 & G2; 1750 W COLORADO BLVD E1 & E2,2 to 4,18,2019,R1,1.0,4.0,over_and_unexplained
+los_angeles,6044007013,1627 E 92ND ST 1-18,5+,18,2024,R3,9.0,9.0,over_and_unexplained
+los_angeles,2747011041,10233 N ETON AVE 1-17,5+,17,2024,R3,8.0,8.0,over_and_unexplained
+los_angeles,5131021007,937 E 25TH ST 1-17,5+,17,2021,R3,8.0,8.0,over_and_unexplained
+los_angeles,5131021009,927 E 25TH ST #1-17,5+,17,2022,R3,8.0,8.0,over_and_unexplained
+los_angeles,5175032001,643 N SAN BENITO ST 1-17,5+,17,2024,[VN1-MU3-4][RX2-15],3.0,3.0,over_and_unexplained
+los_angeles,5177027021,2437 E FOLSOM ST,5+,17,2023,[VN1-MU3-4][RX2-8],6.0,6.0,over_and_unexplained
+los_angeles,5177027022,2441 E FOLSOM ST 1-17,5+,17,2024,[VN1-MU3-4][RX2-8],6.0,6.0,over_and_unexplained
+los_angeles,2040031030,22727 W DEL VALLE ST,5+,16,2021,R3,6.0,6.0,over_and_unexplained
+los_angeles,4125012006,8833 S RAMSGATE AVE 1-16,5+,16,2025,R3,7.0,7.0,over_and_unexplained
+los_angeles,5093021002,752 S HARVARD BLVD 1-16,5+,16,2024,R3-2,8.0,8.0,over_and_unexplained
+los_angeles,5153011012,230 S UNION AVE #1-16,5+,16,2024,R3,8.0,8.0,over_and_unexplained
+los_angeles,5517004014,222 N MANHATTAN PL,5+,16,2020,R3,8.0,8.0,over_and_unexplained
+los_angeles,2416006012,5262 N CLEON AVE 1-15,5+,15,2024,R3,7.0,7.0,over_and_unexplained
+los_angeles,4217016002,11500 W CULVER BLVD #1-15,5+,15,2019,R3,6.0,6.0,over_and_unexplained
+los_angeles,4235004001,12602 W MATTESON AVE,5+,15,2019,R3,5.0,5.0,over_and_unexplained
+los_angeles,5183001017,2025 E NEW JERSEY ST,5+,15,2021,[VN1-MU3-4][RX2-15],3.0,3.0,over_and_unexplained
+los_angeles,4254026017,10757 W PALMS BLVD,5+,14,2021,R3,5.0,5.0,over_and_unexplained
+los_angeles,4257024038,2512 S CENTINELA AVE 1-15,5+,14,2025,R3,6.0,6.0,over_and_unexplained
+los_angeles,4322004903,2373 S MIDVALE AVE 1-7; 2375 S MIDVALE AVE 1-7,5+,14,2024,R1,1.0,4.0,over_and_unexplained
+los_angeles,5118014011,1348 E 27TH ST #1-14,5+,14,2021,R3,7.0,7.0,over_and_unexplained
+los_angeles,5175007023,2341 E SHERIDAN ST 1-14; 2341 E SHERIDAN ST 1-14,5+,14,2024,[VN1-MU3-4][RX2-15],4.0,4.0,over_and_unexplained
+los_angeles,5522010011,606 N MANHATTAN PL,5+,14,2025,R3,7.0,7.0,over_and_unexplained
+hawthorne,4037018026,11311-11315 Hawthorne Blvd,5+,13,2018,CR (MU),6.0,6.0,over_and_unexplained
+los_angeles,2218004016,7405 N VAN NUYS BLVD #1-12,5+,12,2020,P,0.0,0.0,over_and_unexplained
+los_angeles,5113018013,217 E VERNON AVE,5+,12,2023,R3,6.0,6.0,over_and_unexplained
+los_angeles,5535008011,5506-5506 1/2 W BARTON AVE; 5508-5508 1/2 W BARTON AVE,2 to 4,12,2022,RD1.5-1XL,4.0,4.0,over_and_unexplained
+los_angeles,5540007012,"1211 N KENMORE AVE 10,11,12,-12A",2 to 4,12,2020,RD1.5-1XL,4.0,4.0,over_and_unexplained
+los_angeles,5586004017,2033 VISTA DEL MAR AVE,2 to 4,12,2018,RD1.5-1XL,5.0,5.0,over_and_unexplained
+los_angeles,6030013011,142 E 84TH ST 1-12,5+,12,2024,R3,6.0,6.0,over_and_unexplained
+norwalk,8048030027,12052 Union St.,2 to 4,12,2018,R-3,3.0,3.0,over_and_unexplained
+carson,7334002008,21250 MAIN ST,5+,11,2024,CG,0.0,0.0,over_and_unexplained
+los_angeles,5040014014,1226-1226 1/2 W 37TH PL,5+,11,2021,RD2,3.0,3.0,over_and_unexplained
+montebello,5271021005,2068 Lupine Terrace,5+,11,2025,R-A,1.0,4.0,over_and_unexplained
+glendale,5641011004,712 S Louise St,5+,10,2020,R-1650,4.0,4.0,over_and_unexplained
+los_angeles,5018027019,552-552 1/2 W 47TH ST,2 to 4,10,2020,RD2,4.0,4.0,over_and_unexplained
+los_angeles,5058022023,1871-1871 1/2 W 24TH ST; 1871-1871 1/2 W 24TH ST; 1869-1869 1/2 W 24TH ST,2 to 4,10,2020,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5188006021,3553 E PERCY ST 1-2; 3553 E PERCY ST 3-4,2 to 4,10,2020,[VN1-MU3-3][RX2-15],5.0,5.0,over_and_unexplained
+west_hollywood,5530025002,944 Ogden Dr,5+,10,2021,R3B,5.0,5.0,over_and_unexplained
+los_angeles,2423029028,10718 ACAMA ST,5+,9,2018,RD2,4.0,4.0,over_and_unexplained
+los_angeles,4236002025,1172 E NELROSE AVE 1-9,5+,9,2025,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5539028029,563 N HOOVER ST Unit 1-9,5+,9,2019,R2,2.0,3.0,over_and_unexplained
+carson,7334002007,21240 MAIN ST,5+,8,2024,CG,0.0,0.0,over_and_unexplained
+los_angeles,2419008022,10847-10847 1/2 W HARTSOOK ST; 10851-10851 1/2 W HARTSOOK ST; 10849-10849 1/2 W HARTSOOK ST; 10845-10845 1/2 W HARTSOOK ST,2 to 4,8,2022,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,2419008027,10825-10825 1/2 W HARTSOOK ST; 10823-10823 1/2 W HARTSOOK ST; 10829-10829 1/2 W HARTSOOK ST; 10827-10827 1/2 W HARTSOOK ST,2 to 4,8,2022,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5040005017,1330-1330 1/2 W 35TH PL; 1326-1326 1/2 W 35TH PL; 1328-1328 1/2 W 35TH PL; 1332-1332 1/2 W 35TH PL,2 to 4,8,2023,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5056012025,1817-1817 1/2 S ARAPAHOE ST; 1819-1819 1/2 S ARAPAHOE ST,2 to 4,8,2023,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5063006052,2204-2204 1/2 S CARMONA AVE; 2206-2206 1/2 S CARMONA AVE,2 to 4,8,2023,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5067007029,4840-4840 1/2 W ST CHARLES PL; 4838-4838 1/2 W ST CHARLES PL,2 to 4,8,2023,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5175018024,2223-2223 1/2 E SHERIDAN ST; 2225-2227 1/2 E SHERIDAN ST,2 to 4,8,2023,[VN1-MU3-4][RX2-15],4.0,4.0,over_and_unexplained
+los_angeles,5202015016,1525-1525 1/2 N RICARDO ST; 1527-1527 1/2 N RICARDO ST,2 to 4,8,2023,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5550031021,1351-1351 1/2 N STANLEY AVE,2 to 4,8,2022,RD1.5-1XL,4.0,4.0,over_and_unexplained
+los_angeles,6053025011,10116-10116 1/2 S BROADWAY; 10114-10114 1/2 S BROADWAY,2 to 4,8,2022,RD1.5,4.0,4.0,over_and_unexplained
+alhambra,5343011017,"205-207 S Marguerita
+Alhambra, CA 91801",5+,7,2024,R-3,2.0,3.0,over_and_unexplained
+bell_gardens,6358006014,6515 Florence Pl,5+,7,2021,R-3,2.0,3.0,over_and_unexplained
+los_angeles,2506030025,12779 N NORRIS AVE 1-4; 12777 N NORRIS AVE 1-3,2 to 4,7,2024,RD3-1XL,4.0,4.0,over_and_unexplained
+los_angeles,2558032020,7538 W APPERSON ST 1-7,5+,7,2023,RD2,4.0,4.0,over_and_unexplained
+los_angeles,5040015001,1298 W 37TH ST UNIT 1-8,5+,7,2022,RD2,4.0,4.0,over_and_unexplained
+los_angeles,5040029006,1165 W 36TH PL 1-8,5+,7,2024,RD1.5,4.0,4.0,over_and_unexplained
+los_angeles,5459009017,3324 N CHAPMAN ST Units 1-7,5+,7,2019,RD2,4.0,4.0,over_and_unexplained
+los_angeles,5544017011,1559 N HARVARD BLVD 1-8,5+,7,2024,RD1.5-1XL,4.0,4.0,over_and_unexplained
+los_angeles,5589031029,4826 W FRANKLIN AVE,5+,7,2020,RD1.5-1XL,4.0,4.0,over_and_unexplained
+los_angeles,7425010021,905 N DOMINGUEZ AVE 1-7,5+,7,2024,R2-1XL,2.0,3.0,over_and_unexplained
+pasadena,5713036076,268 W BELLEVUE DR CONDOMINIUM,2 to 4,7,2023,RM-16-1,2.0,3.0,over_and_unexplained
+bell_gardens,6358031030,6707 Otto,2 to 4,6,2019,R-3,2.0,3.0,over_and_unexplained
+los_angeles,2231010025,16647 W VICTORY BLVD 1-4; 16647 W VICTORY BLVD 1-4,2 to 4,6,2024,RD2,3.0,3.0,over_and_unexplained
+los_angeles,2415022028,5654-5654 1/2 N CARTWRIGHT AVE,2 to 4,6,2023,R2,2.0,3.0,over_and_unexplained
+los_angeles,5040004019,1366-1366 1/2 W 35TH ST,2 to 4,6,2022,RD2,3.0,3.0,over_and_unexplained
+los_angeles,5049001051,2418 WEST VIEW ST,2 to 4,6,2018,RD1.5,3.0,3.0,over_and_unexplained
+los_angeles,5060017024,2011-2011 1/2 S 8TH AVE; 2013-2013 1/2 S 8TH AVE,2 to 4,6,2024,RD2,3.0,3.0,over_and_unexplained
+los_angeles,5063002013,5207-5207 1/2 W 21ST ST; 5201-5201 1/2 W 21ST ST,2 to 4,6,2024,RD2,3.0,3.0,over_and_unexplained
+los_angeles,5064009010,1734-1734 1/2 S CARMONA AVE; 1734-1734 1/2 S CARMONA AVE,2 to 4,6,2023,RD1.5,3.0,3.0,over_and_unexplained
+los_angeles,5159004005,309-309 1/2 N UNION AVE; 309-309 1/2 N UNION AVE,2 to 4,6,2023,RD2,3.0,3.0,over_and_unexplained
+los_angeles,5309018019,5401-5401 1/2 E HUNTINGTON DR NORTH,2 to 4,6,2020,RD1.5,3.0,3.0,over_and_unexplained
+los_angeles,5542026034,1127 1/2-3/4 N VIRGIL AVE,2 to 4,6,2018,R2-1XL,2.0,3.0,over_and_unexplained
+west_hollywood,4337014053,621 HUNTLEY DR,2 to 4,6,2018,R2,3.0,3.0,over_and_unexplained
+west_hollywood,4340028006,1012 CORY AVE,5+,6,2020,R3A,4.0,4.0,over_and_unexplained
+baldwin_park,8543009053,"4428 STEWART AVE
+BALDWIN PARK CA, 91706--246",5+,5,2025,R1,1.0,4.0,over_and_unexplained
+claremont,8313020032,330 W Bonita Ave,5+,5,2023,CV,0.0,0.0,over_and_unexplained
+los_angeles,2415015009,5835-5837 N CARTWRIGHT AVE,5+,5,2023,R1,1.0,4.0,over_and_unexplained
+los_angeles,5040032006,1164 W 37TH PL,5+,5,2021,RD2,3.0,3.0,over_and_unexplained
+los_angeles,5043013009,2726 S COCHRAN AVE,5+,5,2019,RD1.5,3.0,3.0,over_and_unexplained
+los_angeles,5166007029,1200 S SANTA FE AVE 1-58,5+,5,2025,[MM1-CDF1-5][IX4-FA],0.0,0.0,over_and_unexplained
+bell_gardens,6329006020,5953 Florence Avenue,2 to 4,4,2023,C-4,0.0,0.0,over_and_unexplained
+los_angeles,5164008031,1330 E FACTORY PL BUILDING B,2 to 4,4,2020,[MB1-CDF1-5][IX4-FA],0.0,0.0,over_and_unexplained
+baldwin_park,8550021050,12766 Torch St C,5+,3,2023,R3,0.0,0.0,over_and_unexplained
+baldwin_park,8550021048,12766 Torch St A,5+,1,2022,R3,0.0,0.0,over_and_unexplained
+baldwin_park,8550021049,12766 Torch St B,5+,1,2023,R3,0.0,0.0,over_and_unexplained
+baldwin_park,8550021054,12770 Torch St F,5+,1,2022,R3,0.0,0.0,over_and_unexplained
+baldwin_park,8550021055,12770Torch St E,5+,1,2022,R3,0.0,0.0,over_and_unexplained
+baldwin_park,8550021056,12770 Torch St D,5+,1,2022,R3,0.0,0.0,over_and_unexplained
+baldwin_park,8550021057,12770Torch St C,5+,1,2023,R3,0.0,0.0,over_and_unexplained
+carson,7343001040,21205 Main Street,5+,1,2018,ML,0.0,0.0,over_and_unexplained
+los_angeles,2334011031,6151 N RADFORD AVE,5+,481,2020,C2,315.0,315.0,over_but_fits_a_density_bonus
+los_angeles,2235004010,6728 N SEPULVEDA BLVD 1-405,5+,405,2024,R4,235.0,235.0,over_but_fits_a_density_bonus
+los_angeles,5457004007,2910 W SAN FERNANDO ROAD,5+,339,2023,CM,250.0,250.0,over_but_fits_a_density_bonus
+los_angeles,5094001002,678 ARDMORE AVE,5+,329,2018,R5-2,272.0,272.0,over_but_fits_a_density_bonus
+los_angeles,4205032001,3411 S LA CIENEGA BLVD,5+,260,2024,CM-2,192.0,192.0,over_but_fits_a_density_bonus
+los_angeles,5094008026,695 S VERMONT AVE 1-255,5+,255,2023,C2-2,225.0,225.0,over_but_fits_a_density_bonus
+los_angeles,5077016027,2972 7TH ST   W  90005,5+,228,2019,C2,66.0,66.0,over_but_fits_a_density_bonus
+los_angeles,5547009024,1718 LAS PALMAS AVE,5+,224,2018,C2-2,124.0,124.0,over_but_fits_a_density_bonus
+los_angeles,2761035016,19525 W NORDHOFF ST Bldg A,5+,215,2021,C2,203.0,203.0,over_but_fits_a_density_bonus
+los_angeles,2761035015,19535 W NORDHOFF ST Bldg B,5+,214,2021,C2,189.0,189.0,over_but_fits_a_density_bonus
+glendale,5638001087,515 W. Broadway,5+,180,2019,SFMU,124.0,124.0,over_but_fits_a_density_bonus
+los_angeles,4110001004,6711 S SEPULVEDA BLVD #1-#180,5+,180,2019,C4,65.0,65.0,over_but_fits_a_density_bonus
+los_angeles,7347018094,1309 W SEPULVEDA BLVD,5+,176,2019,C2-2,174.0,174.0,over_but_fits_a_density_bonus
+los_angeles,2334011030,11950 W ERWIN ST 1-161,5+,161,2019,C2,111.0,111.0,over_but_fits_a_density_bonus
+los_angeles,5093014070,760 S SERRANO AVE 1-157,5+,157,2021,C2,44.0,44.0,over_but_fits_a_density_bonus
+los_angeles,4208006026,10375 W WASHINGTON BLVD,5+,139,2021,C2,44.0,44.0,over_but_fits_a_density_bonus
+los_angeles,2111011030,7322 N TOPANGA CANYON BLVD 1-149,5+,137,2023,CR,43.0,43.0,over_but_fits_a_density_bonus
+los_angeles,4208009049,10601 W WASHINGTON BLVD,5+,135,2020,RAS4,97.0,97.0,over_but_fits_a_density_bonus
+los_angeles,5086001066,6066 W OLYMPIC BLVD 1-120,5+,120,2025,C2,33.0,33.0,over_but_fits_a_density_bonus
+los_angeles,4254012058,10751 W ROSE AVE 322,5+,119,2025,R3,104.0,104.0,over_but_fits_a_density_bonus
+los_angeles,5093022028,815 S KINGSLEY DR,5+,114,2021,R4-2,66.0,66.0,over_but_fits_a_density_bonus
+los_angeles,5094008044,3240 W WILSHIRE BLVD 1-107,5+,107,2023,C4-2,63.0,63.0,over_but_fits_a_density_bonus
+los_angeles,5690006029,1332 W COLORADO BLVD; 1332 W COLORADO BLVD,5+,106,2022,C4-2,43.0,43.0,over_but_fits_a_density_bonus
+los_angeles,5127029042,316 E WASHINGTON BLVD 1-104,5+,104,2024,C2-2,70.0,70.0,over_but_fits_a_density_bonus
+los_angeles,2747011051,21300 W DEVONSHIRE ST,5+,100,2023,C2-2,77.0,77.0,over_but_fits_a_density_bonus
+los_angeles,4259039054,11916 W PICO BLVD,5+,100,2019,C2,32.0,32.0,over_but_fits_a_density_bonus
+los_angeles,5078003025,990 S MARIPOSA AVE,5+,100,2022,C2,28.0,28.0,over_but_fits_a_density_bonus
+los_angeles,7455003017,448 W 5TH ST,5+,99,2021,C2-2,41.0,41.0,over_but_fits_a_density_bonus
+los_angeles,2350003059,5525 CASE AVE,5+,98,2018,R4,69.0,69.0,over_but_fits_a_density_bonus
+los_angeles,5543009026,4850 W HOLLYWOOD BLVD R5,5+,96,2024,C2-2,94.0,94.0,over_but_fits_a_density_bonus
+los_angeles,5094010001,711 S NEW HAMPSHIRE AVE,5+,95,2024,R4-2,80.0,80.0,over_but_fits_a_density_bonus
+los_angeles,5202001011,2201 E TROJAN WAY,5+,95,2019,C2-2,63.0,63.0,over_but_fits_a_density_bonus
+los_angeles,2135038011,20120 W SHERMAN WAY 1-91,5+,91,2021,C2,54.0,54.0,over_but_fits_a_density_bonus
+glendale,5695018044,521 W Colorado St.,5+,90,2020,SFMU,82.0,82.0,over_but_fits_a_density_bonus
+los_angeles,4108019029,8521 S SEPULVEDA BLVD unit 1-87,5+,87,2019,C2,31.0,31.0,over_but_fits_a_density_bonus
+los_angeles,4252029035,3773 S GLENDON AVE 1-85,5+,85,2021,C2,23.0,23.0,over_but_fits_a_density_bonus
+los_angeles,5077017025,730 S VERMONT AVE,5+,80,2024,C2,21.0,21.0,over_but_fits_a_density_bonus
+los_angeles,4235013027,12444 W VENICE BLVD,5+,77,2020,C2,24.0,24.0,over_but_fits_a_density_bonus
+los_angeles,5537020039,5151 W ROMAINE ST,5+,76,2020,R3-1XL,67.0,67.0,over_but_fits_a_density_bonus
+los_angeles,5094023041,923 S KENMORE AVE 1-75,2 to 4,75,2023,R4,39.0,39.0,over_but_fits_a_density_bonus
+los_angeles,5094023041,923 S KENMORE AVE 1-75,5+,75,2021,R4,39.0,39.0,over_but_fits_a_density_bonus
+los_angeles,5155004021,139 S OCCIDENTAL BLVD unit 1-74,5+,74,2021,R4,40.0,40.0,over_but_fits_a_density_bonus
+los_angeles,4257006033,11701 W GATEWAY BLVD 1-73,5+,73,2021,C2,19.0,19.0,over_but_fits_a_density_bonus
+los_angeles,5006008026,5414 CRENSHAW BLVD,5+,70,2018,C2-2,57.0,57.0,over_but_fits_a_density_bonus
+los_angeles,5078013028,1019 S CATALINA ST,5+,70,2021,C2,21.0,21.0,over_but_fits_a_density_bonus
+los_angeles,5533018001,901 VINE ST,5+,70,2018,C2-2,63.0,63.0,over_but_fits_a_density_bonus
+los_angeles,2353003015,5110 N BAKMAN AVE,5+,65,2024,R4,34.0,34.0,over_but_fits_a_density_bonus
+los_angeles,5155009047,326 S RENO ST,5+,65,2021,R4,45.0,45.0,over_but_fits_a_density_bonus
+los_angeles,5434017005,3160 RIVERSIDE DR,5+,65,2018,R4,32.0,32.0,over_but_fits_a_density_bonus
+los_angeles,2654011019,15314 W RAYEN ST,5+,64,2024,C2,37.0,37.0,over_but_fits_a_density_bonus
+los_angeles,5419023035,1611 W MONTANA ST,5+,64,2021,R4,34.0,34.0,over_but_fits_a_density_bonus
+los_angeles,5032007019,"4008 W MARTIN LUTHER KING, JR BLVD 1-70",5+,63,2023,C1.5,18.0,18.0,over_but_fits_a_density_bonus
+los_angeles,5419023035,1611 W MONTANA ST,2 to 4,63,2023,R4,34.0,34.0,over_but_fits_a_density_bonus
+los_angeles,2338028034,5610 CAMELLIA AVE  N  91601,5+,62,2018,C2,22.0,22.0,over_but_fits_a_density_bonus
+los_angeles,5094007002,689 S CATALINA ST,5+,61,2019,C4-2,34.0,34.0,over_but_fits_a_density_bonus
+los_angeles,5043002029,5315 ADAMS BLVD W  90016,5+,60,2018,C2,38.0,38.0,over_but_fits_a_density_bonus
+los_angeles,5078014048,1037 S DEWEY AVE 1-60,5+,60,2023,R4,35.0,35.0,over_but_fits_a_density_bonus
+los_angeles,5548017050,1446 N DETROIT ST 1-60,5+,60,2020,C4-2,38.0,38.0,over_but_fits_a_density_bonus
+los_angeles,2784004061,18900 W PARTHENIA ST 1-64,5+,59,2023,R3,47.0,47.0,over_but_fits_a_density_bonus
+los_angeles,5544030010,5627 W FERNWOOD AVE,2 to 4,59,2023,R4-2,35.0,35.0,over_but_fits_a_density_bonus
+los_angeles,5544030010,5627 W FERNWOOD AVE,5+,59,2021,R4-2,35.0,35.0,over_but_fits_a_density_bonus
+los_angeles,5068018066,1500 S HI POINT ST,5+,58,2022,R3,33.0,33.0,over_but_fits_a_density_bonus
+los_angeles,5019026009,4050 FIGUEROA ST   S  90037,5+,57,2018,C2-2,40.0,40.0,over_but_fits_a_density_bonus
+los_angeles,5142023013,1532 CAMBRIA ST,5+,57,2018,R4,29.0,29.0,over_but_fits_a_density_bonus
+los_angeles,4242001028,2329 S SUPERIOR AVE,5+,56,2023,R4-1XL,18.0,18.0,over_but_fits_a_density_bonus
+los_angeles,5024018012,3450 W 43RD ST,5+,56,2022,C1.5,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,5544030015,1353 N WESTERN AVE 1-70,5+,56,2023,C2,18.0,18.0,over_but_fits_a_density_bonus
+los_angeles,2604028031,12665 N SAN FERNANDO ROAD,5+,55,2020,C2,24.0,24.0,over_but_fits_a_density_bonus
+los_angeles,6074018025,11001 S BROADWAY 1-55,2 to 4,55,2023,R4,24.0,24.0,over_but_fits_a_density_bonus
+los_angeles,6132026030,12003 S MAIN ST,5+,55,2020,C2,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,5082023002,4200 W PICO BLVD,2 to 4,54,2023,C4-2,31.0,31.0,over_but_fits_a_density_bonus
+los_angeles,7420007040,1355 N AVALON BLVD 1-54,5+,54,2025,C2,47.0,47.0,over_but_fits_a_density_bonus
+los_angeles,5084003009,850 S LA BREA AVE 1-53,5+,53,2020,C2,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,6034001027,7924 S WESTERN AVE,5+,53,2023,C2,21.0,21.0,over_but_fits_a_density_bonus
+los_angeles,2664013049,15418 W BERMUDA ST,5+,52,2022,RAS4,37.0,37.0,over_but_fits_a_density_bonus
+los_angeles,5523022012,647 BEACHWOOD DR,5+,52,2018,C2,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,2359024031,5020 N WOODMAN AVE,5+,51,2020,R3,43.0,43.0,over_but_fits_a_density_bonus
+los_angeles,6022022011,410 E FLORENCE AVE,5+,51,2019,C2,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,4235026016,3960 S GRAND VIEW BLVD,5+,50,2019,R4,34.0,34.0,over_but_fits_a_density_bonus
+los_angeles,4267034020,12431 ROCHESTER AVE,5+,50,2018,C2,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,5078016049,1047 S FEDORA ST,5+,50,2021,R4,22.0,22.0,over_but_fits_a_density_bonus
+los_angeles,2644025015,9502 N VAN NUYS BLVD 1-49,5+,49,2021,RAS4,32.0,32.0,over_but_fits_a_density_bonus
+los_angeles,4261024096,1836 S COLBY AVE Unit 105-1-50,5+,49,2021,R3,33.0,33.0,over_but_fits_a_density_bonus
+los_angeles,5076009011,1036 S MENLO AVE,5+,49,2021,R4,32.0,32.0,over_but_fits_a_density_bonus
+los_angeles,5110026033,5138 S BROADWAY,2 to 4,49,2023,C2,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5547021020,1410 N HIGHLAND AVE,5+,49,2021,C2,23.0,23.0,over_but_fits_a_density_bonus
+los_angeles,2513006900,13570 W FOOTHILL BLVD,5+,48,2019,RD1.5-1XL,35.0,35.0,over_but_fits_a_density_bonus
+los_angeles,5006006007,3409 W 54TH ST 1-48,5+,48,2024,C2-2,30.0,30.0,over_but_fits_a_density_bonus
+los_angeles,5201016028,1016-1030 N STATE ST 1-48,5+,48,2025,[LM4-G2-4][CX3-4],29.0,29.0,over_but_fits_a_density_bonus
+los_angeles,5157013027,433 N ROSENELL TER,5+,47,2021,C2,27.0,27.0,over_but_fits_a_density_bonus
+los_angeles,2206035034,16015 W SHERMAN WAY,5+,46,2021,C2,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,2284001016,4741 N LIBBIT AVE,5+,45,2020,R3,32.0,32.0,over_but_fits_a_density_bonus
+los_angeles,5051006016,4220 W MONT CLAIR ST,5+,45,2020,C2,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5406014035,1301 SUNSET BLVD,5+,45,2018,C2,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,2409003049,10966 RATNER ST   W  91352,5+,44,2018,C2,19.0,19.0,over_but_fits_a_density_bonus
+los_angeles,5094005016,738 S NORMANDIE AVE,5+,44,2022,R5-2,25.0,25.0,over_but_fits_a_density_bonus
+los_angeles,6032014015,823 W MANCHESTER AVE 1-42,5+,42,2024,C2-2,40.0,40.0,over_but_fits_a_density_bonus
+los_angeles,5078017902,1055 S MARIPOSA AVE 1-41,5+,41,2021,R4,22.0,22.0,over_but_fits_a_density_bonus
+los_angeles,2353013013,5050 N BAKMAN AVE 1-40,5+,40,2021,R4,22.0,22.0,over_but_fits_a_density_bonus
+los_angeles,4217018032,11612 CULVER BLVD,5+,40,2018,C2,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,4321003102,10642 W SANTA MONICA BLVD,5+,40,2022,C2,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,6022014002,7655 S SAN PEDRO ST 1-40,5+,40,2024,C2,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,2217003040,7223 N TYRONE AVE,5+,38,2019,R3,33.0,33.0,over_but_fits_a_density_bonus
+los_angeles,5076018013,1200 S WESTMORELAND AVE,5+,38,2024,R4-1XL,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5076018014,1212 S WESTMORELAND AVE 1-38,5+,38,2024,R4-1XL,15.0,15.0,over_but_fits_a_density_bonus
+los_angeles,5086004028,5843 W PICO BLVD,5+,38,2023,C4,19.0,19.0,over_but_fits_a_density_bonus
+los_angeles,5094017002,846 S MARIPOSA AVE,5+,38,2019,R4-2,21.0,21.0,over_but_fits_a_density_bonus
+los_angeles,4317004016,10534 W SANTA MONICA BLVD 1-37,5+,37,2019,C2,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2337029005,5614 N FULCHER AVE 1-36,5+,36,2025,C2,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,2347019010,12147 W MAGNOLIA BLVD 1-36,5+,36,2019,C2,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,2565015132,10240 COMMERCE AVE  N  91042,5+,36,2018,R3,22.0,22.0,over_but_fits_a_density_bonus
+los_angeles,4303035074,8590 W PICO BLVD 1-36,5+,36,2019,C4,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5032015003,4101 S SOMERSET DR,5+,36,2021,C2,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5157020132,226 LAKE ST   N  90026,5+,36,2018,R4,20.0,20.0,over_but_fits_a_density_bonus
+los_angeles,5404001036,1915 W PARK AVE,5+,36,2023,C2,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5442024045,2908 N ALLESANDRO ST #1-#36,5+,36,2021,CM-1XL,33.0,33.0,over_but_fits_a_density_bonus
+los_angeles,6032012008,932 W 84TH ST 1-36,5+,36,2024,C2-2,22.0,22.0,over_but_fits_a_density_bonus
+los_angeles,6071002018,10820 S AVALON BLVD 1-36,5+,36,2023,R4,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,2241011027,14606 W SYLVAN ST 1-34,5+,34,2024,R3,20.0,20.0,over_but_fits_a_density_bonus
+los_angeles,4263033056,11852 SANTA MONICA BLVD,5+,34,2018,C2,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,2333010017,6144 WHITSETT AVE  N  91606,5+,33,2018,R3,22.0,22.0,over_but_fits_a_density_bonus
+los_angeles,5155014010,154 S OCCIDENTAL BLVD UNITS 1-36,5+,33,2021,R4,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,5402020003,1032 N CORONADO ST 1-33,5+,33,2020,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5539023032,636 N JUANITA AVE,5+,33,2021,R3,18.0,18.0,over_but_fits_a_density_bonus
+los_angeles,2747005022,10247 N VARIEL AVE #1-#32,5+,32,2020,RAS3,28.0,28.0,over_but_fits_a_density_bonus
+los_angeles,4248017010,12331 W PALMS BLVD,5+,32,2022,C1,19.0,19.0,over_but_fits_a_density_bonus
+los_angeles,4314011014,10625 W TABOR ST,5+,32,2020,C2,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,2236016016,14541 W GILMORE ST 1-31,5+,31,2020,CR,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5076006025,2600 SAN MARINO ST,5+,31,2018,R4,18.0,18.0,over_but_fits_a_density_bonus
+los_angeles,5094006004,744 S MARIPOSA AVE 1-31,5+,31,2019,R5-2,27.0,27.0,over_but_fits_a_density_bonus
+los_angeles,5111012030,4325 S MAIN ST,5+,31,2023,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5517005018,223 N OXFORD AVE,5+,31,2024,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,4324038002,10939 W OHIO AVE 1-18,5+,30,2022,R4,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5094024015,924 S CATALINA ST,5+,30,2019,R4,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5516027022,4670 W BEVERLY BLVD,5+,30,2024,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,6032031015,8100 S FIGUEROA ST 1-30,5+,30,2024,C2,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2111005038,21514 W SATICOY ST #1 - #29,5+,29,2019,R3,27.0,27.0,over_but_fits_a_density_bonus
+los_angeles,2233030024,6701 N WOODLEY AVE 1-29,5+,29,2025,R3,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,5020017007,"1130 W MARTIN LUTHER KING, JR BLVD",5+,29,2020,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,4321003035,10604 SANTA MONICA BLVD W  90025,5+,28,2018,C2,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5077023019,2954 W 8TH ST,5+,28,2024,R4-2,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,5109023005,5125 S AVALON BLVD 1-28,5+,28,2020,C2,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,6006018001,6401 S AVALON BLVD,5+,28,2020,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5083033018,1327 S WEST BLVD 1-27,5+,27,2025,R4,15.0,15.0,over_but_fits_a_density_bonus
+los_angeles,5094023011,936 S FEDORA ST 1-30,5+,27,2023,R4,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5094025017,928 BERENDO ST,5+,27,2018,R4,26.0,26.0,over_but_fits_a_density_bonus
+los_angeles,5154027008,329 S BONNIE BRAE ST 1-30,5+,27,2023,R4,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,6002026025,6201 S NORMANDIE AVE,5+,27,2024,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,4006020025,6559 S BRYNHURST AVE,5+,26,2020,R3,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5019006032,836 W 42ND PL 1-31,5+,26,2023,R3,17.0,17.0,over_but_fits_a_density_bonus
+los_angeles,5101027028,5607 S MAIN ST 1-26,5+,26,2023,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5137025022,1517 W 12TH ST,5+,26,2022,R4,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5401022019,3105 W BELLEVUE AVE,5+,26,2022,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,6061029029,10304 S FIGUEROA ST 1-26,5+,26,2025,C2,7.0,7.0,over_but_fits_a_density_bonus
+el_monte,8569004100,4123 Peck,5+,25,2022,MMU,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,2360030017,4406 N FULTON AVE,5+,25,2021,C2,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,5021028002,4209 S WESTERN AVE 1-25,5+,25,2020,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,5051015002,3844 W 27TH ST,5+,25,2022,R3,15.0,15.0,over_but_fits_a_density_bonus
+los_angeles,5089005011,740 S RIDGELEY DR,5+,25,2020,R4,17.0,17.0,over_but_fits_a_density_bonus
+los_angeles,2222013016,7701 N SEPULVEDA BLVD 1-24,5+,24,2024,C2,15.0,15.0,over_but_fits_a_density_bonus
+los_angeles,2353017009,11155 W HUSTON ST 1-24,5+,24,2020,R3,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,4233020016,11955 CULVER BLVD W  90066,5+,24,2019,C2,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4261020002,11272 W NEBRASKA AVE 1-24,5+,24,2019,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5049016048,2599 S ALSACE AVE,5+,24,2022,C2-2,19.0,19.0,over_but_fits_a_density_bonus
+los_angeles,5154037003,2310 W OCEAN VIEW AVE 1-24,5+,24,2024,R4,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5522016116,5122 MAPLEWOOD AVE  W  90004,5+,24,2018,R3,15.0,15.0,over_but_fits_a_density_bonus
+los_angeles,5575005007,1920 N WHITLEY AVE 1-24,5+,24,2021,R4,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,4324038001,10978 W WILKINS AVE #1-23; 10978 W WILKINS AVE,5+,23,2024,R4,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,5077029006,2837 W SAN MARINO ST 1-23,5+,23,2022,R4,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5094022018,936 S MARIPOSA AVE,5+,23,2022,R4,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5155025900,252 RAMPART BLVD,5+,23,2018,R4,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,7447029013,335 N GAFFEY ST UNIT  1-23,5+,23,2022,C2,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,4401024026,11620 W CHENAULT ST,5+,22,2019,R3,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5180008011,325 N FICKETT ST,2 to 4,22,2023,[LN1-MU3-4][RX2-6],11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5180008011,325 N FICKETT ST,5+,22,2020,[LN1-MU3-4][RX2-6],11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5016016004,4719 S WESTERN AVE UNIT 1-21,5+,21,2024,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5073003006,1537 S WILTON PL,5+,21,2022,R3,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,5115013025,933 E VERNON AVE,5+,21,2021,C2-2,15.0,15.0,over_but_fits_a_density_bonus
+los_angeles,5486004027,6817 N FIGUEROA ST 1-25,5+,21,2025,RD1.5,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5544019014,1525 N HOBART BLVD,5+,21,2019,R3-1XL,15.0,15.0,over_but_fits_a_density_bonus
+los_angeles,6031009017,7407 S BROADWAY 1-21,5+,21,2025,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,6048004025,9515 S COMPTON AVE,5+,21,2020,R3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,2350007040,11460 W KILLION ST,5+,20,2022,R4,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,4263020011,1450 BARRINGTON AVE,5+,20,2018,R3,17.0,17.0,over_but_fits_a_density_bonus
+los_angeles,5050011022,2853 S WEST BLVD,5+,20,2023,R3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5085024020,1110 S SPAULDING AVE 1-26,5+,20,2023,R3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5119010017,1120 E 25TH ST,5+,20,2022,C2-2,15.0,15.0,over_but_fits_a_density_bonus
+los_angeles,5128023033,1039 E 28TH ST 1-20,5+,20,2023,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5137032014,1516 W 12TH PL,5+,20,2022,R4,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5156007008,330 N ROBINSON ST 1-20,5+,20,2023,RAS3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5183005016,129 N SOTO ST 1-20,5+,20,2025,[LM6-SH3-4][CX2-4],11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5503003012,339 S OXFORD AVE 1-12,5+,20,2022,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5518005014,153 N MARIPOSA AVE 1-20,5+,20,2022,R4,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,6014033032,1315 W FLORENCE AVE,5+,20,2019,C2,17.0,17.0,over_but_fits_a_density_bonus
+los_angeles,6042024004,8717 S CENTRAL AVE 1-20,5+,20,2023,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,6073008017,10914 S MAIN ST 1-20,5+,20,2024,C2,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,4334016038,415 S LE DOUX ROAD 1-19,5+,19,2019,R3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5073014900,1808 S ST ANDREWS PL 1-20,5+,19,2024,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5078007024,954 S CATALINA ST 1-19,5+,19,2020,R4,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5092028020,3935 W 8TH ST 1-19,5+,19,2021,R4,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5157024002,405 N WESTLAKE AVE,5+,19,2023,C2,4.0,4.0,over_but_fits_a_density_bonus
+los_angeles,6032024014,532 W 81ST ST 1-19,5+,19,2024,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,2367014027,4114 VANTAGE AVE,5+,18,2018,R3,17.0,17.0,over_but_fits_a_density_bonus
+los_angeles,4235002015,3827 S FRANCES AVE 1-18,5+,18,2019,R3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5210008011,1848 N WORKMAN ST 1-20,5+,18,2023,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5511014008,130 S CROFT AVE 1-18,5+,18,2021,R3,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,5511032063,8457 W BLACKBURN AVE 1-18,5+,18,2020,R3,17.0,17.0,over_but_fits_a_density_bonus
+los_angeles,5529014046,1000 N EDINBURGH AVE,5+,18,2024,R4,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5537024004,5068 W ROMAINE ST,5+,18,2020,R3-1XL,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5545010004,5842 W CARLTON WAY,5+,18,2021,R4,16.0,16.0,over_but_fits_a_density_bonus
+los_angeles,6031021016,7807 S BROADWAY 1-20,5+,18,2023,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,6032009009,918 W 83RD ST 1-21,5+,18,2023,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,6048022007,1630 E 92ND ST 1-18,5+,18,2024,R4,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,2328012003,13654 W BASSETT ST 1-19,5+,17,2019,R3,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,2338028007,11470 W COLLINS ST,5+,17,2021,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4260037013,2465 S PURDUE AVE,5+,17,2020,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4305014014,8867 W ALCOTT ST #1-17,5+,17,2021,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,4313003029,3672 JASMINE AVE,5+,17,2018,R3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,4323006027,1827 MIDVALE AVE,5+,17,2018,R3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5003009002,5211 S NORMANDIE AVE,5+,17,2024,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5021024022,4284 S WESTERN AVE 1-17,5+,17,2024,C2-2,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5076016005,1200 S MAGNOLIA AVE,5+,17,2023,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5093023034,3279 W SAN MARINO ST,5+,17,2021,R4,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,5107022023,4821 S COMPTON AVE 1-17,5+,17,2022,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5121013004,3727 S SAN PEDRO ST 1-17,5+,17,2023,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5177022014,610 N SOTO ST #1-17,5+,17,2023,[LM4-G2-3][CX2-4],9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5520008011,549 N HELIOTROPE DR 1-17,5+,17,2021,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,6031004019,7311 S BROADWAY 1-17,5+,17,2024,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,6031007024,7415 S MAIN ST 1-17,5+,17,2023,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,7418004009,505 MARINE AVE,5+,17,2018,RD1.5-1XL,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,2241017006,14822 W DELANO ST 1-11,5+,16,2022,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4317012061,10405 W LOUISIANA AVE 1-16,5+,16,2021,R3,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5020035018,4324 S VERMONT AVE,5+,16,2022,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,5090033005,827 S CRENSHAW BLVD,5+,16,2023,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5109001007,142 E VERNON AVE #1-16,5+,16,2024,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,5402008025,2828 W LONDON ST 1-16,5+,16,2019,C1,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,5542027031,4575 W SANTA MONICA BLVD 1-16,5+,16,2021,C2-2,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,6006024016,6110 S SAN PEDRO ST 1-16,5+,16,2024,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,2112024025,7353 N MILWOOD AVE 1-16,5+,15,2023,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4006026037,3221 W 71ST ST 1-17,5+,15,2023,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,4221023034,4971 S CENTINELA AVE #1-15,5+,15,2019,R3,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,4236019026,12737 W MITCHELL AVE,5+,15,2023,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,4314022036,3308 MENTONE AVE,5+,15,2018,R4,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,4332024025,1059 S HOLT AVE,5+,15,2024,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5054028018,2600 S CATALINA ST 1-15,5+,15,2019,C2,14.0,14.0,over_but_fits_a_density_bonus
+los_angeles,5094022036,941 S FEDORA ST,5+,15,2020,R4,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5154012019,2226 W VALLEY ST 1-15,5+,15,2024,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5522030013,4802 W ELMWOOD AVE 1-15,5+,15,2025,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5536008015,5533 W VIRGINIA AVE,5+,15,2021,R4,13.0,13.0,over_but_fits_a_density_bonus
+los_angeles,5537003004,5342 FOUNTAIN AVE,5+,15,2018,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5537024005,5066 W ROMAINE ST,5+,15,2020,R3-1XL,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5539022025,627 N JUANITA AVE 1-17,5+,15,2023,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,6003030013,6211 VERMONT AVE,5+,15,2018,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,6004019004,6406 S HOOVER ST 1-16,5+,15,2023,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,2239023003,6015 WOODMAN AVE,5+,14,2018,C1.5,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2240011020,14333 W SYLVAN ST 1-17,5+,14,2021,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2338015002,11500 W EMELITA ST,5+,14,2020,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,2423023023,10652 WHIPPLE ST   W  91602,5+,14,2020,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2653005002,14828 W RAYEN ST #1-14,5+,14,2019,RD1.5,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,2656027067,9122 N ORION AVE,5+,14,2021,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2747011042,10229 N ETON AVE 1-17,5+,14,2023,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5157018024,132 N ROSEMONT AVE,5+,14,2020,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5157025029,319 N WESTLAKE AVE,5+,14,2020,R4,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5180005027,321 S FICKETT ST 1-16,5+,14,2021,[LM6-SH3-4][CX2-4],10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5520024009,338 MARIPOSA AVE,5+,14,2018,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5521004020,641 N HOBART BLVD #1 - #14,5+,14,2020,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5522019003,4749 ELMWOOD AVE  W  90004,5+,14,2018,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,6019011002,1156 W FLORENCE AVE 1-15,5+,14,2024,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,6030019006,7924 S SAN PEDRO ST 1-14,5+,14,2024,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,6039001021,9116 S VERMONT AVE 1-17,5+,14,2023,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,7410002085,1522 W LOMITA BLVD 1-14,5+,14,2021,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,2324029011,12555 W VANOWEN ST,5+,13,2020,R3,12.0,12.0,over_but_fits_a_density_bonus
+los_angeles,2350006010,5548 N ELMER AVE,5+,13,2021,R4,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,2421014032,10910 PEACH GROVE ST,5+,13,2018,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4252025007,3743 S MIDVALE AVE,5+,13,2019,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4263031012,1431 S ARMACOST AVE 1-13,5+,13,2019,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,4265008042,11727 W KIOWA AVE,5+,13,2019,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4330035009,1143 S GLENVILLE DR 1-13,5+,13,2021,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,4368015003,862 N MORAGA DR,5+,13,2019,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5075029012,1950 S NORMANDIE AVE,5+,13,2019,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5086026017,1127 SPAULDING AVE,5+,13,2018,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5092023021,920 S GRAMERCY PL,5+,13,2021,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5113015009,443 E VERNON AVE,5+,13,2021,C2,4.0,4.0,over_but_fits_a_density_bonus
+los_angeles,5154005007,245 S WESTLAKE AVE,5+,13,2021,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5420022023,1901 ECHO PARK AVE,5+,13,2018,C2,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5522020011,4807 ELMWOOD AVE,5+,13,2018,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5534024018,6115 W ROMAINE ST 1-15,5+,13,2023,R4,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5536004003,5608 LA MIRADA AVE  W  90038,5+,13,2018,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,6067013007,2065-2065 1/2 E IMPERIAL HWY; 2071-2071 1/2 E IMPERIAL HWY; 2063-2063 1/2 E IMPERIAL HWY; 2075-2075 1/2 E IMPERIAL HWY; 2067-2067 1/2 E IMPERIAL HWY; 2073-2073 1/2 E IMPERIAL HWY,2 to 4,13,2021,RD2,8.0,8.0,over_but_fits_a_density_bonus
+west_hollywood,5554011011,1223 HAYWORTH AVE,5+,13,2020,R4A,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2248005024,14419 W RIVERSIDE DR,5+,12,2019,RD1.5,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2353017012,11168 W MORRISON ST 1-12,5+,12,2021,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2419001020,10947 W HARTSOOK ST APT. 1-12,5+,12,2019,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2421014027,10934 W PEACH GROVE ST,5+,12,2022,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,2423004008,4433 N CARTWRIGHT AVE 1-14,5+,12,2021,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,2423005014,10742 RIVERSIDE DR,5+,12,2018,C2,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2654008024,8837 BURNET AVE,5+,12,2018,RD1.5,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4103022009,5506 W THORNBURN ST 1-12,5+,12,2020,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,4265016030,12071 W WILSHIRE BLVD,5+,12,2019,C4,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,5067013028,1806 S LA BREA AVE,5+,12,2024,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5154036008,2347 W OCEAN VIEW AVE 1-20,5+,12,2021,R3,11.0,11.0,over_but_fits_a_density_bonus
+los_angeles,5520014013,432 N NORMANDIE AVE,5+,12,2021,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5521005005,644 N HOBART BLVD #1-12,5+,12,2019,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,5534018009,5817 W VIRGINIA AVE 1-12,5+,12,2024,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,6041016016,219 E 87TH ST 1-13,5+,12,2023,C2,6.0,6.0,over_but_fits_a_density_bonus
+pasadena,5738008036,919 Boston Ct,5+,12,2020,CD-MU-G,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,2324029019,6825 N WHITSETT AVE 1-11,5+,11,2020,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2332021018,12611 W OXNARD ST #1-11,5+,11,2019,RD1.5,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,2340006015,5923 N LAUREL CANYON BLVD #1-11,5+,11,2019,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,2340006017,5915 N LAUREL CANYON BLVD,5+,11,2022,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,2350010013,11514 W CUMPSTON ST #1-11,5+,11,2020,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2375017180,4214 N FULTON AVE,5+,11,2023,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,2661016005,15724 W DEVONSHIRE ST #1-#11,5+,11,2020,CR,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,4262021095,1832 S BARRINGTON AVE,5+,11,2021,RD1.5,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5063022045,2403 S CLYDE AVE 1-13,5+,11,2023,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,5068026012,1568 S ORANGE GROVE AVE 1-14,5+,11,2023,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5156016017,2829 HYANS ST,5+,11,2018,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5404018010,1111 ECHO PARK AVE,5+,11,2018,R3,10.0,10.0,over_but_fits_a_density_bonus
+los_angeles,5531025019,941 N MARTEL AVE,5+,11,2021,R3-1XL,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,6012010034,7025 S MAIN ST 1-11,5+,11,2019,C2,5.0,5.0,over_but_fits_a_density_bonus
+arcadia,5773002023,36 E COLORADO BLVD,5+,10,2025,R-3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,2221021005,14912 WYANDOTTE ST,5+,10,2018,RD1.5,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,2335032017,11671 ERWIN ST,5+,10,2018,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,2337034016,5617 KLUMP AVE,5+,10,2018,C2,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2347023003,5246 N HERMITAGE AVE 1-11,5+,10,2023,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2353025033,11042 W LA MAIDA ST,5+,10,2022,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,2423014013,10943 W BLOOMFIELD ST 1-11,5+,10,2025,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,2558024022,10218 N FERNGLEN AVE,5+,10,2021,RD1.5,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,4236021021,12800 ZANJA ST,5+,10,2018,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4267036009,1225 WELLESLEY AVE  S  90025,5+,10,2018,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4306003010,1414 S BEVERLY DR,5+,10,2022,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,4314009015,3667 S MENTONE AVE #1 -#10,5+,10,2019,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4314009030,3632 KEYSTONE AVE,5+,10,2018,R3,9.0,9.0,over_but_fits_a_density_bonus
+los_angeles,4334016030,8555 COLGATE AVE,5+,10,2018,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5068021010,1563 S FAIRFAX AVE 1-10,5+,10,2021,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5078034026,1208-1210 MARIPOSA AVE,5+,10,2018,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5081025016,3720 W SAN MARINO ST,5+,10,2024,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5177021003,2450 E HOUSTON ST 1-10,5+,10,2019,[VN1-MU3-3][RX2-8],6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,5536003018,5537 W LA MIRADA AVE,5+,10,2019,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,7418004008,221 E ST,5+,10,2018,RD1.5-1XL,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,2378008012,11055 W FRUITLAND DR 1-9,5+,9,2019,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2416028030,5232 WILLOW CREST AVE  N  91601,5+,9,2020,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,2421015023,10849 W BLIX ST 1-10,5+,9,2023,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,2421024004,10737 W HORTENSE ST 1-9,5+,9,2019,RD1.5,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,4103011016,7032 S RAMSGATE PL,5+,9,2019,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,4236021020,12772 ZANJA ST,5+,9,2018,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,4263034024,1550 S BROCKTON AVE #1-9,5+,9,2019,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,4265017003,11811 DOROTHY ST,5+,9,2018,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5078033016,1228 S FEDORA ST,5+,9,2021,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5511016002,106 KINGS ROAD,5+,9,2018,R3,8.0,8.0,over_but_fits_a_density_bonus
+los_angeles,5590007013,4543 W FINLEY AVE 1-9,5+,9,2022,R3-1XL,8.0,8.0,over_but_fits_a_density_bonus
+santa_monica,4282028007,1546  9TH ST,5+,9,2023,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,2040031027,22735 W DEL VALLE ST 1-9,5+,8,2023,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,2240020002,14252 ERWIN ST,2 to 4,8,2018,RD1.5,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,2320026006,6630-6630 1/2 N TROOST AVE; 6632-6632 1/2 N TROOST AVE,2 to 4,8,2023,RD1.5,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,2506033039,12647 N BRADLEY AVE 1-8,5+,8,2021,RD3-1XL,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,4125017010,8836 READING AVE,5+,8,2018,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,4217018020,4418 S SLAUSON AVE,5+,8,2020,R3,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,4242034004,1619 E VENICE BLVD 1-8,5+,8,2020,R4-1XL,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,4313003009,3643 EMPIRE DR,5+,8,2018,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,4317004006,1820 S PROSSER AVE #1-8,5+,8,2023,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,4330005039,9842 W VIDOR DR,5+,8,2019,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,5003017029,1409 W 55TH ST UNIT# 1-8,5+,8,2019,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5056013022,1732-1732 1/2 S MAGNOLIA AVE; 1730-1730 1/2 S MAGNOLIA AVE,2 to 4,8,2023,RD1.5,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5061012002,4554 W WASHINGTON BLVD #1-8,5+,8,2024,C2,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,5205023003,2311 N PASADENA AVE 1-8,5+,8,2019,C2-1XL,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5521014014,543 N OXFORD AVE #1-9,5+,8,2024,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5528001053,715 N ALFRED ST 1-8,5+,8,2020,R3,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,5534001022,6201 LA MIRADA AVE,5+,8,2018,R3-1XL,7.0,7.0,over_but_fits_a_density_bonus
+los_angeles,6006004037,5875-5875 1/2 S SAN PEDRO ST,5+,8,2023,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,6058006009,10035 S WESTERN AVE #1-8,5+,8,2022,C2,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,7463005027,700 24TH ST,5+,8,2018,RD1.5-1XL,7.0,7.0,over_but_fits_a_density_bonus
+beverly_hills,4330034016,462 S Rexford,5+,7,2018,R-4,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,2417004009,5230 N CAHUENGA BLVD #1- #7,5+,7,2020,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,2417004010,5240 N CAHUENGA BLVD,5+,7,2021,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,4217009018,4364 S MCLAUGHLIN AVE,5+,7,2019,R3,6.0,6.0,over_but_fits_a_density_bonus
+los_angeles,6015035032,7112 S HARVARD BLVD 1-9,5+,7,2025,C2,5.0,5.0,over_but_fits_a_density_bonus
+beverly_hills,4342034007,457 OAKHURST DR N,5+,6,2023,R-4,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,2343006001,13656 W HATTERAS ST,5+,6,2023,RD1.5,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,2414004014,6031 N CRANER AVE 1-6,5+,6,2019,RD1.5,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,5057002005,4801-4803 W ADAMS BLVD,5+,6,2024,C2,4.0,4.0,over_but_fits_a_density_bonus
+los_angeles,5590007012,2016 N RODNEY DR 1-6,5+,6,2020,R3-1XL,5.0,5.0,over_but_fits_a_density_bonus
+pasadena,5741003032,"1300 N HILL AVE MIXED USE
+PASADENA, CA 91104",5+,6,2025,CL,5.0,5.0,over_but_fits_a_density_bonus
+los_angeles,4220020009,12000 W BEATRICE ST 1-5,5+,5,2024,R3,4.0,4.0,over_but_fits_a_density_bonus
+los_angeles,5419027007,1501 SUNSET BLVD,5+,5,2018,C2,4.0,4.0,over_but_fits_a_density_bonus
+los_angeles,5534010005,1139-1139 1/2 N BRONSON AVE,2 to 4,10,2020,R3,8.0,8.0,over_by_two_or_fewer_small_buildings
+los_angeles,2112016002,7306-7306 1/2 N INDEPENDENCE AVE; 7308-7308 1/2 N INDEPENDENCE AVE,2 to 4,8,2022,R3,7.0,7.0,over_by_two_or_fewer_small_buildings
+los_angeles,5511035023,8234-8234 1/2 W BLACKBURN AVE; 8236-8236 1/2 W BLACKBURN AVE,2 to 4,8,2023,R3,7.0,7.0,over_by_two_or_fewer_small_buildings
+los_angeles,5586011014,2117-2117 1/2 N BEACHWOOD TER; 2115-2115 1/2 N BEACHWOOD TER,2 to 4,8,2021,R3-1XL,6.0,6.0,over_by_two_or_fewer_small_buildings
+los_angeles,6041003035,129-129 1/2 E 88TH ST; 127-127 1/2 E 88TH ST; 133-133 1/2 E 88TH ST; 131-131 1/2 E 88TH ST,2 to 4,8,2022,R3,6.0,6.0,over_by_two_or_fewer_small_buildings
+alhambra,5337014020,"310 N 3rd, UNIT 1,2,3
+Alhambra, CA 91801",2 to 4,6,2024,R-3,5.0,5.0,over_by_two_or_fewer_small_buildings
+los_angeles,2335010018,6423-6423 1/2 N TROOST AVE,2 to 4,6,2022,RD1.5,4.0,4.0,over_by_two_or_fewer_small_buildings
+los_angeles,2680010037,16508-16510 W SAN FERNANDO MISSION BLVD; 16508-16510 W SAN FERNANDO MISSION BLVD; 16508-16510 W SAN FERNANDO MISSION BLVD,2 to 4,6,2024,RS,1.0,4.0,over_by_two_or_fewer_small_buildings
+los_angeles,5037004021,1197 BROWNING BLVD,2 to 4,6,2018,RD1.5,5.0,5.0,over_by_two_or_fewer_small_buildings
+los_angeles,5041011041,3571-3571 1/2 S NORMANDIE AVE; 3575-3575 1/2 S NORMANDIE AVE; 3567-3567 1/2 S NORMANDIE AVE,2 to 4,6,2023,C2,5.0,5.0,over_by_two_or_fewer_small_buildings
+los_angeles,5050002023,2616 1-4 S WELLINGTON ROAD; 2616 1-4 S WELLINGTON ROAD,2 to 4,6,2022,RD1.5,4.0,4.0,over_by_two_or_fewer_small_buildings
+los_angeles,5050002028,2627-2627 1/2 S SOMERSET DR,2 to 4,6,2019,RD1.5,4.0,4.0,over_by_two_or_fewer_small_buildings
+los_angeles,5063001012,5185-5187 1/2 W 20TH ST,2 to 4,6,2022,RD1.5,4.0,4.0,over_by_two_or_fewer_small_buildings
+los_angeles,5157012022,243-243 1/2 N ROSEMONT AVE,2 to 4,6,2019,RD2,4.0,4.0,over_by_two_or_fewer_small_buildings
+los_angeles,5188006026,3527-3527 1/2 E PERCY ST,2 to 4,6,2019,[VN1-MU3-3][RX2-15],5.0,5.0,over_by_two_or_fewer_small_buildings
+los_angeles,5188006027,3521-3521 1/2 E PERCY ST,2 to 4,6,2019,[VN1-MU3-3][RX2-15],5.0,5.0,over_by_two_or_fewer_small_buildings
+los_angeles,5201014014,1031-1031 1/4 N CUMMINGS ST,2 to 4,6,2020,[VN1-MU3-4][RX2-15],5.0,5.0,over_by_two_or_fewer_small_buildings
+los_angeles,5458013013,3117-3117 1/2 N ANDRITA ST; 3119-3119 1/2 N ANDRITA ST,2 to 4,6,2023,RD2,4.0,4.0,over_by_two_or_fewer_small_buildings
+los_angeles,5586032012,1750-1750 1/2 N VAN NESS AVE,2 to 4,6,2022,RD1.5-1XL,5.0,5.0,over_by_two_or_fewer_small_buildings
+los_angeles,5689003027,1750 W COLORADO BLVD C1 & C2; 1750 W COLORADO BLVD B1 & B2; 1750 W COLORADO BLVD A1 & A2,2 to 4,6,2021,RD1.5,4.0,4.0,over_by_two_or_fewer_small_buildings
+downey,6229002029,7337 IRWINGROVE DR,2 to 4,5,2024,"R-1 7,500",1.0,4.0,over_by_two_or_fewer_small_buildings
+los_angeles,4312009026,3154-3154 1/2 S CURTS AVE,2 to 4,5,2018,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5040011004,1376 37TH PL   W  90007,2 to 4,5,2018,RD2,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5060021010,2211-2211 1/2 S 6TH AVE,2 to 4,5,2018,RD2,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,6042005030,8758 S AVALON BLVD 1-5,2 to 4,5,2020,R2,1.0,3.0,over_by_two_or_fewer_small_buildings
+burbank,2455001017,708 E. Santa Anita,2 to 4,4,2018,R-3,3.0,3.0,over_by_two_or_fewer_small_buildings
+burbank,2460013007,1400 Leland Way,2 to 4,4,2019,R-3,2.0,3.0,over_by_two_or_fewer_small_buildings
+compton,6153021037,1719 N CULVER AVE,2 to 4,4,2020,R-M,3.0,3.0,over_by_two_or_fewer_small_buildings
+long_beach,7145014022,505E 36TH ST,2 to 4,4,2021,R-3-S,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2228021006,17610 SHERMAN WAY,2 to 4,4,2018,RD2,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2243015041,5823-5823 1/2 N KESTER AVE,2 to 4,4,2025,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2245003010,14438 TIARA ST,2 to 4,4,2018,RD2,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2248013018,5243 N TILDEN AVE 1-2; 5245 N TILDEN AVE 1-2,2 to 4,4,2023,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2264016035,14944-14946 W MOORPARK ST; 14940-14942 W MOORPARK ST,2 to 4,4,2021,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2343007005,5636-5636 1/2 N WOODMAN AVE,2 to 4,4,2019,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2350004043,5537-5541 N CAMELLIA AVE,2 to 4,4,2025,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2350004044,11509-11509 1/2 W KILLION ST,2 to 4,4,2025,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2415001004,5934 VINELAND AVE,2 to 4,4,2018,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2415002003,5852 N VINELAND AVE 1 - 2; 5850 N VINELAND AVE 1 - 2,2 to 4,4,2022,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2415022014,5643-5643 1/2 N WILLOW CREST AVE,2 to 4,4,2019,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,2415022015,5649 WILLOW CREST AVE,2 to 4,4,2018,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,4004007004,5861-5863 1/2 S WEST BLVD,2 to 4,4,2023,C2,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,4260033029,11621-11621 1/2 W AYRES AVE; 11619-11619 1/2 W AYRES AVE,2 to 4,4,2021,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5018020007,708-708 1/2 W 50TH ST,2 to 4,4,2021,RD2,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5036018006,3915 BRIGHTON AVE,2 to 4,4,2018,R2,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5036029019,3996-3996 1/2 S LA SALLE AVE; 3994-3994 1/2 S LA SALLE AVE,2 to 4,4,2022,R2,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5041012036,1618-1620 W 35TH PL,2 to 4,4,2018,R2,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5044007010,3417 EDGEHILL DR,2 to 4,4,2018,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5051010007,2826 NORTON AVE,2 to 4,4,2018,R2-1XL,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5062026030,2417-2417 1/2 S ALSACE AVE; 2419-2419 1/2 S ALSACE AVE,2 to 4,4,2024,RD2,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5065012068,6006-6006 1/2 W COMEY AVE; 6008-6008 1/2 W COMEY AVE,2 to 4,4,2022,RD2,1.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5067012022,4812-4812 1/2 W MASCOT ST; 4810-4810 1/2 W MASCOT ST,2 to 4,4,2022,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5068003035,1435-1435 1/2 S CRESCENT HEIGHTS BLVD; 1433-1433 1/2 S CRESCENT HEIGHTS BLVD,2 to 4,4,2022,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5068020017,1656-1656 1/2 S HAYWORTH AVE,2 to 4,4,2024,R2,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5109014041,4417-4417 1/2 S METTLER ST,2 to 4,4,2025,R2,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5136010011,1050 S BONNIE BRAE ST 1-4,2 to 4,4,2020,C1,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5137018012,1659 W 11TH ST 1-4,2 to 4,4,2021,CR,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5159018010,235-235 1/2 N WELCOME ST,2 to 4,4,2019,RD1.5,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5208023003,2733-2733 1/2 N LINCOLN PARK AVE; 2733-2733 1/2 N LINCOLN PARK AVE,2 to 4,4,2022,RD3,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5213006005,3682 N HARRIMAN AVE,2 to 4,4,2020,RD3,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5440026026,2436-2438 N RIVERSIDE PL; 2436-2438 N RIVERSIDE PL,2 to 4,4,2024,R2,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5590016018,4511 W RUSSELL AVE 1-4,2 to 4,4,2021,R2-1XL,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,6020030017,449-449 1/2 W 74TH ST; 447-447 1/2 W 74TH ST,2 to 4,4,2024,C2,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,6034019017,1517-1517 1/4 W 84TH ST,2 to 4,4,2020,RD2,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,6083026007,132 E 119TH ST,2 to 4,4,2020,R2,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,7420024011,1063-1063 1/2 N FRIES AVE,2 to 4,4,2019,RD2-1XL,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,7423017006,926-926 1/2 N LAKME AVE,2 to 4,4,2019,RD3-1XL,2.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,7423017007,930-930 1/2 N LAKME AVE,2 to 4,4,2019,RD3-1XL,2.0,3.0,over_by_two_or_fewer_small_buildings
+san_fernando,2518005016,443 Harps Street,2 to 4,4,2022,R-2,2.0,3.0,over_by_two_or_fewer_small_buildings
+torrance,7357018009,1913 Cabrillo Ave,2 to 4,4,2022,R3,3.0,3.0,over_by_two_or_fewer_small_buildings
+los_angeles,5035030020,3807-3807 1/2 S ST ANDREWS PL,2 to 4,2,2025,R1,0.0,0.0,over_by_two_or_fewer_small_buildings
+los_angeles,2321008032,11933 W HART ST 1-7,2 to 4,1,2020,M1,0.0,0.0,over_by_two_or_fewer_small_buildings
+los_angeles,5123018033,2722 S FIGUEROA ST 1-157,5+,314,2022,C2-2,113.0,113.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5508015008,640 S CURSON AVE,5+,285,2019,C4-2,40.0,40.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5546025001,6200 W SUNSET BLVD,5+,270,2020,C2-2,135.0,135.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5503032011,640 S ST ANDREWS PL,5+,230,2022,C4-2,84.0,84.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2138013025,7019 N CANOGA AVE 1-220,5+,198,2023,C2,25.0,25.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2210011029,8155 N VAN NUYS BLVD,5+,192,2020,M1,0.0,0.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5539003014,4632 W SANTA MONICA BLVD,5+,177,2022,C2-2,97.0,97.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5214001002,4208 E HUNTINGTON DR SOUTH,5+,170,2019,A1,2.0,3.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4236006013,1600 E VENICE BLVD 1-77,5+,154,2022,R4-1XL,6.0,6.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2330012004,6330 N WOODMAN AVE 1-147,5+,147,2025,C1.5,18.0,18.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5551018020,1511 N FAIRFAX AVE 1-62,5+,124,2022,C4,24.0,24.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5141007016,668 S CORONADO ST,5+,120,2023,C2-2,44.0,44.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2654020034,8547 N SEPULVEDA BLVD 1-54,5+,108,2022,C2,25.0,25.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2042006056,23036 W VENTURA BLVD 1-100,5+,100,2023,C1,2.0,3.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2237002026,6755 N SYLMAR AVE #1-45,5+,90,2022,CR,13.0,13.0,over_on_a_lot_flagged_as_simplified
+los_angeles,7449014007,319 N BEACON ST,5+,89,2022,C2-2,26.0,26.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5013019002,5144 S CRENSHAW BLVD,5+,78,2022,C2-2,28.0,28.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5141026006,825 S CORONADO ST 1-77,5+,77,2021,RAS4,16.0,16.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5538021003,4750 W SANTA MONICA BLVD,5+,75,2022,C2-2,15.0,15.0,over_on_a_lot_flagged_as_simplified
+los_angeles,6086036019,1134 E 120TH ST 1-74,5+,74,2023,C2-2,26.0,26.0,over_on_a_lot_flagged_as_simplified
+los_angeles,7418014021,445 N AVALON BLVD,5+,74,2021,CM,20.0,20.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2126004015,18722 W SHERMAN WAY,5+,64,2024,C2,7.0,7.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2237006018,14154 W VANOWEN ST 1-64,5+,64,2023,R3,32.0,32.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2654015017,15566 W RAYEN ST 1-31,5+,61,2019,R3,24.0,24.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4242033001,1503 E VENICE BLVD 1-32,5+,60,2020,R4-1XL,15.0,15.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2249001004,14536 W BURBANK BLVD,5+,55,2021,R3,13.0,13.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2631002041,9190 N TELFAIR AVE; 9190 N TELFAIR AVE,5+,52,2021,R3,16.0,16.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5040033012,1069 W EXPOSITION BLVD,5+,47,2023,C2-2,7.0,7.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5142023006,1525 W 8TH ST,5+,45,2022,C2-2,16.0,16.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4327006008,10431 W SANTA MONICA BLVD,5+,43,2022,C2,9.0,9.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4335008015,143 S WETHERLY DR #1 - #40,5+,40,2020,R4,6.0,6.0,over_on_a_lot_flagged_as_simplified
+los_angeles,7416028023,728 N LAGOON AVE 1-40,5+,40,2025,RD1.5-1XL,12.0,12.0,over_on_a_lot_flagged_as_simplified
+los_angeles,7418004018,516 N FRIES AVE 1-39,5+,39,2022,RD1.5-1XL,11.0,11.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5539019027,710 N VIRGIL AVE,5+,37,2022,C1-2,13.0,13.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2348010026,5400 N CARPENTER AVE #1-16,5+,32,2022,R3,8.0,8.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5442024043,2938 N ALLESANDRO ST,5+,32,2021,CM-1XL,12.0,12.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5131026022,1010 E 25TH ST,5+,31,2021,C2-2,15.0,15.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2338024009,11436 HATTERAS ST,5+,28,2018,RAS4,8.0,8.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4324032019,1633 S CAMDEN AVE 101-601,5+,22,2022,R3,8.0,8.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5525002022,818 N ALTA VISTA BLVD,5+,20,2022,R3-1XL,9.0,9.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4332021027,1070 S BEDFORD ST 1-19,5+,19,2020,R3,7.0,7.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4325023018,1751 MALCOLM AVE,5+,18,2018,RD1.5,4.0,4.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2350010015,11502 W CUMPSTON ST,5+,16,2019,R3,8.0,8.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4426005011,1745 N CORREA WAY,5+,14,2022,RE20,1.0,4.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5213023004,3453 N EDLOFT AVE #1-11,5+,10,2024,RD1.5,3.0,3.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4262021004,1817-1817 1/2 S BARRY AVE; 1815-1815 1/2 S BARRY AVE,2 to 4,8,2023,RD1.5,3.0,3.0,over_on_a_lot_flagged_as_simplified
+los_angeles,5533014002,6464 W SANTA MONICA BLVD,5+,8,2024,M1,0.0,0.0,over_on_a_lot_flagged_as_simplified
+los_angeles,2250021112,14947-14955 W MAGNOLIA BLVD #1-#5,5+,5,2019,RD1.5,4.0,4.0,over_on_a_lot_flagged_as_simplified
+los_angeles,4325025012,1664 S MALCOLM AVE 1-5,5+,5,2021,RD1.5,4.0,4.0,over_on_a_lot_flagged_as_simplified

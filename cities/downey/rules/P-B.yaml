@@ -1,0 +1,15 @@
+# Downey P-B. Every value cites the Downey Municipal Code, Article IX (eCode360, through Ord. 25-1520), read 2026-11-03.
+zone: P-B
+name: P-B (Table 9.3.1)
+family: nonresidential
+sources:
+  Z: {section: 'DMC §9302, Table 9.3.1 (zones)', url: 'https://ecode360.com/44400897'}
+residential_allowed: {value: false, source: Z, assumption: We didn't read this zone's use list. We don't count homes (conservative).}
+housing_types:
+  value: []
+  source: Z
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: 'Not relevant: homes not counted.'}

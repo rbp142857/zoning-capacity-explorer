@@ -21,6 +21,7 @@ sources:
 
 residential_allowed: {value: true, source: U08}
 housing_types: {value: [single_family, two_unit, multifamily], source: T08}
+approval: {value: by_right, source: U08, assumption: "Chapter 9.08's table marks multiple-unit dwellings P."}
 min_lot_area_sqft: {value: 5000, source: T08}
 
 lot_area_per_unit_sqft: {value: 1250, source: T08, assumption: "1 home per 1,250 sq ft on lots of 4,000 sq ft or more."}

@@ -18,6 +18,7 @@ sources:
 
 residential_allowed: {value: true, source: U12, assumption: "Multi-unit housing is permitted by right."}
 housing_types: {value: [multifamily, mixed_use], source: U12}
+approval: {value: by_right, source: U12, assumption: "Multi-unit housing is permitted by right."}
 
 setbacks:
   front_ft: {value: 10, source: T12, assumption: "Building frontage line: 10 to 20 ft from the curb depending on the street, mostly sidewalk; we use 10 ft from the lot line (conservative)."}

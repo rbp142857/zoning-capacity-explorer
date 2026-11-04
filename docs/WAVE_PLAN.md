@@ -1,7 +1,8 @@
 # Wave plan: covering LA County
 
-Goal: model every jurisdiction in Los Angeles County (88 cities and the
-unincorporated county), in an order that gets the most useful coverage soonest.
+Goal: model all 88 cities in Los Angeles County, in an order that gets the most
+useful coverage soonest. The owner took the unincorporated county (Title 22) out
+of scope in November 2026; see wave 4.
 
 The numbers come from `make waves` →
 [`reports/la_county/city_ranking.md`](../reports/la_county/city_ranking.md), which
@@ -10,6 +11,8 @@ the state's permit reports (homes permitted per year, 2018–2025). Re-run it an
 time; the waves below were drawn from the November 2026 run.
 
 ## The fact that shapes the plan
+
+**Correction (November 2026).** The state's reports can repeat one permit, and the figures in this section and in `city_ranking` add up those repeats, so they run high for cities that repeat them (METHODOLOGY section 67). With repeats removed, LA has about 16,029 homes a year in 2+ unit buildings, not ~21,300, which is about 81% of the 86 cities downloaded so far. LA still dominates, so the order of the plan stands.
 
 Homes permitted per year in buildings of 2+ homes, the kind of building a
 city's own zoning controls (ADUs follow state law everywhere, so they don't
@@ -39,13 +42,13 @@ building. Each is a Glendale-sized job via the SCAG fast path
 | City | Parcels | Zone codes (for 90%) | Homes/yr in 2+ unit buildings | All homes/yr |
 |---|---|---|---|---|
 | Santa Monica ✅ | 14,979 | 44 (9) | 260 | 386 |
-| El Monte | 16,978 | 25 (7) | 148 | 238 |
-| Inglewood | 18,375 | 29 (8) | 146 | 215 |
-| West Hollywood | 4,314 | 23 (10) | 146 | 171 |
-| Monrovia | 9,783 | 30 (11) | 140 | 188 |
-| Santa Clarita | 51,872 | 25 (5) | 128 | 495 |
+| El Monte ✅ | 16,978 | 25 (7) | 148 | 238 |
+| Inglewood ⚠️ | 18,375 | 29 (8) | 146 | 215 |
+| West Hollywood ✅ | 4,314 | 23 (10) | 146 | 171 |
+| Monrovia ✅ | 9,783 | 30 (11) | 140 | 188 |
+| Santa Clarita ✅ | 51,872 | 25 (5) | 128 | 495 |
 | Burbank ✅ | 25,423 | 41 (7) | 104 | 321 |
-| Duarte | 5,503 | 18 (6) | 103 | 122 |
+| Duarte ✅ | 5,503 | 18 (6) | 103 | 122 |
 
 Together: 147,000 parcels, ~1,175 homes/yr in 2+ unit buildings (4.5%).
 Good order: Burbank first (closest to Glendale), then Santa Monica (most
@@ -81,9 +84,33 @@ several files where the height district changes the answer. 17 zones cover 90%
 of lots. Lots with `Q`, `T`, `F` or `D` conditions are flagged as simplified;
 Chapter 1A and specific-plan zones stay "not modeled" until they have files.
 
-**Progress (November 2026).** The single-family zones have rule files: 21 files
-covering 436,041 lots (65%). They stay off the site until the apartment and
-commercial zones are done. See METHODOLOGY section 14.
+**Progress (November 2026).** 259 rule files cover 668,189 lots (99.4%):
+single-family, apartment, commercial, no-housing and Chapter 1A zones. Not done:
+4,133 lots, mostly in specific plan zones, and incentive programs. LA is on the site, at the owner's request. See METHODOLOGY section 14.
+
+**Waiting on the owner: Westlake Village's North Business Park plan.** Its PDF is over the fetch tool's 10 MB limit, and saving a file needs
+the owner's OK: https://www.wlv.org/DocumentCenter/View/5961/NBPSP-revised-September-2025. It holds the standards for six districts (42 lots).
+
+**Waiting on the owner: Glendale's Downtown Specific Plan and Santa Monica's Downtown Community Plan.** Their standards appear to be in city PDFs, and saving a file needs the owner's OK. Other Pasadena plans and LA's specific plans, such as Central City West, are still to read.
+
+**Waiting on the owner: Maywood.** The Municipal Code only continues its zoning ordinances in effect, so the text is in city PDFs (https://www.cityofmaywood.com/174/Standards-Permits-Maps), and saving a file needs the owner's OK. Its data is downloaded, but it has no rule files.
+
+**Waiting on the owner: Pomona.** Its data is downloaded and its config is in `cities/pomona/`, but it has no rule files.
+Its 2024 code, with zones like RND1 and NED1, is a PDF on the city's site that the fetch tool can't read, and saving a file needs
+the owner's OK: https://www.pomonaca.gov/home/showpublisheddocument/9137/639197017052930000 (effective July 15, 2026).
+Municode only has the older code, whose zones don't match the map.
+
+**Open decisions for the owner** (the conservative reading is in use for now):
+Monrovia NC (its code marks multiple-family P, and our file counts no homes); Palmdale RC (its code marks multifamily P with note 1, and our file counts no homes); Inglewood P-1 (its code permits R-3 uses, and our file counts no homes); Bellflower T-C (its code permits upper-floor homes, and our file counts none); South Gate NL duplexes; SB 9 in A1 and A2; homes in IX3, IX4, IX6, P2 and A1 under Chapter 1A; whether Alhambra's old CPD lots count as CMU (48 homes per acre) rather than none; getting a post-2024 Alhambra zoning map; getting Azusa's TOD Specific Plan map (SCAG's Azusa data is from 2005); what San Gabriel's letter suffixes (R-1 V, R-2 G, R-3 A) mean; whether Monterey Park's R-3 is 25 homes per acre (the code) or 30 (a 2024 city handout); whether Agoura Hills' OS-R lots count one home with a conditional use permit (in use) and whether SB 9 reaches them (not applied); whether Torrance's C-1 and C-2 use 1,600 sq ft per home (in use) or R-4's 1,000; SB 9 in Torrance's and Artesia's A-1 (not applied); whether Avalon's 169-acre HD-R lot should count its 6,748 paper homes (counted, flagged in METHODOLOGY section 45); whether Baldwin Park's R-1 allows duplexes, as its Ord. 1503 intent text says (one home in use); what density applies to Bell's C-3R, whose chapter states none (R-3's 1,452 sq ft per home in use); what standards apply to Bell Gardens' R-4, which its tables omit (R-3's in use); how many homes Bellflower's Town Center can hold, as its chapter states no density (none counted); SB 9 in Bellflower's A-E (not applied); which density set applies to each Beverly Hills R-4 site, which needs street widths (the strictest in use); Calabasas' RM density suffixes, which SCAG drops (24 per acre in use); SB 9 in Calabasas' HM, OS and REC (not applied); whether Commerce's R-3 note on rounding up lets density round up (rounded down in use); whether its R-3 lots under 7,500 sq ft can hold duplexes (one home in use); how many homes its C-2 can hold, as the chapter states no density (floor area limits in use, section 54); whether Compton's C-L homes, which need a conditional use permit, should count (counted, section 55); whether its R-L and R-A lots can hold more than one home without testing §30-8.3.b's split conditions (counted); a current map of Claremont's Housing Opportunity Site Overlay, which allows 30 to 60 homes per acre and which SCAG's 2016 data doesn't show (base zones in use, section 56); whether its RM outdoor living rule should cap density (not applied); whether its hillside lots count one home, as we have no slope or overlay map (counted); whether Covina's RD-1250 and RD-1500 use their names' density or the table's 22 per acre (the table in use, section 57); whether its RD lots under 15,000 sq ft are held to 14.1 per acre (in use); what §17.34.020 allows for homes in its C-P (none counted); whether its PCD lots should use their underlying zones (not modeled); whether SB 9 reaches Cudahy's LDR, which also permits apartments (not applied, section 58); what SCAG's HDR-G means there (treated as HDR); how many homes its Ent and NC can hold, with density listed as N/A (none counted); whether its CMU and CivicMU should use the mixed-use 40 per acre rather than the residential-only 30 (30 in use); whether Diamond Bar's OS parcels each count a home, as the county may have restricted some (counted, section 59); what its Transit Oriented and Neighborhood Mixed Use lots are now, since Chapter 22.11 no longer lists them (not modeled); getting a map of its RH-30 sites; whether Irwindale's Government Parcel and Mineral Processing lots in A-1 should count their 23,022 paper homes (counted, section 63).
+
+**Sources refused on November 3, 2026** (skipped, not worked around). The fetch tool got a 403 from planning.lacity.gov (Central City West's consolidated plan, https://planning.lacity.gov/odocument/eaea8850-0749-4a9b-80dd-b131c751db62/Central_City_West_Specific_Plan.pdf), ecode360.com (Lakewood, https://ecode360.com/45616275), codelibrary.amlegal.com, codepublishing.com (La Verne, Glendora, San Dimas, South Pasadena, Sierra Madre and Signal Hill were tried; a 403 doesn't show whether those cities are hosted there) and manhattanbeach.gov. The refusals may be specific to the fetch tool, and they may not last. CW also has a mapping problem: the zoning layer shows only `CW` on all 1,023 lots, with no subarea, so a rule file would need the plan's subarea map too.
+
+**How old SCAG's zoning data is** (YEAR_ZN, checked November 2026). An old date matters only where a city has rezoned or renamed zones since, which
+has been checked only for Alhambra, Carson, Azusa, Lomita and Hawthorne. 2005: Azusa. 2015: Bradbury. 2016: Glendale, Monrovia, Montebello, Santa Clarita, West Covina, Carson, Hawthorne, San Gabriel, Agoura Hills, Commerce, Claremont.
+2017: South Gate, Baldwin Park. 2018: Alhambra, Avalon, Bell, Cudahy. 2021 to 2025: the other 30 downloaded cities, including Torrance, Artesia, Bell Gardens, Bellflower, Beverly Hills, Calabasas, Cerritos, Compton, Covina and Diamond Bar. Pomona's is 2025, but it has no rule files yet.
+
+**Open data gap:** Inglewood's Transit Oriented plan areas need the city's own zoning
+map and plan (⚠️ above; see METHODOLOGY section 16). SP-4 in El Monte is similar. Agoura Hills' SP lots (Agoura Village and other plans) hold 94% of its recent 5+ unit homes and are not modeled. Torrance's DT (78 of its 145 recent 5+ unit homes) needs Downtown densities that Article 40 doesn't state.
 
 **What the real data showed (November 2026).** LA's data was downloaded and run
 through the pipeline and site as a test, with stand-in rules:
@@ -111,7 +138,7 @@ through the pipeline and site as a test, with stand-in rules:
   - Its terms are a site-wide disclaimer ("as is", no warranty), with no explicit
     open license. Add the city to the list to ask before charging for anything.
 - **Where LA builds:** of 150,982 homes permitted in 5+ unit buildings in
-  2018-2025, by the zone on today's map: C2 32%, Chapter 1A 14%, R3 12%, R4 8%,
+  2018-2025 (115,391 once repeated permits are removed; these shares were measured before that fix), by the zone on today's map: C2 32%, Chapter 1A 14%, R3 12%, R4 8%,
   C4 6%. About 28% are on lots with a condition prefix such as `[Q]` or `(T)`. So single-family zones
   cover the most land, but commercial zones are where the homes get built, and
   incentive programs (sub-step d) may explain much of it; not yet measured.
@@ -134,8 +161,9 @@ Break it into sub-steps, each shipped and validated on its own:
 
 ### Wave 3: Long Beach, the next 23 cities, and the specific plans already started
 
-- **Long Beach**: 87,000 parcels, ~590 homes/yr; 177 zone codes (20 for
+- **Long Beach** ⚠️ (residential zones done; mixed-use, PD and commercial not): 87,000 parcels, ~590 homes/yr; 177 zone codes (20 for
   90%), many of them planned-development districts. Treat like a small LA.
+- **Progress:** residential zones done for Lancaster ⚠️ (METHODOLOGY section 22); Gardena done (section 23); Norwalk R-1 to R-3 ⚠️ (section 24); Santa Fe Springs residential ⚠️ (section 25); Whittier R-1 to R-4 ⚠️ (section 26); Arcadia residential ⚠️ (section 27); South Gate NL and NM ⚠️ (section 28); Culver City residential ⚠️ (section 29); Montebello residential ⚠️ (section 30); Pomona skipped ⚠️ (below); Rolling Hills Estates R-A ⚠️ (section 31); West Covina residential ⚠️ (section 32). Westlake Village most zones ⚠️ (section 33). Alhambra base zones ⚠️ (section 34). Palmdale base zones ⚠️ (section 35). Carson base zones ⚠️ (section 36). Azusa neighborhoods and corridors ⚠️ (section 37). Lomita most zones ⚠️ (section 38). Hawthorne most zones ⚠️ (section 39). San Gabriel residential ⚠️ (section 40). Monterey Park residential ⚠️ (section 41). Agoura Hills most zones ⚠️ (section 42). Torrance most zones ⚠️ (section 43).
 - **23 cities with 30–100 homes/yr in 2+ unit buildings:** Lancaster,
   Gardena, Norwalk, Santa Fe Springs, Whittier, Arcadia, South Gate, Culver
   City, Montebello, Pomona, Rolling Hills Estates, West Covina, Westlake
@@ -148,7 +176,9 @@ Break it into sub-steps, each shipped and validated on its own:
   standards in the plan's Chapter 4). These three are worth doing earlier
   than the rest of wave 3, since each is where its city builds most.
 
-### Wave 4: unincorporated LA County
+### Wave 4: unincorporated LA County (out of scope)
+
+**Skipped at the owner's request (November 2, 2026). Don't start it unless the owner asks.** No rule files were written. If it comes back, two things found so far will save time: density comes from each lot's General Plan or Area Plan designation, not its zone (Title 22 §22.02.050.C; General Plan Ch. 6, pp. 67-68), and SCAG's `GeneralPlan_poly_LA` table gives that designation by parcel number. A zoning adapter could combine them into codes like `R-3-H30`, with the plain zone as the fallback. The earlier scoping notes follow.
 
 312,000 parcels in scattered areas from East LA to the Antelope Valley, ~510
 homes/yr in 2+ unit buildings. One code (Title 22) but 259 zone codes (32
@@ -156,6 +186,8 @@ for 90%) and many community standards districts. Do it after LA, reusing
 what that wave teaches about suffixes and overlays.
 
 ### Wave 5: the long tail (53 jurisdictions)
+
+**Progress:** Artesia most zones ⚠️ (METHODOLOGY section 44). Avalon most zones ⚠️ (section 45). Baldwin Park most zones ⚠️ (section 46). Bell most zones ⚠️ (section 47). Bell Gardens most zones ⚠️ (section 48). Bellflower most zones ⚠️ (section 49). Beverly Hills most zones ⚠️ (section 50). Bradbury done ⚠️ (section 51). Calabasas done ⚠️ (section 52). Cerritos most zones ⚠️ (section 53). Commerce most zones ⚠️ (section 54). Compton most zones ⚠️ (section 55). Claremont most zones ⚠️ (section 56). Covina most zones ⚠️ (section 57). Cudahy most zones ⚠️ (section 58). Diamond Bar most zones ⚠️ (section 59). Downey most zones ⚠️ (section 61). El Segundo most zones ⚠️ (section 62). Irwindale most zones ⚠️ (section 63). Rosemead most zones ⚠️ (section 64). San Fernando most zones ⚠️ (section 65).
 
 Together 1.3% of the county's multi-unit building. Many are almost entirely
 single-family (in 20 of them, 1–4 zone codes cover 90% of parcels), so each
@@ -172,6 +204,14 @@ Malibu, Manhattan Beach, Maywood, Palos Verdes Estates, Paramount, Pico
 Rivera, Rancho Palos Verdes, Redondo Beach, Rolling Hills, Rosemead, San
 Dimas, San Fernando, San Marino, Sierra Madre, Signal Hill, South El Monte,
 South Pasadena, Temple City, Vernon, Walnut.
+
+## By-right approval pass
+
+Every rule file should say how its zone permits homes (`approval`, METHODOLOGY section 60). **Done from the code:** Los Angeles' LAMC zones, Pasadena, and the cities listed in METHODOLOGY section 60's second pass. **Done only from what the files already recorded:** 91 files across 21 cities. **Still to read:** 396 rule files, listed by the check that `approval` is empty, including LA's Chapter 1A districts and Azusa, whose table columns couldn't be matched to zones. New cities should set `approval` from the start.
+
+## Direction (November 2026)
+
+The owner chose to make this a research and policy tool rather than a paid developer product (see docs/USE_CASES.md). Accuracy on totals, clear labels and citable outputs come first. The waves above still set the order, weighted toward the plans and programs where cities actually build. **Waiting on the owner:** publishing the other 50 cities on the map, which adds roughly 180 MB of site files.
 
 ## Definition of done, for every city
 
@@ -195,7 +235,7 @@ and later, worth paying for:
   setup. A similar city should now take about one session.
 - **Wave 1:** about 8 sessions.
 - **City of Los Angeles:** many sessions, likely 10–20 across its sub-steps.
-- **Waves 3–5:** roughly 25 cities, then 53 smaller ones (2–3 per session).
+- **Waves 3 and 5:** roughly 25 cities, then 53 smaller ones (2–3 per session). Wave 4 is out of scope.
 
 That's many months of steady work. The order above means that after wave 2,
 the tool covers about **90% of the county's multi-unit housing production**,

@@ -1,0 +1,33 @@
+# West Hollywood CR. Every value cites the West Hollywood Municipal Code, Title 19 (eCode360, read 2026-11-01).
+zone: "CR"
+name: "Commercial (CR)"
+family: commercial
+
+sources:
+  Z:
+    section: "WHMC §19.10.040, Table 2-6"
+    url: https://ecode360.com/43927979
+  P:
+    section: "WHMC §19.28, Table 3-6 (parking by land use)"
+    url: https://ecode360.com/43927992
+
+residential_allowed: {value: true, source: Z, assumption: "Homes through mixed-use projects, allowed by right except in the commercial-only overlay, which our data does not show."}
+housing_types: {value: [mixed_use], source: Z}
+approval: {value: by_right, source: Z, assumption: "Homes through mixed-use projects, allowed by right except in the commercial-only overlay, which our data does not show, so those lots run high."}
+min_lot_area_sqft: {value: 5000, source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z, assumption: "None required, or 10 ft next to a residential zone, not modeled."}
+  rear_ft: {value: 0, source: Z, assumption: "None required, or 10 ft next to a residential zone, not modeled."}
+
+max_height_ft: {value: 90, source: Z}
+max_stories: {value: 8, source: Z}
+max_far: {value: 3.0, source: Z, assumption: "Residential floor area is set through the permit process within this FAR, with no density limit. We count the whole FAR as homes, which runs high, since a mixed-use project needs commercial space."}
+parking_per_unit: {value: 1.5, source: P, assumption: "1.5 spaces for a 1-bedroom home; none within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: P, assumption: "1 covered guest space per 4 homes, for 5 or more homes."}
+guest_parking_min_units: 5
+
+simplifications:
+  - "Density bonuses and incentives (Ch. 19.22, §19.10.050) are not modeled, so numbers are base zoning only."
+  - "The Mixed-Use Incentive Overlay (up to 0.5 more FAR and 10 ft) is not modeled."

@@ -21,6 +21,7 @@ sources:
 
 residential_allowed: {value: true, source: T08}
 housing_types: {value: [single_family, two_unit], source: T08, assumption: "Only single-unit homes and duplexes are listed as permitted here; multi-unit buildings are not."}
+approval: {value: by_right, source: T08, assumption: "Chapter 9.08's table marks multiple-unit dwellings P."}
 min_lot_area_sqft: {value: 3000, source: T08}
 
 max_units_per_lot: {value: 2, source: T08, assumption: "Duplex at most (permitted on lots that existed on Aug. 31, 1975, which we assume of all lots)."}

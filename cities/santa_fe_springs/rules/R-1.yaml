@@ -1,0 +1,27 @@
+# Santa Fe Springs R-1. Every value cites the Santa Fe Springs Code of Ordinances, Ch. 155 (Municode, read 2026-11-01).
+zone: "R-1"
+name: "Single-Family Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "SFSCO §§155.065 to 155.074"
+    url: https://library.municode.com/ca/santa_fe_springs/codes/code_of_ordinances?nodeId=TITXVLAUS_CH155ZO_ZODI
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 5000, source: Z}
+min_lot_width_ft: {value: 50, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "§155.066. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z, assumption: "The code limits 25 ft, not stories; we fit 2."}
+lot_coverage: {value: 0.40, source: Z}
+
+simplifications:
+  - "Parking for a single home wasn't read; the one-home limit binds either way."

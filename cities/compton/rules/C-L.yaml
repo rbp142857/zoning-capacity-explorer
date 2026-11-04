@@ -1,0 +1,37 @@
+# Compton C-L. Every value cites the Compton Municipal Code, Chapter 30 (eCode360, through July 14, 2026, read 2026-11-03).
+zone: "C-L"
+name: "C-L Limited Commercial"
+family: commercial
+
+sources:
+  Z:
+    section: "CMC §§30-12.2, 30-12.3 and 30-21.3"
+    url: https://ecode360.com/35622209
+
+residential_allowed: {value: true, source: Z, assumption: "Multiple and single-family residences need a conditional use permit (§30-12.2), which we assume is granted."}
+housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: conditional, source: Z, assumption: "Residences need a conditional use permit (§30-12.2)."}
+min_lot_area_sqft: {value: 10000, source: Z}
+lot_area_per_unit_sqft: {value: 1500, source: Z, assumption: "1,250 sq ft for senior homes isn't modeled."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "An existing smaller lot keeps one home, if a conditional use permit is granted."
+small_lot_units_below_sqft: 1500
+
+setbacks:
+  front_ft: {value: 15, source: Z, assumption: "Residences use R-H's yards (§30-12.3.e)."}
+  side_ft: {value: 5, source: Z, assumption: "3 ft for one story; 5 ft for two or more stories and on a street side."}
+  rear_ft: {value: 10, source: Z, assumption: "Residences use R-H's yards (§30-12.3.e)."}
+
+max_height_ft: {value: 75, source: Z}
+max_stories: {value: 7, source: Z, assumption: "The code limits feet, not stories; we fit one per 10 ft."}
+lot_coverage: {value: 0.40, source: Z}
+parking_per_unit: {value: 1.5, source: Z, assumption: "1.5 enclosed spaces for attached homes with two or fewer bedrooms; 2 for larger homes. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.25, source: Z, assumption: "1 guest space per 4 homes."}
+
+simplifications:
+  - "Unit size limits (§30-12.3.c) aren't modeled."

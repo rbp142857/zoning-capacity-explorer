@@ -1,0 +1,29 @@
+# Carson RS. Every value cites the Carson Municipal Code, Article IX (eCode360, read 2026-11-01).
+zone: "RS"
+name: "Residential, Single-Family (RS)"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §9124.1 (Dwelling Units)"
+    url: https://ecode360.com/48527874
+  S:
+    section: "CMC Art. IX, Pt. 2, Div. 6 (§§9126.12-9126.25)"
+    url: https://ecode360.com/48527883
+  P:
+    section: "CMC §9162.21 (parking table, Art. IX, Pt. 6, Div. 2)"
+    url: https://ecode360.com/48529873
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "The residential use table marks single-family dwellings on a lot X, automatically permitted."}
+max_units_per_lot: {value: 1, source: Z, assumption: "One dwelling per lawfully established lot. State law (ADU, SB 9, CMC §9128.81 on) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 20, source: S, assumption: "20 ft or 20% of lot depth, whichever is less; we use 20 ft, which runs low on lots under 100 ft deep."}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}, source: S, assumption: "3 ft under 30 ft wide, 10% of width at 30 to 50 ft, 5 ft over 50 ft."}
+  rear_ft: {value: 15, source: S, assumption: "15 ft or 15% of lot depth, whichever is less; we use 15 ft, which runs low on lots under 100 ft deep."}
+
+max_height_ft: {value: 30, source: S}
+max_stories: {value: 2, source: S, assumption: "The code limits height to 30 ft, not stories; we fit 2 (conservative)."}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces in a garage. None within ½ mile of a major transit stop (the AB 2097 path)."}

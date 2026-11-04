@@ -1,0 +1,40 @@
+# Duarte R4. Every value cites the Duarte Development Code (Municode, through Ord. No. 927, read 2026-11-01).
+zone: "R4"
+name: "Multi-Family (R-4)"
+family: multifamily
+
+sources:
+  Z:
+    section: "Duarte Development Code §19.10.030, Tables 2-2 and 2-4"
+    url: https://library.municode.com/ca/duarte/codes/development_code?nodeId=ART2ZOALUSDEST_CH19.10REZO
+  P:
+    section: "Duarte Development Code Ch. 19.38 (off-street parking)"
+    url: https://library.municode.com/ca/duarte/codes/development_code?nodeId=ART3REAPALZO_CH19.38OREPAREDE
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+min_lot_area_sqft: {value: 10000, source: Z}
+min_lot_width_ft: {value: 90, source: Z}
+lot_area_per_unit_sqft: {value: 1556, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1556
+
+setbacks:
+  front_ft: {value: 30, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 20, source: Z, assumption: "20 ft, or 25 ft next to R-1; we use 20 ft."}
+
+max_height_ft: {value: 50, source: Z}
+max_stories: {value: 4, source: Z, assumption: "More height, to 70 ft, needs a conditional use permit; not counted."}
+lot_coverage: {value: 0.6, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 per home in a garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "1 overflow and 1 guest space per 4 homes."}
+
+simplifications:
+  - "Open space per home and §19.10.060's added R-3 and R-4 standards are not modeled, so these can be too high."

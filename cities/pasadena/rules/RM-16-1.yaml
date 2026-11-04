@@ -23,6 +23,7 @@ sources:
 
 residential_allowed: {value: true, source: T2-2}
 housing_types: {value: [single_family, two_unit, multifamily], source: T2-2}
+approval: {value: by_right, source: T2-2, assumption: "Table 2-2 marks multi-family and single-family housing P, permitted with a Code Compliance Certificate."}
 
 min_lot_area_sqft:
   value: 12000

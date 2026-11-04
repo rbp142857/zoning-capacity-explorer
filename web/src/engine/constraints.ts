@@ -100,6 +100,7 @@ export function envelopeLimit(r: ZoneRules, lot: Lot, a: EngineAssumptions): num
   const stories = asNumber(r.max_stories.value, lot) || 0;
   let floorArea = maxFootprintSqft(r, lot) * stories;
   if (r.max_far) floorArea = Math.min(floorArea, r.max_far.value * lot.area_sqft);
+  if (r.max_buildable_multiple) floorArea = Math.min(floorArea, r.max_buildable_multiple.value * setbackAreaSqft(r, lot));
 
   let units = Math.floor(floorArea / a.gross_sqft_per_unit + EPS);
 

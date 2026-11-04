@@ -1,0 +1,35 @@
+# West Covina R-1. Every value cites the West Covina Municipal Code, Ch. 26 Art. II (Municode, read 2026-11-01).
+zone: "R-1"
+name: "Single-Family Residential (R-1)"
+family: single_family
+
+sources:
+  Z:
+    section: "WCMC Ch. 26 Art. II, Table of lot sizes and R-A/R-1 standards"
+    url: https://library.municode.com/ca/west_covina/codes/code_of_ordinances?nodeId=MUCO_CH26ZO_ARTIIZOALUSDEST
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "The permitted use table marks single-family homes X, allowed with no use permit."}
+min_lot_area_sqft: {value: 6000, source: Z, assumption: "Ranges from 6,000 to 40,000 sq ft by mapped suffix, which SCAG drops. We use 6,000, so larger minimums aren't reflected."}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z, assumption: "25 ft, or 20 ft on 7,500 sq ft lots."}
+  side_ft: {value: 5, source: Z, assumption: "5 ft under 14,400 sq ft, 7 ft to 20,000, 10 ft above; we use 5 ft."}
+  rear_ft: {value: 15, source: Z, assumption: "15 ft up to 7,500 sq ft, more above; we use 15 ft."}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 5001, share: 0.50}
+      - {below: 6001, share: 0.30, plus_sqft: 1000}
+      - {share: 0.20, plus_sqft: 1600}
+  source: Z
+  assumption: "Table of allowable total building coverage and floor area by lot size."
+
+simplifications:
+  - "Parking was not read; the one-home limit binds."

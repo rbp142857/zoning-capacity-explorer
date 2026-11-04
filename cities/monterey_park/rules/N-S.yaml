@@ -1,0 +1,18 @@
+# Monterey Park N-S. Every value cites the Monterey Park Municipal Code, Title 21 (eCode360, read 2026-11-01).
+zone: "N-S"
+name: "N-S (Ch. 21.10)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "MPMC Ch. 21.10 (Commercial Zones)"
+    url: https://ecode360.com/43883312
+
+residential_allowed: {value: false, source: Z, assumption: "Mixed use is allowed only in areas the General Plan marks Mixed-Use I, II or III, subject to Ch. 21.15 (§21.10). We have no map of those areas, so we don't count homes (conservative); those lots run low."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

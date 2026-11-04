@@ -36,6 +36,8 @@ class CapacityResult:
     state_laws_applied: list[str] = field(default_factory=list)
     net_new_units: int | None = None
     flags: list[str] = field(default_factory=list)
+    approval: str | None = None  # the zone's approval value; None = not confirmed
+    by_right_units: int | None = None  # None = not confirmed
 
 
 def local_capacity(
@@ -55,6 +57,22 @@ def local_capacity(
     units = min(applicable.values())
     binding = next(k for k in TIE_ORDER if applicable.get(k) == units)
     return units, binding, limits
+
+
+def by_right_units(rules: ZoneRules, best_units: int, sb9_units: int | None) -> int | None:
+    """Homes allowed without a discretionary approval, or None if not confirmed.
+
+    SB 9 approval is ministerial wherever it applies, so it's a floor whatever
+    the zone's own approval is. The ADU path isn't: it needs a house to go with.
+    """
+    approval = rules.approval.value if rules.approval else None
+    if approval == "by_right":
+        if rules.by_right_max_units:
+            return min(best_units, max(rules.by_right_max_units.value, sb9_units or 0))
+        return best_units
+    if approval in ("conditional", "not_allowed"):
+        return sb9_units or 0
+    return sb9_units
 
 
 def _has_excluded_overlay(lot: Lot, prefixes) -> bool:
@@ -125,6 +143,8 @@ def compute_capacity(
 
     result.max_units = best_units
     result.binding_constraint = best_binding
+    result.approval = rules.approval.value if rules.approval else None
+    result.by_right_units = by_right_units(rules, best_units, limits.get("state_sb9"))
     if lot.existing_units is not None and lot.existing_units == lot.existing_units:  # not NaN
         result.net_new_units = max(0, best_units - int(lot.existing_units))
     return result

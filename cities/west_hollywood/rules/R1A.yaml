@@ -1,0 +1,33 @@
+# West Hollywood R1A. Every value cites the West Hollywood Municipal Code, Title 19 (eCode360, read 2026-11-01).
+zone: "R1A"
+name: "Single-Family (R1-A)"
+family: single_family
+
+sources:
+  Z:
+    section: "WHMC §19.06.040, Table 2-3 and §19.06.050, Table 2-4"
+    url: https://ecode360.com/43913027
+  P:
+    section: "WHMC §19.28, Table 3-6 (parking by land use)"
+    url: https://ecode360.com/43927992
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table marks single-family dwellings and two-unit projects P1."}
+min_lot_area_sqft: {value: 5000, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, per Table 2-4. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 15, source: Z, assumption: "The average of neighbors, with this minimum; we use the minimum."}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}, source: Z, assumption: "5 ft, or 10% of width (at least 3 ft) on narrow lots; plus 1 ft per story above the second in R3 and R4."}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 25, source: Z}
+max_stories: {value: 2, source: Z}
+max_far: {value: 0.5, source: Z}
+
+simplifications:
+  - "Parking for a single home wasn't read; the one-home limit binds either way."
+  - "The front minimum is 10 ft in Norma Triangle; we use 15 ft."
+  - "Density bonuses and incentives (Ch. 19.22, §19.10.050) are not modeled, so numbers are base zoning only."
+  - "Added 2nd-story front setback of 6 ft is not modeled."

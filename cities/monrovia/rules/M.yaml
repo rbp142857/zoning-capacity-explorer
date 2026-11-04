@@ -1,0 +1,19 @@
+# Monrovia M. Every value cites the Monrovia Municipal Code, Title 17 (American Legal, read 2026-11-01).
+zone: "M"
+name: "Manufacturing (M)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "MMC Ch. 17.08 (permitted uses)"
+    url: https://codelibrary.amlegal.com/codes/monrovia/latest/monrovia_ca/0-0-0-71610
+
+residential_allowed: {value: false, source: Z, assumption: "No housing use in Table 17.08."}
+housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "§17.08.010's table leaves dwellings blank here."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

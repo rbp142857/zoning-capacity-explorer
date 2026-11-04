@@ -1,0 +1,19 @@
+# El Monte M-2. Every value cites the El Monte Municipal Code, Title 17 (Municode, Ord. No. 3053, read 2026-11-01).
+zone: M-2
+name: "General Manufacturing (M-2)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "EMMC Table 17.A-1"
+    url: https://library.municode.com/ca/el_monte/codes/code_of_ordinances?nodeId=TIT17ZO_DIVACIMAPEUS_CH17.AMAPEUS_17.AMAPEUS
+
+residential_allowed: {value: false, source: Z, assumption: "The use matrix allows no homes in M-2."}
+housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "The citywide use matrix marks dwellings — in M-1 and M-2."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not allowed."}

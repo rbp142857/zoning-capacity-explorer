@@ -1,0 +1,18 @@
+# Torrance C5. Every value cites the Torrance Municipal Code, Division 9 (Code Publishing, read 2026-11-02; current through Ord. 3969, June 23, 2026).
+zone: "C5"
+name: "Conditional Commercial (C-5)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "TMC Art. 24"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.24
+
+residential_allowed: {value: false, source: Z, assumption: "§91.24.1 bars uses permitted in R-1, R-2 and R-3."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

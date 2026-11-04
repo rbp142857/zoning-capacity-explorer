@@ -1,0 +1,40 @@
+# Palmdale MU1. Every value cites the Palmdale Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "MU1"
+name: "Mixed-Use 1 (MU 1)"
+family: commercial
+
+sources:
+  Z:
+    section: "PMC Ch. 17.55, Table 17.55.010-1, and Ch. 17.54, Table 17.54.020-1"
+    url: https://ecode360.com/46603780
+  P:
+    section: "PMC Ch. 17.87 (Off-Street Parking and Loading)"
+    url: https://ecode360.com/46604288
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [two_unit, multifamily, mixed_use], source: Z}
+approval: {value: by_right, source: Z, assumption: "Chapter 17.54's table marks attached, two-family and multifamily homes P."}
+lot_area_per_unit_sqft: {value: 2178, source: Z, assumption: "20 homes per acre: 43,560 divided by 20."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 2178
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 0, source: Z, assumption: "None; 10 ft next to single-family zones, not modeled."}
+  rear_ft: {value: 15, source: Z}
+
+max_height_ft: {value: 45, source: Z}
+max_stories: {value: 3, source: Z}
+parking_per_unit: {value: 1.5, source: P, assumption: "1.5 spaces for a two-bedroom home in buildings of 5 or more; smaller buildings need 2. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.2, source: P, assumption: "0.2 guest space per home at 5 or more homes."}
+guest_parking_min_units: 5
+
+simplifications:
+  - "Stand-alone residential is allowed on any parcel, but frontages on Palmdale Boulevard must hold nonresidential space. We count all-residential buildings, which can run high there."
+  - "A step-back next to single-family zones and open space per home are not modeled."

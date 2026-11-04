@@ -1,0 +1,19 @@
+# Claremont CH. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "CH"
+name: "CH Commercial Highway"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC §§16.051.010 and 16.051.020"
+    url: https://ecode360.com/43834771
+
+residential_allowed: {value: false, source: Z, assumption: "Homes need a conditional use permit and must be part of a mixed-use project with ground-floor commercial, and the chapter states no density. We don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+approval: {value: conditional, source: Z, assumption: "Homes need a conditional use permit as part of a mixed-use project."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

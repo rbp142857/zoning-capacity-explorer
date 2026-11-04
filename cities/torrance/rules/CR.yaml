@@ -1,0 +1,18 @@
+# Torrance CR. Every value cites the Torrance Municipal Code, Division 9 (Code Publishing, read 2026-11-02; current through Ord. 3969, June 23, 2026).
+zone: "CR"
+name: "Restricted Commercial (C-R)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "TMC Art. 25"
+    url: https://www.codepublishing.com/CA/Torrance/html/Torrance09/Torrance0901.html#91.25
+
+residential_allowed: {value: false, source: Z, assumption: "Article 25 lists no homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

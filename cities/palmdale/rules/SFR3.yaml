@@ -1,0 +1,30 @@
+# Palmdale SFR3. Every value cites the Palmdale Municipal Code, Title 17 (eCode360, read 2026-11-01).
+zone: "SFR3"
+name: "SFR 3"
+family: single_family
+
+sources:
+  Z:
+    section: "PMC §17.36.010, Tables 17.36.010-1 and -2"
+    url: https://ecode360.com/46603435
+  P:
+    section: "PMC Ch. 17.87 (Off-Street Parking and Loading)"
+    url: https://ecode360.com/46604288
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Chapter 17.35's table marks single-family detached dwellings P."}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. The zone's 6 homes per acre and minimum lot sizes govern new lots, not a lot already there. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 7.5, source: Z, assumption: "5 ft on one side and 10 ft on the garage side; we use the average, 7.5 ft."}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.5, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 enclosed spaces. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Subdividing large lots to the zone's density is not modeled, so large lots can be too low."

@@ -1,0 +1,19 @@
+# Bellflower O-S. Every value cites the Bellflower Municipal Code, Title 17 (eCode360, through Ord. 1461 of September 28, 2026, read 2026-11-02).
+zone: "O-S"
+name: "Open Space"
+family: nonresidential
+
+sources:
+  Z:
+    section: "BMC Ch. 17.64"
+    url: https://ecode360.com/43109825
+
+residential_allowed: {value: false, source: Z, assumption: "Chapter 17.64 lists no homes."}
+housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "The zone's permitted use list has no homes."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

@@ -1,0 +1,28 @@
+# Commerce C-2. Every value cites the Commerce Municipal Code, Title 19 (Municode, Supp. 15, through Ord. 829, read 2026-11-02).
+zone: "C-2"
+name: "C-2 Commercial"
+family: commercial
+
+sources:
+  Z:
+    section: "CMC §§19.09.020 and 19.09.030 and Table 19.21.040A"
+    url: https://library.municode.com/ca/commerce/codes/code_of_ordinances?nodeId=TIT19ZO_CH19.09COZO_19.09.030DEST
+
+residential_allowed: {value: true, source: Z, assumption: "Table 19.09.020A lists multifamily and single-family dwellings as permitted uses."}
+housing_types: {value: [single_family, multifamily], source: Z}
+min_lot_area_sqft: {value: 15000, source: Z}
+
+setbacks:
+  front_ft: {value: 5, source: Z, assumption: "5 ft for all other uses. Lots next to a residential zone, park or school match that neighbor's front yard, which isn't modeled."}
+  side_ft: {value: 0, source: Z, assumption: "0 ft in general; 10 ft next to a street or residential zone, which isn't modeled."}
+  rear_ft: {value: 0, source: Z, assumption: "The table leaves this blank for other uses, which we read as none; 10 ft next to a residential zone, which isn't modeled."}
+
+max_height_ft: {value: 50, source: Z, assumption: "The table's only height is 50 ft within 500 ft of a residential zone."}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.50, source: Z}
+max_far: {value: 0.5, source: Z}
+parking_per_unit: {value: 2, source: Z, assumption: "The residential rate: 2 garage spaces for homes with two or more bedrooms. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: Z}
+
+simplifications:
+  - "The chapter states no density for homes, so the count comes from its floor area, coverage and parking limits. No density limit is applied."

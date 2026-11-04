@@ -10,6 +10,7 @@ sources:
 
 residential_allowed: {value: false, source: C17-26, assumption: "Public/semi-public district; we assume housing is not allowed by right. Not yet checked against the Chapter 17.26 use table."}
 housing_types: {value: [], source: C17-26}
+approval: {value: not_allowed, source: C17-26, assumption: "Table 2-7 allows housing in PS only as accessory facilities, with a Conditional Use Permit."}
 
 setbacks:
   front_ft: {value: 0, source: C17-26, assumption: "Not relevant: housing not allowed."}

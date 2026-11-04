@@ -1,0 +1,37 @@
+# Claremont RM-4000. Every value cites the Claremont Municipal Code, Title 16 (eCode360, through Ord. 2026-02 of July 14, 2026, read 2026-11-03).
+zone: "RM-4000"
+name: "RM (4000) Medium Density Residential"
+family: multifamily
+
+sources:
+  Z:
+    section: "CMC §§16.013.010 and 16.013.020"
+    url: https://ecode360.com/43834239
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single- and multiple-family structures are permitted as a matter of right."}
+min_lot_area_sqft: {value: 8000, source: Z}
+lot_area_per_unit_sqft: {value: 4000, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "Lots under 8,000 sq ft may only be developed under RS (8000) standards (§16.013.020.B), so one home."
+small_lot_units_below_sqft: 8000
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 8, source: Z}
+  rear_ft: {value: 8, source: Z, assumption: "The interior rear yard; 15 ft on a street."}
+
+max_height_ft: {value: 25, source: Z, assumption: "Within 75 ft of a single-family parcel, 25 ft and two stories; not modeled."}
+max_stories: {value: 2, source: Z}
+parking_per_unit: {value: 2.5, source: Z, assumption: "The rate for homes of 720 sq ft or more. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: Z}
+
+simplifications:
+  - "Outdoor living area (400 sq ft per bedroom for homes with two or more, 400 per home otherwise) isn't modeled, so floor area can run high; density binds on most lots."
+  - "Lots under 8,000 sq ft use this file's yards and height rather than RS (8000)'s; the one-home limit binds anyway."

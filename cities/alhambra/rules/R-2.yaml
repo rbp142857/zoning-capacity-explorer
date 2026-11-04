@@ -1,0 +1,41 @@
+# Alhambra R-2. Every value cites the Alhambra Municipal Code, Title 23 (American Legal, read 2026-11-01).
+zone: "R-2"
+name: "Residential Medium Density (RM; R-2 in SCAG's table)"
+family: multifamily
+
+sources:
+  Z:
+    section: "AMC §23.04.030, Table 23.04.030"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-136023
+  P:
+    section: "AMC §23.20.040, Table 23.20.040"
+    url: https://codelibrary.amlegal.com/codes/alhambra/latest/alhambra_ca/0-0-0-137138
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, two_unit, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 23.04.020 marks multi-unit dwellings P in RM and RH, which we read these as."}
+lot_area_per_unit_sqft: {value: 2420, source: Z, assumption: "18 homes per acre: 43,560 divided by 18."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "§23.02.030: fractions round down, and at least one home is allowed where homes are permitted."
+small_lot_units_below_sqft: 2420
+
+setbacks:
+  front_ft: {value: 20, source: Z, assumption: "The greater of 20 ft or the neighbors' average; we use 20 ft."}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on the first story and 6 ft above; we use 5 ft for the ground floor."}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z}
+lot_coverage: {value: 0.45, source: Z}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces in an enclosed garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "0.5 guest space per home for multi-unit dwellings."}
+guest_parking_min_units: 2
+
+simplifications:
+  - "SCAG's zoning table for Alhambra dates from 2018 and uses the zone names from before the 2024 code. We read this as RM, the zone that implements the same General Plan designation; a lot rezoned since 2018 would be wrong."
+  - "Open space (§23.13.030) is not modeled."

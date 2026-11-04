@@ -1,0 +1,35 @@
+# West Covina MF-8. Every value cites the West Covina Municipal Code, Ch. 26 Art. II (Municode, read 2026-11-01).
+zone: "MF-8"
+name: "Multi-Family Residential (MF-8)"
+family: multifamily
+
+sources:
+  Z:
+    section: "WCMC Ch. 26 Art. II, Table 2-6 and multi-family standards"
+    url: https://library.municode.com/ca/west_covina/codes/code_of_ordinances?nodeId=MUCO_CH26ZO_ARTIIZOALUSDEST
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The permitted use table marks multi-family homes X, allowed with no use permit."}
+min_lot_area_sqft: {value: 20000, source: Z, assumption: "Minimum site size; smaller existing lots get the density rule."}
+lot_area_per_unit_sqft: {value: 5445, source: Z, assumption: "8 homes per net acre converted to land per home."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 5445
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 10, source: Z}
+  rear_ft: {value: 20, source: Z}
+
+max_height_ft: {value: 30, source: Z, assumption: "Lower within 100 ft of single-family zones; not modeled."}
+max_stories: {value: 3, source: Z, assumption: "The code limits feet, not stories; we fit one per 10 ft or so."}
+lot_coverage: {value: 0.45, source: Z}
+
+simplifications:
+  - "Parking and open space were not read, so these can run high."

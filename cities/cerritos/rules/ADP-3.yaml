@@ -1,0 +1,37 @@
+# Cerritos ADP-3. Every value cites the Cerritos Municipal Code, Title 22 (eCode360, read 2026-11-02).
+zone: "ADP-3"
+name: "Area Development Plan 3 (Development Area Three)"
+family: multifamily
+
+sources:
+  Z:
+    section: "CMC §§22.13.100 to 22.13.180"
+    url: https://ecode360.com/50810433
+  P:
+    section: "CMC Ch. 22.74"
+    url: https://ecode360.com/50815967
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family, multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Single-family and multi-family dwellings are permitted uses."}
+lot_area_per_unit_sqft: {value: 3260, source: Z, assumption: "1 home per 3,260 sq ft of net land. Tri-level projects may reach 3,100 sq ft, not modeled."}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "Under an acre, single-family homes under RS-6500's standards (§22.13.170(1)(b))."
+small_lot_units_below_sqft: 43560
+
+setbacks:
+  front_ft: {value: 20, source: Z, assumption: "RS-6500's yards, which apply under an acre; we use them on larger parcels too (assumed)."}
+  side_ft: {value: 5, source: Z, assumption: "See front."}
+  rear_ft: {value: 10, source: Z, assumption: "See front."}
+
+max_stories: {value: 2, source: Z, assumption: "Tri-level structures keep two living levels; we fit 2."}
+lot_coverage: {value: 0.40, source: Z, assumption: "RS-6500's coverage; we didn't capture a separate figure for parcels of an acre or more (assumed)."}
+parking_per_unit: {value: 2, source: P, assumption: "2 spaces per home on the building site (§22.74). None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Most lots here are single townhomes or small homes, each keeping one home. Private and recreation open space isn't modeled."

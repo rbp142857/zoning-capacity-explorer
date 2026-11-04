@@ -1,0 +1,40 @@
+# Los Angeles [H3-CR1-3][RG2-2L]. Chapter 1A (new zoning code), read on zoning.lacity.gov on 2026-11-01.
+zone: "[H3-CR1-3][RG2-2L]"
+name: "H3 form, CR1 frontage, Standards 3, RG2 use, 2L density"
+family: multifamily
+
+sources:
+  F:
+    section: "LA Zoning Code (Ch. 1A) Sec. 2B.3.3 (H3 Form District)"
+    url: https://zoning.lacity.gov/browse/2#2B.3.3
+  U:
+    section: "LA Zoning Code (Ch. 1A) Sec. 5B.3.2 (RG2 Use District)"
+    url: https://zoning.lacity.gov/browse/5#5B.3.2
+  D:
+    section: "LA Zoning Code (Ch. 1A) Part 6B (Density Districts)"
+    url: https://zoning.lacity.gov/browse/6#6B
+  P:
+    section: "LA Zoning Code (Ch. 1A) Sec. 4C.4.1, Table 1 (Package C, assigned by Development Standards District 3)"
+    url: https://zoning.lacity.gov/browse/4#4C.4.1
+
+residential_allowed: {value: true, source: U, assumption: "Dwellings are allowed in this district."}
+housing_types: {value: [multifamily], source: U}
+min_lot_area_sqft: {value: 4000, source: F}
+min_lot_width_ft: {value: 40, source: F}
+max_units_per_lot: {value: 2, source: D}
+
+setbacks:
+  front_ft: {value: 10, source: F}
+  side_ft: {value: 3, source: F}
+  rear_ft: {value: 3, source: F}
+
+max_height_ft: {value: 33, source: F}
+max_stories: {value: 3, source: F, assumption: "The Form District limits feet; we fit one story per roughly 10 to 11 ft."}
+lot_coverage: {value: 0.65, source: F}
+max_far: {value: 0.6, source: F, assumption: "Base FAR, without public benefit bonuses."}
+parking_per_unit: {value: 0.5, source: P, assumption: "0.5 per home of 1-4 habitable rooms, 1 for 5 or more; we use the smaller home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Base floor area only. Bonus floor area and density come through the public benefit programs in Article 9, so these can be far below what a project with affordable homes can reach."
+  - "Lot and residential amenity space, building width, step-backs and frontage rules are not modeled; they can lower what fits."
+  - "All-residential building assumed."

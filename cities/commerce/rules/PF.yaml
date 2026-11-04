@@ -1,0 +1,19 @@
+# Commerce PF. Every value cites the Commerce Municipal Code, Title 19 (Municode, Supp. 15, through Ord. 829, read 2026-11-02).
+zone: "PF"
+name: "PF Public Facility"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC §19.13.020"
+    url: https://library.municode.com/ca/commerce/codes/code_of_ordinances?nodeId=TIT19ZO_CH19.13COPUFAZO_19.13.020USRE
+
+residential_allowed: {value: false, source: Z, assumption: "Table 19.13.020A allows only an accessory or caretaker dwelling, with a conditional use permit. We don't count that as a home."}
+housing_types: {value: [], source: Z}
+approval: {value: not_allowed, source: Z, assumption: "Only an accessory or caretaker dwelling, with a conditional use permit."}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

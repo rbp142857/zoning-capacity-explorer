@@ -1,0 +1,23 @@
+# El Segundo R-3. Every value cites the El Segundo Municipal Code, Title 15 (American Legal), read 2026-11-03.
+zone: R-3
+name: Multi-Family Residential (R-3)
+family: multifamily
+sources:
+  Z: {section: ESMC §§15-4A-1 and 15-4D-3, url: 'https://codelibrary.amlegal.com/codes/elsegundoca/latest/elsegundo_ca/0-0-0-30052'}
+residential_allowed: {value: true, source: Z}
+housing_types:
+  value: [single_family, two_unit, multifamily]
+  source: Z
+approval: {value: by_right, source: Z, assumption: Table No. 1 marks multiple-family dwellings P.}
+min_lot_area_sqft: {value: 7000, source: Z}
+units_per_acre: {value: 30, source: Z}
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft:
+    value: {pct_of_width: 0.1, min_ft: 3, max_ft: 5}
+    source: Z
+  rear_ft: {value: 10, source: Z}
+max_height_ft: {value: 26, source: Z}
+max_stories: {value: 2, source: Z}
+lot_coverage: {value: 0.53, source: Z}
+simplifications: ['Parking wasn''t read, so small lots can run high.', We use the 26 ft flat-roof limit; pitched roofs may reach 32 ft. Open space isn't modeled.]

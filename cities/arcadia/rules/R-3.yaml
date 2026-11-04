@@ -1,0 +1,35 @@
+# Arcadia R-3. Every value cites the Arcadia Development Code, Art. IX Ch. 1 (Municode, read 2026-11-01).
+zone: "R-3"
+name: "High Density Residential (R-3)"
+family: multifamily
+
+sources:
+  Z:
+    section: "ADC §9102.01.090"
+    url: https://library.municode.com/ca/arcadia/codes/code_of_ordinances?nodeId=ARTIXDIUSLA_CH1DECO_DIV2ZOALUSDEST_S9102.01REZO
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-1 marks multifamily dwellings P."}
+min_lot_area_sqft: {value: 10000, source: Z, assumption: "For new lots."}
+min_lot_width_ft: {value: 100, source: Z}
+lot_area_per_unit_sqft: {value: 1089, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 1089
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 10, source: Z}
+  rear_ft: {value: 10, source: Z}
+
+max_height_ft: {value: 30, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits feet, not stories; we fit one per 10 ft."}
+
+simplifications:
+  - "Parking and open space aren't modeled, so these can run high. Height exceptions (§9102.01.100.H) are not modeled."

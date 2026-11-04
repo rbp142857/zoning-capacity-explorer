@@ -17,6 +17,7 @@ sources:
 
 residential_allowed: {value: true, source: T12A}
 housing_types: {value: [single_family], source: T12A, assumption: "Table 30.12-A allows one dwelling per lot in CPD, not multiple dwellings."}
+approval: {value: by_right, source: T12A, assumption: "Table 30.12-A marks one dwelling per lot P and leaves multiple dwellings blank."}
 max_units_per_lot: {value: 1, source: T12A}
 
 setbacks:

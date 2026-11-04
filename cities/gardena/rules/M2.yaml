@@ -1,0 +1,18 @@
+# Gardena M2. Every value cites the Gardena Municipal Code, Title 18 (eCode360, read 2026-11-01).
+zone: "M2"
+name: "General Industrial (M-2)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "GMC General Industrial zone"
+    url: https://ecode360.com/48209641
+
+residential_allowed: {value: false, source: Z, assumption: "No dwelling use."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not allowed."}

@@ -1,0 +1,18 @@
+# Westlake Village MU—SP No. 1. Every value cites the Westlake Village Municipal Code, Article 9 (Municode, read 2026-11-01).
+zone: "MU—SP No. 1"
+name: "Westlake North Specific Plan (MU-SP No. 1)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "WVMC Ch. 9.24"
+    url: https://library.municode.com/ca/westlake_village/codes/code_of_ordinances?nodeId=ART9ZORE_CH9.24WENOSPPL
+
+residential_allowed: {value: false, source: Z, assumption: "Only Planning Area F allows homes (14.1 per net acre, 250 at most), and we have no map of planning areas. We count none here (conservative); its existing homes stay on the roll."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

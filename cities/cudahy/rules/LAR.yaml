@@ -1,0 +1,18 @@
+# Cudahy LAR. Every value cites the Cudahy Municipal Code, Title 20 (ICC Code Solutions, through Ord. 772 of August 18, 2026, read 2026-11-03).
+zone: "LAR"
+name: "LAR Los Angeles River"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Ch. 20.24"
+    url: https://cudahy.municipal.codes/CMC/20.24
+
+residential_allowed: {value: false, source: Z, assumption: "We found no residential use in this chapter. We don't count homes."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

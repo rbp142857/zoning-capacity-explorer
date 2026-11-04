@@ -1,0 +1,46 @@
+# Monrovia RF. Every value cites the Monrovia Municipal Code, Title 17 (American Legal, read 2026-11-01).
+zone: "RF"
+name: "Residential Foothill (RF)"
+family: single_family
+
+sources:
+  Z:
+    section: "MMC §17.12.010"
+    url: https://codelibrary.amlegal.com/codes/monrovia/latest/monrovia_ca/0-0-0-71877
+  P:
+    section: "MMC §17.24.030 (residential parking)"
+    url: https://codelibrary.amlegal.com/codes/monrovia/latest/monrovia_ca/0-0-0-72371
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "§17.08.010's table marks single-family dwellings P."}
+min_lot_area_sqft: {value: 15000, source: Z}
+min_lot_width_ft: {value: 100, source: Z}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: {pct_of_width: 0.1, min_ft: 5, max_ft: 15}, source: Z, assumption: "10% of lot width, at least 5 ft, at most 15 ft."}
+  rear_ft: {value: 20, source: Z, assumption: "25% of depth, at least 20 ft; we use the minimum."}
+
+max_height_ft:
+  value:
+    by: lot_width_ft
+    bands:
+      - {below: 75, value: 27}
+      - {value: 30}
+  source: Z
+max_stories: {value: 2, source: Z}
+max_floor_area:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {below: 20000, share: 0.35}
+      - {share: 0.10, plus_sqft: 5000}
+  source: Z
+  assumption: "Main building only; 10% of lot or less more for accessory buildings isn't counted as homes."
+parking_per_unit: {value: 2, source: P, assumption: "2-car garage. None within ½ mile of a major transit stop (the AB 2097 path)."}
+
+simplifications:
+  - "Second-story setbacks and neighborhood compatibility review are not modeled."
+  - "Hillside streets need 3 garage spaces in RF and RE; not modeled."

@@ -1,0 +1,33 @@
+# Westlake Village MHP. Every value cites the Westlake Village Municipal Code, Article 9 (Municode, read 2026-11-01).
+zone: "MHP"
+name: "Mobile Home Park (MHP)"
+family: multifamily
+
+sources:
+  Z:
+    section: "WVMC Ch. 9.7 (MHP Zone)"
+    url: https://library.municode.com/ca/westlake_village/codes/code_of_ordinances?nodeId=ART9ZORE_CH9.7MHMOHOPAZO
+  S:
+    section: "WVMC §9.14.020 (Development Standards)"
+    url: https://library.municode.com/ca/westlake_village/codes/code_of_ordinances?nodeId=ART9ZORE_CH9.14DEST
+  P:
+    section: "WVMC Ch. 9.19 (Number of Parking Spaces Required)"
+    url: https://library.municode.com/ca/westlake_village/codes/code_of_ordinances?nodeId=ART9ZORE_CH9.19OREPALOST
+
+residential_allowed: {value: true, source: Z, assumption: "Mobile home parks, with a conditional use permit."}
+housing_types: {value: [single_family], source: Z}
+approval: {value: conditional, source: Z, assumption: "Mobile home parks, with a conditional use permit."}
+max_units_per_lot: {value: 1, source: Z, assumption: "§9.7.040: at most one home per mobile home lot. A park on one parcel is counted as one lot, so it runs low; park density follows the General Plan, which we have no parcel map of."}
+
+setbacks:
+  front_ft: {value: 15, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 5, source: Z}
+
+max_stories: {value: 1, source: Z, assumption: "The chapter gives no height limit; we fit one story, as a mobile home. The one-home limit binds."}
+parking_per_unit: {value: 2, source: P, assumption: "2 covered spaces per home. None within ½ mile of a major transit stop (the AB 2097 path)."}
+guest_parking_per_unit: {value: 0.5, source: P, assumption: "Half a guest space per mobile home."}
+guest_parking_min_units: 1
+
+simplifications:
+  - "§9.14.070 lists ADU locations without MHP. The state ADU path still applies in our model, so lots here can run high."

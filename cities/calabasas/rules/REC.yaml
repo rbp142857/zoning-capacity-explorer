@@ -1,0 +1,25 @@
+# Calabasas REC. Every value cites the Calabasas Municipal Code, Title 17 (Municode, read 2026-11-02).
+zone: "REC"
+name: "Recreation (REC)"
+family: single_family
+
+sources:
+  Z:
+    section: "CMC §17.11.010 Table 2-2 and Ch. 17.16 Table 2-7"
+    url: https://library.municode.com/ca/city_of_calabasas/codes/code_of_ordinances?nodeId=TIT17LAUSDE
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+approval: {value: by_right, source: Z, assumption: "Table 2-2 marks single-family housing P."}
+max_units_per_lot: {value: 1, source: Z, assumption: "One home per lot, Table 2-5. Subdivision densities are not modeled. State law is modeled separately."}
+sb9_allowed: {value: false, source: Z, assumption: "This is a recreation district, not a single-family residential zone, so we don't apply SB 9 (conservative); see the open decision."}
+
+setbacks:
+  front_ft: {value: 0, source: Z, assumption: "Set by the development plan; we model none."}
+  side_ft: {value: 0, source: Z, assumption: "Set by the development plan; we model none."}
+  rear_ft: {value: 0, source: Z, assumption: "Set by the development plan; we model none."}
+
+max_stories: {value: 2, source: Z, assumption: "The table doesn't limit stories; we fit 2."}
+
+simplifications:
+  - "Lots over the hillside threshold follow §17.20.150, and we have no slope data, so hilly lots can run high. Minimum lot sizes of up to 160 acres apply to new lots, not modeled."

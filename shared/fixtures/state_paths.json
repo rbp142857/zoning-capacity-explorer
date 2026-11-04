@@ -1,0 +1,165 @@
+{
+ "sb79": [
+  {
+   "args": [
+    10000,
+    100,
+    null,
+    true,
+    true,
+    1062.5
+   ],
+   "want": 36
+  },
+  {
+   "args": [
+    10000,
+    1000,
+    null,
+    true,
+    true,
+    1062.5
+   ],
+   "want": 27
+  },
+  {
+   "args": [
+    10000,
+    2000,
+    null,
+    true,
+    true,
+    1062.5
+   ],
+   "want": 22
+  },
+  {
+   "args": [
+    10000,
+    2000,
+    null,
+    true,
+    false,
+    1062.5
+   ],
+   "want": null
+  },
+  {
+   "args": [
+    10000,
+    null,
+    500,
+    true,
+    true,
+    1062.5
+   ],
+   "want": 22
+  },
+  {
+   "args": [
+    10000,
+    null,
+    2000,
+    true,
+    true,
+    1062.5
+   ],
+   "want": 18
+  },
+  {
+   "args": [
+    10000,
+    2000,
+    1000,
+    true,
+    true,
+    1062.5
+   ],
+   "want": 22
+  },
+  {
+   "args": [
+    1500,
+    500,
+    null,
+    true,
+    true,
+    1062.5
+   ],
+   "want": null
+  },
+  {
+   "args": [
+    10000,
+    500,
+    null,
+    false,
+    true,
+    1062.5
+   ],
+   "want": null
+  },
+  {
+   "args": [
+    10000,
+    null,
+    null,
+    true,
+    true,
+    1062.5
+   ],
+   "want": null
+  }
+ ],
+ "bonus": [
+  {
+   "limits": {
+    "density": 10
+   },
+   "share": 0.5,
+   "want": 15
+  },
+  {
+   "limits": {
+    "lot_area_per_unit": 5,
+    "density": null
+   },
+   "share": 0.5,
+   "want": 8
+  },
+  {
+   "limits": {
+    "lot_area_per_unit": 7,
+    "density": 10
+   },
+   "share": 0.8,
+   "want": 13
+  },
+  {
+   "limits": {
+    "density": 4
+   },
+   "share": 0.5,
+   "want": null
+  },
+  {
+   "limits": {
+    "envelope": 30
+   },
+   "share": 0.5,
+   "want": null
+  },
+  {
+   "limits": {},
+   "share": 0.8,
+   "want": null
+  },
+  {
+   "limits": {
+    "density": 5
+   },
+   "share": 0.5,
+   "want": 8
+  }
+ ]
+}

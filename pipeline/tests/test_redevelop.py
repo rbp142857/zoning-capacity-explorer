@@ -6,7 +6,7 @@ import math
 
 import pytest
 
-from zce.engine.redevelop import AGE, ALL_STATIC, HISTORIC, OWNERSHIP, VALUE, ZONE, Screens, redevelopment, static_mask
+from zce.engine.redevelop import AGE, ALL_STATIC, HISTORIC, LAND, OWNERSHIP, VALUE, ZONE, Screens, is_special_land, redevelopment, static_mask
 
 S = Screens(
     as_of_year=2026, min_capacity_multiple=2.0, min_net_new_units=3, min_building_age_years=50,
@@ -19,6 +19,24 @@ def mask(**kw):
                 existing_units=1, is_condo=False, overlays=())
     base.update(kw)
     return static_mask(S, **base)
+
+
+@pytest.mark.parametrize("label, special", [
+    ("Government Parcel", True), ("Mineral Processing", True), ("Golf Courses", True),
+    ("Utility Commercial & Mutual: Pumping Plants State Assessed Pr", True), ("Schools (Private)", True),
+    ("Cemeteries, Mausoleums, Mortuaries", True), ("Single", False), ("Parking Lots (Commercial Use Properties)", False),
+    (None, False), (float("nan"), False),
+])
+def test_special_land_labels(label, special):
+    assert is_special_land(label) is special
+
+
+def test_vacant_looking_government_land_is_not_likely_to_redevelop():
+    # Exempt public land has no building or assessed value, so it passes as "vacant".
+    m = mask(land_value=None, improvement_value=None, year_built=None, existing_units=None, special_land=True)
+    assert not m & LAND
+    r = redevelopment(S, m, local_units=100, existing_units=None)
+    assert not r.likely and r.failed == ("public_or_special_land",)
 
 
 def test_old_cheap_building_passes_every_static_screen():

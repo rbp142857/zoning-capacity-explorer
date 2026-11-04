@@ -11,7 +11,7 @@ map: {center: [-118.135, 34.16], zoom: 12.3}
 
 # EPSG:2229 = NAD83 / California State Plane Zone 5, measured in US survey feet.
 # We do all area and distance math in this projected CRS, because lat/lon
-# degrees are not a unit of length. See LEARNING.md -> "Coordinate systems".
+# degrees are not a unit of length.
 analysis_crs: "EPSG:2229"
 
 sources:

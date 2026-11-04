@@ -1,0 +1,18 @@
+# Inglewood O-S. Every value cites the Inglewood Municipal Code, Chapter 12 (eCode360, read 2026-11-01).
+zone: "O-S"
+name: "O-S Open Space Zone"
+family: nonresidential
+
+sources:
+  Z:
+    section: "IMC Ch. 12, Article 17.1 (O-S Open Space Zone)"
+    url: https://ecode360.com/43787441
+
+residential_allowed: {value: false, source: Z, assumption: "Open space: we found no dwelling use in this article."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: housing not counted."}

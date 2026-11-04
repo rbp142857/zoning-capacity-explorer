@@ -1,0 +1,34 @@
+# Whittier R-2. Every value cites the Whittier Municipal Code, Title 18 (Municode, read 2026-11-01).
+zone: "R-2"
+name: "Light Multiple Residential (R-2)"
+family: multifamily
+
+sources:
+  Z:
+    section: "WMC §§18.18.020 and 18.18.030"
+    url: https://library.municode.com/ca/whittier/codes/code_of_ordinances?nodeId=TIT18ZO_DIVIZO_CH18.18LIMUREZO
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [multifamily], source: Z}
+approval: {value: by_right, source: Z, assumption: "The chapter's permitted uses list dwelling units as a principal use."}
+min_lot_area_sqft: {value: 7000, source: Z, assumption: "For new lots; existing smaller lots get the density rule."}
+lot_area_per_unit_sqft: {value: 3000, source: Z}
+small_lot_units:
+  value:
+    by: lot_area_sqft
+    bands:
+      - {value: 1}
+  source: Z
+  assumption: "A lot too small for one home keeps one home (assumed)."
+small_lot_units_below_sqft: 3000
+
+setbacks:
+  front_ft: {value: 20, source: Z}
+  side_ft: {value: 5, source: Z, assumption: "5 ft on interior lots."}
+  rear_ft: {value: 5, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 3, source: Z, assumption: "The code limits 35 ft, not stories; we fit 3."}
+
+simplifications:
+  - "Parking (not read for this pass) is not modeled, so these can run high."

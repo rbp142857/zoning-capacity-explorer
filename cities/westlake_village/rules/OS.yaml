@@ -1,0 +1,18 @@
+# Westlake Village OS. Every value cites the Westlake Village Municipal Code, Article 9 (Municode, read 2026-11-01).
+zone: "OS"
+name: "Open Space (OS)"
+family: nonresidential
+
+sources:
+  Z:
+    section: "WVMC Ch. 9.13"
+    url: https://library.municode.com/ca/westlake_village/codes/code_of_ordinances?nodeId=ART9ZORE_CH9.13OSOPSPZO
+
+residential_allowed: {value: false, source: Z, assumption: "We found no dwelling use in this chapter."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}

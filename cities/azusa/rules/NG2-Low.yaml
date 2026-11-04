@@ -1,0 +1,25 @@
+# Azusa NG2-Low. Every value cites the Azusa Development Code, Chapter 88 (Municode, read 2026-11-01).
+zone: "NG2-Low"
+name: "Neighborhood General 2, Low Density (NG2-L)"
+family: single_family
+
+sources:
+  Z:
+    section: "Azusa Development Code §88.22.065 (Table 2-1) and §88.22.070"
+    url: https://library.municode.com/ca/azusa/codes/code_of_ordinances?nodeId=CH88DECO_ART2URST_CH88.22NE_88.22.070NESIPLBUDE
+
+residential_allowed: {value: true, source: Z}
+housing_types: {value: [single_family], source: Z}
+min_lot_area_sqft: {value: 6000, source: Z, assumption: "The minimum parcel applies to each subdivision and residential development; we flag smaller lots rather than zero them."}
+max_units_per_lot: {value: 1, source: Z, assumption: "Table 2-1 allows no duplexes or larger in the low-density column. Its 8 homes per acre governs subdividing. State law (ADU, SB 9) is modeled separately."}
+
+setbacks:
+  front_ft: {value: 25, source: Z}
+  side_ft: {value: 5, source: Z}
+  rear_ft: {value: 25, source: Z}
+
+max_height_ft: {value: 35, source: Z}
+max_stories: {value: 2.5, source: Z}
+
+simplifications:
+  - "Parking for a single home wasn't read; the one-home limit binds either way."

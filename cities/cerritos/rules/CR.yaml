@@ -1,0 +1,18 @@
+# Cerritos CR. Every value cites the Cerritos Municipal Code, Title 22 (eCode360, read 2026-11-02).
+zone: "CR"
+name: "CR Regional Commercial"
+family: nonresidential
+
+sources:
+  Z:
+    section: "CMC Ch. 22.27"
+    url: https://ecode360.com/50812183
+
+residential_allowed: {value: false, source: Z, assumption: "We didn't read this zone's uses. We don't count homes (conservative)."}
+housing_types: {value: [], source: Z}
+
+setbacks:
+  front_ft: {value: 0, source: Z}
+  side_ft: {value: 0, source: Z}
+  rear_ft: {value: 0, source: Z}
+max_stories: {value: 0, source: Z, assumption: "Not relevant: homes not counted."}
