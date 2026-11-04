@@ -127,16 +127,46 @@ def write_addresses(lots: gpd.GeoDataFrame, path) -> None:
     path.write_text(json.dumps(payload, separators=(",", ":")))
 
 
+# Cities the owner has kept off the map whatever their level, and why.
+HELD_OFF_MAP = {
+    "avalon": "on Catalina Island, where wildlife restrictions limit development and the rule files don't model them",
+}
+
+
+def coverage_levels(path=None) -> dict[str, str]:
+    """Each city's level from the coverage table `python -m zce release` writes."""
+    path = path or REPO_ROOT / "reports" / "la_county" / "coverage.csv"
+    if not path.exists():
+        return {}
+    return dict(pd.read_csv(path, usecols=["city_id", "coverage_level"]).values)
+
+
 def write_city_index() -> None:
-    """web/public/data/cities.json: every city with exported data, for the city picker."""
+    """web/public/data/cities.json: exported cities for the city picker.
+
+    Partial cities stay off the map even if their files exist: their totals run
+    low because the plans where they build most are missing. A city not yet in
+    the coverage table is listed without a level.
+    """
     from zce.config import CITIES_DIR, load_city
 
     data_root = REPO_ROOT / "web" / "public" / "data"
+    levels = coverage_levels()
     cities = []
     for folder in sorted(p for p in CITIES_DIR.iterdir() if (p / "city.yaml").exists()):
         if (data_root / folder.name / "parcels.json").exists():
+            level = levels.get(folder.name)
+            if folder.name in HELD_OFF_MAP:
+                print(f"  {folder.name} is held off the map: {HELD_OFF_MAP[folder.name]}")
+                continue
+            if level == "Partial":
+                print(f"  {folder.name} is rated Partial, so it stays off the map")
+                continue
             c = load_city(folder.name)
-            cities.append({"id": c.id, "name": c.name, "center": list(c.map.center), "zoom": c.map.zoom})
+            entry = {"id": c.id, "name": c.name, "center": list(c.map.center), "zoom": c.map.zoom}
+            if level:
+                entry["level"] = level
+            cities.append(entry)
     (data_root / "cities.json").write_text(json.dumps(cities, indent=1))
 
 

@@ -9,7 +9,7 @@ import maplibregl from "maplibre-gl";
 import "./style.css";
 import { renderBarChart } from "./charts";
 import {
-  COMBINED, type CityInfo, mergeParcelData, mergeResults, selectionFromSearch, selectionToSearch, shortName,
+  COMBINED, COUNTY_VIEW, type CityInfo, mergeParcelData, mergeResults, selectionFromSearch, selectionToSearch, shortName,
 } from "./cities";
 import { BINDING_LABELS } from "./colors";
 import { type ParcelData, loadJson } from "./data";
@@ -45,18 +45,24 @@ const cityDir = (id: string) => `${DATA_ROOT}/${id}`;
 function setupCityPicker(cities: CityInfo[], selected: string[], onChange: (ids: string[]) => void) {
   const picker = $<HTMLDetailsElement>("city-picker");
   const box = $("city-options");
-  const makeRow = (text: string, value: string) => {
+  const makeRow = (text: string, value: string, level?: string) => {
     const label = document.createElement("label");
     const input = document.createElement("input");
     input.type = "checkbox";
     input.value = value;
     label.append(input, text);
+    if (level) {
+      const tag = document.createElement("span");
+      tag.className = "city-level";
+      tag.textContent = level;
+      label.append(tag);
+    }
     box.append(label);
     return input;
   };
-  const all = makeRow("Select all", "");
+  const all = makeRow("Select all (large)", "");
   all.parentElement?.classList.add("select-all");
-  const rows = cities.map((c) => makeRow(shortName(c), c.id));
+  const rows = cities.map((c) => makeRow(shortName(c), c.id, c.level));
   const ticked = () => rows.filter((r) => r.checked).map((r) => r.value);
   const showState = () => {
     const ids = ticked();
@@ -271,8 +277,8 @@ async function main() {
         count: b.data.count,
       }));
 
-    // One city opens at its usual view; several are framed to fit.
-    const start = bundles.length === 1 ? bundles[0].info : cities[0];
+    // One city opens at its usual view; several are framed to fit; none shows the county.
+    const start = bundles.length === 1 ? bundles[0].info : COUNTY_VIEW;
     const bindingCodes = bundles[0]?.data.codes.binding ?? (await loadCity(cities[0])).data.codes.binding;
     const controller = await createMap("map", bindingCodes, { center: start.center, zoom: start.zoom });
     const frameCities = (animate: boolean) => {

@@ -169,7 +169,7 @@ your browser, using the same calculations as the pipeline.
 
 | Lever | What changes |
 |---|---|
-| Homes per lot, single-family zones | The one-home cap becomes 2, 3, 4 or 6. Floor-area, setback and parking limits still apply. |
+| Homes per lot, single-family zones | The one-home cap becomes 2, 3, 4 or 6. Where a city writes that rule as land per home, the land rule is replaced too, and a big lot keeps the higher number it already had. Floor-area, setback and parking limits still apply. |
 | Minimum lot size, single-family zones | A lot may be split into as many lots of the new size as fit, each with the per-lot allowance. Street access isn't checked, so this is optimistic. |
 | Parking per home | Replaces the 2-space requirement everywhere (0 removes it). |
 | No parking minimums near transit | Widens AB 2097's ½-mile radius (it can't be narrowed). |
@@ -453,7 +453,7 @@ housing count still needs its manual download.
 
 ## 14. Los Angeles (in progress)
 
-LA is on the site as of November 2026. Its files are large: loading it uses about 470 MB of browser memory, so phones may struggle, and it's not the default city. It has a zoning adapter
+LA is on the site as of November 2026. Its files are large: in a November 2026 test on a desktop computer, loading it used about 340 MB of JavaScript memory, with the map's own memory on top, so phones may struggle, and it's not the default city. Selecting all 46 Fuller and Usable cities, in a test that included Avalon before it was held off the map, used about 1 GB and worked on that computer, so the picker labels it as large. It has a zoning adapter
 and 259 rule files from the Los Angeles Municipal Code (American Legal and the
 city's zoning.lacity.gov, read November 1, 2026), covering 668,189 of its 672,322
 lots (99.4%). A lot looks for a
@@ -530,7 +530,7 @@ use R4's 400. Their numbers assume an all-residential building.
 
 ## 15. El Monte
 
-Not on the site yet: publishing a new city's site files is the owner's call.
+On the site as of November 2026.
 
 **Zoning data.** Zones come from SCAG's parcel table. 96.3% of lots are modeled.
 Not modeled: the specific plans (SP-4 Downtown Main Street, 277 lots, plus SP-1 to
@@ -563,7 +563,7 @@ law; El Monte's own SB 9 rules weren't checked.
 
 ## 16. Inglewood
 
-Not on the site yet: publishing a new city's site files is the owner's call.
+Not on the site: rated Partial, so its totals run low.
 
 **Zoning data.** SCAG's table. Only 81% of lots are modeled, and the gap matters:
 four Transit Oriented Development plan areas (Downtown, Fairview Heights,
@@ -593,7 +593,7 @@ Article 35 (ADUs) wasn't checked against the state path.
 
 ## 17. West Hollywood
 
-Not on the site yet: publishing a new city's site files is the owner's call.
+On the site as of November 2026.
 
 **Zoning data.** SCAG's table. 94.4% of lots are modeled. Not modeled: the
 SSP zone (151 lots), other specific plans, and 78 lots SCAG doesn't match.
@@ -617,7 +617,7 @@ printed, though it looks low for four stories (11 lots).
 
 ## 18. Monrovia
 
-Not on the site yet: publishing a new city's site files is the owner's call.
+On the site as of November 2026.
 
 **Zoning data.** SCAG's table. 85% of lots are modeled. The gap is planned
 developments: 1,186 lots coded `PD`, each with its own ordinance. Also not modeled:
@@ -643,7 +643,7 @@ allows them only where the Land Use Element says, which we have no map of.
 
 ## 19. Santa Clarita
 
-Not on the site yet: publishing a new city's site files is the owner's call.
+On the site as of November 2026.
 
 **Zoning data.** SCAG's table. 88.1% of lots are modeled. Not modeled: specific plans
 (3,713 lots), 1,287 lots with no zone, and PI, CP and the OS zones, whose rules weren't
@@ -667,7 +667,7 @@ counted in CC, CN, CR, BP and I.
 
 ## 20. Duarte
 
-Not on the site yet: publishing a new city's site files is the owner's call.
+On the site as of November 2026.
 
 **Zoning data.** SCAG's table. 89.9% of lots are modeled. Not modeled: specific plans
 (468 lots), O (71 lots), RMH and 11 lots with no zone.
@@ -682,7 +682,7 @@ we don't count. M lots show 742 homes today but allow none, worth a second look.
 
 ## 21. Long Beach (residential zones only so far)
 
-Not on the site yet: publishing a new city's site files is the owner's call.
+Not on the site: rated Partial, so its totals run low.
 
 **Zoning data.** SCAG's table has 174 zone codes. 70,010 of 87,365 lots (80.1%) are
 modeled, and the rest hold 68,123 of 191,022 homes.
@@ -703,7 +703,7 @@ we didn't read, so it can run low. Parking uses 1.5 per home, for one bedroom.
 
 ## 22. Lancaster (residential zones only so far)
 
-Not on the site yet. 8 files from Chapter 17.08 cover 43,082 of 52,372 lots (82.3%): RR-2.5,
+Not on the site: rated Partial, so its totals run low. 8 files from Chapter 17.08 cover 43,082 of 52,372 lots (82.3%): RR-2.5,
 RR-1, SRR, R-15,000, R-10,000, R-7000, MDR and HDR. Not done: specific plans (3,201 lots),
 TOD (1,263), the MU zones, commercial and industrial zones, and 1,690 lots with no zone.
 
@@ -714,7 +714,7 @@ modeled, so those two can run high.
 
 ## 23. Gardena
 
-Not on the site yet. 23 files from Title 18 cover 11,108 of 12,110 lots (91.7%): R1, R2, R3,
+On the site as of November 2026. 23 files from Title 18 cover 11,108 of 12,110 lots (91.7%): R1, R2, R3,
 R4, Housing Overlay versions of commercial and industrial zones (`C3-HO-5` and so on),
 and no homes in C3, M1 and M2. Not done: specific plans, the `-MUO` zones, HB, CR, O, CP,
 C2, AMU and R6.
@@ -727,7 +727,7 @@ density up at .5; other zones' rounding wasn't stated, so we round down. M1 and 
 
 ## 24. Norwalk (R-1, R-2, R-3 so far)
 
-Not on the site yet. 3 files from Chapter 17.05, including 2025's Ord. 25-1762, cover 20,444
+On the site as of November 2026. 3 files from Chapter 17.05, including 2025's Ord. 25-1762, cover 20,444
 of 21,751 lots (94%), since R-1 is 19,716 of them. Not done: R-4, R-H, commercial and
 manufacturing zones, specific plans, and 128 lots with no zone. These zones aren't marked as
 no-housing, as their chapters weren't read for homes.
@@ -738,7 +738,7 @@ one average new home.
 
 ## 25. Santa Fe Springs (R-1, R-3, R-4 so far)
 
-Not on the site yet. 3 files from Chapter 155 cover 3,473 of 5,656 lots (61.4%). Much of the
+Not on the site: rated Partial, so its totals run low. 3 files from Chapter 155 cover 3,473 of 5,656 lots (61.4%). Much of the
 rest is industrial land (M-1, M-2, ML), whose rules weren't read, so those lots are "not
 modeled", not zero. Also not done: MU, C-1, C-4, A-1, and RR.
 
@@ -748,7 +748,7 @@ are all to the code on Municode. Minimum lot sizes are read as applying to new l
 
 ## 26. Whittier (R-1 to R-4 so far)
 
-Not on the site yet. 4 files from Title 18 cover 18,779 of 21,964 lots (85.5%). Not done: the
+On the site as of November 2026. 4 files from Title 18 cover 18,779 of 21,964 lots (85.5%). Not done: the
 Specific Plan zone (809 lots), R-E and H-R, the MU zones, C-O, C-2, INV, MED, and others.
 
 Whittier sets density by lot-size steps, and its height limit is 35 ft in every one of
@@ -757,7 +757,7 @@ optional development standards allow more on small lots; we use base figures.
 
 ## 27. Arcadia (residential zones so far)
 
-Not on the site yet. 6 files from §9102.01 cover 12,159 of 13,375 lots (90.9%): R-1, R-M, SCAG's
+On the site as of November 2026. 6 files from §9102.01 cover 12,159 of 13,375 lots (90.9%): R-1, R-M, SCAG's
 `R`, R-2, R-3, R-3-R. Not done: MU, DMU, CBD, commercial and industrial zones, R-R, OS, and
 the SP-ALC plan. Ord. No. 2400 changed density and added zones recently; the Municode text
 we read has R-3 at 40 per acre, which may be the updated figure.
@@ -768,7 +768,7 @@ uses the schedule for north of Huntington Drive; south allows more. Parking wasn
 
 ## 28. South Gate (NL and NM so far)
 
-Not on the site yet. 2 files from Chapter 11.25 cover 13,817 of 16,268 lots (84.9%). Not done: the
+Not on the site: rated Partial, so its totals run low. 2 files from Chapter 11.25 cover 13,817 of 16,268 lots (84.9%). Not done: the
 mixed-use and corridor zones (MS, TMU, HMU, CDR, CC, UN), and industrial and other zones. Parking wasn't read.
 
 **Open question, please review:** NL's table allows 5 homes per acre and "max. 2 separate living
@@ -778,7 +778,7 @@ a lot. State-law numbers (SB 9) are unaffected.
 
 ## 29. Culver City (residential zones so far)
 
-Not on the site yet. 5 files from §17.210.020 cover 7,343 of 9,453 lots (77.7%): R1, R2, RLD, RMD,
+Not on the site: rated Partial, so its totals run low. 5 files from §17.210.020 cover 7,343 of 9,453 lots (77.7%): R1, R2, RLD, RMD,
 RHD. Not done: the mixed-use zones (MU-1, MU-2, MU-I, MU-HD, MU-N, MU-MD, MU-DT, 1,510 lots), PD
 (351), and others.
 
@@ -788,7 +788,7 @@ not on SCAG's map.
 
 ## 30. Montebello (residential zones so far)
 
-Not on the site yet. 5 files from Chapter 17.10 cover 10,647 of 12,284 lots (86.7%): R-1, R-A, R-2,
+On the site as of November 2026. 5 files from Chapter 17.10 cover 10,647 of 12,284 lots (86.7%): R-1, R-A, R-2,
 R-3, R-4. Not done: C-1, C-2, C-M, C-R, M-1, M-2, and 386 lots with no zone.
 
 **What stands out:** a 25 ft height limit in R-2, R-3 and R-4, and R-3's density equals R-2's. So
@@ -798,14 +798,14 @@ minimum lot size in R-1.
 
 ## 31. Rolling Hills Estates (R-A zones so far)
 
-Not on the site yet. 4 files from Chapter 17.06 cover 1,979 of 3,232 lots (61.2%): RA-20,000,
+Not on the site: rated Partial, so its totals run low. 4 files from Chapter 17.06 cover 1,979 of 3,232 lots (61.2%): RA-20,000,
 RA-15,000, RA-10,000, RAE. All allow one home per lot. Not done: RPD (1,031 lots), CG-MU-OD, the
 commercial zones and others. The lot coverage formula and parking weren't read in detail,
 since one home binds first. The minimum lot sizes come from a search summary of §17.04.080.
 
 ## 32. West Covina (residential zones so far)
 
-Not on the site yet. 6 files from Chapter 26, Article II cover 18,790 of 24,211 lots (77.6%): R-1, R-A,
+Not on the site: rated Partial, so its totals run low. 6 files from Chapter 26, Article II cover 18,790 of 24,211 lots (77.6%): R-1, R-A,
 MF-8, MF-15, MF-20, MF-45. Not done: PCD-1 (3,799 lots), SP (834), the T-4 and T-5 transect zones,
 commercial and others.
 
@@ -815,7 +815,7 @@ Parking wasn't read.
 
 ## 33. Westlake Village (most zones)
 
-Not on the site yet. 11 files from Article 9 and two city district pages cover 2,930 of 2,976 lots (98.5%):
+On the site as of November 2026. 11 files from Article 9 and two city district pages cover 2,930 of 2,976 lots (98.5%):
 R-1, RPD, MHP, CPD, CR, BP, PI, OS, MU-SP No. 1, and the Corsa and Lindero districts of the North Business
 Park Specific Plan. Not done: that plan's La Baya, Cedar Valley, Office, BP, CPD and PI districts (42 lots),
 because its PDF is over the size our reader takes and no city page gives their standards.
@@ -832,7 +832,7 @@ Judgment calls, most of them conservative:
 
 ## 34. Alhambra (base zones)
 
-Not on the site yet. 11 files from Title 23 cover 15,058 of 15,609 lots (96.5%). Not done: VSP (393 lots)
+On the site as of November 2026. 11 files from Title 23 cover 15,058 of 15,609 lots (96.5%). Not done: VSP (393 lots)
 and the named specific plans (79 lots more), whose texts aren't in the code, and 79 lots with no zone.
 
 **The zoning table is older than the code.** SCAG's Alhambra records are dated 2018 and use the names from
@@ -846,7 +846,7 @@ the 64-per-acre downtown area and the taller limits near freeways aren't mapped,
 
 ## 35. Palmdale (base zones)
 
-Not on the site yet. 27 files from Title 17 cover 41,206 of 47,732 lots (86.3%). Not done: SP (6,091 lots) and
+On the site as of November 2026. 27 files from Title 17 cover 41,206 of 47,732 lots (86.3%). Not done: SP (6,091 lots) and
 435 lots with no zone. SCAG's Palmdale records are dated 2023 and use the current zone names, except the three below.
 
 Judgment calls: homes count only where a table gives a residential density. EMPFX (742 lots), CA and IND aren't
@@ -857,7 +857,7 @@ instead of the table's 2.5. Multifamily parking uses 1.5 spaces and 0.2 guest, t
 
 ## 36. Carson (base zones)
 
-Not on the site yet. 15 files from Article IX cover 19,829 of 21,183 lots (93.6%). Not done: SP (786 lots) and 568
+On the site as of November 2026. 15 files from Article IX cover 19,829 of 21,183 lots (93.6%). Not done: SP (786 lots) and 568
 lots with no zone. SCAG's Carson records are dated 2016. The code on eCode360, dated July 2026, still uses the same
 zone names, so no name matching was needed, but a lot rezoned since 2016 would be wrong. City drafts from 2023 and 2024
 describe a replacement code with LDR, MDR and HDR districts, which we did not find in the code as published.
@@ -870,7 +870,7 @@ CG, CN and CR count no homes. ML, MH, OS and SU count none, and we didn't read t
 
 ## 37. Azusa (neighborhoods and corridors)
 
-Not on the site yet. 21 files from Chapter 88 cover 7,134 of 8,553 lots (83.4%). Not done: SP-MN (1,050 lots), the downtown
+Not on the site: rated Partial, so its totals run low. 21 files from Chapter 88 cover 7,134 of 8,553 lots (83.4%). Not done: SP-MN (1,050 lots), the downtown
 codes DTC, DTV and DCC (126 lots, which the code sends to the Azusa TOD Specific Plan), the University zones MU, RM and RMO
 (68 lots, likely DU-MU, DU-RM and DU-RMO), and 175 lots with no zone.
 
@@ -884,7 +884,7 @@ read of the use table. OS, Ins and Rec count none, and their uses weren't read.
 
 ## 38. Lomita (most zones)
 
-Not on the site yet. 18 files cover 4,209 of 4,270 lots (98.6%). Not done: R1P (22 lots), the Crenshaw Blvd plan (5 lots), and 34 lots with no zone.
+On the site as of November 2026. 18 files cover 4,209 of 4,270 lots (98.6%). Not done: R1P (22 lots), the Crenshaw Blvd plan (5 lots), and 34 lots with no zone.
 
 **The zoning table is older than the code.** SCAG's records are from 2023. The code's residential article was reenacted in June 2026 (Ord. 891)
 with A-1, R-1, R-2 and R-3. We read R1 and A1 as R-1 and A-1, and R1-6000, R1-7000 and R1-7500 as R-1. We read the number in RVD zones as sq ft per home, which is
@@ -897,7 +897,7 @@ without a variation permit, which we don't map, so those lots run high.
 
 ## 39. Hawthorne (most zones)
 
-Not on the site yet. 16 files cover 11,199 of 11,536 lots (97.1%). Not done: SP (281 lots) and 56 lots with no zone. SCAG's records are dated 2016, and the code
+On the site as of November 2026. 16 files cover 11,199 of 11,536 lots (97.1%). Not done: SP (281 lots) and 56 lots with no zone. SCAG's records are dated 2016, and the code
 still uses the same zone names, though Ord. 2263 reorganized its residential standards in June 2026. A lot rezoned since 2016 would be wrong.
 
 Judgment calls: R-2 counts two homes at 7,000 sq ft and one below, reading the duplex minimum with §17.21.020. R-3 and R-4 count one home under 5,000 sq ft, and 1,452 sq ft per home above it.
@@ -908,7 +908,7 @@ Conservative calls: plain C-3, C-R, C-2, C-M, M-1, M-2, UOS, H, P and AMP count 
 
 ## 40. San Gabriel (residential zones)
 
-Not on the site yet. 17 files cover 8,308 of 8,351 lots (99.5%), but only the residential zones count homes. 43 lots have no zone. SCAG's records are dated 2016, and the code still uses the same
+On the site as of November 2026. 17 files cover 8,308 of 8,351 lots (99.5%), but only the residential zones count homes. 43 lots have no zone. SCAG's records are dated 2016, and the code still uses the same
 residential names, though a lot rezoned since 2016 would be wrong.
 
 **Letter suffixes.** SCAG shows R-1 V, R-2 G, R-3 A, C-1 M, C-3 M and GMD. None of those letters are in §153.015's list of zones. We read R-1 V, R-2 G and R-3 A (231 lots) as overlays on the base zone with its rules, which
@@ -920,7 +920,7 @@ Conservative calls: C-1 and C-3 count no homes. They allow mixed use under §153
 
 ## 41. Monterey Park (residential zones)
 
-Not on the site yet. 12 files cover 13,209 of 13,300 lots (99.3%), but only R-1, R-2 and R-3 count homes. Not done: GVC-S and GVN-S (73 lots) and 18 lots with no zone. SCAG's records are from 2025.
+On the site as of November 2026. 12 files cover 13,209 of 13,300 lots (99.3%), but only R-1, R-2 and R-3 count homes. Not done: GVC-S and GVN-S (73 lots) and 18 lots with no zone. SCAG's records are from 2025.
 
 **Density.** Table 21.08F sets maximum homes by lot, and we could not read it on eCode360. We use the per-acre maximums in §21.08. A city summary shows the top tiers match that density, and says lower tiers cover smaller lots, so smaller lots may run high.
 **R-3 conflict.** The chapter says 25 homes per acre. A city handout dated October 2024 (Ord. 2247) says 30, and the Housing Element called 25 inconsistent with the General Plan. We use 25 and record the question as an open decision.
@@ -929,7 +929,7 @@ Other calls: parking uses 1 space for 2 or fewer bedrooms, with no guest parking
 
 ## 42. Agoura Hills (most zones)
 
-Not on the site yet. 17 files cover 6,427 of 6,531 lots (98.4%); RS, RM, RL, RV, RH, CS-MU and OS-R count homes. Not done: SP (83 lots, 475 homes on the roll) and 21 lots with no zone. The SP lots matter most: 278 of the 296 homes permitted in 5+ unit buildings in 2018-2025 are there, in specific plans such as Agoura Village that we haven't read. §9497 sends those lots to each plan. SCAG's records are from July 2016, and we haven't checked for rezoning since, so newer zones such as the Affordable Housing overlay's sites may not show.
+On the site as of November 2026. 17 files cover 6,427 of 6,531 lots (98.4%); RS, RM, RL, RV, RH, CS-MU and OS-R count homes. Not done: SP (83 lots, 475 homes on the roll) and 21 lots with no zone. The SP lots matter most: 278 of the 296 homes permitted in 5+ unit buildings in 2018-2025 are there, in specific plans such as Agoura Village that we haven't read. §9497 sends those lots to each plan. SCAG's records are from July 2016, and we haven't checked for rezoning since, so newer zones such as the Affordable Housing overlay's sites may not show.
 
 **Density.** The code sets density by a number after the zone, such as RM-10 or RH-25, and SCAG drops it. RM uses RM-6 (6,000 sq ft per home) and RH uses RH-15 (2,400), the lowest of each range, so lots zoned higher run low.
 **Parking.** RM, RH and CS-MU use 2.5 spaces per home, the §9654.2 figure for one bedroom and up. Studios need 1.5.
@@ -941,7 +941,7 @@ Rule file check added: a `lot_coverage` band written with `value` under 1 now fa
 
 ## 43. Torrance (most zones)
 
-Not on the site yet. 22 files cover 32,150 of 33,738 lots (95.3%). Not done: PD (602 lots), DT (223), the Hawthorne Boulevard Corridor plan's H- codes (420), 176 lots with no zone, and about 170 lots with codes like A1/R2 or R1(RP). SCAG's records are from August 2025. The gaps matter: of 145 homes permitted in 5+ unit buildings in 2018-2025, 130 are on unmodeled lots, 78 of them in DT. Article 40 allows homes in DT with a conditional use permit but gives no density, so we left it out.
+On the site as of November 2026. 22 files cover 32,150 of 33,738 lots (95.3%). Not done: PD (602 lots), DT (223), the Hawthorne Boulevard Corridor plan's H- codes (420), 176 lots with no zone, and about 170 lots with codes like A1/R2 or R1(RP). SCAG's records are from August 2025. The gaps matter: of 145 homes permitted in 5+ unit buildings in 2018-2025, 130 are on unmodeled lots, 78 of them in DT. Article 40 allows homes in DT with a conditional use permit but gives no density, so we left it out.
 
 **R-3 floor area.** §91.7.9 sets FAR 0.6 without garages. Since Ord. 3896 and 3897, developments of 3 to 7 homes get 1.0 and of 8 to 10 homes get 1.25, counting garages. We pick by the homes a lot's area allows, so lots of 17,600 sq ft or more fall back to 0.6, and FAR limits them below 1,600 sq ft per home. R-3-3 works the same way, with a cap of 3 homes.
 **C-1 and C-2.** Homes need a conditional use permit. Each article points to R-4's lot area (1,000 sq ft) and also says 1,600 per home. We use 1,600 and record it as an open decision.
@@ -953,7 +953,7 @@ Known artifact: 54 lots show 0 homes because surface parking takes the room, 43 
 
 ## 44. Artesia (most zones)
 
-Not on the site yet. 13 files cover 3,719 of 3,793 lots (98.0%); R-1, M-R, M-D-R, M-C-R, C-O and A-1 count homes. Not done: five specific plans (52 lots) and 22 lots with no zone. SCAG's records are from December 2022. Of 81 homes permitted in 5+ unit buildings in 2018-2025, 64 are on unmodeled lots, 26 of them in the Arkansas Street plan.
+On the site as of November 2026. 13 files cover 3,719 of 3,793 lots (98.0%); R-1, M-R, M-D-R, M-C-R, C-O and A-1 count homes. Not done: five specific plans (52 lots) and 22 lots with no zone. SCAG's records are from December 2022. Of 81 homes permitted in 5+ unit buildings in 2018-2025, 64 are on unmodeled lots, 26 of them in the Arkansas Street plan.
 
 **Rounding.** M-R and C-O round to the nearest home, with exactly .5 rounding up (§§9-2.2904 and 9-2.3503), so a lot can get a home it's slightly short of.
 **M-C-R.** It allows R-1's uses, so one home per lot. We treat it as commercial, so ADU law applies and SB 9 doesn't.
@@ -963,7 +963,7 @@ Other calls: M-R parking uses 2 spaces plus about 1 guest space per 3 homes at 4
 
 ## 45. Avalon (most zones)
 
-Not on the site yet. 8 files cover 1,037 of 1,054 lots (98.4%); HD-R, MD-R, LD-R and SC count homes. Not done: PB-SP (7 lots), 8 lots with no zone, HD-R-CH (1 lot with 62 homes) and LI (1 lot). SCAG's records are from September 2018, and we haven't checked for rezoning since.
+Not on the site: the owner held Avalon off the map because it is on Catalina Island, where wildlife restrictions limit development and these rules do not model them. 8 files cover 1,037 of 1,054 lots (98.4%); HD-R, MD-R, LD-R and SC count homes. Not done: PB-SP (7 lots), 8 lots with no zone, HD-R-CH (1 lot with 62 homes) and LI (1 lot). SCAG's records are from September 2018, and we haven't checked for rezoning since.
 
 **Don't trust the city total.** One 169-acre lot mapped HD-R gets 6,748 of the 7,704 HD-R homes, and 6,739 of the 6,963 "likely to redevelop" homes. That's what 40 homes per acre gives on paper, but the lot is far larger than any other HD-R lot, and the slopes, fire access and the Annual Growth Policy (Ch. 9-12) aren't modeled. It's more than twice the 2,593 homes on the whole city's roll. The map may also be wrong for this lot. We report it as computed and record it as an open decision. Likewise, three LD-R parcels of 251 to 514 acres get 1,119 of that zone's 1,529 local homes.
 
@@ -974,7 +974,7 @@ Other calls: parking is 1 space per home. MD-R's attached and clustered homes ne
 
 ## 46. Baldwin Park (most zones)
 
-Not on the site yet. 11 files cover 13,516 of 13,598 lots (99.4%); R1, RG, R3, MU-1 and MU-2 count homes. Not done: 82 lots with no zone. SCAG's records are from January 2017, and we haven't checked for rezoning since. Of 130 homes permitted in 5+ unit buildings in 2018-2025, 56 couldn't be placed on a zoned lot.
+On the site as of November 2026. 11 files cover 13,516 of 13,598 lots (99.4%); R1, RG, R3, MU-1 and MU-2 count homes. Not done: 82 lots with no zone. SCAG's records are from January 2017, and we haven't checked for rezoning since. Of 130 homes permitted in 5+ unit buildings in 2018-2025, 56 couldn't be placed on a zoned lot.
 
 **R-1.** SCAG writes R1 for both R-1 and R-1-7,500, so all use R-1's rules, and the stricter R-1-7,500 lots can run high. The use table lists single-family homes only, while the zone's intent, amended by Ord. 1503, mentions duplexes. We use one home and record it as an open decision.
 **MU-2.** Density is 15 homes per acre under 20,000 sq ft and 30 above it. The table doesn't cover exactly 20,000 sq ft; we use 30.
@@ -988,7 +988,7 @@ Pipeline fix: the assessor roll here has a record with no parcel number sharing 
 
 ## 47. Bell (most zones)
 
-Not on the site yet. 7 files cover 4,170 of 4,231 lots (98.6%); R1, R2, R3 and C3R count homes. Not done: POL (24 lots), T (4), LAR (1) and 32 lots with no zone. We didn't find POL or LAR in the chapters we read. SCAG's records are from November 2018, and we haven't checked for rezoning since. The state's reports show no homes permitted in 5+ unit buildings in 2019-2025, so the permit check tells us little here.
+On the site as of November 2026. 7 files cover 4,170 of 4,231 lots (98.6%); R1, R2, R3 and C3R count homes. Not done: POL (24 lots), T (4), LAR (1) and 32 lots with no zone. We didn't find POL or LAR in the chapters we read. SCAG's records are from November 2018, and we haven't checked for rezoning since. The state's reports show no homes permitted in 5+ unit buildings in 2019-2025, so the permit check tells us little here.
 
 **C-3R (369 lots).** §17.28.020 allows R-3's principal uses and lists residential uses with a conditional use permit, but Chapter 17.28 states no density. We apply R-3's 1,452 sq ft per home, its 50% coverage, its 3 stories and 35 ft, and its side and rear yards, though the zone itself allows 70 ft and full coverage outside yards and parking. This drives 3,381 homes and is an open decision.
 **R-3.** Most of the city's lots are here. One home per 1,452 sq ft (30 per acre) binds on nearly every lot. Its 7,200 sq ft and 60 ft minimums apply to lots created after 1989, so older lots are flagged but keep their capacity. Private open space of 150 sq ft per home isn't modeled, so these can run high.
@@ -1000,7 +1000,7 @@ Known artifact: 18 lots show 0 homes because yards or parking leave too little r
 
 ## 48. Bell Gardens (most zones)
 
-Not on the site yet. 11 files cover 4,080 of 4,094 lots (99.7%); R-1, R-2, R-3, R-4 and M-U count homes. Not done: MPD (3 lots) and 11 lots with no zone. SCAG's records are from April 2023. All 19 homes permitted in 5+ unit buildings in 2018-2025 are on modeled lots.
+On the site as of November 2026. 11 files cover 4,080 of 4,094 lots (99.7%); R-1, R-2, R-3, R-4 and M-U count homes. Not done: MPD (3 lots) and 11 lots with no zone. SCAG's records are from April 2023. All 19 homes permitted in 5+ unit buildings in 2018-2025 are on modeled lots.
 
 **R-3.** Density depends on lot size: under 5,000 sq ft one home, then 2,500, 2,000 and 1,750 sq ft per home at 5,000, 15,000 and 43,560 sq ft. Those are the apartment figures. Condominiums need a conditional use permit and may reach 2,000, 1,625 and 1,400 sq ft per home, so condominium sites run low.
 **R-4 (107 lots).** §9.10.010 names R-4 (its history note cites Ord. 929 of 2023, though we didn't read that ordinance), but the use and standards tables have no R-4 column that we could find. It should allow more than R-3, so we use R-3's standards as a low bound and record it as an open decision. This drives 660 local homes.
@@ -1011,7 +1011,7 @@ Other calls: the residential table limits height to 35 ft without a story limit,
 
 ## 49. Bellflower (most zones)
 
-Not on the site yet. 10 files cover 11,814 of 11,938 lots (99.0%); S-F, R-1, A-E, R-2 and R-3 count homes. Not done: four specific plan codes (87 lots, 419 homes), SCH (3 lots, 350 homes) and 34 lots with no zone. SCAG's records are from April 2023. Of 18 homes permitted in 5+ unit buildings in 2018-2025, 13 are in SP No. 7.
+On the site as of November 2026. 10 files cover 11,814 of 11,938 lots (99.0%); S-F, R-1, A-E, R-2 and R-3 count homes. Not done: four specific plan codes (87 lots, 419 homes), SCH (3 lots, 350 homes) and 34 lots with no zone. SCAG's records are from April 2023. Of 18 homes permitted in 5+ unit buildings in 2018-2025, 13 are in SP No. 7.
 
 **Town Center (130 lots).** §17.48.130 lets the Planning Commission approve homes on the second floor and above, but the chapter states no density. We count none and record it as an open decision, so this area runs low.
 **R-1.** §17.24.100 sets 5,000 sq ft per home, and §17.24.110 covers lots with two or more single-family homes, so larger lots count more than one. SCAG drops any larger-lot suffix, so those lots can run high.
@@ -1024,7 +1024,7 @@ Known artifact: 202 lots show 0 homes because yards or parking leave too little 
 
 ## 50. Beverly Hills (most zones)
 
-Not on the site yet. 11 files cover 7,982 of 8,065 lots (99.0%); only R-1 and R-4 count homes, through aliases for their variants. Not done: PRG (56 lots), two specific plans (6 lots), C-3B and C-Z (1 lot each) and 19 lots with no zone. SCAG's records are from May 2023. Of 136 homes permitted in 5+ unit buildings in 2018-2025, 54 are on C-3 lots, where we count none, and 33 couldn't be placed on a zoned lot.
+On the site as of November 2026. 11 files cover 7,982 of 8,065 lots (99.0%); only R-1 and R-4 count homes, through aliases for their variants. Not done: PRG (56 lots), two specific plans (6 lots), C-3B and C-Z (1 lot each) and 19 lots with no zone. SCAG's records are from May 2023. Of 136 homes permitted in 5+ unit buildings in 2018-2025, 54 are on C-3 lots, where we count none, and 33 couldn't be placed on a zoned lot.
 
 **C-3.** §10-3-1601 lists no homes, but the city has several mixed-use overlays (Arts. 18.7, 19.3, 19.8, 19.9, 19.95) that aren't in our data. The 54 permitted homes suggest they're being used, so commercial lots run low.
 **R-4 density.** §10-3-2801 sets density by lot width and by site: within 170 ft of a single-family lot, on a street under 34 ft wide, or neither. We have no street widths, so all sites use the strictest set: 1,700, 1,450 or 1,200 sq ft per home for lots under 60, 60 to 120, and over 120 ft wide. A remainder over 75% rounds up. Other sites can reach 900 sq ft per home, so many lots run low. We leave out the efficiency bonus home. This is an open decision.
@@ -1040,7 +1040,7 @@ Known artifact: 50 R-4 lots end at parking, mostly large lots, with 1,452 homes 
 
 ## 51. Bradbury (all mapped zones)
 
-Not on the site yet. 6 files cover 418 of 426 lots (98.1%); only 8 lots with no zone are left. Every housing zone allows one home per lot. SCAG's records are from December 2015, and we haven't checked for rezoning since. The state's reports show no homes permitted in 5+ unit buildings in 2020-2025.
+On the site as of November 2026. 6 files cover 418 of 426 lots (98.1%); only 8 lots with no zone are left. Every housing zone allows one home per lot. SCAG's records are from December 2015, and we haven't checked for rezoning since. The state's reports show no homes permitted in 5+ unit buildings in 2020-2025.
 
 **SB 9.** Unlike Torrance, Artesia and Bellflower, Bradbury's own code names its A-1, A-2 and A-5 zones as single-family zones for SB 9 (Ch. 85, Art. IV), so SB 9 applies to them here. But it excludes very high fire hazard zones, as state law does, and we have no fire map. Much of the city is in the foothills, so the SB 9 total of 4 homes per lot likely runs high.
 
@@ -1048,7 +1048,7 @@ Other calls: R-7,500 uses the two-story limits of 35% coverage and FAR 0.50, wit
 
 ## 52. Calabasas (all mapped zones)
 
-Not on the site yet. 16 files cover 7,321 of 7,332 lots (99.8%); only 11 lots with no zone are left. SCAG's records are from March 2023. All 158 homes permitted in 5+ unit buildings in 2018-2025 are on modeled lots, but 78 of them are on PF land, where we count none; we didn't look into how those were approved.
+On the site as of November 2026. 16 files cover 7,321 of 7,332 lots (99.8%); only 11 lots with no zone are left. SCAG's records are from March 2023. All 158 homes permitted in 5+ unit buildings in 2018-2025 are on modeled lots, but 78 of them are on PF land, where we count none; we didn't look into how those were approved.
 
 **RM density.** The table allows 24 homes per acre, but a zoning map suffix can set less (the code's example is RM-12D), and SCAG drops suffixes. We can't see which lots have one, so RM uses 24 and can run high. Densities above the minimum of 20 also need the impact findings in Ch. 17.60, not modeled. This is an open decision, and it drives 5,866 local homes.
 **HM, OS and REC.** Each allows one home per lot. We don't apply SB 9 in these districts; ADU law applies. Table 2-7 is merged across columns, so we read its yards for HM and OS as 50, 25 and 50 ft, and REC's as set by a development plan.
@@ -1061,7 +1061,7 @@ Known artifact: 324 lots show 0 homes because yards leave too little room, 303 o
 
 ## 53. Cerritos (most zones)
 
-Not on the site yet. 15 files cover 14,759 of 15,310 lots (96.4%); RS-5000, RS-6500, ADP-4 (through RS-6500), RM and ADP-3 count homes. Not done: 14 other Area Development Plans (528 lots, 1,119 homes), A (2 lots) and 21 lots with no zone. Area Development Plans replace normal zoning, so each needs its own chapter read. SCAG's records are from March 2023. The state's reports show no homes permitted in 5+ unit buildings in 2019-2025.
+On the site as of November 2026. 15 files cover 14,759 of 15,310 lots (96.4%); RS-5000, RS-6500, ADP-4 (through RS-6500), RM and ADP-3 count homes. Not done: 14 other Area Development Plans (528 lots, 1,119 homes), A (2 lots) and 21 lots with no zone. Area Development Plans replace normal zoning, so each needs its own chapter read. SCAG's records are from March 2023. The state's reports show no homes permitted in 5+ unit buildings in 2019-2025.
 
 **RM.** Multi-family use needs a 3-acre lot (§22.23.700), so smaller RM lots count one single-family home, even though many hold more today. RM holds 1,262 homes against 525 allowed. Up to 20 homes per acre applies above that, and the approving authority sets the exact number, so large lots can run high. We didn't capture the zone's height limit and fit 2 stories.
 **ADP-3.** 1 home per 3,260 sq ft on parcels of an acre or more; smaller parcels are single-family under RS-6500's standards. We use RS-6500's yards and coverage everywhere, an assumption for larger parcels. Most lots here are single townhomes or small homes.

@@ -2,7 +2,7 @@
 // Keep in step (golden test). Explanations of each lever live in the Python file.
 
 import { type CapacityResult, computeCapacity } from "./capacity";
-import type { EngineAssumptions, Lot } from "./constraints";
+import { type EngineAssumptions, type Lot, lotAreaPerUnitLimit } from "./constraints";
 import type { Banded, Sourced, StateOverrides, ZoneRules } from "./types";
 import { pick } from "./types";
 
@@ -46,7 +46,8 @@ export function applyScenario(
   const out: Record<string, ZoneRules> = {};
   for (const [zone, r] of Object.entries(rules)) {
     const u: Partial<ZoneRules> = {};
-    if (r.family === "single_family" && r.residential_allowed.value && s.sf_units_per_lot !== null) {
+    const hasAreaRuleOnly = !r.max_units_per_lot && (r.lot_area_per_unit_sqft || r.small_lot_units);
+    if (r.family === "single_family" && r.residential_allowed.value && s.sf_units_per_lot !== null && !hasAreaRuleOnly) {
       u.max_units_per_lot = cite(s.sf_units_per_lot);
     }
     if (s.parking_per_unit !== null && r.parking_per_unit) {
@@ -86,10 +87,17 @@ function addStories(stories: number | Banded, extra: number): number | Banded {
 export function adjustForLot(r: ZoneRules, lot: Lot, s: Scenario): ZoneRules {
   const u: Partial<ZoneRules> = {};
 
-  if (r.family === "single_family" && r.residential_allowed.value && s.sf_min_lot_sqft) {
-    const perLot = r.max_units_per_lot ? r.max_units_per_lot.value : 1;
-    const lots = Math.max(1, Math.floor(lot.area_sqft / s.sf_min_lot_sqft + 1e-9));
-    u.max_units_per_lot = cite(perLot * lots);
+  if (r.family === "single_family" && r.residential_allowed.value && (s.sf_min_lot_sqft || s.sf_units_per_lot !== null)) {
+    const perLot = r.max_units_per_lot ? r.max_units_per_lot.value : s.sf_units_per_lot || 1;
+    const lots = s.sf_min_lot_sqft ? Math.max(1, Math.floor(lot.area_sqft / s.sf_min_lot_sqft + 1e-9)) : 1;
+    let allowed = perLot * lots;
+    if (r.lot_area_per_unit_sqft || r.small_lot_units) {
+      if (!r.max_units_per_lot) allowed = Math.max(allowed, lotAreaPerUnitLimit(r, lot) ?? 0);
+      u.lot_area_per_unit_sqft = null;
+      u.small_lot_units = null;
+      u.small_lot_units_below_sqft = null;
+    }
+    u.max_units_per_lot = cite(allowed);
   }
 
   const nearTransit = lot.dist_major_transit_ft !== null && lot.dist_major_transit_ft <= s.transit_radius_ft;

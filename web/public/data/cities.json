@@ -1,12 +1,253 @@
 [
  {
+  "id": "agoura_hills",
+  "name": "Agoura Hills, California",
+  "center": [
+   -118.76,
+   34.145
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "alhambra",
+  "name": "Alhambra, California",
+  "center": [
+   -118.135,
+   34.09
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "arcadia",
+  "name": "Arcadia, California",
+  "center": [
+   -118.03,
+   34.13
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "artesia",
+  "name": "Artesia, California",
+  "center": [
+   -118.08,
+   33.867
+  ],
+  "zoom": 14.0,
+  "level": "Fuller"
+ },
+ {
+  "id": "baldwin_park",
+  "name": "Baldwin Park, California",
+  "center": [
+   -117.97,
+   34.085
+  ],
+  "zoom": 13.5,
+  "level": "Usable"
+ },
+ {
+  "id": "bell",
+  "name": "Bell, California",
+  "center": [
+   -118.18,
+   33.977
+  ],
+  "zoom": 14.0,
+  "level": "Usable"
+ },
+ {
+  "id": "bell_gardens",
+  "name": "Bell Gardens, California",
+  "center": [
+   -118.155,
+   33.965
+  ],
+  "zoom": 14.0,
+  "level": "Fuller"
+ },
+ {
+  "id": "bellflower",
+  "name": "Bellflower, California",
+  "center": [
+   -118.125,
+   33.888
+  ],
+  "zoom": 13.5,
+  "level": "Fuller"
+ },
+ {
+  "id": "beverly_hills",
+  "name": "Beverly Hills, California",
+  "center": [
+   -118.4,
+   34.075
+  ],
+  "zoom": 13.5,
+  "level": "Usable"
+ },
+ {
+  "id": "bradbury",
+  "name": "Bradbury, California",
+  "center": [
+   -117.97,
+   34.15
+  ],
+  "zoom": 14.0,
+  "level": "Usable"
+ },
+ {
   "id": "burbank",
   "name": "Burbank, California",
   "center": [
    -118.32,
    34.185
   ],
-  "zoom": 12.6
+  "zoom": 12.6,
+  "level": "Fuller"
+ },
+ {
+  "id": "calabasas",
+  "name": "Calabasas, California",
+  "center": [
+   -118.66,
+   34.14
+  ],
+  "zoom": 13.0,
+  "level": "Fuller"
+ },
+ {
+  "id": "carson",
+  "name": "Carson, California",
+  "center": [
+   -118.26,
+   33.83
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "cerritos",
+  "name": "Cerritos, California",
+  "center": [
+   -118.065,
+   33.865
+  ],
+  "zoom": 13.2,
+  "level": "Fuller"
+ },
+ {
+  "id": "claremont",
+  "name": "Claremont, California",
+  "center": [
+   -117.72,
+   34.115
+  ],
+  "zoom": 13.0,
+  "level": "Usable"
+ },
+ {
+  "id": "commerce",
+  "name": "Commerce, California",
+  "center": [
+   -118.155,
+   34.0
+  ],
+  "zoom": 13.0,
+  "level": "Usable"
+ },
+ {
+  "id": "compton",
+  "name": "Compton, California",
+  "center": [
+   -118.225,
+   33.895
+  ],
+  "zoom": 13.0,
+  "level": "Fuller"
+ },
+ {
+  "id": "covina",
+  "name": "Covina, California",
+  "center": [
+   -117.885,
+   34.09
+  ],
+  "zoom": 13.0,
+  "level": "Usable"
+ },
+ {
+  "id": "cudahy",
+  "name": "Cudahy, California",
+  "center": [
+   -118.185,
+   33.963
+  ],
+  "zoom": 14.0,
+  "level": "Usable"
+ },
+ {
+  "id": "diamond_bar",
+  "name": "Diamond Bar, California",
+  "center": [
+   -117.82,
+   34.0
+  ],
+  "zoom": 12.5,
+  "level": "Fuller"
+ },
+ {
+  "id": "downey",
+  "name": "Downey, California",
+  "center": [
+   -118.13,
+   33.94
+  ],
+  "zoom": 13.0,
+  "level": "Usable"
+ },
+ {
+  "id": "duarte",
+  "name": "Duarte, California",
+  "center": [
+   -117.97,
+   34.14
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "el_monte",
+  "name": "El Monte, California",
+  "center": [
+   -118.03,
+   34.07
+  ],
+  "zoom": 13.2,
+  "level": "Fuller"
+ },
+ {
+  "id": "el_segundo",
+  "name": "El Segundo, California",
+  "center": [
+   -118.402,
+   33.916
+  ],
+  "zoom": 13.0,
+  "level": "Usable"
+ },
+ {
+  "id": "gardena",
+  "name": "Gardena, California",
+  "center": [
+   -118.31,
+   33.89
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
  },
  {
   "id": "glendale",
@@ -15,7 +256,38 @@
    -118.255,
    34.16
   ],
-  "zoom": 12.6
+  "zoom": 12.6,
+  "level": "Usable"
+ },
+ {
+  "id": "hawthorne",
+  "name": "Hawthorne, California",
+  "center": [
+   -118.35,
+   33.915
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "irwindale",
+  "name": "Irwindale, California",
+  "center": [
+   -117.967,
+   34.109
+  ],
+  "zoom": 13.0,
+  "level": "Usable"
+ },
+ {
+  "id": "lomita",
+  "name": "Lomita, California",
+  "center": [
+   -118.315,
+   33.79
+  ],
+  "zoom": 13.2,
+  "level": "Fuller"
  },
  {
   "id": "los_angeles",
@@ -24,7 +296,58 @@
    -118.35,
    34.05
   ],
-  "zoom": 10.0
+  "zoom": 10.0,
+  "level": "Fuller"
+ },
+ {
+  "id": "monrovia",
+  "name": "Monrovia, California",
+  "center": [
+   -118.0,
+   34.145
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "montebello",
+  "name": "Montebello, California",
+  "center": [
+   -118.11,
+   34.02
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "monterey_park",
+  "name": "Monterey Park, California",
+  "center": [
+   -118.125,
+   34.05
+  ],
+  "zoom": 13.2,
+  "level": "Fuller"
+ },
+ {
+  "id": "norwalk",
+  "name": "Norwalk, California",
+  "center": [
+   -118.08,
+   33.91
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "palmdale",
+  "name": "Palmdale, California",
+  "center": [
+   -118.11,
+   34.58
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
  },
  {
   "id": "pasadena",
@@ -33,7 +356,48 @@
    -118.135,
    34.16
   ],
-  "zoom": 12.3
+  "zoom": 12.3,
+  "level": "Usable"
+ },
+ {
+  "id": "rosemead",
+  "name": "Rosemead, California",
+  "center": [
+   -118.082,
+   34.065
+  ],
+  "zoom": 13.0,
+  "level": "Usable"
+ },
+ {
+  "id": "san_fernando",
+  "name": "San Fernando, California",
+  "center": [
+   -118.436,
+   34.289
+  ],
+  "zoom": 13.0,
+  "level": "Usable"
+ },
+ {
+  "id": "san_gabriel",
+  "name": "San Gabriel, California",
+  "center": [
+   -118.105,
+   34.095
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "santa_clarita",
+  "name": "Santa Clarita, California",
+  "center": [
+   -118.54,
+   34.41
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
  },
  {
   "id": "santa_monica",
@@ -42,6 +406,47 @@
    -118.475,
    34.022
   ],
-  "zoom": 13.2
+  "zoom": 13.2,
+  "level": "Fuller"
+ },
+ {
+  "id": "torrance",
+  "name": "Torrance, California",
+  "center": [
+   -118.34,
+   33.835
+  ],
+  "zoom": 12.5,
+  "level": "Fuller"
+ },
+ {
+  "id": "west_hollywood",
+  "name": "West Hollywood, California",
+  "center": [
+   -118.36,
+   34.09
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "westlake_village",
+  "name": "Westlake Village, California",
+  "center": [
+   -118.81,
+   34.145
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
+ },
+ {
+  "id": "whittier",
+  "name": "Whittier, California",
+  "center": [
+   -118.03,
+   33.97
+  ],
+  "zoom": 13.2,
+  "level": "Usable"
  }
 ]

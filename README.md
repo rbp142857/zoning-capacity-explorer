@@ -5,8 +5,9 @@ and how much housing a proposed rule change would allow. It's built for citywide
 comparing reforms, research and reporting: see the **[usage guide](docs/USE_CASES.md)**.
 
 Rule files cover 55 of the county's 88 cities, with every value cited
-([how complete each city is](reports/la_county/coverage.md)). The map currently shows Pasadena,
-Glendale, Burbank and Santa Monica, with Los Angeles to follow.
+([how complete each city is](reports/la_county/coverage.md)). The map shows 45 of the 46 rated Fuller or Usable. Avalon is held off, because wildlife restrictions
+on Catalina Island limit development in ways the rules here don't model. The 9 rated Partial stay off too,
+because their totals run low.
 Tick one or more cities in the site's header (or **Select all**), or link to them
 with `?city=santa_monica`, `?cities=burbank,glendale` or `?cities=all`.
 
@@ -39,7 +40,7 @@ plans aren't modeled.
 | 8. Validation, methodology, deploy | ✅ live on GitHub Pages |
 | 9. Developer pro forma | dropped: the tool's focus is research and policy (November 2026) |
 | 10. Accuracy test, coverage levels, data release, reform study reports | ✅ |
-| LA County expansion | ✅ multi-city pipeline and site; Glendale, Burbank and Santa Monica added. Next: [wave plan](docs/WAVE_PLAN.md) |
+| LA County expansion | ✅ multi-city pipeline and site; 45 cities on the map. Next: [wave plan](docs/WAVE_PLAN.md) |
 
 Reports: [data quality](reports/pasadena/quality_report.md) ·
 [capacity](reports/pasadena/capacity_report.md) ·
