@@ -1,75 +1,115 @@
 // Run the engine over every lot for one scenario.
 
-import type { ParcelData } from "../data";
-import type { EngineAssumptions, Lot } from "./constraints";
-import { LAND, redevelopment } from "./redevelop";
+import { NA, type ParcelData, lotAt, zoneAt } from "../data";
+import type { EngineAssumptions } from "./constraints";
+import { LAND, likelyNewUnits } from "./redevelop";
 import { type Scenario, applyScenario, capacityUnderScenario } from "./scenario";
 import type { RulesFile } from "./types";
 
-/** Results for every lot, as columns indexed by pid (like parcels.json). */
+/** Results for every lot, as columns indexed by pid. NA means unknown (see data.ts). */
 export interface Results {
-  max: (number | null)[];
-  local: (number | null)[];
-  net: (number | null)[];
-  binding: number[]; // index into data.codes.binding, -1 = not modeled
-  likely: boolean[]; // passes every redevelopment screen
-  realistic: number[]; // net new homes counted in the realistic estimate (0 if not likely)
+  max: Int32Array;
+  local: Int32Array;
+  net: Int32Array;
+  binding: Int8Array; // index into data.codes.binding, -1 = not modeled
+  realistic: Int32Array; // net new homes counted in the realistic estimate (0 if not likely)
   // specialLandNet: the part of `net` on public or special land (see engine/redevelop.ts).
   totals: { max: number; local: number; net: number; existing: number; realistic: number; likelyLots: number; specialLandNet: number };
 }
 
-/** Engine inputs for each lot, built once from parcels.json. */
-export interface LotInputs {
-  lots: Lot[];
-  zones: (string | null)[];
+export function emptyResults(count: number): Results {
+  return {
+    max: new Int32Array(count), local: new Int32Array(count), net: new Int32Array(count),
+    binding: new Int8Array(count), realistic: new Int32Array(count),
+    totals: { max: 0, local: 0, net: 0, existing: 0, realistic: 0, likelyLots: 0, specialLandNet: 0 },
+  };
 }
 
-export function buildLotInputs(data: ParcelData): LotInputs {
+const asColumn = (v: number | null) => (v === null ? NA : v);
+
+/**
+ * Today's results, from the numbers the pipeline already worked out. This is far
+ * faster than running the engine on every lot, and allLots.test.ts checks that
+ * the two agree on every lot in every city.
+ */
+export function resultsFromColumns(data: ParcelData, rules: RulesFile): Results {
   const c = data.columns;
-  const lots: Lot[] = [];
-  const zones: (string | null)[] = [];
+  const out = emptyResults(data.count);
+  out.max.set(c.max_units);
+  out.local.set(c.local_units);
+  out.net.set(c.net_new_units);
+  out.binding.set(c.binding);
+  const t = out.totals;
   for (let pid = 0; pid < data.count; pid++) {
-    lots.push({
-      area_sqft: c.lot_area_sqft[pid],
-      width_ft: c.lot_width_ft[pid],
-      depth_ft: c.lot_depth_ft[pid],
-      overlays: data.codes.overlay_sets[c.overlay_set[pid]],
-      dist_major_transit_ft: c.dist_major_transit_ft[pid],
-      existing_units: c.existing_units[pid],
-      dist_single_family_ft: c.dist_single_family_ft[pid],
-    });
-    zones.push(c.rules_zone[pid] >= 0 ? data.codes.rules_zone[c.rules_zone[pid]] : null);
+    const local = c.local_units[pid];
+    const existing = c.existing_units[pid];
+    const mask = c.redev_mask[pid];
+    const likely = likelyNewUnits(rules.redevelopment, mask, local === NA ? null : local, existing === NA ? null : existing);
+    if (likely > 0) out.realistic[pid] = likely;
+    if (c.binding[pid] < 0) continue;
+    const net = c.net_new_units[pid] === NA ? 0 : c.net_new_units[pid];
+    t.max += c.max_units[pid] === NA ? 0 : c.max_units[pid];
+    t.local += local === NA ? 0 : local;
+    t.net += net;
+    if (!(mask & LAND)) t.specialLandNet += net;
+    t.existing += existing === NA ? 0 : existing;
+    if (likely >= 0) {
+      t.realistic += likely;
+      t.likelyLots++;
+    }
   }
-  return { lots, zones };
+  return out;
 }
 
-export function runScenario(data: ParcelData, inputs: LotInputs, rules: RulesFile, scenario: Scenario): Results {
+/** The engine over every lot, pausing at each yield so a page can stay responsive. */
+function* scenarioSteps(data: ParcelData, rules: RulesFile, scenario: Scenario, out: Results): Generator<void> {
   const [zoneRules, state] = applyScenario(rules.zones, rules.state, scenario);
   const a: EngineAssumptions = rules.assumptions;
   const codeOf = new Map(data.codes.binding.map((name, i) => [name, i]));
-  const out: Results = {
-    max: [], local: [], net: [], binding: [], likely: [], realistic: [],
-    totals: { max: 0, local: 0, net: 0, existing: 0, realistic: 0, likelyLots: 0, specialLandNet: 0 },
-  };
+  const mask = data.columns.redev_mask;
+  const t = out.totals;
   for (let pid = 0; pid < data.count; pid++) {
-    const r = capacityUnderScenario(inputs.zones[pid], inputs.lots[pid], a, zoneRules, state, scenario);
-    out.max.push(r.max_units);
-    out.local.push(r.local_units);
-    out.net.push(r.net_new_units);
-    out.binding.push(r.binding_constraint === null ? -1 : codeOf.get(r.binding_constraint) ?? -1);
-    const redev = redevelopment(
-      rules.redevelopment, data.columns.redev_mask[pid], r.local_units, inputs.lots[pid].existing_units,
-    );
-    out.likely.push(redev.likely);
-    out.realistic.push(redev.realistic_new_units);
+    if (pid % 2000 === 0) yield;
+    const lot = lotAt(data, pid);
+    const r = capacityUnderScenario(zoneAt(data, pid), lot, a, zoneRules, state, scenario);
+    out.max[pid] = asColumn(r.max_units);
+    out.local[pid] = asColumn(r.local_units);
+    out.net[pid] = asColumn(r.net_new_units);
+    out.binding[pid] = r.binding_constraint === null ? -1 : codeOf.get(r.binding_constraint) ?? -1;
+    const likely = likelyNewUnits(rules.redevelopment, mask[pid], r.local_units, lot.existing_units);
+    if (likely > 0) out.realistic[pid] = likely;
     if (r.status === "ok") {
-      out.totals.max += r.max_units ?? 0;
-      out.totals.local += r.local_units ?? 0;
-      out.totals.net += r.net_new_units ?? 0;
-      if (!(data.columns.redev_mask[pid] & LAND)) out.totals.specialLandNet += r.net_new_units ?? 0;
-      out.totals.existing += inputs.lots[pid].existing_units ?? 0;
-      out.totals.realistic += redev.realistic_new_units;
-      if (redev.likely) out.totals.likelyLots++;
+      t.max += r.max_units ?? 0;
+      t.local += r.local_units ?? 0;
+      t.net += r.net_new_units ?? 0;
+      if (!(mask[pid] & LAND)) t.specialLandNet += r.net_new_units ?? 0;
+      t.existing += lot.existing_units ?? 0;
+      if (likely >= 0) {
+        t.realistic += likely;
+        t.likelyLots++;
+      }
+    }
+  }
+}
+
+export function runScenario(data: ParcelData, rules: RulesFile, scenario: Scenario): Results {
+  const out = emptyResults(data.count);
+  for (const _ of scenarioSteps(data, rules, scenario, out)) void _;
+  return out;
+}
+
+/** runScenario in short bursts, so the page never freezes. Null if `stillWanted` turned false. */
+export async function runScenarioInSteps(
+  data: ParcelData, rules: RulesFile, scenario: Scenario, stillWanted: () => boolean,
+): Promise<Results | null> {
+  const out = emptyResults(data.count);
+  let burstStart = performance.now();
+  for (const _ of scenarioSteps(data, rules, scenario, out)) {
+    void _;
+    if (performance.now() - burstStart > 12) {
+      await new Promise((resolve) => setTimeout(resolve));
+      if (!stillWanted()) return null;
+      burstStart = performance.now();
     }
   }
   return out;

@@ -267,8 +267,8 @@ lot arrives as a record with fields like `AIN: "5744002002"`, `Units1: 1`,
 - `redevelop.py` asks whether it's likely to be rebuilt: no (single-family zone).
 
 **Step 4: Website** (`export_web.py` → `web/`).
-- The lot's shape goes into `parcels.pmtiles` with an id number (its `pid`).
-- Its numbers go into `parcels.json`, at position `pid` in each list.
+- The lot's shape goes into a shared `.pmtiles` file with an id number and today's colors.
+- Its numbers go into `lots.bin.gz`, at position `pid` in each column.
 - In your browser, `map.ts` colors the shape using those numbers; when you
   move a lever, `web/src/engine/` (the TypeScript copy of the same math)
   recomputes all 30,198 lots in about 30 milliseconds.

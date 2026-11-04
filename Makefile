@@ -13,7 +13,7 @@ export UV_PROJECT_ENVIRONMENT := .venv.nosync
 UV ?= uv
 RUN = cd pipeline && $(UV) run
 
-.PHONY: all download clean capacity export golden validate waves test exercise setup repl site
+.PHONY: all download clean capacity export tiles golden validate waves test exercise setup repl site
 
 setup:
 	cd pipeline && $(UV) sync
@@ -29,6 +29,10 @@ capacity:
 
 export:
 	$(RUN) python -m zce export $(CITY)
+
+# Shared map tiles for every city on the map. Run after any export.
+tiles:
+	$(RUN) python -m zce tiles
 
 golden:
 	$(RUN) python -m zce golden $(CITY)

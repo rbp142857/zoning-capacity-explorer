@@ -34,9 +34,9 @@ Run from the repo root:
 - `cd pipeline && .venv.nosync/bin/python -m pytest -q`
 - `cd web && npx vitest run && npx tsc --noEmit`
 - `cd pipeline && .venv.nosync/bin/python -m zce {download|clean|capacity|validate|golden|export} <city_id>` (`download` saves files, so it needs approval under the rule above)
+- `cd pipeline && .venv.nosync/bin/python -m zce tiles` rebuilds the shared map tiles for every city on the map. Run it after any export, because tile colors and lot numbers depend on the data. It adds about 100 MB to the repo's history each time it's committed, so do it when publishing, not while experimenting.
 - `npx --prefix web vite web --port 5174 --strictPort` previews the site.
 
-Exporting rewrites parcels.pmtiles and addresses.json. If only data columns changed, restore them with `git checkout` to avoid large new blobs.
 
 ## Working with the owner
 The owner is learning Python and wants the work done for them to study later. They prefer what's realistic over what's idealistic.

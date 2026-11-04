@@ -2,7 +2,7 @@
 // the printable summary. Only modeled lots count (like the headline).
 
 import type { ChartRow } from "./charts";
-import type { ParcelData } from "./data";
+import { NA, type ParcelData } from "./data";
 import type { Results } from "./engine/run";
 
 export const TRANSIT_BANDS = [
@@ -27,7 +27,7 @@ function groupSums(data: ParcelData, groupOf: (pid: number) => number, labels: s
   return rows;
 }
 
-export const netNew: Pick = (r, pid) => r.net[pid] ?? 0;
+export const netNew: Pick = (r, pid) => (r.net[pid] === NA ? 0 : r.net[pid]);
 export const realisticNew: Pick = (r, pid) => r.realistic[pid];
 
 export function byDistrict(data: ParcelData, today: Results, now: Results, value: Pick = netNew): ChartRow[] {
@@ -37,7 +37,7 @@ export function byDistrict(data: ParcelData, today: Results, now: Results, value
 export function byTransitDistance(data: ParcelData, today: Results, now: Results, value: Pick = netNew): ChartRow[] {
   const groupOf = (pid: number) => {
     const d = data.columns.dist_major_transit_ft[pid];
-    return d === null ? -1 : TRANSIT_BANDS.findIndex((b) => d < b.maxFt);
+    return d === NA ? -1 : TRANSIT_BANDS.findIndex((b) => d < b.maxFt);
   };
   return groupSums(data, groupOf, TRANSIT_BANDS.map((b) => b.label), today, now, value);
 }

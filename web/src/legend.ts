@@ -13,7 +13,7 @@ import {
   type Theme,
   type ValueClass,
 } from "./colors";
-import type { ParcelData } from "./data";
+import { NA, type ParcelData } from "./data";
 import type { Results } from "./engine/run";
 import type { View } from "./map";
 
@@ -27,7 +27,7 @@ interface Row {
 const fmt = new Intl.NumberFormat("en-US");
 
 function classRows(
-  values: (number | null)[],
+  values: Int32Array,
   modeled: (pid: number) => boolean,
   count: number,
   classes: ValueClass[],
@@ -40,7 +40,7 @@ function classRows(
   let notModeled = 0;
   for (let pid = 0; pid < count; pid++) {
     const v = values[pid];
-    if (!modeled(pid) || v === null) notModeled++;
+    if (!modeled(pid) || v === NA) notModeled++;
     else if (v === 0) zero++;
     else counts[classes.findIndex((c) => v >= c.min && (c.max === null || v <= c.max))]++;
   }
@@ -98,7 +98,7 @@ export function renderLegend(
   } else if (view === "net") {
     rows = classRows(scenario.net, modeled, data.count, NET_NEW_CLASSES, theme, "0: no room for more homes");
   } else if (view === "added") {
-    const added = scenario.max.map((v, pid) => (v === null ? null : Math.max(0, v - (today.max[pid] ?? 0))));
+    const added = scenario.max.map((v, pid) => (v === NA ? NA : Math.max(0, v - (today.max[pid] === NA ? 0 : today.max[pid]))));
     rows = classRows(added, modeled, data.count, ADDED_CLASSES, theme, "No change from today's rules");
   } else if (view === "likely") {
     rows = classRows(scenario.realistic, modeled, data.count, ADDED_CLASSES, theme, "Not likely to redevelop (see the screens)");

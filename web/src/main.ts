@@ -9,19 +9,19 @@ import maplibregl from "maplibre-gl";
 import "./style.css";
 import { renderBarChart } from "./charts";
 import {
-  COMBINED, COUNTY_VIEW, type CityInfo, mergeParcelData, mergeResults, selectionFromSearch, selectionToSearch, shortName,
+  COMBINED, COUNTY_VIEW, type CityInfo, mergeParcelData, mergeResults, selectionFromSearch, selectionToSearch, shortName, unionBounds,
 } from "./cities";
 import { BINDING_LABELS } from "./colors";
-import { type ParcelData, loadJson } from "./data";
-import { type LotInputs, type Results, buildLotInputs, runScenario } from "./engine/run";
+import { BINDING_CODES, type ParcelData, fetchBinary, loadJson, loadLots, na, parcelId } from "./data";
+import { type Results, resultsFromColumns, runScenarioInSteps } from "./engine/run";
 import { BASELINE, type Scenario, isBaseline } from "./engine/scenario";
 import type { RulesFile } from "./engine/types";
 import { renderLotDetails } from "./details";
 import { renderLegend } from "./legend";
 import { createMap, currentTheme, type MapCity, type View } from "./map";
-import { downloadText, lotsCsv } from "./csv";
+import { downloadText, lotsCsvParts } from "./csv";
 import { describeScenario, renderPrintSummary } from "./print";
-import { type AddressIndex, setupSearch } from "./search";
+import { type AddressIndex, makeAddressIndex, setupSearch } from "./search";
 import { byDistrict, byTransitDistance, netNew, realisticNew } from "./summary";
 import { LEVERS, scenarioFromHash, scenarioToHash } from "./url";
 
@@ -34,7 +34,6 @@ interface CityBundle {
   info: CityInfo;
   data: ParcelData;
   rules: RulesFile;
-  inputs: LotInputs;
   today: Results;
   offset: number; // where its lots start in the combined list
 }
@@ -60,7 +59,7 @@ function setupCityPicker(cities: CityInfo[], selected: string[], onChange: (ids:
     box.append(label);
     return input;
   };
-  const all = makeRow("Select all (large)", "");
+  const all = makeRow("Select all", "");
   all.parentElement?.classList.add("select-all");
   const rows = cities.map((c) => makeRow(shortName(c), c.id, c.level));
   const ticked = () => rows.filter((r) => r.checked).map((r) => r.value);
@@ -164,8 +163,8 @@ function showHeadline(data: ParcelData, scenario: Scenario, now: Results, today:
 function popupHtml(data: ParcelData, pid: number, now: Results, today: Results, reform: boolean): string {
   const c = data.columns;
   const zone = c.zone[pid] >= 0 ? data.codes.zone[c.zone[pid]] : "unknown";
-  const n = (v: number | null) => (v === null ? "unknown" : fmt.format(v));
-  const header = `<h3>Lot ${c.parcel_id[pid]}</h3><div>Zone <strong>${zone}</strong> · ${fmt.format(c.lot_area_sqft[pid])} sq ft</div>`;
+  const n = (v: number) => (na(v) === null ? "unknown" : fmt.format(v));
+  const header = `<h3>Lot ${parcelId(data, pid)}</h3><div>Zone <strong>${zone}</strong> · ${fmt.format(c.lot_area_sqft[pid])} sq ft</div>`;
   if (now.binding[pid] < 0) {
     return `<div class="popup">${header}<p class="limit">This zone isn't modeled yet (specific plan or planned development).</p></div>`;
   }
@@ -209,6 +208,8 @@ async function main() {
   try {
     const cities = await loadJson<CityInfo[]>(`${DATA_ROOT}/cities.json`);
     const allIds = cities.map((c) => c.id);
+    const citiesInGroup: Record<string, number> = {};
+    for (const c of cities) citiesInGroup[c.tiles] = (citiesInGroup[c.tiles] ?? 0) + 1;
 
     // Each city is downloaded once, however many times it's ticked and unticked.
     const loaded = new Map<string, Promise<Omit<CityBundle, "offset">>>();
@@ -217,11 +218,10 @@ async function main() {
       if (!city) {
         city = (async () => {
           const [data, rules] = await Promise.all([
-            loadJson<ParcelData>(`${cityDir(info.id)}/parcels.json`),
+            loadLots(`${cityDir(info.id)}/lots.bin.gz`),
             loadJson<RulesFile>(`${cityDir(info.id)}/rules.json`),
           ]);
-          const inputs = buildLotInputs(data);
-          return { info, data, rules, inputs, today: runScenario(data, inputs, rules, BASELINE) };
+          return { info, data, rules, today: resultsFromColumns(data, rules) };
         })();
         city.catch(() => loaded.delete(info.id)); // allow a retry
         loaded.set(info.id, city);
@@ -236,18 +236,46 @@ async function main() {
     let today = mergeResults([]);
     let scenario = scenarioFromHash(window.location.hash);
     let now = today;
+    let lotsReady = false; // false while a selection's numbers are still loading
 
-    const computeNow = () =>
-      isBaseline(scenario)
-        ? today
-        : mergeResults(bundles.map((b) => runScenario(b.data, b.inputs, b.rules, scenario)));
+    /** Today's results if nothing changed. Null if a newer scenario took over while this ran. */
+    let computeToken = 0;
+    const computeNow = async (): Promise<Results | null> => {
+      const token = ++computeToken;
+      if (isBaseline(scenario)) return today;
+      const parts: Results[] = [];
+      for (const b of bundles) {
+        const r = await runScenarioInSteps(b.data, b.rules, scenario, () => token === computeToken);
+        if (!r) return null;
+        parts.push(r);
+      }
+      return token === computeToken ? mergeResults(parts) : null;
+    };
+
+    /** Where the chosen cities' lots are, known before any lot data arrives. */
+    const mapCitiesFor = (ids: string[]): MapCity[] => {
+      let offset = 0;
+      const out: MapCity[] = [];
+      cities.forEach((c, index) => {
+        if (!ids.includes(c.id)) return;
+        out.push({ id: c.id, index, tiles: c.tiles, start: c.start, offset, count: c.count });
+        offset += c.count;
+      });
+      return out;
+    };
 
     /** Load `ids` and make them the current selection. False if a newer selection replaced it. */
     let selectionToken = 0;
     const setSelection = async (ids: string[]) => {
       const token = ++selectionToken;
+      lotsReady = false;
       const chosen = cities.filter((c) => ids.includes(c.id));
-      const parts = await Promise.all(chosen.map(loadCity));
+      let done = 0;
+      const progress = () => {
+        if (token === selectionToken && chosen.length > 1) status.textContent = `Loading lot numbers: ${done} of ${chosen.length} cities…`;
+      };
+      progress();
+      const parts = await Promise.all(chosen.map((c) => loadCity(c).then((p) => { done++; progress(); return p; })));
       if (token !== selectionToken) return false;
       let offset = 0;
       bundles = parts.map((p) => {
@@ -257,42 +285,64 @@ async function main() {
       });
       data = mergeParcelData(parts.map((p) => p.data), chosen.map(shortName));
       today = mergeResults(parts.map((p) => p.today));
-      now = computeNow();
-      const place = bundles.length === 1 ? shortName(bundles[0].info) : bundles.length ? `${bundles.length} Cities` : "LA County";
-      $("city-name").textContent = place;
-      document.title = `${place} Zoning Capacity`;
+      now = (await computeNow()) ?? today;
+      if (token !== selectionToken) return false;
+      lotsReady = true;
       return true;
     };
 
-    const selected = selectionFromSearch(window.location.search, allIds);
-    await setSelection(selected);
-    writeForm(scenario);
-    showHeadline(data, scenario, now, today);
+    const showPlace = (ids: string[]) => {
+      const chosen = cities.filter((c) => ids.includes(c.id));
+      const place = chosen.length === 1 ? shortName(chosen[0]) : chosen.length ? `${chosen.length} Cities` : "LA County";
+      $("city-name").textContent = place;
+      document.title = `${place} Zoning Capacity`;
+    };
 
-    const mapCities = (): MapCity[] =>
-      bundles.map((b) => ({
-        id: b.info.id,
-        tilesUrl: new URL(`${cityDir(b.info.id)}/parcels.pmtiles`, window.location.href).href,
-        offset: b.offset,
-        count: b.data.count,
-      }));
+    const selected = selectionFromSearch(window.location.search, allIds, window.matchMedia("(max-width: 760px)").matches);
+    // Put the choice in the address, so a copied link shows the same cities on any screen.
+    history.replaceState(null, "", window.location.pathname + selectionToSearch(window.location.search, selected, allIds) + window.location.hash);
+    showPlace(selected);
+    writeForm(scenario);
+
+    // Start the numbers downloading, and draw the map without waiting for them:
+    // its colors for today's rules come with the tiles.
+    let selectedIds = selected;
+    const firstLoad = setSelection(selected);
 
     // One city opens at its usual view; several are framed to fit; none shows the county.
-    const start = bundles.length === 1 ? bundles[0].info : COUNTY_VIEW;
-    const bindingCodes = bundles[0]?.data.codes.binding ?? (await loadCity(cities[0])).data.codes.binding;
-    const controller = await createMap("map", bindingCodes, { center: start.center, zoom: start.zoom });
-    const frameCities = (animate: boolean) => {
-      if (bundles.length === 1) {
-        const { center, zoom } = bundles[0].info;
+    const firstCity = cities.find((c) => c.id === selected[0]);
+    const start = selected.length === 1 && firstCity ? firstCity : COUNTY_VIEW;
+    const bindingCodes = BINDING_CODES;
+    const controller = await createMap(
+      "map", citiesInGroup, (group: string) => new URL(`${DATA_ROOT}/tiles/${group}.pmtiles`, window.location.href).href, bindingCodes,
+      { center: start.center, zoom: start.zoom },
+    );
+    const frameCities = (ids: string[], animate: boolean) => {
+      const chosen = cities.filter((c) => ids.includes(c.id));
+      if (chosen.length === 1) {
+        const { center, zoom } = chosen[0];
         controller.map.easeTo({ center, zoom, duration: animate ? 600 : 0 });
-      } else if (bundles.length > 1) {
-        const [w, s, e, n] = data.bounds;
+      } else if (chosen.length > 1) {
+        const [w, s, e, n] = unionBounds(chosen.map((c) => c.bounds));
         controller.map.fitBounds([[w, s], [e, n]], { padding: 40, animate });
       }
     };
-    frameCities(false);
-    status.textContent = "";
-    controller.setCities(mapCities());
+    frameCities(selected, false);
+    controller.setCities(mapCitiesFor(selected));
+
+    // Choices made while the first load runs are picked up when it's done.
+    let onCitiesChosen: ((ids: string[]) => void) | null = null;
+    setupCityPicker(cities, selected, (ids) => {
+      selectedIds = ids;
+      showPlace(ids);
+      frameCities(ids, true);
+      controller.setCities(mapCitiesFor(ids));
+      onCitiesChosen?.(ids);
+    });
+
+    await firstLoad;
+    if (lotsReady) status.textContent = "";
+    showHeadline(data, scenario, now, today);
     controller.setResults(now, today);
 
     // Highlight menu: one option per binding constraint.
@@ -329,7 +379,7 @@ async function main() {
       controller.select(pid);
       // The engine's details need the lot's own city: its rules, its numbering.
       const b = bundles.find((c) => pid >= c.offset && pid < c.offset + c.data.count) as CityBundle;
-      renderLotDetails($("details-body"), pid - b.offset, b.data, b.inputs, b.rules, scenario, !isBaseline(scenario), BASELINE);
+      renderLotDetails($("details-body"), pid - b.offset, b.data, b.rules, scenario, !isBaseline(scenario), BASELINE);
       details.hidden = false;
       if (focus) {
         details.focus();
@@ -341,19 +391,24 @@ async function main() {
       $("search-input").focus();
     });
 
-    const applyScenario = (next: Scenario, updateUrl = true) => {
+    const applyScenario = async (next: Scenario, updateUrl = true) => {
       scenario = next;
-      const t0 = performance.now();
-      now = computeNow();
       writeForm(scenario);
+      // Keep ?city=... (the search part); only the #scenario changes.
+      if (updateUrl) history.replaceState(null, "", window.location.pathname + window.location.search + scenarioToHash(scenario));
+      if (!lotsReady) return; // the selection's load will use this scenario when it finishes
+      const t0 = performance.now();
+      if (!isBaseline(scenario)) status.textContent = "Calculating…";
+      const result = await computeNow();
+      if (!result) return; // a newer scenario took over
+      now = result;
+      status.textContent = "";
       showHeadline(data, scenario, now, today);
       controller.setResults(now, today);
       redraw();
       renderCharts(data, now, today, !isBaseline(scenario));
       if (selectedPid !== null) showDetails(selectedPid);
       popup.remove();
-      // Keep ?city=... (the search part); only the #scenario changes.
-      if (updateUrl) history.replaceState(null, "", window.location.pathname + window.location.search + scenarioToHash(scenario));
       console.debug(`Scenario recomputed in ${Math.round(performance.now() - t0)} ms`);
     };
 
@@ -398,6 +453,10 @@ async function main() {
 
     const popup = new maplibregl.Popup({ maxWidth: "300px", focusAfterOpen: true });
     const openLot = (pid: number, lngLat: maplibregl.LngLatLike) => {
+      if (!lotsReady) {
+        status.textContent = "Still loading this lot's numbers. Try again in a moment.";
+        return;
+      }
       popup.setLngLat(lngLat).setHTML(popupHtml(data, pid, now, today, !isBaseline(scenario))).addTo(controller.map);
       popup.getElement()?.querySelector(".popup-details")?.addEventListener("click", () => showDetails(pid, true));
       showDetails(pid);
@@ -414,23 +473,20 @@ async function main() {
     });
 
     // --- Address search ---
-    const loadAddresses = async (): Promise<AddressIndex> => {
-      const lists = await Promise.all(
-        bundles.map(async (b) => ({ b, list: await loadJson<AddressIndex>(`${cityDir(b.info.id)}/addresses.json`) })),
+    const loadAddresses = async (): Promise<AddressIndex[]> =>
+      Promise.all(
+        bundles.map(async (b) => {
+          const file = await fetchBinary(`${cityDir(b.info.id)}/search.bin.gz`);
+          const c = file.columns;
+          return makeAddressIndex(new TextDecoder().decode(c.text as Uint8Array), c.lng as Float32Array, c.lat as Float32Array, b.offset);
+        }),
       );
-      return {
-        address: lists.flatMap(({ list }) => list.address),
-        pid: lists.flatMap(({ b, list }) => list.pid.map((p) => p + b.offset)),
-        lng: lists.flatMap(({ list }) => list.lng),
-        lat: lists.flatMap(({ list }) => list.lat),
-      };
-    };
     const search = setupSearch(
       $<HTMLInputElement>("search-input"),
       $<HTMLUListElement>("search-list"),
       $("search-status"),
       loadAddresses,
-      () => data.columns.parcel_id,
+      (digits) => data.columns.parcel_id.indexOf(Number(digits)),
       (hit) => {
         controller.map.flyTo({ center: [hit.lng, hit.lat], zoom: 17, duration: 800 });
         controller.map.once("moveend", () => openLot(hit.pid, [hit.lng, hit.lat]));
@@ -439,20 +495,17 @@ async function main() {
     );
 
     // --- Choosing cities ---
-    setupCityPicker(cities, selected, async (ids) => {
-      status.textContent = "Loading…";
+    onCitiesChosen = async (ids) => {
+      popup.remove();
+      closeDetails();
+      search.reset();
       try {
         if (!(await setSelection(ids))) return; // a newer choice took over
         status.textContent = ids.length ? "" : "Select a city to see its lots.";
-        popup.remove();
-        closeDetails();
-        search.reset();
-        controller.setCities(mapCities());
         controller.setResults(now, today);
         showHeadline(data, scenario, now, today);
         redraw();
         renderCharts(data, now, today, !isBaseline(scenario));
-        frameCities(true);
         history.replaceState(
           null, "",
           window.location.pathname + selectionToSearch(window.location.search, ids, allIds) + window.location.hash,
@@ -461,13 +514,17 @@ async function main() {
         status.textContent = `Couldn't load that city. ${(err as Error).message}`;
         console.error(err);
       }
-    });
+    };
+    // Cities changed while the first load ran.
+    if (selectedIds !== selected) onCitiesChosen(selectedIds);
 
     // --- Printable summary ---
     const fillPrint = () => {
       const reform = !isBaseline(scenario);
       let mapImage: string | null = null;
       try {
+        // The canvas only holds a picture right after drawing, so draw first.
+        controller.map.redraw();
         mapImage = controller.map.getCanvas().toDataURL("image/png");
       } catch {
         mapImage = null; // a blank or tainted canvas: print without the map
@@ -495,21 +552,13 @@ async function main() {
     $("cite-date").textContent = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
     $("download-csv").addEventListener("click", () => {
       const reform = !isBaseline(scenario);
-      downloadText("zoning-capacity-lots.csv", lotsCsv(data, today, now, window.location.href, reform));
+      downloadText("zoning-capacity-lots.csv", lotsCsvParts(data, today, now, window.location.href, reform));
     });
     $("print").addEventListener("click", () => {
       fillPrint();
       window.print();
     });
 
-    // Sanity check in development: the browser's "today" must equal the
-    // pipeline's numbers in parcels.json (the golden test checks a sample;
-    // this checks every lot).
-    if (import.meta.env.DEV) {
-      const bad = data.columns.max_units.findIndex((v, pid) => v !== today.max[pid]);
-      if (bad >= 0) console.error(`Browser engine disagrees with pipeline on lot ${bad}`);
-      else console.debug("Browser engine matches pipeline on all lots");
-    }
   } catch (err) {
     status.textContent = `Couldn't load the map data. ${(err as Error).message}`;
     console.error(err);
