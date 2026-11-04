@@ -1,6 +1,6 @@
 // Colors and classes for the three map views.
 //
-// Rules we follow (see LEARNING.md -> "Color-blind-safe maps"):
+// Rules we follow:
 // - Amounts (homes allowed, new homes) use ONE hue, light -> dark, in classes.
 // - Categories (what limits a lot) use at most three hues, because on a map
 //   every color can sit next to every other one; three is the most our

@@ -6,8 +6,8 @@
 - Don't start unincorporated LA County (Title 22). It's out of scope unless the owner says otherwise.
 
 ## Access limits
-- Don't get around site blocks, bot checks or 401/403 errors. Skip the source, log it in docs/WAVE_PLAN.md and move on.
-- Municode's /api returns 401 to direct calls. Don't work around that.
+- When a site refuses automated access, the owner approves reading its pages in a browser, as a person would. Don't defeat logins, paywalls or CAPTCHAs, and don't call blocked APIs directly. If a browser can't reach it either, log it in docs/WAVE_PLAN.md and move on.
+- Municode's /api returns 401 to direct calls. Don't work around that; read its pages in a browser.
 - eCode360 returns 429 if you go too fast. Wait about 5 seconds between pages.
 - American Legal has returned 403s. Go slowly and stop at any refusal.
 

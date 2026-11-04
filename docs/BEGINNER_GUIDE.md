@@ -188,7 +188,6 @@ lots[lots["address"].str.contains("MOUNTAIN ST", na=False)]
 zoning-capacity-explorer/
 ├── README.md               what it is, how to run it
 ├── METHODOLOGY.md          every calculation in plain language (read this early)
-├── LEARNING.md             one paragraph per concept, with links (your study notes)
 ├── ADDING_A_CITY.md        how to do this for another city
 ├── Makefile                shortcuts: make test, make all, make site, make repl
 ├── cities/
@@ -438,7 +437,7 @@ their branch). Run `make test` after each change.
 
 ## 8. Things CS50P doesn't cover (yet)
 
-Short explanations; `LEARNING.md` has a paragraph and a link for each.
+Short explanations.
 
 - **Terminal and `make`.** `make test` runs the commands listed under `test:`
   in the `Makefile`. It's a menu of shortcuts so you don't have to remember

@@ -1,6 +1,6 @@
 // Small horizontal bar charts, drawn as plain SVG (no chart library).
 //
-// Design rules (see LEARNING.md -> "Accessible charts"):
+// Design rules:
 // - One axis, bars start at zero, thin bars with a small gap between them.
 // - "Today" and "this scenario" are two series: blue and orange, the first
 //   two slots of the validated palette. With no scenario, only "today".
