@@ -402,8 +402,9 @@ async function main() {
       popup.getElement()?.querySelector(".popup-details")?.addEventListener("click", () => showDetails(pid, true));
       showDetails(pid);
     };
-    controller.onLotClick((pid, lngLat) => {
-      openLot(pid, lngLat);
+    controller.onLotClick((pids, lngLat) => {
+      // Where a big parcel covers smaller ones, the smallest is the one you can see to aim at.
+      openLot(pids.reduce((a, b) => (data.columns.lot_area_sqft[b] < data.columns.lot_area_sqft[a] ? b : a)), lngLat);
       // On phones the map is short, so move the clicked lot near the top to
       // leave room for the popup below it.
       if (window.matchMedia("(max-width: 760px)").matches) {

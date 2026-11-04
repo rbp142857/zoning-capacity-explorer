@@ -30,7 +30,7 @@ export function searchAddresses(index: AddressIndex, query: string, parcelIds: s
   const contains: SearchHit[] = [];
   for (let i = 0; i < index.address.length && starts.length < MAX_RESULTS; i++) {
     const a = index.address[i];
-    if (!words.every((w) => a.includes(w))) continue;
+    if (!a || !words.every((w) => a.includes(w))) continue;
     const hit = { pid: index.pid[i], address: a, lng: index.lng[i], lat: index.lat[i] };
     (a.startsWith(q) ? starts : contains).push(hit);
   }
@@ -39,7 +39,10 @@ export function searchAddresses(index: AddressIndex, query: string, parcelIds: s
   if (/^\d{10}$/.test(digits)) {
     const pid = parcelIds.indexOf(digits);
     const i = index.pid.indexOf(pid);
-    if (pid >= 0 && i >= 0) starts.unshift({ pid, address: `Lot ${digits} (${index.address[i]})`, lng: index.lng[i], lat: index.lat[i] });
+    if (pid >= 0 && i >= 0) {
+      const address = index.address[i] ? `Lot ${digits} (${index.address[i]})` : `Lot ${digits} (no address on record)`;
+      starts.unshift({ pid, address, lng: index.lng[i], lat: index.lat[i] });
+    }
   }
   return [...starts, ...contains].slice(0, MAX_RESULTS);
 }

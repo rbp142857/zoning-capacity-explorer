@@ -107,15 +107,15 @@ def write_addresses(lots: gpd.GeoDataFrame, path) -> None:
 
     Situs (property) addresses only; owner mailing addresses are never in
     our data. Each entry has the lot's pid and a point inside the lot to fly
-    the map to. Sorted by address so the list reads naturally.
+    the map to. Sorted by address so the list reads naturally. Lots with no
+    address stay in, with a blank one, so their parcel numbers can be searched.
     """
-    has_address = lots["address"].fillna("").str.strip() != ""
-    sub = lots[has_address]
+    sub = lots
     points = sub.geometry.representative_point().to_crs("EPSG:4326")
     # "960 SAN PASQUAL ST PASADENA CA 91106" -> "960 SAN PASQUAL ST, 91106":
     # every address here is in Pasadena, so the city name is noise.
     clean = (
-        sub["address"].str.strip().str.replace(r"\s+PASADENA\s+CA\s+", ", ", regex=True).str.replace(r"\s+", " ", regex=True)
+        sub["address"].fillna("").str.strip().str.replace(r"\s+PASADENA\s+CA\s+", ", ", regex=True).str.replace(r"\s+", " ", regex=True)
     )
     order = clean.argsort(kind="stable")
     payload = {

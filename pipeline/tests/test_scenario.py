@@ -173,3 +173,15 @@ def test_minimum_lot_lever_keeps_a_big_lots_higher_number(land_rule_zone):
     lot = Lot(164_245, 300, 547, dist_major_transit_ft=9_000)
     today = _land_rule_units(land_rule_zone, lot)
     assert _land_rule_units(land_rule_zone, lot, sf_min_lot_sqft=20_000).local_units >= today.local_units
+
+
+def test_parking_lever_never_raises_what_a_city_requires():
+    from zce.config import load_city
+
+    city = load_city("santa_monica")
+    rules = load_zone_rules(city.rules_dir)
+    state = load_state_overrides(city.state_law_file)
+    changed, _ = apply_scenario(rules, state, Scenario(parking_per_unit=1))
+    for zone, r in rules.items():
+        if r.parking_per_unit is not None:
+            assert changed[zone].parking_per_unit.value == min(r.parking_per_unit.value, 1)

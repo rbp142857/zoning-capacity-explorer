@@ -32,11 +32,15 @@ SCREEN_NAMES = {AGE: "building_too_new", VALUE: "building_worth_more_than_land",
                 OWNERSHIP: "condo_many_owners", HISTORIC: "historic_district",
                 ZONE: "single_family_zone", LAND: "public_or_special_land"}
 
-# Assessor use labels for land that rarely comes up for private rebuilding. Exempt
-# public land has no assessed value, so without this screen it looks like a vacant lot.
+# Assessor use labels for land that rarely comes up for private rebuilding.
 # Lower case; labels are matched by their start because the Assessor's get cut off.
 SPECIAL_LAND_USES = ("government parcel", "utility commercial", "mineral processing",
-                     "cemeteries", "golf courses", "schools (private)")
+                     "cemeteries", "golf courses", "schools (private)", "rights of way")
+
+# Land valued at or below this is a placeholder (4,166 vacant-looking lots of
+# 5,000+ sq ft carry $9 or less), typically not a lot that can be sold and built
+# on. Real low values start around $2,000. Assumption, chosen by looking at the data.
+NOMINAL_LAND_VALUE = 1_000
 
 
 def is_special_land(use_description) -> bool:
@@ -69,12 +73,19 @@ def static_mask(
 ) -> int:
     """Which static screens a lot passes, as a bit mask."""
     nan = lambda v: v is None or v != v  # noqa: E731  (NaN is the only value not equal to itself)
-    vacant = (nan(existing_units) or existing_units == 0) and (nan(improvement_value) or improvement_value == 0)
+    # Vacant needs evidence: a real land value and no building value. A lot off the
+    # tax roll (mostly exempt land, including public housing) has blanks that say
+    # nothing about whether anything is built there, so it isn't vacant.
+    vacant = (
+        (nan(existing_units) or existing_units == 0)
+        and not nan(improvement_value) and improvement_value == 0
+        and not nan(land_value) and land_value > NOMINAL_LAND_VALUE
+    )
     mask = 0
     if vacant or (not nan(year_built) and s.as_of_year - year_built >= s.min_building_age_years):
         mask |= AGE
     # Unknown values (mostly exempt public land) fail: we can't tell.
-    if vacant or (not nan(land_value) and land_value > 0 and not nan(improvement_value)
+    if vacant or (not nan(land_value) and land_value > NOMINAL_LAND_VALUE and not nan(improvement_value)
                   and improvement_value / land_value < s.max_improvement_to_land_ratio):
         mask |= VALUE
     if not (s.exclude_condos and is_condo):

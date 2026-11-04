@@ -31,12 +31,24 @@ def test_special_land_labels(label, special):
     assert is_special_land(label) is special
 
 
-def test_vacant_looking_government_land_is_not_likely_to_redevelop():
-    # Exempt public land has no building or assessed value, so it passes as "vacant".
-    m = mask(land_value=None, improvement_value=None, year_built=None, existing_units=None, special_land=True)
+def test_government_land_is_not_likely_to_redevelop():
+    m = mask(land_value=500_000, improvement_value=0, year_built=None, existing_units=None, special_land=True)
     assert not m & LAND
     r = redevelopment(S, m, local_units=100, existing_units=None)
     assert not r.likely and r.failed == ("public_or_special_land",)
+
+
+def test_lot_off_the_tax_roll_is_not_vacant():
+    # Lomita's Harbor Hills public housing lot has blanks for everything but its use.
+    m = mask(land_value=None, improvement_value=None, year_built=None, existing_units=None)
+    assert not m & AGE and not m & VALUE
+    assert not redevelopment(S, m, local_units=374, existing_units=None).likely
+
+
+@pytest.mark.parametrize("land, vacant", [(9, False), (1_000, False), (1_001, True)])
+def test_placeholder_land_value_is_not_vacant(land, vacant):
+    m = mask(land_value=land, improvement_value=0, year_built=None, existing_units=None)
+    assert bool(m & AGE) is vacant and bool(m & VALUE) is vacant
 
 
 def test_old_cheap_building_passes_every_static_screen():

@@ -132,8 +132,11 @@ these screens (thresholds in `cities/pasadena/city.yaml`):
 
 1. Zoning allows **at least twice** the homes already there **and at least 3
    more** (tearing down a house to gain one or two homes rarely pays).
-2. The building is **50+ years old**, or the lot is vacant.
-3. The building is **assessed at less than the land**.
+2. The building is **50+ years old**, or the lot is vacant. Vacant needs evidence:
+   no homes on record, a building value of $0, and a land value above $1,000. A
+   lot off the tax roll, or valued at a placeholder, fails. See section 67.
+3. The building is **assessed at less than the land**, or the lot is vacant as
+   defined in screen 2.
 4. **Not a condo** (many owners rarely sell together).
 5. **Not in a landmark district** (demolition needs special review).
 6. **Not in a single-family zone.** Small-scale infill on single-family lots
@@ -144,11 +147,10 @@ these screens (thresholds in `cities/pasadena/city.yaml`):
    rule allows it.
 7. **Not public or special land:** government, utility, quarry (mineral
    processing), cemetery, golf course or private school, by the Assessor's use
-   label. Added November 2026, because exempt public land has no assessed value
-   and so passed screens 2 and 3 as if it were vacant. See section 67.
+   or rights-of-way label. Added November 2026. See section 67.
 
-Only the city's (or a reform scenario's) own allowance counts here. **Today:
-4,907 homes on 753 lots.** This is a **screen, not a forecast**: it shows
+Only the city's (or a reform scenario's) own allowance counts here. **Today, in
+Pasadena: 8,787 homes on 1,008 lots.** This is a **screen, not a forecast**: it shows
 where rebuilding is plausible, not when or whether it will happen.
 
 Caveats:
@@ -171,19 +173,19 @@ your browser, using the same calculations as the pipeline.
 |---|---|
 | Homes per lot, single-family zones | The one-home cap becomes 2, 3, 4 or 6. Where a city writes that rule as land per home, the land rule is replaced too, and a big lot keeps the higher number it already had. Floor-area, setback and parking limits still apply. |
 | Minimum lot size, single-family zones | A lot may be split into as many lots of the new size as fit, each with the per-lot allowance. Street access isn't checked, so this is optimistic. |
-| Parking per home | Replaces the 2-space requirement everywhere (0 removes it). |
+| Parking per home | Caps the requirement in every zone (0 removes it). A zone that already asks for less keeps its lower number. |
 | No parking minimums near transit | Widens AB 2097's ½-mile radius (it can't be narrowed). |
 | Near transit: stories / density | For multifamily and commercial zones in the chosen radius: extra stories (with floor-area ratio raised in proportion) and less land required per home. |
-| Housing in General Commercial (CG) | CG uses CL's housing standards with CG's 45 ft height and FAR 0.80. |
+| Housing in General Commercial (CG) | Pasadena only, the one city on the map with both zones. CG uses CL's housing standards with CG's 45 ft height and FAR 0.80. |
 | ADU homes per house | The ADU path adds 3 or 4 homes instead of 2. |
 
-What the presets show:
+What the presets show in Pasadena:
 
 | Scenario | Theoretical change | Likely-to-redevelop change |
 |---|---|---|
-| Fourplexes in single-family zones | +456 | +0 (screen 6) |
-| No parking minimums within 1 mile of transit | +1,948 | +500 |
-| Upzone near transit (+2 stories, double density within ½ mile) | +15,700 | +6,503 |
+| Fourplexes in single-family zones | +442 | +0 (screen 6) |
+| No parking minimums within 1 mile of transit | +1,067 | +471 |
+| Upzone near transit (+2 stories, double density within ½ mile) | +25,213 | +10,250 |
 
 Fourplex legalization adds little on its own: SB 9 already allows four homes on
 most single-family lots, and the city's floor-area limits fit only about two
@@ -891,6 +893,8 @@ with A-1, R-1, R-2 and R-3. We read R1 and A1 as R-1 and A-1, and R1-6000, R1-70
 our inference, and keep that density as long as it fits the new zone: RVD2500 is R-2; RVD2200, RVD1500, RVD1452 and RVD1000 are R-3; RVD5000 is R-1.
 A city rezoning under the new code could change any of these.
 
+**Harbor Hills.** The largest RVD1452 lot (APN 7552001903, 12.5 acres, 374 homes allowed on paper) appears to be Harbor Hills, a county-run public housing development of 301 homes at 26607 S. Western Ave. The match rests on its location and use label, not a parcel record. The Assessor has no building or value for it, so its existing homes show as unknown. It made up 89% of Lomita's likely homes until the November 2026 fix in section 67. It still counts in theoretical totals, which treat every lot as rebuildable.
+
 Conservative calls: commercial zones count no homes, because homes need a conditional use permit in a mixed-use project, and stand-alone homes are
 limited to a Housing overlay we don't have. Lots in the overlay run low. Stories aren't in the code, so we fit 2 at 27 ft and 3 at 35 ft. South of Pacific Coast Highway the limit is 16 ft and one story
 without a variation permit, which we don't map, so those lots run high.
@@ -1234,6 +1238,12 @@ The tool's main uses are now citywide estimates, reform comparisons and research
 **Public and special land.** The likely-to-redevelop estimate counted vacant-looking public land. That was 52% of Compton's estimate (7,008 of 13,367 homes), 81% of San Fernando's (1,413 of 1,740) and 7% of LA's (35,934 of 505,327). Screen 7 in section 6 removes it. These labels are a judgment call: public land does sometimes become housing, and some private school sites may too, so these homes stay in the theoretical totals and the site and reports show them separately. Across the 55 cities that's 51,530 of 4,453,812 theoretical new homes, mostly in LA, but 89% of Irwindale's (9,171 of 10,325).
 
 **Repeated permits.** The state's Annual Progress Reports can list one building permit more than once, and we were adding them all. The same permit reappears in a later year with the same tracking number and issue date, sometimes with two permits written together in either order. Permits are now counted once (`drop_repeat_permits` in `validate.py`). Homes in 5+ unit buildings, 2018 to 2025: Los Angeles 150,982 before, 115,391 after; Glendale 5,541 before, 1,780 after. Pasadena, Santa Monica and Long Beach don't change, since their repeats don't appear this way. It only affected validation and planning figures, not any lot's capacity. Rows with no usable tracking number or date can't be matched and still count, and about 27 LA pairs with matching parcel, address and homes but different permit numbers (about 500 homes, under 0.5%) were left as they are, since they may be separate permits. `zce waves` adds up the same data directly in the state's database, so `city_ranking` and the tables at the top of `docs/WAVE_PLAN.md` still run high for cities that repeat permits.
+
+**Blank and placeholder records (a later check, November 2026).** The likely-to-redevelop estimate treated any lot with no building or value on record as vacant. A blank says nothing about what's built there: Lomita's Harbor Hills public housing passed as empty land. Two kinds of lot no longer count as vacant: those off the tax roll, and those with land valued at $1,000 or less. Among vacant-looking lots of 5,000+ sq ft, 4,166 carry $9 or less, including a 3.5-acre Santa Monica parking lot, while ordinary low values start around $2,000. We read those as placeholders, an inference from the data rather than something the county states. Rights-of-way labels joined screen 7. Across the 45 cities on the map, likely new homes went from 665,814 to 595,973. Lots on the roll with real land value and no building still count as vacant, so Palmdale's total stays high (48,543): most of it is vacant land zoned for housing, which depends on demand that this tool doesn't measure.
+
+Not changed, as judgment calls: churches, hospitals and mobile home parks can still count as likely, since all of them do get redeveloped, but residents and institutions make that harder than the screens show.
+
+**Overlapping parcels.** 1,564 lots on the map lie mostly inside another lot, usually a large parcel drawn over smaller ones. Totals count both, which adds at most 41,442 of 6.5 million theoretical homes (0.6%) and 96 likely ones. We leave them in, since we can't tell which record is right. A click on the map opens the smallest lot under the pointer.
 
 **Accuracy test** (`python -m zce accuracy`, [reports/la_county/accuracy.md](reports/la_county/accuracy.md)). Every building of 2+ homes in those reports is matched by parcel number to its lot and compared with our number. The first results across 52 cities: of 4,139 buildings of 2 to 4 homes, 97% fit our number and 1% are over it with no explanation found. Of 1,023 buildings of 5+ homes, 29% fit; 12% are over with a density bonus or streamlining reported, 37% are over but would fit an 80% density bonus (assumed, not confirmed), 5% are on lots flagged as having conditions or plan rules we don't model, and 17% are over with no explanation found. So most large projects exceed base zoning, which is why this tool's base numbers shouldn't be read as what large projects actually achieve in LA.
 
