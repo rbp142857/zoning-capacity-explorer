@@ -17,7 +17,7 @@ from zce.adapters.la_city_zoning import NEW_CODE
 from zce.capacity_report import write_capacity_report
 from zce.config import DATA_DIR, REPO_ROOT, CityConfig
 from zce.engine import EngineAssumptions, Lot, compute_capacity
-from zce.engine.redevelop import redevelopment, screens_from_config, static_mask
+from zce.engine.redevelop import is_special_land, redevelopment, screens_from_config, static_mask
 from zce.engine.state_paths import density_bonus_units, sb79_units
 from zce.rules.schema import load_state_overrides, load_zone_rules
 
@@ -140,6 +140,7 @@ def run_capacity(city: CityConfig) -> gpd.GeoDataFrame:
             is_condo=bool(row["is_condo"]),
             overlays=lot.overlays,
             single_family_zone=zone_rules is not None and zone_rules.family == "single_family",
+            special_land=is_special_land(row["use_description"]),
         )
         redev = redevelopment(screens, mask, result.local_units, lot.existing_units)
         if result.status == "not_modeled" and "planned_development_not_modeled" in flags:

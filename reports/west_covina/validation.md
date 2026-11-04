@@ -22,28 +22,28 @@ Homes **permitted** per year, by building type (ADU = accessory dwelling unit, S
 | 2019 | 0 | 42 | 7 | 0 | 0 | 49 |
 | 2020 | 0 | 14 | 11 | 0 | 7 | 32 |
 | 2021 | 0 | 0 | 49 | 0 | 2 | 51 |
-| 2022 | 7 | 131 | 139 | 0 | 112 | 389 |
-| 2023 | 0 | 141 | 101 | 0 | 107 | 349 |
-| 2024 | 0 | 78 | 134 | 1 | 6 | 219 |
+| 2022 | 7 | 136 | 118 | 0 | 112 | 373 |
+| 2023 | 0 | 57 | 47 | 0 | 0 | 104 |
+| 2024 | 0 | 38 | 118 | 1 | 3 | 160 |
 
-Average per year, 2018–2024: **156 homes**, of which 58 in buildings of 5+ homes, 63 ADUs, and 1 in 2–4 unit buildings.
+Average per year, 2018–2024: **110 homes**, of which 41 in buildings of 5+ homes, 50 ADUs, and 1 in 2–4 unit buildings.
 
-Where homes in **5+ unit buildings** were permitted (100% of them matched to a lot: 255 by nearest lot, 151 by parcel number):
+Where homes in **5+ unit buildings** were permitted (100% of them matched to a lot: 193 by nearest lot, 94 by parcel number):
 
 | area | homes permitted | share |
 |---|---|---|
-| Other zones not modeled (PDs, no zone found, ...) | 255 | 63% |
-| Modeled base zones | 151 | 37% |
+| Other zones not modeled (PDs, no zone found, ...) | 193 | 67% |
+| Modeled base zones | 94 | 33% |
 
 Top zone codes for these homes:
 
 | zone_code | homes permitted |
 |---|---|
-| R-1 | 151 |
-| T-4 GUZ | 132 |
-| (not matched or no zone) | 123 |
+| T-4 GUZ | 120 |
+| R-1 | 94 |
+| (not matched or no zone) | 73 |
 
-- In the zones this tool models, 5+ unit buildings added about **22 homes a year**. Our likely-to-redevelop estimate for those zones is **694 homes**, roughly **32 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
+- In the zones this tool models, 5+ unit buildings added about **13 homes a year**. Our likely-to-redevelop estimate for those zones is **689 homes**, roughly **51 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
 - 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 1 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
 - Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. Most new apartment buildings are in areas this tool doesn't model yet, so its totals miss where the city builds most.
 

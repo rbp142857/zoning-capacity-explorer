@@ -22,23 +22,23 @@ Homes **permitted** per year, by building type (ADU = accessory dwelling unit, S
 | 2019 | 0 | 0 | 0 | 0 |
 | 2021 | 0 | 0 | 0 | 0 |
 | 2022 | 102 | 0 | 2 | 104 |
-| 2023 | 102 | 1 | 2 | 105 |
-| 2024 | 102 | 2 | 4 | 108 |
-| 2025 | 102 | 3 | 4 | 109 |
+| 2023 | 0 | 1 | 0 | 1 |
+| 2024 | 0 | 2 | 2 | 4 |
+| 2025 | 0 | 3 | 0 | 3 |
 
-Average per year, 2018–2025: **54 homes**, of which 51 in buildings of 5+ homes, 1 ADUs, and 0 in 2–4 unit buildings.
+Average per year, 2018–2025: **14 homes**, of which 13 in buildings of 5+ homes, 1 ADUs, and 0 in 2–4 unit buildings.
 
-Where homes in **5+ unit buildings** were permitted (100% of them matched to a lot: 408 by parcel number):
+Where homes in **5+ unit buildings** were permitted (100% of them matched to a lot: 102 by parcel number):
 
 | area | homes permitted | share |
 |---|---|---|
-| Other zones not modeled (PDs, no zone found, ...) | 408 | 100% |
+| Other zones not modeled (PDs, no zone found, ...) | 102 | 100% |
 
 Top zone codes for these homes:
 
 | zone_code | homes permitted |
 |---|---|
-| SP No. 2-Mixed-Use Cedar Valley | 408 |
+| SP No. 2-Mixed-Use Cedar Valley | 102 |
 
 - In the zones this tool models, 5+ unit buildings added about **0 homes a year**. Our likely-to-redevelop estimate for those zones is **0 homes**, roughly **0 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
 - 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 0 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.

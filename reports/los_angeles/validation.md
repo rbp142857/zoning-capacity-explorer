@@ -18,49 +18,49 @@ Homes **permitted** per year, by building type (ADU = accessory dwelling unit, S
 
 | YEAR | 2 to 4 | 5+ | ADU | SFA | SFD | Total |
 |---|---|---|---|---|---|---|
-| 2018 | 1516 | 12977 | 4079 | 114 | 2145 | 20831 |
-| 2019 | 2686 | 18965 | 6747 | 0 | 3094 | 31492 |
-| 2020 | 2415 | 20819 | 6012 | 0 | 2700 | 31946 |
-| 2021 | 2273 | 21937 | 7589 | 0 | 2609 | 34408 |
-| 2022 | 2478 | 26206 | 10304 | 0 | 2727 | 41715 |
-| 2023 | 3229 | 13516 | 10426 | 0 | 2021 | 29192 |
-| 2024 | 2276 | 18247 | 11406 | 0 | 2065 | 33994 |
-| 2025 | 2237 | 18315 | 12334 | 0 | 2657 | 35543 |
+| 2018 | 1518 | 13761 | 4082 | 114 | 2149 | 21624 |
+| 2019 | 2161 | 18889 | 5161 | 0 | 2705 | 28916 |
+| 2020 | 1530 | 18427 | 3645 | 0 | 1967 | 25569 |
+| 2021 | 1224 | 17931 | 5204 | 0 | 1697 | 26056 |
+| 2022 | 1557 | 19055 | 7272 | 0 | 1705 | 29589 |
+| 2023 | 2492 | 9960 | 6595 | 0 | 1302 | 20349 |
+| 2024 | 1168 | 8819 | 7199 | 0 | 1234 | 18420 |
+| 2025 | 1191 | 8549 | 7624 | 0 | 1817 | 19181 |
 
-Average per year, 2018–2025: **32,390 homes**, of which 18,873 in buildings of 5+ homes, 8,612 ADUs, and 2,389 in 2–4 unit buildings.
+Average per year, 2018–2025: **23,713 homes**, of which 14,424 in buildings of 5+ homes, 5,848 ADUs, and 1,605 in 2–4 unit buildings.
 
-Where homes in **5+ unit buildings** were permitted (99% of them matched to a lot: 28,438 by address, 65,984 by nearest lot, 1,265 by not matched, 55,295 by parcel number):
+Where homes in **5+ unit buildings** were permitted (99% of them matched to a lot: 19,781 by address, 51,728 by nearest lot, 941 by not matched, 42,941 by parcel number):
 
 | area | homes permitted | share |
 |---|---|---|
-| Modeled base zones | 110,947 | 73% |
-| Chapter 1A (new zoning code) | 20,361 | 13% |
-| Specific plan (WC) | 6,587 | 4% |
-| Other zones not modeled (PDs, no zone found, ...) | 4,635 | 3% |
-| Specific plan (EC) | 2,631 | 2% |
-| Specific plan (CA) | 2,039 | 1% |
-| Parcel not matched | 1,265 | 1% |
-| Specific plan (PV) | 1,089 | 1% |
-| Specific plan (UV) | 978 | 1% |
-| Specific plan (GM) | 314 | 0% |
-| Specific plan (PKM) | 136 | 0% |
+| Modeled base zones | 84,259 | 73% |
+| Chapter 1A (new zoning code) | 15,632 | 14% |
+| Specific plan (WC) | 4,607 | 4% |
+| Other zones not modeled (PDs, no zone found, ...) | 4,175 | 4% |
+| Specific plan (EC) | 2,188 | 2% |
+| Specific plan (CA) | 1,768 | 2% |
+| Parcel not matched | 941 | 1% |
+| Specific plan (UV) | 850 | 1% |
+| Specific plan (PV) | 598 | 1% |
+| Specific plan (GM) | 305 | 0% |
+| Specific plan (PKM) | 68 | 0% |
 
 Top zone codes for these homes:
 
 | zone_code | homes permitted |
 |---|---|
-| R3-1 | 10,399 |
-| C2-1 | 10,138 |
-| R4-1 | 5,184 |
-| C2-1VL-CPIO | 5,092 |
-| C2-2D-CPIO | 4,551 |
-| C4-2 | 3,377 |
-| C2-1VL | 3,260 |
-| CW | 3,190 |
-| (WC)COLLEGE-SN | 3,031 |
-| R4-2 | 2,764 |
+| R3-1 | 7,915 |
+| C2-1 | 7,342 |
+| R4-1 | 4,125 |
+| C2-1VL-CPIO | 4,048 |
+| C2-2D-CPIO | 3,105 |
+| CW | 2,819 |
+| C4-2 | 2,603 |
+| C2-1VL | 2,542 |
+| R4-2 | 2,383 |
+| [Q]C2-2D | 1,925 |
 
-- In the zones this tool models, 5+ unit buildings added about **13,868 homes a year**. Our likely-to-redevelop estimate for those zones is **505,327 homes**, roughly **36 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
-- 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 2,389 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
+- In the zones this tool models, 5+ unit buildings added about **10,532 homes a year**. Our likely-to-redevelop estimate for those zones is **469,393 homes**, roughly **45 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
+- 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 1,605 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
 - Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. 73% of new apartment homes are in zones this tool models.
 

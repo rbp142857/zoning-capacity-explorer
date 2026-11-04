@@ -2,7 +2,7 @@
 
 import type { ParcelData } from "../data";
 import type { EngineAssumptions, Lot } from "./constraints";
-import { redevelopment } from "./redevelop";
+import { LAND, redevelopment } from "./redevelop";
 import { type Scenario, applyScenario, capacityUnderScenario } from "./scenario";
 import type { RulesFile } from "./types";
 
@@ -14,7 +14,8 @@ export interface Results {
   binding: number[]; // index into data.codes.binding, -1 = not modeled
   likely: boolean[]; // passes every redevelopment screen
   realistic: number[]; // net new homes counted in the realistic estimate (0 if not likely)
-  totals: { max: number; local: number; net: number; existing: number; realistic: number; likelyLots: number };
+  // specialLandNet: the part of `net` on public or special land (see engine/redevelop.ts).
+  totals: { max: number; local: number; net: number; existing: number; realistic: number; likelyLots: number; specialLandNet: number };
 }
 
 /** Engine inputs for each lot, built once from parcels.json. */
@@ -48,7 +49,7 @@ export function runScenario(data: ParcelData, inputs: LotInputs, rules: RulesFil
   const codeOf = new Map(data.codes.binding.map((name, i) => [name, i]));
   const out: Results = {
     max: [], local: [], net: [], binding: [], likely: [], realistic: [],
-    totals: { max: 0, local: 0, net: 0, existing: 0, realistic: 0, likelyLots: 0 },
+    totals: { max: 0, local: 0, net: 0, existing: 0, realistic: 0, likelyLots: 0, specialLandNet: 0 },
   };
   for (let pid = 0; pid < data.count; pid++) {
     const r = capacityUnderScenario(inputs.zones[pid], inputs.lots[pid], a, zoneRules, state, scenario);
@@ -65,6 +66,7 @@ export function runScenario(data: ParcelData, inputs: LotInputs, rules: RulesFil
       out.totals.max += r.max_units ?? 0;
       out.totals.local += r.local_units ?? 0;
       out.totals.net += r.net_new_units ?? 0;
+      if (!(data.columns.redev_mask[pid] & LAND)) out.totals.specialLandNet += r.net_new_units ?? 0;
       out.totals.existing += inputs.lots[pid].existing_units ?? 0;
       out.totals.realistic += redev.realistic_new_units;
       if (redev.likely) out.totals.likelyLots++;

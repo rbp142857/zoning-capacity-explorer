@@ -142,6 +142,10 @@ these screens (thresholds in `cities/pasadena/city.yaml`):
    8 homes a year in 2018–2025 (section 8). It's reported separately as
    theoretical capacity (53,639 homes on 20,134 lots in Pasadena) whichever
    rule allows it.
+7. **Not public or special land:** government, utility, quarry (mineral
+   processing), cemetery, golf course or private school, by the Assessor's use
+   label. Added November 2026, because exempt public land has no assessed value
+   and so passed screens 2 and 3 as if it were vacant. See section 67.
 
 Only the city's (or a reform scenario's) own allowance counts here. **Today:
 4,907 homes on 753 lots.** This is a **screen, not a forecast**: it shows
@@ -1223,3 +1227,18 @@ San Fernando's zones come from San Fernando City Code Chapter 106 (Municode, rea
 
 **Pasadena's Central District.** CD-MU-G, CD-MU-N, CD-MU-C and CD-RM-87 now have rule files. Density and height are set block by block in Figures CDSP-6 and CDSP-8, images with no parcel data. We use 48 homes per acre for the mixed-use districts, though most blocks allow 87, and 40 ft for height, so many lots run low. Street setbacks, floor area and parking aren't modeled, which can push some lots high. A lot now looks for a file named for its full plan code before its base zone, since MU-G means different things in different plans. East Colorado's MU districts and the other Pasadena plans still aren't modeled.
 
+## 67. Corrections and checks for public use (November 2026)
+
+The tool's main uses are now citywide estimates, reform comparisons and research ([docs/USE_CASES.md](docs/USE_CASES.md)). Three problems turned up while preparing for that. Numbers in older sections of this file may predate these fixes; the generated reports are current.
+
+**Public and special land.** The likely-to-redevelop estimate counted vacant-looking public land. That was 52% of Compton's estimate (7,008 of 13,367 homes), 81% of San Fernando's (1,413 of 1,740) and 7% of LA's (35,934 of 505,327). Screen 7 in section 6 removes it. These labels are a judgment call: public land does sometimes become housing, and some private school sites may too, so these homes stay in the theoretical totals and the site and reports show them separately. Across the 55 cities that's 51,530 of 4,453,812 theoretical new homes, mostly in LA, but 89% of Irwindale's (9,171 of 10,325).
+
+**Repeated permits.** The state's Annual Progress Reports can list one building permit more than once, and we were adding them all. The same permit reappears in a later year with the same tracking number and issue date, sometimes with two permits written together in either order. Permits are now counted once (`drop_repeat_permits` in `validate.py`). Homes in 5+ unit buildings, 2018 to 2025: Los Angeles 150,982 before, 115,391 after; Glendale 5,541 before, 1,780 after. Pasadena, Santa Monica and Long Beach don't change, since their repeats don't appear this way. It only affected validation and planning figures, not any lot's capacity. Rows with no usable tracking number or date can't be matched and still count, and about 27 LA pairs with matching parcel, address and homes but different permit numbers (about 500 homes, under 0.5%) were left as they are, since they may be separate permits. `zce waves` adds up the same data directly in the state's database, so `city_ranking` and the tables at the top of `docs/WAVE_PLAN.md` still run high for cities that repeat permits.
+
+**Accuracy test** (`python -m zce accuracy`, [reports/la_county/accuracy.md](reports/la_county/accuracy.md)). Every building of 2+ homes in those reports is matched by parcel number to its lot and compared with our number. The first results across 52 cities: of 4,139 buildings of 2 to 4 homes, 97% fit our number and 1% are over it with no explanation found. Of 1,023 buildings of 5+ homes, 29% fit; 12% are over with a density bonus or streamlining reported, 37% are over but would fit an 80% density bonus (assumed, not confirmed), 5% are on lots flagged as having conditions or plan rules we don't model, and 17% are over with no explanation found. So most large projects exceed base zoning, which is why this tool's base numbers shouldn't be read as what large projects actually achieve in LA.
+
+What it does not show: **it can only catch numbers that are too low.** A building smaller than our number says nothing, because most don't use all their capacity. So passing doesn't prove a rule is right, and the test gives no measure of overestimates. Rules and zoning are today's while permits go back to 2018, and 1,644 projects with parcel numbers we couldn't find (some possibly subdivided or merged since) plus 155 on lots we don't model weren't tested. The projects over our number are listed in `accuracy_cases.csv` for checking, and those haven't been reviewed one by one.
+
+**ADUs on multifamily lots aren't modeled.** Many LA duplexes were permitted as 4 homes, and this is the likely reason, though it's unconfirmed. It's a known undercount.
+
+**Coverage levels** (`python -m zce release`, [reports/la_county/coverage.md](reports/la_county/coverage.md)). Fuller: 95%+ of lots modeled, 80%+ with approval confirmed, and a zoning map from 2021 or newer or the city's own. Usable: 85%+ of lots modeled. Partial: the rest. These are simple thresholds, not measures of accuracy, and don't reflect bonus programs or local conditions: LA is Fuller, though `Q`, `T` and `D` conditions on 58,406 lots and TOC aren't modeled.

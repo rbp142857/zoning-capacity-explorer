@@ -70,7 +70,7 @@ describe("combining cities", () => {
   it("adds results in order", () => {
     const r = (v: number): Results => ({
       max: [v], local: [v], net: [v], binding: [0], likely: [false], realistic: [0],
-      totals: { max: v, local: v, net: v, existing: v, realistic: 0, likelyLots: 0 },
+      totals: { max: v, local: v, net: v, existing: v, realistic: 0, likelyLots: 0, specialLandNet: 0 },
     });
     const m = mergeResults([r(2), r(5)]);
     expect(m.max).toEqual([2, 5]);

@@ -112,7 +112,7 @@
    "dist_major_transit_ft": 23811.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -123,7 +123,7 @@
    "dist_major_transit_ft": 21408.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RM",
@@ -134,7 +134,7 @@
    "dist_major_transit_ft": 27922.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 138.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -145,7 +145,7 @@
    "dist_major_transit_ft": 27803.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -156,7 +156,7 @@
    "dist_major_transit_ft": 29988.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -167,7 +167,7 @@
    "dist_major_transit_ft": 35104.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -178,7 +178,7 @@
    "dist_major_transit_ft": 19092.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "OS-DR",
@@ -189,7 +189,7 @@
    "dist_major_transit_ft": 28260.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -200,7 +200,7 @@
    "dist_major_transit_ft": 29442.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -211,7 +211,7 @@
    "dist_major_transit_ft": 19164.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -222,7 +222,7 @@
    "dist_major_transit_ft": 16312.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HM",
@@ -233,7 +233,7 @@
    "dist_major_transit_ft": 23130.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -244,7 +244,7 @@
    "dist_major_transit_ft": 16039.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -255,7 +255,7 @@
    "dist_major_transit_ft": 28037.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 240.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -266,7 +266,7 @@
    "dist_major_transit_ft": 27645.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -277,7 +277,7 @@
    "dist_major_transit_ft": 16319.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -288,7 +288,7 @@
    "dist_major_transit_ft": 28523.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -299,7 +299,7 @@
    "dist_major_transit_ft": 16919.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -310,7 +310,7 @@
    "dist_major_transit_ft": 26005.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -321,7 +321,7 @@
    "dist_major_transit_ft": 27226.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -332,7 +332,7 @@
    "dist_major_transit_ft": 16946.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -343,7 +343,7 @@
    "dist_major_transit_ft": 23465.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -354,7 +354,7 @@
    "dist_major_transit_ft": 26199.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RC",
@@ -365,7 +365,7 @@
    "dist_major_transit_ft": 24431.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RM",
@@ -376,7 +376,7 @@
    "dist_major_transit_ft": 28127.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 116.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -387,7 +387,7 @@
    "dist_major_transit_ft": 16666.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -398,7 +398,7 @@
    "dist_major_transit_ft": 24693.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -409,7 +409,7 @@
    "dist_major_transit_ft": 16195.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "OS",
@@ -420,7 +420,7 @@
    "dist_major_transit_ft": 21438.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -431,7 +431,7 @@
    "dist_major_transit_ft": 23557.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -442,7 +442,7 @@
    "dist_major_transit_ft": 26683.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -453,7 +453,7 @@
    "dist_major_transit_ft": 18192.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -464,7 +464,7 @@
    "dist_major_transit_ft": 33887.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "CR",
@@ -475,7 +475,7 @@
    "dist_major_transit_ft": 27952.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -486,7 +486,7 @@
    "dist_major_transit_ft": 19096.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -497,7 +497,7 @@
    "dist_major_transit_ft": 18044.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -508,7 +508,7 @@
    "dist_major_transit_ft": 18752.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -519,7 +519,7 @@
    "dist_major_transit_ft": 28034.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 281.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -530,7 +530,7 @@
    "dist_major_transit_ft": 25063.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -541,7 +541,7 @@
    "dist_major_transit_ft": 28891.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -552,7 +552,7 @@
    "dist_major_transit_ft": 19215.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -563,7 +563,7 @@
    "dist_major_transit_ft": 27002.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RM",
@@ -574,7 +574,7 @@
    "dist_major_transit_ft": 27914.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 166.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "CO",
@@ -585,7 +585,7 @@
    "dist_major_transit_ft": 15961.0,
    "existing_units": 17.0,
    "dist_single_family_ft": 64.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RM",
@@ -596,7 +596,7 @@
    "dist_major_transit_ft": 32711.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 643.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "RS",
@@ -607,7 +607,7 @@
    "dist_major_transit_ft": 16105.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "OS-DR",
@@ -618,7 +618,7 @@
    "dist_major_transit_ft": 28289.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RC",
@@ -640,7 +640,7 @@
    "dist_major_transit_ft": 24416.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -651,7 +651,7 @@
    "dist_major_transit_ft": 20719.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RM",
@@ -662,7 +662,7 @@
    "dist_major_transit_ft": 16395.0,
    "existing_units": null,
    "dist_single_family_ft": 17.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RC",
@@ -673,7 +673,7 @@
    "dist_major_transit_ft": 24787.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -684,7 +684,7 @@
    "dist_major_transit_ft": 23808.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -695,7 +695,7 @@
    "dist_major_transit_ft": 16293.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -706,7 +706,7 @@
    "dist_major_transit_ft": 35559.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -717,7 +717,7 @@
    "dist_major_transit_ft": 18818.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -728,7 +728,7 @@
    "dist_major_transit_ft": 27179.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -739,7 +739,7 @@
    "dist_major_transit_ft": 27987.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 195.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -750,7 +750,7 @@
    "dist_major_transit_ft": 17708.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -761,7 +761,7 @@
    "dist_major_transit_ft": 24149.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -772,7 +772,7 @@
    "dist_major_transit_ft": 27243.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -783,7 +783,7 @@
    "dist_major_transit_ft": 17607.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -794,7 +794,7 @@
    "dist_major_transit_ft": 22018.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -805,7 +805,7 @@
    "dist_major_transit_ft": 17473.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -816,7 +816,7 @@
    "dist_major_transit_ft": 27667.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -827,7 +827,7 @@
    "dist_major_transit_ft": 20203.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -838,7 +838,7 @@
    "dist_major_transit_ft": 18361.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -849,7 +849,7 @@
    "dist_major_transit_ft": 16422.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -860,7 +860,7 @@
    "dist_major_transit_ft": 17387.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -871,7 +871,7 @@
    "dist_major_transit_ft": 23920.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -882,7 +882,7 @@
    "dist_major_transit_ft": 36256.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "OS-DR",
@@ -893,7 +893,7 @@
    "dist_major_transit_ft": 23975.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -904,7 +904,7 @@
    "dist_major_transit_ft": 17899.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "OS-DR",
@@ -915,7 +915,7 @@
    "dist_major_transit_ft": 25138.0,
    "existing_units": null,
    "dist_single_family_ft": 85.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -926,7 +926,7 @@
    "dist_major_transit_ft": 27068.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -937,7 +937,7 @@
    "dist_major_transit_ft": 26887.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RC",
@@ -948,7 +948,7 @@
    "dist_major_transit_ft": 23985.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -959,7 +959,7 @@
    "dist_major_transit_ft": 19020.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -970,7 +970,7 @@
    "dist_major_transit_ft": 36584.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -981,7 +981,7 @@
    "dist_major_transit_ft": 21894.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -992,7 +992,7 @@
    "dist_major_transit_ft": 24982.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RC",
@@ -1003,7 +1003,7 @@
    "dist_major_transit_ft": 25093.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1014,7 +1014,7 @@
    "dist_major_transit_ft": 18679.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1025,7 +1025,7 @@
    "dist_major_transit_ft": 18420.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -1036,7 +1036,7 @@
    "dist_major_transit_ft": 28041.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 244.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RS",
@@ -1047,7 +1047,7 @@
    "dist_major_transit_ft": 17926.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1058,7 +1058,7 @@
    "dist_major_transit_ft": 26380.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1069,7 +1069,7 @@
    "dist_major_transit_ft": 30941.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1080,7 +1080,7 @@
    "dist_major_transit_ft": 35580.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -1091,7 +1091,7 @@
    "dist_major_transit_ft": 17875.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1102,7 +1102,7 @@
    "dist_major_transit_ft": 17295.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RC",
@@ -1113,7 +1113,7 @@
    "dist_major_transit_ft": 24975.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1124,7 +1124,7 @@
    "dist_major_transit_ft": 20207.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1135,7 +1135,7 @@
    "dist_major_transit_ft": 23882.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1146,7 +1146,7 @@
    "dist_major_transit_ft": 26979.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1157,7 +1157,7 @@
    "dist_major_transit_ft": 17807.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -1168,7 +1168,7 @@
    "dist_major_transit_ft": 27882.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 67.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RS",
@@ -1179,7 +1179,7 @@
    "dist_major_transit_ft": 24331.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -1190,7 +1190,7 @@
    "dist_major_transit_ft": 26481.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HM",
@@ -1212,7 +1212,7 @@
    "dist_major_transit_ft": 27887.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 134.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RS",
@@ -1223,7 +1223,7 @@
    "dist_major_transit_ft": 15163.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1234,7 +1234,7 @@
    "dist_major_transit_ft": 35213.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1245,7 +1245,7 @@
    "dist_major_transit_ft": 17382.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1256,7 +1256,7 @@
    "dist_major_transit_ft": 15473.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1267,7 +1267,7 @@
    "dist_major_transit_ft": 27549.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1278,7 +1278,7 @@
    "dist_major_transit_ft": 28923.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RC",
@@ -1289,7 +1289,7 @@
    "dist_major_transit_ft": 24804.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1300,7 +1300,7 @@
    "dist_major_transit_ft": 22740.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1311,7 +1311,7 @@
    "dist_major_transit_ft": 19947.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1322,7 +1322,7 @@
    "dist_major_transit_ft": 28456.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1333,7 +1333,7 @@
    "dist_major_transit_ft": 19871.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1344,7 +1344,7 @@
    "dist_major_transit_ft": 18392.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1355,7 +1355,7 @@
    "dist_major_transit_ft": 19975.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "CR",
@@ -1366,7 +1366,7 @@
    "dist_major_transit_ft": 33830.0,
    "existing_units": null,
    "dist_single_family_ft": 923.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -1377,7 +1377,7 @@
    "dist_major_transit_ft": 19613.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -1388,7 +1388,7 @@
    "dist_major_transit_ft": 27612.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1399,7 +1399,7 @@
    "dist_major_transit_ft": 18608.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1410,7 +1410,7 @@
    "dist_major_transit_ft": 27186.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1421,7 +1421,7 @@
    "dist_major_transit_ft": 25859.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -1432,7 +1432,7 @@
    "dist_major_transit_ft": 28491.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -1443,7 +1443,7 @@
    "dist_major_transit_ft": 24297.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -1454,7 +1454,7 @@
    "dist_major_transit_ft": 32968.0,
    "existing_units": 240.0,
    "dist_single_family_ft": 101.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -1465,7 +1465,7 @@
    "dist_major_transit_ft": 35848.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "HM",
@@ -1476,7 +1476,7 @@
    "dist_major_transit_ft": 24665.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1487,7 +1487,7 @@
    "dist_major_transit_ft": 27987.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1498,7 +1498,7 @@
    "dist_major_transit_ft": 34866.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1509,7 +1509,7 @@
    "dist_major_transit_ft": 27031.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1520,7 +1520,7 @@
    "dist_major_transit_ft": 29947.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1531,7 +1531,7 @@
    "dist_major_transit_ft": 19722.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HM",
@@ -1542,7 +1542,7 @@
    "dist_major_transit_ft": 34010.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1553,7 +1553,7 @@
    "dist_major_transit_ft": 21014.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1564,7 +1564,7 @@
    "dist_major_transit_ft": 23975.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1575,7 +1575,7 @@
    "dist_major_transit_ft": 22498.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1586,7 +1586,7 @@
    "dist_major_transit_ft": 34659.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1597,7 +1597,7 @@
    "dist_major_transit_ft": 18361.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1608,7 +1608,7 @@
    "dist_major_transit_ft": 17402.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1619,7 +1619,7 @@
    "dist_major_transit_ft": 25113.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -1630,7 +1630,7 @@
    "dist_major_transit_ft": 18817.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RC",
@@ -1641,7 +1641,7 @@
    "dist_major_transit_ft": 24216.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1652,7 +1652,7 @@
    "dist_major_transit_ft": 36698.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1663,7 +1663,7 @@
    "dist_major_transit_ft": 16187.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1674,7 +1674,7 @@
    "dist_major_transit_ft": 18051.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "OS-DR",
@@ -1685,7 +1685,7 @@
    "dist_major_transit_ft": 23993.0,
    "existing_units": null,
    "dist_single_family_ft": 276.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RC",
@@ -1696,7 +1696,7 @@
    "dist_major_transit_ft": 24364.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1707,7 +1707,7 @@
    "dist_major_transit_ft": 16860.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1718,7 +1718,7 @@
    "dist_major_transit_ft": 35623.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1729,7 +1729,7 @@
    "dist_major_transit_ft": 26808.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -1740,7 +1740,7 @@
    "dist_major_transit_ft": 18714.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RC",
@@ -1751,7 +1751,7 @@
    "dist_major_transit_ft": 24170.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "PF",
@@ -1773,7 +1773,7 @@
    "dist_major_transit_ft": 28068.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 157.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -1784,7 +1784,7 @@
    "dist_major_transit_ft": 24384.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -1795,7 +1795,7 @@
    "dist_major_transit_ft": 17608.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1806,7 +1806,7 @@
    "dist_major_transit_ft": 27224.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1817,7 +1817,7 @@
    "dist_major_transit_ft": 25736.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1828,7 +1828,7 @@
    "dist_major_transit_ft": 18914.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1839,7 +1839,7 @@
    "dist_major_transit_ft": 35225.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1850,7 +1850,7 @@
    "dist_major_transit_ft": 18046.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -1861,7 +1861,7 @@
    "dist_major_transit_ft": 27540.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1872,7 +1872,7 @@
    "dist_major_transit_ft": 35143.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1883,7 +1883,7 @@
    "dist_major_transit_ft": 33668.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1894,7 +1894,7 @@
    "dist_major_transit_ft": 22115.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -1905,7 +1905,7 @@
    "dist_major_transit_ft": 30856.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1916,7 +1916,7 @@
    "dist_major_transit_ft": 16911.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RC",
@@ -1927,7 +1927,7 @@
    "dist_major_transit_ft": 24727.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -1938,7 +1938,7 @@
    "dist_major_transit_ft": 18840.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -1949,7 +1949,7 @@
    "dist_major_transit_ft": 25445.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RM",
@@ -1960,7 +1960,7 @@
    "dist_major_transit_ft": 33131.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 1053.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "RS",
@@ -1971,7 +1971,7 @@
    "dist_major_transit_ft": 14944.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "PF",
@@ -1993,7 +1993,7 @@
    "dist_major_transit_ft": 15081.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2004,7 +2004,7 @@
    "dist_major_transit_ft": 19183.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RM",
@@ -2015,7 +2015,7 @@
    "dist_major_transit_ft": 32675.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 588.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "RS",
@@ -2026,7 +2026,7 @@
    "dist_major_transit_ft": 19238.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -2037,7 +2037,7 @@
    "dist_major_transit_ft": 18726.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2048,7 +2048,7 @@
    "dist_major_transit_ft": 27716.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2059,7 +2059,7 @@
    "dist_major_transit_ft": 27667.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2070,7 +2070,7 @@
    "dist_major_transit_ft": 35562.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2081,7 +2081,7 @@
    "dist_major_transit_ft": 35151.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "CMU",
@@ -2092,7 +2092,7 @@
    "dist_major_transit_ft": 16655.0,
    "existing_units": 12.0,
    "dist_single_family_ft": 93.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RM",
@@ -2103,7 +2103,7 @@
    "dist_major_transit_ft": 26523.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "RS",
@@ -2114,7 +2114,7 @@
    "dist_major_transit_ft": 18717.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2125,7 +2125,7 @@
    "dist_major_transit_ft": 16226.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2136,7 +2136,7 @@
    "dist_major_transit_ft": 24014.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RC",
@@ -2147,7 +2147,7 @@
    "dist_major_transit_ft": 23892.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2158,7 +2158,7 @@
    "dist_major_transit_ft": 27400.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RM",
@@ -2169,7 +2169,7 @@
    "dist_major_transit_ft": 27978.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 208.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -2180,7 +2180,7 @@
    "dist_major_transit_ft": 15853.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2191,7 +2191,7 @@
    "dist_major_transit_ft": 20747.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "OS-DR",
@@ -2202,7 +2202,7 @@
    "dist_major_transit_ft": 43233.0,
    "existing_units": null,
    "dist_single_family_ft": 758.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -2213,7 +2213,7 @@
    "dist_major_transit_ft": 19350.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2224,7 +2224,7 @@
    "dist_major_transit_ft": 20807.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2235,7 +2235,7 @@
    "dist_major_transit_ft": 36043.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2246,7 +2246,7 @@
    "dist_major_transit_ft": 20272.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2257,7 +2257,7 @@
    "dist_major_transit_ft": 17701.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2268,7 +2268,7 @@
    "dist_major_transit_ft": 23349.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RM",
@@ -2279,7 +2279,7 @@
    "dist_major_transit_ft": 27882.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 66.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -2290,7 +2290,7 @@
    "dist_major_transit_ft": 18023.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2301,7 +2301,7 @@
    "dist_major_transit_ft": 27598.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2312,7 +2312,7 @@
    "dist_major_transit_ft": 18476.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RC",
@@ -2323,7 +2323,7 @@
    "dist_major_transit_ft": 23054.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2334,7 +2334,7 @@
    "dist_major_transit_ft": 36323.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RM",
@@ -2345,7 +2345,7 @@
    "dist_major_transit_ft": 16228.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "RS",
@@ -2356,7 +2356,7 @@
    "dist_major_transit_ft": 26175.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2367,7 +2367,7 @@
    "dist_major_transit_ft": 17382.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2378,7 +2378,7 @@
    "dist_major_transit_ft": 18996.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2389,7 +2389,7 @@
    "dist_major_transit_ft": 19598.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2400,7 +2400,7 @@
    "dist_major_transit_ft": 25407.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2411,7 +2411,7 @@
    "dist_major_transit_ft": 29770.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "PF",
@@ -2422,7 +2422,7 @@
    "dist_major_transit_ft": 20332.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -2433,7 +2433,7 @@
    "dist_major_transit_ft": 24019.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2444,7 +2444,7 @@
    "dist_major_transit_ft": 28088.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2455,7 +2455,7 @@
    "dist_major_transit_ft": 18602.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2466,7 +2466,7 @@
    "dist_major_transit_ft": 17892.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -2477,7 +2477,7 @@
    "dist_major_transit_ft": 27964.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 142.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RS",
@@ -2488,7 +2488,7 @@
    "dist_major_transit_ft": 24131.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2499,7 +2499,7 @@
    "dist_major_transit_ft": 25841.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RM",
@@ -2510,7 +2510,7 @@
    "dist_major_transit_ft": 16376.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 41.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -2521,7 +2521,7 @@
    "dist_major_transit_ft": 16772.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "CR",
@@ -2532,7 +2532,7 @@
    "dist_major_transit_ft": 19776.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 673.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "RM",
@@ -2543,7 +2543,7 @@
    "dist_major_transit_ft": 27872.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 65.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RC",
@@ -2554,7 +2554,7 @@
    "dist_major_transit_ft": 23797.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2565,7 +2565,7 @@
    "dist_major_transit_ft": 35510.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RC",
@@ -2576,7 +2576,7 @@
    "dist_major_transit_ft": 22896.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RC",
@@ -2587,7 +2587,7 @@
    "dist_major_transit_ft": 23335.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2598,7 +2598,7 @@
    "dist_major_transit_ft": 17330.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2609,7 +2609,7 @@
    "dist_major_transit_ft": 17455.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -2620,7 +2620,7 @@
    "dist_major_transit_ft": 27059.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2631,7 +2631,7 @@
    "dist_major_transit_ft": 25288.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -2642,7 +2642,7 @@
    "dist_major_transit_ft": 28042.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 223.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -2653,7 +2653,7 @@
    "dist_major_transit_ft": 29289.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2664,7 +2664,7 @@
    "dist_major_transit_ft": 27006.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RM",
@@ -2675,7 +2675,7 @@
    "dist_major_transit_ft": 28041.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 158.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RM",
@@ -2686,7 +2686,7 @@
    "dist_major_transit_ft": 28029.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 201.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RM",
@@ -2697,7 +2697,7 @@
    "dist_major_transit_ft": 28041.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 265.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "PF",
@@ -2719,7 +2719,7 @@
    "dist_major_transit_ft": 26042.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2730,7 +2730,7 @@
    "dist_major_transit_ft": 20140.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2741,7 +2741,7 @@
    "dist_major_transit_ft": 20336.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2752,7 +2752,7 @@
    "dist_major_transit_ft": 18880.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "OS-DR",
@@ -2763,7 +2763,7 @@
    "dist_major_transit_ft": 23953.0,
    "existing_units": null,
    "dist_single_family_ft": 116.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "OS",
@@ -2774,7 +2774,7 @@
    "dist_major_transit_ft": 28573.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2785,7 +2785,7 @@
    "dist_major_transit_ft": 18804.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -2796,7 +2796,7 @@
    "dist_major_transit_ft": 33116.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 1029.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "RS",
@@ -2807,7 +2807,7 @@
    "dist_major_transit_ft": 29884.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RC",
@@ -2818,7 +2818,7 @@
    "dist_major_transit_ft": 24427.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2829,7 +2829,7 @@
    "dist_major_transit_ft": 28730.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2840,7 +2840,7 @@
    "dist_major_transit_ft": 19525.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2851,7 +2851,7 @@
    "dist_major_transit_ft": 19837.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -2862,7 +2862,7 @@
    "dist_major_transit_ft": 16450.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 36.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -2873,7 +2873,7 @@
    "dist_major_transit_ft": 17406.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2884,7 +2884,7 @@
    "dist_major_transit_ft": 35842.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2895,7 +2895,7 @@
    "dist_major_transit_ft": 16245.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -2906,7 +2906,7 @@
    "dist_major_transit_ft": 24539.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2917,7 +2917,7 @@
    "dist_major_transit_ft": 26716.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2928,7 +2928,7 @@
    "dist_major_transit_ft": 27243.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2939,7 +2939,7 @@
    "dist_major_transit_ft": 28812.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2950,7 +2950,7 @@
    "dist_major_transit_ft": 27612.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -2961,7 +2961,7 @@
    "dist_major_transit_ft": 26969.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2972,7 +2972,7 @@
    "dist_major_transit_ft": 29759.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -2983,7 +2983,7 @@
    "dist_major_transit_ft": 23840.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -2994,7 +2994,7 @@
    "dist_major_transit_ft": 23759.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3005,7 +3005,7 @@
    "dist_major_transit_ft": 26164.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3016,7 +3016,7 @@
    "dist_major_transit_ft": 17214.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RMH",
@@ -3027,7 +3027,7 @@
    "dist_major_transit_ft": 22552.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -3038,7 +3038,7 @@
    "dist_major_transit_ft": 16385.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3049,7 +3049,7 @@
    "dist_major_transit_ft": 33994.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "OS-DR",
@@ -3060,7 +3060,7 @@
    "dist_major_transit_ft": 23885.0,
    "existing_units": null,
    "dist_single_family_ft": 159.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "PF",
@@ -3082,7 +3082,7 @@
    "dist_major_transit_ft": 22478.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "OS-DR",
@@ -3093,7 +3093,7 @@
    "dist_major_transit_ft": 24109.0,
    "existing_units": null,
    "dist_single_family_ft": 181.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -3104,7 +3104,7 @@
    "dist_major_transit_ft": 26742.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3115,7 +3115,7 @@
    "dist_major_transit_ft": 29784.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3126,7 +3126,7 @@
    "dist_major_transit_ft": 16726.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RC",
@@ -3137,7 +3137,7 @@
    "dist_major_transit_ft": 24053.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "OS",
@@ -3148,7 +3148,7 @@
    "dist_major_transit_ft": 28284.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3159,7 +3159,7 @@
    "dist_major_transit_ft": 17483.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3170,7 +3170,7 @@
    "dist_major_transit_ft": 27549.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3181,7 +3181,7 @@
    "dist_major_transit_ft": 26766.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3192,7 +3192,7 @@
    "dist_major_transit_ft": 19501.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3203,7 +3203,7 @@
    "dist_major_transit_ft": 29302.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3214,7 +3214,7 @@
    "dist_major_transit_ft": 28770.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3225,7 +3225,7 @@
    "dist_major_transit_ft": 35133.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -3236,7 +3236,7 @@
    "dist_major_transit_ft": 33524.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -3247,7 +3247,7 @@
    "dist_major_transit_ft": 25933.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3258,7 +3258,7 @@
    "dist_major_transit_ft": 18412.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3269,7 +3269,7 @@
    "dist_major_transit_ft": 20614.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RC",
@@ -3280,7 +3280,7 @@
    "dist_major_transit_ft": 24737.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3291,7 +3291,7 @@
    "dist_major_transit_ft": 19793.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "OS-DR",
@@ -3313,7 +3313,7 @@
    "dist_major_transit_ft": 25046.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "CT",
@@ -3324,7 +3324,7 @@
    "dist_major_transit_ft": 16095.0,
    "existing_units": 16.0,
    "dist_single_family_ft": 263.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "RS",
@@ -3335,7 +3335,7 @@
    "dist_major_transit_ft": 29207.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3346,7 +3346,7 @@
    "dist_major_transit_ft": 26567.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3357,7 +3357,7 @@
    "dist_major_transit_ft": 27410.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RC",
@@ -3368,7 +3368,7 @@
    "dist_major_transit_ft": 23578.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3379,7 +3379,7 @@
    "dist_major_transit_ft": 17906.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3390,7 +3390,7 @@
    "dist_major_transit_ft": 17438.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3401,7 +3401,7 @@
    "dist_major_transit_ft": 16899.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3412,7 +3412,7 @@
    "dist_major_transit_ft": 21113.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3423,7 +3423,7 @@
    "dist_major_transit_ft": 28820.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3434,7 +3434,7 @@
    "dist_major_transit_ft": 20486.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RM",
@@ -3445,7 +3445,7 @@
    "dist_major_transit_ft": 32468.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 404.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "OS-DR",
@@ -3456,7 +3456,7 @@
    "dist_major_transit_ft": 36084.0,
    "existing_units": null,
    "dist_single_family_ft": 31.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -3467,7 +3467,7 @@
    "dist_major_transit_ft": 19350.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "REC",
@@ -3478,7 +3478,7 @@
    "dist_major_transit_ft": 37023.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3489,7 +3489,7 @@
    "dist_major_transit_ft": 23751.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3500,7 +3500,7 @@
    "dist_major_transit_ft": 16876.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RM",
@@ -3511,7 +3511,7 @@
    "dist_major_transit_ft": 28073.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 157.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RS",
@@ -3522,7 +3522,7 @@
    "dist_major_transit_ft": 29562.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3533,7 +3533,7 @@
    "dist_major_transit_ft": 27656.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3544,7 +3544,7 @@
    "dist_major_transit_ft": 18389.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3555,7 +3555,7 @@
    "dist_major_transit_ft": 18983.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3566,7 +3566,7 @@
    "dist_major_transit_ft": 25776.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3577,7 +3577,7 @@
    "dist_major_transit_ft": 22567.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3588,7 +3588,7 @@
    "dist_major_transit_ft": 20645.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "OS-DR",
@@ -3599,7 +3599,7 @@
    "dist_major_transit_ft": 19539.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -3610,7 +3610,7 @@
    "dist_major_transit_ft": 18621.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -3621,7 +3621,7 @@
    "dist_major_transit_ft": 27355.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3632,7 +3632,7 @@
    "dist_major_transit_ft": 25652.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RM",
@@ -3643,7 +3643,7 @@
    "dist_major_transit_ft": 27893.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 139.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RS",
@@ -3654,7 +3654,7 @@
    "dist_major_transit_ft": 24193.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3665,7 +3665,7 @@
    "dist_major_transit_ft": 28025.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3676,7 +3676,7 @@
    "dist_major_transit_ft": 24794.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3687,7 +3687,7 @@
    "dist_major_transit_ft": 18806.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -3698,7 +3698,7 @@
    "dist_major_transit_ft": 19614.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3709,7 +3709,7 @@
    "dist_major_transit_ft": 19219.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RC",
@@ -3720,7 +3720,7 @@
    "dist_major_transit_ft": 22583.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3731,7 +3731,7 @@
    "dist_major_transit_ft": 28406.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3742,7 +3742,7 @@
    "dist_major_transit_ft": 20161.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3753,7 +3753,7 @@
    "dist_major_transit_ft": 17270.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "HM",
@@ -3764,7 +3764,7 @@
    "dist_major_transit_ft": 19510.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "CMU",
@@ -3775,7 +3775,7 @@
    "dist_major_transit_ft": 18918.0,
    "existing_units": null,
    "dist_single_family_ft": 652.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -3786,7 +3786,7 @@
    "dist_major_transit_ft": 24103.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3797,7 +3797,7 @@
    "dist_major_transit_ft": 18837.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3808,7 +3808,7 @@
    "dist_major_transit_ft": 22951.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3819,7 +3819,7 @@
    "dist_major_transit_ft": 18278.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3830,7 +3830,7 @@
    "dist_major_transit_ft": 16551.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "OS",
@@ -3841,7 +3841,7 @@
    "dist_major_transit_ft": 16069.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3852,7 +3852,7 @@
    "dist_major_transit_ft": 27416.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -3863,7 +3863,7 @@
    "dist_major_transit_ft": 17556.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3874,7 +3874,7 @@
    "dist_major_transit_ft": 17999.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3885,7 +3885,7 @@
    "dist_major_transit_ft": 17106.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3896,7 +3896,7 @@
    "dist_major_transit_ft": 27264.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RC",
@@ -3907,7 +3907,7 @@
    "dist_major_transit_ft": 23935.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RC",
@@ -3918,7 +3918,7 @@
    "dist_major_transit_ft": 24410.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3929,7 +3929,7 @@
    "dist_major_transit_ft": 27850.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -3940,7 +3940,7 @@
    "dist_major_transit_ft": 17436.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -3951,7 +3951,7 @@
    "dist_major_transit_ft": 16737.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -3962,7 +3962,7 @@
    "dist_major_transit_ft": 17692.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -3973,7 +3973,7 @@
    "dist_major_transit_ft": 19024.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "CB",
@@ -3984,7 +3984,7 @@
    "dist_major_transit_ft": 34192.0,
    "existing_units": null,
    "dist_single_family_ft": 325.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RS",
@@ -3995,7 +3995,7 @@
    "dist_major_transit_ft": 27556.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4006,7 +4006,7 @@
    "dist_major_transit_ft": 35349.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4017,7 +4017,7 @@
    "dist_major_transit_ft": 17325.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RM",
@@ -4028,7 +4028,7 @@
    "dist_major_transit_ft": 24358.0,
    "existing_units": 26.0,
    "dist_single_family_ft": 119.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -4039,7 +4039,7 @@
    "dist_major_transit_ft": 34445.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4050,7 +4050,7 @@
    "dist_major_transit_ft": 15897.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -4061,7 +4061,7 @@
    "dist_major_transit_ft": 18017.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -4072,7 +4072,7 @@
    "dist_major_transit_ft": 28044.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 157.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RS",
@@ -4083,7 +4083,7 @@
    "dist_major_transit_ft": 14753.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4094,7 +4094,7 @@
    "dist_major_transit_ft": 27090.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RC",
@@ -4105,7 +4105,7 @@
    "dist_major_transit_ft": 24606.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4116,7 +4116,7 @@
    "dist_major_transit_ft": 20573.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4127,7 +4127,7 @@
    "dist_major_transit_ft": 26980.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4138,7 +4138,7 @@
    "dist_major_transit_ft": 23777.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4149,7 +4149,7 @@
    "dist_major_transit_ft": 15775.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -4160,7 +4160,7 @@
    "dist_major_transit_ft": 24604.0,
    "existing_units": 24.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "RS",
@@ -4171,7 +4171,7 @@
    "dist_major_transit_ft": 20346.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "CMU",
@@ -4182,7 +4182,7 @@
    "dist_major_transit_ft": 33361.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 397.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "RS",
@@ -4193,7 +4193,7 @@
    "dist_major_transit_ft": 17611.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -4204,7 +4204,7 @@
    "dist_major_transit_ft": 34026.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -4215,7 +4215,7 @@
    "dist_major_transit_ft": 23640.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4226,7 +4226,7 @@
    "dist_major_transit_ft": 30321.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -4237,7 +4237,7 @@
    "dist_major_transit_ft": 28250.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4248,7 +4248,7 @@
    "dist_major_transit_ft": 17950.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "RS",
@@ -4259,7 +4259,7 @@
    "dist_major_transit_ft": 25691.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4270,7 +4270,7 @@
    "dist_major_transit_ft": 34791.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4281,7 +4281,7 @@
    "dist_major_transit_ft": 20388.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -4292,7 +4292,7 @@
    "dist_major_transit_ft": 27637.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RM",
@@ -4303,7 +4303,7 @@
    "dist_major_transit_ft": 15968.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 27
+   "redev_mask": 59
   },
   {
    "zone": "RS",
@@ -4314,7 +4314,7 @@
    "dist_major_transit_ft": 17163.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "RS",
@@ -4325,7 +4325,7 @@
    "dist_major_transit_ft": 26129.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4336,7 +4336,7 @@
    "dist_major_transit_ft": 25837.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4347,7 +4347,7 @@
    "dist_major_transit_ft": 18502.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4358,7 +4358,7 @@
    "dist_major_transit_ft": 28089.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -4369,7 +4369,7 @@
    "dist_major_transit_ft": 30740.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -4380,7 +4380,7 @@
    "dist_major_transit_ft": 18735.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4391,7 +4391,7 @@
    "dist_major_transit_ft": 29998.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -4402,7 +4402,7 @@
    "dist_major_transit_ft": 27939.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RM",
@@ -4413,7 +4413,7 @@
    "dist_major_transit_ft": 28037.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 287.0,
-   "redev_mask": 24
+   "redev_mask": 56
   },
   {
    "zone": "RS",
@@ -4424,7 +4424,7 @@
    "dist_major_transit_ft": 24007.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4435,7 +4435,7 @@
    "dist_major_transit_ft": 21527.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4446,7 +4446,7 @@
    "dist_major_transit_ft": 15543.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4457,7 +4457,7 @@
    "dist_major_transit_ft": 27283.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -4468,7 +4468,7 @@
    "dist_major_transit_ft": 28799.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RS",
@@ -4479,7 +4479,7 @@
    "dist_major_transit_ft": 20467.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -4490,7 +4490,7 @@
    "dist_major_transit_ft": 20167.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "RS",
@@ -4501,7 +4501,7 @@
    "dist_major_transit_ft": 18542.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   }
  ],
  "expected": {

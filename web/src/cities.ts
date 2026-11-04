@@ -126,7 +126,7 @@ export function mergeResults(results: Results[]): Results {
   if (results.length === 1) return results[0];
   const out: Results = {
     max: [], local: [], net: [], binding: [], likely: [], realistic: [],
-    totals: { max: 0, local: 0, net: 0, existing: 0, realistic: 0, likelyLots: 0 },
+    totals: { max: 0, local: 0, net: 0, existing: 0, realistic: 0, likelyLots: 0, specialLandNet: 0 },
   };
   for (const r of results) {
     for (let i = 0; i < r.max.length; i++) {

@@ -1,8 +1,12 @@
 # Zoning Capacity Explorer
 
-An open-source tool that shows what zoning legally allows on every parcel in a
-city, and how much housing a proposed rule change would enable. Cities so far:
-**Pasadena** (the pilot), **Glendale**, **Burbank** and **Santa Monica**, California.
+An open-source tool that estimates what zoning allows on each parcel in LA County cities,
+and how much housing a proposed rule change would allow. It's built for citywide estimates,
+comparing reforms, research and reporting: see the **[usage guide](docs/USE_CASES.md)**.
+
+Rule files cover 55 of the county's 88 cities, with every value cited
+([how complete each city is](reports/la_county/coverage.md)). The map currently shows Pasadena,
+Glendale, Burbank and Santa Monica, with Los Angeles to follow.
 Tick one or more cities in the site's header (or **Select all**), or link to them
 with `?city=santa_monica`, `?cities=burbank,glendale` or `?cities=all`.
 
@@ -11,7 +15,15 @@ with `?city=santa_monica`, `?cities=burbank,glendale` or `?cities=all`.
 New to the code? Start with the **[beginner's guide](docs/BEGINNER_GUIDE.md)**.
 
 > **Disclaimer:** this is an estimate for research and advocacy, not legal or
-> zoning advice. Always confirm with the city before relying on it.
+> zoning advice. Don't use it alone to decide about a specific lot. Always confirm with the city.
+
+**How far to trust it:** real permitted buildings are compared with this tool's numbers in the
+**[accuracy test](reports/la_county/accuracy.md)**. It can catch numbers that are too low, but not
+numbers that are too high. Bonus programs such as LA's TOC, `Q`/`T`/`D` conditions and many specific
+plans aren't modeled.
+
+**Data:** [every rule value with its citation](reports/la_county/rules.csv) ·
+[city totals](reports/la_county/coverage.csv) · [how to cite](CITATION.cff)
 
 ## Status
 
@@ -25,7 +37,8 @@ New to the code? Start with the **[beginner's guide](docs/BEGINNER_GUIDE.md)**.
 | 6. Charts, lot details, address search, printable summary | ✅ |
 | 7. Realistic redevelopment estimate | ✅ 5 screens, shown beside theoretical everywhere |
 | 8. Validation, methodology, deploy | ✅ live on GitHub Pages |
-| 9. Developer pro forma (optional) | planned |
+| 9. Developer pro forma | dropped: the tool's focus is research and policy (November 2026) |
+| 10. Accuracy test, coverage levels, data release, reform study reports | ✅ |
 | LA County expansion | ✅ multi-city pipeline and site; Glendale, Burbank and Santa Monica added. Next: [wave plan](docs/WAVE_PLAN.md) |
 
 Reports: [data quality](reports/pasadena/quality_report.md) ·
@@ -107,6 +120,10 @@ cd web && npm install && npm run dev
 ```
 
 Then open the address Vite prints (http://127.0.0.1:5173 by default).
+
+**Countywide outputs:** `python -m zce accuracy` (permits vs. our numbers), `python -m zce release`
+(coverage table, rules CSV, lot files) and `python -m zce study <file.yaml>` (a reform study).
+Run from `pipeline/`.
 
 **Validation** (`make validate`) compares the results with official figures. Two of
 its sources are on servers that refuse automated downloads; `make download`

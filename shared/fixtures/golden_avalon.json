@@ -112,7 +112,7 @@
    "dist_major_transit_ft": 158116.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "HD-R",
@@ -123,7 +123,7 @@
    "dist_major_transit_ft": 158929.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 493.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "SC",
@@ -134,7 +134,7 @@
    "dist_major_transit_ft": 158320.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 712.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "MD-R",
@@ -145,7 +145,7 @@
    "dist_major_transit_ft": 158368.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 96.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -156,7 +156,7 @@
    "dist_major_transit_ft": 158980.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 331.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -167,7 +167,7 @@
    "dist_major_transit_ft": 158949.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 290.0,
-   "redev_mask": 27
+   "redev_mask": 59
   },
   {
    "zone": "HD-R",
@@ -178,7 +178,7 @@
    "dist_major_transit_ft": 159095.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 328.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "HD-R",
@@ -189,7 +189,7 @@
    "dist_major_transit_ft": 158928.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 280.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -200,7 +200,7 @@
    "dist_major_transit_ft": 158787.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 468.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "HD-R",
@@ -211,7 +211,7 @@
    "dist_major_transit_ft": 158836.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 379.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -222,7 +222,7 @@
    "dist_major_transit_ft": 157484.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 115.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -233,7 +233,7 @@
    "dist_major_transit_ft": 159078.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 386.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -244,7 +244,7 @@
    "dist_major_transit_ft": 158801.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -255,7 +255,7 @@
    "dist_major_transit_ft": 154187.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "LD-R",
@@ -266,7 +266,7 @@
    "dist_major_transit_ft": 158159.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -277,7 +277,7 @@
    "dist_major_transit_ft": 159005.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 384.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -288,7 +288,7 @@
    "dist_major_transit_ft": 159035.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 323.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "LD-R",
@@ -299,7 +299,7 @@
    "dist_major_transit_ft": 158540.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -310,7 +310,7 @@
    "dist_major_transit_ft": 158799.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 397.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -321,7 +321,7 @@
    "dist_major_transit_ft": 157908.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 230.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -332,7 +332,7 @@
    "dist_major_transit_ft": 158934.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 478.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -343,7 +343,7 @@
    "dist_major_transit_ft": 159252.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 176.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -354,7 +354,7 @@
    "dist_major_transit_ft": 157703.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "HD-R",
@@ -365,7 +365,7 @@
    "dist_major_transit_ft": 158529.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 441.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -376,7 +376,7 @@
    "dist_major_transit_ft": 154107.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "C",
@@ -387,7 +387,7 @@
    "dist_major_transit_ft": 158037.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 739.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "C",
@@ -398,7 +398,7 @@
    "dist_major_transit_ft": 157949.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 133.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -409,7 +409,7 @@
    "dist_major_transit_ft": 157838.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 934.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -420,7 +420,7 @@
    "dist_major_transit_ft": 159078.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 342.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -431,7 +431,7 @@
    "dist_major_transit_ft": 159200.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 323.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -442,7 +442,7 @@
    "dist_major_transit_ft": 158248.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 708.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -453,7 +453,7 @@
    "dist_major_transit_ft": 159641.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -464,7 +464,7 @@
    "dist_major_transit_ft": 158839.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 316.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -475,7 +475,7 @@
    "dist_major_transit_ft": 159108.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 323.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -486,7 +486,7 @@
    "dist_major_transit_ft": 158912.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 352.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -497,7 +497,7 @@
    "dist_major_transit_ft": 158616.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 295.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -508,7 +508,7 @@
    "dist_major_transit_ft": 159060.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 210.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -519,7 +519,7 @@
    "dist_major_transit_ft": 157869.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 50.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "C",
@@ -530,7 +530,7 @@
    "dist_major_transit_ft": 158337.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 571.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -541,7 +541,7 @@
    "dist_major_transit_ft": 158707.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 592.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -552,7 +552,7 @@
    "dist_major_transit_ft": 158981.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 394.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -563,7 +563,7 @@
    "dist_major_transit_ft": 159749.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "MD-R",
@@ -574,7 +574,7 @@
    "dist_major_transit_ft": 157719.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -585,7 +585,7 @@
    "dist_major_transit_ft": 158322.0,
    "existing_units": 8.0,
    "dist_single_family_ft": 203.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "MD-R",
@@ -596,7 +596,7 @@
    "dist_major_transit_ft": 158843.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 190.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -607,7 +607,7 @@
    "dist_major_transit_ft": 159686.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "LD-R",
@@ -618,7 +618,7 @@
    "dist_major_transit_ft": 154089.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "HD-R",
@@ -629,7 +629,7 @@
    "dist_major_transit_ft": 158288.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 203.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -640,7 +640,7 @@
    "dist_major_transit_ft": 157914.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 30.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -651,7 +651,7 @@
    "dist_major_transit_ft": 161852.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -662,7 +662,7 @@
    "dist_major_transit_ft": 159227.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 85.0,
-   "redev_mask": 27
+   "redev_mask": 59
   },
   {
    "zone": "HD-R",
@@ -673,7 +673,7 @@
    "dist_major_transit_ft": 158402.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -684,7 +684,7 @@
    "dist_major_transit_ft": 158215.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 25.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -695,7 +695,7 @@
    "dist_major_transit_ft": 159838.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "LD-R",
@@ -706,7 +706,7 @@
    "dist_major_transit_ft": 159741.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "MD-R",
@@ -717,7 +717,7 @@
    "dist_major_transit_ft": 158885.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 391.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -728,7 +728,7 @@
    "dist_major_transit_ft": 158878.0,
    "existing_units": null,
    "dist_single_family_ft": 300.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -739,7 +739,7 @@
    "dist_major_transit_ft": 159078.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 236.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -750,7 +750,7 @@
    "dist_major_transit_ft": 157954.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "LD-R",
@@ -761,7 +761,7 @@
    "dist_major_transit_ft": 157945.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "MD-R",
@@ -772,7 +772,7 @@
    "dist_major_transit_ft": 159006.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 411.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -783,7 +783,7 @@
    "dist_major_transit_ft": 159789.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "MD-R",
@@ -794,7 +794,7 @@
    "dist_major_transit_ft": 158612.0,
    "existing_units": null,
    "dist_single_family_ft": 171.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -805,7 +805,7 @@
    "dist_major_transit_ft": 158496.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 30.0,
-   "redev_mask": 27
+   "redev_mask": 59
   },
   {
    "zone": "LD-R",
@@ -816,7 +816,7 @@
    "dist_major_transit_ft": 159751.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "MD-R",
@@ -827,7 +827,7 @@
    "dist_major_transit_ft": 158476.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 246.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -838,7 +838,7 @@
    "dist_major_transit_ft": 157327.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "MD-R",
@@ -849,7 +849,7 @@
    "dist_major_transit_ft": 158881.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 186.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -860,7 +860,7 @@
    "dist_major_transit_ft": 158862.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 431.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -871,7 +871,7 @@
    "dist_major_transit_ft": 158765.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 105.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -882,7 +882,7 @@
    "dist_major_transit_ft": 157765.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -893,7 +893,7 @@
    "dist_major_transit_ft": 158727.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 444.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -904,7 +904,7 @@
    "dist_major_transit_ft": 159070.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 96.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -915,7 +915,7 @@
    "dist_major_transit_ft": 158307.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -926,7 +926,7 @@
    "dist_major_transit_ft": 158331.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 556.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -937,7 +937,7 @@
    "dist_major_transit_ft": 157539.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 357.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -948,7 +948,7 @@
    "dist_major_transit_ft": 158166.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 711.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "HD-R",
@@ -959,7 +959,7 @@
    "dist_major_transit_ft": 158408.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -970,7 +970,7 @@
    "dist_major_transit_ft": 159665.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "LD-R",
@@ -981,7 +981,7 @@
    "dist_major_transit_ft": 159688.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "HD-R",
@@ -992,7 +992,7 @@
    "dist_major_transit_ft": 158969.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 259.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -1003,7 +1003,7 @@
    "dist_major_transit_ft": 157735.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 507.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "P",
@@ -1025,7 +1025,7 @@
    "dist_major_transit_ft": 159194.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 384.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1036,7 +1036,7 @@
    "dist_major_transit_ft": 158901.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 214.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1047,7 +1047,7 @@
    "dist_major_transit_ft": 158942.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 204.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "SC",
@@ -1058,7 +1058,7 @@
    "dist_major_transit_ft": 158416.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 124.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "MD-R",
@@ -1069,7 +1069,7 @@
    "dist_major_transit_ft": 159077.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 282.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1080,7 +1080,7 @@
    "dist_major_transit_ft": 157164.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -1091,7 +1091,7 @@
    "dist_major_transit_ft": 158301.0,
    "existing_units": null,
    "dist_single_family_ft": 111.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "MD-R",
@@ -1102,7 +1102,7 @@
    "dist_major_transit_ft": 159039.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 379.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1113,7 +1113,7 @@
    "dist_major_transit_ft": 158325.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 168.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -1124,7 +1124,7 @@
    "dist_major_transit_ft": 153994.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -1135,7 +1135,7 @@
    "dist_major_transit_ft": 158475.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 422.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1146,7 +1146,7 @@
    "dist_major_transit_ft": 158781.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 409.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1157,7 +1157,7 @@
    "dist_major_transit_ft": 157858.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 311.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "P",
@@ -1168,7 +1168,7 @@
    "dist_major_transit_ft": 159507.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RR-H",
@@ -1179,7 +1179,7 @@
    "dist_major_transit_ft": 158977.0,
    "existing_units": 12.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1190,7 +1190,7 @@
    "dist_major_transit_ft": 159078.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 464.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -1201,7 +1201,7 @@
    "dist_major_transit_ft": 159855.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "MD-R",
@@ -1212,7 +1212,7 @@
    "dist_major_transit_ft": 158865.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 338.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1223,7 +1223,7 @@
    "dist_major_transit_ft": 157876.0,
    "existing_units": 17.0,
    "dist_single_family_ft": 34.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "C",
@@ -1234,7 +1234,7 @@
    "dist_major_transit_ft": 158143.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 716.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1245,7 +1245,7 @@
    "dist_major_transit_ft": 159307.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 27.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "HD-R",
@@ -1256,7 +1256,7 @@
    "dist_major_transit_ft": 157958.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 447.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "C",
@@ -1267,7 +1267,7 @@
    "dist_major_transit_ft": 158301.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 603.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -1278,7 +1278,7 @@
    "dist_major_transit_ft": 158862.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 315.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1289,7 +1289,7 @@
    "dist_major_transit_ft": 157144.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 105.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1300,7 +1300,7 @@
    "dist_major_transit_ft": 157647.0,
    "existing_units": 5.0,
    "dist_single_family_ft": 230.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1311,7 +1311,7 @@
    "dist_major_transit_ft": 159029.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 238.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -1322,7 +1322,7 @@
    "dist_major_transit_ft": 158077.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 312.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1333,7 +1333,7 @@
    "dist_major_transit_ft": 158952.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 477.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "MD-R",
@@ -1344,7 +1344,7 @@
    "dist_major_transit_ft": 158200.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 128.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -1355,7 +1355,7 @@
    "dist_major_transit_ft": 158915.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 251.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1366,7 +1366,7 @@
    "dist_major_transit_ft": 158984.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 332.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -1377,7 +1377,7 @@
    "dist_major_transit_ft": 158214.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 384.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1388,7 +1388,7 @@
    "dist_major_transit_ft": 159113.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 86.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -1399,7 +1399,7 @@
    "dist_major_transit_ft": 154287.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "C",
@@ -1410,7 +1410,7 @@
    "dist_major_transit_ft": 158032.0,
    "existing_units": null,
    "dist_single_family_ft": 513.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "MD-R",
@@ -1421,7 +1421,7 @@
    "dist_major_transit_ft": 157646.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 31.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "C",
@@ -1432,7 +1432,7 @@
    "dist_major_transit_ft": 158292.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 416.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1443,7 +1443,7 @@
    "dist_major_transit_ft": 159099.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 176.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -1454,7 +1454,7 @@
    "dist_major_transit_ft": 158797.0,
    "existing_units": null,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -1465,7 +1465,7 @@
    "dist_major_transit_ft": 158478.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 166.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -1476,7 +1476,7 @@
    "dist_major_transit_ft": 158380.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "MD-R",
@@ -1487,7 +1487,7 @@
    "dist_major_transit_ft": 158957.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 381.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1498,7 +1498,7 @@
    "dist_major_transit_ft": 158357.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 501.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1509,7 +1509,7 @@
    "dist_major_transit_ft": 158387.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 31.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RR-H",
@@ -1520,7 +1520,7 @@
    "dist_major_transit_ft": 157481.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 745.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1531,7 +1531,7 @@
    "dist_major_transit_ft": 159021.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 388.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "HD-R",
@@ -1542,7 +1542,7 @@
    "dist_major_transit_ft": 159120.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 384.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "RR-L",
@@ -1564,7 +1564,7 @@
    "dist_major_transit_ft": 157819.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "LD-R",
@@ -1575,7 +1575,7 @@
    "dist_major_transit_ft": 158242.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "MD-R",
@@ -1586,7 +1586,7 @@
    "dist_major_transit_ft": 159083.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 87.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -1597,7 +1597,7 @@
    "dist_major_transit_ft": 158646.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 623.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -1608,7 +1608,7 @@
    "dist_major_transit_ft": 158515.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 252.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1619,7 +1619,7 @@
    "dist_major_transit_ft": 158488.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1630,7 +1630,7 @@
    "dist_major_transit_ft": 159136.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 85.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -1641,7 +1641,7 @@
    "dist_major_transit_ft": 158366.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 97.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1652,7 +1652,7 @@
    "dist_major_transit_ft": 159270.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 25.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -1663,7 +1663,7 @@
    "dist_major_transit_ft": 158947.0,
    "existing_units": null,
    "dist_single_family_ft": 249.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -1674,7 +1674,7 @@
    "dist_major_transit_ft": 158369.0,
    "existing_units": 44.0,
    "dist_single_family_ft": 203.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -1685,7 +1685,7 @@
    "dist_major_transit_ft": 157725.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 292.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1696,7 +1696,7 @@
    "dist_major_transit_ft": 158518.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 537.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "C",
@@ -1707,7 +1707,7 @@
    "dist_major_transit_ft": 158002.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 114.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "HD-R",
@@ -1718,7 +1718,7 @@
    "dist_major_transit_ft": 158415.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 664.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1729,7 +1729,7 @@
    "dist_major_transit_ft": 158035.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 194.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1740,7 +1740,7 @@
    "dist_major_transit_ft": 158614.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -1751,7 +1751,7 @@
    "dist_major_transit_ft": 158276.0,
    "existing_units": 9.0,
    "dist_single_family_ft": 621.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1762,7 +1762,7 @@
    "dist_major_transit_ft": 158799.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 545.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -1773,7 +1773,7 @@
    "dist_major_transit_ft": 158633.0,
    "existing_units": null,
    "dist_single_family_ft": 343.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -1784,7 +1784,7 @@
    "dist_major_transit_ft": 158361.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 96.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -1795,7 +1795,7 @@
    "dist_major_transit_ft": 158457.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 416.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "RR-L",
@@ -1806,7 +1806,7 @@
    "dist_major_transit_ft": 161384.0,
    "existing_units": 16.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "LD-R",
@@ -1817,7 +1817,7 @@
    "dist_major_transit_ft": 158049.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "HD-R",
@@ -1828,7 +1828,7 @@
    "dist_major_transit_ft": 159053.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 180.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "LD-R",
@@ -1839,7 +1839,7 @@
    "dist_major_transit_ft": 157416.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "SC",
@@ -1850,7 +1850,7 @@
    "dist_major_transit_ft": 158439.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 724.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "MD-R",
@@ -1861,7 +1861,7 @@
    "dist_major_transit_ft": 158475.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -1872,7 +1872,7 @@
    "dist_major_transit_ft": 158845.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 337.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -1883,7 +1883,7 @@
    "dist_major_transit_ft": 159827.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "LD-R",
@@ -1894,7 +1894,7 @@
    "dist_major_transit_ft": 159670.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "HD-R",
@@ -1905,7 +1905,7 @@
    "dist_major_transit_ft": 158824.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 439.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -1916,7 +1916,7 @@
    "dist_major_transit_ft": 153966.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -1927,7 +1927,7 @@
    "dist_major_transit_ft": 159068.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 91.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1938,7 +1938,7 @@
    "dist_major_transit_ft": 158885.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 306.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -1949,7 +1949,7 @@
    "dist_major_transit_ft": 158546.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": null,
@@ -1971,7 +1971,7 @@
    "dist_major_transit_ft": 158220.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 676.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -1982,7 +1982,7 @@
    "dist_major_transit_ft": 159021.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 422.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -1993,7 +1993,7 @@
    "dist_major_transit_ft": 158948.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 268.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -2004,7 +2004,7 @@
    "dist_major_transit_ft": 157981.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -2015,7 +2015,7 @@
    "dist_major_transit_ft": 158952.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 205.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "LD-R",
@@ -2026,7 +2026,7 @@
    "dist_major_transit_ft": 157277.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "LD-R",
@@ -2037,7 +2037,7 @@
    "dist_major_transit_ft": 153915.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "HD-R",
@@ -2048,7 +2048,7 @@
    "dist_major_transit_ft": 159119.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 236.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2059,7 +2059,7 @@
    "dist_major_transit_ft": 158344.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 102.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -2070,7 +2070,7 @@
    "dist_major_transit_ft": 157448.0,
    "existing_units": 19.0,
    "dist_single_family_ft": 172.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -2081,7 +2081,7 @@
    "dist_major_transit_ft": 158463.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 702.0,
-   "redev_mask": 27
+   "redev_mask": 59
   },
   {
    "zone": "HD-R",
@@ -2092,7 +2092,7 @@
    "dist_major_transit_ft": 158903.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 352.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -2103,7 +2103,7 @@
    "dist_major_transit_ft": 157819.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 373.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -2114,7 +2114,7 @@
    "dist_major_transit_ft": 159122.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 129.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -2125,7 +2125,7 @@
    "dist_major_transit_ft": 159849.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "HD-R",
@@ -2136,7 +2136,7 @@
    "dist_major_transit_ft": 158966.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 481.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "RR-H",
@@ -2158,7 +2158,7 @@
    "dist_major_transit_ft": 158100.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "HD-R",
@@ -2169,7 +2169,7 @@
    "dist_major_transit_ft": 158861.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 298.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2180,7 +2180,7 @@
    "dist_major_transit_ft": 158346.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 409.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "SC",
@@ -2191,7 +2191,7 @@
    "dist_major_transit_ft": 158453.0,
    "existing_units": null,
    "dist_single_family_ft": 434.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2202,7 +2202,7 @@
    "dist_major_transit_ft": 158745.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -2213,7 +2213,7 @@
    "dist_major_transit_ft": 158537.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "MD-R",
@@ -2224,7 +2224,7 @@
    "dist_major_transit_ft": 158348.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 173.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2235,7 +2235,7 @@
    "dist_major_transit_ft": 158594.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 564.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -2246,7 +2246,7 @@
    "dist_major_transit_ft": 158206.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "LD-R",
@@ -2268,7 +2268,7 @@
    "dist_major_transit_ft": 157565.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "MD-R",
@@ -2279,7 +2279,7 @@
    "dist_major_transit_ft": 158556.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 299.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2290,7 +2290,7 @@
    "dist_major_transit_ft": 158916.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 256.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2301,7 +2301,7 @@
    "dist_major_transit_ft": 158764.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 54.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -2312,7 +2312,7 @@
    "dist_major_transit_ft": 158932.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 228.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2323,7 +2323,7 @@
    "dist_major_transit_ft": 157466.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 155.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2334,7 +2334,7 @@
    "dist_major_transit_ft": 157265.0,
    "existing_units": 5.0,
    "dist_single_family_ft": 80.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2345,7 +2345,7 @@
    "dist_major_transit_ft": 158565.0,
    "existing_units": null,
    "dist_single_family_ft": 387.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RR-L",
@@ -2356,7 +2356,7 @@
    "dist_major_transit_ft": 161453.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "C",
@@ -2367,7 +2367,7 @@
    "dist_major_transit_ft": 158210.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 514.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -2378,7 +2378,7 @@
    "dist_major_transit_ft": 158230.0,
    "existing_units": null,
    "dist_single_family_ft": 384.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -2389,7 +2389,7 @@
    "dist_major_transit_ft": 157766.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "HD-R",
@@ -2400,7 +2400,7 @@
    "dist_major_transit_ft": 158825.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 353.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -2411,7 +2411,7 @@
    "dist_major_transit_ft": 159819.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -2422,7 +2422,7 @@
    "dist_major_transit_ft": 157049.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 114.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -2433,7 +2433,7 @@
    "dist_major_transit_ft": 157214.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 155.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2444,7 +2444,7 @@
    "dist_major_transit_ft": 158923.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 250.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2455,7 +2455,7 @@
    "dist_major_transit_ft": 158617.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 555.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2466,7 +2466,7 @@
    "dist_major_transit_ft": 159025.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 183.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2477,7 +2477,7 @@
    "dist_major_transit_ft": 158435.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 669.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "LD-R",
@@ -2488,7 +2488,7 @@
    "dist_major_transit_ft": 157792.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "HD-R",
@@ -2499,7 +2499,7 @@
    "dist_major_transit_ft": 159020.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 469.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "MD-R",
@@ -2510,7 +2510,7 @@
    "dist_major_transit_ft": 157684.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 40.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "C",
@@ -2521,7 +2521,7 @@
    "dist_major_transit_ft": 157928.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 170.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2532,7 +2532,7 @@
    "dist_major_transit_ft": 157549.0,
    "existing_units": 8.0,
    "dist_single_family_ft": 185.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2543,7 +2543,7 @@
    "dist_major_transit_ft": 159112.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 56.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2554,7 +2554,7 @@
    "dist_major_transit_ft": 157538.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 99.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2565,7 +2565,7 @@
    "dist_major_transit_ft": 157694.0,
    "existing_units": 8.0,
    "dist_single_family_ft": 312.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -2576,7 +2576,7 @@
    "dist_major_transit_ft": 158870.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 294.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2587,7 +2587,7 @@
    "dist_major_transit_ft": 158392.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 568.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2598,7 +2598,7 @@
    "dist_major_transit_ft": 157604.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 165.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2609,7 +2609,7 @@
    "dist_major_transit_ft": 158970.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 344.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2620,7 +2620,7 @@
    "dist_major_transit_ft": 158052.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 30.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -2631,7 +2631,7 @@
    "dist_major_transit_ft": 159743.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "MD-R",
@@ -2642,7 +2642,7 @@
    "dist_major_transit_ft": 158487.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -2653,7 +2653,7 @@
    "dist_major_transit_ft": 159040.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 387.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2664,7 +2664,7 @@
    "dist_major_transit_ft": 157275.0,
    "existing_units": 16.0,
    "dist_single_family_ft": 64.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -2675,7 +2675,7 @@
    "dist_major_transit_ft": 158866.0,
    "existing_units": null,
    "dist_single_family_ft": 176.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -2686,7 +2686,7 @@
    "dist_major_transit_ft": 157291.0,
    "existing_units": null,
    "dist_single_family_ft": 484.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2697,7 +2697,7 @@
    "dist_major_transit_ft": 158997.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 154.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -2708,7 +2708,7 @@
    "dist_major_transit_ft": 158151.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 210.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -2719,7 +2719,7 @@
    "dist_major_transit_ft": 158217.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 432.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2730,7 +2730,7 @@
    "dist_major_transit_ft": 159050.0,
    "existing_units": 12.0,
    "dist_single_family_ft": 154.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -2741,7 +2741,7 @@
    "dist_major_transit_ft": 158538.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -2752,7 +2752,7 @@
    "dist_major_transit_ft": 158924.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 389.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -2763,7 +2763,7 @@
    "dist_major_transit_ft": 158419.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 412.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "SC",
@@ -2774,7 +2774,7 @@
    "dist_major_transit_ft": 158456.0,
    "existing_units": null,
    "dist_single_family_ft": 138.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2785,7 +2785,7 @@
    "dist_major_transit_ft": 158937.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 99.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "C",
@@ -2796,7 +2796,7 @@
    "dist_major_transit_ft": 158097.0,
    "existing_units": 5.0,
    "dist_single_family_ft": 298.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -2807,7 +2807,7 @@
    "dist_major_transit_ft": 158521.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 98.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2818,7 +2818,7 @@
    "dist_major_transit_ft": 158880.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 487.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "SC",
@@ -2829,7 +2829,7 @@
    "dist_major_transit_ft": 158545.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 240.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2840,7 +2840,7 @@
    "dist_major_transit_ft": 158628.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 526.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2851,7 +2851,7 @@
    "dist_major_transit_ft": 158772.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 228.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2862,7 +2862,7 @@
    "dist_major_transit_ft": 159090.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 92.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -2873,7 +2873,7 @@
    "dist_major_transit_ft": 157985.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 94.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -2884,7 +2884,7 @@
    "dist_major_transit_ft": 158294.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 648.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -2895,7 +2895,7 @@
    "dist_major_transit_ft": 157199.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 261.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "MD-R",
@@ -2906,7 +2906,7 @@
    "dist_major_transit_ft": 158449.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 90.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -2917,7 +2917,7 @@
    "dist_major_transit_ft": 159040.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 465.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -2928,7 +2928,7 @@
    "dist_major_transit_ft": 158439.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 213.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -2939,7 +2939,7 @@
    "dist_major_transit_ft": 158685.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 471.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "LD-R",
@@ -2950,7 +2950,7 @@
    "dist_major_transit_ft": 156879.0,
    "existing_units": 12.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "MD-R",
@@ -2961,7 +2961,7 @@
    "dist_major_transit_ft": 159053.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 408.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -2972,7 +2972,7 @@
    "dist_major_transit_ft": 158016.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "LD-R",
@@ -2983,7 +2983,7 @@
    "dist_major_transit_ft": 158123.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "MD-R",
@@ -2994,7 +2994,7 @@
    "dist_major_transit_ft": 158440.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 160.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3005,7 +3005,7 @@
    "dist_major_transit_ft": 158709.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 439.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3016,7 +3016,7 @@
    "dist_major_transit_ft": 158673.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 193.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3027,7 +3027,7 @@
    "dist_major_transit_ft": 158985.0,
    "existing_units": null,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3038,7 +3038,7 @@
    "dist_major_transit_ft": 158183.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 104.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3049,7 +3049,7 @@
    "dist_major_transit_ft": 158312.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 196.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3060,7 +3060,7 @@
    "dist_major_transit_ft": 158764.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 453.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -3071,7 +3071,7 @@
    "dist_major_transit_ft": 153983.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -3082,7 +3082,7 @@
    "dist_major_transit_ft": 158659.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 114.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3093,7 +3093,7 @@
    "dist_major_transit_ft": 158505.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 84.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -3104,7 +3104,7 @@
    "dist_major_transit_ft": 159200.0,
    "existing_units": 65.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "LD-R",
@@ -3115,7 +3115,7 @@
    "dist_major_transit_ft": 159797.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "RR-H",
@@ -3137,7 +3137,7 @@
    "dist_major_transit_ft": 159168.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 176.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "C",
@@ -3148,7 +3148,7 @@
    "dist_major_transit_ft": 158194.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 434.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "MD-R",
@@ -3159,7 +3159,7 @@
    "dist_major_transit_ft": 157385.0,
    "existing_units": null,
    "dist_single_family_ft": 30.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3170,7 +3170,7 @@
    "dist_major_transit_ft": 158858.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 292.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3181,7 +3181,7 @@
    "dist_major_transit_ft": 158896.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 483.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3192,7 +3192,7 @@
    "dist_major_transit_ft": 158542.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 45.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -3203,7 +3203,7 @@
    "dist_major_transit_ft": 158151.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "SC",
@@ -3214,7 +3214,7 @@
    "dist_major_transit_ft": 158415.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 729.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -3225,7 +3225,7 @@
    "dist_major_transit_ft": 157406.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "MD-R",
@@ -3236,7 +3236,7 @@
    "dist_major_transit_ft": 158249.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 146.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -3247,7 +3247,7 @@
    "dist_major_transit_ft": 158834.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 388.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3258,7 +3258,7 @@
    "dist_major_transit_ft": 158852.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 188.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3269,7 +3269,7 @@
    "dist_major_transit_ft": 158246.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "C",
@@ -3280,7 +3280,7 @@
    "dist_major_transit_ft": 158379.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 525.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3291,7 +3291,7 @@
    "dist_major_transit_ft": 158846.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 50.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -3302,7 +3302,7 @@
    "dist_major_transit_ft": 158100.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 13
+   "redev_mask": 45
   },
   {
    "zone": "LD-R",
@@ -3313,7 +3313,7 @@
    "dist_major_transit_ft": 159644.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -3324,7 +3324,7 @@
    "dist_major_transit_ft": 159111.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 328.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3335,7 +3335,7 @@
    "dist_major_transit_ft": 159036.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 439.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3346,7 +3346,7 @@
    "dist_major_transit_ft": 158080.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 30.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "SC",
@@ -3357,7 +3357,7 @@
    "dist_major_transit_ft": 158567.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 287.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3368,7 +3368,7 @@
    "dist_major_transit_ft": 157431.0,
    "existing_units": 5.0,
    "dist_single_family_ft": 196.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3379,7 +3379,7 @@
    "dist_major_transit_ft": 158820.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 389.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -3390,7 +3390,7 @@
    "dist_major_transit_ft": 159718.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "LD-R",
@@ -3401,7 +3401,7 @@
    "dist_major_transit_ft": 159712.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "MD-R",
@@ -3412,7 +3412,7 @@
    "dist_major_transit_ft": 158509.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3423,7 +3423,7 @@
    "dist_major_transit_ft": 158290.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 200.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -3434,7 +3434,7 @@
    "dist_major_transit_ft": 159658.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "HD-R",
@@ -3445,7 +3445,7 @@
    "dist_major_transit_ft": 158306.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 181.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3456,7 +3456,7 @@
    "dist_major_transit_ft": 158421.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 28.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3467,7 +3467,7 @@
    "dist_major_transit_ft": 158729.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 142.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3478,7 +3478,7 @@
    "dist_major_transit_ft": 157677.0,
    "existing_units": null,
    "dist_single_family_ft": 189.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3489,7 +3489,7 @@
    "dist_major_transit_ft": 158592.0,
    "existing_units": null,
    "dist_single_family_ft": 32.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3500,7 +3500,7 @@
    "dist_major_transit_ft": 157926.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 210.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": null,
@@ -3511,7 +3511,7 @@
    "dist_major_transit_ft": 159041.0,
    "existing_units": 5.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3522,7 +3522,7 @@
    "dist_major_transit_ft": 158690.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 100.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3533,7 +3533,7 @@
    "dist_major_transit_ft": 157137.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -3544,7 +3544,7 @@
    "dist_major_transit_ft": 158189.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -3555,7 +3555,7 @@
    "dist_major_transit_ft": 158412.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 572.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3566,7 +3566,7 @@
    "dist_major_transit_ft": 159030.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 186.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -3577,7 +3577,7 @@
    "dist_major_transit_ft": 158940.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 323.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3588,7 +3588,7 @@
    "dist_major_transit_ft": 158180.0,
    "existing_units": 19.0,
    "dist_single_family_ft": 27.0,
-   "redev_mask": 25
+   "redev_mask": 57
   },
   {
    "zone": "HD-R",
@@ -3599,7 +3599,7 @@
    "dist_major_transit_ft": 158725.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "MD-R",
@@ -3610,7 +3610,7 @@
    "dist_major_transit_ft": 158313.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 28.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3621,7 +3621,7 @@
    "dist_major_transit_ft": 159061.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 333.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3632,7 +3632,7 @@
    "dist_major_transit_ft": 158493.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 588.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3643,7 +3643,7 @@
    "dist_major_transit_ft": 158789.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 145.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3654,7 +3654,7 @@
    "dist_major_transit_ft": 158911.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 498.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3665,7 +3665,7 @@
    "dist_major_transit_ft": 158393.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -3676,7 +3676,7 @@
    "dist_major_transit_ft": 158321.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 590.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3687,7 +3687,7 @@
    "dist_major_transit_ft": 159145.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 176.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3698,7 +3698,7 @@
    "dist_major_transit_ft": 158860.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 304.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3709,7 +3709,7 @@
    "dist_major_transit_ft": 158108.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 30.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "P",
@@ -3720,7 +3720,7 @@
    "dist_major_transit_ft": 159569.0,
    "existing_units": null,
    "dist_single_family_ft": 74.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3731,7 +3731,7 @@
    "dist_major_transit_ft": 157954.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 192.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -3742,7 +3742,7 @@
    "dist_major_transit_ft": 159076.0,
    "existing_units": null,
    "dist_single_family_ft": 307.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3753,7 +3753,7 @@
    "dist_major_transit_ft": 158834.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 424.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3764,7 +3764,7 @@
    "dist_major_transit_ft": 158553.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 604.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RR-H",
@@ -3775,7 +3775,7 @@
    "dist_major_transit_ft": 158126.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -3786,7 +3786,7 @@
    "dist_major_transit_ft": 158452.0,
    "existing_units": null,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "MD-R",
@@ -3797,7 +3797,7 @@
    "dist_major_transit_ft": 158503.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 203.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3808,7 +3808,7 @@
    "dist_major_transit_ft": 159142.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 202.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -3819,7 +3819,7 @@
    "dist_major_transit_ft": 159721.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "HD-R",
@@ -3830,7 +3830,7 @@
    "dist_major_transit_ft": 159198.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 25.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3841,7 +3841,7 @@
    "dist_major_transit_ft": 158586.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 460.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3852,7 +3852,7 @@
    "dist_major_transit_ft": 157703.0,
    "existing_units": 9.0,
    "dist_single_family_ft": 149.0,
-   "redev_mask": 26
+   "redev_mask": 58
   },
   {
    "zone": "HD-R",
@@ -3863,7 +3863,7 @@
    "dist_major_transit_ft": 157757.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 471.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3874,7 +3874,7 @@
    "dist_major_transit_ft": 158580.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 566.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3885,7 +3885,7 @@
    "dist_major_transit_ft": 157258.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 35.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -3896,7 +3896,7 @@
    "dist_major_transit_ft": 157899.0,
    "existing_units": 8.0,
    "dist_single_family_ft": 840.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3907,7 +3907,7 @@
    "dist_major_transit_ft": 158475.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 681.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3918,7 +3918,7 @@
    "dist_major_transit_ft": 158556.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 610.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -3929,7 +3929,7 @@
    "dist_major_transit_ft": 158860.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 186.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -3940,7 +3940,7 @@
    "dist_major_transit_ft": 158187.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 310.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -3951,7 +3951,7 @@
    "dist_major_transit_ft": 158871.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 236.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -3962,7 +3962,7 @@
    "dist_major_transit_ft": 158289.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 198.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -3973,7 +3973,7 @@
    "dist_major_transit_ft": 158874.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 511.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -3984,7 +3984,7 @@
    "dist_major_transit_ft": 159157.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 384.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -3995,7 +3995,7 @@
    "dist_major_transit_ft": 158328.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -4006,7 +4006,7 @@
    "dist_major_transit_ft": 158838.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 322.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -4028,7 +4028,7 @@
    "dist_major_transit_ft": 157172.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 100.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "C",
@@ -4039,7 +4039,7 @@
    "dist_major_transit_ft": 158250.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 502.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4050,7 +4050,7 @@
    "dist_major_transit_ft": 158438.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 414.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -4061,7 +4061,7 @@
    "dist_major_transit_ft": 158270.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "HD-R",
@@ -4072,7 +4072,7 @@
    "dist_major_transit_ft": 158366.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 111.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "LD-R",
@@ -4083,7 +4083,7 @@
    "dist_major_transit_ft": 159648.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 12
+   "redev_mask": 44
   },
   {
    "zone": "HD-R",
@@ -4094,7 +4094,7 @@
    "dist_major_transit_ft": 156958.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -4105,7 +4105,7 @@
    "dist_major_transit_ft": 158879.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 361.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4116,7 +4116,7 @@
    "dist_major_transit_ft": 158516.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 647.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4127,7 +4127,7 @@
    "dist_major_transit_ft": 158923.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 344.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4138,7 +4138,7 @@
    "dist_major_transit_ft": 158256.0,
    "existing_units": null,
    "dist_single_family_ft": 263.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "RR-L",
@@ -4149,7 +4149,7 @@
    "dist_major_transit_ft": 161349.0,
    "existing_units": 6.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -4160,7 +4160,7 @@
    "dist_major_transit_ft": 158752.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 568.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -4171,7 +4171,7 @@
    "dist_major_transit_ft": 158089.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "C",
@@ -4182,7 +4182,7 @@
    "dist_major_transit_ft": 158144.0,
    "existing_units": null,
    "dist_single_family_ft": 463.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -4204,7 +4204,7 @@
    "dist_major_transit_ft": 158127.0,
    "existing_units": null,
    "dist_single_family_ft": 384.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4215,7 +4215,7 @@
    "dist_major_transit_ft": 157956.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 30.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -4226,7 +4226,7 @@
    "dist_major_transit_ft": 157970.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 30.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "HD-R",
@@ -4237,7 +4237,7 @@
    "dist_major_transit_ft": 158640.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 561.0,
-   "redev_mask": 30
+   "redev_mask": 62
   },
   {
    "zone": "HD-R",
@@ -4248,7 +4248,7 @@
    "dist_major_transit_ft": 158692.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 180.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -4259,7 +4259,7 @@
    "dist_major_transit_ft": 159828.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 14
+   "redev_mask": 46
   },
   {
    "zone": "MD-R",
@@ -4270,7 +4270,7 @@
    "dist_major_transit_ft": 158899.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 292.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -4281,7 +4281,7 @@
    "dist_major_transit_ft": 159042.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 323.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -4292,7 +4292,7 @@
    "dist_major_transit_ft": 157395.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "MD-R",
@@ -4303,7 +4303,7 @@
    "dist_major_transit_ft": 159021.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 235.0,
-   "redev_mask": 27
+   "redev_mask": 59
   },
   {
    "zone": "MD-R",
@@ -4314,7 +4314,7 @@
    "dist_major_transit_ft": 157486.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 29.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "LD-R",
@@ -4325,7 +4325,7 @@
    "dist_major_transit_ft": 157998.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -4336,7 +4336,7 @@
    "dist_major_transit_ft": 157553.0,
    "existing_units": 6.0,
    "dist_single_family_ft": 326.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4347,7 +4347,7 @@
    "dist_major_transit_ft": 157892.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 413.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -4358,7 +4358,7 @@
    "dist_major_transit_ft": 159091.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 164.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "MD-R",
@@ -4369,7 +4369,7 @@
    "dist_major_transit_ft": 158901.0,
    "existing_units": 4.0,
    "dist_single_family_ft": 253.0,
-   "redev_mask": 27
+   "redev_mask": 59
   },
   {
    "zone": "HD-R",
@@ -4380,7 +4380,7 @@
    "dist_major_transit_ft": 158802.0,
    "existing_units": 5.0,
    "dist_single_family_ft": 72.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "C",
@@ -4391,7 +4391,7 @@
    "dist_major_transit_ft": 158230.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 520.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4402,7 +4402,7 @@
    "dist_major_transit_ft": 158998.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 160.0,
-   "redev_mask": 28
+   "redev_mask": 60
   },
   {
    "zone": "SC",
@@ -4413,7 +4413,7 @@
    "dist_major_transit_ft": 158368.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 718.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "C",
@@ -4424,7 +4424,7 @@
    "dist_major_transit_ft": 157453.0,
    "existing_units": null,
    "dist_single_family_ft": 412.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4435,7 +4435,7 @@
    "dist_major_transit_ft": 159264.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 85.0,
-   "redev_mask": 27
+   "redev_mask": 59
   },
   {
    "zone": "RR-H",
@@ -4446,7 +4446,7 @@
    "dist_major_transit_ft": 159306.0,
    "existing_units": 35.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "LD-R",
@@ -4457,7 +4457,7 @@
    "dist_major_transit_ft": 158513.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 0.0,
-   "redev_mask": 15
+   "redev_mask": 47
   },
   {
    "zone": "HD-R",
@@ -4468,7 +4468,7 @@
    "dist_major_transit_ft": 158275.0,
    "existing_units": 3.0,
    "dist_single_family_ft": 203.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "MD-R",
@@ -4479,7 +4479,7 @@
    "dist_major_transit_ft": 158378.0,
    "existing_units": null,
    "dist_single_family_ft": 34.0,
-   "redev_mask": 31
+   "redev_mask": 63
   },
   {
    "zone": "HD-R",
@@ -4490,7 +4490,7 @@
    "dist_major_transit_ft": 158862.0,
    "existing_units": 2.0,
    "dist_single_family_ft": 412.0,
-   "redev_mask": 29
+   "redev_mask": 61
   },
   {
    "zone": "HD-R",
@@ -4501,7 +4501,7 @@
    "dist_major_transit_ft": 158689.0,
    "existing_units": 1.0,
    "dist_single_family_ft": 472.0,
-   "redev_mask": 31
+   "redev_mask": 63
   }
  ],
  "expected": {

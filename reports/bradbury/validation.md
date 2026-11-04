@@ -21,11 +21,11 @@ Homes **permitted** per year, by building type (ADU = accessory dwelling unit, S
 | 2020 | 0 | 0 | 19 | 19 |
 | 2021 | 0 | 0 | 1 | 1 |
 | 2022 | 0 | 0 | 4 | 4 |
-| 2023 | 0 | 1 | 4 | 5 |
-| 2024 | 4 | 1 | 5 | 10 |
-| 2025 | 4 | 1 | 9 | 14 |
+| 2023 | 0 | 1 | 2 | 3 |
+| 2024 | 4 | 0 | 1 | 5 |
+| 2025 | 0 | 0 | 4 | 4 |
 
-Average per year, 2020–2025: **9 homes**, of which 0 in buildings of 5+ homes, 0 ADUs, and 1 in 2–4 unit buildings.
+Average per year, 2020–2025: **6 homes**, of which 0 in buildings of 5+ homes, 0 ADUs, and 1 in 2–4 unit buildings.
 
 Where homes in **5+ unit buildings** were permitted (nan% of them matched to a lot: ):
 

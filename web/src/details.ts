@@ -110,6 +110,7 @@ const SCREEN_TEXT: Record<string, [string, string]> = {
   condo_many_owners: ["Not a condo", "Condo (many owners)"],
   historic_district: ["Not in a landmark district", "In a landmark (historic) district"],
   single_family_zone: ["Not in a single-family zone", "In a single-family zone (small-scale infill is counted separately)"],
+  public_or_special_land: ["Not public or special land", "Public or special land (government, utility, quarry, cemetery, golf, private school)"],
 };
 
 function redevSection(rules: RulesFile, mask: number, r: CapacityResult, existing: number | null, reform: boolean): string {

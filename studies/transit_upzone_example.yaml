@@ -1,0 +1,10 @@
+# Example reform study. Run from pipeline/: .venv.nosync/bin/python -m zce study ../studies/transit_upzone_example.yaml
+title: "Example: upzoning within ½ mile of major transit in four cities"
+summary: >
+  Allows two more stories and twice the density within ½ mile of a major transit stop, in
+  multifamily and commercial zones. This shows the format of a study. It isn't a proposal or a finding.
+cities: [pasadena, glendale, burbank, santa_monica]
+levers:
+  transit_radius_ft: 2640
+  transit_extra_stories: 2
+  transit_density_multiplier: 2

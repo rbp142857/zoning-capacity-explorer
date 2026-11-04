@@ -21,7 +21,7 @@ Homes **permitted** per year, by building type (ADU = accessory dwelling unit, S
 | 2018 | 1 | 0 | 25 | 0 | 2 | 28 |
 | 2019 | 8 | 447 | 38 | 1 | 6 | 500 |
 | 2020 | 2 | 60 | 93 | 0 | 5 | 160 |
-| 2024 | 0 | 0 | 177 | 0 | 0 | 177 |
+| 2024 | 0 | 0 | 175 | 0 | 0 | 175 |
 | 2025 | 0 | 0 | 154 | 0 | 4 | 158 |
 
 Average per year, 2018–2025: **128 homes**, of which 63 in buildings of 5+ homes, 61 ADUs, and 1 in 2–4 unit buildings.
@@ -40,7 +40,7 @@ Top zone codes for these homes:
 | RC | 203 |
 | CDR2 | 60 |
 
-- In the zones this tool models, 5+ unit buildings added about **0 homes a year**. Our likely-to-redevelop estimate for those zones is **418 homes**, roughly **418 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
+- In the zones this tool models, 5+ unit buildings added about **0 homes a year**. Our likely-to-redevelop estimate for those zones is **391 homes**, roughly **391 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
 - 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 1 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
 - Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. Most new apartment buildings are in areas this tool doesn't model yet, so its totals miss where the city builds most.
 

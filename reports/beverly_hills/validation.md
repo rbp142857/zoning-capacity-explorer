@@ -44,7 +44,7 @@ Top zone codes for these homes:
 | R-4 | 49 |
 | (not matched or no zone) | 33 |
 
-- In the zones this tool models, 5+ unit buildings added about **13 homes a year**. Our likely-to-redevelop estimate for those zones is **343 homes**, roughly **27 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
+- In the zones this tool models, 5+ unit buildings added about **13 homes a year**. Our likely-to-redevelop estimate for those zones is **241 homes**, roughly **19 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
 - 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 0 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
 - Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. 76% of new apartment homes are in zones this tool models.
 

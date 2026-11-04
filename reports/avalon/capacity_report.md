@@ -23,6 +23,7 @@ Theoretical capacity assumes every lot is rebuilt to the maximum. The realistic 
 - Net new homes, theoretical (all rules incl. state law): **8,732**
 - Net new homes on lots **likely to redevelop**: **6,963** on 36 lots (3.5% of modeled lots)
 - Single-family zones (SB 9, ADUs): **1,140** new homes in theory on 176 lots. Not counted as likely: small-scale infill on single-family lots has produced few homes wherever it's been allowed, whether through state law or a city reform.
+- Public or special land (government, utility, quarry, cemetery, golf, private school): **0** of the theoretical new homes, on 22 lots. Not counted as likely. They may rarely be rebuilt, so read citywide theoretical totals with this in mind.
 
 First screen each other lot fails:
 

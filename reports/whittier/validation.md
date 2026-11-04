@@ -19,15 +19,15 @@ Homes **permitted** per year, by building type (ADU = accessory dwelling unit, S
 | YEAR | 2 to 4 | 5+ | ADU | MH | SFA | SFD | Total |
 |---|---|---|---|---|---|---|---|
 | 2018 | 4 | 0 | 8 | 0 | 0 | 5 | 17 |
-| 2019 | 19 | 10 | 35 | 0 | 48 | 29 | 141 |
-| 2020 | 0 | 0 | 26 | 0 | 71 | 22 | 119 |
+| 2019 | 15 | 10 | 29 | 0 | 48 | 24 | 126 |
+| 2020 | 0 | 0 | 22 | 0 | 70 | 20 | 112 |
 | 2021 | 0 | 507 | 61 | 0 | 195 | 189 | 952 |
 | 2022 | 15 | 39 | 78 | 0 | 1 | 28 | 161 |
 | 2023 | 4 | 0 | 105 | 0 | 0 | 3 | 112 |
 | 2024 | 0 | 0 | 97 | 0 | 41 | 4 | 142 |
 | 2025 | 4 | 0 | 86 | 0 | 0 | 1 | 91 |
 
-Average per year, 2018–2025: **217 homes**, of which 70 in buildings of 5+ homes, 62 ADUs, and 6 in 2–4 unit buildings.
+Average per year, 2018–2025: **214 homes**, of which 70 in buildings of 5+ homes, 61 ADUs, and 5 in 2–4 unit buildings.
 
 Where homes in **5+ unit buildings** were permitted (100% of them matched to a lot: 8 by address, 548 by nearest lot):
 
@@ -45,7 +45,7 @@ Top zone codes for these homes:
 | R-4 | 39 |
 | R-3 | 10 |
 
-- In the zones this tool models, 5+ unit buildings added about **6 homes a year**. Our likely-to-redevelop estimate for those zones is **1,990 homes**, roughly **325 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
-- 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 6 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
+- In the zones this tool models, 5+ unit buildings added about **6 homes a year**. Our likely-to-redevelop estimate for those zones is **1,849 homes**, roughly **302 years** of building at that pace. That's a sanity check on scale, not a forecast: the pace depends on the market, not only on zoning.
+- 2–4 unit buildings (the "missing middle" that SB 9 and fourplex reforms target) added about 5 homes a year citywide. That's why the realistic estimate doesn't count small-scale infill in single-family zones.
 - Nearest-lot matches can land on a neighbor across the street, so treat the shares as approximate. Most new apartment buildings are in areas this tool doesn't model yet, so its totals miss where the city builds most.
 

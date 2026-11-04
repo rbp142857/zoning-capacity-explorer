@@ -19,6 +19,7 @@ import type { RulesFile } from "./engine/types";
 import { renderLotDetails } from "./details";
 import { renderLegend } from "./legend";
 import { createMap, currentTheme, type MapCity, type View } from "./map";
+import { downloadText, lotsCsv } from "./csv";
 import { describeScenario, renderPrintSummary } from "./print";
 import { type AddressIndex, setupSearch } from "./search";
 import { byDistrict, byTransitDistance, netNew, realisticNew } from "./summary";
@@ -134,6 +135,10 @@ function showHeadline(data: ParcelData, scenario: Scenario, now: Results, today:
     note.innerHTML = `<span class="up">${diff >= 0 ? "+" : "−"}${fmt.format(Math.abs(diff))}</span> vs. ${fmt.format(today.totals.max)} under today's rules`;
   } else {
     note.textContent = `${fmt.format(today.totals.local)} under city zoning alone, the rest from state law`;
+  }
+  const special = now.totals.specialLandNet;
+  if (special > 0) {
+    note.append(` · ${fmt.format(special)} of the new homes are on government, utility, quarry, cemetery, golf or private school land`);
   }
   $("stat-realistic").textContent = fmt.format(now.totals.realistic);
   const rNote = $("stat-realistic-note");
@@ -480,6 +485,11 @@ async function main() {
       });
     };
     window.addEventListener("beforeprint", fillPrint);
+    $("cite-date").textContent = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    $("download-csv").addEventListener("click", () => {
+      const reform = !isBaseline(scenario);
+      downloadText("zoning-capacity-lots.csv", lotsCsv(data, today, now, window.location.href, reform));
+    });
     $("print").addEventListener("click", () => {
       fillPrint();
       window.print();

@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from zce.engine.redevelop import is_special_land
 from zce.config import CityConfig
 from zce.report import _table
 
@@ -73,7 +74,11 @@ def write_capacity_report(df: pd.DataFrame, rules: dict, state, city: CityConfig
                f"on {_fmt(len(likely))} lots ({len(likely) / len(ok):.1%} of modeled lots)")
     out.append(f"- Single-family zones (SB 9, ADUs): **{_fmt(ok.loc[sf_zone, 'net_new_units'].sum())}** new homes in theory "
                f"on {_fmt(sf_zone.sum())} lots. Not counted as likely: small-scale infill on single-family lots has "
-               "produced few homes wherever it's been allowed, whether through state law or a city reform.\n")
+               "produced few homes wherever it's been allowed, whether through state law or a city reform.")
+    special = ok["use_description"].map(is_special_land)
+    out.append(f"- Public or special land (government, utility, quarry, cemetery, golf, private school): "
+               f"**{_fmt(ok.loc[special, 'net_new_units'].sum())}** of the theoretical new homes, on {_fmt(special.sum())} lots. "
+               "Not counted as likely. They may rarely be rebuilt, so read citywide theoretical totals with this in mind.\n")
     reasons = ok.loc[~ok["likely_redevelop"], "redev_failed"].map(lambda f: list(f)[0] if len(f) else None)
     rc = reasons.value_counts()
     labels = {
@@ -83,6 +88,7 @@ def write_capacity_report(df: pd.DataFrame, rules: dict, state, city: CityConfig
         "condo_many_owners": "Condo (many owners)",
         "historic_district": "In a landmark (historic) district",
         "single_family_zone": "In a single-family zone (counted separately)",
+        "public_or_special_land": "Public or special land (government, utility, quarry, cemetery, golf, private school)",
     }
     out.append("First screen each other lot fails:\n")
     out.append(_table(pd.DataFrame({"reason": [labels.get(k, k) for k in rc.index], "lots": [_fmt(v) for v in rc.values]})))

@@ -12,6 +12,8 @@ time; the waves below were drawn from the November 2026 run.
 
 ## The fact that shapes the plan
 
+**Correction (November 2026).** The state's reports can repeat one permit, and the figures in this section and in `city_ranking` add up those repeats, so they run high for cities that repeat them (METHODOLOGY section 67). With repeats removed, LA has about 16,029 homes a year in 2+ unit buildings, not ~21,300, which is about 81% of the 86 cities downloaded so far. LA still dominates, so the order of the plan stands.
+
 Homes permitted per year in buildings of 2+ homes, the kind of building a
 city's own zoning controls (ADUs follow state law everywhere, so they don't
 tell us which city's rules matter):
@@ -136,7 +138,7 @@ through the pipeline and site as a test, with stand-in rules:
   - Its terms are a site-wide disclaimer ("as is", no warranty), with no explicit
     open license. Add the city to the list to ask before charging for anything.
 - **Where LA builds:** of 150,982 homes permitted in 5+ unit buildings in
-  2018-2025, by the zone on today's map: C2 32%, Chapter 1A 14%, R3 12%, R4 8%,
+  2018-2025 (115,391 once repeated permits are removed; these shares were measured before that fix), by the zone on today's map: C2 32%, Chapter 1A 14%, R3 12%, R4 8%,
   C4 6%. About 28% are on lots with a condition prefix such as `[Q]` or `(T)`. So single-family zones
   cover the most land, but commercial zones are where the homes get built, and
   incentive programs (sub-step d) may explain much of it; not yet measured.
@@ -206,6 +208,10 @@ South Pasadena, Temple City, Vernon, Walnut.
 ## By-right approval pass
 
 Every rule file should say how its zone permits homes (`approval`, METHODOLOGY section 60). **Done from the code:** Los Angeles' LAMC zones, Pasadena, and the cities listed in METHODOLOGY section 60's second pass. **Done only from what the files already recorded:** 91 files across 21 cities. **Still to read:** 396 rule files, listed by the check that `approval` is empty, including LA's Chapter 1A districts and Azusa, whose table columns couldn't be matched to zones. New cities should set `approval` from the start.
+
+## Direction (November 2026)
+
+The owner chose to make this a research and policy tool rather than a paid developer product (see docs/USE_CASES.md). Accuracy on totals, clear labels and citable outputs come first. The waves above still set the order, weighted toward the plans and programs where cities actually build. **Waiting on the owner:** publishing the other 50 cities on the map, which adds roughly 180 MB of site files.
 
 ## Definition of done, for every city
 
