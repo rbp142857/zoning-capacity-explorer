@@ -77,7 +77,7 @@ export function renderPrintSummary(el: HTMLElement, d: PrintData) {
        <tr><th>…on lots likely to redevelop*</th><td>${fmt.format(d.todayRealistic)}</td></tr>`;
   el.innerHTML = `
     <h1>${esc(place)}: zoning capacity summary</h1>
-    <p class="print-disclaimer"><strong>Estimate for research and advocacy, not legal or zoning advice.</strong>
+    <p class="print-disclaimer"><strong>Unreviewed prototype, no longer maintained. Zoning and home counts may be wrong. Not legal or zoning advice.</strong>
       Always confirm with ${esc(confirm)}. Numbers are theoretical maximums if lots were rebuilt, not predictions.</p>
     ${scenarioText}
     <table class="print-totals"><thead><tr><th></th><th>Today's rules</th>${d.reform ? "<th>This scenario</th>" : ""}</tr></thead>

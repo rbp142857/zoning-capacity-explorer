@@ -1,5 +1,8 @@
 # Zoning Capacity Explorer
 
+> **Unreviewed prototype, no longer maintained.** No planner or attorney has checked it, and its
+> zoning and home counts may be wrong. Don't rely on them.
+
 An open-source tool that estimates what zoning allows on each parcel in LA County cities,
 and how much housing a proposed rule change would allow. It's built for citywide estimates,
 comparing reforms, research and reporting: see the **[usage guide](docs/USE_CASES.md)**.
