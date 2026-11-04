@@ -98,7 +98,8 @@ export interface MapController {
   /** Show these cities' lots (colored by the next setResults call). */
   setCities(cities: MapCity[]): void;
   setResults(scenario: Results, today: Results): void;
-  onLotClick(handler: (pid: number, lngLat: maplibregl.LngLat) => void): void;
+  /** `pids` is every lot under the click: the county's parcels sometimes overlap. */
+  onLotClick(handler: (pids: number[], lngLat: maplibregl.LngLat) => void): void;
   /** Outline one lot (the one shown in the details panel), or none. */
   select(pid: number | null): void;
 }
@@ -115,7 +116,7 @@ export function createMap(
   let applied: { scenario: Results; today: Results } | null = null; // what the map's lots show now
   let selected: number | null = null;
   let cities: MapCity[] = [];
-  const clickHandlers: ((pid: number, lngLat: maplibregl.LngLat) => void)[] = [];
+  const clickHandlers: ((pids: number[], lngLat: maplibregl.LngLat) => void)[] = [];
 
   const map = new maplibregl.Map({
     container,
@@ -231,12 +232,14 @@ export function createMap(
   const lotsAt = (point: maplibregl.Point) =>
     cities.length ? map.queryRenderedFeatures(point, { layers: cities.map((c) => fillId(c.id)) }) : [];
   map.on("click", (e) => {
-    const feature = lotsAt(e.point)[0];
-    const city = cities.find((c) => sourceId(c.id) === feature?.source);
-    // The id can arrive as a number or a numeric string depending on how
-    // the tile encoded `pid`, so convert explicitly.
-    const pid = Number(feature?.id);
-    if (city && Number.isInteger(pid)) clickHandlers.forEach((h) => h(city.offset + pid, e.lngLat));
+    const pids = lotsAt(e.point).flatMap((feature) => {
+      const city = cities.find((c) => sourceId(c.id) === feature.source);
+      // The id can arrive as a number or a numeric string depending on how
+      // the tile encoded `pid`, so convert explicitly.
+      const pid = Number(feature.id);
+      return city && Number.isInteger(pid) ? [city.offset + pid] : [];
+    });
+    if (pids.length) clickHandlers.forEach((h) => h(pids, e.lngLat));
   });
   map.on("mousemove", (e) => {
     map.getCanvas().style.cursor = lotsAt(e.point).length ? "pointer" : "";

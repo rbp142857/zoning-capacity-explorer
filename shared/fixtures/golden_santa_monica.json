@@ -332,7 +332,7 @@
    "dist_major_transit_ft": 146.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 4020.0,
-   "redev_mask": 31
+   "redev_mask": 28
   },
   {
    "zone": "R2",
@@ -1454,7 +1454,7 @@
    "dist_major_transit_ft": 725.0,
    "existing_units": null,
    "dist_single_family_ft": 2569.0,
-   "redev_mask": 31
+   "redev_mask": 28
   },
   {
    "zone": "R2-NP",
@@ -2015,7 +2015,7 @@
    "dist_major_transit_ft": 1284.0,
    "existing_units": null,
    "dist_single_family_ft": 3831.0,
-   "redev_mask": 31
+   "redev_mask": 28
   },
   {
    "zone": "R2",
@@ -2279,7 +2279,7 @@
    "dist_major_transit_ft": 2745.0,
    "existing_units": null,
    "dist_single_family_ft": 2527.0,
-   "redev_mask": 31
+   "redev_mask": 28
   },
   {
    "zone": "OP2",
@@ -2400,7 +2400,7 @@
    "dist_major_transit_ft": 186.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 3736.0,
-   "redev_mask": 63
+   "redev_mask": 61
   },
   {
    "zone": "OS",
@@ -2411,7 +2411,7 @@
    "dist_major_transit_ft": 45.0,
    "existing_units": null,
    "dist_single_family_ft": 2943.0,
-   "redev_mask": 31
+   "redev_mask": 28
   },
   {
    "zone": "R1",
@@ -2576,7 +2576,7 @@
    "dist_major_transit_ft": 4606.0,
    "existing_units": null,
    "dist_single_family_ft": 3120.0,
-   "redev_mask": 63
+   "redev_mask": 60
   },
   {
    "zone": "R1",
@@ -3368,7 +3368,7 @@
    "dist_major_transit_ft": 4562.0,
    "existing_units": null,
    "dist_single_family_ft": 2866.0,
-   "redev_mask": 63
+   "redev_mask": 60
   },
   {
    "zone": "R1",
@@ -4226,7 +4226,7 @@
    "dist_major_transit_ft": 1011.0,
    "existing_units": 0.0,
    "dist_single_family_ft": 4070.0,
-   "redev_mask": 63
+   "redev_mask": 60
   },
   {
    "zone": "R1",
@@ -4292,7 +4292,7 @@
    "dist_major_transit_ft": 4596.0,
    "existing_units": null,
    "dist_single_family_ft": 3108.0,
-   "redev_mask": 31
+   "redev_mask": 28
   },
   {
    "zone": "R2",
@@ -4424,7 +4424,7 @@
    "dist_major_transit_ft": 101.0,
    "existing_units": null,
    "dist_single_family_ft": 4719.0,
-   "redev_mask": 31
+   "redev_mask": 28
   },
   {
    "zone": "R3",
@@ -4435,7 +4435,7 @@
    "dist_major_transit_ft": 3344.0,
    "existing_units": null,
    "dist_single_family_ft": 2216.0,
-   "redev_mask": 31
+   "redev_mask": 28
   },
   {
    "zone": "OP2",
@@ -10913,8 +10913,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 53,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 53,
     "local_units": 53,
     "binding_constraint": "envelope",
@@ -17755,8 +17755,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 53,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 53,
     "local_units": 53,
     "binding_constraint": "envelope",
@@ -24597,8 +24597,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 53,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 53,
     "local_units": 53,
     "binding_constraint": "envelope",
@@ -31439,8 +31439,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 53,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 53,
     "local_units": 53,
     "binding_constraint": "envelope",
@@ -32157,17 +32157,17 @@
    {
     "likely_redevelop": false,
     "realistic_new_units": 0,
-    "max_units": 17,
-    "local_units": 17,
-    "binding_constraint": "parking",
-    "net_new_units": 17,
+    "max_units": 21,
+    "local_units": 21,
+    "binding_constraint": "envelope",
+    "net_new_units": 21,
     "approval": "by_right",
-    "by_right_units": 17,
+    "by_right_units": 21,
     "limits": {
      "density": null,
      "lot_area_per_unit": null,
      "envelope": 21,
-     "parking": 17,
+     "parking": null,
      "state_adu": 3
     }
    },
@@ -33811,7 +33811,7 @@
      "density": null,
      "lot_area_per_unit": 14,
      "envelope": 19,
-     "parking": 22,
+     "parking": null,
      "state_adu": 3
     }
    },
@@ -36379,18 +36379,18 @@
    },
    {
     "likely_redevelop": true,
-    "realistic_new_units": 17,
-    "max_units": 17,
-    "local_units": 17,
-    "binding_constraint": "parking",
-    "net_new_units": 17,
+    "realistic_new_units": 21,
+    "max_units": 21,
+    "local_units": 21,
+    "binding_constraint": "envelope",
+    "net_new_units": 21,
     "approval": "by_right",
-    "by_right_units": 17,
+    "by_right_units": 21,
     "limits": {
      "density": null,
      "lot_area_per_unit": null,
      "envelope": 21,
-     "parking": 17,
+     "parking": null,
      "state_adu": 3
     }
    },
@@ -36980,7 +36980,7 @@
      "density": null,
      "lot_area_per_unit": 15,
      "envelope": 20,
-     "parking": 23,
+     "parking": null,
      "state_adu": 3
     }
    },
@@ -38281,8 +38281,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 53,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 53,
     "local_units": 53,
     "binding_constraint": "envelope",
@@ -45123,8 +45123,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 71,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 71,
     "local_units": 71,
     "binding_constraint": "envelope",
@@ -51965,8 +51965,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 53,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 53,
     "local_units": 53,
     "binding_constraint": "envelope",
@@ -58807,8 +58807,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 53,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 53,
     "local_units": 53,
     "binding_constraint": "envelope",
@@ -65649,8 +65649,8 @@
     }
    },
    {
-    "likely_redevelop": true,
-    "realistic_new_units": 62,
+    "likely_redevelop": false,
+    "realistic_new_units": 0,
     "max_units": 62,
     "local_units": 62,
     "binding_constraint": "envelope",

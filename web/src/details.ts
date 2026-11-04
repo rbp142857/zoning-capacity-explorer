@@ -105,8 +105,8 @@ function limitsTable(today: CapacityResult, now: CapacityResult, reform: boolean
 
 const SCREEN_TEXT: Record<string, [string, string]> = {
   zoning_allows_too_little_more: ["Zoning allows at least twice the homes already there", "Zoning allows less than twice the homes already there"],
-  building_too_new: ["Building is 50+ years old (or lot is vacant)", "Building is less than 50 years old"],
-  building_worth_more_than_land: ["Building assessed at less than the land", "Building assessed at more than the land (or value unknown)"],
+  building_too_new: ["Building is 50+ years old (or lot is vacant)", "Building is under 50 years old, or the county has no record of it (often exempt land)"],
+  building_worth_more_than_land: ["Building assessed at less than the land", "Building assessed at more than the land, or no real value on record (often exempt land)"],
   condo_many_owners: ["Not a condo", "Condo (many owners)"],
   historic_district: ["Not in a landmark district", "In a landmark (historic) district"],
   single_family_zone: ["Not in a single-family zone", "In a single-family zone (small-scale infill is counted separately)"],

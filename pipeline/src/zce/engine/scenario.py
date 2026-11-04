@@ -103,7 +103,8 @@ def apply_scenario(
         ):
             updates["max_units_per_lot"] = _cite(s.sf_units_per_lot)
         if s.parking_per_unit is not None and r.parking_per_unit is not None:
-            updates["parking_per_unit"] = _cite(s.parking_per_unit)
+            # A cap: a city that already asks for less keeps its lower number.
+            updates["parking_per_unit"] = _cite(min(r.parking_per_unit.value, s.parking_per_unit))
             if s.parking_per_unit == 0:
                 updates["guest_parking_per_unit"] = None
         out[zone] = _with_scenario_source(r, **updates) if updates else r

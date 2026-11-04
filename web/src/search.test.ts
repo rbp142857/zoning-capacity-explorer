@@ -26,4 +26,12 @@ describe("address search", () => {
     expect(hits[0].pid).toBe(5);
     expect(hits[0].address).toContain("5713000006");
   });
+
+  it("finds a lot with no address by its parcel number, and not by words", () => {
+    const withBlank = { address: ["", ...index.address], pid: [0, ...index.pid], lng: [1, 0, 0, 0, 0], lat: [2, 0, 0, 0, 0] };
+    const hits = searchAddresses(withBlank, "5713000001", ids);
+    expect(hits).toHaveLength(1);
+    expect(hits[0]).toMatchObject({ pid: 0, lng: 1, lat: 2, address: "Lot 5713000001 (no address on record)" });
+    expect(searchAddresses(withBlank, "lake", ids).map((h) => h.pid)).toEqual([6, 8]);
+  });
 });

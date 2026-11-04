@@ -51,7 +51,7 @@ export function applyScenario(
       u.max_units_per_lot = cite(s.sf_units_per_lot);
     }
     if (s.parking_per_unit !== null && r.parking_per_unit) {
-      u.parking_per_unit = cite(s.parking_per_unit);
+      u.parking_per_unit = cite(Math.min(r.parking_per_unit.value, s.parking_per_unit));
       if (s.parking_per_unit === 0) u.guest_parking_per_unit = null;
     }
     out[zone] = Object.keys(u).length ? { ...r, ...u } : r;

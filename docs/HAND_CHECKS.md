@@ -1217,6 +1217,11 @@ Rules: Lomita Municipal Code, Title XI, Chapter 1, read on Municode 2026-11-01 (
 
 - 1,500 sq ft per home → 7.9 → **7**. **Result: 7, lot area.** Engine: 7 ✓
 
+### LO-6. APN 7552001903 (no address on record) · RVD1452 (read as R-3) · 543,234 sq ft
+
+- 1,452 sq ft per home → 374.1 → **374**. **Result: 374, lot area.** Engine: 374 ✓
+- Likely to redevelop: no. The lot is off the tax roll, so screens 2 and 3 fail. Web sources describe Harbor Hills, 301 public housing homes, at 26607 S. Western Ave; we matched that by location and use label, not by a parcel record.
+
 ### LO-5. 25620 Oak St · RVD5000 (read as R-1) · 9,077 sq ft
 
 - One home → **1**. FAR 0.60 = 5,446 ÷ 1,062.5 = 5.1 → 5. SB 9: 4. **Result: 4, SB 9.** Engine: 4 ✓

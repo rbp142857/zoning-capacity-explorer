@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232f6fd0'/%3E%3C/svg%3E" />
     <title>LA County Zoning Capacity</title>
     <meta
       name="description"
@@ -38,7 +39,7 @@
             aria-expanded="false"
             aria-controls="search-list"
             autocomplete="off"
-            placeholder="e.g. 100 N Garfield Ave"
+            placeholder="e.g. 100 Main St, or a parcel number"
           />
           <ul id="search-list" role="listbox" aria-label="Matching addresses" hidden></ul>
           <span id="search-status" class="visually-hidden" role="status" aria-live="polite"></span>
@@ -88,7 +89,7 @@
           <form id="levers" class="levers">
             <label>Homes allowed per lot in single-family zones
               <select name="sf_units_per_lot">
-                <option value="">Today: 1</option>
+                <option value="">Today: the city's rule</option>
                 <option value="2">2 (duplex)</option>
                 <option value="3">3 (triplex)</option>
                 <option value="4">4 (fourplex)</option>
@@ -106,7 +107,7 @@
             </label>
             <label>Parking spaces required per home
               <select name="parking_per_unit">
-                <option value="">Today: 2</option>
+                <option value="">Today: the city's rule</option>
                 <option value="1">1</option>
                 <option value="0.5">0.5</option>
                 <option value="0">None</option>
@@ -148,7 +149,7 @@
             </fieldset>
             <label class="check">
               <input type="checkbox" name="housing_in_cg" />
-              Allow housing in General Commercial (CG) zones
+              Allow housing in General Commercial (CG) zones (Pasadena only)
             </label>
             <label>Homes a house can add through ADUs
               <select name="adu_units_added">

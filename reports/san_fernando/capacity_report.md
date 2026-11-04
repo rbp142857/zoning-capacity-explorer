@@ -31,8 +31,7 @@ First screen each other lot fails:
 |---|---|
 | Zoning allows less than twice what's there | 4,187 |
 | Building worth more than the land (or value unknown) | 36 |
-| Public or special land (government, utility, quarry, cemetery, golf, private school) | 12 |
-| Building less than 50 years old | 8 |
+| Building less than 50 years old | 20 |
 
 Likely-to-redevelop lots by zone:
 
